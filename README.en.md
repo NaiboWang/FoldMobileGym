@@ -12,8 +12,6 @@ The accompanying public [task dataset](#task-data) in [`tasks/`](tasks/) current
 
 This project provides a simulated experience and is still being improved. All in-app content and actions are examples; they cannot make real calls, payments, purchases, or send messages.
 
-[Watch the demo (about 64 seconds)](https://github.com/user-attachments/assets/ee175436-2e33-4813-834c-dd9afb31efb5) 
-
 ## What You Can Explore
 
 - **Folded and unfolded screens**: Switch between screen states and observe changes to the launcher and app layouts.
@@ -24,6 +22,8 @@ This project provides a simulated experience and is still being improved. All in
 The current version includes **30 simulated apps**, covering everyday apps and system tools. The range of available features differs between apps.
 
 It is suited to anyone interested in foldable phone interactions, comparing screen layouts, or demonstrating multitasking scenarios.
+
+[Watch the demo (about 64 seconds)](https://github.com/user-attachments/assets/ee175436-2e33-4813-834c-dd9afb31efb5)
 
 ## Screenshots
 
