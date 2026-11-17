@@ -12,7 +12,7 @@ The accompanying public [task dataset](#task-data) in [`tasks/`](tasks/) current
 
 This project provides a simulated experience and is still being improved. All in-app content and actions are examples; they cannot make real calls, payments, purchases, or send messages.
 
-[Watch the demo (about 64 seconds)](foldmobilegym-demo.mp4) · [Get the project](https://github.com/flyx-flyx/foldmobilegym)
+[Watch the demo (about 64 seconds)](https://github.com/user-attachments/assets/ee175436-2e33-4813-834c-dd9afb31efb5) · [Get the project](https://github.com/yannnf/foldmobilegym)
 
 ## What You Can Explore
 
@@ -102,11 +102,11 @@ Windows examples use `npm.cmd` to avoid PowerShell execution-policy restrictions
 Open PowerShell in a location with sufficient free space and run:
 
 ```powershell
-git clone https://github.com/flyx-flyx/foldmobilegym.git
+git clone https://github.com/yannnf/foldmobilegym.git
 cd foldmobilegym
 ```
 
-Visit the [media package release page](https://github.com/flyx-flyx/foldmobilegym/releases/tag/media-v0.3.0) and download `foldagent-gui-media-full-v0.3.0.tar.gz`.
+Visit the [media package release page](https://github.com/yannnf/foldmobilegym/releases/tag/media-v0.3.0) and download [`foldagent-gui-media-full-v0.3.0.tar.gz`](https://github.com/yannnf/foldmobilegym/releases/download/media-v0.3.0/foldagent-gui-media-full-v0.3.0.tar.gz).
 
 In the same PowerShell window, run the following command, replacing the example path with the actual location of your downloaded media package:
 
@@ -142,10 +142,10 @@ npm.cmd run dev -- --host 127.0.0.1 --port 3100 --strictPort
 
 First install Git, Node.js 24.14.0 or later (including npm), Python 3 (3.11 or later recommended), and Chrome or Edge. The commands below work in bash / zsh. Use the same media package as on Windows and reserve at least 15 GB of free space.
 
-Download `foldagent-gui-media-full-v0.3.0.tar.gz` from the [media package release page](https://github.com/flyx-flyx/foldmobilegym/releases/tag/media-v0.3.0). Open a terminal where you want to store the project and run these commands in order:
+Download [`foldagent-gui-media-full-v0.3.0.tar.gz`](https://github.com/yannnf/foldmobilegym/releases/download/media-v0.3.0/foldagent-gui-media-full-v0.3.0.tar.gz) from the [media package release page](https://github.com/yannnf/foldmobilegym/releases/tag/media-v0.3.0). Open a terminal where you want to store the project and run these commands in order:
 
 ```bash
-git clone https://github.com/flyx-flyx/foldmobilegym.git
+git clone https://github.com/yannnf/foldmobilegym.git
 cd foldmobilegym
 
 # Replace the path below with the actual location of your downloaded media package
