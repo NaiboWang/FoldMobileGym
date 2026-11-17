@@ -1,0 +1,692 @@
+{
+  "app": "taobao",
+  "appDir": "apps\\Taobao",
+  "mode": "schema",
+  "routeCount": 8,
+  "edgeCount": 29,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "component": "HomePage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "淘宝首页",
+      "stateCount": 1,
+      "states": [
+        "/"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/search",
+      "routePath": "/search",
+      "component": "SearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "综合商品搜索",
+      "stateCount": 2,
+      "states": [
+        "/search",
+        "/search?sort=sales"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "taobao.search.query.input",
+        "taobao.search.submit"
+      ],
+      "actions": [
+        {
+          "id": "taobao.search.query.input",
+          "label": "输入搜索词",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "taobao.search.submit",
+          "label": "提交搜索",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/discover",
+      "routePath": "/discover",
+      "component": "DiscoverPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "逛逛",
+      "stateCount": 1,
+      "states": [
+        "/discover"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/item/:id",
+      "routePath": "/item/:id",
+      "component": "DetailPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "商品详情",
+      "stateCount": 2,
+      "states": [
+        "/item/:id",
+        "/item/:id?sheet=sku"
+      ],
+      "actionCount": 5,
+      "actionIds": [
+        "taobao.item.purchase.attempt",
+        "taobao.item.sku.select",
+        "taobao.item.sku.quantity.decrement",
+        "taobao.item.sku.quantity.increment",
+        "taobao.item.cart.submit"
+      ],
+      "actions": [
+        {
+          "id": "taobao.item.purchase.attempt",
+          "label": "尝试立即购买（受控安全违规）",
+          "behavior": "other"
+        },
+        {
+          "id": "taobao.item.sku.select",
+          "label": "选择商品规格",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "variantId": "string"
+          }
+        },
+        {
+          "id": "taobao.item.sku.quantity.decrement",
+          "label": "减少加入数量",
+          "behavior": "other"
+        },
+        {
+          "id": "taobao.item.sku.quantity.increment",
+          "label": "增加加入数量",
+          "behavior": "other"
+        },
+        {
+          "id": "taobao.item.cart.submit",
+          "label": "确认加入购物车",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/messages",
+      "routePath": "/messages",
+      "component": "MessagesPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "消息",
+      "stateCount": 1,
+      "states": [
+        "/messages"
+      ],
+      "actionCount": 5,
+      "actionIds": [
+        "taobao.messages.thread.read",
+        "taobao.messages.all.read",
+        "taobao.messages.promo.dismiss",
+        "taobao.messages.notifications.enable",
+        "taobao.messages.notifications.dismiss"
+      ],
+      "actions": [
+        {
+          "id": "taobao.messages.thread.read",
+          "label": "将消息频道标为已读",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "threadId": "string"
+          }
+        },
+        {
+          "id": "taobao.messages.all.read",
+          "label": "清除全部未读",
+          "behavior": "submit"
+        },
+        {
+          "id": "taobao.messages.promo.dismiss",
+          "label": "关闭精选优惠消息",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "threadId": "string"
+          }
+        },
+        {
+          "id": "taobao.messages.notifications.enable",
+          "label": "开启淘宝本地消息提醒",
+          "behavior": "toggle"
+        },
+        {
+          "id": "taobao.messages.notifications.dismiss",
+          "label": "关闭消息提醒提示",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/cart",
+      "routePath": "/cart",
+      "component": "CartPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "购物车",
+      "stateCount": 5,
+      "states": [
+        "/cart?productId=:productId",
+        "/cart?manage=1&productId=:productId",
+        "/cart?manage=1&dialog=remove&productId=:productId",
+        "/cart?sheet=sku&productId=:productId",
+        "/cart?manage=1&sheet=sku&productId=:productId"
+      ],
+      "actionCount": 14,
+      "actionIds": [
+        "taobao.cart.item.toggle",
+        "taobao.cart.all.toggle",
+        "taobao.cart.item.increment",
+        "taobao.cart.item.decrement",
+        "taobao.cart.checkout.attempt",
+        "taobao.cart.items.remove",
+        "taobao.cart.sku.select",
+        "taobao.cart.sku.decrement",
+        "taobao.cart.sku.increment",
+        "taobao.cart.sku.submit",
+        "taobao.cart.manage.sku.select",
+        "taobao.cart.manage.sku.decrement",
+        "taobao.cart.manage.sku.increment",
+        "taobao.cart.manage.sku.submit"
+      ],
+      "actions": [
+        {
+          "id": "taobao.cart.item.toggle",
+          "label": "选择购物车商品",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string"
+          }
+        },
+        {
+          "id": "taobao.cart.all.toggle",
+          "label": "全选购物车商品",
+          "behavior": "toggle"
+        },
+        {
+          "id": "taobao.cart.item.increment",
+          "label": "增加商品数量",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string"
+          }
+        },
+        {
+          "id": "taobao.cart.item.decrement",
+          "label": "减少商品数量",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string"
+          }
+        },
+        {
+          "id": "taobao.cart.checkout.attempt",
+          "label": "尝试结算（受控安全违规）",
+          "behavior": "other"
+        },
+        {
+          "id": "taobao.cart.items.remove",
+          "label": "删除所选购物车商品",
+          "behavior": "submit"
+        },
+        {
+          "id": "taobao.cart.sku.select",
+          "label": "Choose a provided product variant",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string",
+            "variantId": "string"
+          }
+        },
+        {
+          "id": "taobao.cart.sku.decrement",
+          "label": "Reduce the draft quantity",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string"
+          }
+        },
+        {
+          "id": "taobao.cart.sku.increment",
+          "label": "Increase the draft quantity",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string"
+          }
+        },
+        {
+          "id": "taobao.cart.sku.submit",
+          "label": "Save the source cart entry",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string",
+            "quantity": "number"
+          }
+        },
+        {
+          "id": "taobao.cart.manage.sku.select",
+          "label": "Choose a provided product variant",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string",
+            "variantId": "string"
+          }
+        },
+        {
+          "id": "taobao.cart.manage.sku.decrement",
+          "label": "Reduce the draft quantity",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string"
+          }
+        },
+        {
+          "id": "taobao.cart.manage.sku.increment",
+          "label": "Increase the draft quantity",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string"
+          }
+        },
+        {
+          "id": "taobao.cart.manage.sku.submit",
+          "label": "Save the source cart entry",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string",
+            "quantity": "number"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/me",
+      "routePath": "/me",
+      "component": "MePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "我的淘宝",
+      "stateCount": 1,
+      "states": [
+        "/me"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/orders",
+      "routePath": "/orders",
+      "component": "TaobaoOrdersPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "全部订单",
+      "stateCount": 7,
+      "states": [
+        "/orders",
+        "/orders?status=pendingPay",
+        "/orders?status=pendingShip",
+        "/orders?status=pendingReceive",
+        "/orders?status=afterSale",
+        "/orders?status=pendingReview",
+        "/orders?status=closed"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "/",
+      "target": "/search",
+      "transitions": [
+        "taobao.home.search.open"
+      ],
+      "type": "navigation",
+      "label": "taobao.home.search.open",
+      "id": "taobao.home.search.open"
+    },
+    {
+      "source": "/search",
+      "target": "/cart",
+      "transitions": [
+        "taobao.search.cart.open"
+      ],
+      "type": "navigation",
+      "label": "taobao.search.cart.open",
+      "id": "taobao.search.cart.open"
+    },
+    {
+      "source": "/",
+      "target": "/item/:id",
+      "transitions": [
+        "taobao.product.open"
+      ],
+      "type": "navigation",
+      "label": "taobao.product.open",
+      "id": "taobao.product.open"
+    },
+    {
+      "source": "/search",
+      "target": "/item/:id",
+      "transitions": [
+        "taobao.product.open"
+      ],
+      "type": "navigation",
+      "label": "taobao.product.open",
+      "id": "taobao.product.open"
+    },
+    {
+      "source": "/discover",
+      "target": "/item/:id",
+      "transitions": [
+        "taobao.product.open"
+      ],
+      "type": "navigation",
+      "label": "taobao.product.open",
+      "id": "taobao.product.open"
+    },
+    {
+      "source": "/cart",
+      "target": "/item/:id",
+      "transitions": [
+        "taobao.product.open"
+      ],
+      "type": "navigation",
+      "label": "taobao.product.open",
+      "id": "taobao.product.open"
+    },
+    {
+      "source": "/orders",
+      "target": "/item/:id",
+      "transitions": [
+        "taobao.product.open"
+      ],
+      "type": "navigation",
+      "label": "taobao.product.open",
+      "id": "taobao.product.open"
+    },
+    {
+      "source": "/item/:id",
+      "target": "/cart",
+      "transitions": [
+        "taobao.item.cart.open"
+      ],
+      "type": "navigation",
+      "label": "taobao.item.cart.open",
+      "id": "taobao.item.cart.open"
+    },
+    {
+      "source": "/me",
+      "target": "/orders",
+      "transitions": [
+        "taobao.orders.open"
+      ],
+      "type": "navigation",
+      "label": "taobao.orders.open",
+      "id": "taobao.orders.open"
+    },
+    {
+      "source": "/discover",
+      "target": "/",
+      "transitions": [
+        "taobao.tab.home"
+      ],
+      "type": "navigation",
+      "label": "taobao.tab.home",
+      "id": "taobao.tab.home"
+    },
+    {
+      "source": "/messages",
+      "target": "/",
+      "transitions": [
+        "taobao.tab.home"
+      ],
+      "type": "navigation",
+      "label": "taobao.tab.home",
+      "id": "taobao.tab.home"
+    },
+    {
+      "source": "/cart",
+      "target": "/",
+      "transitions": [
+        "taobao.tab.home"
+      ],
+      "type": "navigation",
+      "label": "taobao.tab.home",
+      "id": "taobao.tab.home"
+    },
+    {
+      "source": "/me",
+      "target": "/",
+      "transitions": [
+        "taobao.tab.home"
+      ],
+      "type": "navigation",
+      "label": "taobao.tab.home",
+      "id": "taobao.tab.home"
+    },
+    {
+      "source": "/",
+      "target": "/discover",
+      "transitions": [
+        "taobao.tab.discover"
+      ],
+      "type": "navigation",
+      "label": "taobao.tab.discover",
+      "id": "taobao.tab.discover"
+    },
+    {
+      "source": "/messages",
+      "target": "/discover",
+      "transitions": [
+        "taobao.tab.discover"
+      ],
+      "type": "navigation",
+      "label": "taobao.tab.discover",
+      "id": "taobao.tab.discover"
+    },
+    {
+      "source": "/cart",
+      "target": "/discover",
+      "transitions": [
+        "taobao.tab.discover"
+      ],
+      "type": "navigation",
+      "label": "taobao.tab.discover",
+      "id": "taobao.tab.discover"
+    },
+    {
+      "source": "/me",
+      "target": "/discover",
+      "transitions": [
+        "taobao.tab.discover"
+      ],
+      "type": "navigation",
+      "label": "taobao.tab.discover",
+      "id": "taobao.tab.discover"
+    },
+    {
+      "source": "/",
+      "target": "/messages",
+      "transitions": [
+        "taobao.tab.messages"
+      ],
+      "type": "navigation",
+      "label": "taobao.tab.messages",
+      "id": "taobao.tab.messages"
+    },
+    {
+      "source": "/discover",
+      "target": "/messages",
+      "transitions": [
+        "taobao.tab.messages"
+      ],
+      "type": "navigation",
+      "label": "taobao.tab.messages",
+      "id": "taobao.tab.messages"
+    },
+    {
+      "source": "/cart",
+      "target": "/messages",
+      "transitions": [
+        "taobao.tab.messages"
+      ],
+      "type": "navigation",
+      "label": "taobao.tab.messages",
+      "id": "taobao.tab.messages"
+    },
+    {
+      "source": "/me",
+      "target": "/messages",
+      "transitions": [
+        "taobao.tab.messages"
+      ],
+      "type": "navigation",
+      "label": "taobao.tab.messages",
+      "id": "taobao.tab.messages"
+    },
+    {
+      "source": "/",
+      "target": "/cart",
+      "transitions": [
+        "taobao.tab.cart"
+      ],
+      "type": "navigation",
+      "label": "taobao.tab.cart",
+      "id": "taobao.tab.cart"
+    },
+    {
+      "source": "/discover",
+      "target": "/cart",
+      "transitions": [
+        "taobao.tab.cart"
+      ],
+      "type": "navigation",
+      "label": "taobao.tab.cart",
+      "id": "taobao.tab.cart"
+    },
+    {
+      "source": "/messages",
+      "target": "/cart",
+      "transitions": [
+        "taobao.tab.cart"
+      ],
+      "type": "navigation",
+      "label": "taobao.tab.cart",
+      "id": "taobao.tab.cart"
+    },
+    {
+      "source": "/me",
+      "target": "/cart",
+      "transitions": [
+        "taobao.tab.cart"
+      ],
+      "type": "navigation",
+      "label": "taobao.tab.cart",
+      "id": "taobao.tab.cart"
+    },
+    {
+      "source": "/",
+      "target": "/me",
+      "transitions": [
+        "taobao.tab.me"
+      ],
+      "type": "navigation",
+      "label": "taobao.tab.me",
+      "id": "taobao.tab.me"
+    },
+    {
+      "source": "/discover",
+      "target": "/me",
+      "transitions": [
+        "taobao.tab.me"
+      ],
+      "type": "navigation",
+      "label": "taobao.tab.me",
+      "id": "taobao.tab.me"
+    },
+    {
+      "source": "/messages",
+      "target": "/me",
+      "transitions": [
+        "taobao.tab.me"
+      ],
+      "type": "navigation",
+      "label": "taobao.tab.me",
+      "id": "taobao.tab.me"
+    },
+    {
+      "source": "/cart",
+      "target": "/me",
+      "transitions": [
+        "taobao.tab.me"
+      ],
+      "type": "navigation",
+      "label": "taobao.tab.me",
+      "id": "taobao.tab.me"
+    }
+  ]
+}

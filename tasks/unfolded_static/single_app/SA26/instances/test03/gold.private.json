@@ -1,0 +1,14 @@
+{
+  "app": "wechat_reading",
+  "data": {
+    "id": "2",
+    "title": "控糖革命",
+    "author": "杰西·安佐斯佩",
+    "cover": "",
+    "coverColor": "bg-orange-100",
+    "category": "健康",
+    "totalWords": 120000,
+    "rating": 8.8,
+    "recommendedValue": 88.1
+  }
+}

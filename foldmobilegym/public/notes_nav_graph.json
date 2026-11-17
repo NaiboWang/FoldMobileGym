@@ -1,0 +1,3095 @@
+{
+  "app": "notes",
+  "appDir": "system\\Notes",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 26,
+  "transitionCount": 39,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "uiStateId": "notes.list.base",
+      "component": "NotesListPage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "便签列表页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/?sheet=menu",
+      "routePath": "/",
+      "uiStateId": "notes.list.menu",
+      "component": "NotesListPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "首页更多操作",
+      "search": {
+        "sheet": "menu"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/?sheet=create",
+      "routePath": "/",
+      "uiStateId": "notes.list.create",
+      "component": "NotesListPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "Choose a new note type",
+      "search": {
+        "sheet": "create"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "notes.list.import.choose",
+          "label": "Choose a text document from Files",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/?sheet=receive",
+      "routePath": "/",
+      "uiStateId": "notes.list.receive",
+      "component": "NotesListPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "Receive shared text",
+      "search": {
+        "sheet": "receive"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/todo",
+      "routePath": "/todo",
+      "uiStateId": "notes.todo.base",
+      "component": "TodoListPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "待办页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/folders",
+      "routePath": "/folders",
+      "uiStateId": "notes.folders.base",
+      "component": "FoldersPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "文件夹页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/settings?tab=:tab",
+      "routePath": "/settings",
+      "uiStateId": "notes.settings.base",
+      "component": "NotesSettingsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "设置页",
+      "search": {},
+      "queryParams": {
+        "tab": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/trash",
+      "routePath": "/trash",
+      "uiStateId": "notes.trash.base",
+      "component": "TrashPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "回收站页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/private",
+      "routePath": "/private",
+      "uiStateId": "notes.private.base",
+      "component": "PrivateNotesPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "私密便签页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/note/:id",
+      "routePath": "/note/:id",
+      "uiStateId": "notes.editor.base",
+      "component": "NoteEditorPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded editor note list"
+        },
+        {
+          "name": "overlay",
+          "direction": "vertical",
+          "description": "Current editor sheet content"
+        },
+        {
+          "name": "reminderDay",
+          "direction": "vertical",
+          "description": "Reminder date wheel"
+        },
+        {
+          "name": "reminderHour",
+          "direction": "vertical",
+          "description": "Reminder hour wheel"
+        },
+        {
+          "name": "reminderMinute",
+          "direction": "vertical",
+          "description": "Reminder minute wheel"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "编辑页",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "notes.editor.library.pinned.toggle",
+          "label": "Expand or collapse actual pinned source cards",
+          "behavior": "toggle"
+        },
+        {
+          "id": "notes.editor.undo",
+          "label": "Undo text edit",
+          "behavior": "other"
+        },
+        {
+          "id": "notes.editor.share",
+          "label": "通过系统选择器分享笔记文本",
+          "behavior": "other"
+        },
+        {
+          "id": "notes.editor.redo",
+          "label": "Redo text edit",
+          "behavior": "other"
+        },
+        {
+          "id": "notes.editor.title.input",
+          "label": "Edit note title",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "notes.editor.content.input",
+          "label": "Edit note content",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "notes.checklist.enable",
+          "label": "Enable checklist in this note",
+          "behavior": "other"
+        },
+        {
+          "id": "notes.checklist.input",
+          "label": "Edit checklist item",
+          "behavior": "input",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string",
+            "value": "string"
+          }
+        },
+        {
+          "id": "notes.checklist.toggle",
+          "label": "Toggle checklist item",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "notes.checklist.remove",
+          "label": "Remove the actual checklist item",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "notes.editor.image.pick",
+          "label": "Pick an actual simulator image",
+          "behavior": "other"
+        },
+        {
+          "id": "notes.editor.image.item.open",
+          "label": "Open this image in Gallery",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "imageId": "string"
+          }
+        },
+        {
+          "id": "notes.editor.image.item.remove",
+          "label": "Remove this note image block",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "imageId": "string"
+          }
+        },
+        {
+          "id": "notes.editor.restore.submit",
+          "label": "Restore this note",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/note/:id?sheet=ai",
+      "routePath": "/note/:id",
+      "uiStateId": "notes.editor.ai",
+      "component": "NoteEditorPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded editor note list"
+        },
+        {
+          "name": "overlay",
+          "direction": "vertical",
+          "description": "Current editor sheet content"
+        },
+        {
+          "name": "reminderDay",
+          "direction": "vertical",
+          "description": "Reminder date wheel"
+        },
+        {
+          "name": "reminderHour",
+          "direction": "vertical",
+          "description": "Reminder hour wheel"
+        },
+        {
+          "name": "reminderMinute",
+          "direction": "vertical",
+          "description": "Reminder minute wheel"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "Native-observed AI Notes launcher; feature results are not fabricated",
+      "search": {
+        "sheet": "ai"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/note/:id?sheet=menu",
+      "routePath": "/note/:id",
+      "uiStateId": "notes.editor.menu",
+      "component": "NoteEditorPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded editor note list"
+        },
+        {
+          "name": "overlay",
+          "direction": "vertical",
+          "description": "Current editor sheet content"
+        },
+        {
+          "name": "reminderDay",
+          "direction": "vertical",
+          "description": "Reminder date wheel"
+        },
+        {
+          "name": "reminderHour",
+          "direction": "vertical",
+          "description": "Reminder hour wheel"
+        },
+        {
+          "name": "reminderMinute",
+          "direction": "vertical",
+          "description": "Reminder minute wheel"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "Note actions",
+      "search": {
+        "sheet": "menu"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "notes.editor.menu.restore.submit",
+          "label": "Restore note from menu",
+          "behavior": "submit"
+        },
+        {
+          "id": "notes.editor.menu.unprivate.submit",
+          "label": "Remove private flag",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/note/:id?sheet=folder",
+      "routePath": "/note/:id",
+      "uiStateId": "notes.editor.folder",
+      "component": "NoteEditorPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded editor note list"
+        },
+        {
+          "name": "overlay",
+          "direction": "vertical",
+          "description": "Current editor sheet content"
+        },
+        {
+          "name": "reminderDay",
+          "direction": "vertical",
+          "description": "Reminder date wheel"
+        },
+        {
+          "name": "reminderHour",
+          "direction": "vertical",
+          "description": "Reminder hour wheel"
+        },
+        {
+          "name": "reminderMinute",
+          "direction": "vertical",
+          "description": "Reminder minute wheel"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "Choose note folder",
+      "search": {
+        "sheet": "folder"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "notes.editor.folder.item.submit",
+          "label": "Move this note to a folder",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "folderId": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/note/:id?sheet=reminder",
+      "routePath": "/note/:id",
+      "uiStateId": "notes.editor.reminder",
+      "component": "NoteEditorPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded editor note list"
+        },
+        {
+          "name": "overlay",
+          "direction": "vertical",
+          "description": "Current editor sheet content"
+        },
+        {
+          "name": "reminderDay",
+          "direction": "vertical",
+          "description": "Reminder date wheel"
+        },
+        {
+          "name": "reminderHour",
+          "direction": "vertical",
+          "description": "Reminder hour wheel"
+        },
+        {
+          "name": "reminderMinute",
+          "direction": "vertical",
+          "description": "Reminder minute wheel"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "Reminder editor",
+      "search": {
+        "sheet": "reminder"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "notes.editor.reminder.save.submit",
+          "label": "Save or clear reminder",
+          "behavior": "submit"
+        },
+        {
+          "id": "notes.editor.reminder.enabled.toggle",
+          "label": "Toggle reminder draft",
+          "behavior": "toggle"
+        },
+        {
+          "id": "notes.editor.reminder.day.input",
+          "label": "Choose reminder day",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "number"
+          }
+        },
+        {
+          "id": "notes.editor.reminder.hour.input",
+          "label": "Choose reminder hour",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "number"
+          }
+        },
+        {
+          "id": "notes.editor.reminder.minute.input",
+          "label": "Choose reminder minute",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "number"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/note/:id?sheet=delete",
+      "routePath": "/note/:id",
+      "uiStateId": "notes.editor.delete",
+      "component": "NoteEditorPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded editor note list"
+        },
+        {
+          "name": "overlay",
+          "direction": "vertical",
+          "description": "Current editor sheet content"
+        },
+        {
+          "name": "reminderDay",
+          "direction": "vertical",
+          "description": "Reminder date wheel"
+        },
+        {
+          "name": "reminderHour",
+          "direction": "vertical",
+          "description": "Reminder hour wheel"
+        },
+        {
+          "name": "reminderMinute",
+          "direction": "vertical",
+          "description": "Reminder minute wheel"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "Confirm moving this note to trash",
+      "search": {
+        "sheet": "delete"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/note/:id?sheet=permanentDelete",
+      "routePath": "/note/:id",
+      "uiStateId": "notes.editor.permanentDelete",
+      "component": "NoteEditorPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded editor note list"
+        },
+        {
+          "name": "overlay",
+          "direction": "vertical",
+          "description": "Current editor sheet content"
+        },
+        {
+          "name": "reminderDay",
+          "direction": "vertical",
+          "description": "Reminder date wheel"
+        },
+        {
+          "name": "reminderHour",
+          "direction": "vertical",
+          "description": "Reminder hour wheel"
+        },
+        {
+          "name": "reminderMinute",
+          "direction": "vertical",
+          "description": "Reminder minute wheel"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "Confirm permanently deleting this note",
+      "search": {
+        "sheet": "permanentDelete"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/note/:id?sheet=search",
+      "routePath": "/note/:id",
+      "uiStateId": "notes.editor.search",
+      "component": "NoteEditorPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded editor note list"
+        },
+        {
+          "name": "overlay",
+          "direction": "vertical",
+          "description": "Current editor sheet content"
+        },
+        {
+          "name": "reminderDay",
+          "direction": "vertical",
+          "description": "Reminder date wheel"
+        },
+        {
+          "name": "reminderHour",
+          "direction": "vertical",
+          "description": "Reminder hour wheel"
+        },
+        {
+          "name": "reminderMinute",
+          "direction": "vertical",
+          "description": "Reminder minute wheel"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "Find literal text in the current note",
+      "search": {
+        "sheet": "search"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "notes.editor.search.input",
+          "label": "Find text",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "notes.editor.search.clear",
+          "label": "Clear the find query",
+          "behavior": "other"
+        },
+        {
+          "id": "notes.editor.search.previous",
+          "label": "Previous text match",
+          "behavior": "other"
+        },
+        {
+          "id": "notes.editor.search.next",
+          "label": "Next text match",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/note/:id?sheet=create",
+      "routePath": "/note/:id",
+      "uiStateId": "notes.editor.create",
+      "component": "NoteEditorPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded editor note list"
+        },
+        {
+          "name": "overlay",
+          "direction": "vertical",
+          "description": "Current editor sheet content"
+        },
+        {
+          "name": "reminderDay",
+          "direction": "vertical",
+          "description": "Reminder date wheel"
+        },
+        {
+          "name": "reminderHour",
+          "direction": "vertical",
+          "description": "Reminder hour wheel"
+        },
+        {
+          "name": "reminderMinute",
+          "direction": "vertical",
+          "description": "Reminder minute wheel"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "Choose a new note type from the visible source rail",
+      "search": {
+        "sheet": "create"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "notes.editor.import.choose",
+          "label": "Choose a text document from Files",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/note/:id?view=full",
+      "routePath": "/note/:id",
+      "uiStateId": "notes.focus.editor.base",
+      "component": "NoteEditorPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded editor note list"
+        },
+        {
+          "name": "overlay",
+          "direction": "vertical",
+          "description": "Current editor sheet content"
+        },
+        {
+          "name": "reminderDay",
+          "direction": "vertical",
+          "description": "Reminder date wheel"
+        },
+        {
+          "name": "reminderHour",
+          "direction": "vertical",
+          "description": "Reminder hour wheel"
+        },
+        {
+          "name": "reminderMinute",
+          "direction": "vertical",
+          "description": "Reminder minute wheel"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "编辑页",
+      "search": {
+        "view": "full"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "notes.focus.editor.undo",
+          "label": "Undo text edit",
+          "behavior": "other"
+        },
+        {
+          "id": "notes.focus.editor.share",
+          "label": "通过系统选择器分享笔记文本",
+          "behavior": "other"
+        },
+        {
+          "id": "notes.focus.editor.redo",
+          "label": "Redo text edit",
+          "behavior": "other"
+        },
+        {
+          "id": "notes.focus.editor.title.input",
+          "label": "Edit note title",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "notes.focus.editor.content.input",
+          "label": "Edit note content",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "notes.focus.checklist.enable",
+          "label": "Enable checklist in this note",
+          "behavior": "other"
+        },
+        {
+          "id": "notes.focus.checklist.input",
+          "label": "Edit checklist item",
+          "behavior": "input",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string",
+            "value": "string"
+          }
+        },
+        {
+          "id": "notes.focus.checklist.toggle",
+          "label": "Toggle checklist item",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "notes.focus.checklist.remove",
+          "label": "Remove the actual checklist item",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "notes.focus.editor.image.pick",
+          "label": "Pick an actual simulator image",
+          "behavior": "other"
+        },
+        {
+          "id": "notes.focus.editor.image.item.open",
+          "label": "Open this image in Gallery",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "imageId": "string"
+          }
+        },
+        {
+          "id": "notes.focus.editor.image.item.remove",
+          "label": "Remove this note image block",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "imageId": "string"
+          }
+        },
+        {
+          "id": "notes.focus.editor.restore.submit",
+          "label": "Restore this note",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/note/:id?view=full&sheet=ai",
+      "routePath": "/note/:id",
+      "uiStateId": "notes.focus.editor.ai",
+      "component": "NoteEditorPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded editor note list"
+        },
+        {
+          "name": "overlay",
+          "direction": "vertical",
+          "description": "Current editor sheet content"
+        },
+        {
+          "name": "reminderDay",
+          "direction": "vertical",
+          "description": "Reminder date wheel"
+        },
+        {
+          "name": "reminderHour",
+          "direction": "vertical",
+          "description": "Reminder hour wheel"
+        },
+        {
+          "name": "reminderMinute",
+          "direction": "vertical",
+          "description": "Reminder minute wheel"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "Native-observed AI Notes launcher; feature results are not fabricated",
+      "search": {
+        "view": "full",
+        "sheet": "ai"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/note/:id?view=full&sheet=menu",
+      "routePath": "/note/:id",
+      "uiStateId": "notes.focus.editor.menu",
+      "component": "NoteEditorPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded editor note list"
+        },
+        {
+          "name": "overlay",
+          "direction": "vertical",
+          "description": "Current editor sheet content"
+        },
+        {
+          "name": "reminderDay",
+          "direction": "vertical",
+          "description": "Reminder date wheel"
+        },
+        {
+          "name": "reminderHour",
+          "direction": "vertical",
+          "description": "Reminder hour wheel"
+        },
+        {
+          "name": "reminderMinute",
+          "direction": "vertical",
+          "description": "Reminder minute wheel"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "Note actions",
+      "search": {
+        "view": "full",
+        "sheet": "menu"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "notes.focus.editor.menu.restore.submit",
+          "label": "Restore note from menu",
+          "behavior": "submit"
+        },
+        {
+          "id": "notes.focus.editor.menu.unprivate.submit",
+          "label": "Remove private flag",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/note/:id?view=full&sheet=folder",
+      "routePath": "/note/:id",
+      "uiStateId": "notes.focus.editor.folder",
+      "component": "NoteEditorPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded editor note list"
+        },
+        {
+          "name": "overlay",
+          "direction": "vertical",
+          "description": "Current editor sheet content"
+        },
+        {
+          "name": "reminderDay",
+          "direction": "vertical",
+          "description": "Reminder date wheel"
+        },
+        {
+          "name": "reminderHour",
+          "direction": "vertical",
+          "description": "Reminder hour wheel"
+        },
+        {
+          "name": "reminderMinute",
+          "direction": "vertical",
+          "description": "Reminder minute wheel"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "Choose note folder",
+      "search": {
+        "view": "full",
+        "sheet": "folder"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "notes.focus.editor.folder.item.submit",
+          "label": "Move this note to a folder",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "folderId": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/note/:id?view=full&sheet=reminder",
+      "routePath": "/note/:id",
+      "uiStateId": "notes.focus.editor.reminder",
+      "component": "NoteEditorPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded editor note list"
+        },
+        {
+          "name": "overlay",
+          "direction": "vertical",
+          "description": "Current editor sheet content"
+        },
+        {
+          "name": "reminderDay",
+          "direction": "vertical",
+          "description": "Reminder date wheel"
+        },
+        {
+          "name": "reminderHour",
+          "direction": "vertical",
+          "description": "Reminder hour wheel"
+        },
+        {
+          "name": "reminderMinute",
+          "direction": "vertical",
+          "description": "Reminder minute wheel"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "Reminder editor",
+      "search": {
+        "view": "full",
+        "sheet": "reminder"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "notes.focus.editor.reminder.save.submit",
+          "label": "Save or clear reminder",
+          "behavior": "submit"
+        },
+        {
+          "id": "notes.focus.editor.reminder.enabled.toggle",
+          "label": "Toggle reminder draft",
+          "behavior": "toggle"
+        },
+        {
+          "id": "notes.focus.editor.reminder.day.input",
+          "label": "Choose reminder day",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "number"
+          }
+        },
+        {
+          "id": "notes.focus.editor.reminder.hour.input",
+          "label": "Choose reminder hour",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "number"
+          }
+        },
+        {
+          "id": "notes.focus.editor.reminder.minute.input",
+          "label": "Choose reminder minute",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "number"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/note/:id?view=full&sheet=delete",
+      "routePath": "/note/:id",
+      "uiStateId": "notes.focus.editor.delete",
+      "component": "NoteEditorPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded editor note list"
+        },
+        {
+          "name": "overlay",
+          "direction": "vertical",
+          "description": "Current editor sheet content"
+        },
+        {
+          "name": "reminderDay",
+          "direction": "vertical",
+          "description": "Reminder date wheel"
+        },
+        {
+          "name": "reminderHour",
+          "direction": "vertical",
+          "description": "Reminder hour wheel"
+        },
+        {
+          "name": "reminderMinute",
+          "direction": "vertical",
+          "description": "Reminder minute wheel"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "Confirm moving this note to trash",
+      "search": {
+        "view": "full",
+        "sheet": "delete"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/note/:id?view=full&sheet=permanentDelete",
+      "routePath": "/note/:id",
+      "uiStateId": "notes.focus.editor.permanentDelete",
+      "component": "NoteEditorPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded editor note list"
+        },
+        {
+          "name": "overlay",
+          "direction": "vertical",
+          "description": "Current editor sheet content"
+        },
+        {
+          "name": "reminderDay",
+          "direction": "vertical",
+          "description": "Reminder date wheel"
+        },
+        {
+          "name": "reminderHour",
+          "direction": "vertical",
+          "description": "Reminder hour wheel"
+        },
+        {
+          "name": "reminderMinute",
+          "direction": "vertical",
+          "description": "Reminder minute wheel"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "Confirm permanently deleting this note",
+      "search": {
+        "view": "full",
+        "sheet": "permanentDelete"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/note/:id?view=full&sheet=search",
+      "routePath": "/note/:id",
+      "uiStateId": "notes.focus.editor.search",
+      "component": "NoteEditorPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded editor note list"
+        },
+        {
+          "name": "overlay",
+          "direction": "vertical",
+          "description": "Current editor sheet content"
+        },
+        {
+          "name": "reminderDay",
+          "direction": "vertical",
+          "description": "Reminder date wheel"
+        },
+        {
+          "name": "reminderHour",
+          "direction": "vertical",
+          "description": "Reminder hour wheel"
+        },
+        {
+          "name": "reminderMinute",
+          "direction": "vertical",
+          "description": "Reminder minute wheel"
+        },
+        {
+          "name": "create",
+          "direction": "vertical",
+          "description": "New note type and import options"
+        }
+      ],
+      "description": "Find literal text in the current note",
+      "search": {
+        "view": "full",
+        "sheet": "search"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "notes.focus.editor.search.input",
+          "label": "Find text",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "notes.focus.editor.search.clear",
+          "label": "Clear the find query",
+          "behavior": "other"
+        },
+        {
+          "id": "notes.focus.editor.search.previous",
+          "label": "Previous text match",
+          "behavior": "other"
+        },
+        {
+          "id": "notes.focus.editor.search.next",
+          "label": "Next text match",
+          "behavior": "other"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/?sheet=menu",
+      "targetNodeId": "/?sheet=menu",
+      "id": "notes.list.menu.open",
+      "label": "Open Notes home menu",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "menu"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "more",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?sheet=menu",
+      "sourceNodeId": "/?sheet=menu",
+      "target": "/folders",
+      "targetNodeId": "/folders",
+      "id": "notes.list.menu.folders.open",
+      "label": "Open folders from Notes home menu",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "sheet": "menu"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?sheet=menu",
+      "sourceNodeId": "/?sheet=menu",
+      "target": "/settings?tab=:tab",
+      "targetNodeId": "/settings?tab=:tab",
+      "id": "notes.list.menu.settings.open",
+      "label": "Open settings from Notes home menu",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "sheet": "menu"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "settings",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/?sheet=create",
+      "targetNodeId": "/?sheet=create",
+      "id": "notes.list.create.open",
+      "label": "Choose a new note type",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "create"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "fab",
+        "icon": "add",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/?sheet=receive",
+      "targetNodeId": "/?sheet=receive",
+      "id": "notes.list.receive.open",
+      "label": "Open received shared text",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "receive"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "share",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?sheet=receive",
+      "sourceNodeId": "/?sheet=receive",
+      "target": "/note/:id?view=full",
+      "targetNodeId": "/note/:id?view=full",
+      "id": "notes.list.receive.save",
+      "label": "Save received text as a note",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "view": "full"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "sheet": "receive"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "note",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id",
+      "sourceNodeId": "/note/:id",
+      "target": "/note/:id?sheet=create",
+      "targetNodeId": "/note/:id?sheet=create",
+      "id": "notes.editor.create.open",
+      "label": "Choose a new note type from the source rail",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "create"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": null,
+          "view": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "add",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?sheet=create",
+      "sourceNodeId": "/?sheet=create",
+      "target": "/note/:id?view=full",
+      "targetNodeId": "/note/:id?view=full",
+      "id": "notes.list.import.open",
+      "label": "Open the newly imported text note",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "view": "full"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "sheet": "create"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "file",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?sheet=create",
+      "sourceNodeId": "/note/:id?sheet=create",
+      "target": "/note/:id?view=full",
+      "targetNodeId": "/note/:id?view=full",
+      "id": "notes.editor.import.open",
+      "label": "Open the newly imported text note",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "full"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": "create",
+          "view": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "file",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id",
+      "sourceNodeId": "/note/:id",
+      "target": "/note/:id?view=full",
+      "targetNodeId": "/note/:id?view=full",
+      "id": "notes.editor.view.full.open",
+      "label": "Expand the current note editor",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "full"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": null,
+          "view": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "expand",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?view=full",
+      "sourceNodeId": "/note/:id?view=full",
+      "target": "/note/:id",
+      "targetNodeId": "/note/:id",
+      "id": "notes.editor.view.parallel.open",
+      "label": "Restore the source list beside the current note",
+      "type": "state",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": null,
+          "view": "full"
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "collapse",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id",
+      "sourceNodeId": "/note/:id",
+      "target": "/note/:id?sheet=search",
+      "targetNodeId": "/note/:id?sheet=search",
+      "id": "notes.editor.search.open",
+      "label": "Find text in the current note",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "search"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?view=full",
+      "sourceNodeId": "/note/:id?view=full",
+      "target": "/note/:id?view=full&sheet=search",
+      "targetNodeId": "/note/:id?view=full&sheet=search",
+      "id": "notes.editor.search.open",
+      "label": "Find text in the current note",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "search"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "view": "full",
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id",
+      "sourceNodeId": "/note/:id",
+      "target": "/note/:id?sheet=ai",
+      "targetNodeId": "/note/:id?sheet=ai",
+      "id": "notes.editor.ai.open",
+      "label": "Open AI Notes launcher",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "ai"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "sparkles",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?view=full",
+      "sourceNodeId": "/note/:id?view=full",
+      "target": "/note/:id?view=full&sheet=ai",
+      "targetNodeId": "/note/:id?view=full&sheet=ai",
+      "id": "notes.editor.ai.open",
+      "label": "Open AI Notes launcher",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "ai"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "view": "full",
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "sparkles",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id",
+      "sourceNodeId": "/note/:id",
+      "target": "/note/:id?sheet=menu",
+      "targetNodeId": "/note/:id?sheet=menu",
+      "id": "notes.editor.menu.open",
+      "label": "Open menu sheet",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "menu"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "sheet",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?view=full",
+      "sourceNodeId": "/note/:id?view=full",
+      "target": "/note/:id?view=full&sheet=menu",
+      "targetNodeId": "/note/:id?view=full&sheet=menu",
+      "id": "notes.editor.menu.open",
+      "label": "Open menu sheet",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "menu"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "view": "full",
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "sheet",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id",
+      "sourceNodeId": "/note/:id",
+      "target": "/note/:id?sheet=folder",
+      "targetNodeId": "/note/:id?sheet=folder",
+      "id": "notes.editor.folder.open",
+      "label": "Open folder sheet",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "folder"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "sheet",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?view=full",
+      "sourceNodeId": "/note/:id?view=full",
+      "target": "/note/:id?view=full&sheet=folder",
+      "targetNodeId": "/note/:id?view=full&sheet=folder",
+      "id": "notes.editor.folder.open",
+      "label": "Open folder sheet",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "folder"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "view": "full",
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "sheet",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?sheet=menu",
+      "sourceNodeId": "/note/:id?sheet=menu",
+      "target": "/note/:id?sheet=folder",
+      "targetNodeId": "/note/:id?sheet=folder",
+      "id": "notes.editor.menu.folder.open",
+      "label": "Open folder sheet",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "sheet": "folder"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": "menu"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "sheet",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?view=full&sheet=menu",
+      "sourceNodeId": "/note/:id?view=full&sheet=menu",
+      "target": "/note/:id?view=full&sheet=folder",
+      "targetNodeId": "/note/:id?view=full&sheet=folder",
+      "id": "notes.editor.menu.folder.open",
+      "label": "Open folder sheet",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "sheet": "folder"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "view": "full",
+          "sheet": "menu"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "sheet",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?sheet=menu",
+      "sourceNodeId": "/note/:id?sheet=menu",
+      "target": "/note/:id?sheet=reminder",
+      "targetNodeId": "/note/:id?sheet=reminder",
+      "id": "notes.editor.reminder.open",
+      "label": "Open reminder sheet",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "sheet": "reminder"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": "menu"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "sheet",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?view=full&sheet=menu",
+      "sourceNodeId": "/note/:id?view=full&sheet=menu",
+      "target": "/note/:id?view=full&sheet=reminder",
+      "targetNodeId": "/note/:id?view=full&sheet=reminder",
+      "id": "notes.editor.reminder.open",
+      "label": "Open reminder sheet",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "sheet": "reminder"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "view": "full",
+          "sheet": "menu"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "sheet",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?sheet=menu",
+      "sourceNodeId": "/note/:id?sheet=menu",
+      "target": "/note/:id?sheet=delete",
+      "targetNodeId": "/note/:id?sheet=delete",
+      "id": "notes.editor.delete.open",
+      "label": "Open delete sheet",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "sheet": "delete"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": "menu"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "sheet",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?view=full&sheet=menu",
+      "sourceNodeId": "/note/:id?view=full&sheet=menu",
+      "target": "/note/:id?view=full&sheet=delete",
+      "targetNodeId": "/note/:id?view=full&sheet=delete",
+      "id": "notes.editor.delete.open",
+      "label": "Open delete sheet",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "sheet": "delete"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "view": "full",
+          "sheet": "menu"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "sheet",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id",
+      "sourceNodeId": "/note/:id",
+      "target": "/note/:id?sheet=permanentDelete",
+      "targetNodeId": "/note/:id?sheet=permanentDelete",
+      "id": "notes.editor.permanentDelete.open",
+      "label": "Open permanentDelete sheet",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "permanentDelete"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "sheet",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?view=full",
+      "sourceNodeId": "/note/:id?view=full",
+      "target": "/note/:id?view=full&sheet=permanentDelete",
+      "targetNodeId": "/note/:id?view=full&sheet=permanentDelete",
+      "id": "notes.editor.permanentDelete.open",
+      "label": "Open permanentDelete sheet",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "permanentDelete"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "view": "full",
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "sheet",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?sheet=menu",
+      "sourceNodeId": "/note/:id?sheet=menu",
+      "target": "/note/:id?sheet=permanentDelete",
+      "targetNodeId": "/note/:id?sheet=permanentDelete",
+      "id": "notes.editor.menu.permanentDelete.open",
+      "label": "Open permanentDelete sheet",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "sheet": "permanentDelete"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": "menu"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "sheet",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?view=full&sheet=menu",
+      "sourceNodeId": "/note/:id?view=full&sheet=menu",
+      "target": "/note/:id?view=full&sheet=permanentDelete",
+      "targetNodeId": "/note/:id?view=full&sheet=permanentDelete",
+      "id": "notes.editor.menu.permanentDelete.open",
+      "label": "Open permanentDelete sheet",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "sheet": "permanentDelete"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "view": "full",
+          "sheet": "menu"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "sheet",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?sheet=delete",
+      "sourceNodeId": "/note/:id?sheet=delete",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "notes.editor.delete.confirm",
+      "label": "Move this note to trash and return",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": "delete"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "delete",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?view=full&sheet=delete",
+      "sourceNodeId": "/note/:id?view=full&sheet=delete",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "notes.editor.delete.confirm",
+      "label": "Move this note to trash and return",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "view": "full",
+          "sheet": "delete"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "delete",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?sheet=permanentDelete",
+      "sourceNodeId": "/note/:id?sheet=permanentDelete",
+      "target": "/trash",
+      "targetNodeId": "/trash",
+      "id": "notes.editor.permanentDelete.confirm",
+      "label": "Permanently delete this note and return",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": "permanentDelete"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "delete",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?view=full&sheet=permanentDelete",
+      "sourceNodeId": "/note/:id?view=full&sheet=permanentDelete",
+      "target": "/trash",
+      "targetNodeId": "/trash",
+      "id": "notes.editor.permanentDelete.confirm",
+      "label": "Permanently delete this note and return",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "view": "full",
+          "sheet": "permanentDelete"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "delete",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/todo",
+      "targetNodeId": "/todo",
+      "id": "tab.todo",
+      "label": "切换到待办页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "todo",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/todo",
+      "sourceNodeId": "/todo",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "tab.notes",
+      "label": "切换到便签页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "notes",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/folders",
+      "targetNodeId": "/folders",
+      "id": "folders.open",
+      "label": "打开文件夹页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/settings?tab=:tab",
+      "targetNodeId": "/settings?tab=:tab",
+      "id": "settings.open",
+      "label": "打开设置页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "settings",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/todo",
+      "sourceNodeId": "/todo",
+      "target": "/settings?tab=:tab",
+      "targetNodeId": "/settings?tab=:tab",
+      "id": "settings.open",
+      "label": "打开设置页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "settings",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folders",
+      "sourceNodeId": "/folders",
+      "target": "/private",
+      "targetNodeId": "/private",
+      "id": "private.open",
+      "label": "打开私密便签页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "lock",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?sheet=menu",
+      "sourceNodeId": "/note/:id?sheet=menu",
+      "target": "/private",
+      "targetNodeId": "/private",
+      "id": "private.open",
+      "label": "打开私密便签页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": "menu"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "lock",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folders",
+      "sourceNodeId": "/folders",
+      "target": "/trash",
+      "targetNodeId": "/trash",
+      "id": "trash.open",
+      "label": "打开回收站页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "trash",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/note/:id",
+      "targetNodeId": "/note/:id",
+      "id": "note.open",
+      "label": "打开笔记编辑页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "note",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/private",
+      "sourceNodeId": "/private",
+      "target": "/note/:id",
+      "targetNodeId": "/note/:id",
+      "id": "note.open",
+      "label": "打开笔记编辑页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "note",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/trash",
+      "sourceNodeId": "/trash",
+      "target": "/note/:id",
+      "targetNodeId": "/note/:id",
+      "id": "note.open",
+      "label": "打开笔记编辑页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "note",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id",
+      "sourceNodeId": "/note/:id",
+      "target": "/note/:id",
+      "targetNodeId": "/note/:id",
+      "id": "note.open",
+      "label": "打开笔记编辑页",
+      "type": "state",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "note",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?sheet=create",
+      "sourceNodeId": "/?sheet=create",
+      "target": "/note/:id?view=full",
+      "targetNodeId": "/note/:id?view=full",
+      "id": "note.new",
+      "label": "新建笔记",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "view": "full"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "sheet": "create"
+        }
+      },
+      "uiMeta": {
+        "placement": "fab",
+        "icon": "add",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folders",
+      "sourceNodeId": "/folders",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "home.open",
+      "label": "返回便签首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "none",
+        "icon": "home",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/settings?tab=:tab",
+      "sourceNodeId": "/settings?tab=:tab",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "home.open",
+      "label": "返回便签首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "none",
+        "icon": "home",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/trash",
+      "sourceNodeId": "/trash",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "home.open",
+      "label": "返回便签首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "none",
+        "icon": "home",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/private",
+      "sourceNodeId": "/private",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "home.open",
+      "label": "返回便签首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "none",
+        "icon": "home",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id",
+      "sourceNodeId": "/note/:id",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "home.open",
+      "label": "返回便签首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "none",
+        "icon": "home",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id",
+      "sourceNodeId": "/note/:id",
+      "target": "/folders",
+      "targetNodeId": "/folders",
+      "id": "notes.editor.rail.folders.open",
+      "label": "从展开态功能轨打开文件夹页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id",
+      "sourceNodeId": "/note/:id",
+      "target": "/private",
+      "targetNodeId": "/private",
+      "id": "notes.editor.rail.private.open",
+      "label": "从展开态功能轨打开私密笔记页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "lock",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id",
+      "sourceNodeId": "/note/:id",
+      "target": "/trash",
+      "targetNodeId": "/trash",
+      "id": "notes.editor.rail.trash.open",
+      "label": "从展开态功能轨打开回收站",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "trash",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id",
+      "sourceNodeId": "/note/:id",
+      "target": "/settings?tab=:tab",
+      "targetNodeId": "/settings?tab=:tab",
+      "id": "notes.editor.rail.settings.open",
+      "label": "从展开态功能轨打开设置页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "settings",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/note/:id?sheet=create",
+      "sourceNodeId": "/note/:id?sheet=create",
+      "target": "/note/:id?view=full",
+      "targetNodeId": "/note/:id?view=full",
+      "id": "notes.editor.rail.note.new",
+      "label": "从展开态功能轨新建笔记",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "full"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/note/:id",
+        "search": {
+          "sheet": "create",
+          "view": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "add",
+        "gesture": "tap"
+      }
+    }
+  ]
+}

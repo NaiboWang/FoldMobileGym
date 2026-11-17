@@ -1,0 +1,10 @@
+import { describe, expect, it } from 'vitest';
+import { normalizeBilibiliEntryRoute } from '../apps/Bilibili/utils/entryRoute';
+import { getVideoCommentPanelFallback, getPlaybackEntryKey } from '../apps/Bilibili/utils/playerNavigation';
+describe('comment panel URL ownership',()=>{
+ it('normalizes actual cold thread sources to comments without losing IDs',()=>{const url=new URL(normalizeBilibiliEntryRoute('/video/BVunit?commentPanel=thread&rootId=001&replyId=002'),'https://simulator.invalid');expect(url.searchParams.get('tab')).toBe('comment');expect(url.searchParams.get('rootId')).toBe('001');expect(url.searchParams.get('replyId')).toBe('002');});
+ it('never leaves comment panels over a fullscreen surface',()=>{const url=new URL(normalizeBilibiliEntryRoute('/video/BVunit?tab=comment&view=fullscreen&commentPanel=thread&rootId=001'),'https://simulator.invalid');expect(url.searchParams.has('commentPanel')).toBe(false);expect(url.searchParams.has('rootId')).toBe(false);expect(url.searchParams.get('view')).toBe('fullscreen');});
+ it('unknown panels cannot create undeclared states',()=>{expect(normalizeBilibiliEntryRoute('/video/BVunit?commentPanel=invalid&rootId=x')).toBe('/video/BVunit?tab=intro');});
+ it('a cold close lands on the actual comment parent, not a different video',()=>{expect(getVideoCommentPanelFallback({pathname:'/video/BVunit',search:'?tab=comment&commentPanel=compose'})).toBe('/video/BVunit?tab=comment');expect(getVideoCommentPanelFallback({pathname:'/video/BVunit',search:'?tab=comment&commentPanel=thread'},{pathname:'/video/other',search:'?tab=comment'})).toBe('/video/BVunit?tab=comment');});
+ it('a real parent is popped once and playback identity is retained through panel replace',()=>{expect(getVideoCommentPanelFallback({pathname:'/video/BVunit',search:'?tab=comment&commentPanel=thread'},{pathname:'/video/BVunit',search:'?tab=comment'})).toBeNull();expect(getPlaybackEntryKey({key:'overlay',state:{bilibiliPlaybackEntry:'original'}})).toBe('original');});
+});

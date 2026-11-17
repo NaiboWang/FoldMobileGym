@@ -1,0 +1,95 @@
+.bili-home-reference { container: bili-home / inline-size; min-width: 0; position: relative; }
+.bili-app-reference { container: bili / inline-size; }
+.bili-recommend-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); padding-bottom: 16px; }
+.bili-recommend-grid > div { min-width: 0; border-radius: 5px; box-shadow: none; }
+.bili-home-toolbar > [data-trigger="search.open"] { min-width: 0; }
+.bili-home-utility { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+@container bili-home (min-width: 600px) {
+  .bili-recommend-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; padding: 10px 16px 20px; }
+  .bili-recommend-grid > div > div:first-child { aspect-ratio: 4 / 3; }
+  .bili-recommend-grid h3 { font-size: 16px; line-height: 1.45; min-height: 46px; }
+  .bili-recommend-grid h3 + div { margin-top: 9px; }
+}
+@container bili (min-width: 600px) {
+  .bili-home-reference { display: grid; grid-template-columns: minmax(0, .43fr) minmax(0, .57fr); grid-template-rows: 88px minmax(0, 1fr); }
+  .bili-home-toolbar { grid-column: 1; grid-row: 1; min-width: 0; gap: 7px; padding-inline: 10px; }
+  .bili-home-utility { position: absolute; right: 12px; top: 49px; z-index: 1; gap: 10px; }
+  .bili-home-utility > svg { width: 20px; flex-shrink: 0; }
+  .bili-home-toolbar > div:first-child { width: 30px; height: 30px; }
+  .bili-home-toolbar [data-trigger="search.open"] { padding-inline: 8px; }
+  .bili-home-toolbar [data-trigger="search.open"] span { font-size: 13px; }
+  .bili-home-categories { grid-column: 2; grid-row: 1; min-width: 0; padding-top: 40px; padding-right: 62px; }
+  .bili-home-categories button { padding-inline: 10px; font-size: 15px; }
+  .bili-home-reference > [data-scroll-container="main"] { grid-column: 1 / -1; grid-row: 2; min-height: 0; }
+}
+
+/* The recorded expanded search has a separate discovery column; narrow windows keep one pane. */
+.bili-search-reference { min-width: 0; min-height: 0; }
+.bili-search-side { display: none; min-width: 0; min-height: 0; }
+@container bili (min-width: 600px) {
+  .bili-search-reference.is-results { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+  .bili-search-side { display: block; height: 100%; overflow-y: auto; padding: 50px 14px 18px; border-left: 1px solid #e5e7eb; }
+  .bili-search-side-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .bili-search-side-heading h2, .bili-search-side-discovery-title { font-size: 15px; font-weight: 600; }
+  .bili-search-side-heading > span { display: flex; align-items: center; color: #9499a0; font-size: 11px; white-space: nowrap; }
+  .bili-search-side-list { display: flex; flex-direction: column; }
+  .bili-search-side-list button { display: flex; align-items: center; min-width: 0; min-height: 40px; text-align: left; font-size: 14px; }
+  .bili-search-side-list button > span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .bili-search-side-discovery-title { margin-top: 20px; }
+}
+
+/* Fullscreen is owned by this Activity, never the browser or another app. */
+.bili-video-player { position: relative; width: 100%; height: 100%; min-width: 0; min-height: 0; overflow: hidden; background: #000; color: #fff; }
+.bili-video-player.bili-video-player-fullscreen { position: absolute; inset: 0; z-index: 100; }
+
+/* Detail scroll consumes only its own header; no fullscreen viewport or global rules. */
+.bili-player-compact-label, .bili-player-compact-source { display: none; }
+.bili-video-player[data-compact="true"] { background: var(--app-primary); }
+.bili-video-player[data-compact="true"] .bili-player-cover,
+.bili-video-player[data-compact="true"] .bili-player-source-label,
+.bili-video-player[data-compact="true"] .bili-player-surface-toggle { visibility: hidden; pointer-events: none; }
+.bili-video-player[data-compact="true"] .bili-player-surface-toggle { display: none; }
+.bili-video-player[data-compact="true"] .bili-player-controls { top: 0; padding: 0 8px 0 48px; background: none; display: flex; align-items: center; }
+.bili-video-player[data-compact="true"] .bili-player-controls > div { width: 100%; }
+.bili-video-player[data-compact="true"] .bili-player-play { width: auto; flex: 1; min-width: 0; gap: 6px; }
+.bili-video-player[data-compact="true"] .bili-player-compact-label { display: inline; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bili-video-player[data-compact="true"] .bili-player-compact-source { display: inline; font-size: 10px; color: #fff; flex-shrink: 0; }
+.bili-video-player[data-compact="true"] .bili-player-seek,
+.bili-video-player[data-compact="true"] [data-bili-time] { display: none; }
+
+/* Expanded following workspace: creator shortcuts and feed stay within this app. */
+.bili-following-reference { position: relative; min-height: 0; }
+.bili-following-workspace { display: flex; flex: 1; min-height: 0; min-width: 0; }
+.bili-following-main { min-width: 0; }
+.bili-following-rail { display: none; }
+@container bili (min-width: 600px) {
+  .bili-following-header h1 { visibility: hidden; }
+  .bili-following-tabs { position: absolute; top: 40px; left: 34%; width: 32%; padding-bottom: 0; border: 0; z-index: 41; }
+  .bili-following-workspace { background: var(--app-bg, #f3f4f6); }
+  .bili-following-rail { display: block; flex: 0 0 27%; min-width: 0; overflow-y: auto; background: var(--app-surface, #fff); border-right: 1px solid #e5e7eb; padding: 10px 8px; }
+  .bili-following-rail h2 { padding: 9px 10px; color: var(--app-text-muted, #888); font-size: 12px; }
+  .bili-following-rail-user { display: flex; align-items: center; width: 100%; gap: 10px; padding: 9px 8px; text-align: left; border-radius: 6px; }
+  .bili-following-rail-user:hover { background: #f3f4f6; }
+  .bili-following-rail-avatar { display: block; width: 34px; height: 34px; flex: none; overflow: hidden; border-radius: 50%; background: #f3f4f6; }
+  .bili-following-rail-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .bili-following-rail-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; }
+  .bili-following-compact-visits { display: none; }
+  .bili-following-main { padding: 10px; }
+  .bili-following-main > .flex > .flex.flex-col.gap-2 > div { border-radius: 8px; }
+}
+
+/* In expanded favorites, the existing Me page remains the app-owned master. */
+.bili-favorites-master, .bili-favorites-bottom { display: none; }
+@container bili (min-width: 600px) {
+  .bili-favorites-bottom { display: flex; }
+  .bili-favorites-master { display: block; position: absolute; inset: 0 auto 0 0; width: 34%; min-width: 0; border-right: 1px solid #e5e7eb; }
+  .bili-favorites-detail { left: 34%; width: 66%; }
+  .bili-favorites-master .bili-me-page > div:first-child > div:first-child { padding-top: 40px; gap: 4px; }
+  .bili-favorites-master .bili-me-page > div:first-child > div:first-child > div:first-child { display: none; }
+  .bili-favorites-master .bili-me-page > div:first-child > div:first-child > div:last-child { gap: 12px; }
+  .bili-favorites-master .bili-me-page h2 { font-size: 15px; }
+  .bili-favorites-master .bili-me-shortcuts { display: flex; flex-direction: column; }
+  .bili-favorites-master .bili-me-shortcuts > div, .bili-favorites-master .bili-me-shortcuts > div > div { display: flex; flex-direction: row; justify-content: flex-start; gap: 10px; padding: 7px; }
+  .bili-favorites-master .bili-me-selected-favorites { background: var(--app-bg, #f3f4f6); border-radius: 6px; }
+  .bili-favorites-master .bili-me-shortcuts svg { width: 19px; height: 19px; }
+}

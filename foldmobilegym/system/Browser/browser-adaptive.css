@@ -1,0 +1,28 @@
+.browser-app-reference { container: browser / inline-size; min-width: 0; }
+.browser-reference-tabs, .browser-reference-address { display: none; }
+.browser-home-reference { min-height: 0; overflow-y: auto; padding-top: 40px; padding-bottom: 24px; }
+.browser-home-reference > * { flex-shrink: 0; }
+.browser-local-document { min-width: 0; padding: 16px; }
+.browser-local-article { min-width: 0; padding: 20px; overflow-wrap: anywhere; }
+.browser-local-body p { white-space: pre-wrap; margin-block: 0 14px; }
+.browser-local-body p:last-child { margin-bottom: 0; }
+@container browser (min-width: 600px) {
+  .browser-local-document { padding: 32px; }
+  .browser-local-article { padding: 28px; }
+  .browser-legacy-address { display: none; }
+  .browser-reference-tabs { order: -2; display: flex; align-items: center; gap: 4px; min-height: 38px; flex-shrink: 0; padding: 0 12px; overflow-x: auto; background: color-mix(in srgb, var(--app-text, #111827) 10%, var(--app-surface, #fff)); }
+  .browser-reference-tabs > button { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 12px 12px 0 0; min-width: 36px; max-width: 220px; flex-shrink: 0; font-size: 12px; }
+  .browser-reference-tab { display: flex; align-items: center; flex-shrink: 0; min-width: 88px; max-width: 220px; border-radius: 12px 12px 0 0; }
+  .browser-reference-tab[data-active="true"] { background: var(--app-surface, #fff); }
+  .browser-reference-tab-select { display: flex; align-items: center; gap: 8px; min-width: 0; flex: 1; padding: 9px 6px 9px 12px; font-size: 12px; text-align: left; }
+  .browser-reference-tab-select > svg { flex-shrink: 0; }
+  .browser-reference-tab-select > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .browser-reference-tab-close { display: grid; place-items: center; width: 28px; height: 28px; margin-inline-end: 4px; flex-shrink: 0; border-radius: 50%; }
+  .browser-reference-tab-close:focus-visible, .browser-reference-tab-select:focus-visible { outline: 2px solid var(--app-accent, #1a73e8); outline-offset: -2px; }
+  .browser-reference-tab-close:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+  .browser-reference-toolbar { order: -1; gap: 6px; padding: 4px 12px; height: 52px; border-top: 0; border-bottom: 1px solid rgb(120 130 150 / .1); }
+  .browser-reference-toolbar > button { flex: 0 0 36px; width: 36px; height: 40px; background: transparent; color: var(--app-text-secondary, #667); border-radius: 50%; box-shadow: none; }
+  .browser-reference-address { display: flex; align-items: center; gap: 9px; flex: 1; min-width: 0; height: 38px; border-radius: 24px; padding-inline: 12px; background: var(--app-bg, #eef0f6); }
+  .browser-reference-address input { min-width: 0; flex: 1; background: transparent; outline: 0; font-size: 13px; }
+  .browser-reference-address button { padding: 6px; }
+}

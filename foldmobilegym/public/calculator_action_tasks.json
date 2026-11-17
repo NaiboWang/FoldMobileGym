@@ -1,0 +1,644 @@
+[
+  {
+    "app": "calculator",
+    "graphFile": "public\\calculator_nav_graph.json",
+    "taskId": "calculator:calculator.home.calculate.submit",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.home.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.home.base",
+              "component": "CalculatorContent",
+              "description": "计算器主页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 6
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calculator.home.calculate.submit",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "calculator.home.calculate.submit",
+              "label": "计算结果",
+              "description": null,
+              "behavior": "submit",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Calculator\\CalculatorApp.tsx",
+                "line": 115,
+                "col": 45
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calculator.home.calculate.submit",
+      "label": "计算结果",
+      "description": null,
+      "behavior": "submit",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "calculator",
+    "graphFile": "public\\calculator_nav_graph.json",
+    "taskId": "calculator:calculator.home.clear",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.home.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.home.base",
+              "component": "CalculatorContent",
+              "description": "计算器主页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 6
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calculator.home.clear",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "calculator.home.clear",
+              "label": "清除算式",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Calculator\\CalculatorApp.tsx",
+                "line": 86,
+                "col": 46
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calculator.home.clear",
+      "label": "清除算式",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "calculator",
+    "graphFile": "public\\calculator_nav_graph.json",
+    "taskId": "calculator:calculator.home.keypad.press",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.home.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.home.base",
+              "component": "CalculatorContent",
+              "description": "计算器主页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 6
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calculator.home.keypad.press",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calculator.home.keypad.press",
+              "label": "数字或小数点",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Calculator\\CalculatorApp.tsx",
+                "line": 91,
+                "col": 45
+              },
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Calculator\\CalculatorApp.tsx",
+                "line": 92,
+                "col": 45
+              },
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Calculator\\CalculatorApp.tsx",
+                "line": 93,
+                "col": 45
+              },
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Calculator\\CalculatorApp.tsx",
+                "line": 96,
+                "col": 45
+              },
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Calculator\\CalculatorApp.tsx",
+                "line": 97,
+                "col": 45
+              },
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Calculator\\CalculatorApp.tsx",
+                "line": 98,
+                "col": 45
+              },
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Calculator\\CalculatorApp.tsx",
+                "line": 101,
+                "col": 45
+              },
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Calculator\\CalculatorApp.tsx",
+                "line": 102,
+                "col": 45
+              },
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Calculator\\CalculatorApp.tsx",
+                "line": 103,
+                "col": 45
+              },
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Calculator\\CalculatorApp.tsx",
+                "line": 108,
+                "col": 25
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calculator.home.keypad.press",
+      "label": "数字或小数点",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator",
+    "graphFile": "public\\calculator_nav_graph.json",
+    "taskId": "calculator:calculator.home.operator.press",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.home.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.home.base",
+              "component": "CalculatorContent",
+              "description": "计算器主页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 6
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calculator.home.operator.press",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calculator.home.operator.press",
+              "label": "运算符",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Calculator\\CalculatorApp.tsx",
+                "line": 89,
+                "col": 45
+              },
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Calculator\\CalculatorApp.tsx",
+                "line": 94,
+                "col": 45
+              },
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Calculator\\CalculatorApp.tsx",
+                "line": 99,
+                "col": 45
+              },
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Calculator\\CalculatorApp.tsx",
+                "line": 104,
+                "col": 45
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calculator.home.operator.press",
+      "label": "运算符",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator",
+    "graphFile": "public\\calculator_nav_graph.json",
+    "taskId": "calculator:calculator.home.percent",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.home.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.home.base",
+              "component": "CalculatorContent",
+              "description": "计算器主页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 6
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calculator.home.percent",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "calculator.home.percent",
+              "label": "百分比",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Calculator\\CalculatorApp.tsx",
+                "line": 88,
+                "col": 45
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calculator.home.percent",
+      "label": "百分比",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "calculator",
+    "graphFile": "public\\calculator_nav_graph.json",
+    "taskId": "calculator:calculator.home.sign",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.home.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.home.base",
+              "component": "CalculatorContent",
+              "description": "计算器主页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 6
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calculator.home.sign",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "calculator.home.sign",
+              "label": "切换正负号",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Calculator\\CalculatorApp.tsx",
+                "line": 87,
+                "col": 47
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calculator.home.sign",
+      "label": "切换正负号",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  }
+]

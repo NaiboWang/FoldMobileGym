@@ -1,0 +1,38 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "pair_id": "J85",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "apps": {
+    "x": {}
+  },
+  "raw_apps": {
+    "x": {
+      "posts": {
+        "p_1879539026291785845": {
+          "id": "p_1879539026291785845",
+          "authorId": "xiongchun007",
+          "content": "周末去公园散步，记得带水杯和相机",
+          "time": "4h",
+          "stats": {
+            "comments": 120,
+            "retweets": 56,
+            "likes": 1200,
+            "views": 56000
+          },
+          "tweetUrl": "https://x.com/xiongchun007/status/1879539026291785845"
+        }
+      }
+    }
+  },
+  "os": {}
+}

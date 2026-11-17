@@ -1,0 +1,72 @@
+{
+  "app": "study_cards",
+  "appDir": "apps\\StudyCards",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 1,
+  "transitionCount": 0,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "uiStateId": "study_cards.home.base",
+      "component": "StudyCardsHome",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "cards",
+          "direction": "vertical",
+          "description": "牌组和卡片"
+        }
+      ],
+      "description": "学习卡片",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "cards.deck.open",
+          "label": "选择牌组",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "cards.form.open",
+          "label": "新建卡片",
+          "behavior": "other"
+        },
+        {
+          "id": "cards.form.front.input",
+          "label": "输入正面",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "cards.form.back.input",
+          "label": "输入背面",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "cards.form.save",
+          "label": "保存卡片",
+          "behavior": "submit"
+        }
+      ]
+    }
+  ],
+  "edges": []
+}

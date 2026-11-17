@@ -1,0 +1,195 @@
+{
+  "app": "theme_store",
+  "appDir": "system\\ThemeStore",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 3,
+  "transitionCount": 3,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "uiStateId": "themeStore.home.base",
+      "component": "ThemeStoreHomePage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "主题商店首页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/ranking",
+      "routePath": "/ranking",
+      "uiStateId": "themeStore.ranking.base",
+      "component": "ThemeStoreRankingPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "主题排行榜",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/item/:kind/:id",
+      "routePath": "/item/:kind/:id",
+      "uiStateId": "themeStore.item.base",
+      "component": "StoreItemDetailPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "kind": "string",
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "主题详情页",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "themeStore.item.theme.submit",
+          "label": "应用整套主题",
+          "behavior": "submit",
+          "paramsSchema": {
+            "themeId": "string"
+          }
+        },
+        {
+          "id": "themeStore.item.icons.submit",
+          "label": "只应用主题图标",
+          "behavior": "submit",
+          "paramsSchema": {
+            "themeId": "string"
+          }
+        },
+        {
+          "id": "themeStore.item.wallpaper.submit",
+          "label": "只应用主题壁纸",
+          "behavior": "submit",
+          "paramsSchema": {
+            "themeId": "string"
+          }
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/ranking",
+      "targetNodeId": "/ranking",
+      "id": "ranking.open",
+      "label": "打开主题排行榜",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "ranking",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/ranking",
+      "sourceNodeId": "/ranking",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "home.open",
+      "label": "返回主题推荐首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "home",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/item/:kind/:id",
+      "targetNodeId": "/item/:kind/:id",
+      "id": "item.open",
+      "label": "打开主题详情页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "kind": "string",
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "item",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/ranking",
+      "sourceNodeId": "/ranking",
+      "target": "/item/:kind/:id",
+      "targetNodeId": "/item/:kind/:id",
+      "id": "item.open",
+      "label": "打开主题详情页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "kind": "string",
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "item",
+        "gesture": "tap"
+      }
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "app": "tasks",
+  "appDir": "apps\\Tasks",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 3,
+  "transitionCount": 3,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "uiStateId": "tasks.list.base",
+      "component": "TasksList",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "tasks",
+          "direction": "vertical",
+          "description": "待办列表"
+        }
+      ],
+      "description": "待办列表",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/new",
+      "routePath": "/new",
+      "uiStateId": "tasks.form.base",
+      "component": "TaskForm",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "form",
+          "direction": "vertical",
+          "description": "新建待办表单"
+        }
+      ],
+      "description": "新建待办表单",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "tasks.form.title.input",
+          "label": "输入标题",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "tasks.form.due.input",
+          "label": "输入截止时间",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "tasks.form.list.input",
+          "label": "选择列表",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "tasks.form.note.input",
+          "label": "输入备注",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "tasks.form.save",
+          "label": "保存待办",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/task/:id",
+      "routePath": "/task/:id",
+      "uiStateId": "tasks.detail.base",
+      "component": "TaskDetail",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [],
+      "description": "待办详情",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "tasks.detail.complete.toggle",
+          "label": "切换完成状态",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "taskId": "string"
+          }
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/new",
+      "targetNodeId": "/new",
+      "id": "tasks.new.open",
+      "label": "新建待办",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "fab",
+        "icon": "add",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/task/:id",
+      "sourceNodeId": "/task/:id",
+      "target": "/new",
+      "targetNodeId": "/new",
+      "id": "tasks.new.open",
+      "label": "新建待办",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "fab",
+        "icon": "add",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/task/:id",
+      "targetNodeId": "/task/:id",
+      "id": "tasks.item.open",
+      "label": "打开待办",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "task",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/new",
+      "sourceNodeId": "/new",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "tasks.list.open",
+      "label": "返回待办列表",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "back",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/task/:id",
+      "sourceNodeId": "/task/:id",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "tasks.list.open",
+      "label": "返回待办列表",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "back",
+        "gesture": "tap"
+      }
+    }
+  ]
+}

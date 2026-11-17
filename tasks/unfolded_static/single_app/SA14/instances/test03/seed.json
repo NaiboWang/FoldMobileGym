@@ -1,0 +1,42 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "apps": {
+    "file_manager": {}
+  },
+  "raw_apps": {
+    "file_manager": {}
+  },
+  "os": {},
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "single_app_files": [
+    {
+      "path": "/sdcard/FoldAgentSingle/原始资料/访谈安排.txt",
+      "text": "资料正文\n阶段汇报",
+      "mime": "text/plain",
+      "timestamp": 1793664000000
+    },
+    {
+      "path": "/sdcard/FoldAgentSingle/其他资料/访谈安排.txt",
+      "text": "同名旧版，不应复制",
+      "mime": "text/plain",
+      "timestamp": 1793664000000
+    },
+    {
+      "path": "/sdcard/FoldAgentSingle/归档资料/保留.txt",
+      "text": "原有归档文件",
+      "mime": "text/plain",
+      "timestamp": 1793664000000
+    }
+  ],
+  "pair_id": "J65"
+}

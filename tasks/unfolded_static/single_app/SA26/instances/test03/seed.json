@@ -1,0 +1,55 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "pair_id": "J89",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "apps": {
+    "wechat_reading": {}
+  },
+  "raw_apps": {
+    "wechat_reading": {
+      "shelf": [
+        {
+          "bookId": "60",
+          "isPrivate": true,
+          "addedAt": "2025-12-05T10:00:00"
+        },
+        {
+          "bookId": "4",
+          "isPrivate": false,
+          "addedAt": "2025-12-12T10:00:00"
+        },
+        {
+          "bookId": "30",
+          "isPrivate": false,
+          "addedAt": "2025-12-13T11:00:00"
+        },
+        {
+          "bookId": "65",
+          "isPrivate": false,
+          "addedAt": "2025-12-14T12:00:00"
+        },
+        {
+          "bookId": "66",
+          "isPrivate": false,
+          "addedAt": "2025-12-15T12:00:00"
+        },
+        {
+          "bookId": "67",
+          "isPrivate": false,
+          "addedAt": "2025-12-16T12:00:00"
+        }
+      ]
+    }
+  },
+  "os": {}
+}

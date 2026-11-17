@@ -1,0 +1,174 @@
+{
+  "app": "tasks",
+  "appDir": "apps\\Tasks",
+  "mode": "schema",
+  "routeCount": 3,
+  "edgeCount": 5,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "component": "TasksList",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "待办列表",
+      "stateCount": 1,
+      "states": [
+        "/"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/new",
+      "routePath": "/new",
+      "component": "TaskForm",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "新建待办表单",
+      "stateCount": 1,
+      "states": [
+        "/new"
+      ],
+      "actionCount": 5,
+      "actionIds": [
+        "tasks.form.title.input",
+        "tasks.form.due.input",
+        "tasks.form.list.input",
+        "tasks.form.note.input",
+        "tasks.form.save"
+      ],
+      "actions": [
+        {
+          "id": "tasks.form.title.input",
+          "label": "输入标题",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "tasks.form.due.input",
+          "label": "输入截止时间",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "tasks.form.list.input",
+          "label": "选择列表",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "tasks.form.note.input",
+          "label": "输入备注",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "tasks.form.save",
+          "label": "保存待办",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/task/:id",
+      "routePath": "/task/:id",
+      "component": "TaskDetail",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "待办详情",
+      "stateCount": 1,
+      "states": [
+        "/task/:id"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "tasks.detail.complete.toggle"
+      ],
+      "actions": [
+        {
+          "id": "tasks.detail.complete.toggle",
+          "label": "切换完成状态",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "taskId": "string"
+          }
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/",
+      "target": "/new",
+      "transitions": [
+        "tasks.new.open"
+      ],
+      "type": "navigation",
+      "label": "tasks.new.open",
+      "id": "tasks.new.open"
+    },
+    {
+      "source": "/task/:id",
+      "target": "/new",
+      "transitions": [
+        "tasks.new.open"
+      ],
+      "type": "navigation",
+      "label": "tasks.new.open",
+      "id": "tasks.new.open"
+    },
+    {
+      "source": "/",
+      "target": "/task/:id",
+      "transitions": [
+        "tasks.item.open"
+      ],
+      "type": "navigation",
+      "label": "tasks.item.open",
+      "id": "tasks.item.open"
+    },
+    {
+      "source": "/new",
+      "target": "/",
+      "transitions": [
+        "tasks.list.open"
+      ],
+      "type": "navigation",
+      "label": "tasks.list.open",
+      "id": "tasks.list.open"
+    },
+    {
+      "source": "/task/:id",
+      "target": "/",
+      "transitions": [
+        "tasks.list.open"
+      ],
+      "type": "navigation",
+      "label": "tasks.list.open",
+      "id": "tasks.list.open"
+    }
+  ]
+}

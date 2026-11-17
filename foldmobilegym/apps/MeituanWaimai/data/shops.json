@@ -1,0 +1,20 @@
+[
+  { "id": "rice", "name": "大米先生 · 家常简餐", "rating": "4.8", "sales": "月售 1200+", "categoryId": "food", "category": "美食", "time": "约 28 分钟", "dishes": [
+    { "id": "chicken", "name": "香酥鸡排饭", "price": 24.8, "note": "热销 · 鸡排现炸", "emoji": "🍗" },
+    { "id": "beef", "name": "黑椒牛肉饭", "price": 29.8, "note": "黑椒风味 · 米饭", "emoji": "🍛" },
+    { "id": "double", "name": "经典双拼饭", "price": 32.8, "note": "一份两种口味", "emoji": "🍱" }
+  ] },
+  { "id": "salad", "name": "轻食研习社", "rating": "4.9", "sales": "月售 800+", "categoryId": "food", "category": "美食", "time": "约 32 分钟", "dishes": [
+    { "id": "salad", "name": "鸡肉蔬菜轻食碗", "price": 26.8, "note": "鸡肉 · 蔬菜 · 谷物", "emoji": "🥗" },
+    { "id": "yogurt", "name": "鲜果酸奶杯", "price": 18.8, "note": "新鲜水果 · 酸奶", "emoji": "🥣" }
+  ] },
+  { "id": "tea", "name": "茶百道 · 甜品饮品", "rating": "4.7", "sales": "月售 2100+", "categoryId": "drinks", "category": "甜点饮品", "time": "约 25 分钟", "dishes": [
+    { "id": "mango", "name": "杨枝甘露", "price": 19.8, "note": "芒果 · 西柚 · 椰奶", "emoji": "🥭" },
+    { "id": "yogurt", "name": "鲜果酸奶杯", "price": 18.8, "note": "清爽酸甜", "emoji": "🥤" }
+  ] },
+  { "id": "market", "name": "美团便利店 · 生活超市", "rating": "4.8", "sales": "月售 900+", "categoryId": "market", "category": "超市便利", "time": "约 30 分钟", "dishes": [
+    { "id": "water", "name": "饮用纯净水 550ml", "price": 3.5, "note": "单瓶装", "emoji": "💧" },
+    { "id": "milk", "name": "鲜牛奶 250ml", "price": 6.8, "note": "冷藏鲜牛奶", "emoji": "🥛" },
+    { "id": "banana", "name": "香蕉 500g", "price": 8.9, "note": "新鲜水果", "emoji": "🍌" }
+  ] }
+]

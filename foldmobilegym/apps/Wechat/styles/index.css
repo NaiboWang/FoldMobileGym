@@ -1,0 +1,187 @@
+/* Wechat-specific styles (Tailwind is provided globally by /index.css) */
+
+:root {
+  --wechat-green: #07c160;
+  --wechat-bg: #ededed;
+  --wechat-text-main: #191919;
+  --wechat-text-desc: #7f7f7f;
+  --wechat-link: #576b95;
+}
+
+/* All four main tabs share exactly the same master-pane boundary.
+   Scope overrides to this app's layout, including the compact replica tabs. */
+/* The divider changes in the recording: 12:00 is narrower, while 12:30,
+   13:30 and Contacts at 15:30 are approximately equal panes. Use that latter
+   resting layout, not the screen-sharing canvas or a hardware dimension. */
+.wechat-layout {
+  --wechat-master-width: 50%;
+  font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", system-ui, sans-serif;
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-layout .wechat-fold6-parallel {
+  grid-template-columns: var(--wechat-master-width) minmax(0, 1fr) !important;
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-layout .wechat-fold6-topbar-master,
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-layout .wechat-fold6-tabbar-master,
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-layout .wechat-fold6-compact-master-width {
+  width: var(--wechat-master-width) !important;
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-layout .wechat-fold6-topbar-detail {
+  left: var(--wechat-master-width) !important;
+}
+.wechat-layout .wechat-adaptive-master { min-width: 0; min-height: 0; }
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-layout .wechat-adaptive-search-pane {
+  padding-top: 0;
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-layout .wechat-master-keyboard-active {
+  padding-bottom: 0;
+}
+.wechat-search-match { color: var(--wechat-green); background: transparent; }
+.wechat-contact-avatar { flex-shrink: 0; }
+.wechat-contact-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.wechat-contact-row { padding-right: 30px; }
+.wechat-contact-index {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--app-chat-list-item-time-size);
+  line-height: 1.25;
+  color: var(--app-c-common-text-tertiary);
+  pointer-events: auto;
+}
+.wechat-contact-index > span,
+.wechat-contact-index > button { flex-shrink: 1; min-height: 0; }
+.wechat-contact-index > button {
+  width: 100%; padding: 0; border: 0; background: transparent;
+  color: inherit; font: inherit; line-height: inherit; cursor: pointer;
+}
+.wechat-contact-index > button:disabled { cursor: default; opacity: .45; }
+.wechat-contact-index > button:focus-visible { outline: 1px solid var(--wechat-green); outline-offset: -1px; }
+
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-layout .wechat-fold6-parallel .wechat-chat-list-search {
+  display: none;
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-layout .wechat-adaptive-list-title {
+  position: relative;
+  justify-content: center;
+  font-weight: 500;
+  font-size: var(--app-settings-item-text-size);
+  background: var(--app-c-misc-divider-light, #ededed);
+}
+.wechat-master-search {
+  position: absolute;
+  right: 12px;
+  bottom: 6px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: inherit;
+}
+.wechat-with-plus .wechat-master-search { right: 52px; }
+.wechat-master-plus {
+  position: absolute; right: 12px; bottom: 6px; width: 40px; height: 40px;
+  display: grid; place-items: center; color: inherit;
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-layout .wechat-adaptive-empty-icon {
+  width: 62px;
+  height: 52px;
+  border-radius: 0;
+  background: transparent;
+  color: #d2d2d2;
+}
+.wechat-adaptive-empty-icon > span {
+  position: relative;
+  width: 35px;
+  height: 27px;
+  border-radius: 50%;
+  background: currentColor;
+  transform: translate(-9px, -7px);
+}
+.wechat-adaptive-empty-icon > span::before {
+  content: '';
+  position: absolute;
+  width: 29px;
+  height: 24px;
+  left: 21px;
+  top: 17px;
+  border-radius: 50%;
+  background: currentColor;
+  border: 2px solid var(--app-c-common-bg-secondary, #fafafa);
+}
+.wechat-adaptive-empty-icon > span::after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 9px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--app-c-common-bg-secondary, #fafafa);
+  box-shadow: 14px 0 var(--app-c-common-bg-secondary, #fafafa);
+}
+
+/* 微信气泡尾巴 */
+.bubble-tail-me::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  right: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: #95ec69;
+  transform: rotate(45deg);
+  border-radius: 1px;
+}
+
+.bubble-tail-other::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  transform: rotate(45deg);
+  border-radius: 1px;
+}
+
+/* 隐藏滚动条但保留功能 */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 微信列表点击态 */
+.active-state:active {
+  background-color: #e5e5e5 !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+@keyframes wechatSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.wechat-spin {
+  animation: wechatSpin 1s linear infinite !important;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+

@@ -1,0 +1,13 @@
+{
+  "source": "tencent_meeting",
+  "target": "wechat",
+  "data": {
+    "id": "sched_001",
+    "title": "设备方案讨论",
+    "meeting_id": "836 291 475",
+    "duration": 60
+  },
+  "target_text": "设备方案讨论；836 291 475；60",
+  "title": "信息记录 · 腾讯会议",
+  "chat_name": "陈宁（研发）"
+}

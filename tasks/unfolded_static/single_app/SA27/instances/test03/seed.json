@@ -1,0 +1,35 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "pair_id": "J91",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "apps": {
+    "railway12306": {}
+  },
+  "raw_apps": {
+    "railway12306": {
+      "settings": {
+        "fingerprint": false,
+        "notificationEnabled": true,
+        "notificationSound": true,
+        "notificationVibrate": true,
+        "fontSize": "medium",
+        "highContrast": true,
+        "version": "standard",
+        "paymentPassword": false,
+        "recentRecommend": true,
+        "adRecommend": false
+      }
+    }
+  },
+  "os": {}
+}

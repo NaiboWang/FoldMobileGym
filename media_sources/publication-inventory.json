@@ -1,0 +1,486 @@
+{
+  "schema_version": 1,
+  "generated_by": "tools/media/publication_inventory.py",
+  "scope": "Tracked paths read from this worktree. Presence/hash/reference inventory only; no network, pixel, history or rights audit.",
+  "public_clearance": "not_assessed",
+  "input_media_manifest_sha256": "95a660b4ec35f40a593527d37da4ee04b8960e48ad5c8bf553e8a47312660354",
+  "readmes": [
+    {
+      "path": "README.md",
+      "text_sha256_lf": "e338c5ab0669165c80da4dca14a43a7fe936729a78d727b97bbb4677080a8e17"
+    },
+    {
+      "path": "README.en.md",
+      "text_sha256_lf": "57650e88468d7e8a92dca81f07104551d6db076aefec154aff913d55a03f61af"
+    }
+  ],
+  "showcase_assets": [
+    {
+      "path": "media_sources/readme-screenshots/calculator-unfolded.png",
+      "bytes": 25773,
+      "sha256": "255d383548fca85893d8bd826b25693f2416e26c14d1cee73f11335b12774ae0",
+      "referenced_by": [
+        "README.en.md",
+        "README.md"
+      ],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/calendar-todos-folded.png",
+      "bytes": 27622,
+      "sha256": "318f6ceedc1716305fd4eda8844948dfce5326c2e74bcbacc6939a0cf53180a0",
+      "referenced_by": [],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/calendar-unfolded.png",
+      "bytes": 37267,
+      "sha256": "eb3145ef3a1b3ad70fea5d35a555c06060e35511e103dc4a97fe66b4094d7e91",
+      "referenced_by": [
+        "README.en.md",
+        "README.md"
+      ],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/clock-folded.png",
+      "bytes": 41036,
+      "sha256": "7f406c06cbc795fad40a0b6ce6b6d666987d22b0b27f8ad4618e4298c416b8a2",
+      "referenced_by": [],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/clock-unfolded.png",
+      "bytes": 47025,
+      "sha256": "dbb7fc3008b4d336a0068dfffdf4867e193ac627f303ea996abc25b22ece2b5b",
+      "referenced_by": [],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/launcher-folded.png",
+      "bytes": 146760,
+      "sha256": "5f6829abbe4e1c2efe4037b4aa53bc9a1fafec00a99889a5e070ff0bd17642b4",
+      "referenced_by": [
+        "README.en.md",
+        "README.md"
+      ],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/launcher-unfolded.png",
+      "bytes": 254681,
+      "sha256": "2ce1f27638302698611f98b046a0bc0df3837d5ae0fa5b365bbf08dce73aa4fe",
+      "referenced_by": [
+        "README.en.md",
+        "README.md"
+      ],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/meituan-folded.png",
+      "bytes": 101234,
+      "sha256": "5aa3b6419d1126c77d042c9e64713773ec9cdbd858bb1b8882c4908852caa689",
+      "referenced_by": [],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/meituan-merchant-workspace.png",
+      "bytes": 119323,
+      "sha256": "753a046a1d8da9a1aab44c6abfc84a8f1379d2ee2a515dc581dc547e3741fec1",
+      "referenced_by": [],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/meituan-search-workspace.png",
+      "bytes": 111504,
+      "sha256": "2565ed66feabf0651c8ba0e1074c4546f1d8e062cd9c07f4ae91ac0bea780459",
+      "referenced_by": [],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/meituan-unfolded.png",
+      "bytes": 133329,
+      "sha256": "d957e4998feb5d51bd06beefd055505222595a3cce1079013d4eb3b9e7b97259",
+      "referenced_by": [
+        "README.en.md",
+        "README.md"
+      ],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/notes-editor-folded.png",
+      "bytes": 23592,
+      "sha256": "9e10c7ebb135f2c1151a629fff4f7978dbaaf945b5fce48d44e75b686ec5955b",
+      "referenced_by": [
+        "README.en.md",
+        "README.md"
+      ],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/notes-editor-unfolded.png",
+      "bytes": 105217,
+      "sha256": "aae502cae89c1de673249130f44f030d524a5a34f9af1c2ba4b9be109348b82b",
+      "referenced_by": [
+        "README.en.md",
+        "README.md"
+      ],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/reading-progress-folded.png",
+      "bytes": 38064,
+      "sha256": "065d5c9ea96e834fb12433d351c3c0ccc81517d9154687e90b031b7f8935c43c",
+      "referenced_by": [],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/reading-progress-unfolded.png",
+      "bytes": 43343,
+      "sha256": "b0a18498dcc724b1192ba933044c39236a026be89eb53cbbd08933f8fe351417",
+      "referenced_by": [],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/split-folded.png",
+      "bytes": 38420,
+      "sha256": "3b6677f96a9c1975d8e21c31aa72925a9ec7631a472dfa249b4b4625cd92c74f",
+      "referenced_by": [
+        "README.en.md",
+        "README.md"
+      ],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/split-unfolded.png",
+      "bytes": 59828,
+      "sha256": "8ee4c2b9df0747158bdd4e752061f1a54ee57f9b91bd496b0c07d7f325952f2a",
+      "referenced_by": [
+        "README.en.md",
+        "README.md"
+      ],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/spotify-parallel-player.png",
+      "bytes": 110213,
+      "sha256": "9148b9b083ab1661fa34f600b8cc171774cc364609ffe3f689a67b3755c631a2",
+      "referenced_by": [
+        "README.en.md",
+        "README.md"
+      ],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/weather-forecast-folded.png",
+      "bytes": 144433,
+      "sha256": "586e8cdbecfa31432cf60cd626077a73b55f4edd5c7433e0b45748bb703fff34",
+      "referenced_by": [
+        "README.en.md",
+        "README.md"
+      ],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/weather-forecast-unfolded.png",
+      "bytes": 210910,
+      "sha256": "1a7efe0afc67af73ec7cbc0d608b7d5de25e36df43ee2f8793e6ce6e1914aacc",
+      "referenced_by": [
+        "README.en.md",
+        "README.md"
+      ],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/wechat-folded.png",
+      "bytes": 41607,
+      "sha256": "e8267c16334bbd7a3d8333764670044821a2c201a9b9d918fc54dc0631a0257f",
+      "referenced_by": [],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    },
+    {
+      "path": "media_sources/readme-screenshots/wechat-unfolded.png",
+      "bytes": 44659,
+      "sha256": "e24aa10666606b6deeec182f254d30fe72bac722ac19266c62086cd941fbff4c",
+      "referenced_by": [],
+      "review_required": [
+        "capture_provenance",
+        "privacy",
+        "rights"
+      ]
+    }
+  ],
+  "remote_readme_image_references": 0,
+  "pinned_media_snapshot_layers": {
+    "tracked_app_and_system_assets": {
+      "files": 3018,
+      "bytes": 125588103,
+      "sha256": "f80be6e46650387c1b9e99438b7cdd1212279957e6e2bdab82270616598c2d44"
+    },
+    "tracked_shell_images": {
+      "files": 10,
+      "bytes": 3518494,
+      "sha256": "a78bcdff4ae5551337d6af67f6e37a1416265b66048d8e21db14ed20816fb4c1"
+    },
+    "tracked_public_images": {
+      "files": 96,
+      "bytes": 13428414,
+      "sha256": "2e81ff09434469140fb974afa0b8c84eb915c8033f3fedf65e5cd54aa81e10d8"
+    },
+    "tracked_media_patch": {
+      "files": 52,
+      "bytes": 2599600,
+      "sha256": "e20eec0f74db61b9423b3eca92907e5424cfde7db9c0c47109353d09ac569287"
+    },
+    "tracked_legacy_media_supplement": {
+      "files": 5437,
+      "bytes": 462066531,
+      "sha256": "a46ec719d74179391b05579b74209fa11c57183c74074fcdc66ec5c785eebccc"
+    },
+    "future_overrides": {
+      "files": 1,
+      "bytes": 0,
+      "sha256": "e9d824f1bb8aea4d3175f5c10c49bc5fb1b7f32f5f004de5c6580a5debd4dc9a"
+    }
+  },
+  "recorded_source_url_authorities": [
+    {
+      "authority": "localhost:3000",
+      "category": "loopback",
+      "recorded_occurrences": 2
+    },
+    {
+      "authority": "abs.twimg.com",
+      "category": "non_loopback",
+      "recorded_occurrences": 151
+    },
+    {
+      "authority": "api.dicebear.com",
+      "category": "non_loopback",
+      "recorded_occurrences": 30145
+    },
+    {
+      "authority": "c02.purpledshub.com",
+      "category": "non_loopback",
+      "recorded_occurrences": 1
+    },
+    {
+      "authority": "careersinrobotics.com",
+      "category": "non_loopback",
+      "recorded_occurrences": 1
+    },
+    {
+      "authority": "cdn.esawebb.org",
+      "category": "non_loopback",
+      "recorded_occurrences": 1
+    },
+    {
+      "authority": "collection.thedali.org",
+      "category": "non_loopback",
+      "recorded_occurrences": 1
+    },
+    {
+      "authority": "external-preview.redd.it",
+      "category": "non_loopback",
+      "recorded_occurrences": 939
+    },
+    {
+      "authority": "goodokbad.com",
+      "category": "non_loopback",
+      "recorded_occurrences": 1
+    },
+    {
+      "authority": "i.imgur.com",
+      "category": "non_loopback",
+      "recorded_occurrences": 11
+    },
+    {
+      "authority": "i.postimg.cc",
+      "category": "non_loopback",
+      "recorded_occurrences": 1
+    },
+    {
+      "authority": "i.redd.it",
+      "category": "non_loopback",
+      "recorded_occurrences": 849
+    },
+    {
+      "authority": "images.unsplash.com",
+      "category": "non_loopback",
+      "recorded_occurrences": 10831
+    },
+    {
+      "authority": "maps.gstatic.com",
+      "category": "non_loopback",
+      "recorded_occurrences": 3
+    },
+    {
+      "authority": "media-cldnry.s-nbcnews.com",
+      "category": "non_loopback",
+      "recorded_occurrences": 1
+    },
+    {
+      "authority": "media.gettyimages.com",
+      "category": "non_loopback",
+      "recorded_occurrences": 1
+    },
+    {
+      "authority": "media1.tenor.com",
+      "category": "non_loopback",
+      "recorded_occurrences": 1
+    },
+    {
+      "authority": "mobileimages.lowes.com",
+      "category": "non_loopback",
+      "recorded_occurrences": 1
+    },
+    {
+      "authority": "pbs.twimg.com",
+      "category": "non_loopback",
+      "recorded_occurrences": 19611
+    },
+    {
+      "authority": "preview.redd.it",
+      "category": "non_loopback",
+      "recorded_occurrences": 632
+    },
+    {
+      "authority": "sns-avatar-qc.xhscdn.com",
+      "category": "non_loopback",
+      "recorded_occurrences": 218
+    },
+    {
+      "authority": "upload.wikimedia.org",
+      "category": "non_loopback",
+      "recorded_occurrences": 3
+    },
+    {
+      "authority": "video.twimg.com",
+      "category": "non_loopback",
+      "recorded_occurrences": 3004
+    },
+    {
+      "authority": "www.roofkey.com",
+      "category": "non_loopback",
+      "recorded_occurrences": 1
+    },
+    {
+      "authority": "www.snopes.com",
+      "category": "non_loopback",
+      "recorded_occurrences": 1
+    },
+    {
+      "authority": "www.thehistoryblog.com",
+      "category": "non_loopback",
+      "recorded_occurrences": 1
+    },
+    {
+      "authority": "www.transparenttextures.com",
+      "category": "non_loopback",
+      "recorded_occurrences": 1
+    }
+  ],
+  "source_url_scope": "Occurrences from the pinned manifest, not live requests, active-app reachability or a fresh source scan. Loopback examples are separate.",
+  "demo": {
+    "readme_filenames": [],
+    "local_receipts": [
+      {
+        "path": "media_sources/simulator-release.json",
+        "canonical_json_sha256": "dd1253a55d687bd473475ee9c4a70e7de81091d10dee1fb10ce3a28b74312797",
+        "recorded_asset_name": "foldagentgym-demo-v0.1.0.mp4"
+      },
+      {
+        "path": "media_sources/showcase-release.json",
+        "canonical_json_sha256": "1ecbceb2ff52b6566bafd32a6ead5e736764a2386fcc2b67b2e2515b7d569c45",
+        "recorded_asset_name": "foldmobilegym-demo-20261113-v2.mp4"
+      }
+    ],
+    "unsupported_remote_demo_references": 0,
+    "readme_links_have_matching_local_receipt": null,
+    "network_or_media_content_verified": false
+  }
+}

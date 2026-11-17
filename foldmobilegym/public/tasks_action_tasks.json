@@ -1,0 +1,1072 @@
+[
+  {
+    "app": "tasks",
+    "graphFile": "public\\tasks_nav_graph.json",
+    "taskId": "tasks:tasks.detail.complete.toggle",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/task/:id",
+      "routePath": "/task/:id",
+      "uiStateId": "tasks.detail.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/task/:id"
+        ],
+        "transitions": [
+          "tasks.item.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/task/:id"
+        ],
+        "transitions": [
+          "tasks.item.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "tasks.list.base",
+              "component": "TasksList",
+              "description": "待办列表",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "tasks",
+                  "direction": "vertical",
+                  "description": "待办列表"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "tasks.item.open",
+              "label": "打开待办",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/",
+              "target": "/task/:id",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "task",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {
+                "id": "string"
+              },
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/task/:id",
+              "routePath": "/task/:id",
+              "uiStateId": "tasks.detail.base",
+              "component": "TaskDetail",
+              "description": "待办详情",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {
+                "id": "string"
+              },
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "tasks.item.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {
+                  "id": "string"
+                },
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "task",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/task/:id",
+              "routePath": "/task/:id",
+              "uiStateId": "tasks.detail.base",
+              "component": "TaskDetail",
+              "description": "待办详情",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {
+                "id": "string"
+              },
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "tasks.detail.complete.toggle",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "taskId": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "tasks.detail.complete.toggle",
+              "label": "切换完成状态",
+              "description": null,
+              "behavior": "toggle",
+              "scope": "item",
+              "paramsSchema": {
+                "taskId": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\Tasks\\TasksApp.tsx",
+                "line": 67,
+                "col": 101
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "tasks.detail.complete.toggle",
+      "label": "切换完成状态",
+      "description": null,
+      "behavior": "toggle",
+      "scope": "item",
+      "paramsSchema": {
+        "taskId": "string"
+      }
+    }
+  },
+  {
+    "app": "tasks",
+    "graphFile": "public\\tasks_nav_graph.json",
+    "taskId": "tasks:tasks.form.due.input",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/new",
+      "routePath": "/new",
+      "uiStateId": "tasks.form.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/new"
+        ],
+        "transitions": [
+          "tasks.new.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/new"
+        ],
+        "transitions": [
+          "tasks.new.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "tasks.list.base",
+              "component": "TasksList",
+              "description": "待办列表",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "tasks",
+                  "direction": "vertical",
+                  "description": "待办列表"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "tasks.new.open",
+              "label": "新建待办",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/",
+              "target": "/new",
+              "uiMeta": {
+                "placement": "fab",
+                "icon": "add",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/new",
+              "routePath": "/new",
+              "uiStateId": "tasks.form.base",
+              "component": "TaskForm",
+              "description": "新建待办表单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "form",
+                  "direction": "vertical",
+                  "description": "新建待办表单"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 5
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "tasks.new.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "fab",
+              "icon": "add",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/new",
+              "routePath": "/new",
+              "uiStateId": "tasks.form.base",
+              "component": "TaskForm",
+              "description": "新建待办表单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "form",
+                  "direction": "vertical",
+                  "description": "新建待办表单"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 5
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "tasks.form.due.input",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "tasks.form.due.input",
+              "label": "输入截止时间",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "unknown",
+                "file": "apps\\Tasks\\TasksApp.tsx",
+                "line": 48,
+                "col": 33
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "tasks.form.due.input",
+      "label": "输入截止时间",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "tasks",
+    "graphFile": "public\\tasks_nav_graph.json",
+    "taskId": "tasks:tasks.form.list.input",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/new",
+      "routePath": "/new",
+      "uiStateId": "tasks.form.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/new"
+        ],
+        "transitions": [
+          "tasks.new.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/new"
+        ],
+        "transitions": [
+          "tasks.new.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "tasks.list.base",
+              "component": "TasksList",
+              "description": "待办列表",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "tasks",
+                  "direction": "vertical",
+                  "description": "待办列表"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "tasks.new.open",
+              "label": "新建待办",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/",
+              "target": "/new",
+              "uiMeta": {
+                "placement": "fab",
+                "icon": "add",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/new",
+              "routePath": "/new",
+              "uiStateId": "tasks.form.base",
+              "component": "TaskForm",
+              "description": "新建待办表单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "form",
+                  "direction": "vertical",
+                  "description": "新建待办表单"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 5
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "tasks.new.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "fab",
+              "icon": "add",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/new",
+              "routePath": "/new",
+              "uiStateId": "tasks.form.base",
+              "component": "TaskForm",
+              "description": "新建待办表单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "form",
+                  "direction": "vertical",
+                  "description": "新建待办表单"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 5
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "tasks.form.list.input",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "tasks.form.list.input",
+              "label": "选择列表",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "unknown",
+                "file": "apps\\Tasks\\TasksApp.tsx",
+                "line": 49,
+                "col": 31
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "tasks.form.list.input",
+      "label": "选择列表",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "tasks",
+    "graphFile": "public\\tasks_nav_graph.json",
+    "taskId": "tasks:tasks.form.note.input",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/new",
+      "routePath": "/new",
+      "uiStateId": "tasks.form.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/new"
+        ],
+        "transitions": [
+          "tasks.new.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/new"
+        ],
+        "transitions": [
+          "tasks.new.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "tasks.list.base",
+              "component": "TasksList",
+              "description": "待办列表",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "tasks",
+                  "direction": "vertical",
+                  "description": "待办列表"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "tasks.new.open",
+              "label": "新建待办",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/",
+              "target": "/new",
+              "uiMeta": {
+                "placement": "fab",
+                "icon": "add",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/new",
+              "routePath": "/new",
+              "uiStateId": "tasks.form.base",
+              "component": "TaskForm",
+              "description": "新建待办表单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "form",
+                  "direction": "vertical",
+                  "description": "新建待办表单"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 5
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "tasks.new.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "fab",
+              "icon": "add",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/new",
+              "routePath": "/new",
+              "uiStateId": "tasks.form.base",
+              "component": "TaskForm",
+              "description": "新建待办表单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "form",
+                  "direction": "vertical",
+                  "description": "新建待办表单"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 5
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "tasks.form.note.input",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "tasks.form.note.input",
+              "label": "输入备注",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "unknown",
+                "file": "apps\\Tasks\\TasksApp.tsx",
+                "line": 50,
+                "col": 31
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "tasks.form.note.input",
+      "label": "输入备注",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "tasks",
+    "graphFile": "public\\tasks_nav_graph.json",
+    "taskId": "tasks:tasks.form.save",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/new",
+      "routePath": "/new",
+      "uiStateId": "tasks.form.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/new"
+        ],
+        "transitions": [
+          "tasks.new.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/new"
+        ],
+        "transitions": [
+          "tasks.new.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "tasks.list.base",
+              "component": "TasksList",
+              "description": "待办列表",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "tasks",
+                  "direction": "vertical",
+                  "description": "待办列表"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "tasks.new.open",
+              "label": "新建待办",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/",
+              "target": "/new",
+              "uiMeta": {
+                "placement": "fab",
+                "icon": "add",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/new",
+              "routePath": "/new",
+              "uiStateId": "tasks.form.base",
+              "component": "TaskForm",
+              "description": "新建待办表单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "form",
+                  "direction": "vertical",
+                  "description": "新建待办表单"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 5
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "tasks.new.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "fab",
+              "icon": "add",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/new",
+              "routePath": "/new",
+              "uiStateId": "tasks.form.base",
+              "component": "TaskForm",
+              "description": "新建待办表单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "form",
+                  "direction": "vertical",
+                  "description": "新建待办表单"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 5
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "tasks.form.save",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "tasks.form.save",
+              "label": "保存待办",
+              "description": null,
+              "behavior": "submit",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\Tasks\\TasksApp.tsx",
+                "line": 52,
+                "col": 133
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "tasks.form.save",
+      "label": "保存待办",
+      "description": null,
+      "behavior": "submit",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "tasks",
+    "graphFile": "public\\tasks_nav_graph.json",
+    "taskId": "tasks:tasks.form.title.input",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/new",
+      "routePath": "/new",
+      "uiStateId": "tasks.form.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/new"
+        ],
+        "transitions": [
+          "tasks.new.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/new"
+        ],
+        "transitions": [
+          "tasks.new.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "tasks.list.base",
+              "component": "TasksList",
+              "description": "待办列表",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "tasks",
+                  "direction": "vertical",
+                  "description": "待办列表"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "tasks.new.open",
+              "label": "新建待办",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/",
+              "target": "/new",
+              "uiMeta": {
+                "placement": "fab",
+                "icon": "add",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/new",
+              "routePath": "/new",
+              "uiStateId": "tasks.form.base",
+              "component": "TaskForm",
+              "description": "新建待办表单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "form",
+                  "direction": "vertical",
+                  "description": "新建待办表单"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 5
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "tasks.new.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "fab",
+              "icon": "add",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/new",
+              "routePath": "/new",
+              "uiStateId": "tasks.form.base",
+              "component": "TaskForm",
+              "description": "新建待办表单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "form",
+                  "direction": "vertical",
+                  "description": "新建待办表单"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 5
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "tasks.form.title.input",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "tasks.form.title.input",
+              "label": "输入标题",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "unknown",
+                "file": "apps\\Tasks\\TasksApp.tsx",
+                "line": 47,
+                "col": 31
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "tasks.form.title.input",
+      "label": "输入标题",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  }
+]

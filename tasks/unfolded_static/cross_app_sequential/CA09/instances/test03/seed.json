@@ -1,0 +1,163 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "pair_id": "I45",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "apps": {
+    "tencent_meeting": {},
+    "wechat": {}
+  },
+  "raw_apps": {
+    "tencent_meeting": {
+      "scheduledMeetings": [
+        {
+          "id": "sched_002",
+          "meetingId": "517 643 928",
+          "title": "场地协调会",
+          "startTime": 1794189600000,
+          "duration": 90,
+          "timezone": "(GMT+08:00) 中国标准时间",
+          "repeatType": "monthly",
+          "hostId": "user_001",
+          "invitees": [
+            {
+              "id": "user_zhangsan",
+              "name": "张三"
+            },
+            {
+              "id": "user_lisi",
+              "name": "李四"
+            },
+            {
+              "id": "user_wangwu",
+              "name": "王五"
+            },
+            {
+              "id": "user_zhaoliu",
+              "name": "赵六"
+            }
+          ],
+          "settings": {
+            "calendar": true,
+            "waitingRoom": false,
+            "enableSignUp": false,
+            "allowBeforeHost": true,
+            "muteOnJoin": "auto_after_6",
+            "watermark": false,
+            "allowMultiDevice": true,
+            "forbidAddContact": false,
+            "autoCloudRecord": false,
+            "autoTranscribe": false,
+            "allowUploadDoc": true
+          },
+          "status": "pending",
+          "createdAt": 1793664000000
+        },
+        {
+          "id": "other-meeting",
+          "meetingId": "111 222 333",
+          "title": "场地协调会（旧版）",
+          "startTime": 1794189600000,
+          "duration": 90,
+          "timezone": "(GMT+08:00) 中国标准时间",
+          "repeatType": "monthly",
+          "hostId": "user_001",
+          "invitees": [
+            {
+              "id": "user_zhangsan",
+              "name": "张三"
+            },
+            {
+              "id": "user_lisi",
+              "name": "李四"
+            },
+            {
+              "id": "user_wangwu",
+              "name": "王五"
+            },
+            {
+              "id": "user_zhaoliu",
+              "name": "赵六"
+            }
+          ],
+          "settings": {
+            "calendar": true,
+            "waitingRoom": false,
+            "enableSignUp": false,
+            "allowBeforeHost": true,
+            "muteOnJoin": "auto_after_6",
+            "watermark": false,
+            "allowMultiDevice": true,
+            "forbidAddContact": false,
+            "autoCloudRecord": false,
+            "autoTranscribe": false,
+            "allowUploadDoc": true
+          },
+          "status": "pending",
+          "createdAt": 1793664000000
+        }
+      ],
+      "ongoingMeetings": [],
+      "history": []
+    },
+    "wechat": {
+      "chats": [
+        {
+          "id": "target-chat",
+          "user": {
+            "wxid": "target-chat",
+            "name": "韩晴（研发）",
+            "avatar": "/@app-assets/Wechat/avatars/avatar_10.jpg"
+          },
+          "isMuted": false,
+          "isSticky": false,
+          "isAlert": false,
+          "messages": [
+            {
+              "id": "target-chat-hello",
+              "type": "text",
+              "content": "有需要请留言。",
+              "senderId": "target-chat",
+              "timestamp": 1793663990000
+            }
+          ]
+        },
+        {
+          "id": "other-chat",
+          "user": {
+            "wxid": "other-chat",
+            "name": "韩晴（采购）",
+            "avatar": "/@app-assets/Wechat/avatars/avatar_10.jpg"
+          },
+          "isMuted": false,
+          "isSticky": false,
+          "isAlert": false,
+          "messages": [
+            {
+              "id": "other-chat-hello",
+              "type": "text",
+              "content": "有需要请留言。",
+              "senderId": "other-chat",
+              "timestamp": 1793663990000
+            }
+          ]
+        }
+      ],
+      "chatDrafts": {
+        "target-chat": "",
+        "other-chat": "采购事项待确认。"
+      },
+      "sendCount": 0
+    }
+  },
+  "os": {}
+}

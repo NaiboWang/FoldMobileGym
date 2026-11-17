@@ -1,0 +1,9 @@
+{
+  "manifest_version": 3,
+  "name": "foldmobilegym 本地折叠屏控制",
+  "version": "0.1.0",
+  "description": "仅在本地 foldmobilegym 网页中进行人工姿态与分屏预览。",
+  "minimum_chrome_version": "95",
+  "permissions": ["activeTab", "scripting"],
+  "action": { "default_title": "foldmobilegym 折叠屏控制", "default_popup": "popup.html" }
+}

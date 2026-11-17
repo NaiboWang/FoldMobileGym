@@ -1,0 +1,1474 @@
+{
+  "app": "mail",
+  "appDir": "apps\\Mail",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 12,
+  "transitionCount": 17,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "uiStateId": "mail.inbox.base",
+      "component": "MailInbox",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "messages",
+          "direction": "vertical",
+          "description": "邮件和草稿列表"
+        },
+        {
+          "name": "folders",
+          "direction": "vertical",
+          "description": "Modal folder drawer"
+        },
+        {
+          "name": "message",
+          "direction": "vertical",
+          "description": "当前邮件正文"
+        },
+        {
+          "name": "compose",
+          "direction": "vertical",
+          "description": "当前草稿编辑表单"
+        },
+        {
+          "name": "messageMenu",
+          "direction": "vertical",
+          "description": "Source message More actions"
+        }
+      ],
+      "description": "Gmail 收件箱、邮件阅读与安全草稿",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "mail.reader.item.star.toggle",
+          "label": "Toggle the current message star",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.reader.item.archive.set",
+          "label": "Archive or move the current original message to Inbox",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string",
+            "archived": "boolean"
+          }
+        },
+        {
+          "id": "mail.reader.item.unread.set",
+          "label": "Mark the current message unread",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.recovery.item.open",
+          "label": "将未保存冲突副本恢复为新邮件",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.compose.attach.open",
+          "label": "Pick a virtual document attachment",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.compose.attachment.item.remove",
+          "label": "Remove attachment reference",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.draft.open",
+          "label": "打开已保存的草稿",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.message.open",
+          "label": "打开邮件",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.fact.verify",
+          "label": "核对邮件行动项",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.compose.open",
+          "label": "打开写邮件",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.compose.to.input",
+          "label": "输入收件人",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.compose.subject.input",
+          "label": "输入主题",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.compose.body.input",
+          "label": "输入正文",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.compose.save",
+          "label": "保存草稿",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/?drawer=open",
+      "routePath": "/",
+      "uiStateId": "mail.inbox.drawer",
+      "component": "MailInbox",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "messages",
+          "direction": "vertical",
+          "description": "邮件和草稿列表"
+        },
+        {
+          "name": "folders",
+          "direction": "vertical",
+          "description": "Modal folder drawer"
+        },
+        {
+          "name": "message",
+          "direction": "vertical",
+          "description": "当前邮件正文"
+        },
+        {
+          "name": "compose",
+          "direction": "vertical",
+          "description": "当前草稿编辑表单"
+        },
+        {
+          "name": "messageMenu",
+          "direction": "vertical",
+          "description": "Source message More actions"
+        }
+      ],
+      "description": "Modal Mail folder drawer",
+      "search": {
+        "drawer": "open"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/?menu=message",
+      "routePath": "/",
+      "uiStateId": "mail.inbox.readerMenu",
+      "component": "MailInbox",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "messages",
+          "direction": "vertical",
+          "description": "邮件和草稿列表"
+        },
+        {
+          "name": "folders",
+          "direction": "vertical",
+          "description": "Modal folder drawer"
+        },
+        {
+          "name": "message",
+          "direction": "vertical",
+          "description": "当前邮件正文"
+        },
+        {
+          "name": "compose",
+          "direction": "vertical",
+          "description": "当前草稿编辑表单"
+        },
+        {
+          "name": "messageMenu",
+          "direction": "vertical",
+          "description": "Source message More actions"
+        }
+      ],
+      "description": "Source-owned message actions",
+      "search": {
+        "menu": "message"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "mail.reader.menu.item.restore",
+          "label": "Move the original archived message to Inbox",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/folder/:folder",
+      "routePath": "/folder/:folder",
+      "uiStateId": "mail.folder.base",
+      "component": "MailInbox",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "folder": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "messages",
+          "direction": "vertical",
+          "description": "Selected folder messages and drafts"
+        },
+        {
+          "name": "folders",
+          "direction": "vertical",
+          "description": "Modal folder drawer"
+        },
+        {
+          "name": "message",
+          "direction": "vertical",
+          "description": "Selected folder message reader"
+        },
+        {
+          "name": "compose",
+          "direction": "vertical",
+          "description": "Selected folder draft editor"
+        },
+        {
+          "name": "messageMenu",
+          "direction": "vertical",
+          "description": "Selected folder message actions"
+        }
+      ],
+      "description": "Local Mail folder",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "mail.folder.message.item.open",
+          "label": "Open a message in this folder",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.folder.draft.item.open",
+          "label": "Open an original saved draft",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.folder.recovery.item.open",
+          "label": "Recover a conflicting draft",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.folder.reader.item.star.toggle",
+          "label": "Toggle original message star",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.folder.reader.item.archive.set",
+          "label": "Archive or restore the folder reader source",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string",
+            "archived": "boolean"
+          }
+        },
+        {
+          "id": "mail.folder.reader.item.unread.set",
+          "label": "Mark the folder message unread",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.folder.fact.verify",
+          "label": "Verify original message action item",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.folder.compose.open",
+          "label": "Compose in the current folder context",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.folder.compose.to.input",
+          "label": "Edit recipient",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.folder.compose.subject.input",
+          "label": "Edit subject",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.folder.compose.body.input",
+          "label": "Edit body",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.folder.compose.save",
+          "label": "Save local draft",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.folder.compose.attach.open",
+          "label": "Choose virtual attachment",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.folder.compose.attachment.item.remove",
+          "label": "Remove attachment reference",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/folder/:folder?drawer=open",
+      "routePath": "/folder/:folder",
+      "uiStateId": "mail.folder.drawer",
+      "component": "MailInbox",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "folder": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "messages",
+          "direction": "vertical",
+          "description": "Selected folder messages and drafts"
+        },
+        {
+          "name": "folders",
+          "direction": "vertical",
+          "description": "Modal folder drawer"
+        },
+        {
+          "name": "message",
+          "direction": "vertical",
+          "description": "Selected folder message reader"
+        },
+        {
+          "name": "compose",
+          "direction": "vertical",
+          "description": "Selected folder draft editor"
+        },
+        {
+          "name": "messageMenu",
+          "direction": "vertical",
+          "description": "Selected folder message actions"
+        }
+      ],
+      "description": "Modal Mail folder drawer",
+      "search": {
+        "drawer": "open"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/folder/:folder?menu=message",
+      "routePath": "/folder/:folder",
+      "uiStateId": "mail.folder.readerMenu",
+      "component": "MailInbox",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "folder": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "messages",
+          "direction": "vertical",
+          "description": "Selected folder messages and drafts"
+        },
+        {
+          "name": "folders",
+          "direction": "vertical",
+          "description": "Modal folder drawer"
+        },
+        {
+          "name": "message",
+          "direction": "vertical",
+          "description": "Selected folder message reader"
+        },
+        {
+          "name": "compose",
+          "direction": "vertical",
+          "description": "Selected folder draft editor"
+        },
+        {
+          "name": "messageMenu",
+          "direction": "vertical",
+          "description": "Selected folder message actions"
+        }
+      ],
+      "description": "Folder reader message actions",
+      "search": {
+        "menu": "message"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "mail.folder.reader.menu.item.restore",
+          "label": "Move the folder reader source to Inbox",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/search?originFolder=:originFolder&q=:q",
+      "routePath": "/search",
+      "uiStateId": "mail.search.base",
+      "component": "MailInbox",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "searchResults",
+          "direction": "vertical",
+          "description": "完整邮件与草稿搜索结果"
+        }
+      ],
+      "description": "本地已提供邮件事实与草稿搜索",
+      "search": {},
+      "queryParams": {
+        "q": "string",
+        "originFolder": "string"
+      },
+      "actions": [
+        {
+          "id": "mail.search.query.input",
+          "label": "输入邮件搜索条件",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.search.query.clear",
+          "label": "清空邮件搜索",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/search/message/:messageId?originFolder=:originFolder&q=:q",
+      "routePath": "/search/message/:messageId",
+      "uiStateId": "mail.searchMessage.base",
+      "component": "MailInbox",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "messageId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "searchResults",
+          "direction": "vertical",
+          "description": "搜索结果"
+        },
+        {
+          "name": "message",
+          "direction": "vertical",
+          "description": "实际来源邮件正文"
+        },
+        {
+          "name": "messageMenu",
+          "direction": "vertical",
+          "description": "Search message More actions"
+        }
+      ],
+      "description": "从搜索阅读实际邮件",
+      "search": {},
+      "queryParams": {
+        "q": "string",
+        "originFolder": "string"
+      },
+      "actions": [
+        {
+          "id": "mail.search.reader.item.star.toggle",
+          "label": "Toggle the source search message star",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.search.reader.item.archive.set",
+          "label": "Archive or restore the source search message",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string",
+            "archived": "boolean"
+          }
+        },
+        {
+          "id": "mail.search.reader.item.unread.set",
+          "label": "Mark the search message unread",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.search.reader.query.input",
+          "label": "从阅读搜索栏修改条件",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.search.reader.query.clear",
+          "label": "从阅读搜索栏清空条件",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.search.message.item.verify",
+          "label": "核对当前来源邮件行动项",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/search/message/:messageId?menu=message&originFolder=:originFolder&q=:q",
+      "routePath": "/search/message/:messageId",
+      "uiStateId": "mail.searchMessage.readerMenu",
+      "component": "MailInbox",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "messageId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "searchResults",
+          "direction": "vertical",
+          "description": "搜索结果"
+        },
+        {
+          "name": "message",
+          "direction": "vertical",
+          "description": "实际来源邮件正文"
+        },
+        {
+          "name": "messageMenu",
+          "direction": "vertical",
+          "description": "Search message More actions"
+        }
+      ],
+      "description": "Search source message actions",
+      "search": {
+        "menu": "message"
+      },
+      "queryParams": {
+        "q": "string",
+        "originFolder": "string"
+      },
+      "actions": [
+        {
+          "id": "mail.search.reader.menu.item.restore",
+          "label": "Move the original search message to Inbox",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/search/draft/:draftId?originFolder=:originFolder&q=:q",
+      "routePath": "/search/draft/:draftId",
+      "uiStateId": "mail.searchDraft.base",
+      "component": "MailInbox",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "draftId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "compose",
+          "direction": "vertical",
+          "description": "实际已保存草稿编辑器"
+        }
+      ],
+      "description": "从搜索继续实际草稿",
+      "search": {},
+      "queryParams": {
+        "q": "string",
+        "originFolder": "string"
+      },
+      "actions": [
+        {
+          "id": "mail.search.draft.to.input",
+          "label": "编辑草稿收件人",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.search.draft.subject.input",
+          "label": "编辑草稿主题",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.search.draft.body.input",
+          "label": "编辑草稿正文",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.search.draft.save",
+          "label": "保存原草稿",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.search.draft.attach.open",
+          "label": "为当前草稿选择虚拟附件",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.search.draft.attachment.item.remove",
+          "label": "移除草稿附件引用",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/reply/:messageId?origin=:origin&originFolder=:originFolder&q=:q",
+      "routePath": "/reply/:messageId",
+      "uiStateId": "mail.reply.base",
+      "component": "MailReplyPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "messageId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "reply",
+          "direction": "vertical",
+          "description": "Source-bound reply draft editor"
+        }
+      ],
+      "description": "Local reply to the actual original message",
+      "search": {},
+      "queryParams": {
+        "q": "string",
+        "origin": "string",
+        "originFolder": "string"
+      },
+      "actions": [
+        {
+          "id": "mail.reply.body.input",
+          "label": "Edit the original-thread reply body",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.reply.save",
+          "label": "Save the source-bound local reply without sending",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/compose/to",
+      "routePath": "/compose/to",
+      "uiStateId": "mailto.base",
+      "component": "MailtoComposePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "compose",
+          "direction": "vertical",
+          "description": "Independent local email draft"
+        }
+      ],
+      "description": "Local email draft from an explicit mailto intent",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "mail.mailto.to.input",
+          "label": "Edit local draft recipient",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.mailto.subject.input",
+          "label": "Edit local draft subject",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.mailto.body.input",
+          "label": "Edit local draft body",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.mailto.save.submit",
+          "label": "Save local draft and return without sending",
+          "behavior": "submit"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/?menu=message",
+      "targetNodeId": "/?menu=message",
+      "id": "mail.reader.menu.open",
+      "label": "Open current message actions",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "menu": "message"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "drawer": null,
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "more",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder/:folder",
+      "sourceNodeId": "/folder/:folder",
+      "target": "/folder/:folder?menu=message",
+      "targetNodeId": "/folder/:folder?menu=message",
+      "id": "mail.folder.reader.menu.open",
+      "label": "Open folder message actions",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "menu": "message"
+      },
+      "searchParams": {},
+      "params": {
+        "folder": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/folder/:folder",
+        "search": {
+          "drawer": null,
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "more",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search/message/:messageId?originFolder=:originFolder&q=:q",
+      "sourceNodeId": "/search/message/:messageId?originFolder=:originFolder&q=:q",
+      "target": "/search/message/:messageId?menu=message&originFolder=:originFolder&q=:q",
+      "targetNodeId": "/search/message/:messageId?menu=message&originFolder=:originFolder&q=:q",
+      "id": "mail.search.reader.menu.open",
+      "label": "Open source search message actions",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "menu": "message"
+      },
+      "searchParams": {},
+      "params": {
+        "messageId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search/message/:messageId",
+        "search": {
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "more",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/?drawer=open",
+      "targetNodeId": "/?drawer=open",
+      "id": "mail.folders.open",
+      "label": "Open Mail folders",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "drawer": "open"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "drawer": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "IcMailMenu",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder/:folder",
+      "sourceNodeId": "/folder/:folder",
+      "target": "/folder/:folder?drawer=open",
+      "targetNodeId": "/folder/:folder?drawer=open",
+      "id": "mail.folder.folders.open",
+      "label": "Open folders from selected folder",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "drawer": "open"
+      },
+      "searchParams": {},
+      "params": {
+        "folder": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/folder/:folder",
+        "search": {
+          "drawer": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "IcMailMenu",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?drawer=open",
+      "sourceNodeId": "/?drawer=open",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "mail.folders.inbox",
+      "label": "Select inbox",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "drawer": null
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "drawer": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "IcMailInbox",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder/:folder?drawer=open",
+      "sourceNodeId": "/folder/:folder?drawer=open",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "mail.folders.inbox",
+      "label": "Select inbox",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "drawer": null
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/folder/:folder",
+        "search": {
+          "drawer": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "IcMailInbox",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?drawer=open",
+      "sourceNodeId": "/?drawer=open",
+      "target": "/folder/:folder",
+      "targetNodeId": "/folder/:folder",
+      "id": "mail.folders.select",
+      "label": "Select a supported local Mail folder",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "drawer": null
+      },
+      "searchParams": {},
+      "params": {
+        "folder": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "drawer": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "IcMailFolder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder/:folder?drawer=open",
+      "sourceNodeId": "/folder/:folder?drawer=open",
+      "target": "/folder/:folder",
+      "targetNodeId": "/folder/:folder",
+      "id": "mail.folders.select",
+      "label": "Select a supported local Mail folder",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "drawer": null
+      },
+      "searchParams": {},
+      "params": {
+        "folder": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/folder/:folder",
+        "search": {
+          "drawer": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "IcMailFolder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder/:folder",
+      "sourceNodeId": "/folder/:folder",
+      "target": "/search?originFolder=:originFolder&q=:q",
+      "targetNodeId": "/search?originFolder=:originFolder&q=:q",
+      "id": "mail.folder.search.open",
+      "label": "Search from current folder",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "originFolder": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/folder/:folder",
+        "search": {
+          "drawer": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "IcMailSearch",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder/:folder",
+      "sourceNodeId": "/folder/:folder",
+      "target": "/reply/:messageId?origin=:origin&originFolder=:originFolder&q=:q",
+      "targetNodeId": "/reply/:messageId?origin=:origin&originFolder=:originFolder&q=:q",
+      "id": "mail.folder.reply.open",
+      "label": "Reply from original folder",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "origin": "folder"
+      },
+      "searchParams": {
+        "originFolder": "string"
+      },
+      "params": {
+        "messageId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/folder/:folder",
+        "search": {
+          "drawer": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "IcMailBack",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder/:folder",
+      "sourceNodeId": "/folder/:folder",
+      "target": "/reply/:messageId?origin=:origin&originFolder=:originFolder&q=:q",
+      "targetNodeId": "/reply/:messageId?origin=:origin&originFolder=:originFolder&q=:q",
+      "id": "mail.folder.reply.resume",
+      "label": "Resume reply from original drafts folder",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "origin": "folderDrafts"
+      },
+      "searchParams": {
+        "originFolder": "string"
+      },
+      "params": {
+        "messageId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/folder/:folder",
+        "search": {
+          "drawer": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "IcMailBack",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/reply/:messageId?origin=:origin&originFolder=:originFolder&q=:q",
+      "targetNodeId": "/reply/:messageId?origin=:origin&originFolder=:originFolder&q=:q",
+      "id": "mail.reply.resume",
+      "label": "Resume reply from saved drafts",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "origin": "drafts"
+      },
+      "searchParams": {},
+      "params": {
+        "messageId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "drawer": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "IcMailBack",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?originFolder=:originFolder&q=:q",
+      "sourceNodeId": "/search?originFolder=:originFolder&q=:q",
+      "target": "/reply/:messageId?origin=:origin&originFolder=:originFolder&q=:q",
+      "targetNodeId": "/reply/:messageId?origin=:origin&originFolder=:originFolder&q=:q",
+      "id": "mail.search.reply.resume",
+      "label": "Resume reply from draft search results",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "origin": "draftSearch"
+      },
+      "searchParams": {
+        "q": "string"
+      },
+      "params": {
+        "messageId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "IcMailBack",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search/message/:messageId?originFolder=:originFolder&q=:q",
+      "sourceNodeId": "/search/message/:messageId?originFolder=:originFolder&q=:q",
+      "target": "/reply/:messageId?origin=:origin&originFolder=:originFolder&q=:q",
+      "targetNodeId": "/reply/:messageId?origin=:origin&originFolder=:originFolder&q=:q",
+      "id": "mail.search.reply.resume",
+      "label": "Resume reply from draft search results",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "origin": "draftSearch"
+      },
+      "searchParams": {
+        "q": "string"
+      },
+      "params": {
+        "messageId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "IcMailBack",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/reply/:messageId?origin=:origin&originFolder=:originFolder&q=:q",
+      "targetNodeId": "/reply/:messageId?origin=:origin&originFolder=:originFolder&q=:q",
+      "id": "mail.reply.open",
+      "label": "Reply or resume a source-bound draft",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "messageId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "drawer": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "IcMailBack",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search/message/:messageId?originFolder=:originFolder&q=:q",
+      "sourceNodeId": "/search/message/:messageId?originFolder=:originFolder&q=:q",
+      "target": "/reply/:messageId?origin=:origin&originFolder=:originFolder&q=:q",
+      "targetNodeId": "/reply/:messageId?origin=:origin&originFolder=:originFolder&q=:q",
+      "id": "mail.search.reply.open",
+      "label": "Reply from the actual source reader",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "origin": "search"
+      },
+      "searchParams": {
+        "q": "string"
+      },
+      "params": {
+        "messageId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "IcMailBack",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/search?originFolder=:originFolder&q=:q",
+      "targetNodeId": "/search?originFolder=:originFolder&q=:q",
+      "id": "mail.search.open",
+      "label": "搜索邮件与草稿",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "drawer": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "IcMailSearch",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?originFolder=:originFolder&q=:q",
+      "sourceNodeId": "/search?originFolder=:originFolder&q=:q",
+      "target": "/search/message/:messageId?originFolder=:originFolder&q=:q",
+      "targetNodeId": "/search/message/:messageId?originFolder=:originFolder&q=:q",
+      "id": "mail.search.message.select",
+      "label": "打开实际搜索邮件",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "q": "string"
+      },
+      "params": {
+        "messageId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "IcLauncher",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search/message/:messageId?originFolder=:originFolder&q=:q",
+      "sourceNodeId": "/search/message/:messageId?originFolder=:originFolder&q=:q",
+      "target": "/search/message/:messageId?originFolder=:originFolder&q=:q",
+      "targetNodeId": "/search/message/:messageId?originFolder=:originFolder&q=:q",
+      "id": "mail.search.message.select",
+      "label": "打开实际搜索邮件",
+      "type": "state",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "q": "string"
+      },
+      "params": {
+        "messageId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "IcLauncher",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?originFolder=:originFolder&q=:q",
+      "sourceNodeId": "/search?originFolder=:originFolder&q=:q",
+      "target": "/search/draft/:draftId?originFolder=:originFolder&q=:q",
+      "targetNodeId": "/search/draft/:draftId?originFolder=:originFolder&q=:q",
+      "id": "mail.search.draft.select",
+      "label": "打开实际搜索草稿",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "q": "string"
+      },
+      "params": {
+        "draftId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "IcAttachment",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search/message/:messageId?originFolder=:originFolder&q=:q",
+      "sourceNodeId": "/search/message/:messageId?originFolder=:originFolder&q=:q",
+      "target": "/search/draft/:draftId?originFolder=:originFolder&q=:q",
+      "targetNodeId": "/search/draft/:draftId?originFolder=:originFolder&q=:q",
+      "id": "mail.search.draft.select",
+      "label": "打开实际搜索草稿",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "q": "string"
+      },
+      "params": {
+        "draftId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "IcAttachment",
+        "gesture": "tap"
+      }
+    }
+  ]
+}

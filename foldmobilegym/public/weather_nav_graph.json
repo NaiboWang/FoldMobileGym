@@ -1,0 +1,1164 @@
+{
+  "app": "weather",
+  "appDir": "apps\\Weather",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 18,
+  "transitionCount": 17,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "uiStateId": "weather.home.base",
+      "component": "WeatherContent",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "cities",
+          "direction": "horizontal",
+          "description": "天气城市横向分页区"
+        },
+        {
+          "name": "menu",
+          "direction": "vertical",
+          "description": "天气菜单及温度单位选择区"
+        }
+      ],
+      "description": "天气首页（折线图）",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/?forecastLayout=list",
+      "routePath": "/",
+      "uiStateId": "weather.home.forecast.list",
+      "component": "WeatherContent",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "cities",
+          "direction": "horizontal",
+          "description": "天气城市横向分页区"
+        },
+        {
+          "name": "menu",
+          "direction": "vertical",
+          "description": "天气菜单及温度单位选择区"
+        }
+      ],
+      "description": "天气首页（列表）",
+      "search": {
+        "forecastLayout": "list"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/?menu=more",
+      "routePath": "/",
+      "uiStateId": "weather.home.menu",
+      "component": "WeatherContent",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "cities",
+          "direction": "horizontal",
+          "description": "天气城市横向分页区"
+        },
+        {
+          "name": "menu",
+          "direction": "vertical",
+          "description": "天气菜单及温度单位选择区"
+        }
+      ],
+      "description": "首页更多菜单",
+      "search": {
+        "menu": "more"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/?menu=more&forecastLayout=list",
+      "routePath": "/",
+      "uiStateId": "weather.home.menu.list",
+      "component": "WeatherContent",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "cities",
+          "direction": "horizontal",
+          "description": "天气城市横向分页区"
+        },
+        {
+          "name": "menu",
+          "direction": "vertical",
+          "description": "天气菜单及温度单位选择区"
+        }
+      ],
+      "description": "列表预报下的首页更多菜单",
+      "search": {
+        "menu": "more",
+        "forecastLayout": "list"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/?menu=temperature",
+      "routePath": "/",
+      "uiStateId": "weather.home.menu.temperature",
+      "component": "WeatherContent",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "cities",
+          "direction": "horizontal",
+          "description": "天气城市横向分页区"
+        },
+        {
+          "name": "menu",
+          "direction": "vertical",
+          "description": "天气菜单及温度单位选择区"
+        }
+      ],
+      "description": "首页菜单-温度单位",
+      "search": {
+        "menu": "temperature"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "menu.tempUnit.select.celsius",
+          "label": "菜单选择摄氏度",
+          "behavior": "select"
+        },
+        {
+          "id": "menu.tempUnit.select.fahrenheit",
+          "label": "菜单选择华氏度",
+          "behavior": "select"
+        }
+      ]
+    },
+    {
+      "id": "/?menu=temperature&forecastLayout=list",
+      "routePath": "/",
+      "uiStateId": "weather.home.menu.temperature.list",
+      "component": "WeatherContent",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "cities",
+          "direction": "horizontal",
+          "description": "天气城市横向分页区"
+        },
+        {
+          "name": "menu",
+          "direction": "vertical",
+          "description": "天气菜单及温度单位选择区"
+        }
+      ],
+      "description": "列表首页菜单-温度单位",
+      "search": {
+        "menu": "temperature",
+        "forecastLayout": "list"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "menu.tempUnit.list.select.celsius",
+          "label": "菜单选择摄氏度",
+          "behavior": "select"
+        },
+        {
+          "id": "menu.tempUnit.list.select.fahrenheit",
+          "label": "菜单选择华氏度",
+          "behavior": "select"
+        }
+      ]
+    },
+    {
+      "id": "/feedback",
+      "routePath": "/feedback",
+      "uiStateId": "weather.feedback.base",
+      "component": "WeatherFeedbackPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "天气反馈页",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "feedback.save.local",
+          "label": "保存天气反馈到本机",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/settings",
+      "routePath": "/settings",
+      "uiStateId": "weather.settings.base",
+      "component": "WeatherSettingsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "unitPicker",
+          "direction": "vertical",
+          "description": "Unit options in the current settings dialog"
+        }
+      ],
+      "description": "天气设置页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/settings?picker=temp",
+      "routePath": "/settings",
+      "uiStateId": "weather.settings.picker.temp",
+      "component": "WeatherSettingsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "unitPicker",
+          "direction": "vertical",
+          "description": "Unit options in the current settings dialog"
+        }
+      ],
+      "description": "天气设置-温度单位选择",
+      "search": {
+        "picker": "temp"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "settings.tempUnit.select.celsius",
+          "label": "选择摄氏度°C",
+          "behavior": "select"
+        },
+        {
+          "id": "settings.tempUnit.select.fahrenheit",
+          "label": "选择华氏度°F",
+          "behavior": "select"
+        }
+      ]
+    },
+    {
+      "id": "/settings?picker=wind",
+      "routePath": "/settings",
+      "uiStateId": "weather.settings.picker.wind",
+      "component": "WeatherSettingsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "unitPicker",
+          "direction": "vertical",
+          "description": "Unit options in the current settings dialog"
+        }
+      ],
+      "description": "天气设置-风力单位选择",
+      "search": {
+        "picker": "wind"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "settings.windUnit.select.beaufort",
+          "label": "选择蒲福风级",
+          "behavior": "select"
+        },
+        {
+          "id": "settings.windUnit.select.kmh",
+          "label": "选择公里/小时",
+          "behavior": "select"
+        },
+        {
+          "id": "settings.windUnit.select.ms",
+          "label": "选择米/秒",
+          "behavior": "select"
+        },
+        {
+          "id": "settings.windUnit.select.mph",
+          "label": "选择英里/小时",
+          "behavior": "select"
+        },
+        {
+          "id": "settings.windUnit.select.kn",
+          "label": "选择节",
+          "behavior": "select"
+        }
+      ]
+    },
+    {
+      "id": "/settings?picker=pressure",
+      "routePath": "/settings",
+      "uiStateId": "weather.settings.picker.pressure",
+      "component": "WeatherSettingsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "unitPicker",
+          "direction": "vertical",
+          "description": "Unit options in the current settings dialog"
+        }
+      ],
+      "description": "天气设置-气压单位选择",
+      "search": {
+        "picker": "pressure"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "settings.pressureUnit.select.hpa",
+          "label": "选择百帕(hPa)",
+          "behavior": "select"
+        },
+        {
+          "id": "settings.pressureUnit.select.mmhg",
+          "label": "选择毫米汞柱(mmHg)",
+          "behavior": "select"
+        },
+        {
+          "id": "settings.pressureUnit.select.inhg",
+          "label": "选择英寸汞柱(inHg)",
+          "behavior": "select"
+        }
+      ]
+    },
+    {
+      "id": "/settings/privacy",
+      "routePath": "/settings/privacy",
+      "uiStateId": "weather.privacy.base",
+      "component": "WeatherPrivacySettingsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "隐私设置页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/settings/permissions",
+      "routePath": "/settings/permissions",
+      "uiStateId": "weather.permissions.base",
+      "component": "WeatherPermissionsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "权限说明页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/cities",
+      "routePath": "/cities",
+      "uiStateId": "weather.cityManager.base",
+      "component": "WeatherCityManagerPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "城市管理页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/cities/search",
+      "routePath": "/cities/search",
+      "uiStateId": "weather.citySearch.base",
+      "component": "WeatherCitySearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "城市搜索页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/cities/preview?cityId=:cityId",
+      "routePath": "/cities/preview",
+      "uiStateId": "weather.cityPreview.base",
+      "component": "WeatherCityPreviewPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "城市预览页",
+      "search": {},
+      "queryParams": {
+        "cityId": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/forecast/daily?cityId=:cityId",
+      "routePath": "/forecast/daily",
+      "uiStateId": "weather.dailyForecast.base",
+      "component": "WeatherDailyForecastPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "15日预报页面主内容区"
+        },
+        {
+          "name": "forecast",
+          "direction": "horizontal",
+          "description": "15日预报横向滚动区"
+        }
+      ],
+      "description": "15日天气预报页",
+      "search": {},
+      "queryParams": {
+        "cityId": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/airquality?cityId=:cityId",
+      "routePath": "/airquality",
+      "uiStateId": "weather.airQuality.base",
+      "component": "WeatherAirQualityPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "空气质量详情页",
+      "search": {},
+      "queryParams": {
+        "cityId": "string"
+      },
+      "actions": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "/?menu=more",
+      "sourceNodeId": "/?menu=more",
+      "target": "/feedback",
+      "targetNodeId": "/feedback",
+      "id": "feedback.open",
+      "label": "打开天气反馈",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": "more"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "feedback",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/cities",
+      "targetNodeId": "/cities",
+      "id": "cities.open",
+      "label": "打开城市管理",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "city",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/?forecastLayout=list",
+      "targetNodeId": "/?forecastLayout=list",
+      "id": "forecast.layout.list",
+      "label": "切换为列表预报",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "forecastLayout": "list"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": null,
+          "forecastLayout": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "list",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?forecastLayout=list",
+      "sourceNodeId": "/?forecastLayout=list",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "forecast.layout.chart",
+      "label": "切换为折线图预报",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "forecastLayout": null
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": null,
+          "forecastLayout": "list"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "chart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/?menu=more&forecastLayout=list",
+      "targetNodeId": "/?menu=more&forecastLayout=list",
+      "id": "menu.open",
+      "label": "打开更多菜单",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "menu": "more",
+        "forecastLayout": "list"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "search",
+          "key": "forecastLayout"
+        },
+        "right": "list"
+      },
+      "preserveParams": [
+        "forecastLayout"
+      ],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "more",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/?menu=more",
+      "targetNodeId": "/?menu=more",
+      "id": "menu.open",
+      "label": "打开更多菜单",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "menu": "more"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "always"
+      },
+      "preserveParams": [
+        "forecastLayout"
+      ],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "more",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?menu=more",
+      "sourceNodeId": "/?menu=more",
+      "target": "/?menu=temperature&forecastLayout=list",
+      "targetNodeId": "/?menu=temperature&forecastLayout=list",
+      "id": "menu.temperature.open",
+      "label": "菜单选择温度单位",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "menu": "temperature",
+        "forecastLayout": "list"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "search",
+          "key": "forecastLayout"
+        },
+        "right": "list"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": "more"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "temperature",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?menu=more",
+      "sourceNodeId": "/?menu=more",
+      "target": "/?menu=temperature",
+      "targetNodeId": "/?menu=temperature",
+      "id": "menu.temperature.open",
+      "label": "菜单选择温度单位",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "menu": "temperature"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "always"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": "more"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "temperature",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?menu=more",
+      "sourceNodeId": "/?menu=more",
+      "target": "/settings",
+      "targetNodeId": "/settings",
+      "id": "settings.open",
+      "label": "打开天气设置",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": "more"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "settings",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/settings",
+      "sourceNodeId": "/settings",
+      "target": "/settings?picker=temp",
+      "targetNodeId": "/settings?picker=temp",
+      "id": "settings.picker.temp.open",
+      "label": "打开温度单位选择",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "picker": "temp"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/settings",
+        "search": {
+          "picker": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "temp",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/settings",
+      "sourceNodeId": "/settings",
+      "target": "/settings?picker=wind",
+      "targetNodeId": "/settings?picker=wind",
+      "id": "settings.picker.wind.open",
+      "label": "打开风力单位选择",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "picker": "wind"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/settings",
+        "search": {
+          "picker": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "wind",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/settings",
+      "sourceNodeId": "/settings",
+      "target": "/settings?picker=pressure",
+      "targetNodeId": "/settings?picker=pressure",
+      "id": "settings.picker.pressure.open",
+      "label": "打开气压单位选择",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "picker": "pressure"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/settings",
+        "search": {
+          "picker": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "pressure",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/settings",
+      "sourceNodeId": "/settings",
+      "target": "/settings/privacy",
+      "targetNodeId": "/settings/privacy",
+      "id": "privacy.open",
+      "label": "打开隐私政策",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/settings",
+        "search": {
+          "picker": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "privacy",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/settings/privacy",
+      "sourceNodeId": "/settings/privacy",
+      "target": "/settings/permissions",
+      "targetNodeId": "/settings/permissions",
+      "id": "permissions.open",
+      "label": "打开权限说明",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "permission",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/cities",
+      "sourceNodeId": "/cities",
+      "target": "/cities/search",
+      "targetNodeId": "/cities/search",
+      "id": "city.search.open",
+      "label": "打开城市搜索",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/cities/search",
+      "sourceNodeId": "/cities/search",
+      "target": "/cities/preview?cityId=:cityId",
+      "targetNodeId": "/cities/preview?cityId=:cityId",
+      "id": "city.preview.open",
+      "label": "打开城市预览",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "cityId": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "city",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/cities/preview?cityId=:cityId",
+      "sourceNodeId": "/cities/preview?cityId=:cityId",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "home.open",
+      "label": "返回天气首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "confirm",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/forecast/daily?cityId=:cityId",
+      "targetNodeId": "/forecast/daily?cityId=:cityId",
+      "id": "forecast.daily.open",
+      "label": "打开15日天气预报",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "cityId": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "forecast",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/cities/preview?cityId=:cityId",
+      "sourceNodeId": "/cities/preview?cityId=:cityId",
+      "target": "/forecast/daily?cityId=:cityId",
+      "targetNodeId": "/forecast/daily?cityId=:cityId",
+      "id": "forecast.daily.open",
+      "label": "打开15日天气预报",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "cityId": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "forecast",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/airquality?cityId=:cityId",
+      "targetNodeId": "/airquality?cityId=:cityId",
+      "id": "airquality.open",
+      "label": "打开空气质量详情",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "cityId": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "leaf",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/cities/preview?cityId=:cityId",
+      "sourceNodeId": "/cities/preview?cityId=:cityId",
+      "target": "/airquality?cityId=:cityId",
+      "targetNodeId": "/airquality?cityId=:cityId",
+      "id": "airquality.open",
+      "label": "打开空气质量详情",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "cityId": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "leaf",
+        "gesture": "tap"
+      }
+    }
+  ]
+}

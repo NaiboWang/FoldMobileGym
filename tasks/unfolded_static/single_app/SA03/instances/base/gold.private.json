@@ -1,0 +1,9 @@
+{
+  "target_text": "确认于14:30到402会议室参加项目评审",
+  "details": {
+    "address": "review@lab.example",
+    "subject": "评审准备事项",
+    "date": "2026-11-04 09:00",
+    "draft_id": "reply-target"
+  }
+}

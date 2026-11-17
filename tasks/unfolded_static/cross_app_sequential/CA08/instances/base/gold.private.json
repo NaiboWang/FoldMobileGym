@@ -1,0 +1,19 @@
+{
+  "source": "taobao",
+  "target": "notes",
+  "data": {
+    "id": "portable_monitor_x1",
+    "title": "便携显示器 X1 双规格高清扩展屏",
+    "variant": {
+      "id": "x1_13",
+      "size": "13.3英寸",
+      "resolution": "1080P",
+      "weight": "580g",
+      "price": 899
+    },
+    "note_title": "显示器采购记录"
+  },
+  "target_text": "13.3英寸；1080P；580g；899",
+  "title": "信息记录 · 淘宝",
+  "chat_name": "陈宁（研发）"
+}

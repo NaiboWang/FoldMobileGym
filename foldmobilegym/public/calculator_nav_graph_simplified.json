@@ -1,0 +1,146 @@
+{
+  "app": "calculator",
+  "appDir": "system\\Calculator",
+  "mode": "schema",
+  "routeCount": 1,
+  "edgeCount": 0,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "component": "CalculatorContent",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "计算器主页",
+      "stateCount": 5,
+      "states": [
+        "/?selection=:selection&targets=:targets",
+        "/?history=open&selection=:selection&targets=:targets",
+        "/?history=edit&selection=:selection&targets=:targets",
+        "/?history=open&dialog=deleteHistory&selection=:selection&targets=:targets",
+        "/?history=edit&dialog=deleteHistory&selection=:selection&targets=:targets"
+      ],
+      "actionCount": 16,
+      "actionIds": [
+        "calculator.home.keypad.press",
+        "calculator.home.operator.press",
+        "calculator.home.calculate.submit",
+        "calculator.home.clear",
+        "calculator.home.sign",
+        "calculator.home.percent",
+        "calculator.expression.scientific.toggle",
+        "calculator.expression.input",
+        "calculator.expression.key.press",
+        "calculator.expression.calculate.submit",
+        "calculator.expression.clear",
+        "calculator.expression.angle.toggle",
+        "calculator.expression.inverse.toggle",
+        "calculator.expression.memory.press",
+        "calculator.history.clear.submit",
+        "calculator.history.delete.submit"
+      ],
+      "actions": [
+        {
+          "id": "calculator.home.keypad.press",
+          "label": "数字或小数点",
+          "behavior": "other",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calculator.home.operator.press",
+          "label": "运算符",
+          "behavior": "other",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calculator.home.calculate.submit",
+          "label": "计算结果",
+          "behavior": "submit"
+        },
+        {
+          "id": "calculator.home.clear",
+          "label": "清除算式",
+          "behavior": "other"
+        },
+        {
+          "id": "calculator.home.sign",
+          "label": "切换正负号",
+          "behavior": "other"
+        },
+        {
+          "id": "calculator.home.percent",
+          "label": "百分比",
+          "behavior": "other"
+        },
+        {
+          "id": "calculator.expression.scientific.toggle",
+          "label": "Scientific keyboard preference",
+          "behavior": "toggle"
+        },
+        {
+          "id": "calculator.expression.input",
+          "label": "Edit the expression",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calculator.expression.key.press",
+          "label": "Expression keypad",
+          "behavior": "other",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calculator.expression.calculate.submit",
+          "label": "Evaluate the expression",
+          "behavior": "submit"
+        },
+        {
+          "id": "calculator.expression.clear",
+          "label": "Clear expression",
+          "behavior": "other"
+        },
+        {
+          "id": "calculator.expression.angle.toggle",
+          "label": "Radians/degrees preference",
+          "behavior": "toggle"
+        },
+        {
+          "id": "calculator.expression.inverse.toggle",
+          "label": "Inverse function preference",
+          "behavior": "toggle"
+        },
+        {
+          "id": "calculator.expression.memory.press",
+          "label": "Memory operation",
+          "behavior": "other",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calculator.history.clear.submit",
+          "label": "Clear displayed history",
+          "behavior": "submit"
+        },
+        {
+          "id": "calculator.history.delete.submit",
+          "label": "Delete selected history records",
+          "behavior": "submit"
+        }
+      ]
+    }
+  ],
+  "edges": []
+}

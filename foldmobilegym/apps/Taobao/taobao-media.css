@@ -1,0 +1,3 @@
+.tb-shell .tb-image-unavailable { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 8px; color: #888; background: #eee; text-align: center; box-sizing: border-box; }
+.tb-image-unavailable small { max-width: 100%; font-size: 11px; line-height: 1.4; overflow-wrap: anywhere; }
+.tb-image-unavailable svg { flex-shrink: 0; }

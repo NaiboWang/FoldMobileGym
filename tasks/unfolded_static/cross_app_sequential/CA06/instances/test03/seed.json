@@ -1,0 +1,82 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "apps": {
+    "contacts": {},
+    "sms": {}
+  },
+  "raw_apps": {
+    "contacts": {
+      "searchHistory": [],
+      "mutationCount": 0,
+      "callCount": 0
+    },
+    "sms": {
+      "composeDrafts": {
+        "existing-draft": {
+          "recipient": "13900001111",
+          "body": "已有草稿，请保留。",
+          "boundPhone": null
+        }
+      }
+    }
+  },
+  "os": {
+    "providers": {
+      "contacts": {
+        "contacts": [
+          {
+            "id": "source-contact",
+            "displayName": "陆青",
+            "sectionKey": "L",
+            "avatarColor": "#3482FF",
+            "phones": [
+              {
+                "id": "p1",
+                "label": "手机",
+                "number": "13600009517",
+                "isPrimary": true
+              }
+            ],
+            "company": "知行新材料技术服务中心",
+            "title": "项目联络",
+            "createdAt": 1793664000000,
+            "updatedAt": 1793664000000
+          },
+          {
+            "id": "other-contact",
+            "displayName": "陆青",
+            "sectionKey": "L",
+            "avatarColor": "#3482FF",
+            "phones": [
+              {
+                "id": "p1",
+                "label": "手机",
+                "number": "13600009518",
+                "isPrimary": true
+              }
+            ],
+            "company": "另一家公司",
+            "title": "项目联络",
+            "createdAt": 1793664000000,
+            "updatedAt": 1793664000000
+          }
+        ]
+      },
+      "sms": {
+        "conversations": [],
+        "messagesByConversationId": {}
+      }
+    }
+  },
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  }
+}

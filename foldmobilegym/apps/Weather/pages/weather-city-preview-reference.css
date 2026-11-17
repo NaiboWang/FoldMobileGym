@@ -1,0 +1,10 @@
+.weather-city-preview-header { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 48px 14px 0; min-height: 84px; color: white; }
+.weather-city-preview-title { position: absolute; left: 100px; right: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; font-size: 17px; }
+.weather-city-preview-action { position: relative; z-index: 1; height: 36px; min-width: 64px; padding: 0 16px; border: 0; border-radius: 20px; color: white; font-size: 15px; }
+.weather-city-preview-action:disabled { opacity: .5; }
+.weather-city-preview-hero { min-height: 230px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; }
+.weather-city-preview-temperature { font-size: 96px; font-weight: 200; line-height: 1; letter-spacing: -4px; }
+.weather-city-preview-high-low, .weather-city-preview-condition { font-size: 16px; line-height: 24px; }
+.weather-city-preview-retry { margin-top: 16px; border: 0; border-radius: 20px; padding: 8px 20px; background: rgba(255,255,255,.15); color: white; }
+.weather-city-preview-message { padding: 90px 20px; color: rgba(255,255,255,.65); text-align: center; }
+@container foldagent-app (min-width: 600px) { .weather-city-preview-hero { min-height: 285px; } .weather-city-preview-temperature { font-size: 112px; } }

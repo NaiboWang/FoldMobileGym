@@ -1,0 +1,335 @@
+{
+  "app": "appstore",
+  "appDir": "apps\\AppStore",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 4,
+  "transitionCount": 5,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "uiStateId": "appstore.featured.base",
+      "component": "FeaturedPage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "App Store content"
+        }
+      ],
+      "description": "精选",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/apps",
+      "routePath": "/apps",
+      "uiStateId": "appstore.apps.base",
+      "component": "AppsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "App Store content"
+        }
+      ],
+      "description": "应用列表",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/search?q=:q",
+      "routePath": "/search",
+      "uiStateId": "appstore.search.base",
+      "component": "SearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "App Store content"
+        }
+      ],
+      "description": "搜索",
+      "search": {},
+      "queryParams": {
+        "q": "string"
+      },
+      "actions": [
+        {
+          "id": "appstore.search.query.input",
+          "label": "输入关键词",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/app/:appId",
+      "routePath": "/app/:appId",
+      "uiStateId": "appstore.detail.base",
+      "component": "DetailPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "appId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "App Store content"
+        },
+        {
+          "name": "catalog",
+          "direction": "vertical",
+          "description": "Expanded app catalog sidebar"
+        }
+      ],
+      "description": "应用详情",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "appstore.detail.item.open",
+          "label": "打开应用",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "appId": "string"
+          }
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/apps",
+      "sourceNodeId": "/apps",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "appstore.tab.featured",
+      "label": "精选",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "sparkles",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?q=:q",
+      "sourceNodeId": "/search?q=:q",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "appstore.tab.featured",
+      "label": "精选",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "sparkles",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/apps",
+      "targetNodeId": "/apps",
+      "id": "appstore.tab.apps",
+      "label": "应用",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "grid",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?q=:q",
+      "sourceNodeId": "/search?q=:q",
+      "target": "/apps",
+      "targetNodeId": "/apps",
+      "id": "appstore.tab.apps",
+      "label": "应用",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "grid",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/search?q=:q",
+      "targetNodeId": "/search?q=:q",
+      "id": "appstore.tab.search",
+      "label": "搜索",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/apps",
+      "sourceNodeId": "/apps",
+      "target": "/search?q=:q",
+      "targetNodeId": "/search?q=:q",
+      "id": "appstore.tab.search",
+      "label": "搜索",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/app/:appId",
+      "targetNodeId": "/app/:appId",
+      "id": "appstore.item.detail",
+      "label": "应用详情",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "appId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "app",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/apps",
+      "sourceNodeId": "/apps",
+      "target": "/app/:appId",
+      "targetNodeId": "/app/:appId",
+      "id": "appstore.item.detail",
+      "label": "应用详情",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "appId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "app",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?q=:q",
+      "sourceNodeId": "/search?q=:q",
+      "target": "/app/:appId",
+      "targetNodeId": "/app/:appId",
+      "id": "appstore.item.detail",
+      "label": "应用详情",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "appId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "app",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/app/:appId",
+      "sourceNodeId": "/app/:appId",
+      "target": "/app/:appId",
+      "targetNodeId": "/app/:appId",
+      "id": "appstore.item.detail",
+      "label": "应用详情",
+      "type": "state",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "appId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "app",
+        "gesture": "tap"
+      }
+    }
+  ]
+}

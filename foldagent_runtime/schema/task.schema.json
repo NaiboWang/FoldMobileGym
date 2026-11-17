@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "foldagentgym.task.v2",
+  "title": "FoldAgentBench controlled-web episode v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "id", "pair_id", "condition", "split", "environment_tier", "instruction", "initial_state", "initial_window", "apps", "seed_contract", "event_plan", "evaluator", "evidence_contract", "adapter"],
+  "properties": {
+    "schema_version": {"enum": ["foldmobilegym.task.v2", "foldagentgym.task.v2"]},
+    "id": {"pattern": "^[A-J][0-9]{2}-[0-9]{3}$"},
+    "pair_id": {"pattern": "^[A-J][0-9]{2}$"},
+    "condition": {"enum": ["static", "pre_transition", "mid_transition", "multi_transition", "recovery"]},
+    "split": {"const": "l1_controlled"},
+    "environment_tier": {"const": "L1-controlled-web"},
+    "instruction": {"type": "string", "minLength": 20},
+    "initial_state": {"type": "string", "pattern": "^(tasks/seeds/[A-J][0-9]{2}\\.json|tasks_cross_app_multi_window/(cross_app_sequential|multi_window)/[A-Z0-9]+/instances/(base|test0[1-3])/(side_by_side/|stacked/)?seed\\.json|tasks_single_app/SA0[12]/instances/(base|test0[1-3])/seed\\.json|(tasks/unfolded_static|tasks_unfolded_static)/(single_app|cross_app_sequential)/[A-Z0-9]+/instances/(base|test0[1-3])/seed\\.json|(tasks/unfolded_static|tasks_unfolded_static)/multi_window/MW[0-9]{2}/instances/(base|test0[1-3])/(side_by_side|stacked)/seed\\.json)$"},
+    "initial_window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["posture", "layout", "focused_app", "mode"],
+      "properties": {
+        "posture": {"enum": ["folded", "unfolded", "tabletop"]},
+        "layout": {"type": "string"},
+        "focused_app": {"type": "string"},
+        "mode": {"enum": ["fullscreen", "split", "freeform"]},
+        "split_apps": {"type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "split_orientation": {"enum": ["side_by_side", "stacked"]},
+        "divider_ratio": {"type": "number", "minimum": 0.33, "maximum": 0.67}
+      },
+      "allOf": [{
+        "if": {"properties": {"mode": {"const": "split"}}, "required": ["mode"]},
+        "then": {"required": ["split_apps", "split_orientation"], "properties": {"posture": {"enum": ["folded", "unfolded"]}}},
+        "else": {"not": {"anyOf": [{"required": ["split_apps"]}, {"required": ["split_orientation"]}, {"required": ["divider_ratio"]}]}}
+      }]
+    },
+    "apps": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "seed_contract": {
+      "type": "object", "required": ["fixture", "distractors"],
+      "properties": {
+        "single_app_v3": {
+          "type": "object", "additionalProperties": false,
+          "required": ["version", "card", "app", "target_id", "value", "details"],
+          "properties": {
+            "version": {"const": 3},
+            "card": {"enum": ["SA01", "SA02", "SA03", "SA04", "SA06", "SA07", "SA08", "SA09", "SA10", "SA11", "SA12", "SA13", "SA14"]},
+            "app": {"type": "string", "minLength": 1},
+            "target_id": {"type": "string", "minLength": 1},
+            "value": {"type": ["string", "boolean", "array"]},
+            "details": {"type": "object"}
+          }
+        },
+        "single_app_v1": {
+          "oneOf": [{
+          "type": "object", "additionalProperties": false,
+          "required": ["version", "card", "app", "kind", "target_id", "append_text"],
+          "properties": {
+            "version": {"enum": [1, 2]}, "card": {"const": "SA01"},
+            "app": {"const": "notes"}, "kind": {"const": "notes_append"},
+            "target_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]+$"},
+            "append_text": {"type": "string", "minLength": 1}
+          }
+          }, {
+            "type": "object", "additionalProperties": false,
+            "required": ["version", "card", "app", "kind", "target_id", "contact_name", "required_facts"],
+            "properties": {
+              "version": {"const": 1}, "card": {"const": "SA02"},
+              "app": {"const": "wechat"}, "kind": {"const": "wechat_draft_append"},
+              "target_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]+$"},
+              "contact_name": {"type": "string", "minLength": 1},
+              "required_facts": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+            }
+          }]
+        },
+        "price_note": {
+          "type": "object", "required": ["shopId", "quantities"],
+          "properties": {
+            "shopId": {"type": "string", "minLength": 1},
+            "quantities": {
+              "type": "object", "minProperties": 2, "maxProperties": 32,
+              "propertyNames": {"minLength": 1},
+              "additionalProperties": {"type": "integer", "minimum": 1, "maximum": 9007199254740991}
+            }
+          }
+        }
+      },
+      "dependentRequired": {"price_note": ["shop_id", "dish_ids"]}
+    },
+    "event_plan": {"type": "array", "items": {"$ref": "controller_event.schema.json"}},
+    "evaluator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["success_all", "must_have_events", "safety_all", "require_post_transition_action", "max_invalid_actions", "max_repeated_actions"],
+      "properties": {
+        "success_all": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/rule"}},
+        "must_have_events": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "safety_all": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/rule"}},
+        "require_post_transition_action": {"type": "boolean"},
+        "max_invalid_actions": {"type": "integer", "minimum": 0},
+        "max_repeated_actions": {"type": "integer", "minimum": 0}
+      }
+    },
+    "recovery": {
+      "type": ["object", "null"],
+      "properties": {
+        "app_id": {"type": "string"},
+        "required_context": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "retained_apps": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "max_recovery_steps": {"type": "integer", "minimum": 1},
+        "no_duplicate_commit": {"const": true}
+        ,"capture_strategy": {"enum": ["persisted_plus_visible_form_hash", "persisted_plus_target_form_hash"]}
+        ,"completion_condition": {"const": "success_all"}
+      }
+    },
+    "evidence_contract": {
+      "type": "object",
+      "required": ["event_fields", "capture_pre_and_post_state", "capture_action_trace"],
+      "properties": {
+        "event_fields": {"const": ["trigger_step", "trigger_state_hash", "posture_before", "posture_after", "layout_before", "layout_after"]},
+        "capture_pre_and_post_state": {"const": true},
+        "capture_action_trace": {"const": true}
+      }
+    },
+    "metadata": {"type": "object"},
+    "adapter": {
+      "type": "object",
+      "required": ["status", "contract_id", "privileged_state_exposed_to_agent"],
+      "properties": {
+        "status": {"const": "ready"},
+        "contract_id": {"type": "string"},
+        "privileged_state_exposed_to_agent": {"const": false}
+      }
+    }
+  },
+  "$defs": {
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "op", "value"],
+      "properties": {
+        "path": {"type": "string", "minLength": 3},
+        "op": {"enum": ["eq", "neq", "contains", "contains_object", "count_eq", "unchanged", "delta_eq"]},
+        "value": {}
+      }
+    }
+  }
+}

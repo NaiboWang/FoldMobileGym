@@ -1,0 +1,22 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "pair_id": "J66",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "apps": {
+    "calculator": {}
+  },
+  "raw_apps": {
+    "calculator": {}
+  },
+  "os": {}
+}

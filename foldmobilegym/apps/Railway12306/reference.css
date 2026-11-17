@@ -1,0 +1,22 @@
+.railway-app-reference { container: railway / inline-size; min-width: 0; min-height: 0; }
+.railway-reference-empty { display: none; }
+@container railway (min-width: 600px) {
+  .railway-layout[data-reference-home="true"] { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; }
+  .railway-layout[data-reference-home="true"] > .railway-route-content { grid-column: 1; grid-row: 1; min-width: 0; min-height: 0; border-right: 1px solid rgb(120 130 150 / .09); }
+  .railway-layout[data-reference-home="true"] > [data-hide-on-keyboard] { grid-column: 1; grid-row: 2; }
+  .railway-reference-empty { grid-column: 2; grid-row: 1 / 3; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px; color: var(--app-text-muted, #8d98a8); background: var(--app-surface, #fff); text-align: center; }
+  .railway-reference-empty svg { width: min(240px, 85%); height: auto; margin-bottom: 20px; }
+  .railway-reference-empty p { max-width: 240px; font-size: 13px; line-height: 1.6; }
+}
+
+.railway-home-master[hidden], .railway-foreground-route[hidden], .railway-foreground-route > [hidden] { display: none !important; }
+.railway-layout[data-query-workspace="true"] > .railway-home-master { display: none; }
+.railway-query-page { min-width: 0; min-height: 0; }
+.railway-query-filter-panel { max-height: calc(100% - 56px); }
+.railway-query-swap { width: min(280px, calc(100% - 32px)); max-height: calc(100% - 64px); overflow-y: auto; }
+@container railway (min-width: 600px) {
+  .railway-layout[data-query-workspace="true"] { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); }
+  .railway-layout[data-query-workspace="true"] > .railway-home-master { display: flex; grid-column: 1; grid-row: 1; min-height: 0; border-right: 1px solid rgb(120 130 150 / .09); }
+  .railway-layout[data-query-workspace="true"] > .railway-foreground-route { grid-column: 2; grid-row: 1; min-height: 0; }
+  .railway-layout[data-reference-home="true"] > .railway-home-master { grid-column: 1; grid-row: 1 / 3; }
+}

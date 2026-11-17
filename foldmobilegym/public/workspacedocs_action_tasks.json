@@ -1,0 +1,184 @@
+[
+  {
+    "app": "workspace_docs",
+    "graphFile": "public\\workspacedocs_nav_graph.json",
+    "taskId": "workspace_docs:workspaceDocs.document.fact.verify",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/document/:id",
+      "routePath": "/document/:id",
+      "uiStateId": "workspace_docs.document.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/document/:id"
+        ],
+        "transitions": [
+          "workspace_docs.document.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/document/:id"
+        ],
+        "transitions": [
+          "workspace_docs.document.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "workspace_docs.library.base",
+              "component": "WorkspaceDocsLibrary",
+              "description": "工作文档列表",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "documents",
+                  "direction": "vertical",
+                  "description": "文档列表"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "workspace_docs.document.open",
+              "label": "打开文档",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/",
+              "target": "/document/:id",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "document",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {
+                "id": "string"
+              },
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/document/:id",
+              "routePath": "/document/:id",
+              "uiStateId": "workspace_docs.document.base",
+              "component": "WorkspaceDocumentReader",
+              "description": "只读文档",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {
+                "id": "string"
+              },
+              "scrollContainers": [
+                {
+                  "name": "document",
+                  "direction": "vertical",
+                  "description": "只读文档正文"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "workspace_docs.document.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {
+                  "id": "string"
+                },
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "document",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/document/:id",
+              "routePath": "/document/:id",
+              "uiStateId": "workspace_docs.document.base",
+              "component": "WorkspaceDocumentReader",
+              "description": "只读文档",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {
+                "id": "string"
+              },
+              "scrollContainers": [
+                {
+                  "name": "document",
+                  "direction": "vertical",
+                  "description": "只读文档正文"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "workspaceDocs.document.fact.verify",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "workspaceDocs.document.fact.verify",
+              "label": "阅读并核对文档事实",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\WorkspaceDocs\\WorkspaceDocsApp.tsx",
+                "line": 43,
+                "col": 137
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "workspaceDocs.document.fact.verify",
+      "label": "阅读并核对文档事实",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  }
+]

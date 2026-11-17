@@ -1,0 +1,635 @@
+{
+  "app": "meituan_waimai",
+  "appDir": "apps\\MeituanWaimai",
+  "mode": "schema",
+  "routeCount": 9,
+  "edgeCount": 35,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "component": "MeituanHome",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "美团首页",
+      "stateCount": 6,
+      "states": [
+        "/?q=:q",
+        "/?category=food&q=:q",
+        "/?category=drinks&q=:q",
+        "/?category=market&q=:q",
+        "/?search=open&q=:q",
+        "/?channel=waimai&q=:q"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "meituan.search.input"
+      ],
+      "actions": [
+        {
+          "id": "meituan.search.input",
+          "label": "搜索店铺",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/service/:id",
+      "routePath": "/service/:id",
+      "component": "MeituanServiceScope",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "离线服务范围说明",
+      "stateCount": 1,
+      "states": [
+        "/service/:id"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/shop/:id",
+      "routePath": "/shop/:id",
+      "component": "MeituanShopWorkspace",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "店铺菜单",
+      "stateCount": 1,
+      "states": [
+        "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter"
+      ],
+      "actionCount": 3,
+      "actionIds": [
+        "meituan.cart.item.add",
+        "meituan.menu.item.remove.submit",
+        "meituan.cart.switch.submit"
+      ],
+      "actions": [
+        {
+          "id": "meituan.cart.item.add",
+          "label": "加入购物车",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "itemId": "string"
+          }
+        },
+        {
+          "id": "meituan.menu.item.remove.submit",
+          "label": "从菜单减少商品",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "itemId": "string"
+          }
+        },
+        {
+          "id": "meituan.cart.switch.submit",
+          "label": "确认清空原购物车并切换店铺",
+          "behavior": "submit",
+          "paramsSchema": {
+            "shopId": "string"
+          },
+          "condition": {
+            "op": "and",
+            "items": [
+              {
+                "op": "paramNeq",
+                "param": "id",
+                "ref": "cart.shopId"
+              },
+              {
+                "op": "notEmpty",
+                "ref": "cart.quantities"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "/shop/:id/reviews",
+      "routePath": "/shop/:id/reviews",
+      "component": "MeituanShopWorkspace",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "全部离线评价",
+      "stateCount": 5,
+      "states": [
+        "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+        "/shop/:id/reviews?reviewFilter=latest&menuCategory=:menuCategory&origin=:origin",
+        "/shop/:id/reviews?reviewFilter=positive&menuCategory=:menuCategory&origin=:origin",
+        "/shop/:id/reviews?reviewFilter=negative&menuCategory=:menuCategory&origin=:origin",
+        "/shop/:id/reviews?reviewFilter=media&menuCategory=:menuCategory&origin=:origin"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/shop/:id/info",
+      "routePath": "/shop/:id/info",
+      "component": "MeituanShopWorkspace",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "离线商家资料",
+      "stateCount": 1,
+      "states": [
+        "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/cart",
+      "routePath": "/cart",
+      "component": "WaimaiCart",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "模拟购物车",
+      "stateCount": 1,
+      "states": [
+        "/cart"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "meituan.cart.item.remove",
+        "meituan.cart.clear"
+      ],
+      "actions": [
+        {
+          "id": "meituan.cart.item.remove",
+          "label": "减少商品",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "itemId": "string"
+          }
+        },
+        {
+          "id": "meituan.cart.clear",
+          "label": "清空购物车",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/order",
+      "routePath": "/order",
+      "component": "WaimaiOrder",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "模拟订单完成",
+      "stateCount": 1,
+      "states": [
+        "/order"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/orders",
+      "routePath": "/orders",
+      "component": "WaimaiOrders",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "历史模拟订单",
+      "stateCount": 1,
+      "states": [
+        "/orders"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/me",
+      "routePath": "/me",
+      "component": "WaimaiProfile",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "离线演示账户",
+      "stateCount": 1,
+      "states": [
+        "/me"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "/shop/:id/reviews",
+      "target": "/shop/:id",
+      "transitions": [
+        "meituan.context.shop.open",
+        "meituan.shop.menu"
+      ],
+      "type": "navigation",
+      "label": "meituan.context.shop.open, meituan.shop.menu",
+      "id": "meituan.context.shop.open"
+    },
+    {
+      "source": "/shop/:id/info",
+      "target": "/shop/:id",
+      "transitions": [
+        "meituan.context.shop.open",
+        "meituan.shop.menu"
+      ],
+      "type": "navigation",
+      "label": "meituan.context.shop.open, meituan.shop.menu",
+      "id": "meituan.context.shop.open"
+    },
+    {
+      "source": "/shop/:id",
+      "target": "/",
+      "transitions": [
+        "meituan.home.category.all",
+        "meituan.home.category.food",
+        "meituan.home.category.drinks",
+        "meituan.home.category.market",
+        "meituan.search.open",
+        "meituan.waimai.open",
+        "meituan.home.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.home.category.all, meituan.home.category.food, meituan.home.category.drinks, meituan.home.category.market, meituan.search.open, meituan.waimai.open, meituan.home.open",
+      "id": "meituan.home.category.all"
+    },
+    {
+      "source": "/shop/:id/reviews",
+      "target": "/",
+      "transitions": [
+        "meituan.home.category.all",
+        "meituan.home.category.food",
+        "meituan.home.category.drinks",
+        "meituan.home.category.market",
+        "meituan.search.open",
+        "meituan.waimai.open",
+        "meituan.home.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.home.category.all, meituan.home.category.food, meituan.home.category.drinks, meituan.home.category.market, meituan.search.open, meituan.waimai.open, meituan.home.open",
+      "id": "meituan.home.category.all"
+    },
+    {
+      "source": "/shop/:id/info",
+      "target": "/",
+      "transitions": [
+        "meituan.home.category.all",
+        "meituan.home.category.food",
+        "meituan.home.category.drinks",
+        "meituan.home.category.market",
+        "meituan.search.open",
+        "meituan.waimai.open",
+        "meituan.home.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.home.category.all, meituan.home.category.food, meituan.home.category.drinks, meituan.home.category.market, meituan.search.open, meituan.waimai.open, meituan.home.open",
+      "id": "meituan.home.category.all"
+    },
+    {
+      "source": "/",
+      "target": "/service/:id",
+      "transitions": [
+        "meituan.service.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.service.open",
+      "id": "meituan.service.open"
+    },
+    {
+      "source": "/shop/:id",
+      "target": "/service/:id",
+      "transitions": [
+        "meituan.service.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.service.open",
+      "id": "meituan.service.open"
+    },
+    {
+      "source": "/shop/:id/reviews",
+      "target": "/service/:id",
+      "transitions": [
+        "meituan.service.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.service.open",
+      "id": "meituan.service.open"
+    },
+    {
+      "source": "/shop/:id/info",
+      "target": "/service/:id",
+      "transitions": [
+        "meituan.service.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.service.open",
+      "id": "meituan.service.open"
+    },
+    {
+      "source": "/",
+      "target": "/shop/:id",
+      "transitions": [
+        "meituan.shop.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.shop.open",
+      "id": "meituan.shop.open"
+    },
+    {
+      "source": "/cart",
+      "target": "/shop/:id",
+      "transitions": [
+        "meituan.shop.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.shop.open",
+      "id": "meituan.shop.open"
+    },
+    {
+      "source": "/shop/:id",
+      "target": "/shop/:id/reviews",
+      "transitions": [
+        "meituan.shop.reviews"
+      ],
+      "type": "navigation",
+      "label": "meituan.shop.reviews",
+      "id": "meituan.shop.reviews"
+    },
+    {
+      "source": "/shop/:id/info",
+      "target": "/shop/:id/reviews",
+      "transitions": [
+        "meituan.shop.reviews"
+      ],
+      "type": "navigation",
+      "label": "meituan.shop.reviews",
+      "id": "meituan.shop.reviews"
+    },
+    {
+      "source": "/shop/:id",
+      "target": "/shop/:id/info",
+      "transitions": [
+        "meituan.shop.info"
+      ],
+      "type": "navigation",
+      "label": "meituan.shop.info",
+      "id": "meituan.shop.info"
+    },
+    {
+      "source": "/shop/:id/reviews",
+      "target": "/shop/:id/info",
+      "transitions": [
+        "meituan.shop.info"
+      ],
+      "type": "navigation",
+      "label": "meituan.shop.info",
+      "id": "meituan.shop.info"
+    },
+    {
+      "source": "/",
+      "target": "/cart",
+      "transitions": [
+        "meituan.cart.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.cart.open",
+      "id": "meituan.cart.open"
+    },
+    {
+      "source": "/shop/:id",
+      "target": "/cart",
+      "transitions": [
+        "meituan.cart.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.cart.open",
+      "id": "meituan.cart.open"
+    },
+    {
+      "source": "/shop/:id/reviews",
+      "target": "/cart",
+      "transitions": [
+        "meituan.cart.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.cart.open",
+      "id": "meituan.cart.open"
+    },
+    {
+      "source": "/shop/:id/info",
+      "target": "/cart",
+      "transitions": [
+        "meituan.cart.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.cart.open",
+      "id": "meituan.cart.open"
+    },
+    {
+      "source": "/cart",
+      "target": "/order",
+      "transitions": [
+        "meituan.checkout.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.checkout.open",
+      "id": "meituan.checkout.open"
+    },
+    {
+      "source": "/",
+      "target": "/orders",
+      "transitions": [
+        "meituan.orders.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.orders.open",
+      "id": "meituan.orders.open"
+    },
+    {
+      "source": "/me",
+      "target": "/orders",
+      "transitions": [
+        "meituan.orders.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.orders.open",
+      "id": "meituan.orders.open"
+    },
+    {
+      "source": "/shop/:id",
+      "target": "/orders",
+      "transitions": [
+        "meituan.orders.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.orders.open",
+      "id": "meituan.orders.open"
+    },
+    {
+      "source": "/shop/:id/reviews",
+      "target": "/orders",
+      "transitions": [
+        "meituan.orders.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.orders.open",
+      "id": "meituan.orders.open"
+    },
+    {
+      "source": "/shop/:id/info",
+      "target": "/orders",
+      "transitions": [
+        "meituan.orders.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.orders.open",
+      "id": "meituan.orders.open"
+    },
+    {
+      "source": "/",
+      "target": "/me",
+      "transitions": [
+        "meituan.profile.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.profile.open",
+      "id": "meituan.profile.open"
+    },
+    {
+      "source": "/orders",
+      "target": "/me",
+      "transitions": [
+        "meituan.profile.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.profile.open",
+      "id": "meituan.profile.open"
+    },
+    {
+      "source": "/shop/:id",
+      "target": "/me",
+      "transitions": [
+        "meituan.profile.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.profile.open",
+      "id": "meituan.profile.open"
+    },
+    {
+      "source": "/shop/:id/reviews",
+      "target": "/me",
+      "transitions": [
+        "meituan.profile.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.profile.open",
+      "id": "meituan.profile.open"
+    },
+    {
+      "source": "/shop/:id/info",
+      "target": "/me",
+      "transitions": [
+        "meituan.profile.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.profile.open",
+      "id": "meituan.profile.open"
+    },
+    {
+      "source": "/service/:id",
+      "target": "/",
+      "transitions": [
+        "meituan.home.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.home.open",
+      "id": "meituan.home.open"
+    },
+    {
+      "source": "/cart",
+      "target": "/",
+      "transitions": [
+        "meituan.home.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.home.open",
+      "id": "meituan.home.open"
+    },
+    {
+      "source": "/order",
+      "target": "/",
+      "transitions": [
+        "meituan.home.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.home.open",
+      "id": "meituan.home.open"
+    },
+    {
+      "source": "/orders",
+      "target": "/",
+      "transitions": [
+        "meituan.home.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.home.open",
+      "id": "meituan.home.open"
+    },
+    {
+      "source": "/me",
+      "target": "/",
+      "transitions": [
+        "meituan.home.open"
+      ],
+      "type": "navigation",
+      "label": "meituan.home.open",
+      "id": "meituan.home.open"
+    }
+  ]
+}

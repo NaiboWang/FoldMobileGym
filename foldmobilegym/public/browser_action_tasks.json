@@ -1,0 +1,1326 @@
+[
+  {
+    "app": "browser",
+    "graphFile": "public\\browser_nav_graph.json",
+    "taskId": "browser:browser.home.reload",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "browser.home.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "browser.home.base",
+              "component": "BrowserHome",
+              "description": "浏览器首页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                },
+                {
+                  "name": "tabs",
+                  "direction": "horizontal",
+                  "description": "展开态标签栏"
+                },
+                {
+                  "name": "overview",
+                  "direction": "vertical",
+                  "description": "标签页概览"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "browser.home.reload",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "tabId": "string",
+                  "url": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "browser.home.reload",
+              "label": "刷新当前首页",
+              "description": null,
+              "behavior": "other",
+              "scope": "item",
+              "paramsSchema": {
+                "tabId": "string",
+                "url": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Browser\\BrowserApp.tsx",
+                "line": 436,
+                "col": 35
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "browser.home.reload",
+      "label": "刷新当前首页",
+      "description": null,
+      "behavior": "other",
+      "scope": "item",
+      "paramsSchema": {
+        "tabId": "string",
+        "url": "string"
+      }
+    }
+  },
+  {
+    "app": "browser",
+    "graphFile": "public\\browser_nav_graph.json",
+    "taskId": "browser:browser.bookmark.add",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/view",
+      "routePath": "/view",
+      "uiStateId": "browser.view.base"
+    },
+    "trajectoryCount": 3,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/view"
+        ],
+        "transitions": [
+          "history.forward.view"
+        ],
+        "length": 1
+      },
+      {
+        "nodes": [
+          "/",
+          "/view"
+        ],
+        "transitions": [
+          "tab.close.view"
+        ],
+        "length": 1
+      },
+      {
+        "nodes": [
+          "/",
+          "/view"
+        ],
+        "transitions": [
+          "view.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/view"
+        ],
+        "transitions": [
+          "history.forward.view"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "browser.home.base",
+              "component": "BrowserHome",
+              "description": "浏览器首页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                },
+                {
+                  "name": "tabs",
+                  "direction": "horizontal",
+                  "description": "展开态标签栏"
+                },
+                {
+                  "name": "overview",
+                  "direction": "vertical",
+                  "description": "标签页概览"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "edge": {
+              "transitionId": "history.forward.view",
+              "label": "前进到已有网页历史",
+              "type": "navigation",
+              "mode": "replace",
+              "source": "/",
+              "target": "/view",
+              "uiMeta": {
+                "placement": "topbar",
+                "icon": "forward",
+                "gesture": "tap"
+              },
+              "uiCondition": {
+                "op": "notEmpty",
+                "ref": "tabs",
+                "filterFn": "tab => Boolean(tab.history && Array.isArray(tab.history.entries) && Number.isInteger(tab.history.index) && tab.history.index + 1 < tab.history.entries.length)",
+                "text": "Requires forward history in the active source tab."
+              },
+              "fromConstraint": {
+                "path": "/",
+                "search": {
+                  "panel": null
+                }
+              },
+              "search": {},
+              "searchParams": {},
+              "params": {
+                "tabId": "string"
+              },
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/view",
+              "routePath": "/view",
+              "uiStateId": "browser.view.base",
+              "component": "BrowserView",
+              "description": "网页浏览页",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                },
+                {
+                  "name": "tabs",
+                  "direction": "horizontal",
+                  "description": "展开态标签栏"
+                },
+                {
+                  "name": "overview",
+                  "direction": "vertical",
+                  "description": "标签页概览"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "history.forward.view",
+                "dataTriggerType": "tap",
+                "paramsSchema": {
+                  "tabId": "string"
+                },
+                "searchParamsSchema": {}
+              },
+              "placement": "topbar",
+              "icon": "forward",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/view",
+              "routePath": "/view",
+              "uiStateId": "browser.view.base",
+              "component": "BrowserView",
+              "description": "网页浏览页",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                },
+                {
+                  "name": "tabs",
+                  "direction": "horizontal",
+                  "description": "展开态标签栏"
+                },
+                {
+                  "name": "overview",
+                  "direction": "vertical",
+                  "description": "标签页概览"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "browser.bookmark.add",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "tabId": "string",
+                  "url": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "browser.bookmark.add",
+              "label": "保存当前网页书签",
+              "description": null,
+              "behavior": "other",
+              "scope": "item",
+              "paramsSchema": {
+                "tabId": "string",
+                "url": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Browser\\BookmarkButton.tsx",
+                "line": 20,
+                "col": 17
+              }
+            ],
+            "index": 1
+          }
+        ]
+      },
+      {
+        "nodes": [
+          "/",
+          "/view"
+        ],
+        "transitions": [
+          "tab.close.view"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "browser.home.base",
+              "component": "BrowserHome",
+              "description": "浏览器首页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                },
+                {
+                  "name": "tabs",
+                  "direction": "horizontal",
+                  "description": "展开态标签栏"
+                },
+                {
+                  "name": "overview",
+                  "direction": "vertical",
+                  "description": "标签页概览"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "edge": {
+              "transitionId": "tab.close.view",
+              "label": "关闭标签页并保留或显示网页",
+              "type": "navigation",
+              "mode": "replace",
+              "source": "/",
+              "target": "/view",
+              "uiMeta": {
+                "placement": "topbar",
+                "icon": "close",
+                "gesture": "tap"
+              },
+              "uiCondition": {
+                "op": "notEmpty",
+                "ref": "tabs",
+                "filterFn": "tab => Boolean(tab.url)",
+                "text": "Requires an existing document tab; not a cold-default route to a webpage."
+              },
+              "fromConstraint": {
+                "path": "/",
+                "search": {
+                  "panel": null
+                }
+              },
+              "search": {},
+              "searchParams": {},
+              "params": {
+                "tabId": "string"
+              },
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/view",
+              "routePath": "/view",
+              "uiStateId": "browser.view.base",
+              "component": "BrowserView",
+              "description": "网页浏览页",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                },
+                {
+                  "name": "tabs",
+                  "direction": "horizontal",
+                  "description": "展开态标签栏"
+                },
+                {
+                  "name": "overview",
+                  "direction": "vertical",
+                  "description": "标签页概览"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "tab.close.view",
+                "dataTriggerType": "tap",
+                "paramsSchema": {
+                  "tabId": "string"
+                },
+                "searchParamsSchema": {}
+              },
+              "placement": "topbar",
+              "icon": "close",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/view",
+              "routePath": "/view",
+              "uiStateId": "browser.view.base",
+              "component": "BrowserView",
+              "description": "网页浏览页",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                },
+                {
+                  "name": "tabs",
+                  "direction": "horizontal",
+                  "description": "展开态标签栏"
+                },
+                {
+                  "name": "overview",
+                  "direction": "vertical",
+                  "description": "标签页概览"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "browser.bookmark.add",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "tabId": "string",
+                  "url": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "browser.bookmark.add",
+              "label": "保存当前网页书签",
+              "description": null,
+              "behavior": "other",
+              "scope": "item",
+              "paramsSchema": {
+                "tabId": "string",
+                "url": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Browser\\BookmarkButton.tsx",
+                "line": 20,
+                "col": 17
+              }
+            ],
+            "index": 1
+          }
+        ]
+      },
+      {
+        "nodes": [
+          "/",
+          "/view"
+        ],
+        "transitions": [
+          "view.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "browser.home.base",
+              "component": "BrowserHome",
+              "description": "浏览器首页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                },
+                {
+                  "name": "tabs",
+                  "direction": "horizontal",
+                  "description": "展开态标签栏"
+                },
+                {
+                  "name": "overview",
+                  "direction": "vertical",
+                  "description": "标签页概览"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "edge": {
+              "transitionId": "view.open",
+              "label": "打开网页浏览页",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/",
+              "target": "/view",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "search",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/view",
+              "routePath": "/view",
+              "uiStateId": "browser.view.base",
+              "component": "BrowserView",
+              "description": "网页浏览页",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                },
+                {
+                  "name": "tabs",
+                  "direction": "horizontal",
+                  "description": "展开态标签栏"
+                },
+                {
+                  "name": "overview",
+                  "direction": "vertical",
+                  "description": "标签页概览"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "view.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "search",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/view",
+              "routePath": "/view",
+              "uiStateId": "browser.view.base",
+              "component": "BrowserView",
+              "description": "网页浏览页",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                },
+                {
+                  "name": "tabs",
+                  "direction": "horizontal",
+                  "description": "展开态标签栏"
+                },
+                {
+                  "name": "overview",
+                  "direction": "vertical",
+                  "description": "标签页概览"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "browser.bookmark.add",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "tabId": "string",
+                  "url": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "browser.bookmark.add",
+              "label": "保存当前网页书签",
+              "description": null,
+              "behavior": "other",
+              "scope": "item",
+              "paramsSchema": {
+                "tabId": "string",
+                "url": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Browser\\BookmarkButton.tsx",
+                "line": 20,
+                "col": 17
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "browser.bookmark.add",
+      "label": "保存当前网页书签",
+      "description": null,
+      "behavior": "other",
+      "scope": "item",
+      "paramsSchema": {
+        "tabId": "string",
+        "url": "string"
+      }
+    }
+  },
+  {
+    "app": "browser",
+    "graphFile": "public\\browser_nav_graph.json",
+    "taskId": "browser:browser.page.reload",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/view",
+      "routePath": "/view",
+      "uiStateId": "browser.view.base"
+    },
+    "trajectoryCount": 3,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/view"
+        ],
+        "transitions": [
+          "history.forward.view"
+        ],
+        "length": 1
+      },
+      {
+        "nodes": [
+          "/",
+          "/view"
+        ],
+        "transitions": [
+          "tab.close.view"
+        ],
+        "length": 1
+      },
+      {
+        "nodes": [
+          "/",
+          "/view"
+        ],
+        "transitions": [
+          "view.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/view"
+        ],
+        "transitions": [
+          "history.forward.view"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "browser.home.base",
+              "component": "BrowserHome",
+              "description": "浏览器首页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                },
+                {
+                  "name": "tabs",
+                  "direction": "horizontal",
+                  "description": "展开态标签栏"
+                },
+                {
+                  "name": "overview",
+                  "direction": "vertical",
+                  "description": "标签页概览"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "edge": {
+              "transitionId": "history.forward.view",
+              "label": "前进到已有网页历史",
+              "type": "navigation",
+              "mode": "replace",
+              "source": "/",
+              "target": "/view",
+              "uiMeta": {
+                "placement": "topbar",
+                "icon": "forward",
+                "gesture": "tap"
+              },
+              "uiCondition": {
+                "op": "notEmpty",
+                "ref": "tabs",
+                "filterFn": "tab => Boolean(tab.history && Array.isArray(tab.history.entries) && Number.isInteger(tab.history.index) && tab.history.index + 1 < tab.history.entries.length)",
+                "text": "Requires forward history in the active source tab."
+              },
+              "fromConstraint": {
+                "path": "/",
+                "search": {
+                  "panel": null
+                }
+              },
+              "search": {},
+              "searchParams": {},
+              "params": {
+                "tabId": "string"
+              },
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/view",
+              "routePath": "/view",
+              "uiStateId": "browser.view.base",
+              "component": "BrowserView",
+              "description": "网页浏览页",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                },
+                {
+                  "name": "tabs",
+                  "direction": "horizontal",
+                  "description": "展开态标签栏"
+                },
+                {
+                  "name": "overview",
+                  "direction": "vertical",
+                  "description": "标签页概览"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "history.forward.view",
+                "dataTriggerType": "tap",
+                "paramsSchema": {
+                  "tabId": "string"
+                },
+                "searchParamsSchema": {}
+              },
+              "placement": "topbar",
+              "icon": "forward",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/view",
+              "routePath": "/view",
+              "uiStateId": "browser.view.base",
+              "component": "BrowserView",
+              "description": "网页浏览页",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                },
+                {
+                  "name": "tabs",
+                  "direction": "horizontal",
+                  "description": "展开态标签栏"
+                },
+                {
+                  "name": "overview",
+                  "direction": "vertical",
+                  "description": "标签页概览"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "browser.page.reload",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "tabId": "string",
+                  "url": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "browser.page.reload",
+              "label": "刷新当前网页",
+              "description": null,
+              "behavior": "other",
+              "scope": "item",
+              "paramsSchema": {
+                "tabId": "string",
+                "url": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Browser\\BrowserApp.tsx",
+                "line": 435,
+                "col": 35
+              }
+            ],
+            "index": 1
+          }
+        ]
+      },
+      {
+        "nodes": [
+          "/",
+          "/view"
+        ],
+        "transitions": [
+          "tab.close.view"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "browser.home.base",
+              "component": "BrowserHome",
+              "description": "浏览器首页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                },
+                {
+                  "name": "tabs",
+                  "direction": "horizontal",
+                  "description": "展开态标签栏"
+                },
+                {
+                  "name": "overview",
+                  "direction": "vertical",
+                  "description": "标签页概览"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "edge": {
+              "transitionId": "tab.close.view",
+              "label": "关闭标签页并保留或显示网页",
+              "type": "navigation",
+              "mode": "replace",
+              "source": "/",
+              "target": "/view",
+              "uiMeta": {
+                "placement": "topbar",
+                "icon": "close",
+                "gesture": "tap"
+              },
+              "uiCondition": {
+                "op": "notEmpty",
+                "ref": "tabs",
+                "filterFn": "tab => Boolean(tab.url)",
+                "text": "Requires an existing document tab; not a cold-default route to a webpage."
+              },
+              "fromConstraint": {
+                "path": "/",
+                "search": {
+                  "panel": null
+                }
+              },
+              "search": {},
+              "searchParams": {},
+              "params": {
+                "tabId": "string"
+              },
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/view",
+              "routePath": "/view",
+              "uiStateId": "browser.view.base",
+              "component": "BrowserView",
+              "description": "网页浏览页",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                },
+                {
+                  "name": "tabs",
+                  "direction": "horizontal",
+                  "description": "展开态标签栏"
+                },
+                {
+                  "name": "overview",
+                  "direction": "vertical",
+                  "description": "标签页概览"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "tab.close.view",
+                "dataTriggerType": "tap",
+                "paramsSchema": {
+                  "tabId": "string"
+                },
+                "searchParamsSchema": {}
+              },
+              "placement": "topbar",
+              "icon": "close",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/view",
+              "routePath": "/view",
+              "uiStateId": "browser.view.base",
+              "component": "BrowserView",
+              "description": "网页浏览页",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                },
+                {
+                  "name": "tabs",
+                  "direction": "horizontal",
+                  "description": "展开态标签栏"
+                },
+                {
+                  "name": "overview",
+                  "direction": "vertical",
+                  "description": "标签页概览"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "browser.page.reload",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "tabId": "string",
+                  "url": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "browser.page.reload",
+              "label": "刷新当前网页",
+              "description": null,
+              "behavior": "other",
+              "scope": "item",
+              "paramsSchema": {
+                "tabId": "string",
+                "url": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Browser\\BrowserApp.tsx",
+                "line": 435,
+                "col": 35
+              }
+            ],
+            "index": 1
+          }
+        ]
+      },
+      {
+        "nodes": [
+          "/",
+          "/view"
+        ],
+        "transitions": [
+          "view.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "browser.home.base",
+              "component": "BrowserHome",
+              "description": "浏览器首页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                },
+                {
+                  "name": "tabs",
+                  "direction": "horizontal",
+                  "description": "展开态标签栏"
+                },
+                {
+                  "name": "overview",
+                  "direction": "vertical",
+                  "description": "标签页概览"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "edge": {
+              "transitionId": "view.open",
+              "label": "打开网页浏览页",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/",
+              "target": "/view",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "search",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/view",
+              "routePath": "/view",
+              "uiStateId": "browser.view.base",
+              "component": "BrowserView",
+              "description": "网页浏览页",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                },
+                {
+                  "name": "tabs",
+                  "direction": "horizontal",
+                  "description": "展开态标签栏"
+                },
+                {
+                  "name": "overview",
+                  "direction": "vertical",
+                  "description": "标签页概览"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "view.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "search",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/view",
+              "routePath": "/view",
+              "uiStateId": "browser.view.base",
+              "component": "BrowserView",
+              "description": "网页浏览页",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                },
+                {
+                  "name": "tabs",
+                  "direction": "horizontal",
+                  "description": "展开态标签栏"
+                },
+                {
+                  "name": "overview",
+                  "direction": "vertical",
+                  "description": "标签页概览"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "browser.page.reload",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "tabId": "string",
+                  "url": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "browser.page.reload",
+              "label": "刷新当前网页",
+              "description": null,
+              "behavior": "other",
+              "scope": "item",
+              "paramsSchema": {
+                "tabId": "string",
+                "url": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "system\\Browser\\BrowserApp.tsx",
+                "line": 435,
+                "col": 35
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "browser.page.reload",
+      "label": "刷新当前网页",
+      "description": null,
+      "behavior": "other",
+      "scope": "item",
+      "paramsSchema": {
+        "tabId": "string",
+        "url": "string"
+      }
+    }
+  }
+]

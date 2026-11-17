@@ -1,0 +1,12 @@
+{
+  "source": "calculator",
+  "target": "notes",
+  "data": {
+    "a": 128,
+    "b": 36,
+    "result": 4608
+  },
+  "target_text": "4608",
+  "title": "信息记录 · 计算器",
+  "chat_name": "陈宁（研发）"
+}

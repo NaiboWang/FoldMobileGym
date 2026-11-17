@@ -1,0 +1,293 @@
+{
+  "app": "calculator2",
+  "appDir": "system\\Calculator2",
+  "mode": "schema",
+  "routeCount": 1,
+  "edgeCount": 0,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "component": "CalculatorPage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "基本计算面板",
+      "stateCount": 2,
+      "states": [
+        "/",
+        "/?panel=advanced"
+      ],
+      "actionCount": 30,
+      "actionIds": [
+        "calc.digit.0",
+        "calc.digit.1",
+        "calc.digit.2",
+        "calc.digit.3",
+        "calc.digit.4",
+        "calc.digit.5",
+        "calc.digit.6",
+        "calc.digit.7",
+        "calc.digit.8",
+        "calc.digit.9",
+        "calc.input.decimal",
+        "calc.operator.add",
+        "calc.operator.subtract",
+        "calc.operator.multiply",
+        "calc.operator.divide",
+        "calc.edit.delete",
+        "calc.edit.clear",
+        "calc.result.evaluate",
+        "calc.function.sin",
+        "calc.function.cos",
+        "calc.function.tan",
+        "calc.function.ln",
+        "calc.function.log",
+        "calc.function.sqrt",
+        "calc.operator.factorial",
+        "calc.operator.power",
+        "calc.constant.pi",
+        "calc.constant.e",
+        "calc.parenthesis.left",
+        "calc.parenthesis.right"
+      ],
+      "actions": [
+        {
+          "id": "calc.digit.0",
+          "label": "输入 0",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.digit.1",
+          "label": "输入 1",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.digit.2",
+          "label": "输入 2",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.digit.3",
+          "label": "输入 3",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.digit.4",
+          "label": "输入 4",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.digit.5",
+          "label": "输入 5",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.digit.6",
+          "label": "输入 6",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.digit.7",
+          "label": "输入 7",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.digit.8",
+          "label": "输入 8",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.digit.9",
+          "label": "输入 9",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.input.decimal",
+          "label": "输入小数点",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.operator.add",
+          "label": "加",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.operator.subtract",
+          "label": "减",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.operator.multiply",
+          "label": "乘",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.operator.divide",
+          "label": "除",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.edit.delete",
+          "label": "删除一位",
+          "behavior": "other"
+        },
+        {
+          "id": "calc.edit.clear",
+          "label": "清空结果",
+          "behavior": "other"
+        },
+        {
+          "id": "calc.result.evaluate",
+          "label": "计算结果",
+          "behavior": "submit"
+        },
+        {
+          "id": "calc.function.sin",
+          "label": "sin",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.function.cos",
+          "label": "cos",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.function.tan",
+          "label": "tan",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.function.ln",
+          "label": "ln",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.function.log",
+          "label": "log",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.function.sqrt",
+          "label": "平方根",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.operator.factorial",
+          "label": "阶乘",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.operator.power",
+          "label": "幂",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.constant.pi",
+          "label": "π",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.constant.e",
+          "label": "e",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.parenthesis.left",
+          "label": "左括号",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calc.parenthesis.right",
+          "label": "右括号",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        }
+      ]
+    }
+  ],
+  "edges": []
+}

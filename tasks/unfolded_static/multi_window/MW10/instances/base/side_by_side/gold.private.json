@@ -1,0 +1,14 @@
+{
+  "source": "reddit",
+  "target": "notes",
+  "data": {
+    "id": "my_post_1",
+    "title": "周末桌游活动安排",
+    "when": "11月7日15:00",
+    "place": "社区二楼活动室",
+    "items": "水杯和会员卡"
+  },
+  "target_text": "11月7日；15:00；社区二楼活动室；水杯；会员卡",
+  "title": "信息记录 · Reddit",
+  "chat_name": "陈宁（研发）"
+}

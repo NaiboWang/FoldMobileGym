@@ -1,0 +1,153 @@
+
+.mroot{height:100%;container-type:inline-size;background:#f6f8fc;color:#1f1f1f;font-family:Inter,"Microsoft YaHei",sans-serif}.mroot .mlayout{height:100%;display:grid;grid-template-columns:1fr;overflow:hidden}.mroot .mlist{padding:14px 12px;background:#f6f8fc;overflow:auto}.mroot .mbrand{height:52px;display:flex;align-items:center;gap:10px;padding:0 8px;font-size:22px;font-weight:600}.mroot .mbrand svg{width:34px;height:34px}.mroot .compose{width:150px;min-height:52px;border:0;border-radius:16px;background:#c2e7ff;color:#001d35;display:flex;align-items:center;justify-content:center;gap:10px;font-weight:600;box-shadow:0 1px 2px #0002;margin:8px 4px 16px}.mroot .section-label{display:flex;align-items:center;gap:10px;padding:10px;border-radius:20px;background:#d3e3fd;color:#041e49;font-weight:650}.mroot .mrow{width:100%;border:0;border-bottom:1px solid #e0e3e7;background:transparent;padding:14px 10px;text-align:left;color:inherit}.mroot .mrow.active{background:#d3e3fd;border-radius:14px}.mroot .mrow p{margin:5px 0}.mroot .mrow small{color:#5f6368}.mroot .mdetail,.mroot .mcompose{display:none;padding:24px;background:#fff;overflow:auto}.mroot .mdetail.show,.mroot .mcompose.show{display:block}.mroot .message-actions{display:flex;gap:16px;color:#5f6368}.mroot .body{white-space:pre-wrap;line-height:1.8;padding:20px;border-radius:16px;background:#f6f8fc;margin-top:18px}.mroot .verify,.mroot .draft-save{margin-top:20px;border:0;border-radius:20px;background:#0b57d0;color:#fff;min-height:44px;padding:10px 18px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:650}.mroot .compose-head{display:flex;align-items:center;justify-content:space-between}.mroot .compose-head button{border:0;background:transparent;border-radius:50%;width:44px;height:44px}.mroot .compose-form{display:flex;flex-direction:column;margin-top:14px}.mroot .compose-form input,.mroot .compose-form textarea{border:0;border-bottom:1px solid #e0e3e7;padding:15px 4px;font:inherit;outline:none}.mroot .compose-form textarea{min-height:220px;resize:none}.mroot .compose-form input:focus,.mroot .compose-form textarea:focus{border-bottom-color:#0b57d0}.mroot .draft-save:disabled{opacity:.4}@container(min-width:600px){.mroot .mlayout{grid-template-columns:320px minmax(0,1fr)}.mroot .mlist{border-right:1px solid #e0e3e7}.mroot .mdetail,.mroot .mcompose{display:block}.mroot .empty-mail{display:flex;align-items:center;justify-content:center;color:#5f6368;background:#fff}}@container(max-width:599px){.mroot .mlayout.open .mlist{display:none}.mroot .mdetail,.mroot .mcompose{padding:18px}}
+.mroot .mlayout { min-width: 0; min-height: 0; grid-template-rows: minmax(0, 1fr); }
+.mroot .message-actions { align-items: center; }
+.mroot .mail-reader-archive { width: 36px; height: 36px; display: grid; place-items: center; flex-shrink: 0; border: 0; border-radius: 50%; background: transparent; color: inherit; }
+.mroot .mail-reader-archive:active { background: #5f636812; }
+.mroot .mail-reader-archive:disabled { opacity: .4; }
+.mroot .mail-reader-more { width: 36px; height: 36px; display: grid; place-items: center; flex-shrink: 0; border: 0; border-radius: 50%; background: transparent; color: inherit; }
+.mroot .mail-reader-menu-overlay { z-index: 50; }
+.mroot .mail-reader-menu { position: absolute; top: 64px; right: 16px; width: min(300px, calc(100% - 32px)); max-height: calc(100% - 80px); overflow-y: auto; box-sizing: border-box; padding: 18px; border-radius: 14px; background: #fff; color: #3c4043; box-shadow: 0 8px 28px #0003; }
+.mroot .mail-reader-menu h2 { margin: 0 0 12px; font-size: 17px; }
+.mroot .mail-reader-menu p { margin: 0 0 12px; font-size: 13px; overflow-wrap: anywhere; }
+.mroot .mail-reader-menu button { display: block; width: 100%; min-height: 44px; margin-top: 8px; padding: 10px; border: 0; border-radius: 8px; background: #f1f3f4; color: inherit; text-align: left; font-size: 14px; }
+.mroot .mail-reader-menu button:disabled { opacity: .45; }
+.mroot .mlist,
+.mroot .mdetail,
+.mroot .mcompose { min-width: 0; min-height: 0; overflow-wrap: anywhere; }
+.mroot .mrow { min-width: 0; overflow-wrap: anywhere; }
+.mroot .mrow b { display: block; line-height: 1.45; }
+.mroot .mrow p { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mroot .compose-head { flex-shrink: 0; gap: 12px; }
+.mroot .compose-head h2 { min-width: 0; }
+.mroot .compose-head button { flex-shrink: 0; }
+.mroot .mcompose.show { display: flex; flex-direction: column; overflow: hidden; }
+.mroot .compose-form { flex: 1; min-height: 0; min-width: 0; overflow-y: auto; }
+.mroot .compose-form input,
+.mroot .compose-form textarea { width: 100%; min-width: 0; flex-shrink: 0; box-sizing: border-box; }
+.mroot .draft-save { flex-shrink: 0; align-self: flex-start; }
+.mroot .body { overflow-wrap: anywhere; }
+@container (min-width: 600px) {
+  .mroot .mlayout { grid-template-columns: minmax(0, 48%) minmax(0, 1fr); }
+}
+.mroot .mrow { display: flex; align-items: flex-start; gap: 10px; padding: 14px 4px; }
+.mail-reference-avatar { display: grid; place-items: center; flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: #e0e5eb; color: #63707d; font-size: 17px; }
+.mail-reference-row-copy { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.mail-reference-row-copy > * { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.mroot .mail-reference-row-copy b { font-size: 14px; font-weight: 650; }
+.mail-reference-row-copy > span { font-size: 13px; }
+.mroot .mrow[data-mail-unread="true"] .mail-reference-row-copy > b,
+.mroot .mrow[data-mail-unread="true"] .mail-reference-row-copy > span { font-weight: 700; }
+.mroot .mail-unread-badge { display: block; color: #0b57d0; font-size: 11px; font-weight: 700; }
+.mail-reference-row-copy small { font-size: 12px; }
+.mail-reference-date { flex-shrink: 0; width: 64px; font-size: 10px; line-height: 1.5; text-align: right; }
+.mail-reference-empty { display: flex; flex-direction: column; align-items: center; gap: 28px; font-size: 14px; }
+.mail-reference-envelopes { width: 100px; height: 74px; display: block; position: relative; }
+.mail-reference-envelopes::before,
+.mail-reference-envelopes::after {
+  content: ''; position: absolute; width: 68px; height: 48px; border-radius: 4px;
+  background: linear-gradient(30deg, transparent 49%, #ffe697 50%, #ffd45a 53%, transparent 54%),
+    linear-gradient(-30deg, #ffcd40 49%, #fff0ac 50%); box-shadow: 0 6px 8px #7463231c;
+}
+.mail-reference-envelopes::before { top: 0; right: 0; transform: rotate(10deg); }
+.mail-reference-envelopes::after { bottom: 0; left: 0; transform: rotate(-8deg); }
+@container (max-width: 599px) {
+  .mroot .empty-mail { display: none; }
+}
+
+.mroot .compose-head h2 { flex: 1; }
+.mroot .compose-head button:disabled { opacity: .4; }
+.mroot .mail-attachments { flex-shrink: 0; display: flex; flex-direction: column; gap: 8px; padding: 12px 0; }
+.mroot .mail-attachment { display: flex; align-items: center; gap: 10px; border: 1px solid #dadce0; border-radius: 10px; padding: 10px; }
+.mroot .mail-attachment-copy { min-width: 0; flex: 1; display: flex; flex-direction: column; overflow-wrap: anywhere; }
+.mroot .mail-attachment-path { white-space: pre-wrap; color: #5f6368; }
+.mroot .mail-attachment button { border: 0; background: transparent; width: 36px; height: 36px; flex-shrink: 0; }
+
+.mroot [hidden] { display: none !important; }
+.mroot .mail-search-owner { min-width: 0; min-height: 0; height: 100%; overflow: hidden; }
+.mroot .mail-search-panel { height: 100%; min-height: 0; min-width: 0; display: flex; flex-direction: column; background: #f6f8fc; }
+.mroot .mail-search-launch { display: flex; gap: 12px; align-items: center; min-height: 48px; width: 100%; border: 0; border-radius: 24px; padding: 12px 16px; background: #eaf1fb; color: #44546b; text-align: left; }
+.mroot .mail-search-header { display: flex; align-items: center; gap: 6px; padding: 12px 8px; flex-shrink: 0; }
+.mroot .mail-search-header > button, .mroot .mail-search-input button, .mroot .mail-reader-back { display: grid; place-items: center; border: 0; background: transparent; border-radius: 50%; width: 44px; height: 44px; flex-shrink: 0; }
+.mroot .mail-search-input { min-width: 0; flex: 1; display: flex; align-items: center; gap: 8px; padding: 0 10px; background: #eaf1fb; border-radius: 26px; }
+.mroot .mail-search-input > svg { flex-shrink: 0; }
+.mroot .mail-search-input input { min-width: 0; flex: 1; width: 0; min-height: 48px; background: transparent; border: 0; outline-offset: 2px; font: inherit; }
+.mroot .mail-search-intro { padding: 0 16px 12px; font-size: 12px; color: #5f6368; flex-shrink: 0; }
+.mroot .mail-search-intro p { margin: 6px 0; }
+.mroot .mail-search-help { line-height: 1.5; }
+.mroot .mail-search-results { min-height: 0; min-width: 0; overflow-y: auto; overscroll-behavior: contain; flex: 1; padding-inline: 8px; }
+.mroot .mail-search-result { height: 90px; box-sizing: border-box; overflow: hidden; align-items: center; }
+.mroot .mail-search-kind { width: 44px; flex-shrink: 0; font-size: 11px; text-align: right; color: #5f6368; }
+.mroot .mail-search-empty { padding: 32px 16px; line-height: 1.6; color: #5f6368; }
+.mroot .mlayout[data-mail-compose-active="true"] { grid-template-columns: minmax(0, 1fr); }
+.mroot .mcompose { width: 100%; box-sizing: border-box; }
+.mroot .mcompose .compose-head, .mroot .mcompose .compose-form, .mroot .mcompose .mail-local-only { width: min(100%, 760px); margin-inline: auto; }
+.mroot .mcompose .draft-save { margin-left: max(0px, calc((100% - 760px)/2)); }
+.mroot .mail-local-only { color: #5f6368; font-size: 12px; padding-block: 10px; }
+.mroot .mail-search-unavailable { line-height: 1.8; }
+@container (max-width: 599px) { .mroot .mlayout.open .mail-search-owner { display: none; } }
+.mroot .compose-head h2 { order: 1; }
+.mroot .mail-recovery-list { margin-top: 16px; padding: 12px 0; border-top: 1px solid #dadce0; }
+.mroot .mail-recovery-list h2 { font-size: 14px; margin: 8px 0; }
+.mroot .mail-recovery-list p { font-size: 12px; line-height: 1.5; color: #5f6368; }
+.mroot .mail-recovery-list button:disabled { opacity: .45; }
+.mroot .mail-reply { height: 100%; min-height: 0; display: flex; flex-direction: column; padding: 16px; box-sizing: border-box; background: #fff; }
+.mroot .mail-reply > * { width: min(100%, 760px); margin-inline: auto; box-sizing: border-box; }
+.mroot .mail-reply-scroll { flex: 1; min-height: 0; overflow-y: auto; overflow-wrap: anywhere; }
+.mroot .mail-reply-context { padding: 14px; border-radius: 12px; background: #f6f8fc; line-height: 1.5; }
+.mroot .mail-reply-context p { margin-block: 8px; }
+.mroot .mail-reply-original { white-space: pre-wrap; }
+.mroot .mail-reply textarea { display: block; width: 100%; box-sizing: border-box; min-height: 160px; resize: vertical; border: 1px solid #dadce0; border-radius: 8px; padding: 12px; font: inherit; }
+.mroot .mail-reply .draft-save { flex-shrink: 0; width: auto; align-self: flex-start; margin-top: 12px; }
+
+/* The recorded unselected inbox occupies the full screen; a reader adds its pane. */
+.mroot .mlayout:not(.open):not([data-mail-search-active="true"]) {
+  grid-template-columns: minmax(0, 1fr);
+}
+.mroot .mlayout:not(.open):not([data-mail-search-active="true"]) > .empty-mail {
+  display: none;
+}
+
+/* Reader hierarchy observed in the Magic V5 Gmail sequence (02:24–02:40). */
+.mroot .mdetail .message-actions { align-items: center; min-height: 44px; }
+.mroot .mail-reader-subject { margin: 20px 0 24px; font-size: 22px; line-height: 1.4; font-weight: 400; }
+.mroot .mail-reader-sender { display: flex; align-items: flex-start; gap: 12px; }
+.mroot .mail-reader-sender .mail-reference-avatar { width: 40px; height: 40px; }
+.mroot .mail-reader-sender-copy { flex: 1; min-width: 0; }
+.mroot .mail-reader-sender-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.mroot .mail-reader-sender-heading strong { font-size: 14px; font-weight: 600; }
+.mroot .mail-reader-sender-heading small { color: #5f6368; font-size: 11px; }
+.mroot .mail-reader-sender .sender-address { margin: 4px 0 0; font-size: 12px; line-height: 1.5; color: #5f6368; }
+.mroot .mdetail .body { margin-top: 24px; padding: 0; border-radius: 0; background: transparent; font-size: 14px; line-height: 1.7; }
+.mroot .mdetail .verify:disabled { opacity: .4; }
+
+/* The recorded composer retains its recipient label while editing. */
+.mroot .mail-compose-recipient { display: flex; align-items: center; gap: 12px; flex-shrink: 0; min-width: 0; padding: 15px 4px; border-bottom: 1px solid #e0e3e7; font-size: 14px; }
+.mroot .mail-compose-recipient > span { flex-shrink: 0; color: #5f6368; }
+.mroot .compose-form .mail-compose-recipient > input { flex: 1; width: 0; min-width: 0; padding: 0; border: 0; background: transparent; line-height: 24px; }
+.mroot .mail-compose-recipient:focus-within { border-bottom-color: #0b57d0; }
+.mroot .mcompose .compose-form > input,
+.mroot .mcompose .compose-form > textarea { font-size: 14px; background: transparent; }
+.mroot .mcompose .compose-form > textarea { border: 0; line-height: 1.7; }
+
+.mroot .mail-reader-title { display: flex; align-items: flex-start; gap: 12px; }
+.mroot .mail-reader-title .mail-reader-subject { flex: 1; min-width: 0; }
+.mroot .mail-reader-star { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; margin-top: 12px; border: 0; border-radius: 50%; color: #5f6368; background: transparent; }
+.mroot .mail-reader-star[aria-pressed="true"],
+.mroot .mail-reference-starred { color: #f4b400; }
+.mroot .mail-reader-star[aria-pressed="true"] svg,
+.mroot .mail-reference-starred svg { fill: currentColor; }
+.mroot .mail-reference-starred { display: flex; justify-content: flex-end; margin-top: 8px; }
+
+.mroot { position: relative; }
+.mroot .mail-folder-launch { display: grid; place-items: center; width: 44px; height: 44px; flex-shrink: 0; border: 0; border-radius: 50%; background: transparent; color: #5f6368; }
+.mroot .mbrand .mail-folder-launch svg { width: 23px; height: 23px; }
+.mroot .mail-folder-overlay { position: absolute; inset: 0; z-index: 40; }
+.mroot .mail-folder-backdrop { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #0006; }
+.mroot .mail-folder-drawer { position: absolute; inset: 0 auto 0 0; width: min(360px, 85%); padding: 12px 8px; box-sizing: border-box; overflow-y: auto; background: #f6f8fc; box-shadow: 6px 0 20px #0002; }
+.mroot .mail-folder-brand { display: flex; align-items: center; gap: 12px; padding: 10px 18px 24px; font-size: 22px; }
+.mroot .mail-folder-brand > svg { width: 32px; height: 32px; }
+.mroot .mail-folder-drawer > button { display: flex; align-items: center; gap: 20px; width: 100%; min-height: 52px; border: 0; border-radius: 26px; padding: 12px 20px; background: transparent; color: #3c4043; text-align: left; font: inherit; font-size: 14px; }
+.mroot .mail-folder-drawer > button[aria-current="page"] { background: #d3e3fd; color: #041e49; font-weight: 600; }
+.mroot .mail-folder-drawer > button > span { flex: 1; min-width: 0; }
+.mroot .mail-folder-empty { padding: 24px 12px; color: #5f6368; font-size: 14px; }

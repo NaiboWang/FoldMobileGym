@@ -1,0 +1,241 @@
+.sms-compose-root { position: relative; min-width: 0; min-height: 0; }
+.sms-compose-error-backdrop { position: absolute; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; padding: 24px; background: #0006; }
+.sms-compose-error-dialog { width: min(100%, 280px); max-height: 100%; overflow-y: auto; border-radius: 20px; padding: 24px; background: var(--app-surface, #fff); color: var(--app-text, #111827); text-align: center; overflow-wrap: anywhere; }
+.sms-compose-error-dialog h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+.sms-compose-error-dialog p { font-size: 14px; color: var(--app-text-secondary, #6b7280); }
+.sms-compose-error-dialog button { width: 100%; margin-top: 20px; padding: 12px; border-top: 1px solid #8883; color: #2563eb; }
+.sms-compose-recipient-row { display: flex; align-items: center; min-width: 0; }
+.sms-compose-recipient-row input { min-width: 0; }
+.sms-compose-empty-contacts { padding: 24px; color: var(--app-text-secondary, #6b7280); }
+
+.sms-contact-picker {
+  container-type: inline-size;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #24262b;
+  background: #fff;
+}
+.sms-contact-picker-status { height: 40px; flex: 0 0 auto; }
+.sms-contact-picker-header {
+  height: 44px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+.sms-contact-picker-cancel {
+  min-width: 96px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  color: #22252b;
+  font-size: 14px;
+  font-weight: 600;
+}
+.sms-contact-picker-cancel::before {
+  content: "‹";
+  margin-right: 5px;
+  font-size: 27px;
+  line-height: 1;
+  font-weight: 400;
+}
+.sms-contact-picker-confirm {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  color: #22252b;
+  border-radius: 50%;
+}
+.sms-contact-picker-confirm:active { background: #f2f3f5; }
+.sms-contact-picker-tabs {
+  height: 32px;
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  margin: 0 12px 8px;
+  padding: 2px;
+  color: #61646b;
+  font-size: 11px;
+  text-align: center;
+  border-radius: 17px;
+  background: #f1f1f3;
+}
+.sms-contact-picker-tabs span {
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+}
+.sms-contact-picker-tabs span.is-active {
+  color: #24262b;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(33, 35, 42, .10);
+  font-weight: 600;
+}
+.sms-contact-picker-search {
+  height: 38px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 12px 8px;
+  padding: 0 11px;
+  border-radius: 19px;
+  background: #f4f4f6;
+}
+.sms-contact-picker-search > span { color: #858991; font-size: 20px; transform: rotate(-20deg); }
+.sms-contact-picker-search input {
+  min-width: 0;
+  flex: 1 1 auto;
+  color: #202228;
+  font-size: 13px;
+  outline: none;
+  background: transparent;
+}
+.sms-contact-picker-search button {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  color: #8d9097;
+  font-size: 18px;
+  border-radius: 50%;
+}
+.sms-contact-picker-safety {
+  min-height: 52px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 12px 8px;
+  padding: 7px 10px;
+  border-radius: 12px;
+  color: #454951;
+  background: linear-gradient(90deg, #f2f2f3, #f7f7f8);
+}
+.sms-contact-picker-safety > span {
+  width: 31px;
+  height: 31px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  border-radius: 9px;
+  background: linear-gradient(145deg, #6d7fff, #24cbb2);
+  box-shadow: 0 2px 7px rgba(63, 113, 222, .22);
+}
+.sms-contact-picker-safety div { min-width: 0; display: flex; flex-direction: column; }
+.sms-contact-picker-safety strong { font-size: 12px; font-weight: 600; }
+.sms-contact-picker-safety small {
+  margin-top: 2px;
+  overflow: hidden;
+  color: #8b8e95;
+  font-size: 9px;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sms-contact-picker-count {
+  height: 24px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 17px;
+  color: #8b8e95;
+  font-size: 10px;
+}
+.sms-contact-picker-list {
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.sms-contact-picker-list::-webkit-scrollbar { display: none; }
+.sms-contact-picker-row {
+  width: 100%;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 6px 15px;
+  text-align: left;
+}
+.sms-contact-picker-row:active { background: #f7f7f8; }
+.sms-contact-picker-avatar {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 50%;
+}
+.sms-contact-picker-copy { min-width: 0; flex: 1 1 auto; display: flex; flex-direction: column; }
+.sms-contact-picker-copy strong {
+  overflow: hidden;
+  color: #25272d;
+  font-size: 13px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sms-contact-picker-copy small {
+  margin-top: 2px;
+  overflow: hidden;
+  color: #9a9da4;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sms-contact-picker-radio {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 11px;
+  border: 1px solid #d2d4d8;
+  border-radius: 50%;
+}
+.sms-contact-picker-row[data-selected] .sms-contact-picker-radio {
+  border-color: #27c76f;
+  background: #27c76f;
+}
+.sms-contact-picker-footer {
+  height: 48px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  color: #30333a;
+  border-top: 1px solid #f0f0f2;
+  background: rgba(255, 255, 255, .96);
+}
+.sms-contact-picker-footer small { font-size: 9px; }
+
+@container (min-width: 620px) {
+  .sms-contact-picker-header,
+  .sms-contact-picker-tabs,
+  .sms-contact-picker-search,
+  .sms-contact-picker-safety,
+  .sms-contact-picker-count,
+  .sms-contact-picker-row {
+    max-width: 720px;
+    width: calc(100% - 32px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sms-contact-picker-tabs { width: calc(100% - 56px); }
+  .sms-contact-picker-row { padding-left: 18px; padding-right: 18px; }
+}

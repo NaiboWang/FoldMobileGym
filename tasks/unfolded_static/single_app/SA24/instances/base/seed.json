@@ -1,0 +1,38 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "pair_id": "J84",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "apps": {
+    "x": {}
+  },
+  "raw_apps": {
+    "x": {
+      "posts": {
+        "p_1879539450872778943": {
+          "id": "p_1879539450872778943",
+          "authorId": "yuyy614893671",
+          "content": "今天整理了开发环境，准备周末完成阅读计划",
+          "time": "3h",
+          "stats": {
+            "comments": 89,
+            "retweets": 45,
+            "likes": 890,
+            "views": 23000
+          },
+          "tweetUrl": "https://x.com/yuyy614893671/status/1879539450872778943"
+        }
+      }
+    }
+  },
+  "os": {}
+}

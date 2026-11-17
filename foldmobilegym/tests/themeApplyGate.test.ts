@@ -1,0 +1,10 @@
+import {describe, expect, it} from 'vitest';
+import {ThemeApplyGate} from '../system/ThemeStore/applyGate';
+describe('Theme Apply request ownership',()=>{
+ it('rejects a stale or background source before any write',async()=>{const gate=new ThemeApplyGate();let writes=0;expect(await gate.run(()=>false,()=>{writes++;})).toBe(false);expect(writes).toBe(0);});
+ it('claims synchronously before a second same-turn activation',async()=>{const gate=new ThemeApplyGate();let writes=0;const first=gate.run(()=>true,()=>{writes++;});const second=gate.run(()=>true,()=>{writes++;});expect(await first).toBe(true);expect(await second).toBe(false);expect(writes).toBe(1);});
+ it('keeps its claim until actual async completion',async()=>{const gate=new ThemeApplyGate();let release!:()=>void;const pending=new Promise<void>(resolve=>{release=resolve;});const first=gate.run(()=>true,()=>pending);expect(await gate.run(()=>true,()=>{})).toBe(false);release();await first;expect(await gate.run(()=>true,()=>{})).toBe(true);});
+ it('releases on failure so an explicit retry still works',async()=>{const gate=new ThemeApplyGate();await expect(gate.run(()=>true,()=>{throw Error('actual failure');})).rejects.toThrow('actual failure');expect(await gate.run(()=>true,()=>{})).toBe(true);});
+ it('does not roll back a globally accepted user operation after leaving the page',async()=>{const gate=new ThemeApplyGate();let visible=true,release!:()=>void,writes=0;const first=gate.run(()=>visible,async()=>{await new Promise<void>(resolve=>{release=resolve;});writes++;});visible=false;release();expect(await first).toBe(true);expect(writes).toBe(1);expect(await gate.run(()=>visible,()=>{writes++;})).toBe(false);});
+ it('allows a later deliberate activation and does not lock another Activity instance',async()=>{const first=new ThemeApplyGate(),other=new ThemeApplyGate();let writes=0;expect(await first.run(()=>true,()=>{writes++;})).toBe(true);expect(await first.run(()=>true,()=>{writes++;})).toBe(true);expect(await other.run(()=>true,()=>{writes++;})).toBe(true);expect(writes).toBe(3);});
+});

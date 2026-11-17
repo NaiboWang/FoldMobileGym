@@ -1,0 +1,67 @@
+/* Same post/media/editor DOM in both layouts. Narrow split panes stay single-column. */
+.redbook-detail-layout[data-wide="true"] {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+}
+.redbook-detail-layout[data-wide="true"] > .redbook-detail-header {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  min-height: 0;
+  padding: 44px 16px 12px;
+  border-bottom: 0;
+}
+.redbook-detail-layout[data-wide="true"] .redbook-detail-back {
+  position: absolute;
+  left: 16px;
+  top: 44px;
+  z-index: 20;
+}
+.redbook-detail-layout[data-wide="true"] > .redbook-detail-content {
+  display: contents;
+}
+.redbook-detail-layout[data-wide="true"] .redbook-detail-media {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  align-self: center;
+  justify-self: center;
+  width: calc(100% - 32px);
+  max-height: calc(100% - 112px);
+  min-height: 0;
+  background: transparent;
+}
+.redbook-detail-layout[data-wide="true"] .redbook-detail-media > img,
+.redbook-detail-layout[data-wide="true"] .redbook-detail-media > video {
+  border-radius: 14px;
+}
+.redbook-detail-layout[data-wide="true"] .redbook-detail-indicators {
+  bottom: -18px;
+}
+.redbook-detail-layout[data-wide="true"] .redbook-detail-indicators > div:not(.bg-app-primary) {
+  background: #d1d5db;
+}
+.redbook-detail-layout[data-wide="true"] .redbook-detail-article {
+  grid-column: 2;
+  grid-row: 2;
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+  padding-top: 8px;
+}
+.redbook-detail-layout[data-wide="true"] > .redbook-detail-bar {
+  grid-column: 2;
+  grid-row: 3;
+  min-width: 0;
+}
+.redbook-detail-layout[data-wide="true"] .redbook-detail-actions {
+  gap: 16px;
+}
+.redbook-detail-layout[data-wide="true"] .redbook-detail-actions > div {
+  flex-direction: row;
+  gap: 4px;
+}
+.redbook-detail-layout[data-wide="true"] .redbook-detail-bar input {
+  min-width: 0;
+}

@@ -1,0 +1,2120 @@
+[
+  {
+    "app": "file_manager",
+    "graphFile": "public\\filemanager_nav_graph.json",
+    "taskId": "file_manager:file.settings.autoCollect.toggle",
+    "start": {
+      "nodeId": "/?transferPath=:transferPath"
+    },
+    "target": {
+      "nodeId": "/settings",
+      "routePath": "/settings",
+      "uiStateId": "settings.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/?transferPath=:transferPath",
+          "/settings"
+        ],
+        "transitions": [
+          "settings.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/?transferPath=:transferPath",
+          "/settings"
+        ],
+        "transitions": [
+          "settings.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/?transferPath=:transferPath",
+              "routePath": "/",
+              "uiStateId": "browse.base",
+              "component": "BrowseHomePage",
+              "description": "浏览主页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "settings.open",
+              "label": "打开文件管理设置",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/?transferPath=:transferPath",
+              "target": "/settings",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "settings",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/settings",
+              "routePath": "/settings",
+              "uiStateId": "settings.base",
+              "component": "SettingsPage",
+              "description": "文件管理设置",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 4
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "settings.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "settings",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/settings",
+              "routePath": "/settings",
+              "uiStateId": "settings.base",
+              "component": "SettingsPage",
+              "description": "文件管理设置",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 4
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "file.settings.autoCollect.toggle",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "file.settings.autoCollect.toggle",
+              "label": "切换文档自动收藏",
+              "description": null,
+              "behavior": "toggle",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "file.settings.autoCollect.toggle",
+      "label": "切换文档自动收藏",
+      "description": null,
+      "behavior": "toggle",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "file_manager",
+    "graphFile": "public\\filemanager_nav_graph.json",
+    "taskId": "file_manager:file.settings.hidden.toggle",
+    "start": {
+      "nodeId": "/?transferPath=:transferPath"
+    },
+    "target": {
+      "nodeId": "/settings",
+      "routePath": "/settings",
+      "uiStateId": "settings.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/?transferPath=:transferPath",
+          "/settings"
+        ],
+        "transitions": [
+          "settings.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/?transferPath=:transferPath",
+          "/settings"
+        ],
+        "transitions": [
+          "settings.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/?transferPath=:transferPath",
+              "routePath": "/",
+              "uiStateId": "browse.base",
+              "component": "BrowseHomePage",
+              "description": "浏览主页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "settings.open",
+              "label": "打开文件管理设置",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/?transferPath=:transferPath",
+              "target": "/settings",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "settings",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/settings",
+              "routePath": "/settings",
+              "uiStateId": "settings.base",
+              "component": "SettingsPage",
+              "description": "文件管理设置",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 4
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "settings.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "settings",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/settings",
+              "routePath": "/settings",
+              "uiStateId": "settings.base",
+              "component": "SettingsPage",
+              "description": "文件管理设置",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 4
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "file.settings.hidden.toggle",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "file.settings.hidden.toggle",
+              "label": "切换隐藏文件显示",
+              "description": null,
+              "behavior": "toggle",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "file.settings.hidden.toggle",
+      "label": "切换隐藏文件显示",
+      "description": null,
+      "behavior": "toggle",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "file_manager",
+    "graphFile": "public\\filemanager_nav_graph.json",
+    "taskId": "file_manager:file.settings.mobileData.toggle",
+    "start": {
+      "nodeId": "/?transferPath=:transferPath"
+    },
+    "target": {
+      "nodeId": "/settings",
+      "routePath": "/settings",
+      "uiStateId": "settings.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/?transferPath=:transferPath",
+          "/settings"
+        ],
+        "transitions": [
+          "settings.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/?transferPath=:transferPath",
+          "/settings"
+        ],
+        "transitions": [
+          "settings.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/?transferPath=:transferPath",
+              "routePath": "/",
+              "uiStateId": "browse.base",
+              "component": "BrowseHomePage",
+              "description": "浏览主页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "settings.open",
+              "label": "打开文件管理设置",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/?transferPath=:transferPath",
+              "target": "/settings",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "settings",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/settings",
+              "routePath": "/settings",
+              "uiStateId": "settings.base",
+              "component": "SettingsPage",
+              "description": "文件管理设置",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 4
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "settings.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "settings",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/settings",
+              "routePath": "/settings",
+              "uiStateId": "settings.base",
+              "component": "SettingsPage",
+              "description": "文件管理设置",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 4
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "file.settings.mobileData.toggle",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "file.settings.mobileData.toggle",
+              "label": "切换移动数据同步",
+              "description": null,
+              "behavior": "toggle",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "file.settings.mobileData.toggle",
+      "label": "切换移动数据同步",
+      "description": null,
+      "behavior": "toggle",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "file_manager",
+    "graphFile": "public\\filemanager_nav_graph.json",
+    "taskId": "file_manager:file.settings.systemHidden.toggle",
+    "start": {
+      "nodeId": "/?transferPath=:transferPath"
+    },
+    "target": {
+      "nodeId": "/settings",
+      "routePath": "/settings",
+      "uiStateId": "settings.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/?transferPath=:transferPath",
+          "/settings"
+        ],
+        "transitions": [
+          "settings.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/?transferPath=:transferPath",
+          "/settings"
+        ],
+        "transitions": [
+          "settings.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/?transferPath=:transferPath",
+              "routePath": "/",
+              "uiStateId": "browse.base",
+              "component": "BrowseHomePage",
+              "description": "浏览主页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "settings.open",
+              "label": "打开文件管理设置",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/?transferPath=:transferPath",
+              "target": "/settings",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "settings",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/settings",
+              "routePath": "/settings",
+              "uiStateId": "settings.base",
+              "component": "SettingsPage",
+              "description": "文件管理设置",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 4
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "settings.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "settings",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/settings",
+              "routePath": "/settings",
+              "uiStateId": "settings.base",
+              "component": "SettingsPage",
+              "description": "文件管理设置",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 4
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "file.settings.systemHidden.toggle",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "file.settings.systemHidden.toggle",
+              "label": "切换系统隐藏文件显示",
+              "description": null,
+              "behavior": "toggle",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "file.settings.systemHidden.toggle",
+      "label": "切换系统隐藏文件显示",
+      "description": null,
+      "behavior": "toggle",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "file_manager",
+    "graphFile": "public\\filemanager_nav_graph.json",
+    "taskId": "file_manager:folder.select.send",
+    "start": {
+      "nodeId": "/?transferPath=:transferPath"
+    },
+    "target": {
+      "nodeId": "/folder?mode=select&path=:path&transferPath=:transferPath",
+      "routePath": "/folder",
+      "uiStateId": "folder.select"
+    },
+    "trajectoryCount": 2,
+    "shortestLength": 2,
+    "trajectories": [
+      {
+        "nodes": [
+          "/?transferPath=:transferPath",
+          "/folder?path=:path&transferPath=:transferPath",
+          "/folder?mode=select&path=:path&transferPath=:transferPath"
+        ],
+        "transitions": [
+          "rail.folder.open",
+          "folder.select.enter"
+        ],
+        "length": 2
+      },
+      {
+        "nodes": [
+          "/?transferPath=:transferPath",
+          "/folder?path=:path&transferPath=:transferPath",
+          "/folder?mode=select&path=:path&transferPath=:transferPath"
+        ],
+        "transitions": [
+          "folder.open",
+          "folder.select.enter"
+        ],
+        "length": 2
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/?transferPath=:transferPath",
+          "/folder?path=:path&transferPath=:transferPath",
+          "/folder?mode=select&path=:path&transferPath=:transferPath"
+        ],
+        "transitions": [
+          "rail.folder.open",
+          "folder.select.enter"
+        ],
+        "length": 2,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/?transferPath=:transferPath",
+              "routePath": "/",
+              "uiStateId": "browse.base",
+              "component": "BrowseHomePage",
+              "description": "浏览主页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "rail.folder.open",
+              "label": "从展开目录打开文件夹",
+              "type": "navigation",
+              "mode": "replace",
+              "source": "/?transferPath=:transferPath",
+              "target": "/folder?path=:path&transferPath=:transferPath",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "folder",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {
+                "path": "string"
+              },
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/folder?path=:path&transferPath=:transferPath",
+              "routePath": "/folder",
+              "uiStateId": "folder.base",
+              "component": "FolderPage",
+              "description": "文件夹浏览",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {
+                "path": "string",
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "rail.folder.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {
+                  "path": "string"
+                }
+              },
+              "placement": "content",
+              "icon": "folder",
+              "gesture": "tap"
+            }
+          },
+          {
+            "index": 1,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/folder?path=:path&transferPath=:transferPath",
+              "routePath": "/folder",
+              "uiStateId": "folder.base",
+              "component": "FolderPage",
+              "description": "文件夹浏览",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {
+                "path": "string",
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "folder.select.enter",
+              "label": "进入文件夹选择模式",
+              "type": "state",
+              "mode": "push",
+              "source": "/folder?path=:path&transferPath=:transferPath",
+              "target": "/folder?mode=select&path=:path&transferPath=:transferPath",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "select_enter",
+                "gesture": "longPress"
+              },
+              "uiCondition": null,
+              "fromConstraint": {
+                "path": "/folder",
+                "search": {
+                  "mode": null
+                }
+              },
+              "search": {
+                "mode": "select"
+              },
+              "searchParams": {
+                "selected": "string"
+              },
+              "params": {},
+              "preserveParams": [
+                "path"
+              ],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/folder?mode=select&path=:path&transferPath=:transferPath",
+              "routePath": "/folder",
+              "uiStateId": "folder.select",
+              "component": "FolderPage",
+              "description": "文件夹浏览 - 选择模式",
+              "entryPoint": false,
+              "search": {
+                "mode": "select"
+              },
+              "queryParams": {
+                "path": "string",
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "folder.select.enter",
+                "dataTriggerType": "longPress",
+                "paramsSchema": {},
+                "searchParamsSchema": {
+                  "selected": "string"
+                }
+              },
+              "placement": "content",
+              "icon": "select_enter",
+              "gesture": "longPress"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/folder?mode=select&path=:path&transferPath=:transferPath",
+              "routePath": "/folder",
+              "uiStateId": "folder.select",
+              "component": "FolderPage",
+              "description": "文件夹浏览 - 选择模式",
+              "entryPoint": false,
+              "search": {
+                "mode": "select"
+              },
+              "queryParams": {
+                "path": "string",
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "folder.select.send",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "folder.select.send",
+              "label": "发送选中的图片",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "tap",
+                "file": "system\\FileManager\\pages\\FolderPage.tsx",
+                "line": 447,
+                "col": 11
+              }
+            ],
+            "index": 2
+          }
+        ]
+      },
+      {
+        "nodes": [
+          "/?transferPath=:transferPath",
+          "/folder?path=:path&transferPath=:transferPath",
+          "/folder?mode=select&path=:path&transferPath=:transferPath"
+        ],
+        "transitions": [
+          "folder.open",
+          "folder.select.enter"
+        ],
+        "length": 2,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/?transferPath=:transferPath",
+              "routePath": "/",
+              "uiStateId": "browse.base",
+              "component": "BrowseHomePage",
+              "description": "浏览主页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "folder.open",
+              "label": "打开文件夹",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/?transferPath=:transferPath",
+              "target": "/folder?path=:path&transferPath=:transferPath",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "folder",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {
+                "path": "string"
+              },
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/folder?path=:path&transferPath=:transferPath",
+              "routePath": "/folder",
+              "uiStateId": "folder.base",
+              "component": "FolderPage",
+              "description": "文件夹浏览",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {
+                "path": "string",
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "folder.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {
+                  "path": "string"
+                }
+              },
+              "placement": "content",
+              "icon": "folder",
+              "gesture": "tap"
+            }
+          },
+          {
+            "index": 1,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/folder?path=:path&transferPath=:transferPath",
+              "routePath": "/folder",
+              "uiStateId": "folder.base",
+              "component": "FolderPage",
+              "description": "文件夹浏览",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {
+                "path": "string",
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "folder.select.enter",
+              "label": "进入文件夹选择模式",
+              "type": "state",
+              "mode": "push",
+              "source": "/folder?path=:path&transferPath=:transferPath",
+              "target": "/folder?mode=select&path=:path&transferPath=:transferPath",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "select_enter",
+                "gesture": "longPress"
+              },
+              "uiCondition": null,
+              "fromConstraint": {
+                "path": "/folder",
+                "search": {
+                  "mode": null
+                }
+              },
+              "search": {
+                "mode": "select"
+              },
+              "searchParams": {
+                "selected": "string"
+              },
+              "params": {},
+              "preserveParams": [
+                "path"
+              ],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/folder?mode=select&path=:path&transferPath=:transferPath",
+              "routePath": "/folder",
+              "uiStateId": "folder.select",
+              "component": "FolderPage",
+              "description": "文件夹浏览 - 选择模式",
+              "entryPoint": false,
+              "search": {
+                "mode": "select"
+              },
+              "queryParams": {
+                "path": "string",
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "folder.select.enter",
+                "dataTriggerType": "longPress",
+                "paramsSchema": {},
+                "searchParamsSchema": {
+                  "selected": "string"
+                }
+              },
+              "placement": "content",
+              "icon": "select_enter",
+              "gesture": "longPress"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/folder?mode=select&path=:path&transferPath=:transferPath",
+              "routePath": "/folder",
+              "uiStateId": "folder.select",
+              "component": "FolderPage",
+              "description": "文件夹浏览 - 选择模式",
+              "entryPoint": false,
+              "search": {
+                "mode": "select"
+              },
+              "queryParams": {
+                "path": "string",
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "folder.select.send",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "folder.select.send",
+              "label": "发送选中的图片",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "tap",
+                "file": "system\\FileManager\\pages\\FolderPage.tsx",
+                "line": 447,
+                "col": 11
+              }
+            ],
+            "index": 2
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "folder.select.send",
+      "label": "发送选中的图片",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "file_manager",
+    "graphFile": "public\\filemanager_nav_graph.json",
+    "taskId": "file_manager:recent.select.send",
+    "start": {
+      "nodeId": "/?transferPath=:transferPath"
+    },
+    "target": {
+      "nodeId": "/recent?mode=select&transferPath=:transferPath",
+      "routePath": "/recent",
+      "uiStateId": "recent.select"
+    },
+    "trajectoryCount": 2,
+    "shortestLength": 2,
+    "trajectories": [
+      {
+        "nodes": [
+          "/?transferPath=:transferPath",
+          "/recent?transferPath=:transferPath",
+          "/recent?mode=select&transferPath=:transferPath"
+        ],
+        "transitions": [
+          "rail.recent.open",
+          "recent.select.enter"
+        ],
+        "length": 2
+      },
+      {
+        "nodes": [
+          "/?transferPath=:transferPath",
+          "/recent?transferPath=:transferPath",
+          "/recent?mode=select&transferPath=:transferPath"
+        ],
+        "transitions": [
+          "tab.recent",
+          "recent.select.enter"
+        ],
+        "length": 2
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/?transferPath=:transferPath",
+          "/recent?transferPath=:transferPath",
+          "/recent?mode=select&transferPath=:transferPath"
+        ],
+        "transitions": [
+          "rail.recent.open",
+          "recent.select.enter"
+        ],
+        "length": 2,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/?transferPath=:transferPath",
+              "routePath": "/",
+              "uiStateId": "browse.base",
+              "component": "BrowseHomePage",
+              "description": "浏览主页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "rail.recent.open",
+              "label": "从展开目录打开最近文件",
+              "type": "navigation",
+              "mode": "replace",
+              "source": "/?transferPath=:transferPath",
+              "target": "/recent?transferPath=:transferPath",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "recent",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/recent?transferPath=:transferPath",
+              "routePath": "/recent",
+              "uiStateId": "recent.base",
+              "component": "RecentPage",
+              "description": "最近文件",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "rail.recent.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "recent",
+              "gesture": "tap"
+            }
+          },
+          {
+            "index": 1,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/recent?transferPath=:transferPath",
+              "routePath": "/recent",
+              "uiStateId": "recent.base",
+              "component": "RecentPage",
+              "description": "最近文件",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "recent.select.enter",
+              "label": "进入最近选择模式",
+              "type": "state",
+              "mode": "push",
+              "source": "/recent?transferPath=:transferPath",
+              "target": "/recent?mode=select&transferPath=:transferPath",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "select_enter",
+                "gesture": "longPress"
+              },
+              "uiCondition": null,
+              "fromConstraint": {
+                "path": "/recent",
+                "search": {
+                  "mode": null
+                }
+              },
+              "search": {
+                "mode": "select"
+              },
+              "searchParams": {
+                "selected": "string"
+              },
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/recent?mode=select&transferPath=:transferPath",
+              "routePath": "/recent",
+              "uiStateId": "recent.select",
+              "component": "RecentPage",
+              "description": "最近文件 - 选择模式",
+              "entryPoint": false,
+              "search": {
+                "mode": "select"
+              },
+              "queryParams": {
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "recent.select.enter",
+                "dataTriggerType": "longPress",
+                "paramsSchema": {},
+                "searchParamsSchema": {
+                  "selected": "string"
+                }
+              },
+              "placement": "content",
+              "icon": "select_enter",
+              "gesture": "longPress"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/recent?mode=select&transferPath=:transferPath",
+              "routePath": "/recent",
+              "uiStateId": "recent.select",
+              "component": "RecentPage",
+              "description": "最近文件 - 选择模式",
+              "entryPoint": false,
+              "search": {
+                "mode": "select"
+              },
+              "queryParams": {
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "recent.select.send",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "recent.select.send",
+              "label": "发送选中的图片",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "tap",
+                "file": "system\\FileManager\\pages\\RecentPage.tsx",
+                "line": 374,
+                "col": 11
+              }
+            ],
+            "index": 2
+          }
+        ]
+      },
+      {
+        "nodes": [
+          "/?transferPath=:transferPath",
+          "/recent?transferPath=:transferPath",
+          "/recent?mode=select&transferPath=:transferPath"
+        ],
+        "transitions": [
+          "tab.recent",
+          "recent.select.enter"
+        ],
+        "length": 2,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/?transferPath=:transferPath",
+              "routePath": "/",
+              "uiStateId": "browse.base",
+              "component": "BrowseHomePage",
+              "description": "浏览主页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "tab.recent",
+              "label": "切换到最近",
+              "type": "navigation",
+              "mode": "replace",
+              "source": "/?transferPath=:transferPath",
+              "target": "/recent?transferPath=:transferPath",
+              "uiMeta": {
+                "placement": "tabbar",
+                "icon": "tab_recent",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/recent?transferPath=:transferPath",
+              "routePath": "/recent",
+              "uiStateId": "recent.base",
+              "component": "RecentPage",
+              "description": "最近文件",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "tab.recent",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "tabbar",
+              "icon": "tab_recent",
+              "gesture": "tap"
+            }
+          },
+          {
+            "index": 1,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/recent?transferPath=:transferPath",
+              "routePath": "/recent",
+              "uiStateId": "recent.base",
+              "component": "RecentPage",
+              "description": "最近文件",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "recent.select.enter",
+              "label": "进入最近选择模式",
+              "type": "state",
+              "mode": "push",
+              "source": "/recent?transferPath=:transferPath",
+              "target": "/recent?mode=select&transferPath=:transferPath",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "select_enter",
+                "gesture": "longPress"
+              },
+              "uiCondition": null,
+              "fromConstraint": {
+                "path": "/recent",
+                "search": {
+                  "mode": null
+                }
+              },
+              "search": {
+                "mode": "select"
+              },
+              "searchParams": {
+                "selected": "string"
+              },
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/recent?mode=select&transferPath=:transferPath",
+              "routePath": "/recent",
+              "uiStateId": "recent.select",
+              "component": "RecentPage",
+              "description": "最近文件 - 选择模式",
+              "entryPoint": false,
+              "search": {
+                "mode": "select"
+              },
+              "queryParams": {
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "recent.select.enter",
+                "dataTriggerType": "longPress",
+                "paramsSchema": {},
+                "searchParamsSchema": {
+                  "selected": "string"
+                }
+              },
+              "placement": "content",
+              "icon": "select_enter",
+              "gesture": "longPress"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/recent?mode=select&transferPath=:transferPath",
+              "routePath": "/recent",
+              "uiStateId": "recent.select",
+              "component": "RecentPage",
+              "description": "最近文件 - 选择模式",
+              "entryPoint": false,
+              "search": {
+                "mode": "select"
+              },
+              "queryParams": {
+                "transferPath": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                },
+                {
+                  "name": "dialog",
+                  "direction": "vertical",
+                  "description": "当前文件弹层内容"
+                },
+                {
+                  "name": "transfer",
+                  "direction": "vertical",
+                  "description": "复制或移动目标目录"
+                },
+                {
+                  "name": "directory",
+                  "direction": "vertical",
+                  "description": "展开态文件目录栏"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "recent.select.send",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "recent.select.send",
+              "label": "发送选中的图片",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "tap",
+                "file": "system\\FileManager\\pages\\RecentPage.tsx",
+                "line": 374,
+                "col": 11
+              }
+            ],
+            "index": 2
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "recent.select.send",
+      "label": "发送选中的图片",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  }
+]

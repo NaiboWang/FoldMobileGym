@@ -1,0 +1,10 @@
+{
+  "app": "meituan_waimai",
+  "data": {
+    "shop_id": "salad",
+    "shop": "轻食研习社",
+    "dish_id": "salad",
+    "dish": "鸡肉蔬菜轻食碗",
+    "quantity": 1
+  }
+}

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 832 900" preserveAspectRatio="xMidYMid slice">
+  <!-- Original vector approximation of the recording's sky/field palette;
+       not the original device wallpaper and contains no recorded private UI. -->
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#0789cc"/><stop offset="1" stop-color="#8bd5f1"/></linearGradient>
+    <linearGradient id="field" x2="0" y2="1"><stop stop-color="#74a72c"/><stop offset=".5" stop-color="#90cc39"/><stop offset="1" stop-color="#437f18"/></linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="9"/></filter>
+    <pattern id="grass" width="18" height="42" patternUnits="userSpaceOnUse"><path d="M4 42 2 13M8 42 12 5M15 42 16 21" stroke="#d3e57a" stroke-width="1.3" opacity=".3"/></pattern>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h832v900H0z"/>
+  <g fill="#fff" opacity=".82" filter="url(#soft)">
+    <ellipse cx="124" cy="366" rx="173" ry="41"/><ellipse cx="227" cy="333" rx="98" ry="55"/>
+    <ellipse cx="550" cy="466" rx="183" ry="31"/><ellipse cx="768" cy="295" rx="130" ry="40"/>
+    <ellipse cx="64" cy="554" rx="91" ry="25"/>
+  </g>
+  <path d="M0 634Q170 624 365 640T832 630V900H0Z" fill="url(#field)"/>
+  <path d="M0 645Q200 638 410 650T832 640" stroke="#325824" stroke-width="9" fill="none"/>
+  <g fill="#285b2b"><ellipse cx="654" cy="629" rx="19" ry="23"/><ellipse cx="677" cy="628" rx="24" ry="18"/><ellipse cx="510" cy="632" rx="12" ry="17"/></g>
+  <path d="M0 651H832V900H0Z" fill="url(#grass)"/>
+</svg>

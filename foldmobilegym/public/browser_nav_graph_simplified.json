@@ -1,0 +1,112 @@
+{
+  "app": "browser",
+  "appDir": "system\\Browser",
+  "mode": "schema",
+  "routeCount": 2,
+  "edgeCount": 2,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "component": "BrowserHome",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "浏览器首页",
+      "stateCount": 2,
+      "states": [
+        "/",
+        "/?panel=tabs"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "browser.home.reload"
+      ],
+      "actions": [
+        {
+          "id": "browser.home.reload",
+          "label": "刷新当前首页",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "tabId": "string",
+            "url": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/view",
+      "routePath": "/view",
+      "component": "BrowserView",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "网页浏览页",
+      "stateCount": 2,
+      "states": [
+        "/view",
+        "/view?panel=tabs"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "browser.page.reload",
+        "browser.bookmark.add"
+      ],
+      "actions": [
+        {
+          "id": "browser.page.reload",
+          "label": "刷新当前网页",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "tabId": "string",
+            "url": "string"
+          }
+        },
+        {
+          "id": "browser.bookmark.add",
+          "label": "保存当前网页书签",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "tabId": "string",
+            "url": "string"
+          }
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/view",
+      "target": "/",
+      "transitions": [
+        "history.forward.home",
+        "tab.close.home",
+        "home.open"
+      ],
+      "type": "navigation",
+      "label": "history.forward.home, tab.close.home, home.open",
+      "id": "history.forward.home"
+    },
+    {
+      "source": "/",
+      "target": "/view",
+      "transitions": [
+        "history.forward.view",
+        "tab.close.view",
+        "view.open"
+      ],
+      "type": "navigation",
+      "label": "history.forward.view, tab.close.view, view.open",
+      "id": "history.forward.view"
+    }
+  ]
+}

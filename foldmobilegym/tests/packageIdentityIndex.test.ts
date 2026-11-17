@@ -1,0 +1,11 @@
+import { describe, expect, it } from 'vitest';
+import fs from 'node:fs';
+import { manifestId, manifestPatterns, selectedManifest, identitySource, expectedIdentitySource, outputPath } from '../scripts/package_identity_index.mjs';
+describe('packaged identities are derived, not a second application-selection policy',()=>{
+ it('reads only the manifest object id, supporting type wrappers and nested unrelated ids',()=>{expect(manifestId("export const manifest = ({id:'actual',nested:{id:'not-this'}} as const) satisfies SomeType")).toBe('actual');});
+ it('refuses computed, missing, duplicate or invalid manifest identity instead of omitting it',()=>{for(const text of ["export const manifest={id:dynamic}","export const manifest={name:'X'}","export const manifest={id:'a',id:'b'}","export const manifest=makeManifest()","export const manifest={id:'a' broken}"])expect(()=>manifestId(text)).toThrow();});
+ it('uses the existing eager glob exclusions verbatim',()=>{const p=manifestPatterns("const manifestModules=import.meta.glob(['../apps/*/manifest.ts','../system/*/manifest.ts','!../apps/Video/manifest.ts'],{eager:true})");expect(selectedManifest(p,'apps','Video')).toBe(false);expect(selectedManifest(p,'apps','RedBook')).toBe(true);expect(selectedManifest(p,'system','Clock')).toBe(true);});
+ it('fails on unsupported policies/options instead of guessing a deployed app list',()=>{for(const text of ["const manifestModules=import.meta.glob(patterns,{eager:true})","const manifestModules=import.meta.glob(['../other/*/manifest.ts'],{eager:true})","const manifestModules=import.meta.glob(['../apps/*/manifest.ts'],{eager:false})"])expect(()=>manifestPatterns(text)).toThrow();});
+ it('orders by authoritative module paths and rejects duplicate identities',()=>{const a={path:'../system/Clock/manifest.ts',id:'clock'},b={path:'../apps/Map/manifest.ts',id:'map'};expect(identitySource([a,b])).toBe(identitySource([b,a]));expect(identitySource([a,b]).indexOf('"map"')).toBeLessThan(identitySource([a,b]).indexOf('"clock"'));expect(()=>identitySource([a,{...b,id:'clock'}])).toThrow();});
+ it('ships the exact fresh generated production descriptor, allowing only checkout EOL differences',()=>{expect(fs.readFileSync(outputPath,'utf8').replace(/\r\n/g,'\n')).toBe(expectedIdentitySource());});
+});

@@ -1,0 +1,88 @@
+.map-app-root,
+.map-app-shell,
+.map-explore-root {
+  min-width: 0;
+  min-height: 0;
+}
+
+.map-app-root {
+  container-type: inline-size;
+}
+
+.map-place-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.map-place-actions > button {
+  min-width: 0;
+  min-height: 44px;
+  justify-content: center;
+  padding-inline: 10px;
+  overflow-wrap: anywhere;
+}
+
+.map-place-actions > button > svg {
+  flex-shrink: 0;
+}
+
+@container (min-width: 600px) {
+  .map-search-page > .map-search-canvas { left: 50%; }
+  .map-search-header,
+  .map-search-suggestions { width: 50%; }
+  .map-search-page > .map-place-results-pane { width: calc(50% - 24px) !important; }
+  .map-selected-place-chrome {
+    left: 368px;
+  }
+
+  .map-top-chrome {
+    right: auto !important;
+    width: 366px;
+  }
+
+  .map-supporting-pane {
+    right: auto !important;
+    left: 12px !important;
+    width: 340px !important;
+    max-width: calc(100% - 36px);
+    border: 1px solid rgb(226 232 240 / 0.92);
+    border-radius: 22px !important;
+    box-shadow: 0 10px 32px rgb(15 23 42 / 0.18) !important;
+    overflow: hidden;
+  }
+
+  .map-place-results-pane {
+    top: 112px !important;
+    bottom: 12px !important;
+    height: auto !important;
+  }
+
+  .map-place-detail-pane {
+    top: 48px !important;
+    bottom: 12px !important;
+    height: auto !important;
+  }
+
+  .map-route-detail-pane,
+  .map-route-loading-pane {
+    top: 160px !important;
+    bottom: 12px !important;
+    height: auto !important;
+  }
+
+  .map-explore-pulse-pane {
+    right: auto !important;
+    left: 12px !important;
+    width: 340px !important;
+    max-width: calc(100% - 36px);
+    border: 1px solid rgb(226 232 240 / 0.92);
+    border-radius: 22px 22px 0 0 !important;
+    box-shadow: 0 8px 28px rgb(15 23 42 / 0.16) !important;
+  }
+}
+
+/* Wide route panes are persistent workspaces, not draggable phone sheets. */
+@container (min-width: 600px) {
+  .map-route-detail-pane .map-route-drag-handle { display: none; }
+}

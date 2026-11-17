@@ -1,0 +1,77 @@
+{
+  "app": "video",
+  "appDir": "apps\\Video",
+  "mode": "schema",
+  "routeCount": 2,
+  "edgeCount": 1,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "component": "Content",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "Local video library",
+      "stateCount": 1,
+      "states": [
+        "/"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/player/:id",
+      "routePath": "/player/:id",
+      "component": "Content",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "Selected video and chapters",
+      "stateCount": 1,
+      "states": [
+        "/player/:id"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "video.chapter.seek",
+        "video.fact.verify"
+      ],
+      "actions": [
+        {
+          "id": "video.chapter.seek",
+          "label": "Seek to chapter",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "seconds": "number"
+          }
+        },
+        {
+          "id": "video.fact.verify",
+          "label": "Verify current chapter",
+          "behavior": "other"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/",
+      "target": "/player/:id",
+      "transitions": [
+        "video.asset.open"
+      ],
+      "type": "navigation",
+      "label": "video.asset.open",
+      "id": "video.asset.open"
+    }
+  ]
+}

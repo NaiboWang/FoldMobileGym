@@ -1,0 +1,8 @@
+{
+  "target_text": "/sdcard/FoldAgentSingle/归档资料/评审材料.txt",
+  "details": {
+    "filename": "评审材料.txt",
+    "source_dir": "/sdcard/FoldAgentSingle/原始资料",
+    "destination_dir": "/sdcard/FoldAgentSingle/归档资料"
+  }
+}

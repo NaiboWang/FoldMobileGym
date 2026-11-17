@@ -1,0 +1,36 @@
+.launcher-recording-reference .launcher-reference-clock {
+  align-items: flex-start;
+  text-align: left;
+  border-radius: 24px;
+  background: rgb(255 255 255 / 12%);
+  border: 1px solid rgb(255 255 255 / 22%);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+.launcher-reference-clock > div:last-child { font-size: 12px; margin-top: 8px; }
+.launcher-reference-page { padding-top: 12px; padding-bottom: 36px; }
+.launcher-recording-reference .launcher-reference-dock { display: flex; gap: 14px; padding-bottom: 18px; }
+.launcher-reference-dock-grid {
+  min-width: 0;
+  border-radius: 27px;
+  padding: 10px;
+  background: rgb(224 255 197 / 26%);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgb(255 255 255 / 22%);
+}
+.launcher-reference-shortcuts { display: none; }
+html[data-foldagent-posture="unfolded"] .launcher-reference-dock-grid { width: 55%; gap: 8px; }
+html[data-foldagent-posture="unfolded"] .launcher-reference-shortcuts {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 6px;
+  border-radius: 27px;
+  background: rgb(224 255 197 / 26%);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgb(255 255 255 / 22%);
+}
+html[data-foldagent-posture="folded"] .launcher-reference-dock-grid { gap: 6px; }
+/* The recording uses gesture navigation, not the previous Samsung buttons. */
+html[data-foldagent-posture] .foldagent-samsung-nav-buttons { display: none; }

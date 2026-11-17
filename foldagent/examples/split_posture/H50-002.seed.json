@@ -1,0 +1,113 @@
+{
+  "schema_version": "foldagentgym.seed.v1",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "apps": {
+    "calendar": {},
+    "wechat": {}
+  },
+  "raw_apps": {
+    "wechat": {
+      "chats": [
+        {
+          "id": "target-chat",
+          "user": {
+            "wxid": "target-chat",
+            "name": "韩晴（研发）",
+            "avatar": "/@app-assets/Wechat/avatars/avatar_10.jpg"
+          },
+          "isMuted": false,
+          "isSticky": false,
+          "isAlert": false,
+          "messages": [
+            {
+              "id": "target-chat-hello",
+              "type": "text",
+              "content": "有需要请留言。",
+              "senderId": "target-chat",
+              "timestamp": 1793663990000
+            }
+          ]
+        },
+        {
+          "id": "other-chat",
+          "user": {
+            "wxid": "other-chat",
+            "name": "韩晴（采购）",
+            "avatar": "/@app-assets/Wechat/avatars/avatar_10.jpg"
+          },
+          "isMuted": false,
+          "isSticky": false,
+          "isAlert": false,
+          "messages": [
+            {
+              "id": "other-chat-hello",
+              "type": "text",
+              "content": "有需要请留言。",
+              "senderId": "other-chat",
+              "timestamp": 1793663990000
+            }
+          ]
+        }
+      ],
+      "chatDrafts": {
+        "target-chat": "",
+        "other-chat": "采购事项待确认。"
+      },
+      "sendCount": 0
+    },
+    "calendar": {
+      "events": [
+        {
+          "id": "source-event",
+          "type": "event",
+          "title": "阶段汇报",
+          "description": "请准时参加。",
+          "location": "东楼602讨论室",
+          "allDay": false,
+          "startTs": 1794020400000,
+          "endTs": 1794022200000,
+          "reminderMinutesBefore": null,
+          "alarmEnabled": false
+        },
+        {
+          "id": "other-event",
+          "type": "event",
+          "title": "阶段汇报",
+          "description": "另一个活动",
+          "location": "508会议室",
+          "allDay": false,
+          "startTs": 1794038400000,
+          "endTs": 1794040200000,
+          "reminderMinutesBefore": null,
+          "alarmEnabled": false
+        },
+        {
+          "id": "target-event",
+          "type": "event",
+          "title": "户外走访",
+          "description": "带证件。",
+          "location": "西门集合",
+          "allDay": false,
+          "startTs": 1794013200000,
+          "endTs": 1794015000000,
+          "reminderMinutesBefore": null,
+          "alarmEnabled": false
+        }
+      ],
+      "selectedDateTs": 1794009600000,
+      "createdCount": 0,
+      "deletedCount": 0,
+      "mutationCount": 0,
+      "draft": {
+        "title": "",
+        "notes": "",
+        "location": ""
+      }
+    }
+  },
+  "os": {}
+}

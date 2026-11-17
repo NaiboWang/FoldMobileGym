@@ -1,0 +1,8 @@
+/* App-owned typography must not restyle other mounted/background activities. */
+.redbook-app {
+  --redbook-ui-font: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--redbook-ui-font);
+  font-family: var(--redbook-ui-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

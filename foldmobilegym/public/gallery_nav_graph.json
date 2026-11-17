@@ -1,0 +1,1664 @@
+{
+  "app": "gallery",
+  "appDir": "system\\Gallery",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 20,
+  "transitionCount": 24,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "uiStateId": "gallery.home.base",
+      "component": "HomePage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态相册目录"
+        }
+      ],
+      "description": "相册首页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/?tab=albums",
+      "routePath": "/",
+      "uiStateId": "gallery.home.albums",
+      "component": "HomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态相册目录"
+        }
+      ],
+      "description": "相册列表",
+      "search": {
+        "tab": "albums"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/?selection=on",
+      "routePath": "/",
+      "uiStateId": "gallery.home.select",
+      "component": "HomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态相册目录"
+        }
+      ],
+      "description": "照片多选",
+      "search": {
+        "selection": "on"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "gallery.select.share",
+          "label": "分享选中的图片",
+          "behavior": "other"
+        },
+        {
+          "id": "gallery.select.favorite.submit",
+          "label": "收藏选中的图片",
+          "behavior": "submit"
+        },
+        {
+          "id": "gallery.select.all.toggle",
+          "label": "切换全选",
+          "behavior": "toggle"
+        },
+        {
+          "id": "gallery.select.item.toggle",
+          "label": "选择或取消图片",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "path": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/?selection=on&modal=delete",
+      "routePath": "/",
+      "uiStateId": "gallery.home.select.delete",
+      "component": "HomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态相册目录"
+        }
+      ],
+      "description": "确认删除已选照片",
+      "search": {
+        "selection": "on",
+        "modal": "delete"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "gallery.select.delete.submit",
+          "label": "确认删除已选照片",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/search?q=:q",
+      "routePath": "/search",
+      "uiStateId": "gallery.search.base",
+      "component": "GallerySearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "本地媒体搜索结果"
+        }
+      ],
+      "description": "本地媒体搜索",
+      "search": {},
+      "queryParams": {
+        "q": "string"
+      },
+      "actions": [
+        {
+          "id": "gallery.search.query.input",
+          "label": "输入媒体搜索词",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/favorites",
+      "routePath": "/favorites",
+      "uiStateId": "gallery.favorites.base",
+      "component": "FavoritesPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态相册目录"
+        }
+      ],
+      "description": "收藏页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/album/:albumId",
+      "routePath": "/album/:albumId",
+      "uiStateId": "gallery.album.base",
+      "component": "AlbumDetailPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "albumId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态相册目录"
+        }
+      ],
+      "description": "相册详情页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/album/:albumId?selection=on",
+      "routePath": "/album/:albumId",
+      "uiStateId": "gallery.album.select",
+      "component": "AlbumDetailPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "albumId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态相册目录"
+        }
+      ],
+      "description": "相册内多选",
+      "search": {
+        "selection": "on"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "gallery.album.select.share",
+          "label": "分享相册内选中图片",
+          "behavior": "other"
+        },
+        {
+          "id": "gallery.album.select.favorite.submit",
+          "label": "收藏相册内选中图片",
+          "behavior": "submit"
+        },
+        {
+          "id": "gallery.album.select.item.toggle",
+          "label": "选择或取消相册图片",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "path": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/photo/:path?album=:album&from=:from&q=:q",
+      "routePath": "/photo/:path",
+      "uiStateId": "gallery.photo.base",
+      "component": "PhotoViewerPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "path": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态相册目录"
+        }
+      ],
+      "description": "图片预览页",
+      "search": {},
+      "queryParams": {
+        "album": "string",
+        "from": "string",
+        "q": "string"
+      },
+      "actions": [
+        {
+          "id": "gallery.viewer.share",
+          "label": "分享当前图片",
+          "behavior": "other"
+        },
+        {
+          "id": "gallery.viewer.favorite.toggle",
+          "label": "切换当前图片收藏",
+          "behavior": "toggle",
+          "paramsSchema": {
+            "path": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/photo/:path?modal=edit&album=:album&from=:from&q=:q",
+      "routePath": "/photo/:path",
+      "uiStateId": "gallery.photo.modal.edit",
+      "component": "PhotoViewerPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "path": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态相册目录"
+        }
+      ],
+      "description": "Non-destructive rotation editor",
+      "search": {
+        "modal": "edit"
+      },
+      "queryParams": {
+        "album": "string",
+        "from": "string",
+        "q": "string"
+      },
+      "actions": [
+        {
+          "id": "gallery.editor.rotate",
+          "label": "Rotate source pixels clockwise",
+          "behavior": "other"
+        },
+        {
+          "id": "gallery.editor.reset",
+          "label": "Reset the rotation preview",
+          "behavior": "other"
+        },
+        {
+          "id": "gallery.editor.save.copy",
+          "label": "Write a rotated PNG copy, keeping the source",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/photo/:path?modal=more&album=:album&from=:from&q=:q",
+      "routePath": "/photo/:path",
+      "uiStateId": "gallery.photo.modal.more",
+      "component": "PhotoViewerPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "path": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态相册目录"
+        }
+      ],
+      "description": "图片预览页 - 更多菜单弹窗",
+      "search": {
+        "modal": "more"
+      },
+      "queryParams": {
+        "album": "string",
+        "from": "string",
+        "q": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/photo/:path?modal=details&album=:album&from=:from&q=:q",
+      "routePath": "/photo/:path",
+      "uiStateId": "gallery.photo.modal.details",
+      "component": "PhotoViewerPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "path": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态相册目录"
+        }
+      ],
+      "description": "图片预览页 - 详情弹窗",
+      "search": {
+        "modal": "details"
+      },
+      "queryParams": {
+        "album": "string",
+        "from": "string",
+        "q": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/photo/:path?modal=rename&album=:album&from=:from&q=:q",
+      "routePath": "/photo/:path",
+      "uiStateId": "gallery.photo.modal.rename",
+      "component": "PhotoViewerPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "path": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态相册目录"
+        }
+      ],
+      "description": "图片预览页 - 重命名弹窗",
+      "search": {
+        "modal": "rename"
+      },
+      "queryParams": {
+        "album": "string",
+        "from": "string",
+        "q": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/photo/:path?modal=delete&album=:album&from=:from&q=:q",
+      "routePath": "/photo/:path",
+      "uiStateId": "gallery.photo.modal.delete",
+      "component": "PhotoViewerPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "path": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态相册目录"
+        }
+      ],
+      "description": "图片预览页 - 删除确认",
+      "search": {
+        "modal": "delete"
+      },
+      "queryParams": {
+        "album": "string",
+        "from": "string",
+        "q": "string"
+      },
+      "actions": [
+        {
+          "id": "gallery.viewer.delete.submit",
+          "label": "Delete the actual viewed source",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/intent/view?image=:image",
+      "routePath": "/intent/view",
+      "uiStateId": "gallery.photo.intent.base",
+      "component": "PhotoViewerPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态相册目录"
+        }
+      ],
+      "description": "通过 ACTION_VIEW 打开的图片预览页",
+      "search": {},
+      "queryParams": {
+        "image": "string"
+      },
+      "actions": [
+        {
+          "id": "gallery.intent.favorite.toggle",
+          "label": "切换外部来源当前图片收藏",
+          "behavior": "toggle",
+          "paramsSchema": {
+            "path": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/intent/view?modal=edit&image=:image",
+      "routePath": "/intent/view",
+      "uiStateId": "gallery.photo.intent.modal.edit",
+      "component": "PhotoViewerPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态相册目录"
+        }
+      ],
+      "description": "Non-destructive rotation editor",
+      "search": {
+        "modal": "edit"
+      },
+      "queryParams": {
+        "image": "string"
+      },
+      "actions": [
+        {
+          "id": "gallery.intent.editor.rotate",
+          "label": "Rotate source pixels clockwise",
+          "behavior": "other"
+        },
+        {
+          "id": "gallery.intent.editor.reset",
+          "label": "Reset the rotation preview",
+          "behavior": "other"
+        },
+        {
+          "id": "gallery.intent.editor.save.copy",
+          "label": "Write a rotated PNG copy, keeping the source",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/intent/view?modal=more&image=:image",
+      "routePath": "/intent/view",
+      "uiStateId": "gallery.photo.intent.modal.more",
+      "component": "PhotoViewerPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态相册目录"
+        }
+      ],
+      "description": "ACTION_VIEW 图片预览 - 更多菜单",
+      "search": {
+        "modal": "more"
+      },
+      "queryParams": {
+        "image": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/intent/view?modal=details&image=:image",
+      "routePath": "/intent/view",
+      "uiStateId": "gallery.photo.intent.modal.details",
+      "component": "PhotoViewerPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态相册目录"
+        }
+      ],
+      "description": "ACTION_VIEW 图片预览 - 详情弹窗",
+      "search": {
+        "modal": "details"
+      },
+      "queryParams": {
+        "image": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/intent/view?modal=rename&image=:image",
+      "routePath": "/intent/view",
+      "uiStateId": "gallery.photo.intent.modal.rename",
+      "component": "PhotoViewerPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态相册目录"
+        }
+      ],
+      "description": "ACTION_VIEW 图片预览 - 重命名弹窗",
+      "search": {
+        "modal": "rename"
+      },
+      "queryParams": {
+        "image": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/intent/view?modal=delete&image=:image",
+      "routePath": "/intent/view",
+      "uiStateId": "gallery.photo.intent.modal.delete",
+      "component": "PhotoViewerPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态相册目录"
+        }
+      ],
+      "description": "ACTION_VIEW 图片预览 - 删除确认",
+      "search": {
+        "modal": "delete"
+      },
+      "queryParams": {
+        "image": "string"
+      },
+      "actions": [
+        {
+          "id": "gallery.intent.delete.submit",
+          "label": "Delete the actual intent source",
+          "behavior": "submit"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/photo/:path?album=:album&from=:from&q=:q",
+      "sourceNodeId": "/photo/:path?album=:album&from=:from&q=:q",
+      "target": "/photo/:path?modal=edit&album=:album&from=:from&q=:q",
+      "targetNodeId": "/photo/:path?modal=edit&album=:album&from=:from&q=:q",
+      "id": "photo.edit.open",
+      "label": "Edit the actual selected photo",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "edit"
+      },
+      "searchParams": {},
+      "params": {
+        "path": "string"
+      },
+      "preserveParams": [
+        "album",
+        "from",
+        "q"
+      ],
+      "fromConstraint": {
+        "path": "/photo/:path",
+        "search": {
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "edit",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/intent/view?image=:image",
+      "sourceNodeId": "/intent/view?image=:image",
+      "target": "/intent/view?modal=edit&image=:image",
+      "targetNodeId": "/intent/view?modal=edit&image=:image",
+      "id": "photo.intent.edit.open",
+      "label": "Edit the actual intent photo",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "edit"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "image"
+      ],
+      "fromConstraint": {
+        "path": "/intent/view",
+        "search": {
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "edit",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/photo/:path?modal=edit&album=:album&from=:from&q=:q",
+      "sourceNodeId": "/photo/:path?modal=edit&album=:album&from=:from&q=:q",
+      "target": "/photo/:path?album=:album&from=:from&q=:q",
+      "targetNodeId": "/photo/:path?album=:album&from=:from&q=:q",
+      "id": "photo.edit.copy.open",
+      "label": "View the explicitly saved copy",
+      "type": "state",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "path": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/photo/:path",
+        "search": {
+          "modal": "edit"
+        }
+      },
+      "uiCondition": {
+        "op": "notEmpty",
+        "ref": "media",
+        "filterFn": "item => item.mimeType === 'image/png' && item.name.startsWith('edited-')",
+        "text": "Requires a saved edited PNG; the actual UI also requires this editor to own that successful save."
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "photo",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/intent/view?modal=edit&image=:image",
+      "sourceNodeId": "/intent/view?modal=edit&image=:image",
+      "target": "/photo/:path?album=:album&from=:from&q=:q",
+      "targetNodeId": "/photo/:path?album=:album&from=:from&q=:q",
+      "id": "photo.edit.copy.open",
+      "label": "View the explicitly saved copy",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "path": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/intent/view",
+        "search": {
+          "modal": "edit"
+        }
+      },
+      "uiCondition": {
+        "op": "notEmpty",
+        "ref": "media",
+        "filterFn": "item => item.mimeType === 'image/png' && item.name.startsWith('edited-')",
+        "text": "Requires a saved edited PNG; the actual UI also requires this editor to own that successful save."
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "photo",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/search?q=:q",
+      "targetNodeId": "/search?q=:q",
+      "id": "gallery.search.open",
+      "label": "打开本地媒体搜索",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "selection": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?q=:q",
+      "sourceNodeId": "/search?q=:q",
+      "target": "/photo/:path?album=:album&from=:from&q=:q",
+      "targetNodeId": "/photo/:path?album=:album&from=:from&q=:q",
+      "id": "gallery.search.photo.open",
+      "label": "打开当前搜索结果",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "from": "search"
+      },
+      "searchParams": {
+        "q": "string"
+      },
+      "params": {
+        "path": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "photo",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/photo/:path?album=:album&from=:from&q=:q",
+      "sourceNodeId": "/photo/:path?album=:album&from=:from&q=:q",
+      "target": "/photo/:path?modal=delete&album=:album&from=:from&q=:q",
+      "targetNodeId": "/photo/:path?modal=delete&album=:album&from=:from&q=:q",
+      "id": "photo.modal.delete.open",
+      "label": "打开图片删除确认",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "delete"
+      },
+      "searchParams": {},
+      "params": {
+        "path": "string"
+      },
+      "preserveParams": [
+        "album",
+        "from",
+        "q"
+      ],
+      "fromConstraint": {
+        "path": "/photo/:path",
+        "search": {
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "delete",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/intent/view?image=:image",
+      "sourceNodeId": "/intent/view?image=:image",
+      "target": "/intent/view?modal=delete&image=:image",
+      "targetNodeId": "/intent/view?modal=delete&image=:image",
+      "id": "photo.intent.modal.delete.open",
+      "label": "ACTION_VIEW 打开删除确认",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "delete"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "image"
+      ],
+      "fromConstraint": {
+        "path": "/intent/view",
+        "search": {
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "delete",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/?selection=on",
+      "targetNodeId": "/?selection=on",
+      "id": "gallery.photos.select.open",
+      "label": "进入照片多选",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "selection": "on"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "tab": null,
+          "selection": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "select",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/album/:albumId",
+      "sourceNodeId": "/album/:albumId",
+      "target": "/album/:albumId?selection=on",
+      "targetNodeId": "/album/:albumId?selection=on",
+      "id": "gallery.album.select.open",
+      "label": "进入相册多选",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "selection": "on"
+      },
+      "searchParams": {},
+      "params": {
+        "albumId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/album/:albumId",
+        "search": {
+          "selection": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "select",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?selection=on",
+      "sourceNodeId": "/?selection=on",
+      "target": "/?selection=on&modal=delete",
+      "targetNodeId": "/?selection=on&modal=delete",
+      "id": "gallery.select.delete.open",
+      "label": "确认删除已选照片",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "selection": "on",
+        "modal": "delete"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "selection": "on",
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "delete",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?tab=albums",
+      "sourceNodeId": "/?tab=albums",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "gallery.directory.photos.open",
+      "label": "显示所有照片",
+      "type": "state",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "tab": "albums"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "photos",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/album/:albumId",
+      "sourceNodeId": "/album/:albumId",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "gallery.directory.photos.open",
+      "label": "显示所有照片",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/album/:albumId",
+        "search": {
+          "selection": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "photos",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/favorites",
+      "sourceNodeId": "/favorites",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "gallery.directory.photos.open",
+      "label": "显示所有照片",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "photos",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/?tab=albums",
+      "targetNodeId": "/?tab=albums",
+      "id": "gallery.directory.albums.open",
+      "label": "显示相册列表",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "tab": "albums"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "tab": null,
+          "selection": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "albums",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/album/:albumId",
+      "sourceNodeId": "/album/:albumId",
+      "target": "/?tab=albums",
+      "targetNodeId": "/?tab=albums",
+      "id": "gallery.directory.albums.open",
+      "label": "显示相册列表",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "tab": "albums"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/album/:albumId",
+        "search": {
+          "selection": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "albums",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/favorites",
+      "sourceNodeId": "/favorites",
+      "target": "/?tab=albums",
+      "targetNodeId": "/?tab=albums",
+      "id": "gallery.directory.albums.open",
+      "label": "显示相册列表",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "tab": "albums"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "albums",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/favorites",
+      "targetNodeId": "/favorites",
+      "id": "favorites.open",
+      "label": "打开收藏页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "selection": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "favorites",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/album/:albumId",
+      "sourceNodeId": "/album/:albumId",
+      "target": "/favorites",
+      "targetNodeId": "/favorites",
+      "id": "favorites.open",
+      "label": "打开收藏页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/album/:albumId",
+        "search": {
+          "selection": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "favorites",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/album/:albumId",
+      "targetNodeId": "/album/:albumId",
+      "id": "album.open",
+      "label": "打开相册详情页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "albumId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "selection": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "album",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/favorites",
+      "sourceNodeId": "/favorites",
+      "target": "/album/:albumId",
+      "targetNodeId": "/album/:albumId",
+      "id": "album.open",
+      "label": "打开相册详情页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "albumId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "album",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/album/:albumId",
+      "sourceNodeId": "/album/:albumId",
+      "target": "/album/:albumId",
+      "targetNodeId": "/album/:albumId",
+      "id": "album.open",
+      "label": "打开相册详情页",
+      "type": "state",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "albumId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/album/:albumId",
+        "search": {
+          "selection": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "album",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/photo/:path?album=:album&from=:from&q=:q",
+      "targetNodeId": "/photo/:path?album=:album&from=:from&q=:q",
+      "id": "photo.open",
+      "label": "打开图片预览页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "album": "string",
+        "from": "string"
+      },
+      "params": {
+        "path": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "selection": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "photo",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/favorites",
+      "sourceNodeId": "/favorites",
+      "target": "/photo/:path?album=:album&from=:from&q=:q",
+      "targetNodeId": "/photo/:path?album=:album&from=:from&q=:q",
+      "id": "photo.open",
+      "label": "打开图片预览页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "album": "string",
+        "from": "string"
+      },
+      "params": {
+        "path": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "photo",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/album/:albumId",
+      "sourceNodeId": "/album/:albumId",
+      "target": "/photo/:path?album=:album&from=:from&q=:q",
+      "targetNodeId": "/photo/:path?album=:album&from=:from&q=:q",
+      "id": "photo.open",
+      "label": "打开图片预览页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "album": "string",
+        "from": "string"
+      },
+      "params": {
+        "path": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/album/:albumId",
+        "search": {
+          "selection": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "photo",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/photo/:path?album=:album&from=:from&q=:q",
+      "sourceNodeId": "/photo/:path?album=:album&from=:from&q=:q",
+      "target": "/photo/:path?modal=more&album=:album&from=:from&q=:q",
+      "targetNodeId": "/photo/:path?modal=more&album=:album&from=:from&q=:q",
+      "id": "photo.modal.more.open",
+      "label": "打开图片预览更多菜单",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "more"
+      },
+      "searchParams": {},
+      "params": {
+        "path": "string"
+      },
+      "preserveParams": [
+        "album",
+        "from",
+        "q"
+      ],
+      "fromConstraint": {
+        "path": "/photo/:path",
+        "search": {
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_more",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/photo/:path?modal=more&album=:album&from=:from&q=:q",
+      "sourceNodeId": "/photo/:path?modal=more&album=:album&from=:from&q=:q",
+      "target": "/photo/:path?modal=details&album=:album&from=:from&q=:q",
+      "targetNodeId": "/photo/:path?modal=details&album=:album&from=:from&q=:q",
+      "id": "photo.modal.details.open",
+      "label": "从更多菜单打开详情弹窗",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "modal": "details"
+      },
+      "searchParams": {},
+      "params": {
+        "path": "string"
+      },
+      "preserveParams": [
+        "album",
+        "from",
+        "q"
+      ],
+      "fromConstraint": {
+        "path": "/photo/:path",
+        "search": {
+          "modal": "more"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_details",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/photo/:path?modal=more&album=:album&from=:from&q=:q",
+      "sourceNodeId": "/photo/:path?modal=more&album=:album&from=:from&q=:q",
+      "target": "/photo/:path?modal=rename&album=:album&from=:from&q=:q",
+      "targetNodeId": "/photo/:path?modal=rename&album=:album&from=:from&q=:q",
+      "id": "photo.modal.rename.open",
+      "label": "从更多菜单打开重命名弹窗",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "modal": "rename"
+      },
+      "searchParams": {},
+      "params": {
+        "path": "string"
+      },
+      "preserveParams": [
+        "album",
+        "from",
+        "q"
+      ],
+      "fromConstraint": {
+        "path": "/photo/:path",
+        "search": {
+          "modal": "more"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_rename",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/intent/view?image=:image",
+      "sourceNodeId": "/intent/view?image=:image",
+      "target": "/intent/view?modal=more&image=:image",
+      "targetNodeId": "/intent/view?modal=more&image=:image",
+      "id": "photo.intent.modal.more.open",
+      "label": "ACTION_VIEW 模式下打开更多菜单",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "more"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "image"
+      ],
+      "fromConstraint": {
+        "path": "/intent/view",
+        "search": {
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_more",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/intent/view?modal=more&image=:image",
+      "sourceNodeId": "/intent/view?modal=more&image=:image",
+      "target": "/intent/view?modal=details&image=:image",
+      "targetNodeId": "/intent/view?modal=details&image=:image",
+      "id": "photo.intent.modal.details.open",
+      "label": "ACTION_VIEW 模式下从更多菜单打开详情弹窗",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "modal": "details"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "image"
+      ],
+      "fromConstraint": {
+        "path": "/intent/view",
+        "search": {
+          "modal": "more"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_details",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/intent/view?modal=more&image=:image",
+      "sourceNodeId": "/intent/view?modal=more&image=:image",
+      "target": "/intent/view?modal=rename&image=:image",
+      "targetNodeId": "/intent/view?modal=rename&image=:image",
+      "id": "photo.intent.modal.rename.open",
+      "label": "ACTION_VIEW 模式下从更多菜单打开重命名弹窗",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "modal": "rename"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "image"
+      ],
+      "fromConstraint": {
+        "path": "/intent/view",
+        "search": {
+          "modal": "more"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_rename",
+        "gesture": "tap"
+      }
+    }
+  ]
+}

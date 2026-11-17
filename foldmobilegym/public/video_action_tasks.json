@@ -1,0 +1,336 @@
+[
+  {
+    "app": "video",
+    "graphFile": "public\\video_nav_graph.json",
+    "taskId": "video:video.chapter.seek",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/player/:id",
+      "routePath": "/player/:id",
+      "uiStateId": "video.player.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/player/:id"
+        ],
+        "transitions": [
+          "video.asset.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/player/:id"
+        ],
+        "transitions": [
+          "video.asset.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "video.library.base",
+              "component": "Content",
+              "description": "Local video library",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "video.asset.open",
+              "label": "Open video",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/",
+              "target": "/player/:id",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "video",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {
+                "id": "string"
+              },
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/player/:id",
+              "routePath": "/player/:id",
+              "uiStateId": "video.player.base",
+              "component": "Content",
+              "description": "Selected video and chapters",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {
+                "id": "string"
+              },
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "video.asset.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {
+                  "id": "string"
+                },
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "video",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/player/:id",
+              "routePath": "/player/:id",
+              "uiStateId": "video.player.base",
+              "component": "Content",
+              "description": "Selected video and chapters",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {
+                "id": "string"
+              },
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "video.chapter.seek",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "seconds": "number"
+                }
+              }
+            },
+            "action": {
+              "id": "video.chapter.seek",
+              "label": "Seek to chapter",
+              "description": null,
+              "behavior": "other",
+              "scope": "item",
+              "paramsSchema": {
+                "seconds": "number"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "tap",
+                "file": "apps\\Video\\VideoApp.tsx",
+                "line": 8,
+                "col": 1670
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "video.chapter.seek",
+      "label": "Seek to chapter",
+      "description": null,
+      "behavior": "other",
+      "scope": "item",
+      "paramsSchema": {
+        "seconds": "number"
+      }
+    }
+  },
+  {
+    "app": "video",
+    "graphFile": "public\\video_nav_graph.json",
+    "taskId": "video:video.fact.verify",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/player/:id",
+      "routePath": "/player/:id",
+      "uiStateId": "video.player.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/player/:id"
+        ],
+        "transitions": [
+          "video.asset.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/player/:id"
+        ],
+        "transitions": [
+          "video.asset.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "video.library.base",
+              "component": "Content",
+              "description": "Local video library",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "video.asset.open",
+              "label": "Open video",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/",
+              "target": "/player/:id",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "video",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {
+                "id": "string"
+              },
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/player/:id",
+              "routePath": "/player/:id",
+              "uiStateId": "video.player.base",
+              "component": "Content",
+              "description": "Selected video and chapters",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {
+                "id": "string"
+              },
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "video.asset.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {
+                  "id": "string"
+                },
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "video",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/player/:id",
+              "routePath": "/player/:id",
+              "uiStateId": "video.player.base",
+              "component": "Content",
+              "description": "Selected video and chapters",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {
+                "id": "string"
+              },
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "video.fact.verify",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "video.fact.verify",
+              "label": "Verify current chapter",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "unknown",
+                "file": "apps\\Video\\VideoApp.tsx",
+                "line": 8,
+                "col": 1994
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "video.fact.verify",
+      "label": "Verify current chapter",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "apps": {
+    "notes": {}
+  },
+  "raw_apps": {
+    "notes": {
+      "notes": [
+        {
+          "id": "untouched-note",
+          "title": "工作备忘",
+          "content": "原有内容，请保留。",
+          "folderId": "unfiled",
+          "updatedAt": 1793663999000
+        },
+        {
+          "id": "target",
+          "title": "周三评审准备",
+          "content": "",
+          "updatedAt": 1793664000000,
+          "folderId": "unfiled"
+        },
+        {
+          "id": "similar",
+          "title": "周三评审准备（旧版）",
+          "content": "保留旧版内容",
+          "updatedAt": 1793663999000,
+          "folderId": "unfiled"
+        }
+      ],
+      "todos": [
+        {
+          "id": "untouched-todo",
+          "text": "保留原待办",
+          "completed": false,
+          "updatedAt": 1793663999000
+        }
+      ],
+      "createdCount": 0,
+      "deletedCount": 0,
+      "selectedFolderId": "all"
+    }
+  },
+  "os": {},
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "pair_id": "J40"
+}

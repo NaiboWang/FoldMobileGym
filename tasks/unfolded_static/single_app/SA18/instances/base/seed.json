@@ -1,0 +1,27 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "pair_id": "J72",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "apps": {
+    "meituan_waimai": {}
+  },
+  "raw_apps": {
+    "meituan_waimai": {
+      "cart": {
+        "shopId": "rice",
+        "quantities": {}
+      }
+    }
+  },
+  "os": {}
+}

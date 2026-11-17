@@ -1,0 +1,170 @@
+/* 79:00 reference: light canvas, quiet function keys, orange equals.
+   Preserve the existing evaluated operations and keypad order. */
+.calculator-reference { padding-inline: 18px; }
+.calculator-reference-keypad { gap: 8px; }
+.calculator-reference-keypad button {
+  width: 100%; min-width: 0; height: 52px; border-radius: 24px;
+  font-size: 23px; font-weight: 500; color: var(--app-text);
+  background: var(--app-surface); justify-content: center; padding-inline: 6px;
+}
+.calculator-reference-keypad button.bg-gray-400,
+.calculator-reference-keypad button.bg-app-primary { background: var(--app-border); }
+.calculator-reference-keypad button[data-action="calculator.home.calculate.submit"] {
+  background: #f97336; color: #fff;
+}
+.calculator-reference-keypad button:focus-visible {
+  outline: 2px solid #f97336; outline-offset: 2px;
+}
+/* The reference keeps the current result near the top, above an open history sheet. */
+.calculator-reference-display { justify-content: flex-start; padding-top: 24px; padding-bottom: 28px; min-height: 80px; }
+
+/* Query the Activity's available height, not the browser or whole device.
+   Folded top/bottom panes may be much shorter than a fullscreen Activity. */
+.calculator-reference-host {
+  container: calculator / size;
+  min-height: 0;
+}
+
+@container calculator (max-height: 560px) {
+  .calculator-reference {
+    min-height: 0;
+    /* Keep the result below the 36px + 32px toolbar, also in stacked panes. */
+    padding-top: 80px;
+    padding-bottom: 12px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .calculator-reference-display {
+    flex: 1 0 52px;
+    min-height: 52px;
+    padding-top: 0;
+    padding-bottom: 8px;
+  }
+  .calculator-reference-display > div {
+    font-size: clamp(24px, 10cqh, 40px);
+    line-height: 1.1;
+  }
+  .calculator-reference-keypad {
+    /* Reserve separate toolbar/result rows; retain all five key rows.
+       At extremely short divider sizes the owned main area scrolls rather
+       than shrinking touch targets to zero or painting into another pane. */
+    flex: 0 0 clamp(136px, calc(100cqh - 144px), 292px);
+    height: clamp(136px, calc(100cqh - 144px), 292px);
+    min-height: 136px;
+    grid-template-rows: repeat(5, minmax(0, 1fr));
+    gap: clamp(4px, 1.2cqh, 8px);
+    margin-bottom: 0;
+  }
+  .calculator-reference-keypad button {
+    height: 100%;
+    min-height: 0;
+    font-size: clamp(16px, 6cqh, 23px);
+  }
+}
+
+@container calculator (max-height: 240px) {
+  /* A browser-scaled or keyboard-reduced Activity can be shorter than five
+     legible rows. Keep normal-size keys and expose them by owned scrolling. */
+  .calculator-reference-keypad {
+    flex-basis: 292px;
+    height: 292px;
+    min-height: 292px;
+    gap: 8px;
+  }
+  .calculator-reference-keypad button { font-size: 23px; }
+}
+
+.calculator-reference-host { position: relative; }
+.calculator-history-open {
+  position: absolute; top: 36px; left: 18px; z-index: 1;
+  width: 32px; height: 32px; display: grid; place-items: center;
+  border-radius: 50%; color: var(--app-text); background: transparent;
+}
+.calculator-history-open:focus-visible,
+.calculator-history-header button:focus-visible,
+.calculator-history-list:focus-visible { outline: 2px solid #f97336; outline-offset: -2px; }
+.calculator-history-layer { position: absolute; inset: 0; z-index: 80; display: flex; align-items: flex-end; }
+.calculator-history-backdrop { position: absolute; inset: 0; width: 100%; height: 100%; background: rgb(0 0 0 / 16%); }
+.calculator-history-sheet {
+  position: relative; display: flex; flex-direction: column; width: 100%; height: min(70%, 560px);
+  max-height: calc(100% - 36px); min-height: 0; overflow: hidden;
+  border-radius: 24px 24px 0 0; background: var(--app-bg); color: var(--app-text);
+  box-shadow: 0 -4px 24px rgb(0 0 0 / 8%); padding-bottom: 12px;
+}
+.calculator-history-header { display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; padding: 10px 14px 0 18px; gap: 8px; }
+.calculator-history-header h2 { font-size: 16px; font-weight: 600; margin: 0; }
+.calculator-history-header button { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; }
+.calculator-history-list { min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding-inline: 18px; }
+.calculator-history-list ol { list-style: none; padding: 0; margin: 0; }
+.calculator-history-list li { padding-block: 12px; border-bottom: 1px solid var(--app-border); overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+.calculator-history-list [data-history-expression] { font-size: 14px; opacity: .7; }
+.calculator-history-list strong { display: block; font-size: 19px; font-weight: 500; }
+.calculator-history-empty { font-size: 14px; opacity: .65; padding-block: 20px; text-align: center; }
+@container calculator (max-height: 560px) {
+  .calculator-history-header { padding-top: 6px; }
+  .calculator-history-list li { padding-block: 8px; }
+}
+
+.calculator-history-tools { display: flex; align-items: center; gap: 2px; flex-shrink: 0; }
+.calculator-history-header h2 { min-width: 0; overflow-wrap: anywhere; }
+.calculator-history-tools .calculator-history-selectall { width: auto; padding-inline: 5px; min-width: 36px; font-size: 12px; }
+.calculator-history-tools button:disabled { opacity: .35; }
+.calculator-history-record { display: flex; align-items: center; gap: 10px; width: 100%; text-align: start; }
+.calculator-history-record > span:last-child { min-width: 0; overflow-wrap: anywhere; }
+.calculator-history-record [data-history-expression] { display: block; }
+.calculator-history-checkbox { width: 22px; height: 22px; border: 1px solid var(--app-border); border-radius: 50%; display: grid; place-items: center; flex-shrink: 0; }
+.calculator-history-record[aria-checked="true"] .calculator-history-checkbox { background: #f97336; color: white; border-color: #f97336; }
+.calculator-history-confirmation { position: absolute; inset: 0; z-index: 1; display: flex; align-items: center; justify-content: center; padding: 24px 16px; }
+.calculator-history-confirm-box { position: relative; display: flex; flex-direction: column; width: min(100%, 360px); max-height: 100%; overflow: hidden; border-radius: 20px; background: var(--app-surface); color: var(--app-text); padding: 18px; box-shadow: 0 8px 30px rgb(0 0 0 / 15%); }
+.calculator-history-confirm-box h3 { font-size: 17px; font-weight: 600; margin: 0 0 8px; flex-shrink: 0; }
+.calculator-history-confirm-box p { margin: 0; font-size: 14px; min-height: 0; overflow-y: auto; overflow-wrap: anywhere; }
+.calculator-history-confirm-buttons { display: flex; gap: 10px; margin-top: 16px; flex-shrink: 0; }
+.calculator-history-confirm-buttons button { flex: 1; min-width: 0; min-height: 40px; border-radius: 12px; background: var(--app-bg); font-size: 14px; }
+.calculator-history-confirm-buttons [data-calculator-history-delete-confirm] { background: #f97336; color: white; }
+.calculator-history-confirm-buttons button:disabled { opacity: .4; }
+.calculator-history-confirm-box button:focus-visible, .calculator-history-record:focus-visible { outline: 2px solid #f97336; outline-offset: -2px; }
+
+.calculator-scientific-toggle { position: absolute; top: 36px; right: 18px; z-index: 1; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; }
+.calculator-scientific-toggle:focus-visible { outline: 2px solid #f97336; }
+.calculator-expression { background: var(--app-bg); color: var(--app-text); display: flex; flex-direction: column; height: 100%; min-height: 0; padding: 76px 18px 24px; overflow: hidden; }
+.calculator-expression-display { position: relative; flex-shrink: 0; min-height: 88px; padding-bottom: 8px; }
+.calculator-expression-display input { display: block; width: 100%; min-width: 0; height: 48px; text-align: right; background: transparent; color: var(--app-text); font-size: 30px; border: 0; outline: 0; }
+.calculator-expression-preview { height: 32px; line-height: 28px; text-align: right; font-size: 21px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; opacity: .7; }
+.calculator-expression-memory { position: absolute; top: 8px; left: 0; font-size: 12px; }
+.calculator-expression-keyboard-region { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; display: flex; flex-direction: column; }
+.calculator-expression-keyboard { margin-top: auto; flex-shrink: 0; }
+.calculator-expression-functions, .calculator-expression-basic { display: grid; gap: 8px; }
+.calculator-expression-functions { grid-template-columns: repeat(6,minmax(0,1fr)); margin-bottom: 8px; }
+.calculator-expression-basic { grid-template-columns: repeat(4,minmax(0,1fr)); }
+.calculator-expression-keyboard button { min-width: 0; border-radius: 24px; height: 52px; background: var(--app-surface); color: var(--app-text); font-size: 23px; }
+.calculator-expression-functions button {
+  height: clamp(26px,4cqh,40px);
+  /* A minimum-design canvas may be scaled in a narrow freeform window.
+     Keep function targets usable; one pixel covers layout/transform rounding
+     below a 24px screen target. The keyboard region still owns scrolling. */
+  min-height: calc(25px / var(--os-activity-content-scale, 1));
+  font-size: 15px;
+}
+.calculator-expression-keyboard button[data-expression-key="equals"] { background: #f97336; color: white; }
+.calculator-expression-keyboard button[aria-pressed="true"] { color: #f97336; background: var(--app-border); }
+.calculator-expression-keyboard button:disabled { opacity: .35; }
+.calculator-expression-keyboard button:focus-visible { outline: 2px solid #f97336; outline-offset: -2px; }
+.calculator-history-sheet[data-calculator-expression-history="true"] { height: min(60%,560px); }
+@container calculator (max-height: 560px) {
+ .calculator-expression { padding: 80px 18px 12px; overflow: hidden; }
+ .calculator-expression-display { min-height: 54px; padding-bottom: 0; }
+ .calculator-expression-display input { height: 32px; font-size: 24px; padding-inline: 20px 0; }
+ .calculator-expression-preview { height: 22px; line-height: 22px; font-size: 17px; }
+ .calculator-expression-basic { gap: 4px; }
+ .calculator-expression-basic button { height: clamp(24px,calc((100cqh - 162px)/5),52px); }
+ .calculator-expression-functions { gap: 4px; }
+ .calculator-expression-functions button { height: 26px; }
+}
+@container calculator (min-width: 600px) {
+ .calculator-expression[data-scientific="true"] .calculator-expression-keyboard { display: grid; grid-template-columns: repeat(9,minmax(0,1fr)); grid-template-rows: repeat(5,minmax(0,1fr)); gap: 8px; }
+ .calculator-expression[data-scientific="true"] .calculator-expression-functions, .calculator-expression[data-scientific="true"] .calculator-expression-basic { display: contents; }
+ .calculator-expression[data-scientific="true"] .calculator-expression-keyboard button { grid-column: var(--wide-column); grid-row: var(--wide-row) / span var(--wide-span); height: 100%; min-height: 44px; font-size: 20px; }
+}
+.calculator-expression-basic button[data-expression-key="clear"], .calculator-expression-basic button[data-expression-key="backspace"], .calculator-expression-basic button[data-expression-key="+"], .calculator-expression-basic button[data-expression-key="-"], .calculator-expression-basic button[data-expression-key="*"], .calculator-expression-basic button[data-expression-key="/"], .calculator-expression-basic button[data-expression-key="percent"] { background: var(--app-border); }
+@container calculator (max-height: 560px) { .calculator-expression-memory { top: 34px; } }
+.calculator-history-list li.calculator-history-date { border: 0; font-size: 12px; opacity: .6; padding: 10px 0 0; }

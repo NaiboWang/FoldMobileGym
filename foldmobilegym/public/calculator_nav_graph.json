@@ -1,0 +1,451 @@
+{
+  "app": "calculator",
+  "appDir": "system\\Calculator",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 5,
+  "transitionCount": 5,
+  "nodes": [
+    {
+      "id": "/?selection=:selection&targets=:targets",
+      "routePath": "/",
+      "uiStateId": "calculator.home.base",
+      "component": "CalculatorContent",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "history",
+          "direction": "vertical",
+          "description": "Recent local calculations"
+        },
+        {
+          "name": "scientificKeys",
+          "direction": "vertical",
+          "description": "Scientific keypad in short panes"
+        },
+        {
+          "name": "historyDialog",
+          "direction": "vertical",
+          "description": "History confirmation text"
+        }
+      ],
+      "description": "计算器主页",
+      "search": {},
+      "queryParams": {
+        "selection": "string",
+        "targets": "string"
+      },
+      "actions": [
+        {
+          "id": "calculator.home.keypad.press",
+          "label": "数字或小数点",
+          "behavior": "other",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calculator.home.operator.press",
+          "label": "运算符",
+          "behavior": "other",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calculator.home.calculate.submit",
+          "label": "计算结果",
+          "behavior": "submit"
+        },
+        {
+          "id": "calculator.home.clear",
+          "label": "清除算式",
+          "behavior": "other"
+        },
+        {
+          "id": "calculator.home.sign",
+          "label": "切换正负号",
+          "behavior": "other"
+        },
+        {
+          "id": "calculator.home.percent",
+          "label": "百分比",
+          "behavior": "other"
+        },
+        {
+          "id": "calculator.expression.scientific.toggle",
+          "label": "Scientific keyboard preference",
+          "behavior": "toggle"
+        },
+        {
+          "id": "calculator.expression.input",
+          "label": "Edit the expression",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calculator.expression.key.press",
+          "label": "Expression keypad",
+          "behavior": "other",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calculator.expression.calculate.submit",
+          "label": "Evaluate the expression",
+          "behavior": "submit"
+        },
+        {
+          "id": "calculator.expression.clear",
+          "label": "Clear expression",
+          "behavior": "other"
+        },
+        {
+          "id": "calculator.expression.angle.toggle",
+          "label": "Radians/degrees preference",
+          "behavior": "toggle"
+        },
+        {
+          "id": "calculator.expression.inverse.toggle",
+          "label": "Inverse function preference",
+          "behavior": "toggle"
+        },
+        {
+          "id": "calculator.expression.memory.press",
+          "label": "Memory operation",
+          "behavior": "other",
+          "paramsSchema": {
+            "value": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/?history=open&selection=:selection&targets=:targets",
+      "routePath": "/",
+      "uiStateId": "calculator.home.history",
+      "component": "CalculatorContent",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "history",
+          "direction": "vertical",
+          "description": "Recent local calculations"
+        },
+        {
+          "name": "scientificKeys",
+          "direction": "vertical",
+          "description": "Scientific keypad in short panes"
+        },
+        {
+          "name": "historyDialog",
+          "direction": "vertical",
+          "description": "History confirmation text"
+        }
+      ],
+      "description": "Recent calculation history",
+      "search": {
+        "history": "open"
+      },
+      "queryParams": {
+        "selection": "string",
+        "targets": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/?history=edit&selection=:selection&targets=:targets",
+      "routePath": "/",
+      "uiStateId": "calculator.home.history.edit",
+      "component": "CalculatorContent",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "history",
+          "direction": "vertical",
+          "description": "Recent local calculations"
+        },
+        {
+          "name": "scientificKeys",
+          "direction": "vertical",
+          "description": "Scientific keypad in short panes"
+        },
+        {
+          "name": "historyDialog",
+          "direction": "vertical",
+          "description": "History confirmation text"
+        }
+      ],
+      "description": "Select history records",
+      "search": {
+        "history": "edit"
+      },
+      "queryParams": {
+        "selection": "string",
+        "targets": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/?history=open&dialog=deleteHistory&selection=:selection&targets=:targets",
+      "routePath": "/",
+      "uiStateId": "calculator.home.history.clear",
+      "component": "CalculatorContent",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "history",
+          "direction": "vertical",
+          "description": "Recent local calculations"
+        },
+        {
+          "name": "scientificKeys",
+          "direction": "vertical",
+          "description": "Scientific keypad in short panes"
+        },
+        {
+          "name": "historyDialog",
+          "direction": "vertical",
+          "description": "History confirmation text"
+        }
+      ],
+      "description": "Confirm clearing visible history",
+      "search": {
+        "history": "open",
+        "dialog": "deleteHistory"
+      },
+      "queryParams": {
+        "selection": "string",
+        "targets": "string"
+      },
+      "actions": [
+        {
+          "id": "calculator.history.clear.submit",
+          "label": "Clear displayed history",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/?history=edit&dialog=deleteHistory&selection=:selection&targets=:targets",
+      "routePath": "/",
+      "uiStateId": "calculator.home.history.delete",
+      "component": "CalculatorContent",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "history",
+          "direction": "vertical",
+          "description": "Recent local calculations"
+        },
+        {
+          "name": "scientificKeys",
+          "direction": "vertical",
+          "description": "Scientific keypad in short panes"
+        },
+        {
+          "name": "historyDialog",
+          "direction": "vertical",
+          "description": "History confirmation text"
+        }
+      ],
+      "description": "Confirm deleting selected history",
+      "search": {
+        "history": "edit",
+        "dialog": "deleteHistory"
+      },
+      "queryParams": {
+        "selection": "string",
+        "targets": "string"
+      },
+      "actions": [
+        {
+          "id": "calculator.history.delete.submit",
+          "label": "Delete selected history records",
+          "behavior": "submit"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/?selection=:selection&targets=:targets",
+      "sourceNodeId": "/?selection=:selection&targets=:targets",
+      "target": "/?history=open&selection=:selection&targets=:targets",
+      "targetNodeId": "/?history=open&selection=:selection&targets=:targets",
+      "id": "calculator.home.history.open",
+      "label": "View recent calculations",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "history": "open"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "history": null,
+          "dialog": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "history",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?history=open&selection=:selection&targets=:targets",
+      "sourceNodeId": "/?history=open&selection=:selection&targets=:targets",
+      "target": "/?history=edit&selection=:selection&targets=:targets",
+      "targetNodeId": "/?history=edit&selection=:selection&targets=:targets",
+      "id": "calculator.history.edit.open",
+      "label": "Select history records",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "history": "edit"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "history": "open",
+          "dialog": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "edit",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?history=edit&selection=:selection&targets=:targets",
+      "sourceNodeId": "/?history=edit&selection=:selection&targets=:targets",
+      "target": "/?history=edit&dialog=deleteHistory&selection=:selection&targets=:targets",
+      "targetNodeId": "/?history=edit&dialog=deleteHistory&selection=:selection&targets=:targets",
+      "id": "calculator.history.delete.open",
+      "label": "Confirm deleting selected records",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "history": "edit",
+        "dialog": "deleteHistory"
+      },
+      "searchParams": {
+        "targets": "string"
+      },
+      "params": {},
+      "preserveParams": [
+        "selection"
+      ],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "history": "edit",
+          "dialog": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "delete",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?history=open&selection=:selection&targets=:targets",
+      "sourceNodeId": "/?history=open&selection=:selection&targets=:targets",
+      "target": "/?history=open&dialog=deleteHistory&selection=:selection&targets=:targets",
+      "targetNodeId": "/?history=open&dialog=deleteHistory&selection=:selection&targets=:targets",
+      "id": "calculator.history.clear.open",
+      "label": "Confirm clearing visible history",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "history": "open",
+        "dialog": "deleteHistory"
+      },
+      "searchParams": {
+        "targets": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "history": "open",
+          "dialog": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "delete",
+        "gesture": "tap"
+      }
+    }
+  ]
+}

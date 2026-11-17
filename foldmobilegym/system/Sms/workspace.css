@@ -1,0 +1,183 @@
+.sms-workspace {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  container-type: inline-size;
+  container-name: sms-workspace;
+  overflow: hidden;
+  background: var(--app-bg);
+}
+
+.sms-workspace-grid {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  overflow: hidden;
+}
+
+.sms-workspace-master,
+.sms-workspace-detail {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.sms-workspace-master { display: none; background: #fff; }
+.sms-workspace-detail { display: block; background: #f6f6fb; }
+.sms-workspace-grid.is-root .sms-workspace-master { display: block; }
+.sms-workspace-grid.is-root .sms-workspace-detail { display: none; }
+.sms-workspace-empty { width: 100%; height: 100%; background: #f7f7fb; }
+
+.sms-conversation-list {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #202124;
+  background: #fff;
+}
+
+.sms-conversation-status { height: 40px; flex: 0 0 auto; }
+.sms-conversation-toolbar {
+  height: 44px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 12px;
+}
+.sms-conversation-menu {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  color: #2d3035;
+  border-radius: 50%;
+}
+.sms-conversation-menu:active { background: #f1f2f4; }
+.sms-conversation-title {
+  flex: 0 0 auto;
+  padding: 5px 28px 24px;
+  color: #16181c;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.12;
+}
+.sms-conversation-search-wrap { flex: 0 0 auto; padding: 0 24px 18px; }
+.sms-conversation-search {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 15px;
+  border-radius: 22px;
+  color: #8b8e95;
+  background: #f1f1f3;
+}
+.sms-conversation-search input { min-width: 0; flex: 1; outline: none; background: transparent; font-size: 13px; }
+.sms-conversation-categories { flex: 0 0 auto; padding: 0 24px; }
+.sms-conversation-category {
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #272a30;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f2;
+}
+.sms-conversation-category svg { color: #b8bbc1; }
+.sms-conversation-scroll {
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  scrollbar-width: none;
+  background: #fff;
+}
+.sms-conversation-scroll::-webkit-scrollbar { display: none; }
+.sms-conversation-item {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 10px 24px;
+  border-bottom: 1px solid #f1f1f3;
+  cursor: default;
+}
+.sms-conversation-item:active { background: #f3f5f8; }
+.sms-conversation-item[data-selected] { background: #dce8fb; }
+.sms-conversation-unread { width: 12px; flex: 0 0 auto; display: grid; place-items: center; }
+.sms-conversation-unread > span { width: 6px; height: 6px; border-radius: 50%; background: #ff6b00; }
+.sms-conversation-avatar { display: none; }
+.sms-conversation-copy { min-width: 0; flex: 1 1 auto; }
+.sms-conversation-heading { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.sms-conversation-sender { min-width: 0; flex: 1 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #24272d; font-size: 15px; font-weight: 500; }
+.sms-conversation-time { flex: 0 0 auto; color: #81858d; font-size: 11px; }
+.sms-conversation-preview { margin-top: 3px; overflow: hidden; color: #92959d; font-size: 11px; line-height: 1.35; text-overflow: ellipsis; white-space: nowrap; }
+.sms-conversation-fab {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  border-radius: 50%;
+  background: #3478f6;
+  box-shadow: 0 7px 18px rgba(37, 105, 225, .28);
+}
+
+.sms-detail-page,
+.sms-compose-root { background: #f7f7fb !important; }
+.sms-detail-header { background: rgba(247, 247, 251, .96); }
+.sms-detail-header-copy { text-align: left; }
+.sms-detail-avatar {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  border-radius: 50%;
+  background: #c4cad5;
+}
+.sms-detail-actions { display: flex; align-items: center; color: #30333a; }
+.sms-detail-action { width: 36px; height: 36px; display: grid; place-items: center; }
+.sms-detail-messages { padding-inline: 28px !important; }
+.sms-message-group > div:first-child { max-width: 86%; }
+.sms-detail-composer,
+.sms-compose-composer { background: rgba(255, 255, 255, .96) !important; }
+.sms-composer-attachment {
+  color: #24272d;
+  border: 1px solid #c9ccd2;
+  background: #fff !important;
+}
+
+@container sms-workspace (min-width: 600px) {
+  .sms-workspace-grid.is-adaptive {
+    grid-template-columns: minmax(0, 40%) minmax(0, 60%);
+  }
+  .sms-workspace-grid.is-adaptive .sms-workspace-master,
+  .sms-workspace-grid.is-adaptive .sms-workspace-detail { display: block; }
+  .sms-workspace-grid.is-adaptive .sms-workspace-detail {
+    border-left: 1px solid #e3e4e8;
+  }
+  .sms-pane-back { display: none !important; }
+  .sms-compose-header { justify-content: flex-start !important; padding-left: 28px !important; }
+  .sms-compose-title { padding: 6px 28px 20px !important; }
+  .sms-compose-title h1 { font-size: 22px !important; font-weight: 650 !important; }
+  .sms-compose-recipient-shell { padding-inline: 28px !important; }
+  .sms-detail-header { padding-inline: 28px 18px !important; }
+  .sms-detail-header-copy { padding-left: 8px; }
+  .sms-conversation-title { font-size: 29px; }
+  .sms-conversation-item { padding-inline: 24px 18px; }
+  .sms-conversation-fab { right: 28px; bottom: 28px; }
+}

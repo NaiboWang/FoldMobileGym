@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "foldagentgym.episode.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task",
+    "seed_state",
+    "run_metadata",
+    "task_hash",
+    "seed_hash"
+  ],
+  "properties": {
+    "schema_version": {"const": "foldagentgym.episode.v1"},
+    "task": {"type": "object"},
+    "seed_state": {"type": "object"},
+    "run_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["instance_id", "run_seed", "protocol_id", "initial_posture", "transition_directions"],
+      "properties": {
+        "instance_id": {"type": "string", "minLength": 1},
+        "run_seed": {"type": "integer", "minimum": 0},
+        "protocol_id": {"enum": ["inner_to_cover", "cover_to_inner", "tabletop_to_cover", "cover_to_tabletop"]},
+        "initial_posture": {"enum": ["folded", "unfolded", "tabletop"]},
+        "transition_directions": {
+          "type": "array",
+          "items": {"type": "string", "pattern": "^(folded|unfolded|tabletop)->(folded|unfolded|tabletop)$"}
+        }
+      }
+    },
+    "task_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "seed_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

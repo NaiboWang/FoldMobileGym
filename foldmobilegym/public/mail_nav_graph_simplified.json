@@ -1,0 +1,718 @@
+{
+  "app": "mail",
+  "appDir": "apps\\Mail",
+  "mode": "schema",
+  "routeCount": 7,
+  "edgeCount": 11,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "component": "MailInbox",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "Gmail 收件箱、邮件阅读与安全草稿",
+      "stateCount": 3,
+      "states": [
+        "/",
+        "/?drawer=open",
+        "/?menu=message"
+      ],
+      "actionCount": 15,
+      "actionIds": [
+        "mail.reader.item.star.toggle",
+        "mail.reader.item.archive.set",
+        "mail.reader.item.unread.set",
+        "mail.recovery.item.open",
+        "mail.compose.attach.open",
+        "mail.compose.attachment.item.remove",
+        "mail.draft.open",
+        "mail.message.open",
+        "mail.fact.verify",
+        "mail.compose.open",
+        "mail.compose.to.input",
+        "mail.compose.subject.input",
+        "mail.compose.body.input",
+        "mail.compose.save",
+        "mail.reader.menu.item.restore"
+      ],
+      "actions": [
+        {
+          "id": "mail.reader.item.star.toggle",
+          "label": "Toggle the current message star",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.reader.item.archive.set",
+          "label": "Archive or move the current original message to Inbox",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string",
+            "archived": "boolean"
+          }
+        },
+        {
+          "id": "mail.reader.item.unread.set",
+          "label": "Mark the current message unread",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.recovery.item.open",
+          "label": "将未保存冲突副本恢复为新邮件",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.compose.attach.open",
+          "label": "Pick a virtual document attachment",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.compose.attachment.item.remove",
+          "label": "Remove attachment reference",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.draft.open",
+          "label": "打开已保存的草稿",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.message.open",
+          "label": "打开邮件",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.fact.verify",
+          "label": "核对邮件行动项",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.compose.open",
+          "label": "打开写邮件",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.compose.to.input",
+          "label": "输入收件人",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.compose.subject.input",
+          "label": "输入主题",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.compose.body.input",
+          "label": "输入正文",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.compose.save",
+          "label": "保存草稿",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.reader.menu.item.restore",
+          "label": "Move the original archived message to Inbox",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/folder/:folder",
+      "routePath": "/folder/:folder",
+      "component": "MailInbox",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "Local Mail folder",
+      "stateCount": 3,
+      "states": [
+        "/folder/:folder",
+        "/folder/:folder?drawer=open",
+        "/folder/:folder?menu=message"
+      ],
+      "actionCount": 15,
+      "actionIds": [
+        "mail.folder.message.item.open",
+        "mail.folder.draft.item.open",
+        "mail.folder.recovery.item.open",
+        "mail.folder.reader.item.star.toggle",
+        "mail.folder.reader.item.archive.set",
+        "mail.folder.reader.item.unread.set",
+        "mail.folder.fact.verify",
+        "mail.folder.compose.open",
+        "mail.folder.compose.to.input",
+        "mail.folder.compose.subject.input",
+        "mail.folder.compose.body.input",
+        "mail.folder.compose.save",
+        "mail.folder.compose.attach.open",
+        "mail.folder.compose.attachment.item.remove",
+        "mail.folder.reader.menu.item.restore"
+      ],
+      "actions": [
+        {
+          "id": "mail.folder.message.item.open",
+          "label": "Open a message in this folder",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.folder.draft.item.open",
+          "label": "Open an original saved draft",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.folder.recovery.item.open",
+          "label": "Recover a conflicting draft",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.folder.reader.item.star.toggle",
+          "label": "Toggle original message star",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.folder.reader.item.archive.set",
+          "label": "Archive or restore the folder reader source",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string",
+            "archived": "boolean"
+          }
+        },
+        {
+          "id": "mail.folder.reader.item.unread.set",
+          "label": "Mark the folder message unread",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.folder.fact.verify",
+          "label": "Verify original message action item",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.folder.compose.open",
+          "label": "Compose in the current folder context",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.folder.compose.to.input",
+          "label": "Edit recipient",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.folder.compose.subject.input",
+          "label": "Edit subject",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.folder.compose.body.input",
+          "label": "Edit body",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.folder.compose.save",
+          "label": "Save local draft",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.folder.compose.attach.open",
+          "label": "Choose virtual attachment",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.folder.compose.attachment.item.remove",
+          "label": "Remove attachment reference",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.folder.reader.menu.item.restore",
+          "label": "Move the folder reader source to Inbox",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/search",
+      "routePath": "/search",
+      "component": "MailInbox",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "本地已提供邮件事实与草稿搜索",
+      "stateCount": 1,
+      "states": [
+        "/search?originFolder=:originFolder&q=:q"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "mail.search.query.input",
+        "mail.search.query.clear"
+      ],
+      "actions": [
+        {
+          "id": "mail.search.query.input",
+          "label": "输入邮件搜索条件",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.search.query.clear",
+          "label": "清空邮件搜索",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/search/message/:messageId",
+      "routePath": "/search/message/:messageId",
+      "component": "MailInbox",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "从搜索阅读实际邮件",
+      "stateCount": 2,
+      "states": [
+        "/search/message/:messageId?originFolder=:originFolder&q=:q",
+        "/search/message/:messageId?menu=message&originFolder=:originFolder&q=:q"
+      ],
+      "actionCount": 7,
+      "actionIds": [
+        "mail.search.reader.item.star.toggle",
+        "mail.search.reader.item.archive.set",
+        "mail.search.reader.item.unread.set",
+        "mail.search.reader.query.input",
+        "mail.search.reader.query.clear",
+        "mail.search.message.item.verify",
+        "mail.search.reader.menu.item.restore"
+      ],
+      "actions": [
+        {
+          "id": "mail.search.reader.item.star.toggle",
+          "label": "Toggle the source search message star",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.search.reader.item.archive.set",
+          "label": "Archive or restore the source search message",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string",
+            "archived": "boolean"
+          }
+        },
+        {
+          "id": "mail.search.reader.item.unread.set",
+          "label": "Mark the search message unread",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.search.reader.query.input",
+          "label": "从阅读搜索栏修改条件",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.search.reader.query.clear",
+          "label": "从阅读搜索栏清空条件",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.search.message.item.verify",
+          "label": "核对当前来源邮件行动项",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "mail.search.reader.menu.item.restore",
+          "label": "Move the original search message to Inbox",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/search/draft/:draftId",
+      "routePath": "/search/draft/:draftId",
+      "component": "MailInbox",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "从搜索继续实际草稿",
+      "stateCount": 1,
+      "states": [
+        "/search/draft/:draftId?originFolder=:originFolder&q=:q"
+      ],
+      "actionCount": 6,
+      "actionIds": [
+        "mail.search.draft.to.input",
+        "mail.search.draft.subject.input",
+        "mail.search.draft.body.input",
+        "mail.search.draft.save",
+        "mail.search.draft.attach.open",
+        "mail.search.draft.attachment.item.remove"
+      ],
+      "actions": [
+        {
+          "id": "mail.search.draft.to.input",
+          "label": "编辑草稿收件人",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.search.draft.subject.input",
+          "label": "编辑草稿主题",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.search.draft.body.input",
+          "label": "编辑草稿正文",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.search.draft.save",
+          "label": "保存原草稿",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.search.draft.attach.open",
+          "label": "为当前草稿选择虚拟附件",
+          "behavior": "other"
+        },
+        {
+          "id": "mail.search.draft.attachment.item.remove",
+          "label": "移除草稿附件引用",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/reply/:messageId",
+      "routePath": "/reply/:messageId",
+      "component": "MailReplyPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "Local reply to the actual original message",
+      "stateCount": 1,
+      "states": [
+        "/reply/:messageId?origin=:origin&originFolder=:originFolder&q=:q"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "mail.reply.body.input",
+        "mail.reply.save"
+      ],
+      "actions": [
+        {
+          "id": "mail.reply.body.input",
+          "label": "Edit the original-thread reply body",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.reply.save",
+          "label": "Save the source-bound local reply without sending",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/compose/to",
+      "routePath": "/compose/to",
+      "component": "MailtoComposePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "Local email draft from an explicit mailto intent",
+      "stateCount": 1,
+      "states": [
+        "/compose/to"
+      ],
+      "actionCount": 4,
+      "actionIds": [
+        "mail.mailto.to.input",
+        "mail.mailto.subject.input",
+        "mail.mailto.body.input",
+        "mail.mailto.save.submit"
+      ],
+      "actions": [
+        {
+          "id": "mail.mailto.to.input",
+          "label": "Edit local draft recipient",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.mailto.subject.input",
+          "label": "Edit local draft subject",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.mailto.body.input",
+          "label": "Edit local draft body",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "mail.mailto.save.submit",
+          "label": "Save local draft and return without sending",
+          "behavior": "submit"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/folder/:folder",
+      "target": "/",
+      "transitions": [
+        "mail.folders.inbox"
+      ],
+      "type": "navigation",
+      "label": "mail.folders.inbox",
+      "id": "mail.folders.inbox"
+    },
+    {
+      "source": "/",
+      "target": "/folder/:folder",
+      "transitions": [
+        "mail.folders.select"
+      ],
+      "type": "navigation",
+      "label": "mail.folders.select",
+      "id": "mail.folders.select"
+    },
+    {
+      "source": "/folder/:folder",
+      "target": "/search",
+      "transitions": [
+        "mail.folder.search.open"
+      ],
+      "type": "navigation",
+      "label": "mail.folder.search.open",
+      "id": "mail.folder.search.open"
+    },
+    {
+      "source": "/folder/:folder",
+      "target": "/reply/:messageId",
+      "transitions": [
+        "mail.folder.reply.open",
+        "mail.folder.reply.resume"
+      ],
+      "type": "navigation",
+      "label": "mail.folder.reply.open, mail.folder.reply.resume",
+      "id": "mail.folder.reply.open"
+    },
+    {
+      "source": "/",
+      "target": "/reply/:messageId",
+      "transitions": [
+        "mail.reply.resume",
+        "mail.reply.open"
+      ],
+      "type": "navigation",
+      "label": "mail.reply.resume, mail.reply.open",
+      "id": "mail.reply.resume"
+    },
+    {
+      "source": "/search",
+      "target": "/reply/:messageId",
+      "transitions": [
+        "mail.search.reply.resume"
+      ],
+      "type": "navigation",
+      "label": "mail.search.reply.resume",
+      "id": "mail.search.reply.resume"
+    },
+    {
+      "source": "/search/message/:messageId",
+      "target": "/reply/:messageId",
+      "transitions": [
+        "mail.search.reply.resume",
+        "mail.search.reply.open"
+      ],
+      "type": "navigation",
+      "label": "mail.search.reply.resume, mail.search.reply.open",
+      "id": "mail.search.reply.resume"
+    },
+    {
+      "source": "/",
+      "target": "/search",
+      "transitions": [
+        "mail.search.open"
+      ],
+      "type": "navigation",
+      "label": "mail.search.open",
+      "id": "mail.search.open"
+    },
+    {
+      "source": "/search",
+      "target": "/search/message/:messageId",
+      "transitions": [
+        "mail.search.message.select"
+      ],
+      "type": "navigation",
+      "label": "mail.search.message.select",
+      "id": "mail.search.message.select"
+    },
+    {
+      "source": "/search",
+      "target": "/search/draft/:draftId",
+      "transitions": [
+        "mail.search.draft.select"
+      ],
+      "type": "navigation",
+      "label": "mail.search.draft.select",
+      "id": "mail.search.draft.select"
+    },
+    {
+      "source": "/search/message/:messageId",
+      "target": "/search/draft/:draftId",
+      "transitions": [
+        "mail.search.draft.select"
+      ],
+      "type": "navigation",
+      "label": "mail.search.draft.select",
+      "id": "mail.search.draft.select"
+    }
+  ]
+}

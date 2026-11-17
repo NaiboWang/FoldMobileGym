@@ -1,0 +1,67 @@
+{
+  "app": "fitness",
+  "appDir": "apps\\Fitness",
+  "mode": "schema",
+  "routeCount": 2,
+  "edgeCount": 1,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "component": "Content",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "Activity history",
+      "stateCount": 1,
+      "states": [
+        "/"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/activity/:id",
+      "routePath": "/activity/:id",
+      "component": "Content",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "Activity metrics",
+      "stateCount": 1,
+      "states": [
+        "/activity/:id"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "fitness.fact.verify"
+      ],
+      "actions": [
+        {
+          "id": "fitness.fact.verify",
+          "label": "Verify activity data",
+          "behavior": "other"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/",
+      "target": "/activity/:id",
+      "transitions": [
+        "fitness.activity.open"
+      ],
+      "type": "navigation",
+      "label": "fitness.activity.open",
+      "id": "fitness.activity.open"
+    }
+  ]
+}

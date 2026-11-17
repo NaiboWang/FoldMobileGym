@@ -1,0 +1,56 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "apps": {
+    "map": {}
+  },
+  "raw_apps": {
+    "map": {
+      "localPlaces": [
+        {
+          "placeId": "source-place",
+          "name": "知行书店",
+          "lat": 39.905,
+          "lng": 116.407,
+          "types": [
+            "book_store"
+          ],
+          "primaryTypeDisplayName": "书店",
+          "formattedAddress": "海棠区知行路51号A座5层",
+          "rating": 4.5,
+          "userRatingCount": 20,
+          "distanceMeters": 300
+        },
+        {
+          "placeId": "other-place",
+          "name": "知行书店",
+          "lat": 39.905,
+          "lng": 116.407,
+          "types": [
+            "book_store"
+          ],
+          "primaryTypeDisplayName": "书店",
+          "formattedAddress": "南城区人民路18号1层",
+          "rating": 4.5,
+          "userRatingCount": 20,
+          "distanceMeters": 300
+        }
+      ],
+      "searchHistory": [],
+      "navigationStartCount": 0,
+      "savedPlaceIds": []
+    }
+  },
+  "os": {},
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "pair_id": "J51"
+}

@@ -1,0 +1,408 @@
+{
+  "app": "gallery",
+  "appDir": "system\\Gallery",
+  "mode": "schema",
+  "routeCount": 6,
+  "edgeCount": 12,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "component": "HomePage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "相册首页",
+      "stateCount": 4,
+      "states": [
+        "/",
+        "/?tab=albums",
+        "/?selection=on",
+        "/?selection=on&modal=delete"
+      ],
+      "actionCount": 5,
+      "actionIds": [
+        "gallery.select.share",
+        "gallery.select.favorite.submit",
+        "gallery.select.all.toggle",
+        "gallery.select.item.toggle",
+        "gallery.select.delete.submit"
+      ],
+      "actions": [
+        {
+          "id": "gallery.select.share",
+          "label": "分享选中的图片",
+          "behavior": "other"
+        },
+        {
+          "id": "gallery.select.favorite.submit",
+          "label": "收藏选中的图片",
+          "behavior": "submit"
+        },
+        {
+          "id": "gallery.select.all.toggle",
+          "label": "切换全选",
+          "behavior": "toggle"
+        },
+        {
+          "id": "gallery.select.item.toggle",
+          "label": "选择或取消图片",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "path": "string"
+          }
+        },
+        {
+          "id": "gallery.select.delete.submit",
+          "label": "确认删除已选照片",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/search",
+      "routePath": "/search",
+      "component": "GallerySearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "本地媒体搜索",
+      "stateCount": 1,
+      "states": [
+        "/search?q=:q"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "gallery.search.query.input"
+      ],
+      "actions": [
+        {
+          "id": "gallery.search.query.input",
+          "label": "输入媒体搜索词",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/favorites",
+      "routePath": "/favorites",
+      "component": "FavoritesPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "收藏页",
+      "stateCount": 1,
+      "states": [
+        "/favorites"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/album/:albumId",
+      "routePath": "/album/:albumId",
+      "component": "AlbumDetailPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "相册详情页",
+      "stateCount": 2,
+      "states": [
+        "/album/:albumId",
+        "/album/:albumId?selection=on"
+      ],
+      "actionCount": 3,
+      "actionIds": [
+        "gallery.album.select.share",
+        "gallery.album.select.favorite.submit",
+        "gallery.album.select.item.toggle"
+      ],
+      "actions": [
+        {
+          "id": "gallery.album.select.share",
+          "label": "分享相册内选中图片",
+          "behavior": "other"
+        },
+        {
+          "id": "gallery.album.select.favorite.submit",
+          "label": "收藏相册内选中图片",
+          "behavior": "submit"
+        },
+        {
+          "id": "gallery.album.select.item.toggle",
+          "label": "选择或取消相册图片",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "path": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/photo/:path",
+      "routePath": "/photo/:path",
+      "component": "PhotoViewerPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "图片预览页",
+      "stateCount": 6,
+      "states": [
+        "/photo/:path?album=:album&from=:from&q=:q",
+        "/photo/:path?modal=edit&album=:album&from=:from&q=:q",
+        "/photo/:path?modal=more&album=:album&from=:from&q=:q",
+        "/photo/:path?modal=details&album=:album&from=:from&q=:q",
+        "/photo/:path?modal=rename&album=:album&from=:from&q=:q",
+        "/photo/:path?modal=delete&album=:album&from=:from&q=:q"
+      ],
+      "actionCount": 6,
+      "actionIds": [
+        "gallery.viewer.share",
+        "gallery.viewer.favorite.toggle",
+        "gallery.editor.rotate",
+        "gallery.editor.reset",
+        "gallery.editor.save.copy",
+        "gallery.viewer.delete.submit"
+      ],
+      "actions": [
+        {
+          "id": "gallery.viewer.share",
+          "label": "分享当前图片",
+          "behavior": "other"
+        },
+        {
+          "id": "gallery.viewer.favorite.toggle",
+          "label": "切换当前图片收藏",
+          "behavior": "toggle",
+          "paramsSchema": {
+            "path": "string"
+          }
+        },
+        {
+          "id": "gallery.editor.rotate",
+          "label": "Rotate source pixels clockwise",
+          "behavior": "other"
+        },
+        {
+          "id": "gallery.editor.reset",
+          "label": "Reset the rotation preview",
+          "behavior": "other"
+        },
+        {
+          "id": "gallery.editor.save.copy",
+          "label": "Write a rotated PNG copy, keeping the source",
+          "behavior": "submit"
+        },
+        {
+          "id": "gallery.viewer.delete.submit",
+          "label": "Delete the actual viewed source",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/intent/view",
+      "routePath": "/intent/view",
+      "component": "PhotoViewerPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "通过 ACTION_VIEW 打开的图片预览页",
+      "stateCount": 6,
+      "states": [
+        "/intent/view?image=:image",
+        "/intent/view?modal=edit&image=:image",
+        "/intent/view?modal=more&image=:image",
+        "/intent/view?modal=details&image=:image",
+        "/intent/view?modal=rename&image=:image",
+        "/intent/view?modal=delete&image=:image"
+      ],
+      "actionCount": 5,
+      "actionIds": [
+        "gallery.intent.favorite.toggle",
+        "gallery.intent.editor.rotate",
+        "gallery.intent.editor.reset",
+        "gallery.intent.editor.save.copy",
+        "gallery.intent.delete.submit"
+      ],
+      "actions": [
+        {
+          "id": "gallery.intent.favorite.toggle",
+          "label": "切换外部来源当前图片收藏",
+          "behavior": "toggle",
+          "paramsSchema": {
+            "path": "string"
+          }
+        },
+        {
+          "id": "gallery.intent.editor.rotate",
+          "label": "Rotate source pixels clockwise",
+          "behavior": "other"
+        },
+        {
+          "id": "gallery.intent.editor.reset",
+          "label": "Reset the rotation preview",
+          "behavior": "other"
+        },
+        {
+          "id": "gallery.intent.editor.save.copy",
+          "label": "Write a rotated PNG copy, keeping the source",
+          "behavior": "submit"
+        },
+        {
+          "id": "gallery.intent.delete.submit",
+          "label": "Delete the actual intent source",
+          "behavior": "submit"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/intent/view",
+      "target": "/photo/:path",
+      "transitions": [
+        "photo.edit.copy.open"
+      ],
+      "type": "navigation",
+      "label": "photo.edit.copy.open",
+      "id": "photo.edit.copy.open"
+    },
+    {
+      "source": "/",
+      "target": "/search",
+      "transitions": [
+        "gallery.search.open"
+      ],
+      "type": "navigation",
+      "label": "gallery.search.open",
+      "id": "gallery.search.open"
+    },
+    {
+      "source": "/search",
+      "target": "/photo/:path",
+      "transitions": [
+        "gallery.search.photo.open"
+      ],
+      "type": "navigation",
+      "label": "gallery.search.photo.open",
+      "id": "gallery.search.photo.open"
+    },
+    {
+      "source": "/album/:albumId",
+      "target": "/",
+      "transitions": [
+        "gallery.directory.photos.open",
+        "gallery.directory.albums.open"
+      ],
+      "type": "navigation",
+      "label": "gallery.directory.photos.open, gallery.directory.albums.open",
+      "id": "gallery.directory.photos.open"
+    },
+    {
+      "source": "/favorites",
+      "target": "/",
+      "transitions": [
+        "gallery.directory.photos.open",
+        "gallery.directory.albums.open"
+      ],
+      "type": "navigation",
+      "label": "gallery.directory.photos.open, gallery.directory.albums.open",
+      "id": "gallery.directory.photos.open"
+    },
+    {
+      "source": "/",
+      "target": "/favorites",
+      "transitions": [
+        "favorites.open"
+      ],
+      "type": "navigation",
+      "label": "favorites.open",
+      "id": "favorites.open"
+    },
+    {
+      "source": "/album/:albumId",
+      "target": "/favorites",
+      "transitions": [
+        "favorites.open"
+      ],
+      "type": "navigation",
+      "label": "favorites.open",
+      "id": "favorites.open"
+    },
+    {
+      "source": "/",
+      "target": "/album/:albumId",
+      "transitions": [
+        "album.open"
+      ],
+      "type": "navigation",
+      "label": "album.open",
+      "id": "album.open"
+    },
+    {
+      "source": "/favorites",
+      "target": "/album/:albumId",
+      "transitions": [
+        "album.open"
+      ],
+      "type": "navigation",
+      "label": "album.open",
+      "id": "album.open"
+    },
+    {
+      "source": "/",
+      "target": "/photo/:path",
+      "transitions": [
+        "photo.open"
+      ],
+      "type": "navigation",
+      "label": "photo.open",
+      "id": "photo.open"
+    },
+    {
+      "source": "/favorites",
+      "target": "/photo/:path",
+      "transitions": [
+        "photo.open"
+      ],
+      "type": "navigation",
+      "label": "photo.open",
+      "id": "photo.open"
+    },
+    {
+      "source": "/album/:albumId",
+      "target": "/photo/:path",
+      "transitions": [
+        "photo.open"
+      ],
+      "type": "navigation",
+      "label": "photo.open",
+      "id": "photo.open"
+    }
+  ]
+}

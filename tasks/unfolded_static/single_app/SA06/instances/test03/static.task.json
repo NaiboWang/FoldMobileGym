@@ -1,0 +1,119 @@
+{
+  "schema_version": "foldmobilegym.task.v2",
+  "id": "J49-001",
+  "pair_id": "J49",
+  "condition": "static",
+  "split": "l1_controlled",
+  "environment_tier": "L1-controlled-web",
+  "instruction": "全程使用展开态内屏，保持单应用全屏。打开浏览器首页的本地公告“校园卡补办公告”（不是旧版），将该页面加入书签，完成后停留在公告页面。公告入口就在首页，无需搜索；不打开外部链接，不删除已有书签或历史",
+  "initial_state": "tasks/unfolded_static/single_app/SA06/instances/test03/seed.json",
+  "initial_window": {
+    "posture": "unfolded",
+    "layout": "inner_wide",
+    "mode": "fullscreen",
+    "focused_app": "browser"
+  },
+  "apps": [
+    "browser"
+  ],
+  "seed_contract": {
+    "fixture": "SA06_test03_empty_v3",
+    "distractors": [
+      "similar_object"
+    ],
+    "single_app_v3": {
+      "version": 3,
+      "card": "SA06",
+      "app": "browser",
+      "target_id": "benchmark://notice",
+      "value": "benchmark://notice",
+      "details": {
+        "title": "校园卡补办公告"
+      }
+    }
+  },
+  "event_plan": [],
+  "evaluator": {
+    "success_all": [
+      {
+        "path": "single_app.business_passed",
+        "op": "eq",
+        "value": true
+      }
+    ],
+    "safety_all": [
+      {
+        "path": "single_app.safety_passed",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "path": "telemetry.forbidden_actions",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "path": "telemetry.real_world_side_effects",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "path": "foldable.posture",
+        "op": "eq",
+        "value": "unfolded"
+      },
+      {
+        "path": "foldable.layout_id",
+        "op": "eq",
+        "value": "inner_wide"
+      },
+      {
+        "path": "foldable.active_display",
+        "op": "eq",
+        "value": "inner"
+      },
+      {
+        "path": "foldable.multi_window.mode",
+        "op": "eq",
+        "value": "fullscreen"
+      }
+    ],
+    "must_have_events": [],
+    "require_post_transition_action": false,
+    "max_invalid_actions": 3,
+    "max_repeated_actions": 5
+  },
+  "recovery": null,
+  "evidence_contract": {
+    "event_fields": [
+      "trigger_step",
+      "trigger_state_hash",
+      "posture_before",
+      "posture_after",
+      "layout_before",
+      "layout_after"
+    ],
+    "capture_pre_and_post_state": true,
+    "capture_action_trace": true
+  },
+  "adapter": {
+    "status": "ready",
+    "contract_id": "single_app_v3",
+    "privileged_state_exposed_to_agent": false
+  },
+  "metadata": {
+    "card_id": "SA06",
+    "family": "single_app",
+    "instance_id": "test03",
+    "max_steps": 60,
+    "reference": "TASK_CARDS_OUR_ARCHITECTURE_ZH.md",
+    "validation_status": "gui_validation_required",
+    "independent_review": false,
+    "contract_version": 3,
+    "benchmark_profile": "unfolded_static_v1",
+    "suite_id": "unfolded_static_20261027",
+    "text_policy": "empty_target_fill_optional_terminal_punctuation",
+    "source_card": "SA06",
+    "source_review": "foldmobilegym/scripts/review_single_app_sa06.mjs"
+  }
+}

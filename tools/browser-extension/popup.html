@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>foldmobilegym 控制</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+  <h1>折叠屏控制</h1><p class="hint">只控制当前本地网页，不操作真实手机。</p>
+  <div id="status" role="status" aria-live="polite">正在连接…</div>
+  <fieldset><legend>设备姿态</legend><div class="row">
+    <button data-posture="folded">折叠</button><button data-posture="unfolded">展开</button>
+  </div></fieldset>
+  <fieldset><legend>窗口布局</legend>
+    <label>主窗口<select id="primary"></select></label>
+    <label>第二窗口<select id="secondary"></select></label>
+    <label>第三窗口<select id="tertiary"></select></label>
+    <label>主窗口占比 <output id="ratio-label">50%</output><input id="ratio" type="range" min="33" max="67" value="50"></label>
+    <div class="row"><button data-mode="fullscreen">单窗口</button><button data-mode="split">双分屏</button><button data-mode="triple">三分屏</button></div>
+    <p class="hint">先在网页打开应用，再刷新任务列表。折叠时双分屏切换为上下布局。</p>
+  </fieldset>
+  <dl><dt>参考设备</dt><dd id="model">—</dd><dt>逻辑画布</dt><dd id="canvas">—</dd><dt>原生分辨率</dt><dd id="native">—</dd></dl>
+  <button id="refresh">刷新状态 / 任务</button>
+  <p class="hint">人工预览工具；正式评测由控制器负责。</p>
+  <script type="module" src="popup.js"></script>
+</body></html>

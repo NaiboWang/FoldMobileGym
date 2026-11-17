@@ -1,0 +1,85 @@
+{
+  "schema_version": "foldagentgym.seed.v2",
+  "pair_id": "J97",
+  "fixture": {
+    "fixture": "a01_notice_v1",
+    "document_id": "project_review_notice",
+    "target_thread_id": "wxid_boss_007",
+    "distractors": [
+      "项目复盘通知",
+      "产品伙伴"
+    ]
+  },
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "displays": {
+    "cover": {
+      "width": 968,
+      "height": 2376,
+      "visible": false
+    },
+    "inner": {
+      "width": 1856,
+      "height": 2160,
+      "visible": true
+    }
+  },
+  "windows": [
+    {
+      "window_id": "window_workspace_docs",
+      "app_id": "workspace_docs",
+      "display": "inner",
+      "bounds": [
+        0,
+        0,
+        1856,
+        2160
+      ],
+      "z": 1
+    }
+  ],
+  "apps": {
+    "workspace_docs": {
+      "route": "library",
+      "mutation_count": 0,
+      "manifest": {
+        "app_id": "workspace_docs",
+        "launchable": true
+      },
+      "fixture": "a01_notice_v1"
+    },
+    "wechat": {
+      "route": "home",
+      "drafts": {},
+      "send_count": 0,
+      "manifest": {
+        "app_id": "wechat",
+        "launchable": true
+      },
+      "fixture": "a01_notice_v1"
+    }
+  },
+  "benchmark": {
+    "anchors": {
+      "J97": {
+        "source_opened": false,
+        "source_facts_verified": false,
+        "target_entry_started": false,
+        "first_target_committed": false
+      }
+    }
+  },
+  "telemetry": {
+    "real_world_side_effects": 0,
+    "forbidden_actions": 0,
+    "wrong_target_commits": 0,
+    "duplicate_commits": 0,
+    "invalid_action_count": 0,
+    "total_commits": 0
+  },
+  "event_log": []
+}

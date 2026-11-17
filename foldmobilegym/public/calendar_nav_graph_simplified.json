@@ -1,0 +1,767 @@
+{
+  "app": "calendar",
+  "appDir": "system\\Calendar",
+  "mode": "schema",
+  "routeCount": 13,
+  "edgeCount": 20,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "component": "CalendarHomePage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "日历月视图",
+      "stateCount": 10,
+      "states": [
+        "/",
+        "/?view=year",
+        "/?view=week",
+        "/?view=day",
+        "/?view=agenda",
+        "/?view=agenda&menu=open",
+        "/?menu=open",
+        "/?view=year&menu=open",
+        "/?view=week&menu=open",
+        "/?view=day&menu=open"
+      ],
+      "actionCount": 3,
+      "actionIds": [
+        "calendar.home.month.shift",
+        "calendar.home.share",
+        "calendar.week.date.input"
+      ],
+      "actions": [
+        {
+          "id": "calendar.home.month.shift",
+          "label": "滑动切换月份",
+          "behavior": "other",
+          "paramsSchema": {
+            "delta": "number"
+          }
+        },
+        {
+          "id": "calendar.home.share",
+          "label": "通过系统选择器分享当前日程摘要",
+          "behavior": "other"
+        },
+        {
+          "id": "calendar.week.date.input",
+          "label": "选择周内日期",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "number"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/todos",
+      "routePath": "/todos",
+      "component": "CalendarTodosPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "日历待办列表",
+      "stateCount": 1,
+      "states": [
+        "/todos?collapsed=:collapsed&returnView=:returnView"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "calendar.todo.toggle"
+      ],
+      "actions": [
+        {
+          "id": "calendar.todo.toggle",
+          "label": "完成或恢复真实待办",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "todoId": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/todos/new",
+      "routePath": "/todos/new",
+      "component": "CalendarTodosPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "新建待办",
+      "stateCount": 1,
+      "states": [
+        "/todos/new?returnView=:returnView"
+      ],
+      "actionCount": 3,
+      "actionIds": [
+        "calendar.todo.new.title.input",
+        "calendar.todo.new.due.input",
+        "calendar.todo.create"
+      ],
+      "actions": [
+        {
+          "id": "calendar.todo.new.title.input",
+          "label": "输入待办内容",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calendar.todo.new.due.input",
+          "label": "选择截止日期",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calendar.todo.create",
+          "label": "保存新待办",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/todos/:todoId/edit",
+      "routePath": "/todos/:todoId/edit",
+      "component": "CalendarTodosPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "编辑待办",
+      "stateCount": 2,
+      "states": [
+        "/todos/:todoId/edit?returnView=:returnView",
+        "/todos/:todoId/edit?deleteConfirm=open&returnView=:returnView"
+      ],
+      "actionCount": 4,
+      "actionIds": [
+        "calendar.todo.edit.title.input",
+        "calendar.todo.edit.due.input",
+        "calendar.todo.update",
+        "calendar.todo.delete"
+      ],
+      "actions": [
+        {
+          "id": "calendar.todo.edit.title.input",
+          "label": "编辑待办内容",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calendar.todo.edit.due.input",
+          "label": "编辑截止日期",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calendar.todo.update",
+          "label": "保存待办编辑",
+          "behavior": "submit"
+        },
+        {
+          "id": "calendar.todo.delete",
+          "label": "删除所选待办",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/settings",
+      "routePath": "/settings",
+      "component": "CalendarSettingsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "日历设置页",
+      "stateCount": 4,
+      "states": [
+        "/settings",
+        "/settings?sheet=reminder",
+        "/settings?sheet=allday",
+        "/settings?sheet=later"
+      ],
+      "actionCount": 3,
+      "actionIds": [
+        "calendar.settings.reminder.submit",
+        "calendar.settings.allday.submit",
+        "calendar.settings.later.submit"
+      ],
+      "actions": [
+        {
+          "id": "calendar.settings.reminder.submit",
+          "label": "设置默认提前提醒",
+          "behavior": "submit",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calendar.settings.allday.submit",
+          "label": "设置默认全天提醒",
+          "behavior": "submit",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calendar.settings.later.submit",
+          "label": "设置默认稍后提醒",
+          "behavior": "submit",
+          "paramsSchema": {
+            "value": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/new-event",
+      "routePath": "/new-event",
+      "component": "CalendarNewEventPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "新建日程页",
+      "stateCount": 4,
+      "states": [
+        "/new-event?agendaDate=:agendaDate",
+        "/new-event?sheet=reminder&agendaDate=:agendaDate",
+        "/new-event?sheet=type&agendaDate=:agendaDate",
+        "/new-event?sheet=discard&agendaDate=:agendaDate"
+      ],
+      "actionCount": 9,
+      "actionIds": [
+        "calendar.new.save.submit",
+        "calendar.new.moreSettings.toggle",
+        "calendar.new.allDay.toggle",
+        "calendar.new.startDate.input",
+        "calendar.new.endDate.input",
+        "calendar.new.reminder.select",
+        "calendar.new.reminder.confirm",
+        "calendar.new.type.select",
+        "calendar.new.discard.submit"
+      ],
+      "actions": [
+        {
+          "id": "calendar.new.save.submit",
+          "label": "保存新建日程",
+          "behavior": "submit"
+        },
+        {
+          "id": "calendar.new.moreSettings.toggle",
+          "label": "展开或收起更多设置",
+          "behavior": "toggle",
+          "paramsSchema": {
+            "expanded": "boolean"
+          }
+        },
+        {
+          "id": "calendar.new.allDay.toggle",
+          "label": "新建日程全天开关",
+          "behavior": "toggle",
+          "paramsSchema": {
+            "allDay": "boolean"
+          }
+        },
+        {
+          "id": "calendar.new.startDate.input",
+          "label": "Set start date",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calendar.new.endDate.input",
+          "label": "Set end date",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calendar.new.reminder.select",
+          "label": "选择提醒提前量",
+          "behavior": "other",
+          "paramsSchema": {
+            "minutes": "string"
+          }
+        },
+        {
+          "id": "calendar.new.reminder.confirm",
+          "label": "确认新建日程提醒",
+          "behavior": "submit"
+        },
+        {
+          "id": "calendar.new.type.select",
+          "label": "选择新建日程类型",
+          "behavior": "other",
+          "paramsSchema": {
+            "type": "string"
+          }
+        },
+        {
+          "id": "calendar.new.discard.submit",
+          "label": "放弃新建日程更改",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/event/:eventId",
+      "routePath": "/event/:eventId",
+      "component": "CalendarEventDetailPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "日程详情页",
+      "stateCount": 2,
+      "states": [
+        "/event/:eventId?agendaDate=:agendaDate",
+        "/event/:eventId?deleteConfirm=open&agendaDate=:agendaDate"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "calendar.event.delete.submit"
+      ],
+      "actions": [
+        {
+          "id": "calendar.event.delete.submit",
+          "label": "确认删除当前日程",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "eventId": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/event/:eventId/edit",
+      "routePath": "/event/:eventId/edit",
+      "component": "CalendarNewEventPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "编辑日程页",
+      "stateCount": 4,
+      "states": [
+        "/event/:eventId/edit?agendaDate=:agendaDate",
+        "/event/:eventId/edit?sheet=reminder&agendaDate=:agendaDate",
+        "/event/:eventId/edit?sheet=type&agendaDate=:agendaDate",
+        "/event/:eventId/edit?sheet=discard&agendaDate=:agendaDate"
+      ],
+      "actionCount": 8,
+      "actionIds": [
+        "calendar.edit.save.submit",
+        "calendar.edit.allDay.toggle",
+        "calendar.edit.startDate.input",
+        "calendar.edit.endDate.input",
+        "calendar.edit.reminder.select",
+        "calendar.edit.reminder.confirm",
+        "calendar.edit.type.select",
+        "calendar.edit.discard.submit"
+      ],
+      "actions": [
+        {
+          "id": "calendar.edit.save.submit",
+          "label": "保存编辑日程",
+          "behavior": "submit",
+          "paramsSchema": {
+            "eventId": "string"
+          }
+        },
+        {
+          "id": "calendar.edit.allDay.toggle",
+          "label": "编辑日程全天开关",
+          "behavior": "toggle",
+          "paramsSchema": {
+            "eventId": "string",
+            "allDay": "boolean"
+          }
+        },
+        {
+          "id": "calendar.edit.startDate.input",
+          "label": "Edit start date",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calendar.edit.endDate.input",
+          "label": "Edit end date",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calendar.edit.reminder.select",
+          "label": "选择提醒提前量",
+          "behavior": "other",
+          "paramsSchema": {
+            "minutes": "string"
+          }
+        },
+        {
+          "id": "calendar.edit.reminder.confirm",
+          "label": "确认编辑日程提醒",
+          "behavior": "submit"
+        },
+        {
+          "id": "calendar.edit.type.select",
+          "label": "选择编辑日程类型",
+          "behavior": "other",
+          "paramsSchema": {
+            "type": "string"
+          }
+        },
+        {
+          "id": "calendar.edit.discard.submit",
+          "label": "放弃编辑日程更改",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/search",
+      "routePath": "/search",
+      "component": "CalendarSearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "搜索页",
+      "stateCount": 1,
+      "states": [
+        "/search?q=:q"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/date-jump",
+      "routePath": "/date-jump",
+      "component": "CalendarDateJumpPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "日期跳转页",
+      "stateCount": 1,
+      "states": [
+        "/date-jump"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "calendar.dateJump.submit"
+      ],
+      "actions": [
+        {
+          "id": "calendar.dateJump.submit",
+          "label": "跳转到所选日期",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/date-calculate",
+      "routePath": "/date-calculate",
+      "component": "CalendarDateCalculatePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "日期计算页",
+      "stateCount": 1,
+      "states": [
+        "/date-calculate"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/subscription",
+      "routePath": "/subscription",
+      "component": "CalendarSubscriptionPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "订阅管理页",
+      "stateCount": 1,
+      "states": [
+        "/subscription"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/desk-theme",
+      "routePath": "/desk-theme",
+      "component": "CalendarDeskThemePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "桌面组件主题页",
+      "stateCount": 1,
+      "states": [
+        "/desk-theme"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "/",
+      "target": "/todos",
+      "transitions": [
+        "home.todos.open"
+      ],
+      "type": "navigation",
+      "label": "home.todos.open",
+      "id": "home.todos.open"
+    },
+    {
+      "source": "/todos",
+      "target": "/",
+      "transitions": [
+        "todos.calendar.open"
+      ],
+      "type": "navigation",
+      "label": "todos.calendar.open",
+      "id": "todos.calendar.open"
+    },
+    {
+      "source": "/todos",
+      "target": "/todos/new",
+      "transitions": [
+        "todos.new.open"
+      ],
+      "type": "navigation",
+      "label": "todos.new.open",
+      "id": "todos.new.open"
+    },
+    {
+      "source": "/todos",
+      "target": "/todos/:todoId/edit",
+      "transitions": [
+        "todos.edit.open"
+      ],
+      "type": "navigation",
+      "label": "todos.edit.open",
+      "id": "todos.edit.open"
+    },
+    {
+      "source": "/todos/:todoId/edit",
+      "target": "/todos",
+      "transitions": [
+        "todos.return"
+      ],
+      "type": "navigation",
+      "label": "todos.return",
+      "id": "todos.return"
+    },
+    {
+      "source": "/",
+      "target": "/event/:eventId",
+      "transitions": [
+        "home.agenda.event.open",
+        "event.open"
+      ],
+      "type": "navigation",
+      "label": "home.agenda.event.open, event.open",
+      "id": "home.agenda.event.open"
+    },
+    {
+      "source": "/event/:eventId",
+      "target": "/new-event",
+      "transitions": [
+        "workspace.new.open"
+      ],
+      "type": "navigation",
+      "label": "workspace.new.open",
+      "id": "workspace.new.open"
+    },
+    {
+      "source": "/event/:eventId",
+      "target": "/",
+      "transitions": [
+        "workspace.home.switch"
+      ],
+      "type": "navigation",
+      "label": "workspace.home.switch",
+      "id": "workspace.home.switch"
+    },
+    {
+      "source": "/",
+      "target": "/settings",
+      "transitions": [
+        "settings.open"
+      ],
+      "type": "navigation",
+      "label": "settings.open",
+      "id": "settings.open"
+    },
+    {
+      "source": "/",
+      "target": "/new-event",
+      "transitions": [
+        "new-event.open"
+      ],
+      "type": "navigation",
+      "label": "new-event.open",
+      "id": "new-event.open"
+    },
+    {
+      "source": "/search",
+      "target": "/event/:eventId",
+      "transitions": [
+        "event.open"
+      ],
+      "type": "navigation",
+      "label": "event.open",
+      "id": "event.open"
+    },
+    {
+      "source": "/new-event",
+      "target": "/event/:eventId",
+      "transitions": [
+        "event.open"
+      ],
+      "type": "navigation",
+      "label": "event.open",
+      "id": "event.open"
+    },
+    {
+      "source": "/event/:eventId/edit",
+      "target": "/event/:eventId",
+      "transitions": [
+        "event.open"
+      ],
+      "type": "navigation",
+      "label": "event.open",
+      "id": "event.open"
+    },
+    {
+      "source": "/event/:eventId",
+      "target": "/event/:eventId/edit",
+      "transitions": [
+        "event.edit"
+      ],
+      "type": "navigation",
+      "label": "event.edit",
+      "id": "event.edit"
+    },
+    {
+      "source": "/",
+      "target": "/search",
+      "transitions": [
+        "search.open"
+      ],
+      "type": "navigation",
+      "label": "search.open",
+      "id": "search.open"
+    },
+    {
+      "source": "/",
+      "target": "/date-jump",
+      "transitions": [
+        "date-jump.open"
+      ],
+      "type": "navigation",
+      "label": "date-jump.open",
+      "id": "date-jump.open"
+    },
+    {
+      "source": "/",
+      "target": "/date-calculate",
+      "transitions": [
+        "date-calculate.open"
+      ],
+      "type": "navigation",
+      "label": "date-calculate.open",
+      "id": "date-calculate.open"
+    },
+    {
+      "source": "/",
+      "target": "/subscription",
+      "transitions": [
+        "subscription.open"
+      ],
+      "type": "navigation",
+      "label": "subscription.open",
+      "id": "subscription.open"
+    },
+    {
+      "source": "/",
+      "target": "/desk-theme",
+      "transitions": [
+        "desk-theme.open"
+      ],
+      "type": "navigation",
+      "label": "desk-theme.open",
+      "id": "desk-theme.open"
+    },
+    {
+      "source": "/date-jump",
+      "target": "/",
+      "transitions": [
+        "home.open"
+      ],
+      "type": "navigation",
+      "label": "home.open",
+      "id": "home.open"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "source": "tencent_meeting",
+  "target": "wechat",
+  "data": {
+    "id": "sched_002",
+    "title": "场地协调会",
+    "meeting_id": "517 643 928",
+    "duration": 90
+  },
+  "target_text": "场地协调会；517 643 928；90",
+  "title": "资料备忘 · 腾讯会议",
+  "chat_name": "韩晴（研发）"
+}

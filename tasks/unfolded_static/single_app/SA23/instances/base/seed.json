@@ -1,0 +1,50 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "pair_id": "J82",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "apps": {
+    "reddit": {}
+  },
+  "raw_apps": {
+    "reddit": {
+      "posts": {
+        "my_post_1": {
+          "id": "my_post_1",
+          "subreddit": "r/self",
+          "timeAgo": "now",
+          "title": "周末桌游活动安排",
+          "content": "本次活动：11月7日15:00，地点：社区二楼活动室。请携带水杯和会员卡。无需报名费。",
+          "upvotes": "1",
+          "comments": "0",
+          "shares": 0,
+          "isAd": false,
+          "url": "",
+          "commentsData": []
+        }
+      },
+      "user": {
+        "username": "Embarrassed_Fee8630",
+        "isOnline": true,
+        "postIds": [
+          "my_post_1"
+        ],
+        "commentIds": [],
+        "savedPostIds": [],
+        "joinedCommunityIds": [],
+        "postVotes": {},
+        "commentVotes": {}
+      }
+    }
+  },
+  "os": {}
+}

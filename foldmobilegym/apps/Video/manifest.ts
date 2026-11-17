@@ -1,0 +1,2 @@
+import type{AppManifest}from '@/os/types/manifest';import{Icon}from'./res/icons';
+export const manifest:AppManifest={id:'video',packageName:'org.foldagent.video',displayName:'本地视频',displayNameEn:'Video',aliases:['视频','播放器'],version:'1.0.0',versionCode:1,type:'plugin',icon:Icon,iconBackground:'#e83f5b',iconForeground:'#ffffff',theme:{colors:{primary:'#e83f5b',background:'#18191d',surface:'#24262c',textPrimary:'#fff',textSecondary:'#b7bac3',border:'#3b3d45',statusBarForeground:'light',navigationBarForeground:'light'}}};

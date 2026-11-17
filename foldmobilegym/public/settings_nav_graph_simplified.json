@@ -1,0 +1,179 @@
+{
+  "app": "settings",
+  "appDir": "system\\Settings",
+  "mode": "schema",
+  "routeCount": 4,
+  "edgeCount": 5,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "component": "SettingsMainPage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "设置首页",
+      "stateCount": 1,
+      "states": [
+        "/"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/search",
+      "routePath": "/search",
+      "component": "SettingsSearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "设置搜索页",
+      "stateCount": 1,
+      "states": [
+        "/search"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/search/:pageId",
+      "routePath": "/search/:pageId",
+      "component": "PreferenceScreenPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "搜索结果详情页",
+      "stateCount": 2,
+      "states": [
+        "/search/:pageId",
+        "/search/:pageId?sheet=input-method"
+      ],
+      "actionCount": 3,
+      "actionIds": [
+        "settings.search.inputMethod.select.sogou",
+        "settings.search.inputMethod.select.sogouHonor",
+        "settings.search.inputMethod.select.baiduHonor"
+      ],
+      "actions": [
+        {
+          "id": "settings.search.inputMethod.select.sogou",
+          "label": "选择搜狗输入法",
+          "behavior": "select"
+        },
+        {
+          "id": "settings.search.inputMethod.select.sogouHonor",
+          "label": "选择搜狗输入法荣耀版",
+          "behavior": "select"
+        },
+        {
+          "id": "settings.search.inputMethod.select.baiduHonor",
+          "label": "选择百度输入法荣耀版",
+          "behavior": "select"
+        }
+      ]
+    },
+    {
+      "id": "/page/:pageId",
+      "routePath": "/page/:pageId",
+      "component": "PreferenceScreenPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "设置详情页",
+      "stateCount": 2,
+      "states": [
+        "/page/:pageId",
+        "/page/:pageId?sheet=input-method"
+      ],
+      "actionCount": 3,
+      "actionIds": [
+        "settings.page.inputMethod.select.sogou",
+        "settings.page.inputMethod.select.sogouHonor",
+        "settings.page.inputMethod.select.baiduHonor"
+      ],
+      "actions": [
+        {
+          "id": "settings.page.inputMethod.select.sogou",
+          "label": "选择搜狗输入法",
+          "behavior": "select"
+        },
+        {
+          "id": "settings.page.inputMethod.select.sogouHonor",
+          "label": "选择搜狗输入法荣耀版",
+          "behavior": "select"
+        },
+        {
+          "id": "settings.page.inputMethod.select.baiduHonor",
+          "label": "选择百度输入法荣耀版",
+          "behavior": "select"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/",
+      "target": "/search",
+      "transitions": [
+        "search.open"
+      ],
+      "type": "navigation",
+      "label": "search.open",
+      "id": "search.open"
+    },
+    {
+      "source": "/page/:pageId",
+      "target": "/search",
+      "transitions": [
+        "search.open"
+      ],
+      "type": "navigation",
+      "label": "search.open",
+      "id": "search.open"
+    },
+    {
+      "source": "/",
+      "target": "/page/:pageId",
+      "transitions": [
+        "page.open"
+      ],
+      "type": "navigation",
+      "label": "page.open",
+      "id": "page.open"
+    },
+    {
+      "source": "/search/:pageId",
+      "target": "/page/:pageId",
+      "transitions": [
+        "page.open"
+      ],
+      "type": "navigation",
+      "label": "page.open",
+      "id": "page.open"
+    },
+    {
+      "source": "/search",
+      "target": "/search/:pageId",
+      "transitions": [
+        "settings.search.result.open"
+      ],
+      "type": "navigation",
+      "label": "settings.search.result.open",
+      "id": "settings.search.result.open"
+    }
+  ]
+}

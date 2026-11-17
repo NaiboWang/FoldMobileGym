@@ -1,0 +1,50 @@
+{
+  "data": {
+    "name": "沈悦",
+    "event": "测试复盘",
+    "room": "创新楼B201",
+    "time": "15:45",
+    "subject": "复盘准备事项",
+    "list": "复盘任务",
+    "items": [
+      "导出日志",
+      "整理问题清单",
+      "检查录屏",
+      "携带测试机"
+    ],
+    "notice": "实验室预约公告",
+    "note": "预约安排",
+    "desk": "科研楼二层办公室",
+    "materials": [
+      "学生证",
+      "导师签字单",
+      "安全培训证明"
+    ],
+    "deadline": "15:00",
+    "place": "云帆书屋",
+    "address": "海棠区创新路16号C座4层",
+    "area": "海棠区",
+    "hint": "创新路",
+    "place_note": "书屋记录",
+    "city": "云浦市",
+    "high": 13,
+    "current": 6,
+    "person": "陈屿",
+    "phone": "13700008426",
+    "company": "云帆设备",
+    "document": "测试计划",
+    "section": "测试设备",
+    "equipment": [
+      "手机",
+      "数据线",
+      "备用电池",
+      "计时器"
+    ],
+    "doc_note": "测试设备清单",
+    "day": 6,
+    "deadline_day": 8,
+    "prefix": "您好，",
+    "calendar_prefix": ""
+  },
+  "target_text": "轻装出行"
+}

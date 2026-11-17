@@ -1,0 +1,35 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "apps": {
+    "clock": {}
+  },
+  "raw_apps": {
+    "clock": {
+      "alarms": [
+        {
+          "id": "old-alarm",
+          "hour": 7,
+          "minute": 0,
+          "enabled": false,
+          "repeat": "once",
+          "vibrate": true,
+          "autoDelete": false,
+          "note": "保留原闹钟"
+        }
+      ]
+    }
+  },
+  "os": {},
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "pair_id": "J59"
+}

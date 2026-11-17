@@ -1,0 +1,84 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "apps": {
+    "map": {},
+    "notes": {}
+  },
+  "raw_apps": {
+    "notes": {
+      "notes": [
+        {
+          "id": "untouched-note",
+          "title": "工作备忘",
+          "content": "原有内容，请保留。",
+          "folderId": "unfiled",
+          "updatedAt": 1793663999000
+        },
+        {
+          "id": "similar-note",
+          "title": "周末书店（旧版）",
+          "content": "历史记录，保留不改。",
+          "folderId": "unfiled",
+          "updatedAt": 1793663998000
+        }
+      ],
+      "todos": [
+        {
+          "id": "untouched-todo",
+          "text": "保留原待办",
+          "completed": false,
+          "updatedAt": 1793663999000
+        }
+      ],
+      "createdCount": 0,
+      "deletedCount": 0,
+      "selectedFolderId": "all"
+    },
+    "map": {
+      "localPlaces": [
+        {
+          "placeId": "source-place",
+          "name": "青禾书店",
+          "lat": 39.905,
+          "lng": 116.407,
+          "types": [
+            "book_store"
+          ],
+          "primaryTypeDisplayName": "书店",
+          "formattedAddress": "海棠区文昌路18号2层",
+          "rating": 4.5,
+          "userRatingCount": 20,
+          "distanceMeters": 300
+        },
+        {
+          "placeId": "other-place",
+          "name": "青禾书店",
+          "lat": 39.905,
+          "lng": 116.407,
+          "types": [
+            "book_store"
+          ],
+          "primaryTypeDisplayName": "书店",
+          "formattedAddress": "南城区人民路18号1层",
+          "rating": 4.5,
+          "userRatingCount": 20,
+          "distanceMeters": 300
+        }
+      ],
+      "searchHistory": [],
+      "navigationStartCount": 0
+    }
+  },
+  "os": {},
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  }
+}

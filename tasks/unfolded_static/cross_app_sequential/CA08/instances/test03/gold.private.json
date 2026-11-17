@@ -1,0 +1,19 @@
+{
+  "source": "taobao",
+  "target": "notes",
+  "data": {
+    "id": "portable_monitor_x1",
+    "title": "便携显示器 X1 双规格高清扩展屏",
+    "variant": {
+      "id": "x1_15",
+      "size": "15.6英寸",
+      "resolution": "2.5K",
+      "weight": "780g",
+      "price": 1299
+    },
+    "note_title": "显示器备选记录"
+  },
+  "target_text": "15.6英寸；2.5K；780g；1299",
+  "title": "资料备忘 · 淘宝",
+  "chat_name": "韩晴（研发）"
+}

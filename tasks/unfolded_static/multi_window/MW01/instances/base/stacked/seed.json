@@ -1,0 +1,119 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "apps": {
+    "calendar": {},
+    "wechat": {}
+  },
+  "raw_apps": {
+    "wechat": {
+      "chats": [
+        {
+          "id": "target-chat",
+          "user": {
+            "wxid": "target-chat",
+            "name": "陈宁（研发）",
+            "avatar": "/@app-assets/Wechat/avatars/avatar_10.jpg"
+          },
+          "isMuted": false,
+          "isSticky": false,
+          "isAlert": false,
+          "messages": [
+            {
+              "id": "target-chat-hello",
+              "type": "text",
+              "content": "有需要请留言。",
+              "senderId": "target-chat",
+              "timestamp": 1793663990000
+            }
+          ]
+        },
+        {
+          "id": "other-chat",
+          "user": {
+            "wxid": "other-chat",
+            "name": "陈宁（采购）",
+            "avatar": "/@app-assets/Wechat/avatars/avatar_10.jpg"
+          },
+          "isMuted": false,
+          "isSticky": false,
+          "isAlert": false,
+          "messages": [
+            {
+              "id": "other-chat-hello",
+              "type": "text",
+              "content": "有需要请留言。",
+              "senderId": "other-chat",
+              "timestamp": 1793663990000
+            }
+          ]
+        }
+      ],
+      "chatDrafts": {
+        "target-chat": "",
+        "other-chat": "采购事项待确认。"
+      },
+      "sendCount": 0
+    },
+    "calendar": {
+      "events": [
+        {
+          "id": "source-event",
+          "type": "event",
+          "title": "项目评审",
+          "description": "请准时参加。",
+          "location": "402会议室",
+          "allDay": false,
+          "startTs": 1793773800000,
+          "endTs": 1793775600000,
+          "reminderMinutesBefore": null,
+          "alarmEnabled": false
+        },
+        {
+          "id": "other-event",
+          "type": "event",
+          "title": "项目评审",
+          "description": "另一个活动",
+          "location": "508会议室",
+          "allDay": false,
+          "startTs": 1793779200000,
+          "endTs": 1793781000000,
+          "reminderMinutesBefore": null,
+          "alarmEnabled": false
+        },
+        {
+          "id": "target-event",
+          "type": "event",
+          "title": "户外走访",
+          "description": "带证件。",
+          "location": "西门集合",
+          "allDay": false,
+          "startTs": 1793754000000,
+          "endTs": 1793755800000,
+          "reminderMinutesBefore": null,
+          "alarmEnabled": false
+        }
+      ],
+      "selectedDateTs": 1793750400000,
+      "createdCount": 0,
+      "deletedCount": 0,
+      "mutationCount": 0,
+      "draft": {
+        "title": "",
+        "notes": "",
+        "location": ""
+      }
+    }
+  },
+  "os": {},
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  }
+}

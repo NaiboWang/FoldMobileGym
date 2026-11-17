@@ -1,0 +1,403 @@
+{
+  "app": "browser",
+  "appDir": "system\\Browser",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 4,
+  "transitionCount": 8,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "uiStateId": "browser.home.base",
+      "component": "BrowserHome",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "tabs",
+          "direction": "horizontal",
+          "description": "展开态标签栏"
+        },
+        {
+          "name": "overview",
+          "direction": "vertical",
+          "description": "标签页概览"
+        }
+      ],
+      "description": "浏览器首页",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "browser.home.reload",
+          "label": "刷新当前首页",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "tabId": "string",
+            "url": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/?panel=tabs",
+      "routePath": "/",
+      "uiStateId": "browser.home.tabs",
+      "component": "BrowserHome",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "tabs",
+          "direction": "horizontal",
+          "description": "展开态标签栏"
+        },
+        {
+          "name": "overview",
+          "direction": "vertical",
+          "description": "标签页概览"
+        }
+      ],
+      "description": "首页标签页概览",
+      "search": {
+        "panel": "tabs"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/view",
+      "routePath": "/view",
+      "uiStateId": "browser.view.base",
+      "component": "BrowserView",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "tabs",
+          "direction": "horizontal",
+          "description": "展开态标签栏"
+        },
+        {
+          "name": "overview",
+          "direction": "vertical",
+          "description": "标签页概览"
+        }
+      ],
+      "description": "网页浏览页",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "browser.page.reload",
+          "label": "刷新当前网页",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "tabId": "string",
+            "url": "string"
+          }
+        },
+        {
+          "id": "browser.bookmark.add",
+          "label": "保存当前网页书签",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "tabId": "string",
+            "url": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/view?panel=tabs",
+      "routePath": "/view",
+      "uiStateId": "browser.view.tabs",
+      "component": "BrowserView",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "tabs",
+          "direction": "horizontal",
+          "description": "展开态标签栏"
+        },
+        {
+          "name": "overview",
+          "direction": "vertical",
+          "description": "标签页概览"
+        }
+      ],
+      "description": "网页标签页概览",
+      "search": {
+        "panel": "tabs"
+      },
+      "queryParams": {},
+      "actions": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "/view",
+      "sourceNodeId": "/view",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "history.forward.home",
+      "label": "前进到已有首页历史",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "tabId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/view",
+        "search": {
+          "panel": null
+        }
+      },
+      "uiCondition": {
+        "op": "notEmpty",
+        "ref": "tabs",
+        "filterFn": "tab => Boolean(tab.history && Array.isArray(tab.history.entries) && Number.isInteger(tab.history.index) && tab.history.index + 1 < tab.history.entries.length)",
+        "text": "Requires forward history in the active source tab."
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "forward",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/view",
+      "targetNodeId": "/view",
+      "id": "history.forward.view",
+      "label": "前进到已有网页历史",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "tabId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "panel": null
+        }
+      },
+      "uiCondition": {
+        "op": "notEmpty",
+        "ref": "tabs",
+        "filterFn": "tab => Boolean(tab.history && Array.isArray(tab.history.entries) && Number.isInteger(tab.history.index) && tab.history.index + 1 < tab.history.entries.length)",
+        "text": "Requires forward history in the active source tab."
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "forward",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/view",
+      "sourceNodeId": "/view",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "tab.close.home",
+      "label": "关闭标签页并保留或显示首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "tabId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/view",
+        "search": {
+          "panel": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "close",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/view",
+      "targetNodeId": "/view",
+      "id": "tab.close.view",
+      "label": "关闭标签页并保留或显示网页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "tabId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "panel": null
+        }
+      },
+      "uiCondition": {
+        "op": "notEmpty",
+        "ref": "tabs",
+        "filterFn": "tab => Boolean(tab.url)",
+        "text": "Requires an existing document tab; not a cold-default route to a webpage."
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "close",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/?panel=tabs",
+      "targetNodeId": "/?panel=tabs",
+      "id": "tabs.open.home",
+      "label": "打开首页标签页概览",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "panel": "tabs"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "panel": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "tabs",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/view",
+      "sourceNodeId": "/view",
+      "target": "/view?panel=tabs",
+      "targetNodeId": "/view?panel=tabs",
+      "id": "tabs.open.view",
+      "label": "打开网页标签页概览",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "panel": "tabs"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/view",
+        "search": {
+          "panel": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "tabs",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/view",
+      "targetNodeId": "/view",
+      "id": "view.open",
+      "label": "打开网页浏览页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/view",
+      "sourceNodeId": "/view",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "home.open",
+      "label": "返回浏览器首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "home",
+        "gesture": "tap"
+      }
+    }
+  ]
+}

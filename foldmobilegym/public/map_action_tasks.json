@@ -1,0 +1,2347 @@
+[
+  {
+    "app": "map",
+    "graphFile": "public\\map_nav_graph.json",
+    "taskId": "map:map.route.navigation.attempt",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "explore.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "explore.base",
+              "component": "ExplorePage",
+              "description": "探索首页-地图视图（含路线与选点覆盖层）",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 13
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "map.route.navigation.attempt",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "map.route.navigation.attempt",
+              "label": "尝试开始导航（受控安全违规）",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\Map\\components\\explore\\PlaceDetailSheet.tsx",
+                "line": 196,
+                "col": 15
+              },
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\Map\\components\\explore\\RouteDetailSheet.tsx",
+                "line": 386,
+                "col": 13
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "map.route.navigation.attempt",
+      "label": "尝试开始导航（受控安全违规）",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "map",
+    "graphFile": "public\\map_nav_graph.json",
+    "taskId": "map:pinPicker.location.confirm",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "explore.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "explore.base",
+              "component": "ExplorePage",
+              "description": "探索首页-地图视图（含路线与选点覆盖层）",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 13
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "pinPicker.location.confirm",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "pinPicker.location.confirm",
+              "label": "确认地图选点",
+              "description": null,
+              "behavior": "submit",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\Map\\components\\explore\\PinPickerOverlay.tsx",
+                "line": 99,
+                "col": 11
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "pinPicker.location.confirm",
+      "label": "确认地图选点",
+      "description": null,
+      "behavior": "submit",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "map",
+    "graphFile": "public\\map_nav_graph.json",
+    "taskId": "map:pinPicker.overlay.close",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "explore.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "explore.base",
+              "component": "ExplorePage",
+              "description": "探索首页-地图视图（含路线与选点覆盖层）",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 13
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "pinPicker.overlay.close",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "pinPicker.overlay.close",
+              "label": "关闭地图选点",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\Map\\components\\explore\\PinPickerOverlay.tsx",
+                "line": 76,
+                "col": 13
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "pinPicker.overlay.close",
+      "label": "关闭地图选点",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "map",
+    "graphFile": "public\\map_nav_graph.json",
+    "taskId": "map:routePicker.history.choose",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "explore.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "explore.base",
+              "component": "ExplorePage",
+              "description": "探索首页-地图视图（含路线与选点覆盖层）",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 13
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "routePicker.history.choose",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "routePicker.history.choose",
+              "label": "选择路线历史地点",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\Map\\components\\explore\\RoutePointPickerOverlay.tsx",
+                "line": 306,
+                "col": 21
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "routePicker.history.choose",
+      "label": "选择路线历史地点",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "map",
+    "graphFile": "public\\map_nav_graph.json",
+    "taskId": "map:routePicker.map.choose",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "explore.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "explore.base",
+              "component": "ExplorePage",
+              "description": "探索首页-地图视图（含路线与选点覆盖层）",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 13
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "routePicker.map.choose",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "routePicker.map.choose",
+              "label": "在地图上选择",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\Map\\components\\explore\\RoutePointPickerOverlay.tsx",
+                "line": 282,
+                "col": 19
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "routePicker.map.choose",
+      "label": "在地图上选择",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "map",
+    "graphFile": "public\\map_nav_graph.json",
+    "taskId": "map:routePicker.overlay.close",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "explore.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "explore.base",
+              "component": "ExplorePage",
+              "description": "探索首页-地图视图（含路线与选点覆盖层）",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 13
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "routePicker.overlay.close",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "routePicker.overlay.close",
+              "label": "关闭路线地点选择",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\Map\\components\\explore\\RoutePointPickerOverlay.tsx",
+                "line": 221,
+                "col": 17
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "routePicker.overlay.close",
+      "label": "关闭路线地点选择",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "map",
+    "graphFile": "public\\map_nav_graph.json",
+    "taskId": "map:routePicker.prediction.choose",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "explore.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "explore.base",
+              "component": "ExplorePage",
+              "description": "探索首页-地图视图（含路线与选点覆盖层）",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 13
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "routePicker.prediction.choose",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "routePicker.prediction.choose",
+              "label": "选择地点联想结果",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\Map\\components\\explore\\RoutePointPickerOverlay.tsx",
+                "line": 335,
+                "col": 23
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "routePicker.prediction.choose",
+      "label": "选择地点联想结果",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "map",
+    "graphFile": "public\\map_nav_graph.json",
+    "taskId": "map:routePicker.query.clear",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "explore.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "explore.base",
+              "component": "ExplorePage",
+              "description": "探索首页-地图视图（含路线与选点覆盖层）",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 13
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "routePicker.query.clear",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "routePicker.query.clear",
+              "label": "清空地点查询",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\Map\\components\\explore\\RoutePointPickerOverlay.tsx",
+                "line": 254,
+                "col": 21
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "routePicker.query.clear",
+      "label": "清空地点查询",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "map",
+    "graphFile": "public\\map_nav_graph.json",
+    "taskId": "map:routeSetup.history.choose",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "explore.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "explore.base",
+              "component": "ExplorePage",
+              "description": "探索首页-地图视图（含路线与选点覆盖层）",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 13
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "routeSetup.history.choose",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "routeSetup.history.choose",
+              "label": "选择历史地点",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\Map\\components\\explore\\RouteSetupOverlay.tsx",
+                "line": 186,
+                "col": 17
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "routeSetup.history.choose",
+      "label": "选择历史地点",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "map",
+    "graphFile": "public\\map_nav_graph.json",
+    "taskId": "map:routeSetup.locations.swap",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "explore.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "explore.base",
+              "component": "ExplorePage",
+              "description": "探索首页-地图视图（含路线与选点覆盖层）",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 13
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "routeSetup.locations.swap",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "routeSetup.locations.swap",
+              "label": "交换起终点",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\Map\\components\\explore\\RouteSetupOverlay.tsx",
+                "line": 135,
+                "col": 19
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "routeSetup.locations.swap",
+      "label": "交换起终点",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "map",
+    "graphFile": "public\\map_nav_graph.json",
+    "taskId": "map:routeSetup.open.destinationPicker",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "explore.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "explore.base",
+              "component": "ExplorePage",
+              "description": "探索首页-地图视图（含路线与选点覆盖层）",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 13
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "routeSetup.open.destinationPicker",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "routeSetup.open.destinationPicker",
+              "label": "选择目的地",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\Map\\components\\explore\\RouteSetupOverlay.tsx",
+                "line": 115,
+                "col": 23
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "routeSetup.open.destinationPicker",
+      "label": "选择目的地",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "map",
+    "graphFile": "public\\map_nav_graph.json",
+    "taskId": "map:routeSetup.open.originPicker",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "explore.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "explore.base",
+              "component": "ExplorePage",
+              "description": "探索首页-地图视图（含路线与选点覆盖层）",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 13
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "routeSetup.open.originPicker",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "routeSetup.open.originPicker",
+              "label": "选择出发地",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\Map\\components\\explore\\RouteSetupOverlay.tsx",
+                "line": 78,
+                "col": 23
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "routeSetup.open.originPicker",
+      "label": "选择出发地",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "map",
+    "graphFile": "public\\map_nav_graph.json",
+    "taskId": "map:routeSetup.transport.choose",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "explore.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "explore.base",
+              "component": "ExplorePage",
+              "description": "探索首页-地图视图（含路线与选点覆盖层）",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 13
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "routeSetup.transport.choose",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "routeSetup.transport.choose",
+              "label": "选择出行方式",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\Map\\components\\explore\\RouteSetupOverlay.tsx",
+                "line": 161,
+                "col": 23
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "routeSetup.transport.choose",
+      "label": "选择出行方式",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "map",
+    "graphFile": "public\\map_nav_graph.json",
+    "taskId": "map:settings.appDisplay.language.select.en",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/settings/app-display/language",
+      "routePath": "/settings/app-display/language",
+      "uiStateId": "settings.app-display.language.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 4,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/profile",
+          "/settings",
+          "/settings/app-display",
+          "/settings/app-display/language"
+        ],
+        "transitions": [
+          "profile.open",
+          "settings.open",
+          "settings.app-display.open",
+          "settings.app-display.language.open"
+        ],
+        "length": 4
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/profile",
+          "/settings",
+          "/settings/app-display",
+          "/settings/app-display/language"
+        ],
+        "transitions": [
+          "profile.open",
+          "settings.open",
+          "settings.app-display.open",
+          "settings.app-display.language.open"
+        ],
+        "length": 4,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "explore.base",
+              "component": "ExplorePage",
+              "description": "探索首页-地图视图（含路线与选点覆盖层）",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 13
+            },
+            "edge": {
+              "transitionId": "profile.open",
+              "label": "打开个人资料",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/",
+              "target": "/profile",
+              "uiMeta": {
+                "placement": "topbar",
+                "icon": "avatar",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/profile",
+              "routePath": "/profile",
+              "uiStateId": "profile.base",
+              "component": "ProfilePage",
+              "description": "个人资料菜单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "profile.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "topbar",
+              "icon": "avatar",
+              "gesture": "tap"
+            }
+          },
+          {
+            "index": 1,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/profile",
+              "routePath": "/profile",
+              "uiStateId": "profile.base",
+              "component": "ProfilePage",
+              "description": "个人资料菜单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "settings.open",
+              "label": "打开设置",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/profile",
+              "target": "/settings",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "settings",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/settings",
+              "routePath": "/settings",
+              "uiStateId": "settings.base",
+              "component": "SettingsPage",
+              "description": "设置主页",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "settings.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "settings",
+              "gesture": "tap"
+            }
+          },
+          {
+            "index": 2,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/settings",
+              "routePath": "/settings",
+              "uiStateId": "settings.base",
+              "component": "SettingsPage",
+              "description": "设置主页",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "settings.app-display.open",
+              "label": "打开应用和显示",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/settings",
+              "target": "/settings/app-display",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "settings_item",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/settings/app-display",
+              "routePath": "/settings/app-display",
+              "uiStateId": "settings.app-display.base",
+              "component": "AppDisplayPage",
+              "description": "应用和显示设置",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "settings.app-display.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "settings_item",
+              "gesture": "tap"
+            }
+          },
+          {
+            "index": 3,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/settings/app-display",
+              "routePath": "/settings/app-display",
+              "uiStateId": "settings.app-display.base",
+              "component": "AppDisplayPage",
+              "description": "应用和显示设置",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "settings.app-display.language.open",
+              "label": "打开应用语言",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/settings/app-display",
+              "target": "/settings/app-display/language",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "language_item",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/settings/app-display/language",
+              "routePath": "/settings/app-display/language",
+              "uiStateId": "settings.app-display.language.base",
+              "component": "LanguagePage",
+              "description": "应用语言",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 3
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "settings.app-display.language.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "language_item",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/settings/app-display/language",
+              "routePath": "/settings/app-display/language",
+              "uiStateId": "settings.app-display.language.base",
+              "component": "LanguagePage",
+              "description": "应用语言",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 3
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "settings.appDisplay.language.select.en",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "settings.appDisplay.language.select.en",
+              "label": "选择英文",
+              "description": null,
+              "behavior": "select",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\Map\\pages\\LanguagePage.tsx",
+                "line": 73,
+                "col": 29
+              }
+            ],
+            "index": 4
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "settings.appDisplay.language.select.en",
+      "label": "选择英文",
+      "description": null,
+      "behavior": "select",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "map",
+    "graphFile": "public\\map_nav_graph.json",
+    "taskId": "map:settings.appDisplay.language.select.system",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/settings/app-display/language",
+      "routePath": "/settings/app-display/language",
+      "uiStateId": "settings.app-display.language.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 4,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/profile",
+          "/settings",
+          "/settings/app-display",
+          "/settings/app-display/language"
+        ],
+        "transitions": [
+          "profile.open",
+          "settings.open",
+          "settings.app-display.open",
+          "settings.app-display.language.open"
+        ],
+        "length": 4
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/profile",
+          "/settings",
+          "/settings/app-display",
+          "/settings/app-display/language"
+        ],
+        "transitions": [
+          "profile.open",
+          "settings.open",
+          "settings.app-display.open",
+          "settings.app-display.language.open"
+        ],
+        "length": 4,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "explore.base",
+              "component": "ExplorePage",
+              "description": "探索首页-地图视图（含路线与选点覆盖层）",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 13
+            },
+            "edge": {
+              "transitionId": "profile.open",
+              "label": "打开个人资料",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/",
+              "target": "/profile",
+              "uiMeta": {
+                "placement": "topbar",
+                "icon": "avatar",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/profile",
+              "routePath": "/profile",
+              "uiStateId": "profile.base",
+              "component": "ProfilePage",
+              "description": "个人资料菜单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "profile.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "topbar",
+              "icon": "avatar",
+              "gesture": "tap"
+            }
+          },
+          {
+            "index": 1,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/profile",
+              "routePath": "/profile",
+              "uiStateId": "profile.base",
+              "component": "ProfilePage",
+              "description": "个人资料菜单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "settings.open",
+              "label": "打开设置",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/profile",
+              "target": "/settings",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "settings",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/settings",
+              "routePath": "/settings",
+              "uiStateId": "settings.base",
+              "component": "SettingsPage",
+              "description": "设置主页",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "settings.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "settings",
+              "gesture": "tap"
+            }
+          },
+          {
+            "index": 2,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/settings",
+              "routePath": "/settings",
+              "uiStateId": "settings.base",
+              "component": "SettingsPage",
+              "description": "设置主页",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "settings.app-display.open",
+              "label": "打开应用和显示",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/settings",
+              "target": "/settings/app-display",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "settings_item",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/settings/app-display",
+              "routePath": "/settings/app-display",
+              "uiStateId": "settings.app-display.base",
+              "component": "AppDisplayPage",
+              "description": "应用和显示设置",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "settings.app-display.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "settings_item",
+              "gesture": "tap"
+            }
+          },
+          {
+            "index": 3,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/settings/app-display",
+              "routePath": "/settings/app-display",
+              "uiStateId": "settings.app-display.base",
+              "component": "AppDisplayPage",
+              "description": "应用和显示设置",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "settings.app-display.language.open",
+              "label": "打开应用语言",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/settings/app-display",
+              "target": "/settings/app-display/language",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "language_item",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/settings/app-display/language",
+              "routePath": "/settings/app-display/language",
+              "uiStateId": "settings.app-display.language.base",
+              "component": "LanguagePage",
+              "description": "应用语言",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 3
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "settings.app-display.language.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "language_item",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/settings/app-display/language",
+              "routePath": "/settings/app-display/language",
+              "uiStateId": "settings.app-display.language.base",
+              "component": "LanguagePage",
+              "description": "应用语言",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 3
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "settings.appDisplay.language.select.system",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "settings.appDisplay.language.select.system",
+              "label": "选择系统默认语言",
+              "description": null,
+              "behavior": "select",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\Map\\pages\\LanguagePage.tsx",
+                "line": 64,
+                "col": 27
+              }
+            ],
+            "index": 4
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "settings.appDisplay.language.select.system",
+      "label": "选择系统默认语言",
+      "description": null,
+      "behavior": "select",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "map",
+    "graphFile": "public\\map_nav_graph.json",
+    "taskId": "map:settings.appDisplay.language.select.zhHans",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/settings/app-display/language",
+      "routePath": "/settings/app-display/language",
+      "uiStateId": "settings.app-display.language.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 4,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/profile",
+          "/settings",
+          "/settings/app-display",
+          "/settings/app-display/language"
+        ],
+        "transitions": [
+          "profile.open",
+          "settings.open",
+          "settings.app-display.open",
+          "settings.app-display.language.open"
+        ],
+        "length": 4
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/profile",
+          "/settings",
+          "/settings/app-display",
+          "/settings/app-display/language"
+        ],
+        "transitions": [
+          "profile.open",
+          "settings.open",
+          "settings.app-display.open",
+          "settings.app-display.language.open"
+        ],
+        "length": 4,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "explore.base",
+              "component": "ExplorePage",
+              "description": "探索首页-地图视图（含路线与选点覆盖层）",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 13
+            },
+            "edge": {
+              "transitionId": "profile.open",
+              "label": "打开个人资料",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/",
+              "target": "/profile",
+              "uiMeta": {
+                "placement": "topbar",
+                "icon": "avatar",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/profile",
+              "routePath": "/profile",
+              "uiStateId": "profile.base",
+              "component": "ProfilePage",
+              "description": "个人资料菜单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "profile.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "topbar",
+              "icon": "avatar",
+              "gesture": "tap"
+            }
+          },
+          {
+            "index": 1,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/profile",
+              "routePath": "/profile",
+              "uiStateId": "profile.base",
+              "component": "ProfilePage",
+              "description": "个人资料菜单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "settings.open",
+              "label": "打开设置",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/profile",
+              "target": "/settings",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "settings",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/settings",
+              "routePath": "/settings",
+              "uiStateId": "settings.base",
+              "component": "SettingsPage",
+              "description": "设置主页",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "settings.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "settings",
+              "gesture": "tap"
+            }
+          },
+          {
+            "index": 2,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/settings",
+              "routePath": "/settings",
+              "uiStateId": "settings.base",
+              "component": "SettingsPage",
+              "description": "设置主页",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "settings.app-display.open",
+              "label": "打开应用和显示",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/settings",
+              "target": "/settings/app-display",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "settings_item",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/settings/app-display",
+              "routePath": "/settings/app-display",
+              "uiStateId": "settings.app-display.base",
+              "component": "AppDisplayPage",
+              "description": "应用和显示设置",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "settings.app-display.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "settings_item",
+              "gesture": "tap"
+            }
+          },
+          {
+            "index": 3,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/settings/app-display",
+              "routePath": "/settings/app-display",
+              "uiStateId": "settings.app-display.base",
+              "component": "AppDisplayPage",
+              "description": "应用和显示设置",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "settings.app-display.language.open",
+              "label": "打开应用语言",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/settings/app-display",
+              "target": "/settings/app-display/language",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "language_item",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/settings/app-display/language",
+              "routePath": "/settings/app-display/language",
+              "uiStateId": "settings.app-display.language.base",
+              "component": "LanguagePage",
+              "description": "应用语言",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 3
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "settings.app-display.language.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "language_item",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/settings/app-display/language",
+              "routePath": "/settings/app-display/language",
+              "uiStateId": "settings.app-display.language.base",
+              "component": "LanguagePage",
+              "description": "应用语言",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 3
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "settings.appDisplay.language.select.zhHans",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "settings.appDisplay.language.select.zhHans",
+              "label": "选择中文",
+              "description": null,
+              "behavior": "select",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\Map\\pages\\LanguagePage.tsx",
+                "line": 69,
+                "col": 29
+              }
+            ],
+            "index": 4
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "settings.appDisplay.language.select.zhHans",
+      "label": "选择中文",
+      "description": null,
+      "behavior": "select",
+      "scope": null,
+      "paramsSchema": null
+    }
+  }
+]

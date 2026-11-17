@@ -1,0 +1,86 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "pair_id": "J69",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "apps": {
+    "alipay": {}
+  },
+  "raw_apps": {
+    "alipay": {
+      "settings": {
+        "visualRefreshEnabled": true,
+        "payment": {
+          "payOrder": {
+            "mode": "system",
+            "customOrderIds": [
+              "yuebao",
+              "balance",
+              "ccb"
+            ]
+          },
+          "fastPay": {
+            "enabled": false,
+            "noPwdEnabled": false,
+            "easterEggEnabled": true
+          }
+        },
+        "notifications": {
+          "tradeSecurity": true,
+          "service": true,
+          "activity": true,
+          "avCall": false,
+          "avCallPopup": false,
+          "friendReminder": true,
+          "friendDetail": true,
+          "sound": true,
+          "vibration": true,
+          "avCallRing": false
+        },
+        "general": {
+          "refreshSoundEnabled": true,
+          "fontSizeLevel": 2,
+          "darkMode": {
+            "followSystem": false,
+            "mode": "light"
+          },
+          "speedModeEnabled": false,
+          "clipboardAllowRead": true,
+          "homeManage": {
+            "searchBoxRecommendEnabled": true,
+            "searchBoxAmbienceEnabled": true,
+            "searchPreEnabled": true,
+            "voiceFloatEnabled": false,
+            "activityAmbienceEnabled": true,
+            "appDynamicEnabled": true,
+            "featureColumnEnabled": true,
+            "smartSceneEnabled": true
+          },
+          "myManage": {
+            "documents": true,
+            "yuebao": true,
+            "huabei": true,
+            "antInsure": true,
+            "sesame": true,
+            "yulibao": true,
+            "mybankLoan": true,
+            "mybank": true,
+            "civic": true,
+            "orders": true,
+            "moreServices": true
+          }
+        }
+      }
+    }
+  },
+  "os": {}
+}

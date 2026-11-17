@@ -1,0 +1,1 @@
+import React from'react';export const Icon:React.FC<{className?:string}>=({className})=><svg className={className} viewBox="0 0 48 48"><rect x="5" y="5" width="38" height="38" rx="12" fill="#1677ff"/><path d="M11 27h7l3-9 5 17 4-10h7" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>;

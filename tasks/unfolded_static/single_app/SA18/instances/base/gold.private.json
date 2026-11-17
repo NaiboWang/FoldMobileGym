@@ -1,0 +1,10 @@
+{
+  "app": "meituan_waimai",
+  "data": {
+    "shop_id": "rice",
+    "shop": "大米先生 · 家常简餐",
+    "dish_id": "chicken",
+    "dish": "香酥鸡排饭",
+    "quantity": 2
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "controller_event.schema.json",
+  "title": "Benchmark-owned foldable event v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["event_id", "controller", "trigger", "transition", "evidence"],
+  "properties": {
+    "event_id": {"type": "string"},
+    "controller": {"const": "benchmark"},
+    "trigger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["all", "max_wait_steps"],
+      "properties": {
+        "all": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["path", "equals"]}},
+        "max_wait_steps": {"type": "integer", "minimum": 1}
+      }
+    },
+    "transition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from_posture", "to_posture", "duration_steps"],
+      "properties": {
+        "from_posture": {"enum": ["folded", "unfolded", "tabletop"]},
+        "to_posture": {"enum": ["folded", "unfolded", "tabletop"]},
+        "duration_steps": {"type": "integer", "minimum": 0}
+      }
+    },
+    "fault": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "app_id", "preserve_persisted_state"],
+      "properties": {
+        "type": {"const": "recreate_app"},
+        "app_id": {"type": "string"},
+        "preserve_persisted_state": {"const": true}
+      }
+    },
+    "evidence": {"const": ["trigger_step", "trigger_state_hash", "posture_before", "posture_after", "layout_before", "layout_after"]}
+  }
+}

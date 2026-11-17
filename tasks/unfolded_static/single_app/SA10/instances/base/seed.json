@@ -1,0 +1,69 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "apps": {
+    "sms": {}
+  },
+  "raw_apps": {
+    "sms": {
+      "conversationDrafts": {
+        "target": {
+          "sourceKey": "[\"target\",\"陈宁\",\"13900007312\"]",
+          "recipient": "13900007312",
+          "body": ""
+        },
+        "other": {
+          "sourceKey": "[\"other\",\"陈宁\",\"13900007318\"]",
+          "recipient": "13900007318",
+          "body": "保留原草稿"
+        }
+      },
+      "composeDrafts": {}
+    }
+  },
+  "os": {
+    "providers": {
+      "sms": {
+        "conversations": [
+          {
+            "id": "target",
+            "sender": "陈宁",
+            "phoneNumber": "13900007312",
+            "timestamp": "",
+            "avatarColor": "#07C160",
+            "avatarText": "陈",
+            "isUnread": false,
+            "simSlot": 1,
+            "messageCount": 0
+          },
+          {
+            "id": "other",
+            "sender": "陈宁",
+            "phoneNumber": "13900007318",
+            "timestamp": "",
+            "avatarColor": "#07C160",
+            "avatarText": "陈",
+            "isUnread": false,
+            "simSlot": 1,
+            "messageCount": 0
+          }
+        ],
+        "messagesByConversationId": {
+          "target": [],
+          "other": []
+        }
+      }
+    }
+  },
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "pair_id": "J56"
+}

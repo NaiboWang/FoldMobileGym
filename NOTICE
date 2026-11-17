@@ -1,0 +1,43 @@
+FoldMobileGym distribution clarification, 2026-11-16.
+The original mobile-gym attribution is retained below.
+
+mobile-gym
+Copyright 2026 The mobile-gym Authors
+
+This product includes software developed by The mobile-gym Authors and
+contributors. Project source code is licensed under the Apache License,
+Version 2.0 to the extent the project has authority to grant that license;
+third-party software retains its own terms. See the LICENSE file.
+
+Data contributions are licensed separately under CC BY-NC 4.0 only to
+the extent stated in foldmobilegym/LICENSE-DATA. Directory membership
+does not relicense third-party content. Third-party software, fonts,
+platform content, images, icons, and other resources retain their own
+rights and terms. The identified Roboto files are under SIL OFL 1.1;
+see foldmobilegym/apps/Map/assets/offline-fonts/OFL.txt.
+
+For notices regarding trademarks, third-party application references,
+dataset provenance, network behavior, and the takedown procedure, see
+foldmobilegym/DISCLAIMER.md and foldmobilegym/DATA-PROVENANCE.md.
+
+------------------------------------------------------------------------
+Third-party components
+
+This project bundles or depends on third-party software with their own
+licenses. Their copyrights remain with their respective authors. Direct
+dependency declarations are an index, not a complete notice for every
+transitive dependency or distribution. See
+foldmobilegym/THIRD-PARTY-NOTICES.md for collected notices and coverage
+limits, and retain the notices applicable to the actual distribution.
+
+------------------------------------------------------------------------
+Patents
+
+Portions of this codebase may be covered by patents held by the
+contributors. Use of this software is licensed under the patent grant
+in Section 3 of the Apache License, Version 2.0, and is limited to that
+grant. No additional patent rights are conveyed.
+
+foldmobilegym standalone simulator publication (2026).
+Built on MobileGym; original source, data and third-party notices are retained.
+Foldable layouts and simulator workflow changes derive from flyx-flyx/foldagent-gui.

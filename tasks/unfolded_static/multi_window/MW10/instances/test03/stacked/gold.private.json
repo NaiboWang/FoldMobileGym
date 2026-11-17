@@ -1,0 +1,14 @@
+{
+  "source": "reddit",
+  "target": "notes",
+  "data": {
+    "id": "my_post_1",
+    "title": "周末读书分享安排",
+    "when": "11月14日10:30",
+    "place": "图书馆三楼讨论室",
+    "items": "笔记本和借阅证"
+  },
+  "target_text": "11月14日；10:30；图书馆三楼讨论室；笔记本；借阅证",
+  "title": "资料备忘 · Reddit",
+  "chat_name": "韩晴（研发）"
+}

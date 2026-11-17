@@ -1,0 +1,77 @@
+{
+  "app": "workspace_docs",
+  "appDir": "apps\\WorkspaceDocs",
+  "mode": "schema",
+  "routeCount": 2,
+  "edgeCount": 2,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "component": "WorkspaceDocsLibrary",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "工作文档列表",
+      "stateCount": 1,
+      "states": [
+        "/"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/document/:id",
+      "routePath": "/document/:id",
+      "component": "WorkspaceDocumentReader",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "只读文档",
+      "stateCount": 1,
+      "states": [
+        "/document/:id"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "workspaceDocs.document.fact.verify"
+      ],
+      "actions": [
+        {
+          "id": "workspaceDocs.document.fact.verify",
+          "label": "阅读并核对文档事实",
+          "behavior": "other"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/",
+      "target": "/document/:id",
+      "transitions": [
+        "workspace_docs.document.open"
+      ],
+      "type": "navigation",
+      "label": "workspace_docs.document.open",
+      "id": "workspace_docs.document.open"
+    },
+    {
+      "source": "/document/:id",
+      "target": "/",
+      "transitions": [
+        "workspace_docs.library.open"
+      ],
+      "type": "navigation",
+      "label": "workspace_docs.library.open",
+      "id": "workspace_docs.library.open"
+    }
+  ]
+}

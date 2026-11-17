@@ -1,0 +1,47 @@
+{
+  "data": {
+    "name": "陈宁",
+    "event": "项目评审",
+    "room": "402会议室",
+    "time": "14:30",
+    "subject": "评审准备事项",
+    "list": "评审任务",
+    "items": [
+      "打印议程",
+      "整理演示文档",
+      "检查转接头"
+    ],
+    "notice": "图书馆办证公告",
+    "note": "办证安排",
+    "desk": "东馆服务台",
+    "materials": [
+      "身份证",
+      "一寸照片"
+    ],
+    "deadline": "17:00",
+    "place": "青禾书店",
+    "address": "海棠区文昌路18号2层",
+    "area": "海棠区",
+    "hint": "文昌路",
+    "place_note": "周末书店",
+    "city": "宁河市",
+    "high": 12,
+    "current": 7,
+    "person": "林安",
+    "phone": "13900007312",
+    "company": "青禾设计",
+    "document": "实验安排",
+    "section": "设备准备",
+    "equipment": [
+      "电脑",
+      "转接头",
+      "录音笔"
+    ],
+    "doc_note": "设备清单",
+    "day": 4,
+    "deadline_day": 6,
+    "prefix": "您好，",
+    "calendar_prefix": ""
+  },
+  "target_text": "带外套"
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "pair_id": "J87",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "apps": {
+    "redbook": {}
+  },
+  "raw_apps": {
+    "redbook": {
+      "user": {
+        "id": "xiaoming",
+        "name": "小明",
+        "avatar": "my/mine_def_touxiang_3x.png",
+        "userCover": "my/mine_bg_3x.png",
+        "likesAndCollections": 326,
+        "intro": "一只野生程序猿存档 🌟\n喜欢摄影 | 旅行 | 美食\n记录生活中的小美好 ✨",
+        "location": "上海",
+        "address": "上海",
+        "gender": "Female",
+        "age": "24",
+        "followingIds": [
+          "x1dubbu13",
+          "rdh0g1uqf",
+          "bosfmbo16",
+          "ng31ly5bk",
+          "1d6oaldda",
+          "r204n7q81",
+          "oiazv5lgz"
+        ],
+        "followerIds": [
+          "bosfmbo16",
+          "ng31ly5bk",
+          "x1dubbu13"
+        ],
+        "likedNotes": [
+          "9ihedac3e",
+          "xpctqzmeh"
+        ],
+        "collectedNotes": [
+          "2kvlyjk5h",
+          "xpctqzmeh"
+        ],
+        "likedCommentsByNote": {
+          "2kvlyjk5h": [
+            "4p46qdh02",
+            "cxqcga932"
+          ],
+          "xpctqzmeh": [
+            "gaw1goyge"
+          ]
+        },
+        "commentIds": [],
+        "publishedNoteIds": [
+          "note_0",
+          "note_1"
+        ]
+      }
+    }
+  },
+  "os": {}
+}

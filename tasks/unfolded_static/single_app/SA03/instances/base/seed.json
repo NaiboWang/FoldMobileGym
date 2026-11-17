@@ -1,0 +1,67 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "apps": {
+    "mail": {}
+  },
+  "raw_apps": {
+    "mail": {
+      "messages": [
+        {
+          "id": "target",
+          "subject": "评审准备事项",
+          "senderAddress": "review@lab.example",
+          "date": "2026-11-04 09:00",
+          "body": "请确认于14:30到402会议室参加项目评审",
+          "from": "评审工作组"
+        },
+        {
+          "id": "old",
+          "subject": "评审准备事项",
+          "senderAddress": "review@lab.example",
+          "date": "2026-11-01 09:00",
+          "body": "旧通知：16:00到508会议室",
+          "from": "评审工作组"
+        }
+      ],
+      "drafts": [
+        {
+          "id": "reply-target",
+          "to": "review@lab.example",
+          "subject": "Re: 评审准备事项",
+          "body": "",
+          "attachments": [],
+          "replyTo": {
+            "messageId": "target",
+            "sourceKey": "[\"target\",\"评审工作组\",\"review@lab.example\",\"评审准备事项\",\"2026-11-04 09:00\",\"请确认于14:30到402会议室参加项目评审\"]"
+          }
+        },
+        {
+          "id": "other-draft",
+          "to": "other@lab.example",
+          "subject": "保留草稿",
+          "body": "不可更改"
+        }
+      ],
+      "draftInput": {
+        "to": "",
+        "subject": "",
+        "body": ""
+      },
+      "editorBuffers": {},
+      "selectedId": null
+    }
+  },
+  "os": {},
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "pair_id": "J44"
+}

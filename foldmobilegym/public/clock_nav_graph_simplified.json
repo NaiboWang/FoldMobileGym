@@ -1,0 +1,601 @@
+{
+  "app": "clock",
+  "appDir": "system\\Clock",
+  "mode": "schema",
+  "routeCount": 7,
+  "edgeCount": 16,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "component": "ClockRootRedirect",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "时钟根路由",
+      "stateCount": 1,
+      "states": [
+        "/"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/alarm",
+      "routePath": "/alarm",
+      "component": "AlarmPage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "闹钟页",
+      "stateCount": 10,
+      "states": [
+        "/alarm?alarmId=:alarmId",
+        "/alarm?selection=alarms&alarmId=:alarmId",
+        "/alarm?menu=more&alarmId=:alarmId",
+        "/alarm?panel=add&alarmId=:alarmId",
+        "/alarm?panel=quick&alarmId=:alarmId",
+        "/alarm?panel=edit&alarmId=:alarmId",
+        "/alarm?panel=add&repeat=open&alarmId=:alarmId",
+        "/alarm?panel=edit&repeat=open&alarmId=:alarmId",
+        "/alarm?panel=add&ringtone=open&alarmId=:alarmId",
+        "/alarm?panel=edit&ringtone=open&alarmId=:alarmId"
+      ],
+      "actionCount": 21,
+      "actionIds": [
+        "alarm.add.save.submit",
+        "alarm.quick.save.submit",
+        "alarm.edit.save.submit",
+        "alarm.add.repeat.select.once",
+        "alarm.add.repeat.select.daily",
+        "alarm.add.repeat.select.workday",
+        "alarm.add.repeat.select.holiday",
+        "alarm.add.repeat.select.weekday",
+        "alarm.edit.repeat.select.once",
+        "alarm.edit.repeat.select.daily",
+        "alarm.edit.repeat.select.workday",
+        "alarm.edit.repeat.select.holiday",
+        "alarm.edit.repeat.select.weekday",
+        "alarm.add.ringtone.select.classic",
+        "alarm.add.ringtone.select.soft",
+        "alarm.add.ringtone.select.bright",
+        "alarm.add.ringtone.preview",
+        "alarm.edit.ringtone.select.classic",
+        "alarm.edit.ringtone.select.soft",
+        "alarm.edit.ringtone.select.bright",
+        "alarm.edit.ringtone.preview"
+      ],
+      "actions": [
+        {
+          "id": "alarm.add.save.submit",
+          "label": "Save alarm",
+          "behavior": "submit"
+        },
+        {
+          "id": "alarm.quick.save.submit",
+          "label": "Save alarm",
+          "behavior": "submit"
+        },
+        {
+          "id": "alarm.edit.save.submit",
+          "label": "Save alarm",
+          "behavior": "submit"
+        },
+        {
+          "id": "alarm.add.repeat.select.once",
+          "label": "Once",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.add.repeat.select.daily",
+          "label": "Every day",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.add.repeat.select.workday",
+          "label": "Workdays",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.add.repeat.select.holiday",
+          "label": "Holidays",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.add.repeat.select.weekday",
+          "label": "Monday to Friday",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.edit.repeat.select.once",
+          "label": "Once",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.edit.repeat.select.daily",
+          "label": "Every day",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.edit.repeat.select.workday",
+          "label": "Workdays",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.edit.repeat.select.holiday",
+          "label": "Holidays",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.edit.repeat.select.weekday",
+          "label": "Monday to Friday",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.add.ringtone.select.classic",
+          "label": "Select classic tone",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.add.ringtone.select.soft",
+          "label": "Select soft tone",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.add.ringtone.select.bright",
+          "label": "Select bright tone",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.add.ringtone.preview",
+          "label": "Preview generated tone",
+          "behavior": "other",
+          "paramsSchema": {
+            "tone": "string"
+          }
+        },
+        {
+          "id": "alarm.edit.ringtone.select.classic",
+          "label": "Select classic tone",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.edit.ringtone.select.soft",
+          "label": "Select soft tone",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.edit.ringtone.select.bright",
+          "label": "Select bright tone",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.edit.ringtone.preview",
+          "label": "Preview generated tone",
+          "behavior": "other",
+          "paramsSchema": {
+            "tone": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/alarm/ringing/:ringId",
+      "routePath": "/alarm/ringing/:ringId",
+      "component": "AlarmRingingPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "Owned local alarm occurrence",
+      "stateCount": 1,
+      "states": [
+        "/alarm/ringing/:ringId"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "alarm.ringing.dismiss",
+        "alarm.ringing.audio.enable"
+      ],
+      "actions": [
+        {
+          "id": "alarm.ringing.dismiss",
+          "label": "Stop only this alarm occurrence",
+          "behavior": "other"
+        },
+        {
+          "id": "alarm.ringing.audio.enable",
+          "label": "Enable browser audio for this occurrence",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/settings",
+      "routePath": "/settings",
+      "component": "ClockSettingsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "Clock settings",
+      "stateCount": 1,
+      "states": [
+        "/settings"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "clock.settings.gradualVolume.toggle"
+      ],
+      "actions": [
+        {
+          "id": "clock.settings.gradualVolume.toggle",
+          "label": "Toggle gradual browser alarm volume",
+          "behavior": "toggle",
+          "paramsSchema": {
+            "value": "boolean"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/world",
+      "routePath": "/world",
+      "component": "WorldClockPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "世界时钟页",
+      "stateCount": 3,
+      "states": [
+        "/world",
+        "/world?selection=cities",
+        "/world?panel=cities"
+      ],
+      "actionCount": 4,
+      "actionIds": [
+        "world.city.item.add.submit",
+        "world.city.search.input",
+        "world.city.search.clear",
+        "world.city.index.jump"
+      ],
+      "actions": [
+        {
+          "id": "world.city.item.add.submit",
+          "label": "Add selected city or report existing city",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "cityId": "string"
+          }
+        },
+        {
+          "id": "world.city.search.input",
+          "label": "Search country or city",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "world.city.search.clear",
+          "label": "Clear city search",
+          "behavior": "other"
+        },
+        {
+          "id": "world.city.index.jump",
+          "label": "Scroll to city initial",
+          "behavior": "other",
+          "paramsSchema": {
+            "letter": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/stopwatch",
+      "routePath": "/stopwatch",
+      "component": "StopwatchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "秒表页",
+      "stateCount": 1,
+      "states": [
+        "/stopwatch"
+      ],
+      "actionCount": 4,
+      "actionIds": [
+        "stopwatch.run.start",
+        "stopwatch.run.pause",
+        "stopwatch.run.lap",
+        "stopwatch.run.reset"
+      ],
+      "actions": [
+        {
+          "id": "stopwatch.run.start",
+          "label": "Start or resume the stopwatch",
+          "behavior": "other"
+        },
+        {
+          "id": "stopwatch.run.pause",
+          "label": "Pause the stopwatch",
+          "behavior": "other"
+        },
+        {
+          "id": "stopwatch.run.lap",
+          "label": "Record a stopwatch lap",
+          "behavior": "other"
+        },
+        {
+          "id": "stopwatch.run.reset",
+          "label": "Reset the stopwatch",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/timer",
+      "routePath": "/timer",
+      "component": "TimerPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "计时器页",
+      "stateCount": 1,
+      "states": [
+        "/timer"
+      ],
+      "actionCount": 10,
+      "actionIds": [
+        "timer.run.start",
+        "timer.run.pause",
+        "timer.run.resume",
+        "timer.run.stop",
+        "timer.setup.reset",
+        "timer.setup.bell",
+        "timer.finish.dismiss",
+        "timer.finish.restart",
+        "timer.preset.select.duration",
+        "timer.screen.toggle"
+      ],
+      "actions": [
+        {
+          "id": "timer.run.start",
+          "label": "开始真实本地倒计时",
+          "behavior": "other"
+        },
+        {
+          "id": "timer.run.pause",
+          "label": "暂停倒计时",
+          "behavior": "other"
+        },
+        {
+          "id": "timer.run.resume",
+          "label": "继续倒计时",
+          "behavior": "other"
+        },
+        {
+          "id": "timer.run.stop",
+          "label": "停止倒计时",
+          "behavior": "other"
+        },
+        {
+          "id": "timer.setup.reset",
+          "label": "重置计时器设置",
+          "behavior": "other"
+        },
+        {
+          "id": "timer.setup.bell",
+          "label": "测试计时器铃声",
+          "behavior": "other"
+        },
+        {
+          "id": "timer.finish.dismiss",
+          "label": "确认结束并停止提示",
+          "behavior": "other"
+        },
+        {
+          "id": "timer.finish.restart",
+          "label": "重新开始原时长",
+          "behavior": "other"
+        },
+        {
+          "id": "timer.preset.select.duration",
+          "label": "选择原预设时长",
+          "behavior": "select",
+          "paramsSchema": {
+            "seconds": "number"
+          }
+        },
+        {
+          "id": "timer.screen.toggle",
+          "label": "请求或释放浏览器常亮",
+          "behavior": "toggle"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/alarm",
+      "target": "/settings",
+      "transitions": [
+        "alarm.menu.settings.open"
+      ],
+      "type": "navigation",
+      "label": "alarm.menu.settings.open",
+      "id": "alarm.menu.settings.open"
+    },
+    {
+      "source": "/alarm",
+      "target": "/alarm/ringing/:ringId",
+      "transitions": [
+        "alarm.ringing.open"
+      ],
+      "type": "navigation",
+      "label": "alarm.ringing.open",
+      "id": "alarm.ringing.open"
+    },
+    {
+      "source": "/alarm/ringing/:ringId",
+      "target": "/alarm",
+      "transitions": [
+        "alarm.ringing.return"
+      ],
+      "type": "navigation",
+      "label": "alarm.ringing.return",
+      "id": "alarm.ringing.return"
+    },
+    {
+      "source": "/",
+      "target": "/world",
+      "transitions": [
+        "tab.world"
+      ],
+      "type": "navigation",
+      "label": "tab.world",
+      "id": "tab.world"
+    },
+    {
+      "source": "/alarm",
+      "target": "/world",
+      "transitions": [
+        "tab.world"
+      ],
+      "type": "navigation",
+      "label": "tab.world",
+      "id": "tab.world"
+    },
+    {
+      "source": "/stopwatch",
+      "target": "/world",
+      "transitions": [
+        "tab.world"
+      ],
+      "type": "navigation",
+      "label": "tab.world",
+      "id": "tab.world"
+    },
+    {
+      "source": "/timer",
+      "target": "/world",
+      "transitions": [
+        "tab.world"
+      ],
+      "type": "navigation",
+      "label": "tab.world",
+      "id": "tab.world"
+    },
+    {
+      "source": "/alarm",
+      "target": "/stopwatch",
+      "transitions": [
+        "tab.stopwatch"
+      ],
+      "type": "navigation",
+      "label": "tab.stopwatch",
+      "id": "tab.stopwatch"
+    },
+    {
+      "source": "/world",
+      "target": "/stopwatch",
+      "transitions": [
+        "tab.stopwatch"
+      ],
+      "type": "navigation",
+      "label": "tab.stopwatch",
+      "id": "tab.stopwatch"
+    },
+    {
+      "source": "/timer",
+      "target": "/stopwatch",
+      "transitions": [
+        "tab.stopwatch"
+      ],
+      "type": "navigation",
+      "label": "tab.stopwatch",
+      "id": "tab.stopwatch"
+    },
+    {
+      "source": "/alarm",
+      "target": "/timer",
+      "transitions": [
+        "tab.timer"
+      ],
+      "type": "navigation",
+      "label": "tab.timer",
+      "id": "tab.timer"
+    },
+    {
+      "source": "/world",
+      "target": "/timer",
+      "transitions": [
+        "tab.timer"
+      ],
+      "type": "navigation",
+      "label": "tab.timer",
+      "id": "tab.timer"
+    },
+    {
+      "source": "/stopwatch",
+      "target": "/timer",
+      "transitions": [
+        "tab.timer"
+      ],
+      "type": "navigation",
+      "label": "tab.timer",
+      "id": "tab.timer"
+    },
+    {
+      "source": "/world",
+      "target": "/alarm",
+      "transitions": [
+        "tab.alarm"
+      ],
+      "type": "navigation",
+      "label": "tab.alarm",
+      "id": "tab.alarm"
+    },
+    {
+      "source": "/stopwatch",
+      "target": "/alarm",
+      "transitions": [
+        "tab.alarm"
+      ],
+      "type": "navigation",
+      "label": "tab.alarm",
+      "id": "tab.alarm"
+    },
+    {
+      "source": "/timer",
+      "target": "/alarm",
+      "transitions": [
+        "tab.alarm"
+      ],
+      "type": "navigation",
+      "label": "tab.alarm",
+      "id": "tab.alarm"
+    }
+  ]
+}

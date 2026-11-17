@@ -1,0 +1,8 @@
+.tb-cart-sku-sheet .tb-cart-sku-missing-title { grid-column: 1 / span 2; font-weight: 600; }
+.tb-cart-sku-status { margin: 12px 0; color: #8a4c16; font-size: 13px; overflow-wrap: anywhere; }
+.tb-cart-sku-status:empty { display: none; }
+.tb-cart-sku-sheet .tb-sku-options button { max-width: 100%; overflow-wrap: anywhere; }
+.tb-cart-sku-sheet .tb-sku-options + p { margin-top: 12px; color: #777; font-size: 12px; }
+.tb-cart-sku-sheet > footer button:disabled { opacity: .45; }
+.tb-cart-sku-sheet .tb-sku-quantity > div { grid-template-columns: 34px minmax(42px, auto) 34px; }
+.tb-cart-sku-sheet .tb-sku-quantity span { padding-inline: 8px; }

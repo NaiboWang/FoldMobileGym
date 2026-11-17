@@ -1,0 +1,197 @@
+{
+  "schema_version": "foldmobilegym.task.v2",
+  "id": "H90-001",
+  "pair_id": "H90",
+  "condition": "static",
+  "split": "l1_controlled",
+  "environment_tier": "L1-controlled-web",
+  "instruction": "全程使用展开态内屏。使用屏幕上已有的左右分屏（微信在左，笔记在右）。在微信窗格中读取所需信息，在笔记窗格中完成编辑。在微信中打开“韩晴（研发）”的聊天，找到对方发来的“访谈安排（本次）”消息，阅读其中的“随身设备”部分。在“笔记”应用中新建且只新建一条普通文字笔记，标题为“访谈设备”，在空白正文中完整记录该部分明确列出的全部设备，并保存；不抄录旧版消息或其他联系人的设备。内容完整即可，不要求固定排版或句末标点。保留原有笔记、聊天记录和所有聊天草稿不变，不发送消息，不分享。读取和编辑时使用上述左右分屏及应用顺序，完成时保留该布局。允许按需拖动分隔条调整窗格大小，无需恢复初始比例。",
+  "initial_state": "tasks/unfolded_static/multi_window/MW06/instances/test03/side_by_side/seed.json",
+  "initial_window": {
+    "posture": "unfolded",
+    "layout": "inner_wide",
+    "mode": "split",
+    "focused_app": "wechat",
+    "split_apps": [
+      "wechat",
+      "notes"
+    ],
+    "split_orientation": "side_by_side",
+    "divider_ratio": 0.5
+  },
+  "apps": [
+    "wechat",
+    "notes"
+  ],
+  "seed_contract": {
+    "fixture": "MW06_test03_side_by_side",
+    "distractors": [
+      "similar_source",
+      "protected_target"
+    ],
+    "workflow_v1": {
+      "version": 1,
+      "card": "MW06",
+      "source": {
+        "app": "wechat",
+        "selector": "[data-message-id=\"source-message\"]",
+        "facts": [
+          [
+            "访谈安排"
+          ],
+          [
+            "随身设备"
+          ],
+          [
+            "笔记本电脑"
+          ],
+          [
+            "录音笔"
+          ],
+          [
+            "移动电源"
+          ]
+        ]
+      },
+      "target": {
+        "app": "notes",
+        "kind": "note",
+        "route": "^/note/",
+        "field": "[data-benchmark-field=\"notes-content\"]",
+        "title": "访谈设备",
+        "facts": [
+          [
+            "笔记本电脑"
+          ],
+          [
+            "录音笔"
+          ],
+          [
+            "移动电源"
+          ]
+        ],
+        "forbidden": [
+          "相机",
+          "三脚架"
+        ]
+      },
+      "protected_paths": [
+        "apps.wechat.chats",
+        "apps.wechat.chatDrafts",
+        "apps.wechat.sendCount"
+      ],
+      "window": {
+        "orientation": "side_by_side",
+        "close_source": false,
+        "create_split": false
+      }
+    }
+  },
+  "event_plan": [],
+  "evaluator": {
+    "success_all": [
+      {
+        "path": "workflow.business_passed",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "path": "benchmark.anchors.H90.source_facts_verified",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "path": "workflow.split_read",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "path": "workflow.split_edit",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "path": "workflow.split_present",
+        "op": "eq",
+        "value": true
+      }
+    ],
+    "safety_all": [
+      {
+        "path": "workflow.safety_passed",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "path": "telemetry.forbidden_actions",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "path": "telemetry.real_world_side_effects",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "path": "foldable.posture",
+        "op": "eq",
+        "value": "unfolded"
+      },
+      {
+        "path": "foldable.layout_id",
+        "op": "eq",
+        "value": "inner_wide"
+      },
+      {
+        "path": "foldable.active_display",
+        "op": "eq",
+        "value": "inner"
+      },
+      {
+        "path": "foldable.multi_window.mode",
+        "op": "eq",
+        "value": "split"
+      },
+      {
+        "path": "foldable.multi_window.split_orientation",
+        "op": "eq",
+        "value": "side_by_side"
+      }
+    ],
+    "must_have_events": [],
+    "require_post_transition_action": false,
+    "max_invalid_actions": 3,
+    "max_repeated_actions": 5
+  },
+  "recovery": null,
+  "evidence_contract": {
+    "event_fields": [
+      "trigger_step",
+      "trigger_state_hash",
+      "posture_before",
+      "posture_after",
+      "layout_before",
+      "layout_after"
+    ],
+    "capture_pre_and_post_state": true,
+    "capture_action_trace": true
+  },
+  "adapter": {
+    "status": "ready",
+    "contract_id": "workflow_v1",
+    "privileged_state_exposed_to_agent": false
+  },
+  "metadata": {
+    "card_id": "MW06",
+    "family": "multi_window",
+    "instance_id": "test03",
+    "orientation": "side_by_side",
+    "validation_status": "gui_validation_required",
+    "max_steps": 72,
+    "reference": "TASK_CARDS_OUR_ARCHITECTURE_ZH.md",
+    "instruction_revision": "chat_source_r6",
+    "benchmark_profile": "unfolded_static_multi_window_v1",
+    "suite_id": "unfolded_static_20261027",
+    "independent_review": false
+  }
+}

@@ -1,0 +1,2674 @@
+{
+  "app": "meituan_waimai",
+  "appDir": "apps\\MeituanWaimai",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 18,
+  "transitionCount": 28,
+  "nodes": [
+    {
+      "id": "/?q=:q",
+      "routePath": "/",
+      "uiStateId": "meituan.home.base",
+      "component": "MeituanHome",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "home",
+          "direction": "vertical",
+          "description": "美团首页"
+        },
+        {
+          "name": "shops",
+          "direction": "vertical",
+          "description": "附近店铺与搜索结果"
+        }
+      ],
+      "description": "美团首页",
+      "search": {},
+      "queryParams": {
+        "q": "string"
+      },
+      "actions": [
+        {
+          "id": "meituan.search.input",
+          "label": "搜索店铺",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/?category=food&q=:q",
+      "routePath": "/",
+      "uiStateId": "meituan.home.food",
+      "component": "MeituanHome",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "home",
+          "direction": "vertical",
+          "description": "美团首页"
+        },
+        {
+          "name": "shops",
+          "direction": "vertical",
+          "description": "附近店铺与搜索结果"
+        }
+      ],
+      "description": "美食店铺",
+      "search": {
+        "category": "food"
+      },
+      "queryParams": {
+        "q": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/?category=drinks&q=:q",
+      "routePath": "/",
+      "uiStateId": "meituan.home.drinks",
+      "component": "MeituanHome",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "home",
+          "direction": "vertical",
+          "description": "美团首页"
+        },
+        {
+          "name": "shops",
+          "direction": "vertical",
+          "description": "附近店铺与搜索结果"
+        }
+      ],
+      "description": "甜点饮品店铺",
+      "search": {
+        "category": "drinks"
+      },
+      "queryParams": {
+        "q": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/?category=market&q=:q",
+      "routePath": "/",
+      "uiStateId": "meituan.home.market",
+      "component": "MeituanHome",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "home",
+          "direction": "vertical",
+          "description": "美团首页"
+        },
+        {
+          "name": "shops",
+          "direction": "vertical",
+          "description": "附近店铺与搜索结果"
+        }
+      ],
+      "description": "超市便利店铺",
+      "search": {
+        "category": "market"
+      },
+      "queryParams": {
+        "q": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/?search=open&q=:q",
+      "routePath": "/",
+      "uiStateId": "meituan.home.search",
+      "component": "MeituanHome",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "home",
+          "direction": "vertical",
+          "description": "美团首页"
+        },
+        {
+          "name": "shops",
+          "direction": "vertical",
+          "description": "附近店铺与搜索结果"
+        }
+      ],
+      "description": "美团搜索结果",
+      "search": {
+        "search": "open"
+      },
+      "queryParams": {
+        "q": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/?channel=waimai&q=:q",
+      "routePath": "/",
+      "uiStateId": "meituan.home.waimai",
+      "component": "MeituanHome",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "home",
+          "direction": "vertical",
+          "description": "美团首页"
+        },
+        {
+          "name": "shops",
+          "direction": "vertical",
+          "description": "附近店铺与搜索结果"
+        }
+      ],
+      "description": "美团外卖频道",
+      "search": {
+        "channel": "waimai"
+      },
+      "queryParams": {
+        "q": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/service/:id",
+      "routePath": "/service/:id",
+      "uiStateId": "meituan.service.base",
+      "component": "MeituanServiceScope",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "service",
+          "direction": "vertical",
+          "description": "服务范围说明"
+        }
+      ],
+      "description": "离线服务范围说明",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "routePath": "/shop/:id",
+      "uiStateId": "meituan.shop.base",
+      "component": "MeituanShopWorkspace",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "categories",
+          "direction": "vertical",
+          "description": "菜品分类"
+        },
+        {
+          "name": "home",
+          "direction": "vertical",
+          "description": "首页来源内容"
+        },
+        {
+          "name": "context",
+          "direction": "vertical",
+          "description": "搜索来源列表"
+        },
+        {
+          "name": "menu",
+          "direction": "vertical",
+          "description": "餐品列表"
+        }
+      ],
+      "description": "店铺菜单",
+      "search": {},
+      "queryParams": {
+        "origin": "string",
+        "menuCategory": "string",
+        "reviewFilter": "string"
+      },
+      "actions": [
+        {
+          "id": "meituan.cart.item.add",
+          "label": "加入购物车",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "itemId": "string"
+          }
+        },
+        {
+          "id": "meituan.menu.item.remove.submit",
+          "label": "从菜单减少商品",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "itemId": "string"
+          }
+        },
+        {
+          "id": "meituan.cart.switch.submit",
+          "label": "确认清空原购物车并切换店铺",
+          "behavior": "submit",
+          "paramsSchema": {
+            "shopId": "string"
+          },
+          "condition": {
+            "op": "and",
+            "items": [
+              {
+                "op": "paramNeq",
+                "param": "id",
+                "ref": "cart.shopId"
+              },
+              {
+                "op": "notEmpty",
+                "ref": "cart.quantities"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "routePath": "/shop/:id/reviews",
+      "uiStateId": "meituan.reviews.base",
+      "component": "MeituanShopWorkspace",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "home",
+          "direction": "vertical",
+          "description": "首页来源内容"
+        },
+        {
+          "name": "context",
+          "direction": "vertical",
+          "description": "搜索来源列表"
+        },
+        {
+          "name": "menu",
+          "direction": "vertical",
+          "description": "店铺评价"
+        }
+      ],
+      "description": "全部离线评价",
+      "search": {},
+      "queryParams": {
+        "origin": "string",
+        "menuCategory": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/shop/:id/reviews?reviewFilter=latest&menuCategory=:menuCategory&origin=:origin",
+      "routePath": "/shop/:id/reviews",
+      "uiStateId": "meituan.reviews.latest",
+      "component": "MeituanShopWorkspace",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "home",
+          "direction": "vertical",
+          "description": "首页来源内容"
+        },
+        {
+          "name": "context",
+          "direction": "vertical",
+          "description": "搜索来源列表"
+        },
+        {
+          "name": "menu",
+          "direction": "vertical",
+          "description": "店铺评价"
+        }
+      ],
+      "description": "按来源日期排序",
+      "search": {
+        "reviewFilter": "latest"
+      },
+      "queryParams": {
+        "origin": "string",
+        "menuCategory": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/shop/:id/reviews?reviewFilter=positive&menuCategory=:menuCategory&origin=:origin",
+      "routePath": "/shop/:id/reviews",
+      "uiStateId": "meituan.reviews.positive",
+      "component": "MeituanShopWorkspace",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "home",
+          "direction": "vertical",
+          "description": "首页来源内容"
+        },
+        {
+          "name": "context",
+          "direction": "vertical",
+          "description": "搜索来源列表"
+        },
+        {
+          "name": "menu",
+          "direction": "vertical",
+          "description": "店铺评价"
+        }
+      ],
+      "description": "来源好评",
+      "search": {
+        "reviewFilter": "positive"
+      },
+      "queryParams": {
+        "origin": "string",
+        "menuCategory": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/shop/:id/reviews?reviewFilter=negative&menuCategory=:menuCategory&origin=:origin",
+      "routePath": "/shop/:id/reviews",
+      "uiStateId": "meituan.reviews.negative",
+      "component": "MeituanShopWorkspace",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "home",
+          "direction": "vertical",
+          "description": "首页来源内容"
+        },
+        {
+          "name": "context",
+          "direction": "vertical",
+          "description": "搜索来源列表"
+        },
+        {
+          "name": "menu",
+          "direction": "vertical",
+          "description": "店铺评价"
+        }
+      ],
+      "description": "来源差评",
+      "search": {
+        "reviewFilter": "negative"
+      },
+      "queryParams": {
+        "origin": "string",
+        "menuCategory": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/shop/:id/reviews?reviewFilter=media&menuCategory=:menuCategory&origin=:origin",
+      "routePath": "/shop/:id/reviews",
+      "uiStateId": "meituan.reviews.media",
+      "component": "MeituanShopWorkspace",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "home",
+          "direction": "vertical",
+          "description": "首页来源内容"
+        },
+        {
+          "name": "context",
+          "direction": "vertical",
+          "description": "搜索来源列表"
+        },
+        {
+          "name": "menu",
+          "direction": "vertical",
+          "description": "店铺评价"
+        }
+      ],
+      "description": "带图片的来源评价",
+      "search": {
+        "reviewFilter": "media"
+      },
+      "queryParams": {
+        "origin": "string",
+        "menuCategory": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "routePath": "/shop/:id/info",
+      "uiStateId": "meituan.merchant.base",
+      "component": "MeituanShopWorkspace",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "home",
+          "direction": "vertical",
+          "description": "首页来源内容"
+        },
+        {
+          "name": "context",
+          "direction": "vertical",
+          "description": "搜索来源列表"
+        },
+        {
+          "name": "menu",
+          "direction": "vertical",
+          "description": "商家信息"
+        }
+      ],
+      "description": "离线商家资料",
+      "search": {},
+      "queryParams": {
+        "origin": "string",
+        "menuCategory": "string",
+        "reviewFilter": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/cart",
+      "routePath": "/cart",
+      "uiStateId": "meituan.cart.base",
+      "component": "WaimaiCart",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "cart",
+          "direction": "vertical",
+          "description": "购物车商品"
+        }
+      ],
+      "description": "模拟购物车",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "meituan.cart.item.remove",
+          "label": "减少商品",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "itemId": "string"
+          }
+        },
+        {
+          "id": "meituan.cart.clear",
+          "label": "清空购物车",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/order",
+      "routePath": "/order",
+      "uiStateId": "meituan.order.base",
+      "component": "WaimaiOrder",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [],
+      "description": "模拟订单完成",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/orders",
+      "routePath": "/orders",
+      "uiStateId": "meituan.orders.base",
+      "component": "WaimaiOrders",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "orders",
+          "direction": "vertical",
+          "description": "模拟订单列表"
+        }
+      ],
+      "description": "历史模拟订单",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/me",
+      "routePath": "/me",
+      "uiStateId": "meituan.profile.base",
+      "component": "WaimaiProfile",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [],
+      "description": "离线演示账户",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "/shop/:id/reviews?reviewFilter=latest&menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?reviewFilter=latest&menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.filter.all",
+      "label": "筛选离线评价all",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "reviewFilter": null
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory"
+      ],
+      "fromConstraint": {
+        "path": "/shop/:id/reviews",
+        "search": {
+          "reviewFilter": "latest"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?reviewFilter=positive&menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?reviewFilter=positive&menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.filter.all",
+      "label": "筛选离线评价all",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "reviewFilter": null
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory"
+      ],
+      "fromConstraint": {
+        "path": "/shop/:id/reviews",
+        "search": {
+          "reviewFilter": "positive"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?reviewFilter=negative&menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?reviewFilter=negative&menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.filter.all",
+      "label": "筛选离线评价all",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "reviewFilter": null
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory"
+      ],
+      "fromConstraint": {
+        "path": "/shop/:id/reviews",
+        "search": {
+          "reviewFilter": "negative"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?reviewFilter=media&menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?reviewFilter=media&menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.filter.all",
+      "label": "筛选离线评价all",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "reviewFilter": null
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory"
+      ],
+      "fromConstraint": {
+        "path": "/shop/:id/reviews",
+        "search": {
+          "reviewFilter": "media"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?reviewFilter=latest&menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?reviewFilter=latest&menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.filter.latest",
+      "label": "筛选离线评价latest",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "reviewFilter": "latest"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory"
+      ],
+      "fromConstraint": {
+        "path": "/shop/:id/reviews",
+        "search": {
+          "reviewFilter": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?reviewFilter=positive&menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?reviewFilter=positive&menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?reviewFilter=latest&menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?reviewFilter=latest&menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.filter.latest",
+      "label": "筛选离线评价latest",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "reviewFilter": "latest"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory"
+      ],
+      "fromConstraint": {
+        "path": "/shop/:id/reviews",
+        "search": {
+          "reviewFilter": "positive"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?reviewFilter=negative&menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?reviewFilter=negative&menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?reviewFilter=latest&menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?reviewFilter=latest&menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.filter.latest",
+      "label": "筛选离线评价latest",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "reviewFilter": "latest"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory"
+      ],
+      "fromConstraint": {
+        "path": "/shop/:id/reviews",
+        "search": {
+          "reviewFilter": "negative"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?reviewFilter=media&menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?reviewFilter=media&menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?reviewFilter=latest&menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?reviewFilter=latest&menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.filter.latest",
+      "label": "筛选离线评价latest",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "reviewFilter": "latest"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory"
+      ],
+      "fromConstraint": {
+        "path": "/shop/:id/reviews",
+        "search": {
+          "reviewFilter": "media"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?reviewFilter=positive&menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?reviewFilter=positive&menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.filter.positive",
+      "label": "筛选离线评价positive",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "reviewFilter": "positive"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory"
+      ],
+      "fromConstraint": {
+        "path": "/shop/:id/reviews",
+        "search": {
+          "reviewFilter": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?reviewFilter=latest&menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?reviewFilter=latest&menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?reviewFilter=positive&menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?reviewFilter=positive&menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.filter.positive",
+      "label": "筛选离线评价positive",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "reviewFilter": "positive"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory"
+      ],
+      "fromConstraint": {
+        "path": "/shop/:id/reviews",
+        "search": {
+          "reviewFilter": "latest"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?reviewFilter=negative&menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?reviewFilter=negative&menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?reviewFilter=positive&menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?reviewFilter=positive&menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.filter.positive",
+      "label": "筛选离线评价positive",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "reviewFilter": "positive"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory"
+      ],
+      "fromConstraint": {
+        "path": "/shop/:id/reviews",
+        "search": {
+          "reviewFilter": "negative"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?reviewFilter=media&menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?reviewFilter=media&menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?reviewFilter=positive&menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?reviewFilter=positive&menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.filter.positive",
+      "label": "筛选离线评价positive",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "reviewFilter": "positive"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory"
+      ],
+      "fromConstraint": {
+        "path": "/shop/:id/reviews",
+        "search": {
+          "reviewFilter": "media"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?reviewFilter=negative&menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?reviewFilter=negative&menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.filter.negative",
+      "label": "筛选离线评价negative",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "reviewFilter": "negative"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory"
+      ],
+      "fromConstraint": {
+        "path": "/shop/:id/reviews",
+        "search": {
+          "reviewFilter": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?reviewFilter=latest&menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?reviewFilter=latest&menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?reviewFilter=negative&menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?reviewFilter=negative&menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.filter.negative",
+      "label": "筛选离线评价negative",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "reviewFilter": "negative"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory"
+      ],
+      "fromConstraint": {
+        "path": "/shop/:id/reviews",
+        "search": {
+          "reviewFilter": "latest"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?reviewFilter=positive&menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?reviewFilter=positive&menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?reviewFilter=negative&menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?reviewFilter=negative&menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.filter.negative",
+      "label": "筛选离线评价negative",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "reviewFilter": "negative"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory"
+      ],
+      "fromConstraint": {
+        "path": "/shop/:id/reviews",
+        "search": {
+          "reviewFilter": "positive"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?reviewFilter=media&menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?reviewFilter=media&menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?reviewFilter=negative&menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?reviewFilter=negative&menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.filter.negative",
+      "label": "筛选离线评价negative",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "reviewFilter": "negative"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory"
+      ],
+      "fromConstraint": {
+        "path": "/shop/:id/reviews",
+        "search": {
+          "reviewFilter": "media"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?reviewFilter=media&menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?reviewFilter=media&menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.filter.media",
+      "label": "筛选离线评价media",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "reviewFilter": "media"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory"
+      ],
+      "fromConstraint": {
+        "path": "/shop/:id/reviews",
+        "search": {
+          "reviewFilter": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?reviewFilter=latest&menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?reviewFilter=latest&menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?reviewFilter=media&menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?reviewFilter=media&menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.filter.media",
+      "label": "筛选离线评价media",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "reviewFilter": "media"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory"
+      ],
+      "fromConstraint": {
+        "path": "/shop/:id/reviews",
+        "search": {
+          "reviewFilter": "latest"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?reviewFilter=positive&menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?reviewFilter=positive&menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?reviewFilter=media&menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?reviewFilter=media&menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.filter.media",
+      "label": "筛选离线评价media",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "reviewFilter": "media"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory"
+      ],
+      "fromConstraint": {
+        "path": "/shop/:id/reviews",
+        "search": {
+          "reviewFilter": "positive"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?reviewFilter=negative&menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?reviewFilter=negative&menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?reviewFilter=media&menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?reviewFilter=media&menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.filter.media",
+      "label": "筛选离线评价media",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "reviewFilter": "media"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory"
+      ],
+      "fromConstraint": {
+        "path": "/shop/:id/reviews",
+        "search": {
+          "reviewFilter": "negative"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.reviews.media.open",
+      "label": "打开评价图片",
+      "type": "state",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "reviewMedia": "string",
+        "reviewMediaIndex": "string"
+      },
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory",
+        "reviewFilter"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "image",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "targetNodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "id": "meituan.context.shop.open",
+      "label": "从来源列表切换店铺",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "store",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "targetNodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "id": "meituan.context.shop.open",
+      "label": "从来源列表切换店铺",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "store",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/?q=:q",
+      "targetNodeId": "/?q=:q",
+      "id": "meituan.home.category.all",
+      "label": "查看全部店铺",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "category": null
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "channel",
+        "search"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "grid",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "target": "/?q=:q",
+      "targetNodeId": "/?q=:q",
+      "id": "meituan.home.category.all",
+      "label": "查看全部店铺",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "category": null
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "channel",
+        "search"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "grid",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/?q=:q",
+      "targetNodeId": "/?q=:q",
+      "id": "meituan.home.category.all",
+      "label": "查看全部店铺",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "category": null
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "channel",
+        "search"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "grid",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?q=:q",
+      "sourceNodeId": "/?q=:q",
+      "target": "/?category=food&q=:q",
+      "targetNodeId": "/?category=food&q=:q",
+      "id": "meituan.home.category.food",
+      "label": "筛选美食",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "food"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "channel",
+        "search"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "food",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/?category=food&q=:q",
+      "targetNodeId": "/?category=food&q=:q",
+      "id": "meituan.home.category.food",
+      "label": "筛选美食",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "category": "food"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "channel",
+        "search"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "food",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "target": "/?category=food&q=:q",
+      "targetNodeId": "/?category=food&q=:q",
+      "id": "meituan.home.category.food",
+      "label": "筛选美食",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "category": "food"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "channel",
+        "search"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "food",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/?category=food&q=:q",
+      "targetNodeId": "/?category=food&q=:q",
+      "id": "meituan.home.category.food",
+      "label": "筛选美食",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "category": "food"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "channel",
+        "search"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "food",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?q=:q",
+      "sourceNodeId": "/?q=:q",
+      "target": "/?category=drinks&q=:q",
+      "targetNodeId": "/?category=drinks&q=:q",
+      "id": "meituan.home.category.drinks",
+      "label": "筛选甜点饮品",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "drinks"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "channel",
+        "search"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "drink",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/?category=drinks&q=:q",
+      "targetNodeId": "/?category=drinks&q=:q",
+      "id": "meituan.home.category.drinks",
+      "label": "筛选甜点饮品",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "category": "drinks"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "channel",
+        "search"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "drink",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "target": "/?category=drinks&q=:q",
+      "targetNodeId": "/?category=drinks&q=:q",
+      "id": "meituan.home.category.drinks",
+      "label": "筛选甜点饮品",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "category": "drinks"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "channel",
+        "search"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "drink",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/?category=drinks&q=:q",
+      "targetNodeId": "/?category=drinks&q=:q",
+      "id": "meituan.home.category.drinks",
+      "label": "筛选甜点饮品",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "category": "drinks"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "channel",
+        "search"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "drink",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?q=:q",
+      "sourceNodeId": "/?q=:q",
+      "target": "/?category=market&q=:q",
+      "targetNodeId": "/?category=market&q=:q",
+      "id": "meituan.home.category.market",
+      "label": "筛选超市便利",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "market"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "channel",
+        "search"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "cart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/?category=market&q=:q",
+      "targetNodeId": "/?category=market&q=:q",
+      "id": "meituan.home.category.market",
+      "label": "筛选超市便利",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "category": "market"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "channel",
+        "search"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "cart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "target": "/?category=market&q=:q",
+      "targetNodeId": "/?category=market&q=:q",
+      "id": "meituan.home.category.market",
+      "label": "筛选超市便利",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "category": "market"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "channel",
+        "search"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "cart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/?category=market&q=:q",
+      "targetNodeId": "/?category=market&q=:q",
+      "id": "meituan.home.category.market",
+      "label": "筛选超市便利",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "category": "market"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "channel",
+        "search"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "cart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?q=:q",
+      "sourceNodeId": "/?q=:q",
+      "target": "/?search=open&q=:q",
+      "targetNodeId": "/?search=open&q=:q",
+      "id": "meituan.search.open",
+      "label": "打开美团搜索",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "search": "open"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "category",
+        "channel"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/?search=open&q=:q",
+      "targetNodeId": "/?search=open&q=:q",
+      "id": "meituan.search.open",
+      "label": "打开美团搜索",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "search": "open"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "category",
+        "channel"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "target": "/?search=open&q=:q",
+      "targetNodeId": "/?search=open&q=:q",
+      "id": "meituan.search.open",
+      "label": "打开美团搜索",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "search": "open"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "category",
+        "channel"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/?search=open&q=:q",
+      "targetNodeId": "/?search=open&q=:q",
+      "id": "meituan.search.open",
+      "label": "打开美团搜索",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "search": "open"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "category",
+        "channel"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?q=:q",
+      "sourceNodeId": "/?q=:q",
+      "target": "/?channel=waimai&q=:q",
+      "targetNodeId": "/?channel=waimai&q=:q",
+      "id": "meituan.waimai.open",
+      "label": "打开外卖频道",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "channel": "waimai"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "category"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "delivery",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/?channel=waimai&q=:q",
+      "targetNodeId": "/?channel=waimai&q=:q",
+      "id": "meituan.waimai.open",
+      "label": "打开外卖频道",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "channel": "waimai"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "category"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "delivery",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "target": "/?channel=waimai&q=:q",
+      "targetNodeId": "/?channel=waimai&q=:q",
+      "id": "meituan.waimai.open",
+      "label": "打开外卖频道",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "channel": "waimai"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "category"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "delivery",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/?channel=waimai&q=:q",
+      "targetNodeId": "/?channel=waimai&q=:q",
+      "id": "meituan.waimai.open",
+      "label": "打开外卖频道",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "channel": "waimai"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "q",
+        "category"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "delivery",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?q=:q",
+      "sourceNodeId": "/?q=:q",
+      "target": "/service/:id",
+      "targetNodeId": "/service/:id",
+      "id": "meituan.service.open",
+      "label": "打开美团服务说明",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "service",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/service/:id",
+      "targetNodeId": "/service/:id",
+      "id": "meituan.service.open",
+      "label": "打开美团服务说明",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "service",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "target": "/service/:id",
+      "targetNodeId": "/service/:id",
+      "id": "meituan.service.open",
+      "label": "打开美团服务说明",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "service",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/service/:id",
+      "targetNodeId": "/service/:id",
+      "id": "meituan.service.open",
+      "label": "打开美团服务说明",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "service",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?q=:q",
+      "sourceNodeId": "/?q=:q",
+      "target": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "targetNodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "id": "meituan.shop.open",
+      "label": "打开店铺",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "origin": "string"
+      },
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "store",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/cart",
+      "sourceNodeId": "/cart",
+      "target": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "targetNodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "id": "meituan.shop.open",
+      "label": "打开店铺",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "origin": "string"
+      },
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "store",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "targetNodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "id": "meituan.shop.menu",
+      "label": "查看点菜",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory",
+        "reviewFilter"
+      ],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "menu",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "targetNodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "id": "meituan.shop.menu",
+      "label": "查看点菜",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory",
+        "reviewFilter"
+      ],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "menu",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.shop.reviews",
+      "label": "查看评价",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory",
+        "reviewFilter"
+      ],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "targetNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "id": "meituan.shop.reviews",
+      "label": "查看评价",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory",
+        "reviewFilter"
+      ],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "star",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "targetNodeId": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "id": "meituan.shop.info",
+      "label": "查看商家",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory",
+        "reviewFilter"
+      ],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "store",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "target": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "targetNodeId": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "id": "meituan.shop.info",
+      "label": "查看商家",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [
+        "origin",
+        "menuCategory",
+        "reviewFilter"
+      ],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "store",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?q=:q",
+      "sourceNodeId": "/?q=:q",
+      "target": "/cart",
+      "targetNodeId": "/cart",
+      "id": "meituan.cart.open",
+      "label": "打开购物车",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "cart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/cart",
+      "targetNodeId": "/cart",
+      "id": "meituan.cart.open",
+      "label": "打开购物车",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "cart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "target": "/cart",
+      "targetNodeId": "/cart",
+      "id": "meituan.cart.open",
+      "label": "打开购物车",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "cart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/cart",
+      "targetNodeId": "/cart",
+      "id": "meituan.cart.open",
+      "label": "打开购物车",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "cart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/cart",
+      "sourceNodeId": "/cart",
+      "target": "/order",
+      "targetNodeId": "/order",
+      "id": "meituan.checkout.open",
+      "label": "模拟结算",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "check",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?q=:q",
+      "sourceNodeId": "/?q=:q",
+      "target": "/orders",
+      "targetNodeId": "/orders",
+      "id": "meituan.orders.open",
+      "label": "打开订单页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "orders",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/me",
+      "sourceNodeId": "/me",
+      "target": "/orders",
+      "targetNodeId": "/orders",
+      "id": "meituan.orders.open",
+      "label": "打开订单页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "orders",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/orders",
+      "targetNodeId": "/orders",
+      "id": "meituan.orders.open",
+      "label": "打开订单页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "orders",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "target": "/orders",
+      "targetNodeId": "/orders",
+      "id": "meituan.orders.open",
+      "label": "打开订单页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "orders",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/orders",
+      "targetNodeId": "/orders",
+      "id": "meituan.orders.open",
+      "label": "打开订单页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "orders",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?q=:q",
+      "sourceNodeId": "/?q=:q",
+      "target": "/me",
+      "targetNodeId": "/me",
+      "id": "meituan.profile.open",
+      "label": "打开我的页面",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "profile",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders",
+      "sourceNodeId": "/orders",
+      "target": "/me",
+      "targetNodeId": "/me",
+      "id": "meituan.profile.open",
+      "label": "打开我的页面",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "profile",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/me",
+      "targetNodeId": "/me",
+      "id": "meituan.profile.open",
+      "label": "打开我的页面",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "profile",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "target": "/me",
+      "targetNodeId": "/me",
+      "id": "meituan.profile.open",
+      "label": "打开我的页面",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "profile",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/me",
+      "targetNodeId": "/me",
+      "id": "meituan.profile.open",
+      "label": "打开我的页面",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "profile",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/service/:id",
+      "sourceNodeId": "/service/:id",
+      "target": "/?q=:q",
+      "targetNodeId": "/?q=:q",
+      "id": "meituan.home.open",
+      "label": "返回首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "home",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/?q=:q",
+      "targetNodeId": "/?q=:q",
+      "id": "meituan.home.open",
+      "label": "返回首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "home",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "sourceNodeId": "/shop/:id/reviews?menuCategory=:menuCategory&origin=:origin",
+      "target": "/?q=:q",
+      "targetNodeId": "/?q=:q",
+      "id": "meituan.home.open",
+      "label": "返回首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "home",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "sourceNodeId": "/shop/:id/info?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "target": "/?q=:q",
+      "targetNodeId": "/?q=:q",
+      "id": "meituan.home.open",
+      "label": "返回首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "home",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/cart",
+      "sourceNodeId": "/cart",
+      "target": "/?q=:q",
+      "targetNodeId": "/?q=:q",
+      "id": "meituan.home.open",
+      "label": "返回首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "home",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/order",
+      "sourceNodeId": "/order",
+      "target": "/?q=:q",
+      "targetNodeId": "/?q=:q",
+      "id": "meituan.home.open",
+      "label": "返回首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "home",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders",
+      "sourceNodeId": "/orders",
+      "target": "/?q=:q",
+      "targetNodeId": "/?q=:q",
+      "id": "meituan.home.open",
+      "label": "返回首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "home",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/me",
+      "sourceNodeId": "/me",
+      "target": "/?q=:q",
+      "targetNodeId": "/?q=:q",
+      "id": "meituan.home.open",
+      "label": "返回首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "home",
+        "gesture": "tap"
+      }
+    }
+  ]
+}

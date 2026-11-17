@@ -1,0 +1,28 @@
+.tasks-root .tasks-layout,
+.tasks-root .tasks-list,
+.tasks-root .task-panel { min-width: 0; min-height: 0; }
+.tasks-root .tasks-list > header,
+.tasks-root .tasks-filter,
+.tasks-root .task-panel > header,
+.tasks-root .task-panel > footer { flex-shrink: 0; }
+.tasks-root .tasks-list > header > div:last-child { min-width: 0; }
+.tasks-root .tasks-list h1 { font-size: 21px; overflow-wrap: anywhere; }
+.tasks-root .tasks-logo,
+.tasks-root .task-row > svg,
+.tasks-root .detail-state > svg { flex-shrink: 0; }
+.tasks-root .tasks-items { flex: 1; min-height: 0; padding-bottom: 12px; }
+.tasks-root .tasks-fab {
+  position: static; flex-shrink: 0; margin: 8px 14px 16px;
+}
+.tasks-root .task-row b,
+.tasks-root .task-row small,
+.tasks-root .detail-state h1,
+.tasks-root .task-detail dd { overflow-wrap: anywhere; min-width: 0; }
+.tasks-root .task-form,
+.tasks-root .task-detail { min-width: 0; min-height: 0; }
+.tasks-root .task-form input,
+.tasks-root .task-form select,
+.tasks-root .task-form textarea { width: 100%; min-width: 0; box-sizing: border-box; }
+@container (min-width: 600px) {
+  .tasks-root .tasks-layout { grid-template-columns: clamp(240px, 34%, 320px) minmax(0, 1fr); }
+}

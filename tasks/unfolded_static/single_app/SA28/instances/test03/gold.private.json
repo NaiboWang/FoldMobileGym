@@ -1,0 +1,7 @@
+{
+  "app": "tencent_meeting",
+  "data": {
+    "field": "cameraOnJoin",
+    "value": false
+  }
+}

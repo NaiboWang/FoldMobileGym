@@ -1,0 +1,86 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "apps": {
+    "browser": {},
+    "notes": {}
+  },
+  "raw_apps": {
+    "notes": {
+      "notes": [
+        {
+          "id": "untouched-note",
+          "title": "工作备忘",
+          "content": "原有内容，请保留。",
+          "folderId": "unfiled",
+          "updatedAt": 1793663999000
+        },
+        {
+          "id": "similar-note",
+          "title": "办证安排（旧版）",
+          "content": "历史记录，保留不改。",
+          "folderId": "unfiled",
+          "updatedAt": 1793663998000
+        }
+      ],
+      "todos": [
+        {
+          "id": "untouched-todo",
+          "text": "保留原待办",
+          "completed": false,
+          "updatedAt": 1793663999000
+        }
+      ],
+      "createdCount": 0,
+      "deletedCount": 0,
+      "selectedFolderId": "all"
+    },
+    "browser": {
+      "localPages": {
+        "benchmark://notice": {
+          "title": "图书馆办证公告",
+          "badge": "服务公告",
+          "paragraphs": [
+            "截止日期：2026年11月6日 17:00。",
+            "办理地点：东馆服务台。",
+            "所需材料：身份证、一寸照片。"
+          ]
+        },
+        "benchmark://old-notice": {
+          "title": "图书馆办证公告（旧版）",
+          "badge": "历史公告",
+          "paragraphs": [
+            "截止：11月2日12:00。",
+            "地点：旧馆接待室。",
+            "材料：旧学生证。"
+          ]
+        }
+      },
+      "tabs": [
+        {
+          "id": "1",
+          "url": "",
+          "title": "主页"
+        }
+      ],
+      "activeTabId": "1",
+      "visitedUrls": [
+        "benchmark://old-notice"
+      ],
+      "externalNavigationCount": 0,
+      "orderCount": 0,
+      "locationPermissionCount": 0
+    }
+  },
+  "os": {},
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  }
+}

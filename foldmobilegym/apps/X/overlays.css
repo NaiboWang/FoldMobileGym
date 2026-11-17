@@ -1,0 +1,2 @@
+/* Scope to X; use actual supported posture rather than a desktop-only breakpoint. */
+html[data-foldagent-posture="unfolded"] [data-app-id="x"] .x-sort-sheet { align-items: center; }

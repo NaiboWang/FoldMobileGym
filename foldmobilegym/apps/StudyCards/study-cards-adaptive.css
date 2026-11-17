@@ -1,0 +1,28 @@
+.cards-root .cards-layout { min-height: 0; grid-template-rows: minmax(0, 1fr); }
+.cards-root .decks,
+.cards-root .cards-panel,
+.cards-root .card-list { min-height: 0; min-width: 0; }
+.cards-root .cards-head,
+.cards-root .cards-panel > header,
+.cards-root .new-card,
+.cards-root .cards-save { flex-shrink: 0; }
+.cards-root .cards-panel > header button { display: grid; place-items: center; width: 44px; height: 44px; flex-shrink: 0; }
+.cards-root .cards-panel > header b { min-width: 0; overflow-wrap: anywhere; }
+.cards-root .deck-list { min-height: 0; overflow-y: auto; flex: 1; }
+.cards-root .deck > svg,
+.cards-root .cards-head i { flex-shrink: 0; }
+.cards-root .deck span { min-width: 0; overflow-wrap: anywhere; }
+.cards-root .cards-form { min-height: 0; min-width: 0; }
+.cards-root .cards-form input,
+.cards-root .cards-form select,
+.cards-root .cards-form textarea { width: 100%; min-width: 0; box-sizing: border-box; }
+.cards-root .flashcard { overflow-wrap: anywhere; }
+.cards-root .flashcard p { white-space: pre-wrap; }
+@container (min-width: 600px) {
+  .cards-root .cards-layout { grid-template-columns: clamp(240px, 34%, 310px) minmax(0, 1fr); }
+}
+@container (max-width: 599px) {
+  .cards-root .cards-layout:not(.form) { grid-template-rows: minmax(0, auto) minmax(0, 1fr); }
+  .cards-root .cards-layout:not(.form) .decks { max-height: 370px; }
+  .cards-root .new-card { margin: 12px 15px 18px; }
+}

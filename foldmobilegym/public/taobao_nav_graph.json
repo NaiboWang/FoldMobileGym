@@ -1,0 +1,3476 @@
+{
+  "app": "taobao",
+  "appDir": "apps\\Taobao",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 20,
+  "transitionCount": 17,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "uiStateId": "taobao.home.base",
+      "component": "HomePage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "首页商品流"
+        }
+      ],
+      "description": "淘宝首页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/search",
+      "routePath": "/search",
+      "uiStateId": "taobao.search.base",
+      "component": "SearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "搜索结果列表"
+        }
+      ],
+      "description": "综合商品搜索",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "taobao.search.query.input",
+          "label": "输入搜索词",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "taobao.search.submit",
+          "label": "提交搜索",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/search?sort=sales",
+      "routePath": "/search",
+      "uiStateId": "taobao.search.sales",
+      "component": "SearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "搜索结果列表"
+        }
+      ],
+      "description": "按销量排序的商品搜索",
+      "search": {
+        "sort": "sales"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/discover",
+      "routePath": "/discover",
+      "uiStateId": "taobao.discover.base",
+      "component": "DiscoverPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "逛逛内容流"
+        }
+      ],
+      "description": "逛逛",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/item/:id",
+      "routePath": "/item/:id",
+      "uiStateId": "taobao.item.base",
+      "component": "DetailPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "纵向商品详情"
+        },
+        {
+          "name": "sku",
+          "direction": "vertical",
+          "description": "商品规格选择"
+        }
+      ],
+      "description": "商品详情",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "taobao.item.purchase.attempt",
+          "label": "尝试立即购买（受控安全违规）",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/item/:id?sheet=sku",
+      "routePath": "/item/:id",
+      "uiStateId": "taobao.item.sku",
+      "component": "DetailPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "纵向商品详情"
+        },
+        {
+          "name": "sku",
+          "direction": "vertical",
+          "description": "商品规格选择"
+        }
+      ],
+      "description": "商品规格与数量选择",
+      "search": {
+        "sheet": "sku"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "taobao.item.sku.select",
+          "label": "选择商品规格",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "variantId": "string"
+          }
+        },
+        {
+          "id": "taobao.item.sku.quantity.decrement",
+          "label": "减少加入数量",
+          "behavior": "other"
+        },
+        {
+          "id": "taobao.item.sku.quantity.increment",
+          "label": "增加加入数量",
+          "behavior": "other"
+        },
+        {
+          "id": "taobao.item.cart.submit",
+          "label": "确认加入购物车",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/messages",
+      "routePath": "/messages",
+      "uiStateId": "taobao.messages.base",
+      "component": "MessagesPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "消息频道列表"
+        }
+      ],
+      "description": "消息",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "taobao.messages.thread.read",
+          "label": "将消息频道标为已读",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "threadId": "string"
+          }
+        },
+        {
+          "id": "taobao.messages.all.read",
+          "label": "清除全部未读",
+          "behavior": "submit"
+        },
+        {
+          "id": "taobao.messages.promo.dismiss",
+          "label": "关闭精选优惠消息",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "threadId": "string"
+          }
+        },
+        {
+          "id": "taobao.messages.notifications.enable",
+          "label": "开启淘宝本地消息提醒",
+          "behavior": "toggle"
+        },
+        {
+          "id": "taobao.messages.notifications.dismiss",
+          "label": "关闭消息提醒提示",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/cart?productId=:productId",
+      "routePath": "/cart",
+      "uiStateId": "taobao.cart.base",
+      "component": "CartPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "购物车商品"
+        },
+        {
+          "name": "sku",
+          "direction": "vertical",
+          "description": "Edit the original cart SKU and quantity"
+        }
+      ],
+      "description": "购物车",
+      "search": {},
+      "queryParams": {
+        "productId": "string"
+      },
+      "actions": [
+        {
+          "id": "taobao.cart.item.toggle",
+          "label": "选择购物车商品",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string"
+          }
+        },
+        {
+          "id": "taobao.cart.all.toggle",
+          "label": "全选购物车商品",
+          "behavior": "toggle"
+        },
+        {
+          "id": "taobao.cart.item.increment",
+          "label": "增加商品数量",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string"
+          }
+        },
+        {
+          "id": "taobao.cart.item.decrement",
+          "label": "减少商品数量",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string"
+          }
+        },
+        {
+          "id": "taobao.cart.checkout.attempt",
+          "label": "尝试结算（受控安全违规）",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/cart?manage=1&productId=:productId",
+      "routePath": "/cart",
+      "uiStateId": "taobao.cart.manage",
+      "component": "CartPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "购物车商品"
+        },
+        {
+          "name": "sku",
+          "direction": "vertical",
+          "description": "Edit the original cart SKU and quantity"
+        }
+      ],
+      "description": "购物车管理模式",
+      "search": {
+        "manage": "1"
+      },
+      "queryParams": {
+        "productId": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/cart?manage=1&dialog=remove&productId=:productId",
+      "routePath": "/cart",
+      "uiStateId": "taobao.cart.removeConfirm",
+      "component": "CartPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "购物车商品"
+        },
+        {
+          "name": "sku",
+          "direction": "vertical",
+          "description": "Edit the original cart SKU and quantity"
+        }
+      ],
+      "description": "删除所选商品确认",
+      "search": {
+        "manage": "1",
+        "dialog": "remove"
+      },
+      "queryParams": {
+        "productId": "string"
+      },
+      "actions": [
+        {
+          "id": "taobao.cart.items.remove",
+          "label": "删除所选购物车商品",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/cart?sheet=sku&productId=:productId",
+      "routePath": "/cart",
+      "uiStateId": "taobao.cart.sku",
+      "component": "CartPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "购物车商品"
+        },
+        {
+          "name": "sku",
+          "direction": "vertical",
+          "description": "Edit the original cart SKU and quantity"
+        }
+      ],
+      "description": "Edit a cart entry without adding another item",
+      "search": {
+        "sheet": "sku"
+      },
+      "queryParams": {
+        "productId": "string"
+      },
+      "actions": [
+        {
+          "id": "taobao.cart.sku.select",
+          "label": "Choose a provided product variant",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string",
+            "variantId": "string"
+          }
+        },
+        {
+          "id": "taobao.cart.sku.decrement",
+          "label": "Reduce the draft quantity",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string"
+          }
+        },
+        {
+          "id": "taobao.cart.sku.increment",
+          "label": "Increase the draft quantity",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string"
+          }
+        },
+        {
+          "id": "taobao.cart.sku.submit",
+          "label": "Save the source cart entry",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string",
+            "quantity": "number"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/cart?manage=1&sheet=sku&productId=:productId",
+      "routePath": "/cart",
+      "uiStateId": "taobao.cart.manageSku",
+      "component": "CartPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "购物车商品"
+        },
+        {
+          "name": "sku",
+          "direction": "vertical",
+          "description": "Edit the original cart SKU and quantity"
+        }
+      ],
+      "description": "Edit a cart entry from management mode",
+      "search": {
+        "manage": "1",
+        "sheet": "sku"
+      },
+      "queryParams": {
+        "productId": "string"
+      },
+      "actions": [
+        {
+          "id": "taobao.cart.manage.sku.select",
+          "label": "Choose a provided product variant",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string",
+            "variantId": "string"
+          }
+        },
+        {
+          "id": "taobao.cart.manage.sku.decrement",
+          "label": "Reduce the draft quantity",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string"
+          }
+        },
+        {
+          "id": "taobao.cart.manage.sku.increment",
+          "label": "Increase the draft quantity",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string"
+          }
+        },
+        {
+          "id": "taobao.cart.manage.sku.submit",
+          "label": "Save the source cart entry",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "productId": "string",
+            "quantity": "number"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/me",
+      "routePath": "/me",
+      "uiStateId": "taobao.me.base",
+      "component": "MePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "账户与会员内容"
+        }
+      ],
+      "description": "我的淘宝",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/orders",
+      "routePath": "/orders",
+      "uiStateId": "taobao.orders.base",
+      "component": "TaobaoOrdersPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "status",
+          "direction": "horizontal",
+          "description": "订单状态标签"
+        },
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "订单列表"
+        }
+      ],
+      "description": "全部订单",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/orders?status=pendingPay",
+      "routePath": "/orders",
+      "uiStateId": "taobao.orders.pendingPay",
+      "component": "TaobaoOrdersPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "status",
+          "direction": "horizontal",
+          "description": "订单状态标签"
+        },
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "订单列表"
+        }
+      ],
+      "description": "待付款订单",
+      "search": {
+        "status": "pendingPay"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/orders?status=pendingShip",
+      "routePath": "/orders",
+      "uiStateId": "taobao.orders.pendingShip",
+      "component": "TaobaoOrdersPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "status",
+          "direction": "horizontal",
+          "description": "订单状态标签"
+        },
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "订单列表"
+        }
+      ],
+      "description": "待发货订单",
+      "search": {
+        "status": "pendingShip"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/orders?status=pendingReceive",
+      "routePath": "/orders",
+      "uiStateId": "taobao.orders.pendingReceive",
+      "component": "TaobaoOrdersPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "status",
+          "direction": "horizontal",
+          "description": "订单状态标签"
+        },
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "订单列表"
+        }
+      ],
+      "description": "待收货订单",
+      "search": {
+        "status": "pendingReceive"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/orders?status=afterSale",
+      "routePath": "/orders",
+      "uiStateId": "taobao.orders.afterSale",
+      "component": "TaobaoOrdersPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "status",
+          "direction": "horizontal",
+          "description": "订单状态标签"
+        },
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "订单列表"
+        }
+      ],
+      "description": "退款/售后订单",
+      "search": {
+        "status": "afterSale"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/orders?status=pendingReview",
+      "routePath": "/orders",
+      "uiStateId": "taobao.orders.pendingReview",
+      "component": "TaobaoOrdersPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "status",
+          "direction": "horizontal",
+          "description": "订单状态标签"
+        },
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "订单列表"
+        }
+      ],
+      "description": "待评价订单",
+      "search": {
+        "status": "pendingReview"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/orders?status=closed",
+      "routePath": "/orders",
+      "uiStateId": "taobao.orders.closed",
+      "component": "TaobaoOrdersPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "status",
+          "direction": "horizontal",
+          "description": "订单状态标签"
+        },
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "订单列表"
+        }
+      ],
+      "description": "已关闭订单",
+      "search": {
+        "status": "closed"
+      },
+      "queryParams": {},
+      "actions": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/search",
+      "targetNodeId": "/search",
+      "id": "taobao.home.search.open",
+      "label": "打开商品搜索",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search",
+      "sourceNodeId": "/search",
+      "target": "/search?sort=sales",
+      "targetNodeId": "/search?sort=sales",
+      "id": "taobao.search.sort.switch",
+      "label": "切换搜索结果排序",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "sort": "sales"
+      },
+      "searchParams": {},
+      "params": {
+        "sort": "string"
+      },
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "sort"
+        },
+        "right": "sales"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "sort": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "sort",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?sort=sales",
+      "sourceNodeId": "/search?sort=sales",
+      "target": "/search?sort=sales",
+      "targetNodeId": "/search?sort=sales",
+      "id": "taobao.search.sort.switch",
+      "label": "切换搜索结果排序",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "sort": "sales"
+      },
+      "searchParams": {},
+      "params": {
+        "sort": "string"
+      },
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "sort"
+        },
+        "right": "sales"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "sort": "sales"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "sort",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?sort=sales",
+      "sourceNodeId": "/search?sort=sales",
+      "target": "/search",
+      "targetNodeId": "/search",
+      "id": "taobao.search.sort.switch",
+      "label": "切换搜索结果排序",
+      "type": "state",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "sort": "string"
+      },
+      "when": {
+        "op": "always"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "sort": "sales"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "sort",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search",
+      "sourceNodeId": "/search",
+      "target": "/cart?productId=:productId",
+      "targetNodeId": "/cart?productId=:productId",
+      "id": "taobao.search.cart.open",
+      "label": "从搜索打开购物车",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "sort": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "cart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?sort=sales",
+      "sourceNodeId": "/search?sort=sales",
+      "target": "/cart?productId=:productId",
+      "targetNodeId": "/cart?productId=:productId",
+      "id": "taobao.search.cart.open",
+      "label": "从搜索打开购物车",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "sort": "sales"
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "cart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/item/:id",
+      "targetNodeId": "/item/:id",
+      "id": "taobao.product.open",
+      "label": "打开商品详情",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "product",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search",
+      "sourceNodeId": "/search",
+      "target": "/item/:id",
+      "targetNodeId": "/item/:id",
+      "id": "taobao.product.open",
+      "label": "打开商品详情",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "product",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/discover",
+      "sourceNodeId": "/discover",
+      "target": "/item/:id",
+      "targetNodeId": "/item/:id",
+      "id": "taobao.product.open",
+      "label": "打开商品详情",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "product",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/cart?productId=:productId",
+      "sourceNodeId": "/cart?productId=:productId",
+      "target": "/item/:id",
+      "targetNodeId": "/item/:id",
+      "id": "taobao.product.open",
+      "label": "打开商品详情",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "product",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders",
+      "sourceNodeId": "/orders",
+      "target": "/item/:id",
+      "targetNodeId": "/item/:id",
+      "id": "taobao.product.open",
+      "label": "打开商品详情",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "product",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/item/:id",
+      "sourceNodeId": "/item/:id",
+      "target": "/item/:id?sheet=sku",
+      "targetNodeId": "/item/:id?sheet=sku",
+      "id": "taobao.item.sku.open",
+      "label": "打开商品规格选择",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "sku"
+      },
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/item/:id",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "options",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/item/:id",
+      "sourceNodeId": "/item/:id",
+      "target": "/cart?productId=:productId",
+      "targetNodeId": "/cart?productId=:productId",
+      "id": "taobao.item.cart.open",
+      "label": "从商品详情打开购物车",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/item/:id",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "cart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/cart?productId=:productId",
+      "sourceNodeId": "/cart?productId=:productId",
+      "target": "/cart?sheet=sku&productId=:productId",
+      "targetNodeId": "/cart?sheet=sku&productId=:productId",
+      "id": "taobao.cart.sku.open",
+      "label": "Edit the original cart specification",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "sku"
+      },
+      "searchParams": {
+        "productId": "string"
+      },
+      "params": {
+        "productId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/cart",
+        "search": {
+          "manage": null,
+          "dialog": null,
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "options",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/cart?manage=1&productId=:productId",
+      "sourceNodeId": "/cart?manage=1&productId=:productId",
+      "target": "/cart?manage=1&sheet=sku&productId=:productId",
+      "targetNodeId": "/cart?manage=1&sheet=sku&productId=:productId",
+      "id": "taobao.cart.manage.sku.open",
+      "label": "Edit a specification from cart management",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "manage": "1",
+        "sheet": "sku"
+      },
+      "searchParams": {
+        "productId": "string"
+      },
+      "params": {
+        "productId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/cart",
+        "search": {
+          "manage": "1",
+          "dialog": null,
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "options",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/cart?productId=:productId",
+      "sourceNodeId": "/cart?productId=:productId",
+      "target": "/cart?manage=1&productId=:productId",
+      "targetNodeId": "/cart?manage=1&productId=:productId",
+      "id": "taobao.cart.manage.open",
+      "label": "进入购物车管理",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "manage": "1"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/cart",
+        "search": {
+          "manage": null,
+          "dialog": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "manage",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/cart?manage=1&productId=:productId",
+      "sourceNodeId": "/cart?manage=1&productId=:productId",
+      "target": "/cart?manage=1&dialog=remove&productId=:productId",
+      "targetNodeId": "/cart?manage=1&dialog=remove&productId=:productId",
+      "id": "taobao.cart.remove.confirm.open",
+      "label": "确认删除所选购物车商品",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "manage": "1",
+        "dialog": "remove"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/cart",
+        "search": {
+          "manage": "1",
+          "dialog": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "delete",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/me",
+      "sourceNodeId": "/me",
+      "target": "/orders?status=pendingPay",
+      "targetNodeId": "/orders?status=pendingPay",
+      "id": "taobao.orders.open",
+      "label": "打开订单列表",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "status": "pendingPay"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingPay"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "orders",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/me",
+      "sourceNodeId": "/me",
+      "target": "/orders?status=pendingShip",
+      "targetNodeId": "/orders?status=pendingShip",
+      "id": "taobao.orders.open",
+      "label": "打开订单列表",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "status": "pendingShip"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingShip"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "orders",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/me",
+      "sourceNodeId": "/me",
+      "target": "/orders?status=pendingReceive",
+      "targetNodeId": "/orders?status=pendingReceive",
+      "id": "taobao.orders.open",
+      "label": "打开订单列表",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "status": "pendingReceive"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingReceive"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "orders",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/me",
+      "sourceNodeId": "/me",
+      "target": "/orders?status=afterSale",
+      "targetNodeId": "/orders?status=afterSale",
+      "id": "taobao.orders.open",
+      "label": "打开订单列表",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "status": "afterSale"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "afterSale"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "orders",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/me",
+      "sourceNodeId": "/me",
+      "target": "/orders?status=pendingReview",
+      "targetNodeId": "/orders?status=pendingReview",
+      "id": "taobao.orders.open",
+      "label": "打开订单列表",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "status": "pendingReview"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingReview"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "orders",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/me",
+      "sourceNodeId": "/me",
+      "target": "/orders?status=closed",
+      "targetNodeId": "/orders?status=closed",
+      "id": "taobao.orders.open",
+      "label": "打开订单列表",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "status": "closed"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "closed"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "orders",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/me",
+      "sourceNodeId": "/me",
+      "target": "/orders",
+      "targetNodeId": "/orders",
+      "id": "taobao.orders.open",
+      "label": "打开订单列表",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "always"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "orders",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders",
+      "sourceNodeId": "/orders",
+      "target": "/orders?status=pendingPay",
+      "targetNodeId": "/orders?status=pendingPay",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingPay"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingPay"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders",
+      "sourceNodeId": "/orders",
+      "target": "/orders?status=pendingShip",
+      "targetNodeId": "/orders?status=pendingShip",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingShip"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingShip"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders",
+      "sourceNodeId": "/orders",
+      "target": "/orders?status=pendingReceive",
+      "targetNodeId": "/orders?status=pendingReceive",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingReceive"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingReceive"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders",
+      "sourceNodeId": "/orders",
+      "target": "/orders?status=afterSale",
+      "targetNodeId": "/orders?status=afterSale",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "afterSale"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "afterSale"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders",
+      "sourceNodeId": "/orders",
+      "target": "/orders?status=pendingReview",
+      "targetNodeId": "/orders?status=pendingReview",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingReview"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingReview"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders",
+      "sourceNodeId": "/orders",
+      "target": "/orders?status=closed",
+      "targetNodeId": "/orders?status=closed",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "closed"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "closed"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingPay",
+      "sourceNodeId": "/orders?status=pendingPay",
+      "target": "/orders?status=pendingPay",
+      "targetNodeId": "/orders?status=pendingPay",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingPay"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingPay"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingPay"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingPay",
+      "sourceNodeId": "/orders?status=pendingPay",
+      "target": "/orders?status=pendingShip",
+      "targetNodeId": "/orders?status=pendingShip",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingShip"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingShip"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingPay"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingPay",
+      "sourceNodeId": "/orders?status=pendingPay",
+      "target": "/orders?status=pendingReceive",
+      "targetNodeId": "/orders?status=pendingReceive",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingReceive"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingReceive"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingPay"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingPay",
+      "sourceNodeId": "/orders?status=pendingPay",
+      "target": "/orders?status=afterSale",
+      "targetNodeId": "/orders?status=afterSale",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "afterSale"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "afterSale"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingPay"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingPay",
+      "sourceNodeId": "/orders?status=pendingPay",
+      "target": "/orders?status=pendingReview",
+      "targetNodeId": "/orders?status=pendingReview",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingReview"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingReview"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingPay"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingPay",
+      "sourceNodeId": "/orders?status=pendingPay",
+      "target": "/orders?status=closed",
+      "targetNodeId": "/orders?status=closed",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "closed"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "closed"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingPay"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingPay",
+      "sourceNodeId": "/orders?status=pendingPay",
+      "target": "/orders",
+      "targetNodeId": "/orders",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "always"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingPay"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingShip",
+      "sourceNodeId": "/orders?status=pendingShip",
+      "target": "/orders?status=pendingPay",
+      "targetNodeId": "/orders?status=pendingPay",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingPay"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingPay"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingShip"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingShip",
+      "sourceNodeId": "/orders?status=pendingShip",
+      "target": "/orders?status=pendingShip",
+      "targetNodeId": "/orders?status=pendingShip",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingShip"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingShip"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingShip"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingShip",
+      "sourceNodeId": "/orders?status=pendingShip",
+      "target": "/orders?status=pendingReceive",
+      "targetNodeId": "/orders?status=pendingReceive",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingReceive"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingReceive"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingShip"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingShip",
+      "sourceNodeId": "/orders?status=pendingShip",
+      "target": "/orders?status=afterSale",
+      "targetNodeId": "/orders?status=afterSale",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "afterSale"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "afterSale"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingShip"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingShip",
+      "sourceNodeId": "/orders?status=pendingShip",
+      "target": "/orders?status=pendingReview",
+      "targetNodeId": "/orders?status=pendingReview",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingReview"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingReview"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingShip"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingShip",
+      "sourceNodeId": "/orders?status=pendingShip",
+      "target": "/orders?status=closed",
+      "targetNodeId": "/orders?status=closed",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "closed"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "closed"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingShip"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingShip",
+      "sourceNodeId": "/orders?status=pendingShip",
+      "target": "/orders",
+      "targetNodeId": "/orders",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "always"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingShip"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingReceive",
+      "sourceNodeId": "/orders?status=pendingReceive",
+      "target": "/orders?status=pendingPay",
+      "targetNodeId": "/orders?status=pendingPay",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingPay"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingPay"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingReceive"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingReceive",
+      "sourceNodeId": "/orders?status=pendingReceive",
+      "target": "/orders?status=pendingShip",
+      "targetNodeId": "/orders?status=pendingShip",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingShip"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingShip"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingReceive"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingReceive",
+      "sourceNodeId": "/orders?status=pendingReceive",
+      "target": "/orders?status=pendingReceive",
+      "targetNodeId": "/orders?status=pendingReceive",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingReceive"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingReceive"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingReceive"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingReceive",
+      "sourceNodeId": "/orders?status=pendingReceive",
+      "target": "/orders?status=afterSale",
+      "targetNodeId": "/orders?status=afterSale",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "afterSale"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "afterSale"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingReceive"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingReceive",
+      "sourceNodeId": "/orders?status=pendingReceive",
+      "target": "/orders?status=pendingReview",
+      "targetNodeId": "/orders?status=pendingReview",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingReview"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingReview"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingReceive"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingReceive",
+      "sourceNodeId": "/orders?status=pendingReceive",
+      "target": "/orders?status=closed",
+      "targetNodeId": "/orders?status=closed",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "closed"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "closed"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingReceive"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingReceive",
+      "sourceNodeId": "/orders?status=pendingReceive",
+      "target": "/orders",
+      "targetNodeId": "/orders",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "always"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingReceive"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=afterSale",
+      "sourceNodeId": "/orders?status=afterSale",
+      "target": "/orders?status=pendingPay",
+      "targetNodeId": "/orders?status=pendingPay",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingPay"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingPay"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "afterSale"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=afterSale",
+      "sourceNodeId": "/orders?status=afterSale",
+      "target": "/orders?status=pendingShip",
+      "targetNodeId": "/orders?status=pendingShip",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingShip"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingShip"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "afterSale"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=afterSale",
+      "sourceNodeId": "/orders?status=afterSale",
+      "target": "/orders?status=pendingReceive",
+      "targetNodeId": "/orders?status=pendingReceive",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingReceive"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingReceive"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "afterSale"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=afterSale",
+      "sourceNodeId": "/orders?status=afterSale",
+      "target": "/orders?status=afterSale",
+      "targetNodeId": "/orders?status=afterSale",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "afterSale"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "afterSale"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "afterSale"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=afterSale",
+      "sourceNodeId": "/orders?status=afterSale",
+      "target": "/orders?status=pendingReview",
+      "targetNodeId": "/orders?status=pendingReview",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingReview"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingReview"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "afterSale"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=afterSale",
+      "sourceNodeId": "/orders?status=afterSale",
+      "target": "/orders?status=closed",
+      "targetNodeId": "/orders?status=closed",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "closed"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "closed"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "afterSale"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=afterSale",
+      "sourceNodeId": "/orders?status=afterSale",
+      "target": "/orders",
+      "targetNodeId": "/orders",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "always"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "afterSale"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingReview",
+      "sourceNodeId": "/orders?status=pendingReview",
+      "target": "/orders?status=pendingPay",
+      "targetNodeId": "/orders?status=pendingPay",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingPay"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingPay"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingReview"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingReview",
+      "sourceNodeId": "/orders?status=pendingReview",
+      "target": "/orders?status=pendingShip",
+      "targetNodeId": "/orders?status=pendingShip",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingShip"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingShip"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingReview"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingReview",
+      "sourceNodeId": "/orders?status=pendingReview",
+      "target": "/orders?status=pendingReceive",
+      "targetNodeId": "/orders?status=pendingReceive",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingReceive"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingReceive"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingReview"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingReview",
+      "sourceNodeId": "/orders?status=pendingReview",
+      "target": "/orders?status=afterSale",
+      "targetNodeId": "/orders?status=afterSale",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "afterSale"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "afterSale"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingReview"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingReview",
+      "sourceNodeId": "/orders?status=pendingReview",
+      "target": "/orders?status=pendingReview",
+      "targetNodeId": "/orders?status=pendingReview",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingReview"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingReview"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingReview"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingReview",
+      "sourceNodeId": "/orders?status=pendingReview",
+      "target": "/orders?status=closed",
+      "targetNodeId": "/orders?status=closed",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "closed"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "closed"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingReview"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=pendingReview",
+      "sourceNodeId": "/orders?status=pendingReview",
+      "target": "/orders",
+      "targetNodeId": "/orders",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "always"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "pendingReview"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=closed",
+      "sourceNodeId": "/orders?status=closed",
+      "target": "/orders?status=pendingPay",
+      "targetNodeId": "/orders?status=pendingPay",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingPay"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingPay"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "closed"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=closed",
+      "sourceNodeId": "/orders?status=closed",
+      "target": "/orders?status=pendingShip",
+      "targetNodeId": "/orders?status=pendingShip",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingShip"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingShip"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "closed"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=closed",
+      "sourceNodeId": "/orders?status=closed",
+      "target": "/orders?status=pendingReceive",
+      "targetNodeId": "/orders?status=pendingReceive",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingReceive"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingReceive"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "closed"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=closed",
+      "sourceNodeId": "/orders?status=closed",
+      "target": "/orders?status=afterSale",
+      "targetNodeId": "/orders?status=afterSale",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "afterSale"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "afterSale"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "closed"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=closed",
+      "sourceNodeId": "/orders?status=closed",
+      "target": "/orders?status=pendingReview",
+      "targetNodeId": "/orders?status=pendingReview",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "pendingReview"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "pendingReview"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "closed"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=closed",
+      "sourceNodeId": "/orders?status=closed",
+      "target": "/orders?status=closed",
+      "targetNodeId": "/orders?status=closed",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "status": "closed"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "status"
+        },
+        "right": "closed"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "closed"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/orders?status=closed",
+      "sourceNodeId": "/orders?status=closed",
+      "target": "/orders",
+      "targetNodeId": "/orders",
+      "id": "taobao.orders.status.switch",
+      "label": "切换订单状态",
+      "type": "state",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "always"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/orders",
+        "search": {
+          "status": "closed"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "tab",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/discover",
+      "sourceNodeId": "/discover",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "taobao.tab.home",
+      "label": "切换到首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "home",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/messages",
+      "sourceNodeId": "/messages",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "taobao.tab.home",
+      "label": "切换到首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "home",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/cart?productId=:productId",
+      "sourceNodeId": "/cart?productId=:productId",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "taobao.tab.home",
+      "label": "切换到首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "home",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/me",
+      "sourceNodeId": "/me",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "taobao.tab.home",
+      "label": "切换到首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "home",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/discover",
+      "targetNodeId": "/discover",
+      "id": "taobao.tab.discover",
+      "label": "切换到逛逛",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "discover",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/messages",
+      "sourceNodeId": "/messages",
+      "target": "/discover",
+      "targetNodeId": "/discover",
+      "id": "taobao.tab.discover",
+      "label": "切换到逛逛",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "discover",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/cart?productId=:productId",
+      "sourceNodeId": "/cart?productId=:productId",
+      "target": "/discover",
+      "targetNodeId": "/discover",
+      "id": "taobao.tab.discover",
+      "label": "切换到逛逛",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "discover",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/me",
+      "sourceNodeId": "/me",
+      "target": "/discover",
+      "targetNodeId": "/discover",
+      "id": "taobao.tab.discover",
+      "label": "切换到逛逛",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "discover",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/messages",
+      "targetNodeId": "/messages",
+      "id": "taobao.tab.messages",
+      "label": "切换到消息",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "message",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/discover",
+      "sourceNodeId": "/discover",
+      "target": "/messages",
+      "targetNodeId": "/messages",
+      "id": "taobao.tab.messages",
+      "label": "切换到消息",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "message",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/cart?productId=:productId",
+      "sourceNodeId": "/cart?productId=:productId",
+      "target": "/messages",
+      "targetNodeId": "/messages",
+      "id": "taobao.tab.messages",
+      "label": "切换到消息",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "message",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/me",
+      "sourceNodeId": "/me",
+      "target": "/messages",
+      "targetNodeId": "/messages",
+      "id": "taobao.tab.messages",
+      "label": "切换到消息",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "message",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/cart?productId=:productId",
+      "targetNodeId": "/cart?productId=:productId",
+      "id": "taobao.tab.cart",
+      "label": "切换到购物车",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "cart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/discover",
+      "sourceNodeId": "/discover",
+      "target": "/cart?productId=:productId",
+      "targetNodeId": "/cart?productId=:productId",
+      "id": "taobao.tab.cart",
+      "label": "切换到购物车",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "cart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/messages",
+      "sourceNodeId": "/messages",
+      "target": "/cart?productId=:productId",
+      "targetNodeId": "/cart?productId=:productId",
+      "id": "taobao.tab.cart",
+      "label": "切换到购物车",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "cart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/me",
+      "sourceNodeId": "/me",
+      "target": "/cart?productId=:productId",
+      "targetNodeId": "/cart?productId=:productId",
+      "id": "taobao.tab.cart",
+      "label": "切换到购物车",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "cart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/me",
+      "targetNodeId": "/me",
+      "id": "taobao.tab.me",
+      "label": "切换到我的淘宝",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "user",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/discover",
+      "sourceNodeId": "/discover",
+      "target": "/me",
+      "targetNodeId": "/me",
+      "id": "taobao.tab.me",
+      "label": "切换到我的淘宝",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "user",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/messages",
+      "sourceNodeId": "/messages",
+      "target": "/me",
+      "targetNodeId": "/me",
+      "id": "taobao.tab.me",
+      "label": "切换到我的淘宝",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "user",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/cart?productId=:productId",
+      "sourceNodeId": "/cart?productId=:productId",
+      "target": "/me",
+      "targetNodeId": "/me",
+      "id": "taobao.tab.me",
+      "label": "切换到我的淘宝",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "user",
+        "gesture": "tap"
+      }
+    }
+  ]
+}

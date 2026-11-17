@@ -1,0 +1,336 @@
+{
+  "app": "food_info",
+  "appDir": "apps\\FoodInfo",
+  "mode": "schema",
+  "routeCount": 5,
+  "edgeCount": 20,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "component": "YukaHistory",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "扫描历史与商品分析",
+      "stateCount": 1,
+      "states": [
+        "/"
+      ],
+      "actionCount": 2,
+      "actionIds": [
+        "food.catalog.item.open",
+        "food.analysis.item.verify"
+      ],
+      "actions": [
+        {
+          "id": "food.catalog.item.open",
+          "label": "打开食品详情",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "food.analysis.item.verify",
+          "label": "核对营养事实",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/alternatives",
+      "routePath": "/alternatives",
+      "component": "YukaAlternatives",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "健康替代品",
+      "stateCount": 1,
+      "states": [
+        "/alternatives"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/scan",
+      "routePath": "/scan",
+      "component": "YukaScanner",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "条码扫描器",
+      "stateCount": 1,
+      "states": [
+        "/scan"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "food.scan.sample.submit"
+      ],
+      "actions": [
+        {
+          "id": "food.scan.sample.submit",
+          "label": "扫描受控示例条码",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/overview",
+      "routePath": "/overview",
+      "component": "YukaOverview",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "扫描评分概览",
+      "stateCount": 1,
+      "states": [
+        "/overview"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/search",
+      "routePath": "/search",
+      "component": "YukaSearch",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "产品搜索",
+      "stateCount": 1,
+      "states": [
+        "/search?q=:q"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "/alternatives",
+      "target": "/",
+      "transitions": [
+        "food.tab.history"
+      ],
+      "type": "navigation",
+      "label": "food.tab.history",
+      "id": "food.tab.history"
+    },
+    {
+      "source": "/scan",
+      "target": "/",
+      "transitions": [
+        "food.tab.history"
+      ],
+      "type": "navigation",
+      "label": "food.tab.history",
+      "id": "food.tab.history"
+    },
+    {
+      "source": "/overview",
+      "target": "/",
+      "transitions": [
+        "food.tab.history"
+      ],
+      "type": "navigation",
+      "label": "food.tab.history",
+      "id": "food.tab.history"
+    },
+    {
+      "source": "/search",
+      "target": "/",
+      "transitions": [
+        "food.tab.history"
+      ],
+      "type": "navigation",
+      "label": "food.tab.history",
+      "id": "food.tab.history"
+    },
+    {
+      "source": "/",
+      "target": "/alternatives",
+      "transitions": [
+        "food.tab.alternatives"
+      ],
+      "type": "navigation",
+      "label": "food.tab.alternatives",
+      "id": "food.tab.alternatives"
+    },
+    {
+      "source": "/scan",
+      "target": "/alternatives",
+      "transitions": [
+        "food.tab.alternatives"
+      ],
+      "type": "navigation",
+      "label": "food.tab.alternatives",
+      "id": "food.tab.alternatives"
+    },
+    {
+      "source": "/overview",
+      "target": "/alternatives",
+      "transitions": [
+        "food.tab.alternatives"
+      ],
+      "type": "navigation",
+      "label": "food.tab.alternatives",
+      "id": "food.tab.alternatives"
+    },
+    {
+      "source": "/search",
+      "target": "/alternatives",
+      "transitions": [
+        "food.tab.alternatives"
+      ],
+      "type": "navigation",
+      "label": "food.tab.alternatives",
+      "id": "food.tab.alternatives"
+    },
+    {
+      "source": "/",
+      "target": "/scan",
+      "transitions": [
+        "food.tab.scan"
+      ],
+      "type": "navigation",
+      "label": "food.tab.scan",
+      "id": "food.tab.scan"
+    },
+    {
+      "source": "/alternatives",
+      "target": "/scan",
+      "transitions": [
+        "food.tab.scan"
+      ],
+      "type": "navigation",
+      "label": "food.tab.scan",
+      "id": "food.tab.scan"
+    },
+    {
+      "source": "/overview",
+      "target": "/scan",
+      "transitions": [
+        "food.tab.scan"
+      ],
+      "type": "navigation",
+      "label": "food.tab.scan",
+      "id": "food.tab.scan"
+    },
+    {
+      "source": "/search",
+      "target": "/scan",
+      "transitions": [
+        "food.tab.scan"
+      ],
+      "type": "navigation",
+      "label": "food.tab.scan",
+      "id": "food.tab.scan"
+    },
+    {
+      "source": "/",
+      "target": "/overview",
+      "transitions": [
+        "food.tab.overview"
+      ],
+      "type": "navigation",
+      "label": "food.tab.overview",
+      "id": "food.tab.overview"
+    },
+    {
+      "source": "/alternatives",
+      "target": "/overview",
+      "transitions": [
+        "food.tab.overview"
+      ],
+      "type": "navigation",
+      "label": "food.tab.overview",
+      "id": "food.tab.overview"
+    },
+    {
+      "source": "/scan",
+      "target": "/overview",
+      "transitions": [
+        "food.tab.overview"
+      ],
+      "type": "navigation",
+      "label": "food.tab.overview",
+      "id": "food.tab.overview"
+    },
+    {
+      "source": "/search",
+      "target": "/overview",
+      "transitions": [
+        "food.tab.overview"
+      ],
+      "type": "navigation",
+      "label": "food.tab.overview",
+      "id": "food.tab.overview"
+    },
+    {
+      "source": "/",
+      "target": "/search",
+      "transitions": [
+        "food.tab.search"
+      ],
+      "type": "navigation",
+      "label": "food.tab.search",
+      "id": "food.tab.search"
+    },
+    {
+      "source": "/alternatives",
+      "target": "/search",
+      "transitions": [
+        "food.tab.search"
+      ],
+      "type": "navigation",
+      "label": "food.tab.search",
+      "id": "food.tab.search"
+    },
+    {
+      "source": "/scan",
+      "target": "/search",
+      "transitions": [
+        "food.tab.search"
+      ],
+      "type": "navigation",
+      "label": "food.tab.search",
+      "id": "food.tab.search"
+    },
+    {
+      "source": "/overview",
+      "target": "/search",
+      "transitions": [
+        "food.tab.search"
+      ],
+      "type": "navigation",
+      "label": "food.tab.search",
+      "id": "food.tab.search"
+    }
+  ]
+}

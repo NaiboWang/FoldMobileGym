@@ -1,0 +1,200 @@
+{
+  "app": "appstore",
+  "appDir": "apps\\AppStore",
+  "mode": "schema",
+  "routeCount": 4,
+  "edgeCount": 9,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "component": "FeaturedPage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "精选",
+      "stateCount": 1,
+      "states": [
+        "/"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/apps",
+      "routePath": "/apps",
+      "component": "AppsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "应用列表",
+      "stateCount": 1,
+      "states": [
+        "/apps"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/search",
+      "routePath": "/search",
+      "component": "SearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "搜索",
+      "stateCount": 1,
+      "states": [
+        "/search?q=:q"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "appstore.search.query.input"
+      ],
+      "actions": [
+        {
+          "id": "appstore.search.query.input",
+          "label": "输入关键词",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/app/:appId",
+      "routePath": "/app/:appId",
+      "component": "DetailPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "应用详情",
+      "stateCount": 1,
+      "states": [
+        "/app/:appId"
+      ],
+      "actionCount": 1,
+      "actionIds": [
+        "appstore.detail.item.open"
+      ],
+      "actions": [
+        {
+          "id": "appstore.detail.item.open",
+          "label": "打开应用",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "appId": "string"
+          }
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/apps",
+      "target": "/",
+      "transitions": [
+        "appstore.tab.featured"
+      ],
+      "type": "navigation",
+      "label": "appstore.tab.featured",
+      "id": "appstore.tab.featured"
+    },
+    {
+      "source": "/search",
+      "target": "/",
+      "transitions": [
+        "appstore.tab.featured"
+      ],
+      "type": "navigation",
+      "label": "appstore.tab.featured",
+      "id": "appstore.tab.featured"
+    },
+    {
+      "source": "/",
+      "target": "/apps",
+      "transitions": [
+        "appstore.tab.apps"
+      ],
+      "type": "navigation",
+      "label": "appstore.tab.apps",
+      "id": "appstore.tab.apps"
+    },
+    {
+      "source": "/search",
+      "target": "/apps",
+      "transitions": [
+        "appstore.tab.apps"
+      ],
+      "type": "navigation",
+      "label": "appstore.tab.apps",
+      "id": "appstore.tab.apps"
+    },
+    {
+      "source": "/",
+      "target": "/search",
+      "transitions": [
+        "appstore.tab.search"
+      ],
+      "type": "navigation",
+      "label": "appstore.tab.search",
+      "id": "appstore.tab.search"
+    },
+    {
+      "source": "/apps",
+      "target": "/search",
+      "transitions": [
+        "appstore.tab.search"
+      ],
+      "type": "navigation",
+      "label": "appstore.tab.search",
+      "id": "appstore.tab.search"
+    },
+    {
+      "source": "/",
+      "target": "/app/:appId",
+      "transitions": [
+        "appstore.item.detail"
+      ],
+      "type": "navigation",
+      "label": "appstore.item.detail",
+      "id": "appstore.item.detail"
+    },
+    {
+      "source": "/apps",
+      "target": "/app/:appId",
+      "transitions": [
+        "appstore.item.detail"
+      ],
+      "type": "navigation",
+      "label": "appstore.item.detail",
+      "id": "appstore.item.detail"
+    },
+    {
+      "source": "/search",
+      "target": "/app/:appId",
+      "transitions": [
+        "appstore.item.detail"
+      ],
+      "type": "navigation",
+      "label": "appstore.item.detail",
+      "id": "appstore.item.detail"
+    }
+  ]
+}

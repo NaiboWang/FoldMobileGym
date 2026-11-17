@@ -1,0 +1,8 @@
+.wr-audio-reference { container: reading-audio / inline-size; min-width: 0; }
+.wr-audio-recommend-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.wr-audio-recommend-grid > div { min-width: 0; }
+.wr-audio-chart-column { width: min(88cqi, 360px); }
+@container reading-audio (min-width: 600px) {
+  .wr-audio-recommend-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); column-gap: 20px; }
+  .wr-audio-recommend-cover { aspect-ratio: 1; }
+}

@@ -1,0 +1,76 @@
+name: Lightweight source checks
+
+# This is not a media, browser, deployment, or full reconstruction check.
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-checks:
+    # Python 3.11.9 is published for 24.04, but not for Ubuntu 26.04.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      PUPPETEER_SKIP_DOWNLOAD: 'true'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24.14.0'
+          package-manager-cache: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.11.9'
+      - name: Check source and documentation paths
+        run: node tools/release/check_source.mjs
+      - name: Install screenshot-agent task validation dependency
+        run: python -m pip install --disable-pip-version-check -r foldagent_runtime/requirements.txt
+      - name: Test screenshot-agent protocol and runtime (no browser or model API)
+        run: |
+          node --test foldagent/tests/*.test.mjs
+          python -m unittest discover -s foldagent_runtime/tests -v
+      - name: Test media utilities using synthetic fixtures
+        run: python -m unittest discover -s tools/media -p 'test_*.py' -v
+      - name: Check tracked publication inventory (not rights clearance)
+        run: python tools/media/publication_inventory.py --check
+      - name: Test bounded history and current-tree screening
+        run: python -m unittest tools.release.test_audit_public_history -v
+      - name: Test image metadata screening with synthetic images
+        run: |
+          python -m pip install --disable-pip-version-check Pillow==11.3.0
+          python -m unittest tools.release.test_audit_tracked_image_metadata tools.release.test_audit_media_archive_metadata -v
+      - name: Test local screenshot capture boundaries
+        run: node --test tools/media/test_capture_safety.mjs
+      - name: Install locked frontend dependencies
+        working-directory: foldmobilegym
+        run: npm ci --no-audit --no-fund
+      - name: Check TypeScript
+        working-directory: foldmobilegym
+        run: npx --no-install tsc --noEmit
+      - name: Test calendars across daylight saving changes
+        working-directory: foldmobilegym
+        env:
+          TZ: America/New_York
+        run: npx --no-install vitest run tests/notesReminderPickerModel.test.ts tests/notesReminderWallTimeDst.test.ts tests/weatherLibraryCalendarDst.test.ts
+      - name: Test half-hour daylight saving changes
+        working-directory: foldmobilegym
+        env:
+          TZ: Australia/Lord_Howe
+        run: npx --no-install vitest run tests/notesReminderWallTimeDst.test.ts tests/weatherLibraryCalendarDst.test.ts
+      # The four suites below require the full separately distributed media package.
+      # Full `npm test` with real media remains a separate release gate.
+      - name: Test source-only frontend suite (media suites excluded)
+        working-directory: foldmobilegym
+        run: |
+          npx --no-install vitest run \
+            --exclude tests/mapHomeBootstrap.test.ts \
+            --exclude tests/mapSymbolFonts.test.ts \
+            --exclude tests/redbookAvatarAssets.test.ts \
+            --exclude tests/redbookPostAssets.test.ts

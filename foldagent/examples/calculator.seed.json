@@ -1,0 +1,14 @@
+{
+  "pair_id": "J99",
+  "apps": {
+    "calculator": {
+      "display": "0",
+      "firstOperand": null,
+      "operator": null,
+      "waitingForSecondOperand": false,
+      "calculationCount": 0,
+      "clearCount": 0,
+      "calculations": []
+    }
+  }
+}

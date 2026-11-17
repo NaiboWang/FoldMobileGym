@@ -1,0 +1,13 @@
+{
+  "source": "alipay",
+  "target": "notes",
+  "data": {
+    "id": "source-bill",
+    "title": "打印材料",
+    "amount": 26.8,
+    "method": "花呗"
+  },
+  "target_text": "打印材料；26.8；花呗",
+  "title": "资料备忘 · 支付宝",
+  "chat_name": "韩晴（研发）"
+}

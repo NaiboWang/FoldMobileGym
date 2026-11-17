@@ -1,0 +1,358 @@
+[
+  {
+    "app": "food_info",
+    "graphFile": "public\\foodinfo_nav_graph.json",
+    "taskId": "food_info:food.analysis.item.verify",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "food_info.history.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "food_info.history.base",
+              "component": "YukaHistory",
+              "description": "扫描历史与商品分析",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "products",
+                  "direction": "vertical",
+                  "description": "扫描历史"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "food.analysis.item.verify",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "id": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "food.analysis.item.verify",
+              "label": "核对营养事实",
+              "description": null,
+              "behavior": "other",
+              "scope": "item",
+              "paramsSchema": {
+                "id": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "tap",
+                "file": "apps\\FoodInfo\\FoodInfoApp.tsx",
+                "line": 62,
+                "col": 200
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "food.analysis.item.verify",
+      "label": "核对营养事实",
+      "description": null,
+      "behavior": "other",
+      "scope": "item",
+      "paramsSchema": {
+        "id": "string"
+      }
+    }
+  },
+  {
+    "app": "food_info",
+    "graphFile": "public\\foodinfo_nav_graph.json",
+    "taskId": "food_info:food.catalog.item.open",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "food_info.history.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "food_info.history.base",
+              "component": "YukaHistory",
+              "description": "扫描历史与商品分析",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "products",
+                  "direction": "vertical",
+                  "description": "扫描历史"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "food.catalog.item.open",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "id": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "food.catalog.item.open",
+              "label": "打开食品详情",
+              "description": null,
+              "behavior": "other",
+              "scope": "item",
+              "paramsSchema": {
+                "id": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "tap",
+                "file": "apps\\FoodInfo\\FoodInfoApp.tsx",
+                "line": 53,
+                "col": 15
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "food.catalog.item.open",
+      "label": "打开食品详情",
+      "description": null,
+      "behavior": "other",
+      "scope": "item",
+      "paramsSchema": {
+        "id": "string"
+      }
+    }
+  },
+  {
+    "app": "food_info",
+    "graphFile": "public\\foodinfo_nav_graph.json",
+    "taskId": "food_info:food.scan.sample.submit",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/scan",
+      "routePath": "/scan",
+      "uiStateId": "food_info.scan.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/scan"
+        ],
+        "transitions": [
+          "food.tab.scan"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/scan"
+        ],
+        "transitions": [
+          "food.tab.scan"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "food_info.history.base",
+              "component": "YukaHistory",
+              "description": "扫描历史与商品分析",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "products",
+                  "direction": "vertical",
+                  "description": "扫描历史"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "edge": {
+              "transitionId": "food.tab.scan",
+              "label": "切换到扫描",
+              "type": "navigation",
+              "mode": "replace",
+              "source": "/",
+              "target": "/scan",
+              "uiMeta": {
+                "placement": "tabbar",
+                "icon": "scan",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/scan",
+              "routePath": "/scan",
+              "uiStateId": "food_info.scan.base",
+              "component": "YukaScanner",
+              "description": "条码扫描器",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "food.tab.scan",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "tabbar",
+              "icon": "scan",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/scan",
+              "routePath": "/scan",
+              "uiStateId": "food_info.scan.base",
+              "component": "YukaScanner",
+              "description": "条码扫描器",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "food.scan.sample.submit",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "food.scan.sample.submit",
+              "label": "扫描受控示例条码",
+              "description": null,
+              "behavior": "submit",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "tap",
+                "file": "apps\\FoodInfo\\FoodInfoApp.tsx",
+                "line": 67,
+                "col": 272
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "food.scan.sample.submit",
+      "label": "扫描受控示例条码",
+      "description": null,
+      "behavior": "submit",
+      "scope": null,
+      "paramsSchema": null
+    }
+  }
+]

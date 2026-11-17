@@ -1,0 +1,98 @@
+{
+  "app": "answer_sheet",
+  "appDir": "system\\AnswerSheet",
+  "mode": "schema",
+  "routeCount": 1,
+  "edgeCount": 0,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "component": "SheetPage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "Assigned answer form or honest empty state",
+      "stateCount": 1,
+      "states": [
+        "/"
+      ],
+      "actionCount": 7,
+      "actionIds": [
+        "answerSheet.choice.item.choose",
+        "answerSheet.field.item.input",
+        "answerSheet.repeatable.item.add",
+        "answerSheet.repeatable.item.remove",
+        "answerSheet.repeatable.item.input",
+        "answerSheet.form.submit",
+        "answerSheet.form.modify"
+      ],
+      "actions": [
+        {
+          "id": "answerSheet.choice.item.choose",
+          "label": "Choose one assigned option",
+          "scope": "item",
+          "behavior": "other",
+          "paramsSchema": {
+            "fieldIndex": "number",
+            "value": "string"
+          }
+        },
+        {
+          "id": "answerSheet.field.item.input",
+          "label": "Enter an assigned scalar answer",
+          "scope": "item",
+          "behavior": "input",
+          "paramsSchema": {
+            "fieldIndex": "number",
+            "value": "string"
+          }
+        },
+        {
+          "id": "answerSheet.repeatable.item.add",
+          "label": "Add one repeatable answer row",
+          "scope": "item",
+          "behavior": "other",
+          "paramsSchema": {
+            "fieldIndex": "number"
+          }
+        },
+        {
+          "id": "answerSheet.repeatable.item.remove",
+          "label": "Remove this answer row",
+          "scope": "item",
+          "behavior": "other",
+          "paramsSchema": {
+            "fieldIndex": "number",
+            "itemIndex": "number"
+          }
+        },
+        {
+          "id": "answerSheet.repeatable.item.input",
+          "label": "Enter this repeatable answer",
+          "scope": "item",
+          "behavior": "input",
+          "paramsSchema": {
+            "fieldIndex": "number",
+            "itemIndex": "number",
+            "value": "string"
+          }
+        },
+        {
+          "id": "answerSheet.form.submit",
+          "label": "Submit the authored answer as-is",
+          "behavior": "submit"
+        },
+        {
+          "id": "answerSheet.form.modify",
+          "label": "Reopen authored answers for modification",
+          "behavior": "other"
+        }
+      ]
+    }
+  ],
+  "edges": []
+}

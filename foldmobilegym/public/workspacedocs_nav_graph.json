@@ -1,0 +1,109 @@
+{
+  "app": "workspace_docs",
+  "appDir": "apps\\WorkspaceDocs",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 2,
+  "transitionCount": 2,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "uiStateId": "workspace_docs.library.base",
+      "component": "WorkspaceDocsLibrary",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "documents",
+          "direction": "vertical",
+          "description": "文档列表"
+        }
+      ],
+      "description": "工作文档列表",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/document/:id",
+      "routePath": "/document/:id",
+      "uiStateId": "workspace_docs.document.base",
+      "component": "WorkspaceDocumentReader",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "document",
+          "direction": "vertical",
+          "description": "只读文档正文"
+        }
+      ],
+      "description": "只读文档",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "workspaceDocs.document.fact.verify",
+          "label": "阅读并核对文档事实",
+          "behavior": "other"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/document/:id",
+      "targetNodeId": "/document/:id",
+      "id": "workspace_docs.document.open",
+      "label": "打开文档",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "document",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/document/:id",
+      "sourceNodeId": "/document/:id",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "workspace_docs.library.open",
+      "label": "返回文档列表",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "back",
+        "gesture": "tap"
+      }
+    }
+  ]
+}

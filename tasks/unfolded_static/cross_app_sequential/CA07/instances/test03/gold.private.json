@@ -1,0 +1,12 @@
+{
+  "source": "calculator",
+  "target": "notes",
+  "data": {
+    "a": 245,
+    "b": 17,
+    "result": 4165
+  },
+  "target_text": "4165",
+  "title": "资料备忘 · 计算器",
+  "chat_name": "韩晴（研发）"
+}

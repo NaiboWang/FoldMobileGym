@@ -1,0 +1,24 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "pair_id": "J81",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "apps": {
+    "spotify": {}
+  },
+  "raw_apps": {
+    "spotify": {
+      "customPlaylists": []
+    }
+  },
+  "os": {}
+}

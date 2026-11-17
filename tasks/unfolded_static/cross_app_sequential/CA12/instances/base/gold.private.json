@@ -1,0 +1,13 @@
+{
+  "source": "alipay",
+  "target": "notes",
+  "data": {
+    "id": "source-bill",
+    "title": "文具采购",
+    "amount": 48.5,
+    "method": "余额"
+  },
+  "target_text": "文具采购；48.5；余额",
+  "title": "信息记录 · 支付宝",
+  "chat_name": "陈宁（研发）"
+}

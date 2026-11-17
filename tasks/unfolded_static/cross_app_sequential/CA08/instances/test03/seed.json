@@ -1,0 +1,48 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "pair_id": "I43",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "apps": {
+    "taobao": {},
+    "notes": {}
+  },
+  "raw_apps": {
+    "taobao": {
+      "cartItems": [],
+      "orders": []
+    },
+    "notes": {
+      "notes": [
+        {
+          "id": "untouched-note",
+          "title": "工作备忘",
+          "content": "原有内容，请保留。",
+          "folderId": "unfiled",
+          "updatedAt": 1793663999000
+        }
+      ],
+      "todos": [
+        {
+          "id": "untouched-todo",
+          "text": "保留原待办",
+          "completed": false,
+          "updatedAt": 1793663999000
+        }
+      ],
+      "createdCount": 0,
+      "deletedCount": 0,
+      "selectedFolderId": "all"
+    }
+  },
+  "os": {}
+}

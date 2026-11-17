@@ -1,0 +1,41 @@
+/**
+ * Calculator 字符串资源 — 对应 AOSP res/values/strings.xml
+ */
+export const strings = {
+  history_title: '历史记录',
+  history_limit: '最近32条本地计算',
+  history_empty: '暂无计算记录',
+  history_close: '关闭历史记录',
+  history_edit: '编辑历史记录',
+  history_clear: '清空历史记录',
+  history_done: '完成选择',
+  history_selected: '已选择{count}条',
+  history_select_all: '全选',
+  history_unselect_all: '全不选',
+  history_delete_selected: '删除所选记录',
+  history_delete_title: '删除历史记录',
+  history_delete_count: '删除选中的{count}条历史记录？',
+  history_request_stale: '所选记录已发生变化，请返回重新选择。',
+  history_cancel: '取消',
+  history_delete: '删除',
+  scientific_show: '科学键盘',
+  scientific_hide: '基本键盘',
+  expression_label: '计算表达式',
+  expression_result: '计算结果',
+  expression_error_syntax: '表达式不完整或格式不正确',
+  expression_error_domain: '不支持此运算范围',
+  expression_error_divideZero: '不能除以零',
+  expression_error_overflow: '结果超出支持范围',
+  expression_radians: '弧度（Rad）',
+  expression_degrees: '角度（Deg）',
+  expression_inverse: '反函数',
+  expression_backspace: '删除一个字符',
+  expression_memory: '存储值',
+  expression_clear: '清除表达式',
+  expression_evaluate: '计算结果',
+  history_date_locale: 'zh-CN',
+  history_undated: '日期未记录',
+  app_name: '计算器',
+} as const;
+
+export type StringKey = keyof typeof strings;

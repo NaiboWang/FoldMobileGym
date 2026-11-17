@@ -1,0 +1,71 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "apps": {
+    "contacts": {}
+  },
+  "raw_apps": {
+    "contacts": {
+      "searchHistory": [],
+      "mutationCount": 0,
+      "callCount": 0
+    }
+  },
+  "os": {
+    "providers": {
+      "contacts": {
+        "contacts": [
+          {
+            "id": "target",
+            "displayName": "林安",
+            "notes": "",
+            "sectionKey": "L",
+            "avatarColor": "#3482FF",
+            "phones": [
+              {
+                "id": "p1",
+                "label": "手机",
+                "number": "13900007312",
+                "isPrimary": true
+              }
+            ],
+            "company": "青禾设计",
+            "title": "项目联络",
+            "createdAt": 1793664000000,
+            "updatedAt": 1793664000000
+          },
+          {
+            "id": "other",
+            "displayName": "林安",
+            "notes": "保留备注",
+            "sectionKey": "L",
+            "avatarColor": "#3482FF",
+            "phones": [
+              {
+                "id": "p1",
+                "label": "手机",
+                "number": "13900007318",
+                "isPrimary": true
+              }
+            ],
+            "company": "青禾设计",
+            "title": "项目联络",
+            "createdAt": 1793664000000,
+            "updatedAt": 1793664000000
+          }
+        ]
+      }
+    }
+  },
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "pair_id": "J54"
+}

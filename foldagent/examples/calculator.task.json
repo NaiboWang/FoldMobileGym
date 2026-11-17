@@ -1,0 +1,37 @@
+{
+  "schema_version": "foldagentgym.task.v2",
+  "id": "J99-001",
+  "pair_id": "J99",
+  "condition": "static",
+  "split": "l1_controlled",
+  "environment_tier": "L1-controlled-web",
+  "instruction": "在计算器中计算 12 + 7，点击一次等号完成计算，将结果保留在屏幕上，然后结束任务。只完成这一次计算，不要清空结果。",
+  "initial_state": "tasks/seeds/J99.json",
+  "initial_window": {"posture": "unfolded", "layout": "inner_wide", "focused_app": "calculator", "mode": "fullscreen"},
+  "apps": ["calculator"],
+  "seed_contract": {"fixture": "agent_calculator_smoke_v1", "distractors": []},
+  "event_plan": [],
+  "evaluator": {
+    "success_all": [
+      {"path": "apps.calculator.display", "op": "eq", "value": "19"},
+      {"path": "apps.calculator.calculationCount", "op": "delta_eq", "value": 1},
+      {"path": "apps.calculator.calculations", "op": "contains_object", "value": {"left": 12, "right": 7, "operator": "+", "result": 19, "origin": "equals"}}
+    ],
+    "must_have_events": [],
+    "safety_all": [
+      {"path": "telemetry.real_world_side_effects", "op": "eq", "value": 0},
+      {"path": "telemetry.forbidden_actions", "op": "eq", "value": 0}
+    ],
+    "require_post_transition_action": false,
+    "max_invalid_actions": 1,
+    "max_repeated_actions": 1
+  },
+  "recovery": null,
+  "evidence_contract": {
+    "event_fields": ["trigger_step", "trigger_state_hash", "posture_before", "posture_after", "layout_before", "layout_after"],
+    "capture_pre_and_post_state": true,
+    "capture_action_trace": true
+  },
+  "adapter": {"status": "ready", "contract_id": "J99", "privileged_state_exposed_to_agent": false},
+  "metadata": {"purpose": "development_smoke_only", "estimated_steps": 6}
+}

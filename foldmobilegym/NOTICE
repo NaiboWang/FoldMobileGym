@@ -1,0 +1,43 @@
+FoldMobileGym distribution clarification, 2026-11-16.
+The original mobile-gym attribution is retained below.
+
+mobile-gym
+Copyright 2026 The mobile-gym Authors
+
+This product includes software developed by The mobile-gym Authors and
+contributors. Project source code is licensed under the Apache License,
+Version 2.0 to the extent the project has authority to grant that license;
+third-party software retains its own terms. See the LICENSE file.
+
+Data files distributed with this repository (including but not limited
+to apps/*/data, apps/*/assets, and dataset snapshots under public/) are
+licensed separately under the Creative Commons Attribution-NonCommercial
+4.0 International License (CC BY-NC 4.0) only to the extent stated in
+LICENSE-DATA. Directory membership does not relicense third-party content.
+Third-party platform content and other third-party materials retain their
+original rights and terms; see DATA-PROVENANCE.md and any per-resource
+notice. For example, the Roboto files under apps/Map/assets/offline-fonts
+are under SIL OFL 1.1, not CC BY-NC 4.0.
+
+For notices regarding trademarks, third-party application references,
+dataset provenance, network behavior, and the takedown procedure, see
+DISCLAIMER.md and DATA-PROVENANCE.md.
+
+------------------------------------------------------------------------
+Third-party components
+
+This project bundles or depends on third-party software with their own
+licenses. Their copyrights remain with their respective authors. The
+direct dependency declarations in package.json and
+bench_env/requirements.txt are an index, not a complete notice for every
+transitive dependency or generated distribution. See
+THIRD-PARTY-NOTICES.md and each component's license for the notices that
+must accompany a particular distribution.
+
+------------------------------------------------------------------------
+Patents
+
+Portions of this codebase may be covered by patents held by the
+contributors. Use of this software is licensed under the patent grant
+in Section 3 of the Apache License, Version 2.0, and is limited to that
+grant. No additional patent rights are conveyed.

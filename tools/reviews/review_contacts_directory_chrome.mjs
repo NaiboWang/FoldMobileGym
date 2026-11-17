@@ -1,0 +1,48 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { createRequire } from 'node:module';
+import { openPilotApp } from '../browser-automation/pilot_app_navigation.mjs';
+import { resolveBrowserExecutable } from '../browser-automation/browser.mjs';
+const root = path.resolve(import.meta.dirname, '../..');
+const frontend = fs.existsSync(path.join(root, 'foldmobilegym/package.json')) ? 'foldmobilegym' : 'mobilegym';
+const require = createRequire(path.join(root, frontend, 'package.json'));
+const url = new URL(process.env.FOLDAGENT_REVIEW_URL || 'http://127.0.0.1:3375/');
+assert.ok(url.protocol === 'http:' && ['127.0.0.1', 'localhost'].includes(url.hostname) && !url.username && !url.password);
+const browser = await require('puppeteer').launch({ headless: true, executablePath: resolveBrowserExecutable() });
+const context = await browser.createBrowserContext(), p = await context.newPage(), errors = [];
+p.on('pageerror', e => errors.push(String(e)));
+const app = '[data-app-id="contacts"]', shell = `${app} .contacts-directory-detail-shell`, tabs = `${app} .contacts-directory-detail-tabs`;
+try {
+ await p.setViewport({width:1440,height:1100}); await p.goto(url.href);
+ await p.waitForFunction(() => window.__OS__ && window.__FOLDAGENT__);
+ await p.evaluate(() => window.__FOLDAGENT__.setPosture('unfolded'));
+ await openPilotApp(p, 'contacts', '/contact/c_alice');
+ await p.waitForSelector(tabs, {visible:true});
+ const bounds = await p.evaluate((shell,tabs) => {
+   const a=document.querySelector(shell).getBoundingClientRect(), b=document.querySelector(tabs).getBoundingClientRect();
+   return {a:{x:a.x,w:a.width,bottom:a.bottom},b:{x:b.x,w:b.width,bottom:b.bottom}};
+ },shell,tabs);
+ assert.ok(Math.abs(bounds.a.x-bounds.b.x)<1 && Math.abs(bounds.a.w-bounds.b.w)<1 && Math.abs(bounds.a.bottom-bounds.b.bottom)<1);
+ await p.waitForSelector(`${app} .contacts-directory-fab`, {visible:true});
+ await p.click(`${app} .contacts-directory-search`);
+ await p.waitForSelector(tabs, {hidden:true});
+ assert.equal(await p.$(`${app} .contacts-directory-fab`),null);
+ assert.equal(await p.$eval(`${app} .contacts-directory-search-scrim`, e => getComputedStyle(e).backgroundColor), 'rgba(0, 0, 0, 0.2)');
+ await p.evaluate(() => window.__OS__.handleBack());
+ await p.waitForFunction(() => !window.__OS__.keyboard.getState().visible);
+ await p.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+ await p.evaluate(() => window.__OS__.handleBack());
+ await p.waitForSelector(tabs, {visible:true}); await p.waitForSelector(`${app} .contacts-directory-fab`, {visible:true});
+ await p.evaluate(() => window.__FOLDAGENT__.setPosture('folded'));
+ await p.waitForSelector(tabs, {hidden:true});
+ await p.evaluate(() => window.__FOLDAGENT__.setPosture('unfolded'));
+ await p.waitForSelector(`${app} .contacts-directory-fab`, {visible:true});
+ await p.click(`${app} .contacts-directory-fab`);
+ await p.waitForFunction(() => window.__OS__.getAppRoute('contacts').path.startsWith('/contacts/new'));
+ await openPilotApp(p, 'contacts', '/contact/c_alice');
+ await p.waitForSelector(tabs, {visible:true});
+ await p.click(`${tabs} [data-trigger="tab.calls"]`);
+ await p.waitForFunction(() => window.__OS__.getAppRoute('contacts').path === '/');
+ assert.deepEqual(errors,[]); console.log('PASS full-width tabs, create control, search scrim and folded visibility');
+} finally { await context.close(); await browser.close(); }

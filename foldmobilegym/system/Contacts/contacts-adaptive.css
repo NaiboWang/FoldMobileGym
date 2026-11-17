@@ -1,0 +1,312 @@
+.contacts-app-root {
+  container-type: size;
+  min-width: 0;
+  min-height: 0;
+}
+
+.contacts-home-shell,
+.contacts-detail-shell {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+}
+
+.contacts-favorite-detail-shell { display: flex; flex-direction: column; }
+.contacts-favorite-detail-pane { min-width: 0; min-height: 0; flex: 1 1 auto; overflow: hidden; }
+.contacts-favorite-detail-pane .contacts-reference-detail { height: 100%; }
+.contacts-favorite-detail-pane .contacts-reference-avatar { width: 112px; height: 112px; font-size: 40px; background: linear-gradient(145deg, #bec7d8, #9ea8bd) !important; }
+.contacts-favorite-detail-pane .contacts-reference-name { font-size: 28px; font-weight: 500; margin-top: 14px; }
+.contacts-favorite-detail-pane .contacts-reference-phone-actions { display: none; }
+.contacts-favorite-detail-pane .contacts-reference-phone-section > .contacts-reference-section-header { display: none; }
+.contacts-detail-footer { min-height: 72px; padding-bottom: 18px; background: var(--app-bg); }
+.contacts-detail-footer button { min-width: 64px; }
+
+.contacts-wide-placeholder,
+.contacts-master-pane {
+  display: none;
+}
+
+/* A folded detail is a bounded viewport, not an intrinsically tall document. */
+.contacts-detail-pane { height: 100%; min-height: 0; overflow: hidden; }
+
+.contacts-reference-row button { gap: 14px; min-width: 0; }
+.contacts-reference-row-avatar { display: grid; place-items: center; flex: 0 0 44px; width: 44px; height: 44px; border-radius: 50%; background: #a8afc0; color: #fff; font-size: 22px; }
+.contacts-reference-row-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.contacts-reference-row-copy { min-width: 0; }
+.contacts-reference-row button[aria-current="page"] { background: color-mix(in srgb, var(--app-text, #111827) 9%, transparent); }
+.contacts-reference-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; background: transparent; border-radius: 0; }
+.contacts-reference-actions > div { display: none; }
+.contacts-reference-actions > button { min-width: 0; min-height: 82px; border-radius: 22px; background: var(--app-surface, #fff); flex-direction: column-reverse; justify-content: center; gap: 9px; padding: 12px; }
+.contacts-reference-actions > button:disabled { opacity: .45; }
+.contacts-reference-actions > button > span:last-child > span:last-child { display: none; }
+.contacts-reference-detail .contacts-reference-name { overflow-wrap: anywhere; }
+.contacts-reference-fact { min-width: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.contacts-reference-organization { align-self: stretch; max-width: 100%; }
+.contacts-dialpad-panel { max-height: calc(100% - 96px); overflow-y: auto; }
+.contacts-dialpad-number { overflow-wrap: anywhere; min-width: 0; }
+.contacts-call-row { gap: 14px; }
+.contacts-call-avatar { width: 46px; height: 46px; flex: 0 0 46px; display: grid; place-items: center; border-radius: 50%; background: linear-gradient(145deg, #bec7d8, #9ea8bd); color: #fff; font-size: 21px; }
+.contacts-call-copy { align-self: center; }
+.contacts-call-info { color: #59616d; }
+.contacts-dialpad-context { display: none; }
+
+.contacts-delete-backdrop { position: absolute; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; padding: 24px; background: #0006; }
+.contacts-delete-dialog { width: min(100%, 400px); max-height: 100%; overflow-y: auto; border-radius: 24px; padding: 24px; background: var(--app-surface, #fff); color: var(--app-text, #111827); overflow-wrap: anywhere; }
+.contacts-delete-dialog h2 { font-size: 20px; font-weight: 600; margin-bottom: 16px; }
+.contacts-delete-dialog p { margin-bottom: 8px; }
+.contacts-delete-buttons { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; margin-top: 24px; }
+.contacts-delete-buttons button { padding: 12px 20px; border-radius: 20px; background: color-mix(in srgb, var(--app-text, #111827) 6%, transparent); }
+.contacts-delete-buttons button:last-child { color: #c62828; }
+.contacts-delete-buttons button:disabled { opacity: .45; }
+.contacts-sms-picker-scrim { position: absolute; inset: 0; width: 100%; border: 0; background: transparent; }
+.contacts-sms-number-picker { position: relative; min-width: 0; box-sizing: border-box; }
+.contacts-sms-number-choice, .contacts-sms-number-cancel { display: block; width: 100%; min-height: 48px; padding: 12px; border-radius: 14px; text-align: left; color: inherit; background: color-mix(in srgb, var(--app-text, #111827) 5%, transparent); margin-top: 10px; overflow-wrap: anywhere; }
+.contacts-sms-number-choice span, .contacts-sms-number-choice small { display: block; }
+.contacts-sms-number-choice small { opacity: .65; margin-top: 4px; }
+.contacts-sms-number-choice:disabled { opacity: .45; }
+.contacts-sms-number-cancel { text-align: center; }
+
+@container (min-width: 600px) {
+  .contacts-reference-avatar { width: 112px; height: 112px; font-size: 40px; }
+  .contacts-reference-name { font-size: 26px; margin-block: 16px 8px; }
+  .contacts-home-shell,
+  .contacts-detail-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .contacts-favorite-detail-shell { display: flex; flex-direction: column; }
+  .contacts-favorite-detail-shell .contacts-favorite-detail-pane { width: 100%; }
+
+  .contacts-route-pane,
+  .contacts-master-pane {
+    display: block;
+    min-width: 0;
+    min-height: 0;
+    border-right: 1px solid color-mix(in srgb, var(--app-text, #111827) 9%, transparent);
+    overflow: hidden;
+  }
+
+  .contacts-detail-pane {
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .contacts-wide-placeholder {
+    display: flex;
+    min-width: 0;
+    min-height: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 32px;
+    color: #9ca3af;
+    background:
+      radial-gradient(circle at 50% 38%, rgba(59, 130, 246, 0.06), transparent 34%),
+      var(--app-bg, #f7f7f8);
+    text-align: center;
+  }
+
+  .contacts-wide-placeholder-icon {
+    position: relative;
+    width: 74px;
+    height: 58px;
+    margin-bottom: 18px;
+  }
+
+  .contacts-wide-placeholder-icon span {
+    position: absolute;
+    width: 44px;
+    height: 36px;
+    border-radius: 50%;
+    background: #dfe5ec;
+  }
+
+  .contacts-wide-placeholder-icon span::after {
+    content: '';
+    position: absolute;
+    right: 5px;
+    bottom: -4px;
+    width: 12px;
+    height: 12px;
+    background: inherit;
+    transform: rotate(35deg);
+    border-radius: 2px;
+  }
+
+  .contacts-wide-placeholder-icon span:first-child {
+    left: 2px;
+    top: 2px;
+  }
+
+  .contacts-wide-placeholder-icon span:last-child {
+    right: 2px;
+    bottom: 2px;
+    background: #cfd8e3;
+  }
+
+  .contacts-wide-placeholder-title {
+    color: var(--app-text, #1f2937);
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .contacts-wide-placeholder-subtitle {
+    max-width: 270px;
+    margin-top: 7px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .contacts-home-shell > .absolute.left-0.right-0.bottom-0 {
+    grid-column: 1 / -1;
+  }
+
+  .contacts-call-row { min-height: 78px; padding-block: 9px; }
+  .contacts-call-avatar { width: 48px; height: 48px; flex-basis: 48px; }
+  .contacts-call-name { font-size: 17px; font-weight: 500; }
+  .contacts-call-meta { margin-top: 2px; font-size: 12px; gap: 6px; }
+  .contacts-call-info { width: 22px; height: 22px; }
+
+  .contacts-home-shell[data-dialpad-open="true"] .contacts-wide-placeholder { visibility: hidden; }
+  .contacts-home-shell[data-favorites="true"] { grid-template-columns: minmax(0, 1fr); }
+  .contacts-home-shell[data-favorites="true"] .contacts-wide-placeholder { display: none; }
+  .contacts-home-shell[data-favorites="true"] .contacts-route-pane { border-right: 0; }
+  .contacts-home-shell[data-favorites="true"] .contacts-reference-row button { padding-inline: 34px; }
+  .contacts-home-shell[data-favorites="true"] .contacts-reference-row-avatar { width: 48px; height: 48px; flex-basis: 48px; }
+  .contacts-dialpad-owner {
+    position: relative;
+    inset: auto;
+    z-index: 30;
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    background: var(--app-surface, #fff);
+  }
+  .contacts-dialpad-backdrop { display: none; }
+  .contacts-dialpad-panel {
+    inset: 0 0 86px 0;
+    max-height: none;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .contacts-dialpad-display { flex: 0 0 auto; padding-top: clamp(78px, 14vh, 132px); }
+  .contacts-dialpad-display .contacts-dialpad-number { font-size: 32px; letter-spacing: .08em; }
+  .contacts-dialpad-delete-folded { display: none; }
+  .contacts-dialpad-keys { flex: 1 1 auto; display: flex; align-items: flex-end; padding: 20px 56px 18px; }
+  .contacts-dialpad-keys > div { width: 100%; row-gap: clamp(13px, 2.2vh, 22px); column-gap: 54px; }
+  .contacts-dialpad-keys button { height: clamp(48px, 6.4vh, 62px); }
+  .contacts-dialpad-keys button > div:first-child { font-size: 29px; font-weight: 500; }
+  .contacts-dialpad-actions { display: grid; grid-template-columns: 1fr minmax(132px, 164px) 1fr; align-items: center; padding: 0 34px 22px; }
+  .contacts-dialpad-menu,
+  .contacts-dialpad-call-secondary,
+  .contacts-dialpad-more { display: none; }
+  .contacts-dialpad-call-primary { grid-column: 2; width: 100%; height: 48px; }
+  .contacts-dialpad-delete-wide { display: flex; grid-column: 3; justify-self: end; }
+
+  .contacts-home-shell[data-dialpad-seeded="true"] .contacts-calls-directory { display: none !important; }
+  .contacts-home-shell[data-dialpad-seeded="true"] .contacts-dialpad-context { display: block; }
+  .contacts-dialpad-unknown { padding: 78px 28px 0; }
+  .contacts-dialpad-unknown button { display: flex; align-items: center; gap: 20px; width: 100%; min-height: 74px; color: var(--app-text); text-align: left; }
+  .contacts-dialpad-unknown button:not(:last-child) span { border-bottom: 1px solid rgba(0,0,0,.08); }
+  .contacts-dialpad-unknown button span { display: flex; align-items: center; align-self: stretch; flex: 1; font-size: 17px; }
+  .contacts-dialpad-unknown button:disabled { opacity: .45; cursor: not-allowed; }
+
+  .contacts-detail-pane .contacts-detail-back { visibility: hidden; }
+  .contacts-detail-pane .contacts-reference-avatar { width: 118px; height: 118px; color: #fff; background: linear-gradient(145deg, #bec7d8, #9ea8bd) !important; }
+  .contacts-detail-pane .contacts-reference-name { font-size: 30px; font-weight: 500; margin-top: 14px; }
+  .contacts-detail-pane .contacts-reference-actions > button { min-height: 92px; border-radius: 18px; }
+  .contacts-detail-pane .contacts-reference-phone-actions { display: none; }
+  .contacts-detail-pane .contacts-reference-section-header { display: none; }
+  .contacts-detail-pane .contacts-reference-ringtone { border-radius: 18px; }
+}
+
+.contacts-editor { position: relative; height: 100%; min-height: 0; overflow: hidden; background: var(--app-bg); color: var(--app-text); padding-top: 40px; }
+.contacts-editor-owner { height: 100%; min-height: 0; display: flex; flex-direction: column; }
+.contacts-editor-header { display: flex; align-items: center; gap: 12px; min-height: 64px; padding: 8px 16px; flex-shrink: 0; }
+.contacts-editor-header h1 { flex: 1; min-width: 0; font-size: 19px; font-weight: 600; text-align: center; overflow-wrap: anywhere; }
+.contacts-editor-header button { display: grid; place-items: center; width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; }
+.contacts-editor-header button:disabled { opacity: .4; }
+.contacts-editor-body { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 4px 16px 32px; scroll-padding-block: 20px; }
+.contacts-editor-body fieldset { min-width: 0; padding: 0; border: 0; }
+.contacts-editor-body fieldset:disabled { opacity: .55; }
+.contacts-editor-avatar { width: 76px; height: 76px; margin: 8px auto 20px; display: grid; place-items: center; border-radius: 50%; background: #a8afc0; color: white; font-size: 32px; }
+.contacts-editor-card { margin-bottom: 14px; border-radius: 22px; background: var(--app-surface); padding: 8px 18px; }
+.contacts-editor-card h2 { padding: 10px 0 8px; font-size: 15px; font-weight: 600; }
+.contacts-editor-field { display: flex; gap: 14px; align-items: center; padding: 14px 0; min-width: 0; }
+.contacts-editor-field > span { flex: 0 0 76px; font-size: 14px; color: var(--app-text-muted, #6b7280); }
+.contacts-editor-field input, .contacts-editor-field textarea { flex: 1; width: 0; min-width: 0; padding: 4px; border-radius: 4px; outline-offset: 3px; background: transparent; color: inherit; font-size: 16px; }
+.contacts-editor-field textarea { resize: vertical; min-height: 80px; }
+.contacts-editor-field + .contacts-editor-field { border-top: 1px solid color-mix(in srgb, var(--app-text) 7%, transparent); }
+.contacts-editor-entry + .contacts-editor-entry { border-top: 1px solid color-mix(in srgb, var(--app-text) 12%, transparent); }
+.contacts-editor-entry-actions { display: flex; gap: 12px; justify-content: space-between; flex-wrap: wrap; padding-bottom: 10px; }
+.contacts-editor-entry-actions button, .contacts-editor-add { min-height: 44px; padding: 8px 0; color: var(--app-primary); font-size: 14px; }
+.contacts-editor-entry-actions button:last-child { color: #c62828; }
+.contacts-editor-alert { margin: 12px 0; padding: 14px; border-radius: 14px; background: color-mix(in srgb, #c62828 8%, var(--app-surface)); color: #c62828; overflow-wrap: anywhere; }
+.contacts-menu-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+.contacts-menu-actions button { min-height: 48px; border-radius: 18px; background: color-mix(in srgb, var(--app-text) 5%, transparent); }
+.contacts-menu-actions button:disabled { opacity: .4; }
+@container (min-width: 600px) {
+  .contacts-editor-header, .contacts-editor-body { width: min(100%, 640px); margin-inline: auto; }
+  .contacts-editor-body { width: min(100%, 640px); }
+}
+
+/* Search dims only the directory list, never the selected contact detail. */
+.contacts-directory-search-scrim { position: absolute; inset: 0; z-index: 10; background: rgba(0, 0, 0, .2); pointer-events: none; }
+.contacts-directory-list-region[data-directory] > .absolute { top: 0; bottom: 0; }
+
+.contacts-directory-detail-tabs { display: none; }
+.contacts-directory-fab { bottom: 24px; }
+@container (min-width: 600px) {
+  .contacts-directory-detail-shell:not(.contacts-favorite-detail-shell) { grid-template-rows: minmax(0, 1fr) 86px; }
+  .contacts-directory-detail-shell[data-directory-searching]:not(.contacts-favorite-detail-shell) { grid-template-rows: minmax(0, 1fr); }
+  .contacts-directory-detail-shell:not([data-directory-searching]) .contacts-directory-detail-tabs { display: block; position: relative; grid-column: 1 / -1; }
+}
+
+/* One accessible, draggable index target keeps all 27 visual entries within the pane. */
+.contacts-alphabet-index { touch-action: none; width: 32px; }
+.contacts-alphabet-letter { display: flex; flex: 1 1 0; min-height: 0; max-height: 20px; width: 20px; align-items: center; justify-content: center; color: #9ca3af; font-size: 11px; font-weight: 600; }
+.contacts-alphabet-letter.is-active { color: #18c765; background: rgb(24 199 101 / 10%); border-radius: 50%; }
+
+/* A short split pane must keep the primary contact actions above its own tabs. */
+@container (min-width: 600px) and (max-height: 520px) {
+  .contacts-detail-pane .contacts-reference-avatar { width: 64px; height: 64px; }
+  .contacts-detail-pane .contacts-reference-avatar > svg { width: 38px; height: 38px; }
+  .contacts-detail-pane .contacts-reference-name { margin-top: 6px; margin-bottom: 0; font-size: 20px; }
+  .contacts-detail-pane .contacts-reference-detail [data-scroll-container="main"] > div { padding-top: 0; }
+  .contacts-detail-pane .contacts-reference-detail [data-scroll-container="main"] > div > div:has(> .contacts-reference-actions) { margin-top: 8px; }
+  .contacts-detail-pane .contacts-reference-actions > button { min-height: 60px; gap: 4px; padding: 6px; }
+}
+
+/* Very shallow split panes need room for both actions and the navigation bar. */
+@container (min-width: 600px) and (max-height: 340px) {
+  .contacts-directory-detail-shell:not([data-directory-searching]):not(.contacts-favorite-detail-shell) { grid-template-rows: minmax(0, 1fr) 56px; }
+  .contacts-directory-detail-tabs > div > div:first-child { height: 44px; }
+  .contacts-directory-detail-tabs > div > div:last-child { height: 12px; }
+  .contacts-detail-pane .contacts-reference-avatar { width: 40px; height: 40px; }
+  .contacts-detail-pane .contacts-reference-avatar > svg { width: 26px; height: 26px; }
+  .contacts-detail-pane .contacts-reference-name { margin-top: 2px; font-size: 16px; line-height: 20px; }
+  .contacts-detail-pane .contacts-reference-actions > button { min-height: 44px; gap: 0; padding: 2px; }
+}
+
+/* Local dialpad-to-existing-contact picker; native screen details are not yet verified. */
+.contacts-existing-picker { height: 100%; min-height: 0; display: flex; flex-direction: column; padding-top: 40px; background: var(--app-bg); color: var(--app-text); }
+.contacts-existing-picker-header { display: flex; align-items: center; gap: 12px; padding: 8px 16px; min-height: 64px; }
+.contacts-existing-picker-header button { display: grid; place-items: center; flex: none; width: 44px; height: 44px; border-radius: 50%; }
+.contacts-existing-picker-header h1 { font-size: 19px; font-weight: 600; }
+.contacts-existing-picker-search { display: flex; align-items: center; gap: 10px; margin: 0 16px 12px; padding: 0 16px; height: 44px; flex: none; border-radius: 24px; background: var(--app-surface); color: var(--app-text-muted, #6b7280); }
+.contacts-existing-picker-search input { width: 100%; min-width: 0; background: transparent; color: var(--app-text); outline-offset: 3px; }
+.contacts-existing-picker-list { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 0 16px 24px; }
+.contacts-existing-picker-list > button { display: flex; align-items: center; gap: 14px; width: 100%; min-height: 64px; text-align: left; }
+.contacts-existing-picker-list > button + button { border-top: 1px solid color-mix(in srgb, var(--app-text) 8%, transparent); }
+.contacts-existing-picker-avatar { display: grid; place-items: center; flex: none; width: 42px; height: 42px; border-radius: 50%; background: #a8afc0; color: white; }
+.contacts-existing-picker-name { min-width: 0; overflow-wrap: anywhere; }
+.contacts-existing-picker-list > p { padding: 32px; text-align: center; color: var(--app-text-muted, #6b7280); }
+@container (min-width: 600px) { .contacts-existing-picker-header, .contacts-existing-picker-list { width: min(100%, 640px); margin-inline: auto; } .contacts-existing-picker-search { width: min(calc(100% - 32px), 608px); margin-inline: auto; } }

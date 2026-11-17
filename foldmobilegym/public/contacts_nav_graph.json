@@ -1,0 +1,1991 @@
+{
+  "app": "contacts",
+  "appDir": "system\\Contacts",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 20,
+  "transitionCount": 33,
+  "nodes": [
+    {
+      "id": "/?number=:number",
+      "routePath": "/",
+      "uiStateId": "calls.base",
+      "component": "CallsPage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主滚动区域"
+        },
+        {
+          "name": "dialpad",
+          "direction": "vertical",
+          "description": "拨号盘"
+        }
+      ],
+      "description": "通话-通话记录列表",
+      "search": {},
+      "queryParams": {
+        "number": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/?dialpad=true&number=:number",
+      "routePath": "/",
+      "uiStateId": "calls.dialpad",
+      "component": "CallsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主滚动区域"
+        },
+        {
+          "name": "dialpad",
+          "direction": "vertical",
+          "description": "拨号盘"
+        }
+      ],
+      "description": "通话-拨号盘浮层",
+      "search": {
+        "dialpad": "true"
+      },
+      "queryParams": {
+        "number": "string"
+      },
+      "actions": [
+        {
+          "id": "contacts.dialpad.digit.append",
+          "label": "输入拨号字符",
+          "behavior": "other",
+          "paramsSchema": {
+            "digit": "string"
+          }
+        },
+        {
+          "id": "contacts.dialpad.digit.remove",
+          "label": "删除末尾拨号字符",
+          "behavior": "other"
+        },
+        {
+          "id": "contacts.dialpad.sms.open",
+          "label": "给拨号号码写短信",
+          "behavior": "other",
+          "paramsSchema": {
+            "number": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/contacts",
+      "routePath": "/contacts",
+      "uiStateId": "phoneContacts.base",
+      "component": "ContactsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主滚动区域"
+        }
+      ],
+      "description": "联系人-列表",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/contacts?fav=true",
+      "routePath": "/contacts",
+      "uiStateId": "phoneContacts.favorites",
+      "component": "ContactsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主滚动区域"
+        }
+      ],
+      "description": "联系人-收藏筛选",
+      "search": {
+        "fav": "true"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/contacts/choose-existing?from=:from&number=:number",
+      "routePath": "/contacts/choose-existing",
+      "uiStateId": "chooseExisting.base",
+      "component": "ChooseExistingContactPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主滚动区域"
+        }
+      ],
+      "description": "选择要添加号码的联系人",
+      "search": {},
+      "queryParams": {
+        "number": "string",
+        "from": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/calling?number=:number&slot=:slot",
+      "routePath": "/calling",
+      "uiStateId": "simulatedCall.base",
+      "component": "SimulatedCallPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [],
+      "description": "本地模拟呼叫界面，不进行真实通话",
+      "search": {},
+      "queryParams": {
+        "number": "string",
+        "slot": "number"
+      },
+      "actions": []
+    },
+    {
+      "id": "/search?q=:q",
+      "routePath": "/search",
+      "uiStateId": "search.base",
+      "component": "SearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主滚动区域"
+        }
+      ],
+      "description": "联系人-搜索",
+      "search": {},
+      "queryParams": {
+        "q": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/contact/:contactId?fav=:fav&q=:q",
+      "routePath": "/contact/:contactId",
+      "uiStateId": "contactDetail.base",
+      "component": "ContactMasterDetailRoute",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "contactId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主滚动区域"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态联系人目录"
+        },
+        {
+          "name": "confirmation",
+          "direction": "vertical",
+          "description": "删除确认"
+        },
+        {
+          "name": "menu",
+          "direction": "vertical",
+          "description": "联系人操作"
+        },
+        {
+          "name": "smsNumbers",
+          "direction": "vertical",
+          "description": "Choose an original contact phone for a local message"
+        }
+      ],
+      "description": "联系人详情",
+      "search": {},
+      "queryParams": {
+        "q": "string",
+        "fav": "string"
+      },
+      "actions": [
+        {
+          "id": "contacts.contact.sms.open",
+          "label": "打开当前号码的短信编辑器",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "contactId": "string",
+            "number": "string"
+          }
+        },
+        {
+          "id": "contacts.contact.email.open",
+          "label": "打开本地邮件编辑器",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "contactId": "string",
+            "email": "string"
+          }
+        },
+        {
+          "id": "contacts.contact.favorite.toggle",
+          "label": "切换当前联系人收藏",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "contactId": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/contact/:contactId?modal=qr&fav=:fav&q=:q",
+      "routePath": "/contact/:contactId",
+      "uiStateId": "contactDetail.qr",
+      "component": "ContactMasterDetailRoute",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "contactId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主滚动区域"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态联系人目录"
+        },
+        {
+          "name": "confirmation",
+          "direction": "vertical",
+          "description": "删除确认"
+        },
+        {
+          "name": "menu",
+          "direction": "vertical",
+          "description": "联系人操作"
+        },
+        {
+          "name": "smsNumbers",
+          "direction": "vertical",
+          "description": "Choose an original contact phone for a local message"
+        }
+      ],
+      "description": "联系人二维码",
+      "search": {
+        "modal": "qr"
+      },
+      "queryParams": {
+        "q": "string",
+        "fav": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/contact/:contactId?menu=more&fav=:fav&q=:q",
+      "routePath": "/contact/:contactId",
+      "uiStateId": "contactDetail.menu",
+      "component": "ContactMasterDetailRoute",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "contactId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主滚动区域"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态联系人目录"
+        },
+        {
+          "name": "confirmation",
+          "direction": "vertical",
+          "description": "删除确认"
+        },
+        {
+          "name": "menu",
+          "direction": "vertical",
+          "description": "联系人操作"
+        },
+        {
+          "name": "smsNumbers",
+          "direction": "vertical",
+          "description": "Choose an original contact phone for a local message"
+        }
+      ],
+      "description": "联系人操作菜单",
+      "search": {
+        "menu": "more"
+      },
+      "queryParams": {
+        "q": "string",
+        "fav": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/contact/:contactId?modal=sms&fav=:fav&q=:q",
+      "routePath": "/contact/:contactId",
+      "uiStateId": "contactDetail.smsPicker",
+      "component": "ContactMasterDetailRoute",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "contactId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主滚动区域"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态联系人目录"
+        },
+        {
+          "name": "confirmation",
+          "direction": "vertical",
+          "description": "删除确认"
+        },
+        {
+          "name": "menu",
+          "direction": "vertical",
+          "description": "联系人操作"
+        },
+        {
+          "name": "smsNumbers",
+          "direction": "vertical",
+          "description": "Choose an original contact phone for a local message"
+        }
+      ],
+      "description": "Choose a phone before opening SMS",
+      "search": {
+        "modal": "sms"
+      },
+      "queryParams": {
+        "q": "string",
+        "fav": "string"
+      },
+      "actions": [
+        {
+          "id": "contacts.contact.sms.choose",
+          "label": "Open a local composer for this original phone",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "contactId": "string",
+            "phoneId": "string",
+            "number": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/contact/:contactId?modal=delete&fav=:fav&q=:q",
+      "routePath": "/contact/:contactId",
+      "uiStateId": "contactDetail.delete",
+      "component": "ContactMasterDetailRoute",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "contactId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主滚动区域"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态联系人目录"
+        },
+        {
+          "name": "confirmation",
+          "direction": "vertical",
+          "description": "删除确认"
+        },
+        {
+          "name": "menu",
+          "direction": "vertical",
+          "description": "联系人操作"
+        },
+        {
+          "name": "smsNumbers",
+          "direction": "vertical",
+          "description": "Choose an original contact phone for a local message"
+        }
+      ],
+      "description": "确认删除当前联系人",
+      "search": {
+        "modal": "delete"
+      },
+      "queryParams": {
+        "q": "string",
+        "fav": "string"
+      },
+      "actions": [
+        {
+          "id": "contacts.contact.delete.submit",
+          "label": "确认删除当前联系人",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "contactId": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/call/:callLogId",
+      "routePath": "/call/:callLogId",
+      "uiStateId": "callDetail.base",
+      "component": "CallMasterDetailRoute",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "callLogId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主滚动区域"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态通话目录"
+        }
+      ],
+      "description": "通话详情",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "contacts.call.sms.open",
+          "label": "给通话记录号码写短信",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "callLogId": "string",
+            "number": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/contacts/new?number=:number",
+      "routePath": "/contacts/new",
+      "uiStateId": "contactNew.base",
+      "component": "NewContactPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主滚动区域"
+        },
+        {
+          "name": "discard",
+          "direction": "vertical",
+          "description": "放弃编辑确认"
+        }
+      ],
+      "description": "新建联系人",
+      "search": {},
+      "queryParams": {
+        "number": "string"
+      },
+      "actions": [
+        {
+          "id": "contacts.new.field.input",
+          "label": "编辑联系人字段",
+          "behavior": "input",
+          "paramsSchema": {
+            "field": "string",
+            "value": "string"
+          }
+        },
+        {
+          "id": "contacts.new.phone.add",
+          "label": "添加电话号码",
+          "behavior": "other"
+        },
+        {
+          "id": "contacts.new.phone.remove",
+          "label": "移除电话号码",
+          "behavior": "other",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "contacts.new.phone.primary",
+          "label": "设置默认电话",
+          "behavior": "other",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "contacts.new.email.add",
+          "label": "添加邮箱",
+          "behavior": "other"
+        },
+        {
+          "id": "contacts.new.email.remove",
+          "label": "移除邮箱",
+          "behavior": "other",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "contacts.new.email.primary",
+          "label": "设置默认邮箱",
+          "behavior": "other",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "contacts.new.save.submit",
+          "label": "保存联系人",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/contacts/new?modal=discard&number=:number",
+      "routePath": "/contacts/new",
+      "uiStateId": "contactNew.discard",
+      "component": "NewContactPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主滚动区域"
+        },
+        {
+          "name": "discard",
+          "direction": "vertical",
+          "description": "放弃编辑确认"
+        }
+      ],
+      "description": "放弃新建联系人",
+      "search": {
+        "modal": "discard"
+      },
+      "queryParams": {
+        "number": "string"
+      },
+      "actions": [
+        {
+          "id": "contacts.new.discard.submit",
+          "label": "放弃新建联系人",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/contact/:contactId/edit?fav=:fav&from=:from&number=:number&q=:q",
+      "routePath": "/contact/:contactId/edit",
+      "uiStateId": "contactEdit.base",
+      "component": "NewContactPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "contactId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主滚动区域"
+        },
+        {
+          "name": "discard",
+          "direction": "vertical",
+          "description": "放弃编辑确认"
+        }
+      ],
+      "description": "编辑联系人",
+      "search": {},
+      "queryParams": {
+        "fav": "string",
+        "q": "string",
+        "from": "string",
+        "number": "string"
+      },
+      "actions": [
+        {
+          "id": "contacts.edit.field.input",
+          "label": "编辑联系人字段",
+          "behavior": "input",
+          "paramsSchema": {
+            "field": "string",
+            "value": "string"
+          }
+        },
+        {
+          "id": "contacts.edit.phone.add",
+          "label": "添加电话号码",
+          "behavior": "other"
+        },
+        {
+          "id": "contacts.edit.phone.remove",
+          "label": "移除电话号码",
+          "behavior": "other",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "contacts.edit.phone.primary",
+          "label": "设置默认电话",
+          "behavior": "other",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "contacts.edit.email.add",
+          "label": "添加邮箱",
+          "behavior": "other"
+        },
+        {
+          "id": "contacts.edit.email.remove",
+          "label": "移除邮箱",
+          "behavior": "other",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "contacts.edit.email.primary",
+          "label": "设置默认邮箱",
+          "behavior": "other",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "contacts.edit.save.submit",
+          "label": "保存联系人",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/contact/:contactId/edit?modal=discard&fav=:fav&from=:from&number=:number&q=:q",
+      "routePath": "/contact/:contactId/edit",
+      "uiStateId": "contactEdit.discard",
+      "component": "NewContactPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "contactId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主滚动区域"
+        },
+        {
+          "name": "discard",
+          "direction": "vertical",
+          "description": "放弃编辑确认"
+        }
+      ],
+      "description": "放弃联系人更改",
+      "search": {
+        "modal": "discard"
+      },
+      "queryParams": {
+        "fav": "string",
+        "q": "string",
+        "from": "string",
+        "number": "string"
+      },
+      "actions": [
+        {
+          "id": "contacts.edit.discard.submit",
+          "label": "放弃联系人更改",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/settings/calls",
+      "routePath": "/settings/calls",
+      "uiStateId": "dialerSettings.base",
+      "component": "PhoneSettingsHomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主滚动区域"
+        }
+      ],
+      "description": "电话设置-通话",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/settings/contacts",
+      "routePath": "/settings/contacts",
+      "uiStateId": "contactsSettings.base",
+      "component": "PhoneSettingsHomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主滚动区域"
+        }
+      ],
+      "description": "电话设置-联系人",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/settings/page/:pageId",
+      "routePath": "/settings/page/:pageId",
+      "uiStateId": "phonePref.base",
+      "component": "PhonePreferenceScreenPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "pageId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主滚动区域"
+        }
+      ],
+      "description": "电话设置-偏好页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "/call/:callLogId",
+      "sourceNodeId": "/call/:callLogId",
+      "target": "/?dialpad=true&number=:number",
+      "targetNodeId": "/?dialpad=true&number=:number",
+      "id": "call.dial.open",
+      "label": "打开通话记录号码的拨号盘",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "dialpad": "true"
+      },
+      "searchParams": {
+        "number": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "call",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contact/:contactId?fav=:fav&q=:q",
+      "sourceNodeId": "/contact/:contactId?fav=:fav&q=:q",
+      "target": "/?dialpad=true&number=:number",
+      "targetNodeId": "/?dialpad=true&number=:number",
+      "id": "contact.dial.open",
+      "label": "打开当前号码的拨号盘",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "dialpad": "true"
+      },
+      "searchParams": {
+        "number": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/contact/:contactId",
+        "search": {
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "call",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?dialpad=true&number=:number",
+      "sourceNodeId": "/?dialpad=true&number=:number",
+      "target": "/contacts/new?number=:number",
+      "targetNodeId": "/contacts/new?number=:number",
+      "id": "dialpad.contact.new",
+      "label": "从拨号盘新建联系人",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "number": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "dialpad": "true"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "add",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?dialpad=true&number=:number",
+      "sourceNodeId": "/?dialpad=true&number=:number",
+      "target": "/contacts/choose-existing?from=:from&number=:number",
+      "targetNodeId": "/contacts/choose-existing?from=:from&number=:number",
+      "id": "dialpad.contact.existing",
+      "label": "从拨号盘选择已有联系人",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "number": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "dialpad": "true"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "contact",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contacts/choose-existing?from=:from&number=:number",
+      "sourceNodeId": "/contacts/choose-existing?from=:from&number=:number",
+      "target": "/contact/:contactId/edit?fav=:fav&from=:from&number=:number&q=:q",
+      "targetNodeId": "/contact/:contactId/edit?fav=:fav&from=:from&number=:number&q=:q",
+      "id": "contact.existing.edit",
+      "label": "编辑已有联系人的新增号码",
+      "type": "navigation",
+      "mode": "push",
+      "search": {
+        "from": "dialpad"
+      },
+      "searchParams": {
+        "number": "string"
+      },
+      "params": {
+        "contactId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "contact",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contact/:contactId/edit?fav=:fav&from=:from&number=:number&q=:q",
+      "sourceNodeId": "/contact/:contactId/edit?fav=:fav&from=:from&number=:number&q=:q",
+      "target": "/contacts/choose-existing?from=:from&number=:number",
+      "targetNodeId": "/contacts/choose-existing?from=:from&number=:number",
+      "id": "contact.existing.picker.return",
+      "label": "返回选择已有联系人",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {
+        "number": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "back",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?dialpad=true&number=:number",
+      "sourceNodeId": "/?dialpad=true&number=:number",
+      "target": "/calling?number=:number&slot=:slot",
+      "targetNodeId": "/calling?number=:number&slot=:slot",
+      "id": "dialpad.simulatedCall.open",
+      "label": "打开本地模拟呼叫界面",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "number": "string",
+        "slot": "number"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "dialpad": "true"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "call",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contacts",
+      "sourceNodeId": "/contacts",
+      "target": "/?number=:number",
+      "targetNodeId": "/?number=:number",
+      "id": "tab.calls",
+      "label": "切换到通话",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "tab_calls",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contact/:contactId?fav=:fav&q=:q",
+      "sourceNodeId": "/contact/:contactId?fav=:fav&q=:q",
+      "target": "/?number=:number",
+      "targetNodeId": "/?number=:number",
+      "id": "tab.calls",
+      "label": "切换到通话",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/contact/:contactId",
+        "search": {
+          "menu": null,
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "tab_calls",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/call/:callLogId",
+      "sourceNodeId": "/call/:callLogId",
+      "target": "/?number=:number",
+      "targetNodeId": "/?number=:number",
+      "id": "tab.calls",
+      "label": "切换到通话",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "tab_calls",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?number=:number",
+      "sourceNodeId": "/?number=:number",
+      "target": "/contacts",
+      "targetNodeId": "/contacts",
+      "id": "tab.contacts",
+      "label": "切换到联系人",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "dialpad": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "tab_contacts",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contact/:contactId?fav=:fav&q=:q",
+      "sourceNodeId": "/contact/:contactId?fav=:fav&q=:q",
+      "target": "/contacts",
+      "targetNodeId": "/contacts",
+      "id": "tab.contacts",
+      "label": "切换到联系人",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/contact/:contactId",
+        "search": {
+          "menu": null,
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "tab_contacts",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/call/:callLogId",
+      "sourceNodeId": "/call/:callLogId",
+      "target": "/contacts",
+      "targetNodeId": "/contacts",
+      "id": "tab.contacts",
+      "label": "切换到联系人",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "tab_contacts",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?number=:number",
+      "sourceNodeId": "/?number=:number",
+      "target": "/contacts?fav=true",
+      "targetNodeId": "/contacts?fav=true",
+      "id": "tab.favorites",
+      "label": "切换到个人收藏",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "fav": "true"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "dialpad": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "tab_favorites",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contacts",
+      "sourceNodeId": "/contacts",
+      "target": "/contacts?fav=true",
+      "targetNodeId": "/contacts?fav=true",
+      "id": "tab.favorites",
+      "label": "切换到个人收藏",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "fav": "true"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "tab_favorites",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contact/:contactId?fav=:fav&q=:q",
+      "sourceNodeId": "/contact/:contactId?fav=:fav&q=:q",
+      "target": "/contacts?fav=true",
+      "targetNodeId": "/contacts?fav=true",
+      "id": "tab.favorites",
+      "label": "切换到个人收藏",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "fav": "true"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/contact/:contactId",
+        "search": {
+          "menu": null,
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "tab_favorites",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/call/:callLogId",
+      "sourceNodeId": "/call/:callLogId",
+      "target": "/contacts?fav=true",
+      "targetNodeId": "/contacts?fav=true",
+      "id": "tab.favorites",
+      "label": "切换到个人收藏",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "fav": "true"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "tab_favorites",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?number=:number",
+      "sourceNodeId": "/?number=:number",
+      "target": "/?dialpad=true&number=:number",
+      "targetNodeId": "/?dialpad=true&number=:number",
+      "id": "dialpad.open",
+      "label": "打开拨号盘",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "dialpad": "true"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "dialpad": null
+        }
+      },
+      "uiMeta": {
+        "placement": "fab",
+        "icon": "dialpad",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contacts",
+      "sourceNodeId": "/contacts",
+      "target": "/contacts?fav=true",
+      "targetNodeId": "/contacts?fav=true",
+      "id": "contacts.favorites.on",
+      "label": "筛选收藏联系人",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "fav": "true"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "favorite",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contacts",
+      "sourceNodeId": "/contacts",
+      "target": "/contacts/new?number=:number",
+      "targetNodeId": "/contacts/new?number=:number",
+      "id": "contact.new.open",
+      "label": "新建联系人",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "fab",
+        "icon": "add",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contact/:contactId?fav=:fav&q=:q",
+      "sourceNodeId": "/contact/:contactId?fav=:fav&q=:q",
+      "target": "/contacts/new?number=:number",
+      "targetNodeId": "/contacts/new?number=:number",
+      "id": "contact.new.open",
+      "label": "新建联系人",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/contact/:contactId",
+        "search": {
+          "modal": null,
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "fab",
+        "icon": "add",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?number=:number",
+      "sourceNodeId": "/?number=:number",
+      "target": "/search?q=:q",
+      "targetNodeId": "/search?q=:q",
+      "id": "search.open",
+      "label": "打开搜索",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "dialpad": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contacts",
+      "sourceNodeId": "/contacts",
+      "target": "/search?q=:q",
+      "targetNodeId": "/search?q=:q",
+      "id": "search.open",
+      "label": "打开搜索",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contacts",
+      "sourceNodeId": "/contacts",
+      "target": "/contact/:contactId?fav=:fav&q=:q",
+      "targetNodeId": "/contact/:contactId?fav=:fav&q=:q",
+      "id": "contact.open",
+      "label": "打开联系人详情",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "contactId": "string"
+      },
+      "preserveParams": [
+        "fav"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "contact",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?q=:q",
+      "sourceNodeId": "/search?q=:q",
+      "target": "/contact/:contactId?fav=:fav&q=:q",
+      "targetNodeId": "/contact/:contactId?fav=:fav&q=:q",
+      "id": "contact.open",
+      "label": "打开联系人详情",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "contactId": "string"
+      },
+      "preserveParams": [
+        "fav"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "contact",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?number=:number",
+      "sourceNodeId": "/?number=:number",
+      "target": "/call/:callLogId",
+      "targetNodeId": "/call/:callLogId",
+      "id": "call.open",
+      "label": "打开通话详情",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "callLogId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "dialpad": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "call",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contact/:contactId?fav=:fav&q=:q",
+      "sourceNodeId": "/contact/:contactId?fav=:fav&q=:q",
+      "target": "/call/:callLogId",
+      "targetNodeId": "/call/:callLogId",
+      "id": "contact.call.open",
+      "label": "Open the current contact call record",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "callLogId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/contact/:contactId",
+        "search": {
+          "modal": null,
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "call",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contact/:contactId?fav=:fav&q=:q",
+      "sourceNodeId": "/contact/:contactId?fav=:fav&q=:q",
+      "target": "/contact/:contactId?modal=delete&fav=:fav&q=:q",
+      "targetNodeId": "/contact/:contactId?modal=delete&fav=:fav&q=:q",
+      "id": "contact.delete.open",
+      "label": "打开删除联系人确认",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "delete"
+      },
+      "searchParams": {},
+      "params": {
+        "contactId": "string"
+      },
+      "preserveParams": [
+        "fav",
+        "q"
+      ],
+      "fromConstraint": {
+        "path": "/contact/:contactId",
+        "search": {
+          "modal": null,
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "delete",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contact/:contactId?modal=delete&fav=:fav&q=:q",
+      "sourceNodeId": "/contact/:contactId?modal=delete&fav=:fav&q=:q",
+      "target": "/contacts",
+      "targetNodeId": "/contacts",
+      "id": "contact.delete.finish",
+      "label": "删除后返回联系人列表",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "fav"
+      ],
+      "fromConstraint": {
+        "path": "/contact/:contactId",
+        "search": {
+          "modal": "delete"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "delete",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contact/:contactId?fav=:fav&q=:q",
+      "sourceNodeId": "/contact/:contactId?fav=:fav&q=:q",
+      "target": "/contact/:contactId?modal=sms&fav=:fav&q=:q",
+      "targetNodeId": "/contact/:contactId?modal=sms&fav=:fav&q=:q",
+      "id": "contact.sms.picker.open",
+      "label": "Choose a contact phone for a message",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "sms"
+      },
+      "searchParams": {},
+      "params": {
+        "contactId": "string"
+      },
+      "preserveParams": [
+        "fav",
+        "q"
+      ],
+      "fromConstraint": {
+        "path": "/contact/:contactId",
+        "search": {
+          "modal": null,
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "message",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contact/:contactId?fav=:fav&q=:q",
+      "sourceNodeId": "/contact/:contactId?fav=:fav&q=:q",
+      "target": "/contact/:contactId?menu=more&fav=:fav&q=:q",
+      "targetNodeId": "/contact/:contactId?menu=more&fav=:fav&q=:q",
+      "id": "contact.menu.open",
+      "label": "打开联系人操作",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "menu": "more"
+      },
+      "searchParams": {},
+      "params": {
+        "contactId": "string"
+      },
+      "preserveParams": [
+        "fav",
+        "q"
+      ],
+      "fromConstraint": {
+        "path": "/contact/:contactId",
+        "search": {
+          "modal": null,
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "more",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contact/:contactId?fav=:fav&q=:q",
+      "sourceNodeId": "/contact/:contactId?fav=:fav&q=:q",
+      "target": "/contact/:contactId?modal=qr&fav=:fav&q=:q",
+      "targetNodeId": "/contact/:contactId?modal=qr&fav=:fav&q=:q",
+      "id": "contact.qr.open",
+      "label": "显示联系人二维码",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "qr"
+      },
+      "searchParams": {},
+      "params": {
+        "contactId": "string"
+      },
+      "preserveParams": [
+        "fav",
+        "q"
+      ],
+      "fromConstraint": {
+        "path": "/contact/:contactId",
+        "search": {
+          "modal": null,
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "qrcode",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contact/:contactId?fav=:fav&q=:q",
+      "sourceNodeId": "/contact/:contactId?fav=:fav&q=:q",
+      "target": "/contact/:contactId/edit?fav=:fav&from=:from&number=:number&q=:q",
+      "targetNodeId": "/contact/:contactId/edit?fav=:fav&from=:from&number=:number&q=:q",
+      "id": "contact.edit.open",
+      "label": "编辑联系人",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "contactId": "string"
+      },
+      "preserveParams": [
+        "fav",
+        "q"
+      ],
+      "fromConstraint": {
+        "path": "/contact/:contactId",
+        "search": {
+          "modal": null,
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "edit",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contact/:contactId?menu=more&fav=:fav&q=:q",
+      "sourceNodeId": "/contact/:contactId?menu=more&fav=:fav&q=:q",
+      "target": "/contact/:contactId/edit?fav=:fav&from=:from&number=:number&q=:q",
+      "targetNodeId": "/contact/:contactId/edit?fav=:fav&from=:from&number=:number&q=:q",
+      "id": "contact.edit.open",
+      "label": "编辑联系人",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "contactId": "string"
+      },
+      "preserveParams": [
+        "fav",
+        "q"
+      ],
+      "fromConstraint": {
+        "path": "/contact/:contactId",
+        "search": {
+          "modal": null,
+          "menu": "more"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "edit",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contact/:contactId/edit?fav=:fav&from=:from&number=:number&q=:q",
+      "sourceNodeId": "/contact/:contactId/edit?fav=:fav&from=:from&number=:number&q=:q",
+      "target": "/contact/:contactId?fav=:fav&q=:q",
+      "targetNodeId": "/contact/:contactId?fav=:fav&q=:q",
+      "id": "contact.edit.finish",
+      "label": "结束联系人编辑",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "contactId": "string"
+      },
+      "preserveParams": [
+        "fav",
+        "q"
+      ],
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "done",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contacts/new?number=:number",
+      "sourceNodeId": "/contacts/new?number=:number",
+      "target": "/contacts",
+      "targetNodeId": "/contacts",
+      "id": "contact.new.finish",
+      "label": "结束联系人新建",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "done",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contacts/new?number=:number",
+      "sourceNodeId": "/contacts/new?number=:number",
+      "target": "/contacts/new?modal=discard&number=:number",
+      "targetNodeId": "/contacts/new?modal=discard&number=:number",
+      "id": "contact.new.discard.open",
+      "label": "确认放弃新建联系人",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "discard"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "number"
+      ],
+      "fromConstraint": {
+        "path": "/contacts/new",
+        "search": {
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "close",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contact/:contactId/edit?fav=:fav&from=:from&number=:number&q=:q",
+      "sourceNodeId": "/contact/:contactId/edit?fav=:fav&from=:from&number=:number&q=:q",
+      "target": "/contact/:contactId/edit?modal=discard&fav=:fav&from=:from&number=:number&q=:q",
+      "targetNodeId": "/contact/:contactId/edit?modal=discard&fav=:fav&from=:from&number=:number&q=:q",
+      "id": "contact.edit.discard.open",
+      "label": "确认放弃联系人更改",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "discard"
+      },
+      "searchParams": {},
+      "params": {
+        "contactId": "string"
+      },
+      "preserveParams": [
+        "fav",
+        "q",
+        "from",
+        "number"
+      ],
+      "fromConstraint": {
+        "path": "/contact/:contactId/edit",
+        "search": {
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "close",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?number=:number",
+      "sourceNodeId": "/?number=:number",
+      "target": "/settings/calls",
+      "targetNodeId": "/settings/calls",
+      "id": "settings.open.calls",
+      "label": "打开电话设置（通话）",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "dialpad": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "settings",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/contacts",
+      "sourceNodeId": "/contacts",
+      "target": "/settings/contacts",
+      "targetNodeId": "/settings/contacts",
+      "id": "settings.open.contacts",
+      "label": "打开电话设置（联系人）",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "settings",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/settings/calls",
+      "sourceNodeId": "/settings/calls",
+      "target": "/settings/page/:pageId",
+      "targetNodeId": "/settings/page/:pageId",
+      "id": "settings.page.open",
+      "label": "打开设置子页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "pageId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "chevron",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/settings/contacts",
+      "sourceNodeId": "/settings/contacts",
+      "target": "/settings/page/:pageId",
+      "targetNodeId": "/settings/page/:pageId",
+      "id": "settings.page.open",
+      "label": "打开设置子页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "pageId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "chevron",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/settings/page/:pageId",
+      "sourceNodeId": "/settings/page/:pageId",
+      "target": "/settings/page/:pageId",
+      "targetNodeId": "/settings/page/:pageId",
+      "id": "settings.page.open",
+      "label": "打开设置子页",
+      "type": "state",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "pageId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "chevron",
+        "gesture": "tap"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1030 @@
+@import "tailwindcss";
+@source "./index.html";
+@source "./index.tsx";
+@source "./os/**/*.{ts,tsx}";
+@source "./apps/**/*.{ts,tsx}";
+/* Exclude directories/files with zero Tailwind classes to speed up dev scan */
+@source not "./apps/**/res/**";
+@source "./apps/**/res/colors.ts";
+/* Keep data scannable: defaults.json contains runtime Tailwind class names. */
+@source "./apps/**/data/defaults.json";
+@source not "./apps/**/hooks/**";
+@source not "./apps/**/*.declaration.ts";
+@source not "./verify_foldable_*.py";
+/* Local build outputs must not influence generated utility classes. */
+@source not "./.build-*/**";
+/* Documentation examples are not runtime class sources. */
+@source not "./docs/**";
+@source not "./AGENTS.md";
+
+@theme inline {
+  --color-app-primary: var(--app-primary, #000000);
+  --color-app-primary-dark: var(--app-primary-dark, var(--app-primary, #000000));
+  --color-app-on-primary: var(--app-on-primary, #ffffff);
+  --color-app-secondary: var(--app-secondary, #666666);
+  --color-app-accent: var(--app-accent, var(--app-primary, #000000));
+  --color-app-bg: var(--app-bg, #ffffff);
+  --color-app-surface: var(--app-surface, #f5f5f5);
+  --color-app-on-surface: var(--app-on-surface, var(--app-text, #000000));
+  --color-app-text: var(--app-text, #000000);
+  --color-app-text-muted: var(--app-text-muted, #666666);
+  --color-app-border: var(--app-border, #e5e7eb);
+  --color-app-tab-bar-bg: var(--app-tab-bar-bg, var(--app-surface, #ffffff));
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+  /* 全局隐藏滚动条，模拟真实手机悬浮叠加型滚动条行为 */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+input, textarea, [contenteditable="true"] {
+  user-select: text;
+}
+
+/* Explicit opt-in: allow system-style text selection in non-editable areas */
+[data-os-clipboard="true"] {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background:
+    radial-gradient(circle at 50% 18%, #293445 0%, #151a23 42%, #0c0e13 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "PingFang SC", "Hiragino Sans GB",
+               "Microsoft YaHei", "WenQuanYi Micro Hei",
+               "Noto Sans SC", "Noto Sans CJK SC",
+               Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* 隐藏滚动条但保留功能 */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 对整个子树隐藏滚动条（用于模拟 Android 原生无滚动条体验） */
+.hide-all-scrollbars *::-webkit-scrollbar {
+  display: none;
+}
+.hide-all-scrollbars * {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Allow touch panning inside declared scroll containers (important for DevTools touch emulation / Pointer Events). */
+[data-scroll-container][data-scroll-direction="vertical"] {
+  touch-action: pan-y;
+}
+[data-scroll-container][data-scroll-direction="horizontal"] {
+  touch-action: pan-x;
+}
+
+/* Screen-only stage: Galaxy Z Fold6 proportions, without hardware chrome. */
+#root {
+  --foldagent-device-offset-x: 0px;
+  width: var(--foldagent-device-width, 360px);
+  height: var(--foldagent-device-height, 697px);
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+  isolation: isolate;
+  background: #000;
+  border: 0;
+  border-radius: 24px;
+  /* A fine external screen outline, without adding a bezel or changing content bounds. */
+  outline: 2px solid #080808;
+  box-shadow: none;
+  transform: translate(-50%, -50%) translateX(var(--foldagent-device-offset-x)) translateZ(0) scale(var(--sim-scale, 1));
+  transform-origin: center;
+  transition:
+    width 280ms cubic-bezier(.2,.8,.2,1),
+    height 280ms cubic-bezier(.2,.8,.2,1),
+    filter 180ms ease;
+}
+
+html[data-foldagent-presentation="true"] #root {
+  --foldagent-device-offset-x: -116px;
+}
+
+/* Posture affects layout, but hardware folds are not part of screen captures. */
+
+.foldagent-page-brand {
+  position: fixed;
+  z-index: 10000;
+  top: 22px;
+  left: 24px;
+  display: flex;
+  flex-direction: column;
+  color: #f3f7ff;
+  pointer-events: none;
+}
+
+.foldagent-page-brand strong {
+  font-size: 16px;
+  letter-spacing: 0.01em;
+}
+
+.foldagent-page-brand span {
+  margin-top: 3px;
+  color: #8390a3;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.foldagent-demo-panel {
+  position: fixed;
+  z-index: 10000;
+  top: 50%;
+  right: 20px;
+  width: 238px;
+  box-sizing: border-box;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(28, 35, 47, 0.94), rgba(14, 18, 26, 0.96));
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.38), inset 0 1px rgba(255, 255, 255, 0.06);
+  color: #eef4ff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  backdrop-filter: blur(18px);
+  transform: translateY(-50%);
+}
+
+.foldagent-demo-kicker {
+  color: #6f829b;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.foldagent-demo-title {
+  margin-top: 5px;
+  font-size: 19px;
+  font-weight: 720;
+  letter-spacing: -0.02em;
+}
+
+.foldagent-demo-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 9px;
+  color: #b8c5d8;
+  font-size: 12px;
+}
+
+.foldagent-demo-status span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #38d9a9;
+  box-shadow: 0 0 0 4px rgba(56, 217, 169, 0.1);
+}
+
+.foldagent-demo-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: 15px;
+}
+
+.foldagent-demo-actions button {
+  display: flex;
+  min-width: 0;
+  min-height: 76px;
+  padding: 9px 4px 8px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgba(186, 230, 253, 0.12);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.045);
+  color: #dce8f7;
+  font: inherit;
+  cursor: pointer;
+  transition: border-color 150ms ease, background 150ms ease, transform 150ms ease;
+}
+
+.foldagent-demo-actions button:hover {
+  border-color: rgba(125, 211, 252, 0.55);
+  background: rgba(125, 211, 252, 0.09);
+  transform: translateY(-1px);
+}
+
+.foldagent-demo-actions button.is-active {
+  border-color: #7dd3fc;
+  background: linear-gradient(180deg, rgba(125, 211, 252, 0.24), rgba(125, 211, 252, 0.1));
+  color: #eafdff;
+  box-shadow: inset 0 0 0 1px rgba(125, 211, 252, 0.12);
+}
+
+.foldagent-demo-actions i {
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 18px;
+  margin-bottom: 6px;
+  border: 1.5px solid currentColor;
+  border-radius: 3px;
+  opacity: 0.9;
+}
+
+.foldagent-demo-actions button:first-child i {
+  width: 10px;
+  border-radius: 4px;
+}
+
+.foldagent-demo-actions button:nth-child(2) i::after,
+.foldagent-demo-actions button:nth-child(3) i::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: 50%;
+  border-left: 1px solid currentColor;
+  opacity: 0.7;
+}
+
+.foldagent-demo-actions button:nth-child(2) i {
+  transform: perspective(28px) rotateY(-16deg);
+}
+
+.foldagent-demo-actions button span {
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.foldagent-demo-actions button small {
+  overflow: hidden;
+  max-width: 100%;
+  margin-top: 2px;
+  color: #7f90a7;
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.foldagent-demo-actions button.is-active small {
+  color: #a9dff4;
+}
+
+.foldagent-demo-specs {
+  display: grid;
+  gap: 0;
+  margin: 16px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.foldagent-demo-specs div {
+  display: flex;
+  min-width: 0;
+  padding: 8px 0;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.foldagent-demo-specs dt {
+  flex: 0 0 auto;
+  color: #718198;
+  font-size: 9px;
+}
+
+.foldagent-demo-specs dd {
+  overflow: hidden;
+  margin: 0;
+  color: #cbd6e6;
+  font-size: 9px;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.foldagent-demo-note {
+  margin-top: 13px;
+  color: #65758a;
+  font-size: 9px;
+  line-height: 1.55;
+}
+
+@media (max-width: 1039px) {
+  html[data-foldagent-presentation="true"] #root {
+    --foldagent-device-offset-x: 0px;
+  }
+
+  .foldagent-page-brand {
+    display: none;
+  }
+
+  .foldagent-demo-panel {
+    top: auto;
+    right: 12px;
+    bottom: 12px;
+    width: 218px;
+    padding: 13px;
+    transform: none;
+  }
+
+  .foldagent-demo-specs,
+  .foldagent-demo-note,
+  .foldagent-demo-kicker {
+    display: none;
+  }
+
+  .foldagent-demo-title {
+    margin-top: 0;
+    font-size: 14px;
+  }
+
+  .foldagent-demo-actions {
+    margin-top: 10px;
+  }
+
+  .foldagent-demo-actions button {
+    min-height: 54px;
+  }
+}
+/* 当 skin 激活时，对 App 子树内图片资产应用滤镜（不影响 OS UI） */
+[data-skin-filter] img:not([data-no-filter]),
+[data-skin-filter] svg.asset-icon:not([data-no-filter]) {
+  filter: var(--skin-image-filter, none);
+}
+
+/* Hide elements marked data-hide-on-keyboard when keyboard is active (adjustResize) */
+[data-keyboard-active] [data-hide-on-keyboard] {
+  display: none !important;
+}
+
+/* Local, code-native approximation of the colorful IME seen in the Magic V5
+   reference. No private recording frame or proprietary keyboard artwork is
+   shipped; the botanical depth is composed entirely from CSS gradients. */
+.keyboard-reference-theme {
+  isolation: isolate;
+  color: rgba(255, 255, 255, .96);
+  background:
+    radial-gradient(circle at 87% 18%, rgba(58, 221, 219, .52), transparent 24%),
+    radial-gradient(circle at 72% 76%, rgba(55, 153, 220, .46), transparent 31%),
+    radial-gradient(circle at 18% 88%, rgba(84, 74, 186, .52), transparent 34%),
+    linear-gradient(145deg, #24357d 0%, #363071 44%, #194b78 100%);
+  border-top: 1px solid rgba(255, 255, 255, .16);
+  box-shadow: 0 -8px 24px rgba(20, 20, 57, .18);
+}
+.keyboard-reference-theme::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 48px 0 0;
+  pointer-events: none;
+  opacity: .86;
+  background:
+    radial-gradient(ellipse at 91% 17%, rgba(231, 249, 255, .92) 0 2.5%, rgba(69, 213, 223, .66) 3% 6%, transparent 6.7%),
+    radial-gradient(ellipse at 85% 26%, rgba(115, 235, 228, .78) 0 4%, transparent 4.8%),
+    radial-gradient(ellipse at 74% 70%, rgba(120, 210, 246, .62) 0 4%, transparent 4.8%),
+    radial-gradient(ellipse at 25% 82%, rgba(150, 116, 224, .58) 0 5%, transparent 5.8%),
+    repeating-radial-gradient(ellipse at 82% 38%, transparent 0 12px, rgba(130, 231, 239, .18) 13px 15px, transparent 16px 24px);
+  filter: blur(.2px) saturate(1.15);
+}
+.keyboard-reference-toolbar,
+.keyboard-reference-body {
+  position: relative;
+  z-index: 1;
+}
+.keyboard-reference-toolbar {
+  color: rgba(240, 244, 255, .78);
+  background: linear-gradient(90deg, rgba(26, 45, 105, .84), rgba(69, 43, 113, .72), rgba(25, 89, 120, .76));
+  border-bottom: 1px solid rgba(255, 255, 255, .11);
+  backdrop-filter: blur(12px);
+}
+.keyboard-reference-body {
+  background: linear-gradient(180deg, rgba(22, 35, 92, .16), rgba(14, 43, 84, .30));
+}
+.keyboard-reference-key {
+  color: rgba(255, 255, 255, .96);
+  background: linear-gradient(180deg, rgba(40, 76, 142, .76), rgba(23, 54, 114, .78));
+  border: 1px solid rgba(255, 255, 255, .10);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 2px 5px rgba(6, 17, 52, .20);
+  backdrop-filter: blur(5px);
+}
+.keyboard-reference-key[data-keyboard-key-tone="dark"] {
+  background: linear-gradient(180deg, rgba(26, 54, 116, .88), rgba(15, 38, 88, .90));
+}
+.keyboard-reference-key:active {
+  transform: translateY(1px);
+  background: rgba(79, 118, 178, .82);
+}
+.keyboard-reference-main,
+.keyboard-reference-theme .text-black {
+  color: rgba(255, 255, 255, .96) !important;
+}
+.keyboard-reference-sub,
+.keyboard-reference-theme .text-gray-400,
+.keyboard-reference-theme .text-gray-500 {
+  color: rgba(220, 229, 255, .68) !important;
+}
+.keyboard-reference-toolbar-icon {
+  color: rgba(232, 239, 255, .72);
+}
+.keyboard-reference-toolbar-icon:active,
+.keyboard-reference-candidate:active {
+  background: rgba(255, 255, 255, .10);
+}
+.keyboard-reference-pinyin { color: #8ed8ff; }
+.keyboard-reference-candidate { color: rgba(255, 255, 255, .96); }
+
+/* Slide-up animation (e.g. for modals/sheets) */
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+.animate-slide-up {
+  animation: slide-up 0.25s ease-out forwards;
+}
+
+@keyframes slide-down {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+.animate-slide-down {
+  animation: slide-down 0.2s ease-out forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+@keyframes slide-in-left {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+.animate-slide-in-left {
+  animation: slide-in-left 0.25s ease-out forwards;
+}
+
+/* FoldAgent system-level adaptive surface. Individual app layouts stay native unless an evidence-backed profile says otherwise. */
+.foldagent-activity-surface { min-width: 0; min-height: 0; overflow: hidden; container-type: inline-size; container-name: foldagent-app; }
+html[data-foldagent-display="inner"] [data-window-size-class="expanded"] .foldagent-activity-surface { --foldagent-content-gutter: 24px; --foldagent-navigation-mode: rail; }
+html[data-foldagent-display="cover"] .foldagent-activity-surface,
+[data-foldagent-pane="primary"] .foldagent-activity-surface,
+[data-foldagent-pane="secondary"] .foldagent-activity-surface { --foldagent-content-gutter: 12px; --foldagent-navigation-mode: bottom; }
+.foldagent-taskbar { position:absolute; z-index:10020; left:50%; bottom:12px; transform:translateX(-50%); min-width:220px; max-width:calc(100% - 32px); height:58px; padding:9px 14px 7px; display:flex; align-items:center; gap:10px; border-radius:22px; border:1px solid rgba(255,255,255,.55); background:rgba(238,241,247,.88); box-shadow:0 10px 30px rgba(10,20,36,.22); backdrop-filter:blur(18px) saturate(1.2); }
+.foldagent-taskbar-handle { position:absolute; width:34px; height:3px; left:50%; top:3px; transform:translateX(-50%); border-radius:999px; background:rgba(31,41,55,.28); }
+.foldagent-taskbar-apps { min-width:0; display:flex; align-items:center; gap:9px; overflow-x:auto; scrollbar-width:none; }
+.foldagent-taskbar-apps::-webkit-scrollbar { display:none; }
+.foldagent-taskbar-item { position:relative; flex:0 0 auto; }
+.foldagent-taskbar-open { width:40px; height:40px; padding:3px; border:0; border-radius:12px; background:transparent; display:grid; place-items:center; cursor:pointer; }
+.foldagent-taskbar-open:hover { background:rgba(255,255,255,.72); }
+.foldagent-split-divider { position:absolute; z-index:10010; top:40px; bottom:0; width:14px; cursor:col-resize; touch-action:none; display:flex; justify-content:center; background:rgba(23,27,34,.08); }
+.foldagent-split-divider::before { content:''; width:2px; height:100%; background:rgba(17,24,39,.38); }
+.foldagent-split-divider span { position:absolute; top:46%; width:5px; height:44px; border-radius:99px; background:#6b7280; box-shadow:0 0 0 3px rgba(255,255,255,.82); }
+html[data-foldagent-window-mode="split"] [data-foldagent-pane] { padding-bottom:70px; }
+@container foldagent-app (min-width:600px) {
+  .foldagent-adaptive-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .foldagent-adaptive-list-detail { display:grid; grid-template-columns:minmax(220px,38%) 1fr; }
+  .foldagent-adaptive-supporting-pane { display:grid; grid-template-columns:minmax(0,2fr) minmax(220px,1fr); }
+}
+@media (max-width:1039px) { .foldagent-taskbar { bottom:8px; } }
+
+
+/* FoldAgent drag-to-split targets. */
+.foldagent-split-drop-overlay {
+  position: absolute;
+  z-index: 10018;
+  inset: 40px 0 72px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 12px;
+  pointer-events: none;
+}
+.foldagent-split-drop-zone {
+  display: grid;
+  place-items: center;
+  border: 2px dashed rgba(255,255,255,.76);
+  border-radius: 20px;
+  color: white;
+  background: rgba(41, 98, 255, .22);
+  box-shadow: inset 0 0 0 1px rgba(32,74,180,.22);
+  backdrop-filter: blur(4px);
+  pointer-events: auto;
+  transition: background .14s ease, transform .14s ease;
+}
+.foldagent-split-drop-zone:hover {
+  background: rgba(41, 98, 255, .46);
+  transform: scale(.985);
+}
+.foldagent-split-drop-zone span {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(17,24,39,.78);
+  font: 650 13px/1 system-ui, sans-serif;
+}
+/* FoldAgent three-app tiled layout. */
+[data-foldagent-pane="tertiary"] .foldagent-activity-surface {
+  --foldagent-content-gutter: 12px;
+  --foldagent-navigation-mode: bottom;
+}
+.foldagent-split-divider-horizontal {
+  position: absolute;
+  z-index: 10011;
+  right: 0;
+  height: 14px;
+  cursor: row-resize;
+  touch-action: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(23,27,34,.08);
+}
+.foldagent-split-divider-horizontal::before {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: rgba(17,24,39,.38);
+}
+.foldagent-split-divider-horizontal span {
+  position: absolute;
+  width: 44px;
+  height: 5px;
+  border-radius: 99px;
+  background: #6b7280;
+  box-shadow: 0 0 0 3px rgba(255,255,255,.82);
+}
+/* Galaxy Z Fold6 / One UI reference overrides. */
+.foldagent-taskbar {
+  bottom: 10px;
+  min-width: 252px;
+  max-width: calc(100% - 40px);
+  height: 62px;
+  padding: 10px 15px 8px;
+  gap: 11px;
+  border-radius: 19px;
+  border-color: rgba(255,255,255,.68);
+  background: rgba(242,244,249,.93);
+  box-shadow: 0 8px 28px rgba(8,14,24,.24), inset 0 1px rgba(255,255,255,.7);
+}
+.foldagent-taskbar-handle { width: 42px; background: rgba(31,41,55,.34); }
+.foldagent-taskbar-open { width: 42px; height: 42px; border-radius: 13px; }
+.foldagent-taskbar-open:active { transform: scale(.94); background: rgba(255,255,255,.86); }
+
+.foldagent-split-divider,
+.foldagent-split-divider-horizontal { background: transparent; }
+.foldagent-split-divider::before { width: 3px; background: rgba(21,25,31,.34); }
+.foldagent-split-divider-horizontal::before { height: 3px; background: rgba(21,25,31,.34); }
+.foldagent-split-divider span,
+.foldagent-split-divider-horizontal span {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 10px 15px, #59616d 0 2px, transparent 2.4px),
+    radial-gradient(circle at 15px 15px, #59616d 0 2px, transparent 2.4px),
+    radial-gradient(circle at 20px 15px, #59616d 0 2px, transparent 2.4px),
+    rgba(248,249,252,.96);
+  box-shadow: 0 2px 7px rgba(0,0,0,.28), 0 0 0 1px rgba(75,82,92,.18);
+}
+.foldagent-split-divider span { top: calc(50% - 15px); }
+html[data-foldagent-window-mode="split"] [data-foldagent-pane],
+html[data-foldagent-window-mode="triple"] [data-foldagent-pane] { padding-bottom: 76px; }
+
+.foldagent-edge-handle {
+  position: absolute;
+  z-index: 10019;
+  top: 38%;
+  right: 0;
+  width: 8px;
+  height: 66px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(235,238,244,.72);
+  box-shadow: -1px 1px 5px rgba(0,0,0,.22);
+  cursor: pointer;
+}
+.foldagent-edge-handle.is-open { right: 174px; background: rgba(255,255,255,.92); }
+.foldagent-edge-panel {
+  position: absolute;
+  z-index: 10018;
+  top: 50%;
+  right: 8px;
+  width: 166px;
+  padding: 14px 12px 12px;
+  transform: translateY(-50%);
+  border: 1px solid rgba(255,255,255,.66);
+  border-radius: 24px;
+  background: rgba(242,244,249,.94);
+  box-shadow: 0 14px 40px rgba(10,18,30,.3);
+  backdrop-filter: blur(20px) saturate(1.15);
+  color: #20242b;
+}
+.foldagent-edge-panel-title { padding: 0 5px 10px; font: 700 13px/1 system-ui,sans-serif; }
+.foldagent-edge-panel-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 11px 7px; }
+.foldagent-edge-app { min-width:0; padding:0; border:0; background:transparent; display:flex; flex-direction:column; align-items:center; gap:4px; color:inherit; cursor:pointer; }
+.foldagent-edge-app:active { transform:scale(.94); }
+.foldagent-edge-app span { overflow:hidden; width:100%; color:#4b5360; font:500 9px/1.2 system-ui,sans-serif; text-align:center; text-overflow:ellipsis; white-space:nowrap; }
+.foldagent-edge-panel-hint { margin-top:12px; padding-top:9px; border-top:1px solid rgba(75,82,92,.14); color:#707885; font:500 9px/1.45 system-ui,sans-serif; }
+/* Evidence-backed WeChat large-screen parallel view. It is enabled only by the
+   app at unfolded/fullscreen state; compact and multi-window views stay phone-like. */
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-fold6-parallel {
+  display: grid;
+  grid-template-columns: minmax(270px, 37%) minmax(0, 1fr);
+  height: 100%;
+  min-height: 0;
+  overflow: hidden !important;
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-fold6-parallel .wechat-adaptive-master {
+  min-width: 0;
+  min-height: 0;
+  border-right: 1px solid rgba(80, 86, 94, .18);
+  background: var(--app-c-common-bg-primary, #f5f5f5);
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-fold6-parallel .wechat-adaptive-empty-detail {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: rgba(80, 86, 94, .72);
+  background: var(--app-c-common-bg-secondary, #f8f8f8);
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-fold6-parallel .wechat-adaptive-empty-icon {
+  display: grid;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  border-radius: 18px;
+  background: rgba(7, 193, 96, .12);
+  font-size: 26px;
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-fold6-parallel .wechat-adaptive-list-title {
+  display: flex;
+  height: 88px;
+  box-sizing: border-box;
+  align-items: flex-end;
+  padding: 0 20px 16px;
+  border-bottom: 1px solid rgba(80, 86, 94, .14);
+  color: var(--app-c-common-text-primary, #111827);
+  font: 650 22px/1.2 system-ui, sans-serif;
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-fold6-parallel .wechat-adaptive-list-scroll {
+  height: calc(100% - 88px) !important;
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-fold6-parallel .wechat-adaptive-detail-pane {
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  padding-top: 88px;
+  box-sizing: border-box;
+  background: var(--app-c-common-bg-secondary, #f8f8f8);
+}
+/* Galaxy Z Fold / One UI three-button navigation, matching the optional
+   Back–Home–Recents order shown in the reference device. */
+.foldagent-samsung-nav-buttons {
+  position: absolute;
+  right: 20px;
+  bottom: 1px;
+  z-index: 10030;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 30px;
+  color: rgba(255,255,255,.96);
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,.42));
+}
+.foldagent-samsung-nav-buttons button {
+  display: grid;
+  width: 29px;
+  height: 28px;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.foldagent-samsung-nav-buttons svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 2.05; stroke-linecap: round; stroke-linejoin: round; }
+.foldagent-samsung-nav-buttons button:active { background: rgba(255,255,255,.18); transform: scale(.92); }
+/* One UI recents overview for the Galaxy Z Fold main display. */
+.foldagent-recents-header { position:absolute; top:20px; left:22px; right:22px; display:flex; justify-content:space-between; align-items:center; color:rgba(255,255,255,.94); font:500 11px/1 system-ui,sans-serif; text-shadow:0 1px 2px rgba(0,0,0,.55); }
+.foldagent-recents-header span:last-child { font-size:22px; line-height:1; font-weight:300; }
+html[data-foldagent-display="inner"] [data-recents-card] .recents-task-label { left:50% !important; top:-22px !important; transform:translateX(-50%); }
+html[data-foldagent-display="inner"] [data-recents-card] .recents-task-label span { display:none; }
+html[data-foldagent-display="inner"] .foldagent-recents-clear { min-width:108px; background:rgba(235,243,247,.18); backdrop-filter:blur(12px); box-shadow:inset 0 1px rgba(255,255,255,.13); }
+.foldagent-recents-suggestions { display:flex; gap:18px; align-items:center; justify-content:center; margin-top:22px; }
+.foldagent-recents-suggestions button { display:grid; width:48px; height:48px; place-items:center; padding:0; border:0; border-radius:16px; background:transparent; cursor:pointer; }
+.foldagent-recents-suggestions button:active { transform:scale(.92); }
+html[data-foldagent-display="inner"] [data-recents-card] > div:last-child { border-color:rgba(255,255,255,.28) !important; box-shadow:0 18px 46px rgba(0,0,0,.34) !important; }
+/* Galaxy Z Fold6 normal-app taskbar: small pinned icons on the navigation strip, not a floating card. */
+.foldagent-taskbar {
+  left: 10px;
+  right: 142px;
+  bottom: 0;
+  transform: none;
+  z-index: 10021;
+  min-width: 0;
+  max-width: none;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+.foldagent-taskbar-handle { display: none; }
+.foldagent-taskbar-drawer,
+.foldagent-taskbar-open {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+.foldagent-taskbar-drawer span {
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  background:
+    radial-gradient(circle, rgba(255,255,255,.96) 1.25px, transparent 1.8px) 0 0 / 5px 5px;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,.45));
+}
+.foldagent-taskbar-apps {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  overflow: hidden;
+  scrollbar-width: none;
+}
+.foldagent-taskbar-open { padding: 1px; border-radius: 9px; }
+.foldagent-taskbar-drawer:hover,
+.foldagent-taskbar-open:hover { background: rgba(255,255,255,.16); }
+.foldagent-taskbar-drawer:active,
+.foldagent-taskbar-open:active { transform: scale(.9); background: rgba(255,255,255,.22); }
+html[data-foldagent-window-mode="split"] [data-foldagent-pane],
+html[data-foldagent-window-mode="triple"] [data-foldagent-pane] { padding-bottom: 36px; }
+/* Taskbar section boundary: favourites are separated from the two optional recent slots. */
+.foldagent-taskbar-separator {
+  width: 1px;
+  height: 18px;
+  margin: 0 1px 0 2px;
+  flex: 0 0 auto;
+  background: rgba(255,255,255,.42);
+  box-shadow: 0 1px 1px rgba(0,0,0,.25);
+}
+.foldagent-taskbar-item[data-taskbar-kind="recent"] .foldagent-taskbar-open {
+  opacity: .92;
+}
+/* The Recents view is a full-screen overview, not a floating app window. */
+html[data-foldagent-display="inner"] .foldagent-recents-header {
+  top: 26px;
+  left: 28px;
+  right: 28px;
+  font-size: 12px;
+}
+html[data-foldagent-display="inner"] .foldagent-recents-suggestions {
+  gap: 14px;
+  margin-top: 18px;
+}
+html[data-foldagent-display="inner"] .foldagent-recents-suggestions button {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+}
+html[data-foldagent-display="inner"] .foldagent-recents-clear {
+  min-width: 112px;
+  height: 31px;
+  padding: 0 20px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 99px;
+  background: rgba(255,255,255,.13);
+}
+/* WeChat expanded layout, based on the tablet-style conversation list + detail pattern.
+   The left navigation area owns its toolbar and tab bar; the detail area stays independent. */
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-fold6-parallel {
+  grid-template-columns: minmax(248px, 34%) minmax(0, 1fr);
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-fold6-topbar-master {
+  right: auto !important;
+  width: min(34%, 320px);
+  border-right: 1px solid rgba(80, 86, 94, .18);
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-fold6-topbar-detail {
+  left: 34% !important;
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-fold6-tabbar-master {
+  right: auto !important;
+  width: min(34%, 320px);
+  border-right: 1px solid rgba(80, 86, 94, .18);
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-chat-list-search {
+  width: calc(100% - 24px);
+  height: 38px;
+  margin: 10px 12px 6px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 0;
+  border-radius: 7px;
+  color: #a5a5a5;
+  background: rgba(255,255,255,.94);
+  font-size: 15px;
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-adaptive-empty-detail {
+  background: #fafafa;
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-adaptive-empty-icon {
+  width: 66px;
+  height: 50px;
+  position: relative;
+  border-radius: 50%;
+  background: #e4e4e4;
+  box-shadow: none;
+  font-size: 0;
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-adaptive-empty-icon::before,
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-adaptive-empty-icon::after {
+  content: '';
+  position: absolute;
+  width: 37px;
+  height: 29px;
+  border-radius: 50%;
+  background: #d5d5d5;
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-adaptive-empty-icon::before { left: 2px; top: 2px; }
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-adaptive-empty-icon::after { right: 1px; bottom: 1px; }
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-adaptive-empty-icon span::before,
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-adaptive-empty-icon span::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #fafafa;
+  box-shadow: 10px 0 #fafafa;
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-adaptive-empty-icon span::before { left: 13px; top: 13px; }
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-adaptive-empty-icon span::after { right: 10px; bottom: 12px; }
+/* When a chat is open on the right, reserve space for the persistent four-tab bar in the left column only. */
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-fold6-parallel .wechat-adaptive-chat-list {
+  box-sizing: border-box;
+  padding-bottom: 65px;
+}
+/* Match the taller, left-column-only WeChat tab strip in expanded chat view. */
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-fold6-tabbar-master .wechat-tabbar {
+  height: 72px !important;
+  padding-top: 9px;
+  background: #f8f8f8;
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-fold6-parallel .wechat-adaptive-chat-list {
+  padding-bottom: 72px;
+}
+/* Keep the two-pane shell fixed while the soft keyboard scrolls the right composer into view. */
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-adaptive-detail-shell {
+  overflow: hidden !important;
+  overscroll-behavior: none;
+  scroll-behavior: auto;
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-adaptive-detail-shell > .wechat-adaptive-master {
+  position: relative;
+  inset: auto;
+  transform: none !important;
+  overflow: hidden !important;
+}
+/* Contacts, Discover and Me reuse the compact cover-screen viewport as the
+   master pane instead of squeezing those phone layouts into the chat column. */
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-fold6-parallel.wechat-fold6-compact-master {
+  grid-template-columns: minmax(248px, 34%) minmax(0, 1fr) !important;
+}
+html[data-foldagent-display="inner"] [data-app-id="wechat"] .wechat-fold6-compact-master-width {
+  width: min(34%, 320px) !important;
+}
+/* Cross-app adaptive content rules for the unfolded, full-screen inner display.
+   Compact/cover and multi-window modes retain the original phone layouts. */
+.redbook-expanded-discovery-feed { display: none; }
+html[data-foldagent-display="inner"][data-foldagent-window-mode="fullscreen"] .foldagent-activity-surface { --foldagent-expanded-page-gutter: 20px; }
+html[data-foldagent-display="inner"][data-foldagent-window-mode="fullscreen"] [data-app-id="redbook"] .redbook-compact-discovery-feed { display: none; }
+html[data-foldagent-display="inner"][data-foldagent-window-mode="fullscreen"] [data-app-id="redbook"] .redbook-expanded-discovery-feed {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 8px;
+}
+html[data-foldagent-display="inner"][data-foldagent-window-mode="fullscreen"] [data-app-id="redbook"] [class~="grid-cols-2"]:not(.fixed *):not(.absolute *),
+html[data-foldagent-display="inner"][data-foldagent-window-mode="fullscreen"] [data-app-id="ebay"] [class~="grid-cols-2"]:not(.fixed *):not(.absolute *) {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+html[data-foldagent-display="inner"][data-foldagent-window-mode="fullscreen"] [data-app-id="spotify"] [class~="grid-cols-2"]:not(.fixed *):not(.absolute *),
+html[data-foldagent-display="inner"][data-foldagent-window-mode="fullscreen"] [data-app-id="bilibili"] [class~="grid-cols-2"]:not(.fixed *):not(.absolute *) {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+html[data-foldagent-display="inner"][data-foldagent-window-mode="fullscreen"] [data-app-id="wechat_reading"] [class~="grid-cols-3"]:not(.fixed *):not(.absolute *) {
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  column-gap: 20px !important;
+}
+html[data-foldagent-display="inner"][data-foldagent-window-mode="fullscreen"] [data-app-id="wechat_reading"] [class~="grid-cols-2"]:not(.fixed *):not(.absolute *) {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+html[data-foldagent-display="inner"][data-foldagent-window-mode="fullscreen"] [data-app-id="weather"] [class~="grid-cols-2"]:not(.fixed *):not(.absolute *) {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+html[data-foldagent-display="inner"][data-foldagent-window-mode="fullscreen"] [data-app-id="tencent_meeting"] [class~="grid-cols-2"]:not(.fixed *):not(.absolute *) {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+html[data-foldagent-display="inner"][data-foldagent-window-mode="fullscreen"] [data-app-id="alipay"] form,
+html[data-foldagent-display="inner"][data-foldagent-window-mode="fullscreen"] [data-app-id="railway12306"] form,
+html[data-foldagent-display="inner"][data-foldagent-window-mode="fullscreen"] [data-app-id="tencent_meeting"] form {
+  width: min(100%, 680px);
+  margin-inline: auto;
+}
+html[data-foldagent-display="inner"][data-foldagent-window-mode="fullscreen"] [data-app-id="reddit"] article,
+html[data-foldagent-display="inner"][data-foldagent-window-mode="fullscreen"] [data-app-id="x"] article {
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+/* L1 benchmark accessibility and system-bar safety contract. */
+[data-app-id="fitness"] .flist,
+[data-app-id="fitness"] .fdetail,
+[data-app-id="mail"] .mlist,
+[data-app-id="mail"] .mdetail {
+  padding-top: 40px;
+}
+[data-app-id="map"] [data-action="profile.open"],
+[data-app-id="file_manager"] button,
+[data-app-id="contacts"] button,
+[data-app-id="wechat"] [data-action="search.open"],
+[data-app-id="wechat"] [data-action="home.menu.plus.open"] {
+  min-width: 32px;
+  min-height: 32px;
+}
+[data-app-id="wechat"] [data-action="search.open"],
+[data-app-id="wechat"] [data-action="home.menu.plus.open"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+[data-app-id="map"] [data-action="profile.open"] {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  flex: 0 0 48px;
+}
+[data-app-id="map"] button.w-8.h-8 {
+  box-sizing: content-box;
+  padding: 4px;
+}
+[data-app-id="file_manager"] button {
+  min-width: 40px;
+  min-height: 40px;
+}
+[data-app-id="wechat"] [data-action="search.open"],
+[data-app-id="wechat"] [data-action="home.menu.plus.open"] {
+  width: 44px !important;
+  height: 44px !important;
+  flex: 0 0 44px;
+}
+[data-app-id="wechat"] .text-app-text.cursor-pointer {
+  padding: 10px;
+  margin: -10px;
+}
+[data-app-id="wechat"] .wechat-chat-list-search {
+  min-width: 40px;
+}

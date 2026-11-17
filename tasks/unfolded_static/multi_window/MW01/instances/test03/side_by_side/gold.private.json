@@ -1,0 +1,48 @@
+{
+  "data": {
+    "name": "韩晴",
+    "event": "阶段汇报",
+    "room": "东楼602讨论室",
+    "time": "11:00",
+    "subject": "汇报准备事项",
+    "list": "汇报任务",
+    "items": [
+      "打印汇报提纲",
+      "整理统计图表",
+      "检查投影线"
+    ],
+    "notice": "校园卡补办公告",
+    "note": "补办安排",
+    "desk": "综合楼西侧服务台",
+    "materials": [
+      "身份证",
+      "挂失回执",
+      "两寸照片"
+    ],
+    "deadline": "18:00",
+    "place": "知行书店",
+    "address": "海棠区知行路51号A座5层",
+    "area": "海棠区",
+    "hint": "知行路",
+    "place_note": "到店信息",
+    "city": "宁川市",
+    "high": 13,
+    "current": 8,
+    "person": "陆青",
+    "phone": "13600009517",
+    "company": "知行材料",
+    "document": "访谈安排",
+    "section": "随身设备",
+    "equipment": [
+      "笔记本电脑",
+      "录音笔",
+      "移动电源"
+    ],
+    "doc_note": "访谈设备",
+    "day": 7,
+    "deadline_day": 9,
+    "prefix": "",
+    "calendar_prefix": "带证件。"
+  },
+  "target_text": "阶段汇报，11月7日11:00，东楼602讨论室"
+}

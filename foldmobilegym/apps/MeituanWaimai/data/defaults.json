@@ -1,0 +1,6 @@
+{
+  "user": { "orderIds": [] },
+  "orders": {},
+  "nextOrderNumber": 1,
+  "cart": { "shopId": "rice", "quantities": {} }
+}

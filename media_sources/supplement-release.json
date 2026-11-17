@@ -1,0 +1,22 @@
+{
+  "name": "foldagent-gui-media-supplement-v0.2.0.tar.gz",
+  "bytes": 589028996,
+  "sha256": "f83ed472dfe53f535963212ecd57fd8b0c65c433e93b171cd75c3067809fdffc",
+  "kind": "project-local-media-supplement",
+  "version": "v0.2.0",
+  "package_files": 8620,
+  "upstream_release": "data-v0.1.0",
+  "upstream_sha256": "933a8499c71450f135eda70f9107af72b56b42181fc62de76ed1aa4c513a603c",
+  "publish_target": "GitHub Release asset (not committed to Git history)",
+  "published": true,
+  "release_tag": "media-v0.2.0",
+  "source_commit": "3e102d65285508a7ded9e9c281a27502a6cf5cce",
+  "release_id": 430942492,
+  "asset_id": 699903030,
+  "remote_digest": "sha256:f83ed472dfe53f535963212ecd57fd8b0c65c433e93b171cd75c3067809fdffc",
+  "published_at": "2026-11-02T01:04:26Z",
+  "release_url": "https://github.com/flyx-flyx/foldagent-gui/releases/tag/media-v0.2.0",
+  "asset_url": "https://github.com/flyx-flyx/foldagent-gui/releases/download/media-v0.2.0/foldagent-gui-media-supplement-v0.2.0.tar.gz",
+  "repository_visibility": "private",
+  "independent_readback_verified": true
+}

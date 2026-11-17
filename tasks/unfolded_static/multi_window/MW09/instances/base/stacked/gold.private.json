@@ -1,0 +1,18 @@
+{
+  "source": "wechat_reading",
+  "target": "notes",
+  "data": {
+    "id": "1",
+    "title": "纳瓦尔宝典",
+    "author": "埃里克·乔根森",
+    "cover": "",
+    "coverColor": "bg-[#F2EFE9]",
+    "category": "商业",
+    "totalWords": 150000,
+    "rating": 9.2,
+    "recommendedValue": 92.5
+  },
+  "target_text": "纳瓦尔宝典；埃里克·乔根森；15.0万",
+  "title": "信息记录 · 微信读书",
+  "chat_name": "陈宁（研发）"
+}

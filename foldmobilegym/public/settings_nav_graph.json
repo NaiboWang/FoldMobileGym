@@ -1,0 +1,432 @@
+{
+  "app": "settings",
+  "appDir": "system\\Settings",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 6,
+  "transitionCount": 5,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "uiStateId": "settings.main.base",
+      "component": "SettingsMainPage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded settings directory"
+        }
+      ],
+      "description": "设置首页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/search",
+      "routePath": "/search",
+      "uiStateId": "settings.search.base",
+      "component": "SettingsSearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded settings directory"
+        }
+      ],
+      "description": "设置搜索页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/search/:pageId",
+      "routePath": "/search/:pageId",
+      "uiStateId": "settings.searchDetail.base",
+      "component": "PreferenceScreenPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {
+        "pageId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded settings directory"
+        }
+      ],
+      "description": "搜索结果详情页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/search/:pageId?sheet=input-method",
+      "routePath": "/search/:pageId",
+      "uiStateId": "settings.searchDetail.inputMethod",
+      "component": "PreferenceScreenPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {
+        "pageId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded settings directory"
+        }
+      ],
+      "description": "搜索结果详情中的默认输入法对话框",
+      "search": {
+        "sheet": "input-method"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "settings.search.inputMethod.select.sogou",
+          "label": "选择搜狗输入法",
+          "behavior": "select"
+        },
+        {
+          "id": "settings.search.inputMethod.select.sogouHonor",
+          "label": "选择搜狗输入法荣耀版",
+          "behavior": "select"
+        },
+        {
+          "id": "settings.search.inputMethod.select.baiduHonor",
+          "label": "选择百度输入法荣耀版",
+          "behavior": "select"
+        }
+      ]
+    },
+    {
+      "id": "/page/:pageId",
+      "routePath": "/page/:pageId",
+      "uiStateId": "settings.page.base",
+      "component": "PreferenceScreenPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "pageId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded settings directory"
+        }
+      ],
+      "description": "设置详情页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/page/:pageId?sheet=input-method",
+      "routePath": "/page/:pageId",
+      "uiStateId": "settings.page.inputMethod",
+      "component": "PreferenceScreenPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "pageId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "Expanded settings directory"
+        }
+      ],
+      "description": "默认输入法对话框",
+      "search": {
+        "sheet": "input-method"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "settings.page.inputMethod.select.sogou",
+          "label": "选择搜狗输入法",
+          "behavior": "select"
+        },
+        {
+          "id": "settings.page.inputMethod.select.sogouHonor",
+          "label": "选择搜狗输入法荣耀版",
+          "behavior": "select"
+        },
+        {
+          "id": "settings.page.inputMethod.select.baiduHonor",
+          "label": "选择百度输入法荣耀版",
+          "behavior": "select"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/search",
+      "targetNodeId": "/search",
+      "id": "search.open",
+      "label": "打开设置搜索",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/page/:pageId",
+      "sourceNodeId": "/page/:pageId",
+      "target": "/search",
+      "targetNodeId": "/search",
+      "id": "search.open",
+      "label": "打开设置搜索",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/page/:pageId",
+      "targetNodeId": "/page/:pageId",
+      "id": "page.open",
+      "label": "打开设置项详情",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "pageId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "page",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/page/:pageId",
+      "sourceNodeId": "/page/:pageId",
+      "target": "/page/:pageId",
+      "targetNodeId": "/page/:pageId",
+      "id": "page.open",
+      "label": "打开设置项详情",
+      "type": "state",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "pageId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "page",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search/:pageId",
+      "sourceNodeId": "/search/:pageId",
+      "target": "/page/:pageId",
+      "targetNodeId": "/page/:pageId",
+      "id": "page.open",
+      "label": "打开设置项详情",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "pageId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "page",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search",
+      "sourceNodeId": "/search",
+      "target": "/search/:pageId",
+      "targetNodeId": "/search/:pageId",
+      "id": "settings.search.result.open",
+      "label": "在搜索目录旁打开设置详情",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "pageId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "page",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search/:pageId",
+      "sourceNodeId": "/search/:pageId",
+      "target": "/search/:pageId",
+      "targetNodeId": "/search/:pageId",
+      "id": "settings.search.result.open",
+      "label": "在搜索目录旁打开设置详情",
+      "type": "state",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "pageId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "page",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/page/:pageId",
+      "sourceNodeId": "/page/:pageId",
+      "target": "/page/:pageId?sheet=input-method",
+      "targetNodeId": "/page/:pageId?sheet=input-method",
+      "id": "settings.page.inputMethod.open",
+      "label": "打开默认输入法对话框",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "input-method"
+      },
+      "searchParams": {},
+      "params": {
+        "pageId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/page/:pageId",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "keyboard",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search/:pageId",
+      "sourceNodeId": "/search/:pageId",
+      "target": "/search/:pageId?sheet=input-method",
+      "targetNodeId": "/search/:pageId?sheet=input-method",
+      "id": "settings.search.inputMethod.open",
+      "label": "从搜索详情打开默认输入法对话框",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "input-method"
+      },
+      "searchParams": {},
+      "params": {
+        "pageId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search/:pageId",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "keyboard",
+        "gesture": "tap"
+      }
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "app": "fitness",
+  "appDir": "apps\\Fitness",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 2,
+  "transitionCount": 1,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "uiStateId": "fitness.history.base",
+      "component": "Content",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [],
+      "description": "Activity history",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/activity/:id",
+      "routePath": "/activity/:id",
+      "uiStateId": "fitness.detail.base",
+      "component": "Content",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [],
+      "description": "Activity metrics",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "fitness.fact.verify",
+          "label": "Verify activity data",
+          "behavior": "other"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/activity/:id",
+      "targetNodeId": "/activity/:id",
+      "id": "fitness.activity.open",
+      "label": "Open activity",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "activity",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/activity/:id",
+      "sourceNodeId": "/activity/:id",
+      "target": "/activity/:id",
+      "targetNodeId": "/activity/:id",
+      "id": "fitness.activity.open",
+      "label": "Open activity",
+      "type": "state",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "activity",
+        "gesture": "tap"
+      }
+    }
+  ]
+}

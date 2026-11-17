@@ -1,0 +1,57 @@
+import assert from 'node:assert/strict';
+import path from 'node:path';
+import fs from 'node:fs';
+import {fileURLToPath} from 'node:url';
+import {createRequire} from 'node:module';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
+const frontend=fs.existsSync(path.join(root,'mobilegym/package.json'))?'mobilegym':'foldmobilegym';
+const require=createRequire(path.join(root,frontend,'package.json'));
+const base=new URL(process.env.READING_REVIEW_URL||'http://127.0.0.1:3224/');
+assert.ok(base.protocol==='http:'&&['127.0.0.1','localhost'].includes(base.hostname)&&!base.username&&!base.password);
+const browser=await require('puppeteer').launch({headless:true,executablePath:process.env.CHROME_PATH||'C:/Program Files/Google/Chrome/Application/chrome.exe'});
+try {
+ for(const locale of ['zh-Hans','en']) for(const posture of ['folded','unfolded']) {
+  const context=await browser.createBrowserContext(),page=await context.newPage(),errors=[];
+  page.on('pageerror',e=>errors.push(e.message));await page.setRequestInterception(true);
+  page.on('request',r=>{const u=new URL(r.url());return r.method()==='GET'&&u.origin===base.origin&&!u.pathname.startsWith('/api/')?r.continue():r.abort();});
+  await page.setViewport({width:1440,height:1100});await page.goto(base.href,{waitUntil:'domcontentloaded'});await page.waitForFunction(()=>window.__SIM__&&window.__OS__&&window.__FOLDAGENT__);
+  await page.evaluate(({locale,posture})=>{window.__OS__.locale.setLocale(locale);window.__FOLDAGENT__.setPosture(posture);window.__OS__.openApp('wechat_reading','/bookshelf');},{locale,posture});
+  await page.waitForFunction(()=>window.__OS__.getAppRoute('wechat_reading')?.path==='/bookshelf');
+  const ids=await page.evaluate(()=>{const state=window.__SIM__.getState().apps.wechat_reading;const ids=state.store.slice(0,3).map(b=>String(b.id));if(new Set(ids).size!==3)throw Error('Need three distinct fixture books');const shelf=ids.map(bookId=>({bookId,isPrivate:false,addedAt:'2020-01-01T00:00:00.000Z'}));window.__SIM__.setState({apps:{wechat_reading:{...state,shelf}}},{deep:false,reload:false});return ids;});
+  const app='[data-app-id="wechat_reading"]'; await page.waitForFunction((app)=>document.querySelectorAll(`${app} [data-shelf-book-id]`).length===3,{},app);
+  await page.click(`${app} [data-trigger="bookshelf.select.enter.tap"]`); await page.waitForSelector(`${app} [data-action="bookshelf.selectAll.toggle"]`,{visible:true});
+  await page.click(`${app} [data-action="bookshelf.selectAll.toggle"]`);
+  const count=n=>locale==='en'?`${n} books selected`:`已选择 ${n} 本书籍`;
+  await page.waitForFunction((app,text)=>document.querySelector(app)?.innerText.includes(text),{},app,count(3));
+  const remove=async id=>page.evaluate(id=>{const state=window.__SIM__.getState().apps.wechat_reading;window.__SIM__.setState({apps:{wechat_reading:{...state,shelf:state.shelf.filter(x=>x.bookId!==id)}}},{deep:false,reload:false});},id);
+  await remove(ids[0]);
+  await page.waitForFunction((app,text)=>document.querySelector(app)?.innerText.includes(text),{timeout:4000},app,count(2));
+  const button=await page.$eval(`${app} [data-action="bookshelf.selectAll.toggle"]`,e=>e.innerText.trim()); assert.equal(button,locale==='en'?'Deselect All':'取消全选');
+  await page.evaluate(id=>{const state=window.__SIM__.getState().apps.wechat_reading;const item={bookId:id,isPrivate:false,addedAt:'2020-01-01T00:00:00.000Z'};window.__SIM__.setState({apps:{wechat_reading:{...state,shelf:[...state.shelf,item]}}},{deep:false,reload:false});},ids[0]);
+  await page.waitForFunction(app=>document.querySelectorAll(`${app} [data-shelf-book-id]`).length===3,{},app);
+  assert.equal(await page.$eval(`${app} [data-action="bookshelf.selectAll.toggle"]`,e=>e.innerText.trim()),locale==='en'?'Select All':'全选');
+  assert.ok((await page.$eval(app,e=>e.innerText)).includes(count(2)),'re-added book must not inherit an old selection');
+  await remove(ids[0]);
+  const opener=await page.waitForSelector(`${app} [data-trigger="bookshelf.modal.confirm_remove.open"]:not(:disabled)`,{visible:true});
+  await opener.evaluate(async node=>{const toolbar=node.closest('.animate-slide-up');if(toolbar)await Promise.all(toolbar.getAnimations({subtree:true}).filter(a=>Number.isFinite(a.effect?.getComputedTiming().endTime)).map(a=>a.finished.catch(()=>{})));});
+  assert.equal(await opener.evaluate(node=>{const r=node.getBoundingClientRect();return node.contains(document.elementFromPoint(r.x+r.width/2,r.y+r.height/2));}),true,'remove button must be hittable');
+  await opener.click();await page.waitForSelector(`${app} [role="dialog"]`,{visible:true});
+  await remove(ids[1]);await page.waitForFunction((app,text)=>document.querySelector(app)?.innerText.includes(text),{timeout:4000},app,count(1));
+  const confirm=await page.waitForSelector(`${app} [data-action="bookshelf.removeSelected.submit"]:not(:disabled)`,{visible:true});
+  await confirm.evaluate(async node=>{const d=node.closest('[role="dialog"]');await Promise.all(d.getAnimations({subtree:true}).filter(a=>Number.isFinite(a.effect?.getComputedTiming().endTime)).map(a=>a.finished.catch(()=>{})));});
+  assert.equal(await confirm.evaluate(node=>{const r=node.getBoundingClientRect();return node.contains(document.elementFromPoint(r.x+r.width/2,r.y+r.height/2));}),true,'confirm must be hittable');
+  await confirm.click();
+  await page.waitForFunction(()=>window.__SIM__.getState().apps.wechat_reading.shelf.length===0);
+  await page.waitForFunction(()=>window.__OS__.getAppRoute('wechat_reading')?.path==='/bookshelf');
+  await page.evaluate(id=>{const state=window.__SIM__.getState().apps.wechat_reading;window.__SIM__.setState({apps:{wechat_reading:{...state,shelf:[{bookId:id,isPrivate:false,addedAt:'2020-01-01T00:00:00.000Z'}]}}},{deep:false,reload:false});},ids[2]);
+  await page.waitForFunction(app=>document.querySelectorAll(`${app} [data-shelf-book-id]`).length===1,{},app);
+  await page.click(`${app} [data-trigger="bookshelf.select.enter.tap"]`);
+  await page.waitForSelector(`${app} [data-action="bookshelf.selectAll.toggle"]`,{visible:true});
+  await page.click(`${app} [data-action="bookshelf.selectAll.toggle"]`);
+  const again=await page.waitForSelector(`${app} [data-trigger="bookshelf.modal.confirm_remove.open"]:not(:disabled)`,{visible:true});
+  await again.evaluate(async node=>{const toolbar=node.closest('.animate-slide-up');if(toolbar)await Promise.all(toolbar.getAnimations({subtree:true}).filter(a=>Number.isFinite(a.effect?.getComputedTiming().endTime)).map(a=>a.finished.catch(()=>{})));});
+  await again.click(); await page.waitForSelector(`${app} [role="dialog"]`,{visible:true}); await remove(ids[2]);
+  await page.waitForFunction(app=>document.querySelector(`${app} [data-action="bookshelf.removeSelected.submit"]`)?.disabled===true,{},app);
+  assert.deepEqual(errors,[]);await context.close();console.log(locale,posture,'stale selections reconciled and live remainder removed');
+ }
+} finally {await browser.close()}

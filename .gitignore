@@ -1,0 +1,39 @@
+# Local credentials (the committed example contains placeholders only)
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+# Dependencies and generated/runtime outputs
+node_modules/
+dist/
+.cache/
+**/artifacts/
+foldagent/runs/
+foldmobilegym/public/cdn/
+foldmobilegym/mobilegym-data/
+/mobilegym_overlay/
+**/.mobilegym-release-stage-*/
+**/.mobilegym-release-*.lock
+**/.foldagent-media-stage-*/
+*.log
+*.pid
+# Python/editor files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+# Release assets do not belong in source history
+*.tar.gz
+*.zip
+*.7z
+*.msi
+*.safetensors
+*.pt
+*.pth
+*.ckpt

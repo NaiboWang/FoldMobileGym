@@ -1,0 +1,1192 @@
+[
+  {
+    "app": "meituan_waimai",
+    "graphFile": "public\\meituanwaimai_nav_graph.json",
+    "taskId": "meituan_waimai:meituan.search.input",
+    "start": {
+      "nodeId": "/?q=:q"
+    },
+    "target": {
+      "nodeId": "/?q=:q",
+      "routePath": "/",
+      "uiStateId": "meituan.home.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/?q=:q"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/?q=:q"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/?q=:q",
+              "routePath": "/",
+              "uiStateId": "meituan.home.base",
+              "component": "MeituanHome",
+              "description": "美团首页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {
+                "q": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "home",
+                  "direction": "vertical",
+                  "description": "美团首页"
+                },
+                {
+                  "name": "shops",
+                  "direction": "vertical",
+                  "description": "附近店铺与搜索结果"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "meituan.search.input",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "meituan.search.input",
+              "label": "搜索店铺",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "input",
+                "file": "apps\\MeituanWaimai\\MeituanWaimaiApp.tsx",
+                "line": 124,
+                "col": 233
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "meituan.search.input",
+      "label": "搜索店铺",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "meituan_waimai",
+    "graphFile": "public\\meituanwaimai_nav_graph.json",
+    "taskId": "meituan_waimai:meituan.cart.clear",
+    "start": {
+      "nodeId": "/?q=:q"
+    },
+    "target": {
+      "nodeId": "/cart",
+      "routePath": "/cart",
+      "uiStateId": "meituan.cart.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/?q=:q",
+          "/cart"
+        ],
+        "transitions": [
+          "meituan.cart.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/?q=:q",
+          "/cart"
+        ],
+        "transitions": [
+          "meituan.cart.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/?q=:q",
+              "routePath": "/",
+              "uiStateId": "meituan.home.base",
+              "component": "MeituanHome",
+              "description": "美团首页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {
+                "q": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "home",
+                  "direction": "vertical",
+                  "description": "美团首页"
+                },
+                {
+                  "name": "shops",
+                  "direction": "vertical",
+                  "description": "附近店铺与搜索结果"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "edge": {
+              "transitionId": "meituan.cart.open",
+              "label": "打开购物车",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/?q=:q",
+              "target": "/cart",
+              "uiMeta": {
+                "placement": "tabbar",
+                "icon": "cart",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/cart",
+              "routePath": "/cart",
+              "uiStateId": "meituan.cart.base",
+              "component": "WaimaiCart",
+              "description": "模拟购物车",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "cart",
+                  "direction": "vertical",
+                  "description": "购物车商品"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "meituan.cart.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "tabbar",
+              "icon": "cart",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/cart",
+              "routePath": "/cart",
+              "uiStateId": "meituan.cart.base",
+              "component": "WaimaiCart",
+              "description": "模拟购物车",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "cart",
+                  "direction": "vertical",
+                  "description": "购物车商品"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "meituan.cart.clear",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "meituan.cart.clear",
+              "label": "清空购物车",
+              "description": null,
+              "behavior": "submit",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "tap",
+                "file": "apps\\MeituanWaimai\\MeituanWaimaiApp.tsx",
+                "line": 195,
+                "col": 60
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "meituan.cart.clear",
+      "label": "清空购物车",
+      "description": null,
+      "behavior": "submit",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "meituan_waimai",
+    "graphFile": "public\\meituanwaimai_nav_graph.json",
+    "taskId": "meituan_waimai:meituan.cart.item.add",
+    "start": {
+      "nodeId": "/?q=:q"
+    },
+    "target": {
+      "nodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "routePath": "/shop/:id",
+      "uiStateId": "meituan.shop.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/?q=:q",
+          "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter"
+        ],
+        "transitions": [
+          "meituan.shop.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/?q=:q",
+          "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter"
+        ],
+        "transitions": [
+          "meituan.shop.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/?q=:q",
+              "routePath": "/",
+              "uiStateId": "meituan.home.base",
+              "component": "MeituanHome",
+              "description": "美团首页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {
+                "q": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "home",
+                  "direction": "vertical",
+                  "description": "美团首页"
+                },
+                {
+                  "name": "shops",
+                  "direction": "vertical",
+                  "description": "附近店铺与搜索结果"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "edge": {
+              "transitionId": "meituan.shop.open",
+              "label": "打开店铺",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/?q=:q",
+              "target": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "store",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {
+                "origin": "string"
+              },
+              "params": {
+                "id": "string"
+              },
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+              "routePath": "/shop/:id",
+              "uiStateId": "meituan.shop.base",
+              "component": "MeituanShopWorkspace",
+              "description": "店铺菜单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {
+                "origin": "string",
+                "menuCategory": "string",
+                "reviewFilter": "string"
+              },
+              "params": {
+                "id": "string"
+              },
+              "scrollContainers": [
+                {
+                  "name": "categories",
+                  "direction": "vertical",
+                  "description": "菜品分类"
+                },
+                {
+                  "name": "home",
+                  "direction": "vertical",
+                  "description": "首页来源内容"
+                },
+                {
+                  "name": "context",
+                  "direction": "vertical",
+                  "description": "搜索来源列表"
+                },
+                {
+                  "name": "menu",
+                  "direction": "vertical",
+                  "description": "餐品列表"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 3
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "meituan.shop.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {
+                  "id": "string"
+                },
+                "searchParamsSchema": {
+                  "origin": "string"
+                }
+              },
+              "placement": "content",
+              "icon": "store",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+              "routePath": "/shop/:id",
+              "uiStateId": "meituan.shop.base",
+              "component": "MeituanShopWorkspace",
+              "description": "店铺菜单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {
+                "origin": "string",
+                "menuCategory": "string",
+                "reviewFilter": "string"
+              },
+              "params": {
+                "id": "string"
+              },
+              "scrollContainers": [
+                {
+                  "name": "categories",
+                  "direction": "vertical",
+                  "description": "菜品分类"
+                },
+                {
+                  "name": "home",
+                  "direction": "vertical",
+                  "description": "首页来源内容"
+                },
+                {
+                  "name": "context",
+                  "direction": "vertical",
+                  "description": "搜索来源列表"
+                },
+                {
+                  "name": "menu",
+                  "direction": "vertical",
+                  "description": "餐品列表"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 3
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "meituan.cart.item.add",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "itemId": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "meituan.cart.item.add",
+              "label": "加入购物车",
+              "description": null,
+              "behavior": "submit",
+              "scope": "item",
+              "paramsSchema": {
+                "itemId": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\MeituanWaimai\\components\\MeituanMerchantMenu.tsx",
+                "line": 94,
+                "col": 29
+              },
+              {
+                "kind": "data-action",
+                "gestureType": "tap",
+                "file": "apps\\MeituanWaimai\\MeituanWaimaiApp.tsx",
+                "line": 196,
+                "col": 885
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "meituan.cart.item.add",
+      "label": "加入购物车",
+      "description": null,
+      "behavior": "submit",
+      "scope": "item",
+      "paramsSchema": {
+        "itemId": "string"
+      }
+    }
+  },
+  {
+    "app": "meituan_waimai",
+    "graphFile": "public\\meituanwaimai_nav_graph.json",
+    "taskId": "meituan_waimai:meituan.cart.item.remove",
+    "start": {
+      "nodeId": "/?q=:q"
+    },
+    "target": {
+      "nodeId": "/cart",
+      "routePath": "/cart",
+      "uiStateId": "meituan.cart.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/?q=:q",
+          "/cart"
+        ],
+        "transitions": [
+          "meituan.cart.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/?q=:q",
+          "/cart"
+        ],
+        "transitions": [
+          "meituan.cart.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/?q=:q",
+              "routePath": "/",
+              "uiStateId": "meituan.home.base",
+              "component": "MeituanHome",
+              "description": "美团首页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {
+                "q": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "home",
+                  "direction": "vertical",
+                  "description": "美团首页"
+                },
+                {
+                  "name": "shops",
+                  "direction": "vertical",
+                  "description": "附近店铺与搜索结果"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "edge": {
+              "transitionId": "meituan.cart.open",
+              "label": "打开购物车",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/?q=:q",
+              "target": "/cart",
+              "uiMeta": {
+                "placement": "tabbar",
+                "icon": "cart",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/cart",
+              "routePath": "/cart",
+              "uiStateId": "meituan.cart.base",
+              "component": "WaimaiCart",
+              "description": "模拟购物车",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "cart",
+                  "direction": "vertical",
+                  "description": "购物车商品"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "meituan.cart.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "tabbar",
+              "icon": "cart",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/cart",
+              "routePath": "/cart",
+              "uiStateId": "meituan.cart.base",
+              "component": "WaimaiCart",
+              "description": "模拟购物车",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "cart",
+                  "direction": "vertical",
+                  "description": "购物车商品"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 2
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "meituan.cart.item.remove",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "itemId": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "meituan.cart.item.remove",
+              "label": "减少商品",
+              "description": null,
+              "behavior": "submit",
+              "scope": "item",
+              "paramsSchema": {
+                "itemId": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "tap",
+                "file": "apps\\MeituanWaimai\\MeituanWaimaiApp.tsx",
+                "line": 196,
+                "col": 614
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "meituan.cart.item.remove",
+      "label": "减少商品",
+      "description": null,
+      "behavior": "submit",
+      "scope": "item",
+      "paramsSchema": {
+        "itemId": "string"
+      }
+    }
+  },
+  {
+    "app": "meituan_waimai",
+    "graphFile": "public\\meituanwaimai_nav_graph.json",
+    "taskId": "meituan_waimai:meituan.cart.switch.submit",
+    "start": {
+      "nodeId": "/?q=:q"
+    },
+    "target": {
+      "nodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "routePath": "/shop/:id",
+      "uiStateId": "meituan.shop.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/?q=:q",
+          "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter"
+        ],
+        "transitions": [
+          "meituan.shop.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/?q=:q",
+          "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter"
+        ],
+        "transitions": [
+          "meituan.shop.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/?q=:q",
+              "routePath": "/",
+              "uiStateId": "meituan.home.base",
+              "component": "MeituanHome",
+              "description": "美团首页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {
+                "q": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "home",
+                  "direction": "vertical",
+                  "description": "美团首页"
+                },
+                {
+                  "name": "shops",
+                  "direction": "vertical",
+                  "description": "附近店铺与搜索结果"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "edge": {
+              "transitionId": "meituan.shop.open",
+              "label": "打开店铺",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/?q=:q",
+              "target": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "store",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {
+                "origin": "string"
+              },
+              "params": {
+                "id": "string"
+              },
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+              "routePath": "/shop/:id",
+              "uiStateId": "meituan.shop.base",
+              "component": "MeituanShopWorkspace",
+              "description": "店铺菜单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {
+                "origin": "string",
+                "menuCategory": "string",
+                "reviewFilter": "string"
+              },
+              "params": {
+                "id": "string"
+              },
+              "scrollContainers": [
+                {
+                  "name": "categories",
+                  "direction": "vertical",
+                  "description": "菜品分类"
+                },
+                {
+                  "name": "home",
+                  "direction": "vertical",
+                  "description": "首页来源内容"
+                },
+                {
+                  "name": "context",
+                  "direction": "vertical",
+                  "description": "搜索来源列表"
+                },
+                {
+                  "name": "menu",
+                  "direction": "vertical",
+                  "description": "餐品列表"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 3
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "meituan.shop.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {
+                  "id": "string"
+                },
+                "searchParamsSchema": {
+                  "origin": "string"
+                }
+              },
+              "placement": "content",
+              "icon": "store",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+              "routePath": "/shop/:id",
+              "uiStateId": "meituan.shop.base",
+              "component": "MeituanShopWorkspace",
+              "description": "店铺菜单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {
+                "origin": "string",
+                "menuCategory": "string",
+                "reviewFilter": "string"
+              },
+              "params": {
+                "id": "string"
+              },
+              "scrollContainers": [
+                {
+                  "name": "categories",
+                  "direction": "vertical",
+                  "description": "菜品分类"
+                },
+                {
+                  "name": "home",
+                  "direction": "vertical",
+                  "description": "首页来源内容"
+                },
+                {
+                  "name": "context",
+                  "direction": "vertical",
+                  "description": "搜索来源列表"
+                },
+                {
+                  "name": "menu",
+                  "direction": "vertical",
+                  "description": "餐品列表"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 3
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "meituan.cart.switch.submit",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "shopId": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "meituan.cart.switch.submit",
+              "label": "确认清空原购物车并切换店铺",
+              "description": null,
+              "behavior": "submit",
+              "scope": null,
+              "paramsSchema": {
+                "shopId": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\MeituanWaimai\\MeituanWaimaiApp.tsx",
+                "line": 173,
+                "col": 37
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "meituan.cart.switch.submit",
+      "label": "确认清空原购物车并切换店铺",
+      "description": null,
+      "behavior": "submit",
+      "scope": null,
+      "paramsSchema": {
+        "shopId": "string"
+      }
+    }
+  },
+  {
+    "app": "meituan_waimai",
+    "graphFile": "public\\meituanwaimai_nav_graph.json",
+    "taskId": "meituan_waimai:meituan.menu.item.remove.submit",
+    "start": {
+      "nodeId": "/?q=:q"
+    },
+    "target": {
+      "nodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+      "routePath": "/shop/:id",
+      "uiStateId": "meituan.shop.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/?q=:q",
+          "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter"
+        ],
+        "transitions": [
+          "meituan.shop.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/?q=:q",
+          "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter"
+        ],
+        "transitions": [
+          "meituan.shop.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/?q=:q",
+              "routePath": "/",
+              "uiStateId": "meituan.home.base",
+              "component": "MeituanHome",
+              "description": "美团首页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {
+                "q": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "home",
+                  "direction": "vertical",
+                  "description": "美团首页"
+                },
+                {
+                  "name": "shops",
+                  "direction": "vertical",
+                  "description": "附近店铺与搜索结果"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "edge": {
+              "transitionId": "meituan.shop.open",
+              "label": "打开店铺",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/?q=:q",
+              "target": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "store",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {
+                "origin": "string"
+              },
+              "params": {
+                "id": "string"
+              },
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+              "routePath": "/shop/:id",
+              "uiStateId": "meituan.shop.base",
+              "component": "MeituanShopWorkspace",
+              "description": "店铺菜单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {
+                "origin": "string",
+                "menuCategory": "string",
+                "reviewFilter": "string"
+              },
+              "params": {
+                "id": "string"
+              },
+              "scrollContainers": [
+                {
+                  "name": "categories",
+                  "direction": "vertical",
+                  "description": "菜品分类"
+                },
+                {
+                  "name": "home",
+                  "direction": "vertical",
+                  "description": "首页来源内容"
+                },
+                {
+                  "name": "context",
+                  "direction": "vertical",
+                  "description": "搜索来源列表"
+                },
+                {
+                  "name": "menu",
+                  "direction": "vertical",
+                  "description": "餐品列表"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 3
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "meituan.shop.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {
+                  "id": "string"
+                },
+                "searchParamsSchema": {
+                  "origin": "string"
+                }
+              },
+              "placement": "content",
+              "icon": "store",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/shop/:id?menuCategory=:menuCategory&origin=:origin&reviewFilter=:reviewFilter",
+              "routePath": "/shop/:id",
+              "uiStateId": "meituan.shop.base",
+              "component": "MeituanShopWorkspace",
+              "description": "店铺菜单",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {
+                "origin": "string",
+                "menuCategory": "string",
+                "reviewFilter": "string"
+              },
+              "params": {
+                "id": "string"
+              },
+              "scrollContainers": [
+                {
+                  "name": "categories",
+                  "direction": "vertical",
+                  "description": "菜品分类"
+                },
+                {
+                  "name": "home",
+                  "direction": "vertical",
+                  "description": "首页来源内容"
+                },
+                {
+                  "name": "context",
+                  "direction": "vertical",
+                  "description": "搜索来源列表"
+                },
+                {
+                  "name": "menu",
+                  "direction": "vertical",
+                  "description": "餐品列表"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 3
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "meituan.menu.item.remove.submit",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "itemId": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "meituan.menu.item.remove.submit",
+              "label": "从菜单减少商品",
+              "description": null,
+              "behavior": "submit",
+              "scope": "item",
+              "paramsSchema": {
+                "itemId": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\MeituanWaimai\\components\\MeituanMerchantMenu.tsx",
+                "line": 91,
+                "col": 29
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "meituan.menu.item.remove.submit",
+      "label": "从菜单减少商品",
+      "description": null,
+      "behavior": "submit",
+      "scope": "item",
+      "paramsSchema": {
+        "itemId": "string"
+      }
+    }
+  }
+]

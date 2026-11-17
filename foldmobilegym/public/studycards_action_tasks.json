@@ -1,0 +1,475 @@
+[
+  {
+    "app": "study_cards",
+    "graphFile": "public\\studycards_nav_graph.json",
+    "taskId": "study_cards:cards.deck.open",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "study_cards.home.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "study_cards.home.base",
+              "component": "StudyCardsHome",
+              "description": "学习卡片",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "cards",
+                  "direction": "vertical",
+                  "description": "牌组和卡片"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 5
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "cards.deck.open",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "id": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "cards.deck.open",
+              "label": "选择牌组",
+              "description": null,
+              "behavior": "other",
+              "scope": "item",
+              "paramsSchema": {
+                "id": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "unknown",
+                "file": "apps\\StudyCards\\StudyCardsApp.tsx",
+                "line": 48,
+                "col": 15
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "cards.deck.open",
+      "label": "选择牌组",
+      "description": null,
+      "behavior": "other",
+      "scope": "item",
+      "paramsSchema": {
+        "id": "string"
+      }
+    }
+  },
+  {
+    "app": "study_cards",
+    "graphFile": "public\\studycards_nav_graph.json",
+    "taskId": "study_cards:cards.form.back.input",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "study_cards.home.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "study_cards.home.base",
+              "component": "StudyCardsHome",
+              "description": "学习卡片",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "cards",
+                  "direction": "vertical",
+                  "description": "牌组和卡片"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 5
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "cards.form.back.input",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "cards.form.back.input",
+              "label": "输入背面",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "unknown",
+                "file": "apps\\StudyCards\\StudyCardsApp.tsx",
+                "line": 111,
+                "col": 17
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "cards.form.back.input",
+      "label": "输入背面",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "study_cards",
+    "graphFile": "public\\studycards_nav_graph.json",
+    "taskId": "study_cards:cards.form.front.input",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "study_cards.home.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "study_cards.home.base",
+              "component": "StudyCardsHome",
+              "description": "学习卡片",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "cards",
+                  "direction": "vertical",
+                  "description": "牌组和卡片"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 5
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "cards.form.front.input",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "cards.form.front.input",
+              "label": "输入正面",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "unknown",
+                "file": "apps\\StudyCards\\StudyCardsApp.tsx",
+                "line": 102,
+                "col": 17
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "cards.form.front.input",
+      "label": "输入正面",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "study_cards",
+    "graphFile": "public\\studycards_nav_graph.json",
+    "taskId": "study_cards:cards.form.open",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "study_cards.home.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "study_cards.home.base",
+              "component": "StudyCardsHome",
+              "description": "学习卡片",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "cards",
+                  "direction": "vertical",
+                  "description": "牌组和卡片"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 5
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "cards.form.open",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "cards.form.open",
+              "label": "新建卡片",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "unknown",
+                "file": "apps\\StudyCards\\StudyCardsApp.tsx",
+                "line": 66,
+                "col": 11
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "cards.form.open",
+      "label": "新建卡片",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "study_cards",
+    "graphFile": "public\\studycards_nav_graph.json",
+    "taskId": "study_cards:cards.form.save",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "study_cards.home.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "study_cards.home.base",
+              "component": "StudyCardsHome",
+              "description": "学习卡片",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "cards",
+                  "direction": "vertical",
+                  "description": "牌组和卡片"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 5
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "cards.form.save",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "cards.form.save",
+              "label": "保存卡片",
+              "description": null,
+              "behavior": "submit",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "unknown",
+                "file": "apps\\StudyCards\\StudyCardsApp.tsx",
+                "line": 119,
+                "col": 13
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "cards.form.save",
+      "label": "保存卡片",
+      "description": null,
+      "behavior": "submit",
+      "scope": null,
+      "paramsSchema": null
+    }
+  }
+]

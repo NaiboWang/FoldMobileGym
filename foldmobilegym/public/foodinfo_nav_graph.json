@@ -1,0 +1,516 @@
+{
+  "app": "food_info",
+  "appDir": "apps\\FoodInfo",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 5,
+  "transitionCount": 5,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "uiStateId": "food_info.history.base",
+      "component": "YukaHistory",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "products",
+          "direction": "vertical",
+          "description": "扫描历史"
+        }
+      ],
+      "description": "扫描历史与商品分析",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "food.catalog.item.open",
+          "label": "打开食品详情",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        },
+        {
+          "id": "food.analysis.item.verify",
+          "label": "核对营养事实",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/alternatives",
+      "routePath": "/alternatives",
+      "uiStateId": "food_info.alternatives.base",
+      "component": "YukaAlternatives",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [],
+      "description": "健康替代品",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/scan",
+      "routePath": "/scan",
+      "uiStateId": "food_info.scan.base",
+      "component": "YukaScanner",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [],
+      "description": "条码扫描器",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "food.scan.sample.submit",
+          "label": "扫描受控示例条码",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/overview",
+      "routePath": "/overview",
+      "uiStateId": "food_info.overview.base",
+      "component": "YukaOverview",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [],
+      "description": "扫描评分概览",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/search?q=:q",
+      "routePath": "/search",
+      "uiStateId": "food_info.search.base",
+      "component": "YukaSearch",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [],
+      "description": "产品搜索",
+      "search": {},
+      "queryParams": {
+        "q": "string"
+      },
+      "actions": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "/alternatives",
+      "sourceNodeId": "/alternatives",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "food.tab.history",
+      "label": "切换到历史",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "history",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/scan",
+      "sourceNodeId": "/scan",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "food.tab.history",
+      "label": "切换到历史",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "history",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/overview",
+      "sourceNodeId": "/overview",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "food.tab.history",
+      "label": "切换到历史",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "history",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?q=:q",
+      "sourceNodeId": "/search?q=:q",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "food.tab.history",
+      "label": "切换到历史",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "history",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/alternatives",
+      "targetNodeId": "/alternatives",
+      "id": "food.tab.alternatives",
+      "label": "切换到替代品",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "heart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/scan",
+      "sourceNodeId": "/scan",
+      "target": "/alternatives",
+      "targetNodeId": "/alternatives",
+      "id": "food.tab.alternatives",
+      "label": "切换到替代品",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "heart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/overview",
+      "sourceNodeId": "/overview",
+      "target": "/alternatives",
+      "targetNodeId": "/alternatives",
+      "id": "food.tab.alternatives",
+      "label": "切换到替代品",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "heart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?q=:q",
+      "sourceNodeId": "/search?q=:q",
+      "target": "/alternatives",
+      "targetNodeId": "/alternatives",
+      "id": "food.tab.alternatives",
+      "label": "切换到替代品",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "heart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/scan",
+      "targetNodeId": "/scan",
+      "id": "food.tab.scan",
+      "label": "切换到扫描",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "scan",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/alternatives",
+      "sourceNodeId": "/alternatives",
+      "target": "/scan",
+      "targetNodeId": "/scan",
+      "id": "food.tab.scan",
+      "label": "切换到扫描",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "scan",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/overview",
+      "sourceNodeId": "/overview",
+      "target": "/scan",
+      "targetNodeId": "/scan",
+      "id": "food.tab.scan",
+      "label": "切换到扫描",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "scan",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?q=:q",
+      "sourceNodeId": "/search?q=:q",
+      "target": "/scan",
+      "targetNodeId": "/scan",
+      "id": "food.tab.scan",
+      "label": "切换到扫描",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "scan",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/overview",
+      "targetNodeId": "/overview",
+      "id": "food.tab.overview",
+      "label": "切换到概览",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "chart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/alternatives",
+      "sourceNodeId": "/alternatives",
+      "target": "/overview",
+      "targetNodeId": "/overview",
+      "id": "food.tab.overview",
+      "label": "切换到概览",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "chart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/scan",
+      "sourceNodeId": "/scan",
+      "target": "/overview",
+      "targetNodeId": "/overview",
+      "id": "food.tab.overview",
+      "label": "切换到概览",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "chart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?q=:q",
+      "sourceNodeId": "/search?q=:q",
+      "target": "/overview",
+      "targetNodeId": "/overview",
+      "id": "food.tab.overview",
+      "label": "切换到概览",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "chart",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/search?q=:q",
+      "targetNodeId": "/search?q=:q",
+      "id": "food.tab.search",
+      "label": "切换到搜索",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/alternatives",
+      "sourceNodeId": "/alternatives",
+      "target": "/search?q=:q",
+      "targetNodeId": "/search?q=:q",
+      "id": "food.tab.search",
+      "label": "切换到搜索",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/scan",
+      "sourceNodeId": "/scan",
+      "target": "/search?q=:q",
+      "targetNodeId": "/search?q=:q",
+      "id": "food.tab.search",
+      "label": "切换到搜索",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/overview",
+      "sourceNodeId": "/overview",
+      "target": "/search?q=:q",
+      "targetNodeId": "/search?q=:q",
+      "id": "food.tab.search",
+      "label": "切换到搜索",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    }
+  ]
+}

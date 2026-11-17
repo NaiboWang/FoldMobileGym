@@ -1,0 +1,25 @@
+.yuka-root .yuka-history,
+.yuka-root .yuka-detail { min-width: 0; }
+.yuka-root .yuka-detail { container: food-detail / inline-size; }
+.yuka-root .yuka-score { flex: 0 0 74px; }
+.yuka-root .yuka-hero > div,
+.yuka-root .yuka-rating > div { min-width: 0; }
+.yuka-root .yuka-hero h1,
+.yuka-root .yuka-allergen,
+.yuka-root .yuka-summary { overflow-wrap: anywhere; }
+.yuka-root .yuka-factor > div { min-width: 0; }
+.yuka-root .yuka-factor small { display: block; }
+.yuka-root .yuka-factor strong { text-align: right; overflow-wrap: anywhere; }
+.yuka-root .yuka-brand,
+.yuka-root .yuka-list-head { flex-shrink: 0; }
+@container (min-width: 600px) {
+  .yuka-root .yuka-layout { grid-template-columns: clamp(240px, 34%, 320px) minmax(0, 1fr); }
+}
+@container food-detail (max-width: 380px) {
+  .yuka-root .yuka-hero { grid-template-columns: 72px minmax(0, 1fr); gap: 14px; padding: 20px 16px; }
+  .yuka-root .yuka-product-pack { width: 72px; height: 96px; font-size: 36px; }
+  .yuka-root .yuka-hero h1 { font-size: 21px; }
+  .yuka-root .yuka-rating { flex-wrap: wrap; gap: 8px; }
+  .yuka-root .yuka-card { margin: 10px; padding: 16px; }
+  .yuka-root .yuka-factor { grid-template-columns: 11px minmax(0, 1fr) minmax(0, 1fr); gap: 8px; }
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "pair_id": "I50",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "apps": {
+    "alipay": {},
+    "notes": {}
+  },
+  "raw_apps": {
+    "alipay": {
+      "transferRecords": [
+        {
+          "id": "source-bill",
+          "counterpartyName": "文具采购",
+          "counterpartyAvatar": "",
+          "delta": -48.5,
+          "timestamp": 1793660400000,
+          "displayTitle": "文具采购",
+          "detailTimeLabel": "支付时间",
+          "paymentMethod": "余额",
+          "productDescription": "文具采购",
+          "rewardPoints": 100,
+          "payeeFullName": "校园文印店",
+          "serviceDetail": "美团外卖订单",
+          "orderId": "2026030922001499621415864600",
+          "merchantOrderId": "20260309215758U65754474825383198",
+          "kind": "expense",
+          "category": "shopping"
+        }
+      ]
+    },
+    "notes": {
+      "notes": [
+        {
+          "id": "untouched-note",
+          "title": "工作备忘",
+          "content": "原有内容，请保留。",
+          "folderId": "unfiled",
+          "updatedAt": 1793663999000
+        }
+      ],
+      "todos": [
+        {
+          "id": "untouched-todo",
+          "text": "保留原待办",
+          "completed": false,
+          "updatedAt": 1793663999000
+        }
+      ],
+      "createdCount": 0,
+      "deletedCount": 0,
+      "selectedFolderId": "all"
+    }
+  },
+  "os": {}
+}

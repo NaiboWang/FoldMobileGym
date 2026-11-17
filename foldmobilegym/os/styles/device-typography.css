@@ -1,0 +1,5 @@
+/* Device UI text must not fall back to a desktop serif CJK face. Explicit
+   app-owned display/code fonts still win through normal CSS inheritance. */
+.foldagent-activity-surface {
+  font-family: "Segoe UI", Roboto, "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", system-ui, sans-serif;
+}

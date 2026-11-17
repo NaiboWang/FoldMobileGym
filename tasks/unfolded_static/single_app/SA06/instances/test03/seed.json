@@ -1,0 +1,52 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "apps": {
+    "browser": {}
+  },
+  "raw_apps": {
+    "browser": {
+      "localPages": {
+        "benchmark://notice": {
+          "title": "校园卡补办公告",
+          "badge": "本地公告",
+          "paragraphs": [
+            "请在工作日到服务台办理",
+            "请携带有效证件"
+          ]
+        },
+        "benchmark://old-notice": {
+          "title": "校园卡补办公告（旧版）",
+          "paragraphs": [
+            "旧版公告"
+          ]
+        }
+      },
+      "tabs": [
+        {
+          "id": "1",
+          "url": "",
+          "title": "主页"
+        }
+      ],
+      "activeTabId": "1",
+      "bookmarks": {},
+      "visitedUrls": [],
+      "externalNavigationCount": 0,
+      "orderCount": 0,
+      "locationPermissionCount": 0
+    }
+  },
+  "os": {},
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "pair_id": "J49"
+}

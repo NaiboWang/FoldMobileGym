@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "project": "foldmobilegym",
+  "based_on": "MobileGym",
+  "publication_date": "2026-11-05",
+  "repository": "https://github.com/flyx-flyx/foldmobilegym",
+  "repository_private": true,
+  "release": {
+    "passed": true,
+    "published": true,
+    "release_id": 435188582,
+    "release_url": "https://github.com/flyx-flyx/foldmobilegym/releases/tag/v0.1.0",
+    "tag": "v0.1.0",
+    "source_commit": "0a05d935a35e030a3f9fd075e841cf81d98c6ea3",
+    "asset_id": 713377516,
+    "asset_name": "foldagentgym-demo-v0.1.0.mp4",
+    "bytes": 949027,
+    "sha256": "7c0025c750b942cee73aee404819c993914273d1d5cffcd76fd577714088dc5e",
+    "provider_digest_verified": true,
+    "full_video_network_download_rehashed": true,
+    "repository_private": true
+  },
+  "frontend_tree_sha": "61fc339b86cd7a2a48918baf69109b6ddf970763",
+  "fresh_github_reconstruction": {
+    "passed": true,
+    "tested_commit": "b992f2871a65535f8867cea11070e81266378ef3",
+    "frontend_tree_matches_release": true,
+    "initial_runtime_absent": true,
+    "initial_dependencies_absent": true,
+    "npm_cache_isolated": true,
+    "versions": {
+      "node": "v24.14.0",
+      "npm": "11.9.0",
+      "python": "Python 3.11.9"
+    },
+    "media_targets": 188706,
+    "frontend_test_files": 288,
+    "frontend_tests": 2863,
+    "media_tool_tests": 38,
+    "typescript_passed": true,
+    "production_build_passed": true,
+    "browser_entries": 60,
+    "browser_media_groups": 8,
+    "runtime_apis_passed": true,
+    "deep_flows": [
+      "weather-city",
+      "weather-home",
+      "desktop-split-and-folded-continuity"
+    ]
+  },
+  "media_release_verified": true,
+  "demo_format": {
+    "duration_seconds": 27.48,
+    "bytes": 949027,
+    "decode_passed": true,
+    "format": "MP4 / H.264 / yuv420p / faststart"
+  },
+  "boundaries": {
+    "all_native_pages_certified": false,
+    "external_images_fully_offline": false,
+    "browser_extension_toolbar_permission_chain_manual": true,
+    "public_server_deployed": false,
+    "private_phone_video_included": false,
+    "models_or_credentials_included": false
+  }
+}

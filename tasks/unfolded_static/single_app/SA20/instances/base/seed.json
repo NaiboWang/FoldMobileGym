@@ -1,0 +1,25 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "pair_id": "J76",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "apps": {
+    "ebay": {}
+  },
+  "raw_apps": {
+    "ebay": {
+      "savedItems": [],
+      "cartItems": []
+    }
+  },
+  "os": {}
+}

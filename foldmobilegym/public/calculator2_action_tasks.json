@@ -1,0 +1,3398 @@
+[
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.digit.0",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.basic.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.digit.0",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.digit.0",
+              "label": "输入 0",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.digit.0",
+      "label": "输入 0",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.digit.1",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.basic.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.digit.1",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.digit.1",
+              "label": "输入 1",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.digit.1",
+      "label": "输入 1",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.digit.2",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.basic.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.digit.2",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.digit.2",
+              "label": "输入 2",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.digit.2",
+      "label": "输入 2",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.digit.3",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.basic.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.digit.3",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.digit.3",
+              "label": "输入 3",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.digit.3",
+      "label": "输入 3",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.digit.4",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.basic.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.digit.4",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.digit.4",
+              "label": "输入 4",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.digit.4",
+      "label": "输入 4",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.digit.5",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.basic.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.digit.5",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.digit.5",
+              "label": "输入 5",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.digit.5",
+      "label": "输入 5",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.digit.6",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.basic.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.digit.6",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.digit.6",
+              "label": "输入 6",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.digit.6",
+      "label": "输入 6",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.digit.7",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.basic.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.digit.7",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.digit.7",
+              "label": "输入 7",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.digit.7",
+      "label": "输入 7",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.digit.8",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.basic.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.digit.8",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.digit.8",
+              "label": "输入 8",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.digit.8",
+      "label": "输入 8",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.digit.9",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.basic.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.digit.9",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.digit.9",
+              "label": "输入 9",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.digit.9",
+      "label": "输入 9",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.edit.clear",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.basic.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.edit.clear",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "calc.edit.clear",
+              "label": "清空结果",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.edit.clear",
+      "label": "清空结果",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.edit.delete",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.basic.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.edit.delete",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "calc.edit.delete",
+              "label": "删除一位",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.edit.delete",
+      "label": "删除一位",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.input.decimal",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.basic.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.input.decimal",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.input.decimal",
+              "label": "输入小数点",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.input.decimal",
+      "label": "输入小数点",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.operator.add",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.basic.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.operator.add",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.operator.add",
+              "label": "加",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.operator.add",
+      "label": "加",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.operator.divide",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.basic.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.operator.divide",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.operator.divide",
+              "label": "除",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.operator.divide",
+      "label": "除",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.operator.multiply",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.basic.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.operator.multiply",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.operator.multiply",
+              "label": "乘",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.operator.multiply",
+      "label": "乘",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.operator.subtract",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.basic.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.operator.subtract",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.operator.subtract",
+              "label": "减",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.operator.subtract",
+      "label": "减",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.result.evaluate",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "calculator.basic.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.result.evaluate",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "calc.result.evaluate",
+              "label": "计算结果",
+              "description": null,
+              "behavior": "submit",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.result.evaluate",
+      "label": "计算结果",
+      "description": null,
+      "behavior": "submit",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.constant.e",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/?panel=advanced",
+      "routePath": "/",
+      "uiStateId": "calculator.advanced.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "edge": {
+              "transitionId": "panel.advanced.open",
+              "label": "左滑打开科学面板",
+              "type": "state",
+              "mode": "replace",
+              "source": "/",
+              "target": "/?panel=advanced",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "swipe",
+                "gesture": "swipe-left"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {
+                "panel": "advanced"
+              },
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "panel.advanced.open",
+                "dataTriggerType": "swipe-left",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "swipe",
+              "gesture": "swipe-left"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.constant.e",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.constant.e",
+              "label": "e",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.constant.e",
+      "label": "e",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.constant.pi",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/?panel=advanced",
+      "routePath": "/",
+      "uiStateId": "calculator.advanced.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "edge": {
+              "transitionId": "panel.advanced.open",
+              "label": "左滑打开科学面板",
+              "type": "state",
+              "mode": "replace",
+              "source": "/",
+              "target": "/?panel=advanced",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "swipe",
+                "gesture": "swipe-left"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {
+                "panel": "advanced"
+              },
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "panel.advanced.open",
+                "dataTriggerType": "swipe-left",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "swipe",
+              "gesture": "swipe-left"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.constant.pi",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.constant.pi",
+              "label": "π",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.constant.pi",
+      "label": "π",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.function.cos",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/?panel=advanced",
+      "routePath": "/",
+      "uiStateId": "calculator.advanced.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "edge": {
+              "transitionId": "panel.advanced.open",
+              "label": "左滑打开科学面板",
+              "type": "state",
+              "mode": "replace",
+              "source": "/",
+              "target": "/?panel=advanced",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "swipe",
+                "gesture": "swipe-left"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {
+                "panel": "advanced"
+              },
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "panel.advanced.open",
+                "dataTriggerType": "swipe-left",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "swipe",
+              "gesture": "swipe-left"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.function.cos",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.function.cos",
+              "label": "cos",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.function.cos",
+      "label": "cos",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.function.ln",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/?panel=advanced",
+      "routePath": "/",
+      "uiStateId": "calculator.advanced.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "edge": {
+              "transitionId": "panel.advanced.open",
+              "label": "左滑打开科学面板",
+              "type": "state",
+              "mode": "replace",
+              "source": "/",
+              "target": "/?panel=advanced",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "swipe",
+                "gesture": "swipe-left"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {
+                "panel": "advanced"
+              },
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "panel.advanced.open",
+                "dataTriggerType": "swipe-left",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "swipe",
+              "gesture": "swipe-left"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.function.ln",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.function.ln",
+              "label": "ln",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.function.ln",
+      "label": "ln",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.function.log",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/?panel=advanced",
+      "routePath": "/",
+      "uiStateId": "calculator.advanced.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "edge": {
+              "transitionId": "panel.advanced.open",
+              "label": "左滑打开科学面板",
+              "type": "state",
+              "mode": "replace",
+              "source": "/",
+              "target": "/?panel=advanced",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "swipe",
+                "gesture": "swipe-left"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {
+                "panel": "advanced"
+              },
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "panel.advanced.open",
+                "dataTriggerType": "swipe-left",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "swipe",
+              "gesture": "swipe-left"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.function.log",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.function.log",
+              "label": "log",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.function.log",
+      "label": "log",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.function.sin",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/?panel=advanced",
+      "routePath": "/",
+      "uiStateId": "calculator.advanced.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "edge": {
+              "transitionId": "panel.advanced.open",
+              "label": "左滑打开科学面板",
+              "type": "state",
+              "mode": "replace",
+              "source": "/",
+              "target": "/?panel=advanced",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "swipe",
+                "gesture": "swipe-left"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {
+                "panel": "advanced"
+              },
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "panel.advanced.open",
+                "dataTriggerType": "swipe-left",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "swipe",
+              "gesture": "swipe-left"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.function.sin",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.function.sin",
+              "label": "sin",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.function.sin",
+      "label": "sin",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.function.sqrt",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/?panel=advanced",
+      "routePath": "/",
+      "uiStateId": "calculator.advanced.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "edge": {
+              "transitionId": "panel.advanced.open",
+              "label": "左滑打开科学面板",
+              "type": "state",
+              "mode": "replace",
+              "source": "/",
+              "target": "/?panel=advanced",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "swipe",
+                "gesture": "swipe-left"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {
+                "panel": "advanced"
+              },
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "panel.advanced.open",
+                "dataTriggerType": "swipe-left",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "swipe",
+              "gesture": "swipe-left"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.function.sqrt",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.function.sqrt",
+              "label": "平方根",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.function.sqrt",
+      "label": "平方根",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.function.tan",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/?panel=advanced",
+      "routePath": "/",
+      "uiStateId": "calculator.advanced.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "edge": {
+              "transitionId": "panel.advanced.open",
+              "label": "左滑打开科学面板",
+              "type": "state",
+              "mode": "replace",
+              "source": "/",
+              "target": "/?panel=advanced",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "swipe",
+                "gesture": "swipe-left"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {
+                "panel": "advanced"
+              },
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "panel.advanced.open",
+                "dataTriggerType": "swipe-left",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "swipe",
+              "gesture": "swipe-left"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.function.tan",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.function.tan",
+              "label": "tan",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.function.tan",
+      "label": "tan",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.operator.factorial",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/?panel=advanced",
+      "routePath": "/",
+      "uiStateId": "calculator.advanced.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "edge": {
+              "transitionId": "panel.advanced.open",
+              "label": "左滑打开科学面板",
+              "type": "state",
+              "mode": "replace",
+              "source": "/",
+              "target": "/?panel=advanced",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "swipe",
+                "gesture": "swipe-left"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {
+                "panel": "advanced"
+              },
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "panel.advanced.open",
+                "dataTriggerType": "swipe-left",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "swipe",
+              "gesture": "swipe-left"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.operator.factorial",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.operator.factorial",
+              "label": "阶乘",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.operator.factorial",
+      "label": "阶乘",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.operator.power",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/?panel=advanced",
+      "routePath": "/",
+      "uiStateId": "calculator.advanced.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "edge": {
+              "transitionId": "panel.advanced.open",
+              "label": "左滑打开科学面板",
+              "type": "state",
+              "mode": "replace",
+              "source": "/",
+              "target": "/?panel=advanced",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "swipe",
+                "gesture": "swipe-left"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {
+                "panel": "advanced"
+              },
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "panel.advanced.open",
+                "dataTriggerType": "swipe-left",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "swipe",
+              "gesture": "swipe-left"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.operator.power",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.operator.power",
+              "label": "幂",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.operator.power",
+      "label": "幂",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.parenthesis.left",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/?panel=advanced",
+      "routePath": "/",
+      "uiStateId": "calculator.advanced.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "edge": {
+              "transitionId": "panel.advanced.open",
+              "label": "左滑打开科学面板",
+              "type": "state",
+              "mode": "replace",
+              "source": "/",
+              "target": "/?panel=advanced",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "swipe",
+                "gesture": "swipe-left"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {
+                "panel": "advanced"
+              },
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "panel.advanced.open",
+                "dataTriggerType": "swipe-left",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "swipe",
+              "gesture": "swipe-left"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.parenthesis.left",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.parenthesis.left",
+              "label": "左括号",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.parenthesis.left",
+      "label": "左括号",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  },
+  {
+    "app": "calculator2",
+    "graphFile": "public\\calculator2_nav_graph.json",
+    "taskId": "calculator2:calc.parenthesis.right",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/?panel=advanced",
+      "routePath": "/",
+      "uiStateId": "calculator.advanced.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/?panel=advanced"
+        ],
+        "transitions": [
+          "panel.advanced.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "calculator.basic.base",
+              "component": "CalculatorPage",
+              "description": "基本计算面板",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 18
+            },
+            "edge": {
+              "transitionId": "panel.advanced.open",
+              "label": "左滑打开科学面板",
+              "type": "state",
+              "mode": "replace",
+              "source": "/",
+              "target": "/?panel=advanced",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "swipe",
+                "gesture": "swipe-left"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {
+                "panel": "advanced"
+              },
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "panel.advanced.open",
+                "dataTriggerType": "swipe-left",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "swipe",
+              "gesture": "swipe-left"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/?panel=advanced",
+              "routePath": "/",
+              "uiStateId": "calculator.advanced.base",
+              "component": "CalculatorPage",
+              "description": "科学计算面板",
+              "entryPoint": false,
+              "search": {
+                "panel": "advanced"
+              },
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 12
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "calc.parenthesis.right",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "calc.parenthesis.right",
+              "label": "右括号",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "calc.parenthesis.right",
+      "label": "右括号",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  }
+]

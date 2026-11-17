@@ -1,0 +1,8 @@
+{
+  "app": "calculator",
+  "data": {
+    "a": 128,
+    "b": 36,
+    "result": 4608
+  }
+}

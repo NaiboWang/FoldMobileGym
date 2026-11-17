@@ -1,0 +1,287 @@
+[
+  {
+    "app": "gallery",
+    "graphFile": "public\\gallery_nav_graph.json",
+    "taskId": "gallery:gallery.select.share",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/",
+      "routePath": "/",
+      "uiStateId": "gallery.home.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 0,
+    "trajectories": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/"
+        ],
+        "transitions": [],
+        "length": 0,
+        "steps": [
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "gallery.home.base",
+              "component": "HomePage",
+              "description": "相册首页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "gallery.select.share",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "gallery.select.share",
+              "label": "分享选中的图片",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "tap",
+                "file": "system\\Gallery\\GalleryApp.tsx",
+                "line": 669,
+                "col": 11
+              }
+            ],
+            "index": 0
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "gallery.select.share",
+      "label": "分享选中的图片",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  },
+  {
+    "app": "gallery",
+    "graphFile": "public\\gallery_nav_graph.json",
+    "taskId": "gallery:gallery.viewer.share",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/photo/:path?album=:album&from=:from",
+      "routePath": "/photo/:path",
+      "uiStateId": "gallery.photo.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/photo/:path?album=:album&from=:from"
+        ],
+        "transitions": [
+          "photo.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/photo/:path?album=:album&from=:from"
+        ],
+        "transitions": [
+          "photo.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "gallery.home.base",
+              "component": "HomePage",
+              "description": "相册首页",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "edge": {
+              "transitionId": "photo.open",
+              "label": "打开图片预览页",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/",
+              "target": "/photo/:path?album=:album&from=:from",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "photo",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {
+                "album": "string",
+                "from": "string"
+              },
+              "params": {
+                "path": "string"
+              },
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/photo/:path?album=:album&from=:from",
+              "routePath": "/photo/:path",
+              "uiStateId": "gallery.photo.base",
+              "component": "PhotoViewerPage",
+              "description": "图片预览页",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {
+                "album": "string",
+                "from": "string"
+              },
+              "params": {
+                "path": "string"
+              },
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "photo.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {
+                  "path": "string"
+                },
+                "searchParamsSchema": {
+                  "album": "string",
+                  "from": "string"
+                }
+              },
+              "placement": "content",
+              "icon": "photo",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/photo/:path?album=:album&from=:from",
+              "routePath": "/photo/:path",
+              "uiStateId": "gallery.photo.base",
+              "component": "PhotoViewerPage",
+              "description": "图片预览页",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {
+                "album": "string",
+                "from": "string"
+              },
+              "params": {
+                "path": "string"
+              },
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "页面主内容区"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "gallery.viewer.share",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "gallery.viewer.share",
+              "label": "分享当前图片",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "tap",
+                "file": "system\\Gallery\\GalleryApp.tsx",
+                "line": 1693,
+                "col": 11
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "gallery.viewer.share",
+      "label": "分享当前图片",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  }
+]

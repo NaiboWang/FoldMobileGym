@@ -1,0 +1,5 @@
+import type {NavigationDeclaration} from '../../system/Calendar/navigation.types';
+export const NAVIGATION_DECLARATION={app:'fitness',routes:[
+ {path:'/',component:'Content',params:{},entryPoint:'home',queryParams:{},scrollContainers:[],uiStates:[{id:'fitness.history.base',search:{},description:'Activity history'}],description:'Activity list'},
+ {path:'/activity/:id',component:'Content',params:{id:'string'},entryPoint:'none',queryParams:{},scrollContainers:[],uiStates:[{id:'fitness.detail.base',search:{},description:'Activity metrics',actions:[{id:'fitness.fact.verify',label:'Verify activity data',behavior:'other'}]}],description:'Activity detail'}
+],transitions:[{id:'fitness.activity.open',from:['/','/activity/:id'],to:'/activity/:id',params:{id:'string'},search:{},searchParams:{},mode:'push',label:'Open activity',ui:{placement:'content',icon:'activity',gesture:'tap'},dataSource:{ref:'activities',paramMapping:{id:'id'},labelField:'title'}}],capabilities:{historyBack:true}} as const satisfies NavigationDeclaration;

@@ -1,0 +1,67 @@
+/* App-window sizing: folded phones and narrow split windows share compact layout. */
+.tb-shell { container: taobao / inline-size; min-width: 0; min-height: 0; }
+.tb-page { min-width: 0; min-height: 0; }
+.tb-cart-header > div { min-width: 0; gap: 10px; }
+.tb-cart-header h1, .tb-cart-header button { white-space: nowrap; }
+.tb-cart-price { flex-wrap: wrap; gap: 6px; }
+.tb-cart-price > strong, .tb-stepper { flex-shrink: 0; }
+.tb-cart-promo > span, .tb-cart-promo > button { flex-shrink: 0; }
+.tb-cart-total > .tb-check { width: 20px; height: 20px; padding: 0; margin: 0; border: 1.5px solid #bbb; background: #fff; }
+.tb-cart-total > .tb-check.checked { border-color: #ff5000; background: #ff5000; }
+/* Draw the tick geometrically; a text glyph varies with the host font. */
+.tb-shell button.tb-check {
+  position: relative;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  flex: 0 0 20px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 0;
+  line-height: 0;
+  appearance: none;
+}
+.tb-shell button.tb-check.checked::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 9px;
+  left: 6px;
+  top: 3px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.tb-shell button.tb-check:focus-visible {
+  outline: 2px solid #ff5000;
+  outline-offset: 3px;
+}
+.tb-cart-item > .tb-check { margin-top: 36px; }
+.tb-detail-info { min-width: 0; overflow-wrap: anywhere; }
+.tb-detail-media .tb-detail-picture { object-fit: contain; }
+.tb-cart-list .tb-empty { min-height: 220px; height: auto; padding: 28px 12px; }
+@container taobao (max-width: 359px) {
+  .tb-cart-item { grid-template-columns: 20px 72px minmax(0, 1fr); gap: 7px; }
+  .tb-cart-item > .tb-cart-thumbnail { width: 72px; height: 72px; }
+  .tb-cart-item > .tb-check { margin-top: 26px; }
+  .tb-cart-header { padding-left: 10px; padding-right: 10px; }
+  .tb-cart-header h1 { font-size: 20px; }
+  .tb-cart-total { gap: 4px; padding-inline: 6px; }
+  .tb-cart-total .tb-checkout { min-width: 76px; padding-inline: 10px; font-size: 13px; }
+  .tb-cart-total > div strong { font-size: 16px; }
+}
+@container taobao (min-width: 600px) {
+  .tb-page:has(.tb-home-header) .tb-product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .tb-home-header { display: flex; flex-direction: column; padding-inline: 12px; background: linear-gradient(#fff0e9, #fff); }
+  .tb-home-header .tb-channel-row { order: -1; justify-content: flex-start; gap: 30px; }
+  .tb-home-header .tb-search-pill { width: 100%; max-width: none; border-radius: 14px; }
+  .tb-page:has(.tb-home-header) > .tb-tabbar { width: 100%; border-radius: 0; }
+  .tb-page:has(.tb-home-header) .tb-scroll { padding-inline: 10px; }
+  .tb-page:has(.tb-home-header) .tb-product h3 { height: 44px; font-size: 15px; line-height: 22px; }
+  .tb-cart-item > .tb-check { margin-top: 48px; }
+  .tb-detail { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .tb-detail-media .tb-detail-picture { object-fit: contain; }
+  .tb-cart-list .tb-product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

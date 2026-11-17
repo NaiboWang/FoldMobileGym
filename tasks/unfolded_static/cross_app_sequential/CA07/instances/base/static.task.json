@@ -1,0 +1,138 @@
+{
+  "schema_version": "foldmobilegym.task.v2",
+  "id": "I40-001",
+  "pair_id": "I40",
+  "condition": "static",
+  "split": "l1_controlled",
+  "environment_tier": "L1-controlled-web",
+  "instruction": "全程使用展开态内屏，各应用以全屏方式依次切换。在计算器中计算128 × 36，读取计算结果。在“笔记”应用中新建一条普通文字笔记，标题填写“信息记录 · 计算器”，在空白正文中记录这些信息并保存。保留原有笔记，不清除计算记录。完成后保留目标应用全屏",
+  "initial_state": "tasks/unfolded_static/cross_app_sequential/CA07/instances/base/seed.json",
+  "initial_window": {
+    "posture": "unfolded",
+    "layout": "inner_wide",
+    "mode": "fullscreen",
+    "focused_app": "calculator"
+  },
+  "apps": [
+    "calculator",
+    "notes"
+  ],
+  "seed_contract": {
+    "fixture": "CA07_base_expanded_v1",
+    "distractors": [
+      "other_objects"
+    ],
+    "workflow_v1": {
+      "version": 1,
+      "card": "CA07",
+      "source": {
+        "app": "calculator",
+        "selector": "[data-calculator-display]",
+        "facts": [
+          [
+            "4608"
+          ]
+        ]
+      },
+      "target": {
+        "app": "notes",
+        "kind": "note",
+        "route": "^/note/",
+        "field": "[data-benchmark-field=\"notes-content\"]",
+        "facts": [
+          [
+            "4608"
+          ]
+        ],
+        "fact_matching": "numeric_boundaries",
+        "title": "信息记录 · 计算器"
+      },
+      "protected_paths": []
+    }
+  },
+  "event_plan": [],
+  "evaluator": {
+    "success_all": [
+      {
+        "path": "workflow.business_passed",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "path": "apps.calculator.calculations",
+        "op": "contains_object",
+        "value": {
+          "result": 4608
+        }
+      }
+    ],
+    "safety_all": [
+      {
+        "path": "workflow.safety_passed",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "path": "telemetry.real_world_side_effects",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "path": "telemetry.forbidden_actions",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "path": "foldable.posture",
+        "op": "eq",
+        "value": "unfolded"
+      },
+      {
+        "path": "foldable.active_display",
+        "op": "eq",
+        "value": "inner"
+      },
+      {
+        "path": "foldable.multi_window.mode",
+        "op": "eq",
+        "value": "fullscreen"
+      }
+    ],
+    "must_have_events": [],
+    "require_post_transition_action": false,
+    "max_invalid_actions": 3,
+    "max_repeated_actions": 5
+  },
+  "recovery": null,
+  "evidence_contract": {
+    "event_fields": [
+      "trigger_step",
+      "trigger_state_hash",
+      "posture_before",
+      "posture_after",
+      "layout_before",
+      "layout_after"
+    ],
+    "capture_pre_and_post_state": true,
+    "capture_action_trace": true
+  },
+  "adapter": {
+    "status": "ready",
+    "contract_id": "workflow_v1",
+    "privileged_state_exposed_to_agent": false
+  },
+  "metadata": {
+    "card_id": "CA07",
+    "family": "cross_app_sequential",
+    "instance_id": "base",
+    "orientation": null,
+    "benchmark_profile": "unfolded_static_v1",
+    "suite_id": "unfolded_static_20261027",
+    "expansion": "20261104",
+    "validation_status": "gui_validation_required",
+    "independent_review": false,
+    "max_steps": 72,
+    "text_policy": "empty_target_facts_order_and_punctuation_free",
+    "judging": "result_based"
+  }
+}

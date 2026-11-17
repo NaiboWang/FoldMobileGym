@@ -1,0 +1,4580 @@
+{
+  "app": "file_manager",
+  "appDir": "system\\FileManager",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 39,
+  "transitionCount": 49,
+  "nodes": [
+    {
+      "id": "/pick?path=:path",
+      "routePath": "/pick",
+      "uiStateId": "documentPicker.base",
+      "component": "DocumentPickerPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "Available virtual documents"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "Shared-storage directory shortcuts"
+        }
+      ],
+      "description": "Read-only document result picker",
+      "search": {},
+      "queryParams": {
+        "path": "string"
+      },
+      "actions": [
+        {
+          "id": "documentPicker.item.pick.submit",
+          "label": "Return a selected document identity",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "id": "string",
+            "path": "string"
+          }
+        },
+        {
+          "id": "documentPicker.search.input",
+          "label": "Search virtual document names",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "documentPicker.files.refresh",
+          "label": "Refresh shared files",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/search?q=:q",
+      "routePath": "/search",
+      "uiStateId": "fileSearch.base",
+      "component": "SearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        }
+      ],
+      "description": "文件搜索",
+      "search": {},
+      "queryParams": {
+        "q": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/search?category=all&q=:q",
+      "routePath": "/search",
+      "uiStateId": "fileSearch.all",
+      "component": "SearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        }
+      ],
+      "description": "搜索全部文件",
+      "search": {
+        "category": "all"
+      },
+      "queryParams": {
+        "q": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/search?category=images&q=:q",
+      "routePath": "/search",
+      "uiStateId": "fileSearch.images",
+      "component": "SearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        }
+      ],
+      "description": "搜索图片",
+      "search": {
+        "category": "images"
+      },
+      "queryParams": {
+        "q": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/search?category=videos&q=:q",
+      "routePath": "/search",
+      "uiStateId": "fileSearch.videos",
+      "component": "SearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        }
+      ],
+      "description": "搜索视频",
+      "search": {
+        "category": "videos"
+      },
+      "queryParams": {
+        "q": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/search?category=documents&q=:q",
+      "routePath": "/search",
+      "uiStateId": "fileSearch.documents",
+      "component": "SearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        }
+      ],
+      "description": "搜索文档",
+      "search": {
+        "category": "documents"
+      },
+      "queryParams": {
+        "q": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/search?category=audio&q=:q",
+      "routePath": "/search",
+      "uiStateId": "fileSearch.audio",
+      "component": "SearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        }
+      ],
+      "description": "搜索音频",
+      "search": {
+        "category": "audio"
+      },
+      "queryParams": {
+        "q": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/settings",
+      "routePath": "/settings",
+      "uiStateId": "settings.base",
+      "component": "SettingsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        }
+      ],
+      "description": "文件管理设置",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "file.settings.mobileData.toggle",
+          "label": "切换移动数据同步",
+          "behavior": "toggle"
+        },
+        {
+          "id": "file.settings.hidden.toggle",
+          "label": "切换隐藏文件显示",
+          "behavior": "toggle"
+        },
+        {
+          "id": "file.settings.systemHidden.toggle",
+          "label": "切换系统隐藏文件显示",
+          "behavior": "toggle"
+        },
+        {
+          "id": "file.settings.autoCollect.toggle",
+          "label": "切换文档自动收藏",
+          "behavior": "toggle"
+        }
+      ]
+    },
+    {
+      "id": "/?transferPath=:transferPath",
+      "routePath": "/",
+      "uiStateId": "browse.base",
+      "component": "BrowseHomePage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "浏览主页",
+      "search": {},
+      "queryParams": {
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/?modal=details&transferPath=:transferPath",
+      "routePath": "/",
+      "uiStateId": "browse.modal.details",
+      "component": "BrowseHomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "浏览主页 - 详情弹窗",
+      "search": {
+        "modal": "details"
+      },
+      "queryParams": {
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/?modal=rename&transferPath=:transferPath",
+      "routePath": "/",
+      "uiStateId": "browse.modal.rename",
+      "component": "BrowseHomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "浏览主页 - 重命名弹窗",
+      "search": {
+        "modal": "rename"
+      },
+      "queryParams": {
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/?mode=select&transferPath=:transferPath",
+      "routePath": "/",
+      "uiStateId": "browse.select",
+      "component": "BrowseHomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "浏览主页 - 选择模式",
+      "search": {
+        "mode": "select"
+      },
+      "queryParams": {
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/?mode=select&modal=delete&transferPath=:transferPath",
+      "routePath": "/",
+      "uiStateId": "browse.select.modal.delete",
+      "component": "BrowseHomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "浏览主页 - 选择模式 - 删除确认",
+      "search": {
+        "mode": "select",
+        "modal": "delete"
+      },
+      "queryParams": {
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/?mode=select&modal=more&transferPath=:transferPath",
+      "routePath": "/",
+      "uiStateId": "browse.select.modal.more",
+      "component": "BrowseHomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "浏览主页 - 选择模式 - 更多菜单",
+      "search": {
+        "mode": "select",
+        "modal": "more"
+      },
+      "queryParams": {
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/?mode=select&modal=transfer&transferPath=:transferPath",
+      "routePath": "/",
+      "uiStateId": "browse.select.modal.transfer",
+      "component": "BrowseHomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "浏览主页 - 选择模式 - 复制/移动目标选择",
+      "search": {
+        "mode": "select",
+        "modal": "transfer"
+      },
+      "queryParams": {
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/?mode=select&modal=transfer&transferDialog=newFolder&transferPath=:transferPath",
+      "routePath": "/",
+      "uiStateId": "browse.select.modal.transfer.newFolder",
+      "component": "BrowseHomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "浏览主页 - 选择模式 - 复制/移动目标选择 - 新建文件夹",
+      "search": {
+        "mode": "select",
+        "modal": "transfer",
+        "transferDialog": "newFolder"
+      },
+      "queryParams": {
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/recent?transferPath=:transferPath",
+      "routePath": "/recent",
+      "uiStateId": "recent.base",
+      "component": "RecentPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "最近文件",
+      "search": {},
+      "queryParams": {
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/recent?modal=details&transferPath=:transferPath",
+      "routePath": "/recent",
+      "uiStateId": "recent.modal.details",
+      "component": "RecentPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "最近文件 - 详情弹窗",
+      "search": {
+        "modal": "details"
+      },
+      "queryParams": {
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/recent?modal=rename&transferPath=:transferPath",
+      "routePath": "/recent",
+      "uiStateId": "recent.modal.rename",
+      "component": "RecentPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "最近文件 - 重命名弹窗",
+      "search": {
+        "modal": "rename"
+      },
+      "queryParams": {
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/recent?mode=select&transferPath=:transferPath",
+      "routePath": "/recent",
+      "uiStateId": "recent.select",
+      "component": "RecentPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "最近文件 - 选择模式",
+      "search": {
+        "mode": "select"
+      },
+      "queryParams": {
+        "transferPath": "string"
+      },
+      "actions": [
+        {
+          "id": "recent.select.send",
+          "label": "发送选中的图片",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/recent?mode=select&modal=delete&transferPath=:transferPath",
+      "routePath": "/recent",
+      "uiStateId": "recent.select.modal.delete",
+      "component": "RecentPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "最近文件 - 选择模式 - 删除确认",
+      "search": {
+        "mode": "select",
+        "modal": "delete"
+      },
+      "queryParams": {
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/recent?mode=select&modal=more&transferPath=:transferPath",
+      "routePath": "/recent",
+      "uiStateId": "recent.select.modal.more",
+      "component": "RecentPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "最近文件 - 选择模式 - 更多菜单",
+      "search": {
+        "mode": "select",
+        "modal": "more"
+      },
+      "queryParams": {
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/recent?mode=select&modal=transfer&transferPath=:transferPath",
+      "routePath": "/recent",
+      "uiStateId": "recent.select.modal.transfer",
+      "component": "RecentPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "最近文件 - 选择模式 - 复制/移动目标选择",
+      "search": {
+        "mode": "select",
+        "modal": "transfer"
+      },
+      "queryParams": {
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/recent?mode=select&modal=transfer&transferDialog=newFolder&transferPath=:transferPath",
+      "routePath": "/recent",
+      "uiStateId": "recent.select.modal.transfer.newFolder",
+      "component": "RecentPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "最近文件 - 选择模式 - 复制/移动目标选择 - 新建文件夹",
+      "search": {
+        "mode": "select",
+        "modal": "transfer",
+        "transferDialog": "newFolder"
+      },
+      "queryParams": {
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/favorites",
+      "routePath": "/favorites",
+      "uiStateId": "favorites.base",
+      "component": "FavoritesPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "收藏文件",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/private",
+      "routePath": "/private",
+      "uiStateId": "private.base",
+      "component": "PrivatePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "私密文件",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/cloud",
+      "routePath": "/cloud",
+      "uiStateId": "cloud.base",
+      "component": "CloudPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        }
+      ],
+      "description": "云盘",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/folder?path=:path&transferPath=:transferPath",
+      "routePath": "/folder",
+      "uiStateId": "folder.base",
+      "component": "FolderPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "文件夹浏览",
+      "search": {},
+      "queryParams": {
+        "path": "string",
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/folder?modal=details&path=:path&transferPath=:transferPath",
+      "routePath": "/folder",
+      "uiStateId": "folder.modal.details",
+      "component": "FolderPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "文件夹浏览 - 详情弹窗",
+      "search": {
+        "modal": "details"
+      },
+      "queryParams": {
+        "path": "string",
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/folder?modal=rename&path=:path&transferPath=:transferPath",
+      "routePath": "/folder",
+      "uiStateId": "folder.modal.rename",
+      "component": "FolderPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "文件夹浏览 - 重命名弹窗",
+      "search": {
+        "modal": "rename"
+      },
+      "queryParams": {
+        "path": "string",
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/folder?modal=newFolder&path=:path&transferPath=:transferPath",
+      "routePath": "/folder",
+      "uiStateId": "folder.modal.newFolder",
+      "component": "FolderPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "文件夹浏览 - 新建文件夹",
+      "search": {
+        "modal": "newFolder"
+      },
+      "queryParams": {
+        "path": "string",
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/folder?mode=select&path=:path&transferPath=:transferPath",
+      "routePath": "/folder",
+      "uiStateId": "folder.select",
+      "component": "FolderPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "文件夹浏览 - 选择模式",
+      "search": {
+        "mode": "select"
+      },
+      "queryParams": {
+        "path": "string",
+        "transferPath": "string"
+      },
+      "actions": [
+        {
+          "id": "folder.select.send",
+          "label": "发送选中的图片",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/folder?mode=select&modal=delete&path=:path&transferPath=:transferPath",
+      "routePath": "/folder",
+      "uiStateId": "folder.select.modal.delete",
+      "component": "FolderPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "文件夹浏览 - 选择模式 - 删除确认",
+      "search": {
+        "mode": "select",
+        "modal": "delete"
+      },
+      "queryParams": {
+        "path": "string",
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/folder?mode=select&modal=more&path=:path&transferPath=:transferPath",
+      "routePath": "/folder",
+      "uiStateId": "folder.select.modal.more",
+      "component": "FolderPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "文件夹浏览 - 选择模式 - 更多菜单",
+      "search": {
+        "mode": "select",
+        "modal": "more"
+      },
+      "queryParams": {
+        "path": "string",
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/folder?mode=select&modal=transfer&path=:path&transferPath=:transferPath",
+      "routePath": "/folder",
+      "uiStateId": "folder.select.modal.transfer",
+      "component": "FolderPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "文件夹浏览 - 选择模式 - 复制/移动目标选择",
+      "search": {
+        "mode": "select",
+        "modal": "transfer"
+      },
+      "queryParams": {
+        "path": "string",
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/folder?mode=select&modal=transfer&transferDialog=newFolder&path=:path&transferPath=:transferPath",
+      "routePath": "/folder",
+      "uiStateId": "folder.select.modal.transfer.newFolder",
+      "component": "FolderPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "dialog",
+          "direction": "vertical",
+          "description": "当前文件弹层内容"
+        },
+        {
+          "name": "transfer",
+          "direction": "vertical",
+          "description": "复制或移动目标目录"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "文件夹浏览 - 选择模式 - 复制/移动目标选择 - 新建文件夹",
+      "search": {
+        "mode": "select",
+        "modal": "transfer",
+        "transferDialog": "newFolder"
+      },
+      "queryParams": {
+        "path": "string",
+        "transferPath": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/text?path=:path",
+      "routePath": "/text",
+      "uiStateId": "textPreview.base",
+      "component": "TextPreviewPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        }
+      ],
+      "description": "文本文件预览",
+      "search": {},
+      "queryParams": {
+        "path": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/pdf?path=:path",
+      "routePath": "/pdf",
+      "uiStateId": "pdfPreview.base",
+      "component": "PdfPreviewPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [],
+      "description": "PDF 文件预览",
+      "search": {},
+      "queryParams": {
+        "path": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/category/:category",
+      "routePath": "/category/:category",
+      "uiStateId": "category.base",
+      "component": "CategoryPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {
+        "category": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "主内容区"
+        },
+        {
+          "name": "directory",
+          "direction": "vertical",
+          "description": "展开态文件目录栏"
+        }
+      ],
+      "description": "分类文件",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "/?transferPath=:transferPath",
+      "sourceNodeId": "/?transferPath=:transferPath",
+      "target": "/search?q=:q",
+      "targetNodeId": "/search?q=:q",
+      "id": "search.open",
+      "label": "打开文件搜索",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "mode": null,
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/recent?transferPath=:transferPath",
+      "sourceNodeId": "/recent?transferPath=:transferPath",
+      "target": "/search?q=:q",
+      "targetNodeId": "/search?q=:q",
+      "id": "search.open",
+      "label": "打开文件搜索",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/recent",
+        "search": {
+          "mode": null,
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder?path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "target": "/search?q=:q",
+      "targetNodeId": "/search?q=:q",
+      "id": "search.open",
+      "label": "打开文件搜索",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/folder",
+        "search": {
+          "mode": null,
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/favorites",
+      "sourceNodeId": "/favorites",
+      "target": "/search?q=:q",
+      "targetNodeId": "/search?q=:q",
+      "id": "search.open",
+      "label": "打开文件搜索",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/favorites",
+        "search": {}
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/private",
+      "sourceNodeId": "/private",
+      "target": "/search?q=:q",
+      "targetNodeId": "/search?q=:q",
+      "id": "search.open",
+      "label": "打开文件搜索",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/private",
+        "search": {}
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/category/:category",
+      "sourceNodeId": "/category/:category",
+      "target": "/search?q=:q",
+      "targetNodeId": "/search?q=:q",
+      "id": "search.open",
+      "label": "打开文件搜索",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/category/:category",
+        "search": {}
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?q=:q",
+      "sourceNodeId": "/search?q=:q",
+      "target": "/search?category=all&q=:q",
+      "targetNodeId": "/search?category=all&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索全部文件",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "all"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": null
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?q=:q",
+      "sourceNodeId": "/search?q=:q",
+      "target": "/search?category=images&q=:q",
+      "targetNodeId": "/search?category=images&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索图片",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "images"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": null
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?q=:q",
+      "sourceNodeId": "/search?q=:q",
+      "target": "/search?category=videos&q=:q",
+      "targetNodeId": "/search?category=videos&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索视频",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "videos"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": null
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?q=:q",
+      "sourceNodeId": "/search?q=:q",
+      "target": "/search?category=documents&q=:q",
+      "targetNodeId": "/search?category=documents&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索文档",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "documents"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": null
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?q=:q",
+      "sourceNodeId": "/search?q=:q",
+      "target": "/search?category=audio&q=:q",
+      "targetNodeId": "/search?category=audio&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索音频",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "audio"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": null
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?category=all&q=:q",
+      "sourceNodeId": "/search?category=all&q=:q",
+      "target": "/search?category=images&q=:q",
+      "targetNodeId": "/search?category=images&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索图片",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "images"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": "all"
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?category=all&q=:q",
+      "sourceNodeId": "/search?category=all&q=:q",
+      "target": "/search?category=videos&q=:q",
+      "targetNodeId": "/search?category=videos&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索视频",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "videos"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": "all"
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?category=all&q=:q",
+      "sourceNodeId": "/search?category=all&q=:q",
+      "target": "/search?category=documents&q=:q",
+      "targetNodeId": "/search?category=documents&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索文档",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "documents"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": "all"
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?category=all&q=:q",
+      "sourceNodeId": "/search?category=all&q=:q",
+      "target": "/search?category=audio&q=:q",
+      "targetNodeId": "/search?category=audio&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索音频",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "audio"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": "all"
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?category=images&q=:q",
+      "sourceNodeId": "/search?category=images&q=:q",
+      "target": "/search?category=all&q=:q",
+      "targetNodeId": "/search?category=all&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索全部文件",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "all"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": "images"
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?category=images&q=:q",
+      "sourceNodeId": "/search?category=images&q=:q",
+      "target": "/search?category=videos&q=:q",
+      "targetNodeId": "/search?category=videos&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索视频",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "videos"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": "images"
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?category=images&q=:q",
+      "sourceNodeId": "/search?category=images&q=:q",
+      "target": "/search?category=documents&q=:q",
+      "targetNodeId": "/search?category=documents&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索文档",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "documents"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": "images"
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?category=images&q=:q",
+      "sourceNodeId": "/search?category=images&q=:q",
+      "target": "/search?category=audio&q=:q",
+      "targetNodeId": "/search?category=audio&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索音频",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "audio"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": "images"
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?category=videos&q=:q",
+      "sourceNodeId": "/search?category=videos&q=:q",
+      "target": "/search?category=all&q=:q",
+      "targetNodeId": "/search?category=all&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索全部文件",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "all"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": "videos"
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?category=videos&q=:q",
+      "sourceNodeId": "/search?category=videos&q=:q",
+      "target": "/search?category=images&q=:q",
+      "targetNodeId": "/search?category=images&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索图片",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "images"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": "videos"
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?category=videos&q=:q",
+      "sourceNodeId": "/search?category=videos&q=:q",
+      "target": "/search?category=documents&q=:q",
+      "targetNodeId": "/search?category=documents&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索文档",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "documents"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": "videos"
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?category=videos&q=:q",
+      "sourceNodeId": "/search?category=videos&q=:q",
+      "target": "/search?category=audio&q=:q",
+      "targetNodeId": "/search?category=audio&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索音频",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "audio"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": "videos"
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?category=documents&q=:q",
+      "sourceNodeId": "/search?category=documents&q=:q",
+      "target": "/search?category=all&q=:q",
+      "targetNodeId": "/search?category=all&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索全部文件",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "all"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": "documents"
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?category=documents&q=:q",
+      "sourceNodeId": "/search?category=documents&q=:q",
+      "target": "/search?category=images&q=:q",
+      "targetNodeId": "/search?category=images&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索图片",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "images"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": "documents"
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?category=documents&q=:q",
+      "sourceNodeId": "/search?category=documents&q=:q",
+      "target": "/search?category=videos&q=:q",
+      "targetNodeId": "/search?category=videos&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索视频",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "videos"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": "documents"
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?category=documents&q=:q",
+      "sourceNodeId": "/search?category=documents&q=:q",
+      "target": "/search?category=audio&q=:q",
+      "targetNodeId": "/search?category=audio&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索音频",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "audio"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": "documents"
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?category=audio&q=:q",
+      "sourceNodeId": "/search?category=audio&q=:q",
+      "target": "/search?category=all&q=:q",
+      "targetNodeId": "/search?category=all&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索全部文件",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "all"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": "audio"
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?category=audio&q=:q",
+      "sourceNodeId": "/search?category=audio&q=:q",
+      "target": "/search?category=images&q=:q",
+      "targetNodeId": "/search?category=images&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索图片",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "images"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": "audio"
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?category=audio&q=:q",
+      "sourceNodeId": "/search?category=audio&q=:q",
+      "target": "/search?category=videos&q=:q",
+      "targetNodeId": "/search?category=videos&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索视频",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "videos"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": "audio"
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?category=audio&q=:q",
+      "sourceNodeId": "/search?category=audio&q=:q",
+      "target": "/search?category=documents&q=:q",
+      "targetNodeId": "/search?category=documents&q=:q",
+      "id": "search.filter.switch",
+      "label": "切换文件搜索类型 → 搜索文档",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "category": "documents"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/search",
+        "search": {
+          "category": "audio"
+        }
+      },
+      "expandedFrom": "searchParams",
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "filter",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/recent?transferPath=:transferPath",
+      "sourceNodeId": "/recent?transferPath=:transferPath",
+      "target": "/?transferPath=:transferPath",
+      "targetNodeId": "/?transferPath=:transferPath",
+      "id": "rail.browse.open",
+      "label": "从展开目录打开我的文件",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder?path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "target": "/?transferPath=:transferPath",
+      "targetNodeId": "/?transferPath=:transferPath",
+      "id": "rail.browse.open",
+      "label": "从展开目录打开我的文件",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/favorites",
+      "sourceNodeId": "/favorites",
+      "target": "/?transferPath=:transferPath",
+      "targetNodeId": "/?transferPath=:transferPath",
+      "id": "rail.browse.open",
+      "label": "从展开目录打开我的文件",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/private",
+      "sourceNodeId": "/private",
+      "target": "/?transferPath=:transferPath",
+      "targetNodeId": "/?transferPath=:transferPath",
+      "id": "rail.browse.open",
+      "label": "从展开目录打开我的文件",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/category/:category",
+      "sourceNodeId": "/category/:category",
+      "target": "/?transferPath=:transferPath",
+      "targetNodeId": "/?transferPath=:transferPath",
+      "id": "rail.browse.open",
+      "label": "从展开目录打开我的文件",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?transferPath=:transferPath",
+      "sourceNodeId": "/?transferPath=:transferPath",
+      "target": "/recent?transferPath=:transferPath",
+      "targetNodeId": "/recent?transferPath=:transferPath",
+      "id": "rail.recent.open",
+      "label": "从展开目录打开最近文件",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "recent",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder?path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "target": "/recent?transferPath=:transferPath",
+      "targetNodeId": "/recent?transferPath=:transferPath",
+      "id": "rail.recent.open",
+      "label": "从展开目录打开最近文件",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "recent",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/favorites",
+      "sourceNodeId": "/favorites",
+      "target": "/recent?transferPath=:transferPath",
+      "targetNodeId": "/recent?transferPath=:transferPath",
+      "id": "rail.recent.open",
+      "label": "从展开目录打开最近文件",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "recent",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/private",
+      "sourceNodeId": "/private",
+      "target": "/recent?transferPath=:transferPath",
+      "targetNodeId": "/recent?transferPath=:transferPath",
+      "id": "rail.recent.open",
+      "label": "从展开目录打开最近文件",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "recent",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/category/:category",
+      "sourceNodeId": "/category/:category",
+      "target": "/recent?transferPath=:transferPath",
+      "targetNodeId": "/recent?transferPath=:transferPath",
+      "id": "rail.recent.open",
+      "label": "从展开目录打开最近文件",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "recent",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?transferPath=:transferPath",
+      "sourceNodeId": "/?transferPath=:transferPath",
+      "target": "/favorites",
+      "targetNodeId": "/favorites",
+      "id": "rail.favorites.open",
+      "label": "从展开目录打开收藏",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "favorite",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/recent?transferPath=:transferPath",
+      "sourceNodeId": "/recent?transferPath=:transferPath",
+      "target": "/favorites",
+      "targetNodeId": "/favorites",
+      "id": "rail.favorites.open",
+      "label": "从展开目录打开收藏",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "favorite",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder?path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "target": "/favorites",
+      "targetNodeId": "/favorites",
+      "id": "rail.favorites.open",
+      "label": "从展开目录打开收藏",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "favorite",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/private",
+      "sourceNodeId": "/private",
+      "target": "/favorites",
+      "targetNodeId": "/favorites",
+      "id": "rail.favorites.open",
+      "label": "从展开目录打开收藏",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "favorite",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/category/:category",
+      "sourceNodeId": "/category/:category",
+      "target": "/favorites",
+      "targetNodeId": "/favorites",
+      "id": "rail.favorites.open",
+      "label": "从展开目录打开收藏",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "favorite",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?transferPath=:transferPath",
+      "sourceNodeId": "/?transferPath=:transferPath",
+      "target": "/private",
+      "targetNodeId": "/private",
+      "id": "rail.private.open",
+      "label": "从展开目录打开私密文件",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "lock",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/recent?transferPath=:transferPath",
+      "sourceNodeId": "/recent?transferPath=:transferPath",
+      "target": "/private",
+      "targetNodeId": "/private",
+      "id": "rail.private.open",
+      "label": "从展开目录打开私密文件",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "lock",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder?path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "target": "/private",
+      "targetNodeId": "/private",
+      "id": "rail.private.open",
+      "label": "从展开目录打开私密文件",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "lock",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/favorites",
+      "sourceNodeId": "/favorites",
+      "target": "/private",
+      "targetNodeId": "/private",
+      "id": "rail.private.open",
+      "label": "从展开目录打开私密文件",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "lock",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/category/:category",
+      "sourceNodeId": "/category/:category",
+      "target": "/private",
+      "targetNodeId": "/private",
+      "id": "rail.private.open",
+      "label": "从展开目录打开私密文件",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "lock",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?transferPath=:transferPath",
+      "sourceNodeId": "/?transferPath=:transferPath",
+      "target": "/folder?path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "id": "rail.folder.open",
+      "label": "从展开目录打开文件夹",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {
+        "path": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/recent?transferPath=:transferPath",
+      "sourceNodeId": "/recent?transferPath=:transferPath",
+      "target": "/folder?path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "id": "rail.folder.open",
+      "label": "从展开目录打开文件夹",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {
+        "path": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/favorites",
+      "sourceNodeId": "/favorites",
+      "target": "/folder?path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "id": "rail.folder.open",
+      "label": "从展开目录打开文件夹",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {
+        "path": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/private",
+      "sourceNodeId": "/private",
+      "target": "/folder?path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "id": "rail.folder.open",
+      "label": "从展开目录打开文件夹",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {
+        "path": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/category/:category",
+      "sourceNodeId": "/category/:category",
+      "target": "/folder?path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "id": "rail.folder.open",
+      "label": "从展开目录打开文件夹",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {
+        "path": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?transferPath=:transferPath",
+      "sourceNodeId": "/?transferPath=:transferPath",
+      "target": "/category/:category",
+      "targetNodeId": "/category/:category",
+      "id": "rail.category.open",
+      "label": "从展开目录打开文件类型",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "category": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "category",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/recent?transferPath=:transferPath",
+      "sourceNodeId": "/recent?transferPath=:transferPath",
+      "target": "/category/:category",
+      "targetNodeId": "/category/:category",
+      "id": "rail.category.open",
+      "label": "从展开目录打开文件类型",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "category": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "category",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder?path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "target": "/category/:category",
+      "targetNodeId": "/category/:category",
+      "id": "rail.category.open",
+      "label": "从展开目录打开文件类型",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "category": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "category",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/favorites",
+      "sourceNodeId": "/favorites",
+      "target": "/category/:category",
+      "targetNodeId": "/category/:category",
+      "id": "rail.category.open",
+      "label": "从展开目录打开文件类型",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "category": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "category",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/private",
+      "sourceNodeId": "/private",
+      "target": "/category/:category",
+      "targetNodeId": "/category/:category",
+      "id": "rail.category.open",
+      "label": "从展开目录打开文件类型",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "category": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "category",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?transferPath=:transferPath",
+      "sourceNodeId": "/?transferPath=:transferPath",
+      "target": "/settings",
+      "targetNodeId": "/settings",
+      "id": "settings.open",
+      "label": "打开文件管理设置",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "settings",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/recent?transferPath=:transferPath",
+      "sourceNodeId": "/recent?transferPath=:transferPath",
+      "target": "/settings",
+      "targetNodeId": "/settings",
+      "id": "settings.open",
+      "label": "打开文件管理设置",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "settings",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder?path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "target": "/settings",
+      "targetNodeId": "/settings",
+      "id": "settings.open",
+      "label": "打开文件管理设置",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "settings",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/favorites",
+      "sourceNodeId": "/favorites",
+      "target": "/settings",
+      "targetNodeId": "/settings",
+      "id": "settings.open",
+      "label": "打开文件管理设置",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "settings",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/private",
+      "sourceNodeId": "/private",
+      "target": "/settings",
+      "targetNodeId": "/settings",
+      "id": "settings.open",
+      "label": "打开文件管理设置",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "settings",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/category/:category",
+      "sourceNodeId": "/category/:category",
+      "target": "/settings",
+      "targetNodeId": "/settings",
+      "id": "settings.open",
+      "label": "打开文件管理设置",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "settings",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?transferPath=:transferPath",
+      "sourceNodeId": "/?transferPath=:transferPath",
+      "target": "/?mode=select&transferPath=:transferPath",
+      "targetNodeId": "/?mode=select&transferPath=:transferPath",
+      "id": "browse.select.enter",
+      "label": "进入浏览选择模式",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "mode": "select"
+      },
+      "searchParams": {
+        "selected": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "mode": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "select_enter",
+        "gesture": "longPress"
+      }
+    },
+    {
+      "source": "/?mode=select&transferPath=:transferPath",
+      "sourceNodeId": "/?mode=select&transferPath=:transferPath",
+      "target": "/?mode=select&modal=delete&transferPath=:transferPath",
+      "targetNodeId": "/?mode=select&modal=delete&transferPath=:transferPath",
+      "id": "browse.modal.delete.open",
+      "label": "打开删除确认弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "mode": "select",
+        "modal": "delete"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "selected"
+      ],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "mode": "select",
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_delete",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?mode=select&transferPath=:transferPath",
+      "sourceNodeId": "/?mode=select&transferPath=:transferPath",
+      "target": "/?mode=select&modal=more&transferPath=:transferPath",
+      "targetNodeId": "/?mode=select&modal=more&transferPath=:transferPath",
+      "id": "browse.modal.more.open",
+      "label": "打开更多菜单",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "mode": "select",
+        "modal": "more"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "selected"
+      ],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "mode": "select",
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_more",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?mode=select&transferPath=:transferPath",
+      "sourceNodeId": "/?mode=select&transferPath=:transferPath",
+      "target": "/?mode=select&modal=transfer&transferPath=:transferPath",
+      "targetNodeId": "/?mode=select&modal=transfer&transferPath=:transferPath",
+      "id": "browse.modal.transfer.open",
+      "label": "打开复制/移动目标选择弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "mode": "select",
+        "modal": "transfer"
+      },
+      "searchParams": {
+        "operation": "string"
+      },
+      "params": {},
+      "preserveParams": [
+        "selected"
+      ],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "mode": "select"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_transfer",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?mode=select&modal=transfer&transferPath=:transferPath",
+      "sourceNodeId": "/?mode=select&modal=transfer&transferPath=:transferPath",
+      "target": "/?mode=select&modal=transfer&transferDialog=newFolder&transferPath=:transferPath",
+      "targetNodeId": "/?mode=select&modal=transfer&transferDialog=newFolder&transferPath=:transferPath",
+      "id": "browse.modal.transfer.newFolder.open",
+      "label": "在复制/移动目标选择中打开新建文件夹弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "mode": "select",
+        "modal": "transfer",
+        "transferDialog": "newFolder"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "selected",
+        "operation",
+        "transferPath"
+      ],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "mode": "select",
+          "modal": "transfer",
+          "transferDialog": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "modal_new_folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?mode=select&transferPath=:transferPath",
+      "sourceNodeId": "/?mode=select&transferPath=:transferPath",
+      "target": "/?modal=details&transferPath=:transferPath",
+      "targetNodeId": "/?modal=details&transferPath=:transferPath",
+      "id": "browse.modal.details.open",
+      "label": "打开详情弹窗",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "modal": "details"
+      },
+      "searchParams": {
+        "itemId": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "mode": "select"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_details",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?mode=select&transferPath=:transferPath",
+      "sourceNodeId": "/?mode=select&transferPath=:transferPath",
+      "target": "/?modal=rename&transferPath=:transferPath",
+      "targetNodeId": "/?modal=rename&transferPath=:transferPath",
+      "id": "browse.modal.rename.open",
+      "label": "打开重命名弹窗",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "modal": "rename"
+      },
+      "searchParams": {
+        "itemId": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "mode": "select"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_rename",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?transferPath=:transferPath",
+      "sourceNodeId": "/?transferPath=:transferPath",
+      "target": "/?modal=details&transferPath=:transferPath",
+      "targetNodeId": "/?modal=details&transferPath=:transferPath",
+      "id": "browse.modal.details.open.fromBase",
+      "label": "从基础状态打开详情弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "details"
+      },
+      "searchParams": {
+        "itemId": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "mode": null,
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_details",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?mode=select&modal=more&transferPath=:transferPath",
+      "sourceNodeId": "/?mode=select&modal=more&transferPath=:transferPath",
+      "target": "/?modal=details&transferPath=:transferPath",
+      "targetNodeId": "/?modal=details&transferPath=:transferPath",
+      "id": "browse.modal.details.open.fromBase",
+      "label": "从基础状态打开详情弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "details"
+      },
+      "searchParams": {
+        "itemId": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "mode": "select",
+          "modal": "more"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_details",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?transferPath=:transferPath",
+      "sourceNodeId": "/?transferPath=:transferPath",
+      "target": "/?modal=rename&transferPath=:transferPath",
+      "targetNodeId": "/?modal=rename&transferPath=:transferPath",
+      "id": "browse.modal.rename.open.fromBase",
+      "label": "从基础状态打开重命名弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "rename"
+      },
+      "searchParams": {
+        "itemId": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "mode": null,
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_rename",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?mode=select&modal=more&transferPath=:transferPath",
+      "sourceNodeId": "/?mode=select&modal=more&transferPath=:transferPath",
+      "target": "/?modal=rename&transferPath=:transferPath",
+      "targetNodeId": "/?modal=rename&transferPath=:transferPath",
+      "id": "browse.modal.rename.open.fromBase",
+      "label": "从基础状态打开重命名弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "rename"
+      },
+      "searchParams": {
+        "itemId": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "mode": "select",
+          "modal": "more"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_rename",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/recent?transferPath=:transferPath",
+      "sourceNodeId": "/recent?transferPath=:transferPath",
+      "target": "/recent?mode=select&transferPath=:transferPath",
+      "targetNodeId": "/recent?mode=select&transferPath=:transferPath",
+      "id": "recent.select.enter",
+      "label": "进入最近选择模式",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "mode": "select"
+      },
+      "searchParams": {
+        "selected": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/recent",
+        "search": {
+          "mode": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "select_enter",
+        "gesture": "longPress"
+      }
+    },
+    {
+      "source": "/recent?mode=select&transferPath=:transferPath",
+      "sourceNodeId": "/recent?mode=select&transferPath=:transferPath",
+      "target": "/recent?mode=select&modal=delete&transferPath=:transferPath",
+      "targetNodeId": "/recent?mode=select&modal=delete&transferPath=:transferPath",
+      "id": "recent.modal.delete.open",
+      "label": "打开删除确认弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "mode": "select",
+        "modal": "delete"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "selected"
+      ],
+      "fromConstraint": {
+        "path": "/recent",
+        "search": {
+          "mode": "select",
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_delete",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/recent?mode=select&transferPath=:transferPath",
+      "sourceNodeId": "/recent?mode=select&transferPath=:transferPath",
+      "target": "/recent?mode=select&modal=more&transferPath=:transferPath",
+      "targetNodeId": "/recent?mode=select&modal=more&transferPath=:transferPath",
+      "id": "recent.modal.more.open",
+      "label": "打开更多菜单",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "mode": "select",
+        "modal": "more"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "selected"
+      ],
+      "fromConstraint": {
+        "path": "/recent",
+        "search": {
+          "mode": "select",
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_more",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/recent?mode=select&transferPath=:transferPath",
+      "sourceNodeId": "/recent?mode=select&transferPath=:transferPath",
+      "target": "/recent?mode=select&modal=transfer&transferPath=:transferPath",
+      "targetNodeId": "/recent?mode=select&modal=transfer&transferPath=:transferPath",
+      "id": "recent.modal.transfer.open",
+      "label": "打开复制/移动目标选择弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "mode": "select",
+        "modal": "transfer"
+      },
+      "searchParams": {
+        "operation": "string"
+      },
+      "params": {},
+      "preserveParams": [
+        "selected"
+      ],
+      "fromConstraint": {
+        "path": "/recent",
+        "search": {
+          "mode": "select"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_transfer",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/recent?mode=select&modal=transfer&transferPath=:transferPath",
+      "sourceNodeId": "/recent?mode=select&modal=transfer&transferPath=:transferPath",
+      "target": "/recent?mode=select&modal=transfer&transferDialog=newFolder&transferPath=:transferPath",
+      "targetNodeId": "/recent?mode=select&modal=transfer&transferDialog=newFolder&transferPath=:transferPath",
+      "id": "recent.modal.transfer.newFolder.open",
+      "label": "在复制/移动目标选择中打开新建文件夹弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "mode": "select",
+        "modal": "transfer",
+        "transferDialog": "newFolder"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "selected",
+        "operation",
+        "transferPath"
+      ],
+      "fromConstraint": {
+        "path": "/recent",
+        "search": {
+          "mode": "select",
+          "modal": "transfer",
+          "transferDialog": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "modal_new_folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/recent?mode=select&transferPath=:transferPath",
+      "sourceNodeId": "/recent?mode=select&transferPath=:transferPath",
+      "target": "/recent?modal=details&transferPath=:transferPath",
+      "targetNodeId": "/recent?modal=details&transferPath=:transferPath",
+      "id": "recent.modal.details.open",
+      "label": "打开详情弹窗",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "modal": "details"
+      },
+      "searchParams": {
+        "itemId": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/recent",
+        "search": {
+          "mode": "select"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_details",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/recent?mode=select&transferPath=:transferPath",
+      "sourceNodeId": "/recent?mode=select&transferPath=:transferPath",
+      "target": "/recent?modal=rename&transferPath=:transferPath",
+      "targetNodeId": "/recent?modal=rename&transferPath=:transferPath",
+      "id": "recent.modal.rename.open",
+      "label": "打开重命名弹窗",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "modal": "rename"
+      },
+      "searchParams": {
+        "itemId": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/recent",
+        "search": {
+          "mode": "select"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_rename",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/recent?transferPath=:transferPath",
+      "sourceNodeId": "/recent?transferPath=:transferPath",
+      "target": "/recent?modal=details&transferPath=:transferPath",
+      "targetNodeId": "/recent?modal=details&transferPath=:transferPath",
+      "id": "recent.modal.details.open.fromBase",
+      "label": "从基础状态打开详情弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "details"
+      },
+      "searchParams": {
+        "itemId": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/recent",
+        "search": {
+          "mode": null,
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_details",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/recent?mode=select&modal=more&transferPath=:transferPath",
+      "sourceNodeId": "/recent?mode=select&modal=more&transferPath=:transferPath",
+      "target": "/recent?modal=details&transferPath=:transferPath",
+      "targetNodeId": "/recent?modal=details&transferPath=:transferPath",
+      "id": "recent.modal.details.open.fromBase",
+      "label": "从基础状态打开详情弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "details"
+      },
+      "searchParams": {
+        "itemId": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/recent",
+        "search": {
+          "mode": "select",
+          "modal": "more"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_details",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/recent?transferPath=:transferPath",
+      "sourceNodeId": "/recent?transferPath=:transferPath",
+      "target": "/recent?modal=rename&transferPath=:transferPath",
+      "targetNodeId": "/recent?modal=rename&transferPath=:transferPath",
+      "id": "recent.modal.rename.open.fromBase",
+      "label": "从基础状态打开重命名弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "rename"
+      },
+      "searchParams": {
+        "itemId": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/recent",
+        "search": {
+          "mode": null,
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_rename",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/recent?mode=select&modal=more&transferPath=:transferPath",
+      "sourceNodeId": "/recent?mode=select&modal=more&transferPath=:transferPath",
+      "target": "/recent?modal=rename&transferPath=:transferPath",
+      "targetNodeId": "/recent?modal=rename&transferPath=:transferPath",
+      "id": "recent.modal.rename.open.fromBase",
+      "label": "从基础状态打开重命名弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "rename"
+      },
+      "searchParams": {
+        "itemId": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/recent",
+        "search": {
+          "mode": "select",
+          "modal": "more"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_rename",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder?path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "target": "/folder?mode=select&path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?mode=select&path=:path&transferPath=:transferPath",
+      "id": "folder.select.enter",
+      "label": "进入文件夹选择模式",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "mode": "select"
+      },
+      "searchParams": {
+        "selected": "string"
+      },
+      "params": {},
+      "preserveParams": [
+        "path"
+      ],
+      "fromConstraint": {
+        "path": "/folder",
+        "search": {
+          "mode": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "select_enter",
+        "gesture": "longPress"
+      }
+    },
+    {
+      "source": "/folder?mode=select&path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?mode=select&path=:path&transferPath=:transferPath",
+      "target": "/folder?mode=select&modal=delete&path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?mode=select&modal=delete&path=:path&transferPath=:transferPath",
+      "id": "folder.modal.delete.open",
+      "label": "打开删除确认弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "mode": "select",
+        "modal": "delete"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "path",
+        "selected"
+      ],
+      "fromConstraint": {
+        "path": "/folder",
+        "search": {
+          "mode": "select",
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_delete",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder?mode=select&path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?mode=select&path=:path&transferPath=:transferPath",
+      "target": "/folder?mode=select&modal=more&path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?mode=select&modal=more&path=:path&transferPath=:transferPath",
+      "id": "folder.modal.more.open",
+      "label": "打开更多菜单",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "mode": "select",
+        "modal": "more"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "path",
+        "selected"
+      ],
+      "fromConstraint": {
+        "path": "/folder",
+        "search": {
+          "mode": "select",
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_more",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder?mode=select&path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?mode=select&path=:path&transferPath=:transferPath",
+      "target": "/folder?mode=select&modal=transfer&path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?mode=select&modal=transfer&path=:path&transferPath=:transferPath",
+      "id": "folder.modal.transfer.open",
+      "label": "打开复制/移动目标选择弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "mode": "select",
+        "modal": "transfer"
+      },
+      "searchParams": {
+        "operation": "string"
+      },
+      "params": {},
+      "preserveParams": [
+        "path",
+        "selected"
+      ],
+      "fromConstraint": {
+        "path": "/folder",
+        "search": {
+          "mode": "select"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_transfer",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder?mode=select&modal=transfer&path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?mode=select&modal=transfer&path=:path&transferPath=:transferPath",
+      "target": "/folder?mode=select&modal=transfer&transferDialog=newFolder&path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?mode=select&modal=transfer&transferDialog=newFolder&path=:path&transferPath=:transferPath",
+      "id": "folder.modal.transfer.newFolder.open",
+      "label": "在复制/移动目标选择中打开新建文件夹弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "mode": "select",
+        "modal": "transfer",
+        "transferDialog": "newFolder"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "path",
+        "selected",
+        "operation",
+        "transferPath"
+      ],
+      "fromConstraint": {
+        "path": "/folder",
+        "search": {
+          "mode": "select",
+          "modal": "transfer",
+          "transferDialog": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "modal_new_folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder?path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "target": "/folder?modal=newFolder&path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?modal=newFolder&path=:path&transferPath=:transferPath",
+      "id": "folder.modal.newFolder.open",
+      "label": "打开新建文件夹弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "newFolder"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "path",
+        "mode",
+        "selected"
+      ],
+      "fromConstraint": {
+        "path": "/folder",
+        "search": {
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "modal_new_folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder?mode=select&path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?mode=select&path=:path&transferPath=:transferPath",
+      "target": "/folder?modal=details&path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?modal=details&path=:path&transferPath=:transferPath",
+      "id": "folder.modal.details.open",
+      "label": "打开详情弹窗",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "modal": "details"
+      },
+      "searchParams": {
+        "itemId": "string"
+      },
+      "params": {},
+      "preserveParams": [
+        "path"
+      ],
+      "fromConstraint": {
+        "path": "/folder",
+        "search": {
+          "mode": "select"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_details",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder?mode=select&path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?mode=select&path=:path&transferPath=:transferPath",
+      "target": "/folder?modal=rename&path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?modal=rename&path=:path&transferPath=:transferPath",
+      "id": "folder.modal.rename.open",
+      "label": "打开重命名弹窗",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "modal": "rename"
+      },
+      "searchParams": {
+        "itemId": "string"
+      },
+      "params": {},
+      "preserveParams": [
+        "path"
+      ],
+      "fromConstraint": {
+        "path": "/folder",
+        "search": {
+          "mode": "select"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_rename",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder?path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "target": "/folder?modal=details&path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?modal=details&path=:path&transferPath=:transferPath",
+      "id": "folder.modal.details.open.fromBase",
+      "label": "从基础状态打开详情弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "details"
+      },
+      "searchParams": {
+        "itemId": "string"
+      },
+      "params": {},
+      "preserveParams": [
+        "path"
+      ],
+      "fromConstraint": {
+        "path": "/folder",
+        "search": {
+          "mode": null,
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_details",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder?mode=select&modal=more&path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?mode=select&modal=more&path=:path&transferPath=:transferPath",
+      "target": "/folder?modal=details&path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?modal=details&path=:path&transferPath=:transferPath",
+      "id": "folder.modal.details.open.fromBase",
+      "label": "从基础状态打开详情弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "details"
+      },
+      "searchParams": {
+        "itemId": "string"
+      },
+      "params": {},
+      "preserveParams": [
+        "path"
+      ],
+      "fromConstraint": {
+        "path": "/folder",
+        "search": {
+          "mode": "select",
+          "modal": "more"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_details",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder?path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "target": "/folder?modal=rename&path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?modal=rename&path=:path&transferPath=:transferPath",
+      "id": "folder.modal.rename.open.fromBase",
+      "label": "从基础状态打开重命名弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "rename"
+      },
+      "searchParams": {
+        "itemId": "string"
+      },
+      "params": {},
+      "preserveParams": [
+        "path"
+      ],
+      "fromConstraint": {
+        "path": "/folder",
+        "search": {
+          "mode": null,
+          "modal": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_rename",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder?mode=select&modal=more&path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?mode=select&modal=more&path=:path&transferPath=:transferPath",
+      "target": "/folder?modal=rename&path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?modal=rename&path=:path&transferPath=:transferPath",
+      "id": "folder.modal.rename.open.fromBase",
+      "label": "从基础状态打开重命名弹窗",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "modal": "rename"
+      },
+      "searchParams": {
+        "itemId": "string"
+      },
+      "params": {},
+      "preserveParams": [
+        "path"
+      ],
+      "fromConstraint": {
+        "path": "/folder",
+        "search": {
+          "mode": "select",
+          "modal": "more"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "modal_rename",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/recent?transferPath=:transferPath",
+      "sourceNodeId": "/recent?transferPath=:transferPath",
+      "target": "/?transferPath=:transferPath",
+      "targetNodeId": "/?transferPath=:transferPath",
+      "id": "tab.browse",
+      "label": "切换到浏览",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "tab_browse",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/cloud",
+      "sourceNodeId": "/cloud",
+      "target": "/?transferPath=:transferPath",
+      "targetNodeId": "/?transferPath=:transferPath",
+      "id": "tab.browse",
+      "label": "切换到浏览",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "tab_browse",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?transferPath=:transferPath",
+      "sourceNodeId": "/?transferPath=:transferPath",
+      "target": "/recent?transferPath=:transferPath",
+      "targetNodeId": "/recent?transferPath=:transferPath",
+      "id": "tab.recent",
+      "label": "切换到最近",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "tab_recent",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/cloud",
+      "sourceNodeId": "/cloud",
+      "target": "/recent?transferPath=:transferPath",
+      "targetNodeId": "/recent?transferPath=:transferPath",
+      "id": "tab.recent",
+      "label": "切换到最近",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "tab_recent",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?transferPath=:transferPath",
+      "sourceNodeId": "/?transferPath=:transferPath",
+      "target": "/cloud",
+      "targetNodeId": "/cloud",
+      "id": "tab.cloud",
+      "label": "切换到云盘",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "tab_cloud",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/recent?transferPath=:transferPath",
+      "sourceNodeId": "/recent?transferPath=:transferPath",
+      "target": "/cloud",
+      "targetNodeId": "/cloud",
+      "id": "tab.cloud",
+      "label": "切换到云盘",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "tab_cloud",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?transferPath=:transferPath",
+      "sourceNodeId": "/?transferPath=:transferPath",
+      "target": "/category/:category",
+      "targetNodeId": "/category/:category",
+      "id": "category.open",
+      "label": "打开分类",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "category": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "category",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?transferPath=:transferPath",
+      "sourceNodeId": "/?transferPath=:transferPath",
+      "target": "/folder?path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "id": "folder.open",
+      "label": "打开文件夹",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "path": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?q=:q",
+      "sourceNodeId": "/search?q=:q",
+      "target": "/folder?path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "id": "folder.open",
+      "label": "打开文件夹",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "path": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/favorites",
+      "sourceNodeId": "/favorites",
+      "target": "/folder?path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "id": "folder.open",
+      "label": "打开文件夹",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "path": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/private",
+      "sourceNodeId": "/private",
+      "target": "/folder?path=:path&transferPath=:transferPath",
+      "targetNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "id": "folder.open",
+      "label": "打开文件夹",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "path": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "folder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?transferPath=:transferPath",
+      "sourceNodeId": "/?transferPath=:transferPath",
+      "target": "/text?path=:path",
+      "targetNodeId": "/text?path=:path",
+      "id": "file.text.open",
+      "label": "打开文本文件",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "path": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "file_text",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder?path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "target": "/text?path=:path",
+      "targetNodeId": "/text?path=:path",
+      "id": "file.text.open",
+      "label": "打开文本文件",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "path": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "file_text",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?q=:q",
+      "sourceNodeId": "/search?q=:q",
+      "target": "/text?path=:path",
+      "targetNodeId": "/text?path=:path",
+      "id": "file.text.open",
+      "label": "打开文本文件",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "path": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "file_text",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/favorites",
+      "sourceNodeId": "/favorites",
+      "target": "/text?path=:path",
+      "targetNodeId": "/text?path=:path",
+      "id": "file.text.open",
+      "label": "打开文本文件",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "path": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "file_text",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/private",
+      "sourceNodeId": "/private",
+      "target": "/text?path=:path",
+      "targetNodeId": "/text?path=:path",
+      "id": "file.text.open",
+      "label": "打开文本文件",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "path": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "file_text",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?transferPath=:transferPath",
+      "sourceNodeId": "/?transferPath=:transferPath",
+      "target": "/pdf?path=:path",
+      "targetNodeId": "/pdf?path=:path",
+      "id": "file.pdf.open",
+      "label": "打开 PDF 文件",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "path": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "file_pdf",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/folder?path=:path&transferPath=:transferPath",
+      "sourceNodeId": "/folder?path=:path&transferPath=:transferPath",
+      "target": "/pdf?path=:path",
+      "targetNodeId": "/pdf?path=:path",
+      "id": "file.pdf.open",
+      "label": "打开 PDF 文件",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "path": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "file_pdf",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?q=:q",
+      "sourceNodeId": "/search?q=:q",
+      "target": "/pdf?path=:path",
+      "targetNodeId": "/pdf?path=:path",
+      "id": "file.pdf.open",
+      "label": "打开 PDF 文件",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "path": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "file_pdf",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/favorites",
+      "sourceNodeId": "/favorites",
+      "target": "/pdf?path=:path",
+      "targetNodeId": "/pdf?path=:path",
+      "id": "file.pdf.open",
+      "label": "打开 PDF 文件",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "path": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "file_pdf",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/private",
+      "sourceNodeId": "/private",
+      "target": "/pdf?path=:path",
+      "targetNodeId": "/pdf?path=:path",
+      "id": "file.pdf.open",
+      "label": "打开 PDF 文件",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "path": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "file_pdf",
+        "gesture": "tap"
+      }
+    }
+  ]
+}

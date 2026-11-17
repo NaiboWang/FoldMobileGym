@@ -1,0 +1,16 @@
+{
+  "app": "taobao",
+  "data": {
+    "id": "portable_monitor_x1",
+    "title": "便携显示器 X1 双规格高清扩展屏",
+    "variant": {
+      "id": "x1_15",
+      "size": "15.6英寸",
+      "resolution": "2.5K",
+      "weight": "780g",
+      "price": 1299
+    },
+    "note_title": "显示器备选记录",
+    "quantity": 2
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "app": "wechat_reading",
+  "data": {
+    "id": "1",
+    "title": "纳瓦尔宝典",
+    "author": "埃里克·乔根森",
+    "cover": "",
+    "coverColor": "bg-[#F2EFE9]",
+    "category": "商业",
+    "totalWords": 150000,
+    "rating": 9.2,
+    "recommendedValue": 92.5
+  }
+}

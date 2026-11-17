@@ -1,0 +1,113 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "apps": {
+    "wechat": {},
+    "notes": {}
+  },
+  "raw_apps": {
+    "notes": {
+      "notes": [
+        {
+          "id": "untouched-note",
+          "title": "工作备忘",
+          "content": "原有内容，请保留。",
+          "folderId": "unfiled",
+          "updatedAt": 1793663999000
+        },
+        {
+          "id": "similar-note",
+          "title": "设备清单（旧版）",
+          "content": "历史记录，保留不改。",
+          "folderId": "unfiled",
+          "updatedAt": 1793663998000
+        }
+      ],
+      "todos": [
+        {
+          "id": "untouched-todo",
+          "text": "保留原待办",
+          "completed": false,
+          "updatedAt": 1793663999000
+        }
+      ],
+      "createdCount": 0,
+      "deletedCount": 0,
+      "selectedFolderId": "all"
+    },
+    "wechat": {
+      "chats": [
+        {
+          "id": "source-chat",
+          "user": {
+            "wxid": "source-chat",
+            "name": "陈宁（研发）",
+            "avatar": "/@app-assets/Wechat/avatars/avatar_10.jpg"
+          },
+          "isMuted": false,
+          "isSticky": false,
+          "isAlert": false,
+          "messages": [
+            {
+              "id": "source-chat-old",
+              "type": "text",
+              "senderId": "source-chat",
+              "timestamp": 1793577600000,
+              "content": "实验安排（旧版）：设备准备：相机、三脚架。此消息已作废"
+            },
+            {
+              "id": "source-message",
+              "type": "text",
+              "senderId": "source-chat",
+              "timestamp": 1793663990000,
+              "content": "实验安排（本次）：设备准备：电脑、转接头、录音笔。注意事项：结束后归还设备"
+            }
+          ]
+        },
+        {
+          "id": "other-chat",
+          "user": {
+            "wxid": "other-chat",
+            "name": "陈宁（采购）",
+            "avatar": "/@app-assets/Wechat/avatars/avatar_10.jpg"
+          },
+          "isMuted": false,
+          "isSticky": false,
+          "isAlert": false,
+          "messages": [
+            {
+              "id": "other-chat-old",
+              "type": "text",
+              "senderId": "other-chat",
+              "timestamp": 1793577600000,
+              "content": "实验安排（旧版）：设备准备：相机、三脚架。此消息已作废"
+            },
+            {
+              "id": "other-message",
+              "type": "text",
+              "senderId": "other-chat",
+              "timestamp": 1793663990000,
+              "content": "实验安排（本次）：设备准备：相机、三脚架。仅供采购核对"
+            }
+          ]
+        }
+      ],
+      "chatDrafts": {
+        "source-chat": "",
+        "other-chat": "采购事项待确认"
+      },
+      "sendCount": 0
+    }
+  },
+  "os": {},
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  }
+}

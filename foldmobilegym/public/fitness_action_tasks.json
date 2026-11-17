@@ -1,0 +1,166 @@
+[
+  {
+    "app": "fitness",
+    "graphFile": "public\\fitness_nav_graph.json",
+    "taskId": "fitness:fitness.fact.verify",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/activity/:id",
+      "routePath": "/activity/:id",
+      "uiStateId": "fitness.detail.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/activity/:id"
+        ],
+        "transitions": [
+          "fitness.activity.open"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/activity/:id"
+        ],
+        "transitions": [
+          "fitness.activity.open"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "fitness.history.base",
+              "component": "Content",
+              "description": "Activity history",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "fitness.activity.open",
+              "label": "Open activity",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/",
+              "target": "/activity/:id",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "activity",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {
+                "id": "string"
+              },
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/activity/:id",
+              "routePath": "/activity/:id",
+              "uiStateId": "fitness.detail.base",
+              "component": "Content",
+              "description": "Activity metrics",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {
+                "id": "string"
+              },
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "fitness.activity.open",
+                "dataTriggerType": "tap",
+                "paramsSchema": {
+                  "id": "string"
+                },
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "activity",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/activity/:id",
+              "routePath": "/activity/:id",
+              "uiStateId": "fitness.detail.base",
+              "component": "Content",
+              "description": "Activity metrics",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {
+                "id": "string"
+              },
+              "scrollContainers": [],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "fitness.fact.verify",
+                "dataActionType": "tap",
+                "paramsSchema": null
+              }
+            },
+            "action": {
+              "id": "fitness.fact.verify",
+              "label": "Verify activity data",
+              "description": null,
+              "behavior": "other",
+              "scope": null,
+              "paramsSchema": null
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "unknown",
+                "file": "apps\\Fitness\\FitnessApp.tsx",
+                "line": 6,
+                "col": 3641
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "fitness.fact.verify",
+      "label": "Verify activity data",
+      "description": null,
+      "behavior": "other",
+      "scope": null,
+      "paramsSchema": null
+    }
+  }
+]

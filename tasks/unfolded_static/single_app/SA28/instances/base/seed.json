@@ -1,0 +1,43 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "pair_id": "J92",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "apps": {
+    "tencent_meeting": {}
+  },
+  "raw_apps": {
+    "tencent_meeting": {
+      "settings": {
+        "notifications": true,
+        "micOnJoin": true,
+        "speakerOnJoin": true,
+        "micFloating": true,
+        "micSound": false,
+        "cameraOnJoin": false,
+        "videoMirror": true,
+        "hideNonVideo": false,
+        "hideSelf": false,
+        "showPreview": false,
+        "danmu": true,
+        "showDuration": true,
+        "nearbyDiscovery": false,
+        "voiceExcitation": true,
+        "shortcutFloat": false,
+        "safeDrive": true,
+        "darkModeFollow": true,
+        "showIdentity": false
+      }
+    }
+  },
+  "os": {}
+}

@@ -1,0 +1,31 @@
+// Disposable local scenarios only; no private book/reader text is copied into fixtures.
+import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import {createRequire} from 'node:module';
+import {openPilotApp} from '../browser-automation/pilot_app_navigation.mjs';import {resolveBrowserExecutable} from '../browser-automation/browser.mjs';
+fs.mkdirSync(path.resolve(import.meta.dirname, '../../artifacts'), { recursive: true });
+
+const root=path.resolve(import.meta.dirname,'../..'),require=createRequire(path.join(root,'foldmobilegym/package.json'));
+const url=new URL(process.env.FOLDAGENT_REVIEW_URL||'http://127.0.0.1:3100/');assert.ok(url.protocol==='http:'&&['127.0.0.1','localhost'].includes(url.hostname)&&!url.username&&!url.password);
+const output=fs.mkdtempSync(path.join(root,'artifacts/reading-book-detail-')),browser=await require('puppeteer').launch({headless:true,executablePath:resolveBrowserExecutable()});
+const app='[data-app-id="wechat_reading"]',checks=[],failures=[],errors=[];
+const state=p=>p.evaluate(()=>window.__SIM__.getState().apps.wechat_reading);
+async function start(p,locale='zh-Hans',posture='unfolded'){p.on('pageerror',e=>errors.push(e.message));await p.setViewport({width:1440,height:1100});await p.goto(url.href,{waitUntil:'domcontentloaded'});await p.waitForFunction(()=>window.__OS__&&window.__SIM__&&window.__FOLDAGENT__);await p.evaluate(({locale,posture})=>{window.__OS__.locale.setLocale(locale);window.__FOLDAGENT__.setPosture(posture);},{locale,posture});await openPilotApp(p,'wechat_reading','/book/1');await p.waitForSelector(`${app} h1`);}
+async function run(name,fn){const c=await browser.createBrowserContext(),p=await c.newPage();try{await fn(p);checks.push(name);}catch(e){failures.push({name,error:String(e.stack)});await p.screenshot({path:path.join(output,name+'-failure.png')}).catch(()=>{});}finally{await c.close();}}
+try{
+ await run('unknown-source-never-reuses-prior-book',async p=>{await start(p);const before=await state(p);await openPilotApp(p,'wechat_reading','/book/unavailable-source');assert.equal(await p.$$eval(`${app} h1`,es=>es.some(e=>e.checkVisibility())),false,'Unknown book must not retain a visible old title');await p.waitForSelector(`${app} [data-reading-book-unavailable]`,{visible:true});await p.click(`${app} [data-reading-book-unavailable] [data-trigger="system.back"]`);await p.waitForFunction(()=>window.__OS__.getAppRoute('wechat_reading').path==='/book/1');assert.deepEqual(await state(p),before);});
+ await run('background-remove-cannot-mutate-shelf',async p=>{await start(p);const before=await state(p),id=before.shelf[0].bookId;await openPilotApp(p,'wechat_reading','/book/'+encodeURIComponent(id)+'?modal=shelf');await p.waitForSelector(`${app} [data-action="bookDetail.item.shelf.remove.submit"]`);await p.evaluate(app=>window.__oldReadingRemove=document.querySelector(app+' [data-action="bookDetail.item.shelf.remove.submit"]'),app);await openPilotApp(p,'clock','/alarm/new');await p.evaluate(()=>window.__oldReadingRemove.click());assert.deepEqual((await state(p)).shelf,before.shelf,'Background book control must not remove a shelf record');assert.equal(await p.evaluate(()=>window.__OS__.getAppRoute('clock').path),'/alarm/new');});
+ for(const locale of ['zh-Hans','en'])for(const posture of ['unfolded','folded'])await run(locale+'-'+posture,async p=>{
+  await start(p,locale,posture);const before=await state(p);const raw=JSON.parse(fs.readFileSync(path.join(root,'foldmobilegym/apps/WechatReading/data/defaults.json'),'utf8'));const book=raw.store.find(b=>b.id==='1');
+  const minutes=before.readingRecords.filter(r=>r.bookId==='1'&&typeof r.duration==='number'&&Number.isFinite(r.duration)&&r.duration>=0).reduce((n,r)=>n+r.duration,0);
+  assert.equal(await p.$eval(`${app} [data-reading-book-minutes]`,e=>Number(e.dataset.readingBookMinutes)),minutes);
+  assert.equal(await p.$eval(`${app} [data-reading-book-intro]`,e=>e.dataset.readingBookIntro),book.intro??'');
+  assert.equal(await p.$(`${app} img[src*="dicebear"]`),null,'Do not invent a reviewer/avatar');
+  assert.equal(await p.$eval(`${app} [data-reading-book-detail]`,e=>e.scrollWidth>e.clientWidth+1),false);
+  await openPilotApp(p,'wechat_reading','/book/1?modal=shelf');await p.click(`${app} [data-reading-book-cancel]`);await p.waitForFunction(()=>window.__OS__.getAppRoute('wechat_reading').path==='/book/1');
+  const add=`${app} [data-action="bookDetail.item.shelf.add.submit"]`;if(await p.$(add)){await p.click(add);await p.waitForFunction(()=>window.__SIM__.getState().apps.wechat_reading.shelf.some(s=>s.bookId==='1'));}
+  await p.click(`${app} [data-trigger="book.modal.shelf.open"]`);await p.waitForSelector(`${app} [data-action="bookDetail.item.shelf.remove.submit"]`,{visible:true});await p.click(`${app} [data-action="bookDetail.item.shelf.remove.submit"]`);await p.waitForFunction(()=>!window.__SIM__.getState().apps.wechat_reading.shelf.some(s=>s.bookId==='1'));await p.waitForFunction(()=>window.__OS__.getAppRoute('wechat_reading').path==='/book/1');
+  await openPilotApp(p,'wechat_reading','/book/audio_1');await p.waitForSelector(`${app} [data-reading-book-read]`);assert.equal(await p.$eval(`${app} [data-reading-book-read]`,e=>e.disabled),true,'No fake audio reader');
+  await openPilotApp(p,'wechat_reading','/book/1');await p.screenshot({path:path.join(output,locale+'-'+posture+'-detail.png')});await p.click(`${app} [data-reading-book-read]`);await p.waitForFunction(()=>window.__OS__.getAppRoute('wechat_reading').path.startsWith('/read/1'));
+  const after=await state(p);assert.deepEqual(after.readingRecords,before.readingRecords,'Opening detail/reader door leaf does not manufacture reading time');assert.deepEqual(after.bookProgress,before.bookProgress);await p.screenshot({path:path.join(output,locale+'-'+posture+'.png')});
+ });
+}finally{await browser.close();fs.writeFileSync(path.join(output,'result.json'),JSON.stringify({checks,failures,errors,passed:!failures.length&&!errors.length,scope:'Book detail data/identity/shelf workflows, not complete native reader layout certification'},null,2));}
+console.log(JSON.stringify({output,checks,failures,errors}));assert.deepEqual(failures,[]);assert.deepEqual(errors,[]);

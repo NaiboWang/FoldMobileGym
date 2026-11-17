@@ -1,0 +1,9 @@
+{
+  "display": "0",
+  "firstOperand": null,
+  "operator": null,
+  "waitingForSecondOperand": false,
+  "calculationCount": 0,
+  "clearCount": 0,
+  "calculations": []
+}

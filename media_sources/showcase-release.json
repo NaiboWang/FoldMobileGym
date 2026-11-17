@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "project": "foldmobilegym",
+  "repository": "https://github.com/flyx-flyx/foldmobilegym",
+  "verification_date": "2026-11-15",
+  "verification_method": "Read-only authenticated Release metadata and full asset hash; local duration, container and sampled visual review; no visibility or attachment change",
+  "release": {
+    "release_id": 435188582,
+    "tag": "v0.1.0",
+    "draft": false,
+    "prerelease": false,
+    "asset_id": 743807191,
+    "asset_name": "foldmobilegym-demo-20261113-v2.mp4",
+    "bytes": 1718069,
+    "state": "uploaded",
+    "content_type": "video/mp4",
+    "provider_digest": "sha256:8279abc12191c3e1aa09b01397740937e7cc8c41095e1ee51c3f338107059bff",
+    "created_at": "2026-11-13T13:42:46Z",
+    "updated_at": "2026-11-13T13:42:58Z"
+  },
+  "scope": {
+    "anonymous_access_verified": false,
+    "full_asset_redownloaded": true,
+    "video_content_or_duration_rechecked": true,
+    "duration_seconds": 64.4,
+    "visual_sample_interval_seconds": 1,
+    "visual_samples_reviewed": 64,
+    "container_audio_track_present": false,
+    "complete_frame_by_frame_review": false,
+    "capture_source_commit_independently_verified": false,
+    "privacy_or_rights_clearance": "not_assessed"
+  }
+}

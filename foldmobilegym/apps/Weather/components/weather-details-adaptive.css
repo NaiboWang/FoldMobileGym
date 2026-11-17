@@ -1,0 +1,58 @@
+.weather-details-container { container: weather-details / inline-size; min-width: 0; }
+.weather-details-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); scroll-margin-top: 110px; }
+.weather-details-grid > div { min-width: 0; padding-left: 12px; padding-right: 12px; gap: 6px; }
+.weather-details-grid > div > div { min-width: 0; }
+.weather-details-grid > div > div:first-child { width: auto; flex: 1 1 0; }
+.weather-details-grid > div > div:last-child { flex: 0 0 68px; }
+.weather-details-grid > div > div:first-child > span:last-child { white-space: nowrap; font-size: 18px; }
+@container weather-details (max-width: 339px) {
+  .weather-details-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@container weather-details (min-width: 600px) {
+  .weather-details-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
+  .weather-details-grid > div { grid-column: span 2; height: 180px; padding: 16px; flex-direction: column; align-items: stretch; }
+  .weather-details-grid > div > div:first-child { flex: 0 0 auto; width: 100%; gap: 16px; }
+  .weather-details-grid > div > div:last-child { flex: 1 1 auto; }
+  .weather-details-grid > div > div:first-child > span:last-child { font-size: 30px; }
+  .weather-details-grid > div > div:first-child > span:first-child { font-size: 14px; }
+  .weather-details-grid > [data-weather-detail="aqi"] { order: 0; }
+  .weather-details-grid > [data-weather-detail="uv"] { order: 1; }
+  .weather-details-grid > [data-weather-detail="feels"] { order: 2; }
+  .weather-details-grid > [data-weather-detail="wind"] { order: 3; }
+  .weather-details-grid > [data-weather-detail="sun"] { order: 4; }
+  .weather-details-grid > [data-weather-detail="humidity"] { order: 5; }
+  .weather-details-grid > [data-weather-detail="visibility"] { order: 6; grid-column: span 3; }
+  .weather-details-grid > [data-weather-detail="pressure"] { order: 7; grid-column: span 3; }
+}
+
+/* Reference weather cards use the same order in folded and unfolded layouts. */
+.weather-details-grid > [data-weather-detail="aqi"] { order: 0; }
+.weather-details-grid > [data-weather-detail="uv"] { order: 1; }
+.weather-details-grid > [data-weather-detail="feels"] { order: 2; }
+.weather-details-grid > [data-weather-detail="wind"] { order: 3; }
+.weather-details-grid > [data-weather-detail="sun"] { order: 4; }
+.weather-details-grid > [data-weather-detail="humidity"] { order: 5; }
+.weather-details-grid > [data-weather-detail="visibility"] { order: 6; }
+.weather-details-grid > [data-weather-detail="pressure"] { order: 7; }
+.weather-details-grid > .weather-reference-card { height: 180px; padding: 14px 13px; display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+.weather-details-grid > .weather-reference-card > .weather-reference-title { flex: 0 0 auto; display: flex; align-items: center; gap: 5px; width: auto; font-size: 12px; color: rgba(255,255,255,.6); }
+.weather-reference-value { margin-top: 12px; font-size: 24px; line-height: 1.15; font-weight: 600; }
+.weather-reference-temp { font-size: 32px; }
+.weather-reference-number { margin-top: 7px; font-size: 15px; }
+.weather-detail-scale { position: relative; flex: 0 0 4px; width: 100%; margin-top: 13px; border-radius: 4px; }
+.weather-detail-scale--aqi { background: linear-gradient(90deg,#45c969,#e6d83b,#f79825,#ed4853,#a635b4,#8f1b38); }
+.weather-detail-scale--uv { background: linear-gradient(90deg,#44ce81,#cbdc41,#f0a52c,#ee5559,#c9529a); }
+.weather-detail-scale span { position: absolute; top: 50%; transform: translate(-50%,-50%); width: 10px; height: 10px; border-radius: 50%; background: white; border: 2px solid #253756; }
+.weather-details-grid > .weather-reference-card > .weather-reference-description { flex: 0 1 auto; margin-top: 12px; font-size: 12px; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.weather-details-grid > .weather-reference-card > .weather-reference-description--bottom { margin-top: auto; }
+.weather-details-grid > .weather-reference-card > .weather-reference-wind { flex: 1 1 auto; display: flex; align-items: center; justify-content: center; min-height: 0; }
+.weather-reference-wind svg { width: 85px; height: 85px; }
+
+.weather-details-grid > .weather-reference-card > .weather-reference-sun { flex: 1 1 auto; display: flex; align-items: center; min-height: 0; }
+.weather-reference-sun svg { width: 100%; height: 54px; }
+.weather-details-grid > .weather-reference-card > .weather-reference-pressure { flex: 1 1 auto; display: flex; align-items: center; justify-content: center; min-height: 0; }
+.weather-reference-pressure svg { width: 105px; height: 105px; }
+.weather-visibility-unit { font-size: 12px; font-weight: 400; }
+.weather-details-grid > .weather-reference-card > .weather-visibility-labels { flex: 0 0 auto; display: flex; justify-content: space-between; margin-top: auto; color: rgba(255,255,255,.6); font-size: 11px; }
+.weather-details-grid > .weather-reference-card > .weather-visibility-scale { position: relative; flex: 0 0 4px; margin: 10px 4px 10px; border-radius: 4px; background: linear-gradient(90deg, rgba(255,255,255,.2), rgba(255,255,255,.9)); }
+.weather-visibility-scale span { position: absolute; top: 50%; width: 9px; height: 9px; border: 2px solid #253756; background: white; border-radius: 50%; transform: translate(-50%, -50%); }

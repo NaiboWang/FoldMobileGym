@@ -1,0 +1,4670 @@
+{
+  "app": "calendar",
+  "appDir": "system\\Calendar",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 33,
+  "transitionCount": 33,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "uiStateId": "calendar.home.base",
+      "component": "CalendarHomePage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "日程视图中的真实分组列表"
+        },
+        {
+          "name": "monthGrid",
+          "direction": "vertical",
+          "description": "展开态月盘"
+        },
+        {
+          "name": "monthContent",
+          "direction": "vertical",
+          "description": "窄窗格月份与日程整体滚动"
+        },
+        {
+          "name": "weekColumns",
+          "direction": "horizontal",
+          "description": "周视图日期列"
+        },
+        {
+          "name": "weekAllDay",
+          "direction": "vertical",
+          "description": "周视图全天日程"
+        },
+        {
+          "name": "sheet",
+          "direction": "vertical",
+          "description": "日历更多菜单"
+        }
+      ],
+      "description": "日历月视图",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "calendar.home.month.shift",
+          "label": "滑动切换月份",
+          "behavior": "other",
+          "paramsSchema": {
+            "delta": "number"
+          }
+        },
+        {
+          "id": "calendar.home.share",
+          "label": "通过系统选择器分享当前日程摘要",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/?view=year",
+      "routePath": "/",
+      "uiStateId": "calendar.home.year",
+      "component": "CalendarHomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "日程视图中的真实分组列表"
+        },
+        {
+          "name": "monthGrid",
+          "direction": "vertical",
+          "description": "展开态月盘"
+        },
+        {
+          "name": "monthContent",
+          "direction": "vertical",
+          "description": "窄窗格月份与日程整体滚动"
+        },
+        {
+          "name": "weekColumns",
+          "direction": "horizontal",
+          "description": "周视图日期列"
+        },
+        {
+          "name": "weekAllDay",
+          "direction": "vertical",
+          "description": "周视图全天日程"
+        },
+        {
+          "name": "sheet",
+          "direction": "vertical",
+          "description": "日历更多菜单"
+        }
+      ],
+      "description": "日历年视图",
+      "search": {
+        "view": "year"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/?view=week",
+      "routePath": "/",
+      "uiStateId": "calendar.home.week",
+      "component": "CalendarHomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "日程视图中的真实分组列表"
+        },
+        {
+          "name": "monthGrid",
+          "direction": "vertical",
+          "description": "展开态月盘"
+        },
+        {
+          "name": "monthContent",
+          "direction": "vertical",
+          "description": "窄窗格月份与日程整体滚动"
+        },
+        {
+          "name": "weekColumns",
+          "direction": "horizontal",
+          "description": "周视图日期列"
+        },
+        {
+          "name": "weekAllDay",
+          "direction": "vertical",
+          "description": "周视图全天日程"
+        },
+        {
+          "name": "sheet",
+          "direction": "vertical",
+          "description": "日历更多菜单"
+        }
+      ],
+      "description": "日历周视图",
+      "search": {
+        "view": "week"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "calendar.week.date.input",
+          "label": "选择周内日期",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "number"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/?view=day",
+      "routePath": "/",
+      "uiStateId": "calendar.home.day",
+      "component": "CalendarHomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "日程视图中的真实分组列表"
+        },
+        {
+          "name": "monthGrid",
+          "direction": "vertical",
+          "description": "展开态月盘"
+        },
+        {
+          "name": "monthContent",
+          "direction": "vertical",
+          "description": "窄窗格月份与日程整体滚动"
+        },
+        {
+          "name": "weekColumns",
+          "direction": "horizontal",
+          "description": "周视图日期列"
+        },
+        {
+          "name": "weekAllDay",
+          "direction": "vertical",
+          "description": "周视图全天日程"
+        },
+        {
+          "name": "sheet",
+          "direction": "vertical",
+          "description": "日历更多菜单"
+        }
+      ],
+      "description": "日历日视图",
+      "search": {
+        "view": "day"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/?view=agenda",
+      "routePath": "/",
+      "uiStateId": "calendar.home.agenda",
+      "component": "CalendarHomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "日程视图中的真实分组列表"
+        },
+        {
+          "name": "monthGrid",
+          "direction": "vertical",
+          "description": "展开态月盘"
+        },
+        {
+          "name": "monthContent",
+          "direction": "vertical",
+          "description": "窄窗格月份与日程整体滚动"
+        },
+        {
+          "name": "weekColumns",
+          "direction": "horizontal",
+          "description": "周视图日期列"
+        },
+        {
+          "name": "weekAllDay",
+          "direction": "vertical",
+          "description": "周视图全天日程"
+        },
+        {
+          "name": "sheet",
+          "direction": "vertical",
+          "description": "日历更多菜单"
+        }
+      ],
+      "description": "日程列表视图",
+      "search": {
+        "view": "agenda"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/?view=agenda&menu=open",
+      "routePath": "/",
+      "uiStateId": "calendar.home.agendaMenu",
+      "component": "CalendarHomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "日程视图中的真实分组列表"
+        },
+        {
+          "name": "monthGrid",
+          "direction": "vertical",
+          "description": "展开态月盘"
+        },
+        {
+          "name": "monthContent",
+          "direction": "vertical",
+          "description": "窄窗格月份与日程整体滚动"
+        },
+        {
+          "name": "weekColumns",
+          "direction": "horizontal",
+          "description": "周视图日期列"
+        },
+        {
+          "name": "weekAllDay",
+          "direction": "vertical",
+          "description": "周视图全天日程"
+        },
+        {
+          "name": "sheet",
+          "direction": "vertical",
+          "description": "日历更多菜单"
+        }
+      ],
+      "description": "日程列表更多菜单",
+      "search": {
+        "view": "agenda",
+        "menu": "open"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/?menu=open",
+      "routePath": "/",
+      "uiStateId": "calendar.home.menu",
+      "component": "CalendarHomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "日程视图中的真实分组列表"
+        },
+        {
+          "name": "monthGrid",
+          "direction": "vertical",
+          "description": "展开态月盘"
+        },
+        {
+          "name": "monthContent",
+          "direction": "vertical",
+          "description": "窄窗格月份与日程整体滚动"
+        },
+        {
+          "name": "weekColumns",
+          "direction": "horizontal",
+          "description": "周视图日期列"
+        },
+        {
+          "name": "weekAllDay",
+          "direction": "vertical",
+          "description": "周视图全天日程"
+        },
+        {
+          "name": "sheet",
+          "direction": "vertical",
+          "description": "日历更多菜单"
+        }
+      ],
+      "description": "日历更多菜单",
+      "search": {
+        "menu": "open"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/?view=year&menu=open",
+      "routePath": "/",
+      "uiStateId": "calendar.home.yearMenu",
+      "component": "CalendarHomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "日程视图中的真实分组列表"
+        },
+        {
+          "name": "monthGrid",
+          "direction": "vertical",
+          "description": "展开态月盘"
+        },
+        {
+          "name": "monthContent",
+          "direction": "vertical",
+          "description": "窄窗格月份与日程整体滚动"
+        },
+        {
+          "name": "weekColumns",
+          "direction": "horizontal",
+          "description": "周视图日期列"
+        },
+        {
+          "name": "weekAllDay",
+          "direction": "vertical",
+          "description": "周视图全天日程"
+        },
+        {
+          "name": "sheet",
+          "direction": "vertical",
+          "description": "日历更多菜单"
+        }
+      ],
+      "description": "年视图更多菜单",
+      "search": {
+        "view": "year",
+        "menu": "open"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/?view=week&menu=open",
+      "routePath": "/",
+      "uiStateId": "calendar.home.weekMenu",
+      "component": "CalendarHomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "日程视图中的真实分组列表"
+        },
+        {
+          "name": "monthGrid",
+          "direction": "vertical",
+          "description": "展开态月盘"
+        },
+        {
+          "name": "monthContent",
+          "direction": "vertical",
+          "description": "窄窗格月份与日程整体滚动"
+        },
+        {
+          "name": "weekColumns",
+          "direction": "horizontal",
+          "description": "周视图日期列"
+        },
+        {
+          "name": "weekAllDay",
+          "direction": "vertical",
+          "description": "周视图全天日程"
+        },
+        {
+          "name": "sheet",
+          "direction": "vertical",
+          "description": "日历更多菜单"
+        }
+      ],
+      "description": "周视图更多菜单",
+      "search": {
+        "view": "week",
+        "menu": "open"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/?view=day&menu=open",
+      "routePath": "/",
+      "uiStateId": "calendar.home.dayMenu",
+      "component": "CalendarHomePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "日程视图中的真实分组列表"
+        },
+        {
+          "name": "monthGrid",
+          "direction": "vertical",
+          "description": "展开态月盘"
+        },
+        {
+          "name": "monthContent",
+          "direction": "vertical",
+          "description": "窄窗格月份与日程整体滚动"
+        },
+        {
+          "name": "weekColumns",
+          "direction": "horizontal",
+          "description": "周视图日期列"
+        },
+        {
+          "name": "weekAllDay",
+          "direction": "vertical",
+          "description": "周视图全天日程"
+        },
+        {
+          "name": "sheet",
+          "direction": "vertical",
+          "description": "日历更多菜单"
+        }
+      ],
+      "description": "日视图更多菜单",
+      "search": {
+        "view": "day",
+        "menu": "open"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/todos?collapsed=:collapsed&returnView=:returnView",
+      "routePath": "/todos",
+      "uiStateId": "calendar.todos.base",
+      "component": "CalendarTodosPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "日历待办列表",
+      "search": {},
+      "queryParams": {
+        "returnView": "string",
+        "collapsed": "string"
+      },
+      "actions": [
+        {
+          "id": "calendar.todo.toggle",
+          "label": "完成或恢复真实待办",
+          "behavior": "toggle",
+          "scope": "item",
+          "paramsSchema": {
+            "todoId": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/todos/new?returnView=:returnView",
+      "routePath": "/todos/new",
+      "uiStateId": "calendar.todos.new.base",
+      "component": "CalendarTodosPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "新建待办",
+      "search": {},
+      "queryParams": {
+        "returnView": "string"
+      },
+      "actions": [
+        {
+          "id": "calendar.todo.new.title.input",
+          "label": "输入待办内容",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calendar.todo.new.due.input",
+          "label": "选择截止日期",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calendar.todo.create",
+          "label": "保存新待办",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/todos/:todoId/edit?returnView=:returnView",
+      "routePath": "/todos/:todoId/edit",
+      "uiStateId": "calendar.todos.edit.base",
+      "component": "CalendarTodosPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {
+        "todoId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "编辑待办",
+      "search": {},
+      "queryParams": {
+        "returnView": "string"
+      },
+      "actions": [
+        {
+          "id": "calendar.todo.edit.title.input",
+          "label": "编辑待办内容",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calendar.todo.edit.due.input",
+          "label": "编辑截止日期",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calendar.todo.update",
+          "label": "保存待办编辑",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/todos/:todoId/edit?deleteConfirm=open&returnView=:returnView",
+      "routePath": "/todos/:todoId/edit",
+      "uiStateId": "calendar.todos.edit.delete",
+      "component": "CalendarTodosPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {
+        "todoId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "待办删除确认",
+      "search": {
+        "deleteConfirm": "open"
+      },
+      "queryParams": {
+        "returnView": "string"
+      },
+      "actions": [
+        {
+          "id": "calendar.todo.delete",
+          "label": "删除所选待办",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/settings",
+      "routePath": "/settings",
+      "uiStateId": "calendar.settings.base",
+      "component": "CalendarSettingsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "sheet",
+          "direction": "vertical",
+          "description": "默认提醒选项"
+        }
+      ],
+      "description": "日历设置页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/settings?sheet=reminder",
+      "routePath": "/settings",
+      "uiStateId": "calendar.settings.reminder",
+      "component": "CalendarSettingsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "sheet",
+          "direction": "vertical",
+          "description": "默认提醒选项"
+        }
+      ],
+      "description": "默认提前提醒",
+      "search": {
+        "sheet": "reminder"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "calendar.settings.reminder.submit",
+          "label": "设置默认提前提醒",
+          "behavior": "submit",
+          "paramsSchema": {
+            "value": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/settings?sheet=allday",
+      "routePath": "/settings",
+      "uiStateId": "calendar.settings.allday",
+      "component": "CalendarSettingsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "sheet",
+          "direction": "vertical",
+          "description": "默认提醒选项"
+        }
+      ],
+      "description": "默认全天提醒",
+      "search": {
+        "sheet": "allday"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "calendar.settings.allday.submit",
+          "label": "设置默认全天提醒",
+          "behavior": "submit",
+          "paramsSchema": {
+            "value": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/settings?sheet=later",
+      "routePath": "/settings",
+      "uiStateId": "calendar.settings.later",
+      "component": "CalendarSettingsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "sheet",
+          "direction": "vertical",
+          "description": "默认提醒选项"
+        }
+      ],
+      "description": "默认稍后提醒",
+      "search": {
+        "sheet": "later"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "calendar.settings.later.submit",
+          "label": "设置默认稍后提醒",
+          "behavior": "submit",
+          "paramsSchema": {
+            "value": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/new-event?agendaDate=:agendaDate",
+      "routePath": "/new-event",
+      "uiStateId": "calendar.newEvent.base",
+      "component": "CalendarNewEventPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "backgroundMain",
+          "direction": "vertical",
+          "description": "编辑器后方原页面"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "真实分组日程主栏"
+        },
+        {
+          "name": "monthGrid",
+          "direction": "vertical",
+          "description": "后方月盘"
+        },
+        {
+          "name": "monthContent",
+          "direction": "vertical",
+          "description": "后方窄窗格月份与日程"
+        },
+        {
+          "name": "weekColumns",
+          "direction": "horizontal",
+          "description": "后方周日期列"
+        },
+        {
+          "name": "weekAllDay",
+          "direction": "vertical",
+          "description": "后方全天列表"
+        },
+        {
+          "name": "reminder",
+          "direction": "vertical",
+          "description": "提醒选择"
+        },
+        {
+          "name": "type",
+          "direction": "vertical",
+          "description": "日程类型选择"
+        },
+        {
+          "name": "discard",
+          "direction": "vertical",
+          "description": "放弃新建日程确认"
+        }
+      ],
+      "description": "新建日程页",
+      "search": {},
+      "queryParams": {
+        "agendaDate": "string"
+      },
+      "actions": [
+        {
+          "id": "calendar.new.save.submit",
+          "label": "保存新建日程",
+          "behavior": "submit"
+        },
+        {
+          "id": "calendar.new.moreSettings.toggle",
+          "label": "展开或收起更多设置",
+          "behavior": "toggle",
+          "paramsSchema": {
+            "expanded": "boolean"
+          }
+        },
+        {
+          "id": "calendar.new.allDay.toggle",
+          "label": "新建日程全天开关",
+          "behavior": "toggle",
+          "paramsSchema": {
+            "allDay": "boolean"
+          }
+        },
+        {
+          "id": "calendar.new.startDate.input",
+          "label": "Set start date",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calendar.new.endDate.input",
+          "label": "Set end date",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/new-event?sheet=reminder&agendaDate=:agendaDate",
+      "routePath": "/new-event",
+      "uiStateId": "calendar.newEvent.reminder",
+      "component": "CalendarNewEventPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "backgroundMain",
+          "direction": "vertical",
+          "description": "编辑器后方原页面"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "真实分组日程主栏"
+        },
+        {
+          "name": "monthGrid",
+          "direction": "vertical",
+          "description": "后方月盘"
+        },
+        {
+          "name": "monthContent",
+          "direction": "vertical",
+          "description": "后方窄窗格月份与日程"
+        },
+        {
+          "name": "weekColumns",
+          "direction": "horizontal",
+          "description": "后方周日期列"
+        },
+        {
+          "name": "weekAllDay",
+          "direction": "vertical",
+          "description": "后方全天列表"
+        },
+        {
+          "name": "reminder",
+          "direction": "vertical",
+          "description": "提醒选择"
+        },
+        {
+          "name": "type",
+          "direction": "vertical",
+          "description": "日程类型选择"
+        },
+        {
+          "name": "discard",
+          "direction": "vertical",
+          "description": "放弃新建日程确认"
+        }
+      ],
+      "description": "新建日程提醒选择",
+      "search": {
+        "sheet": "reminder"
+      },
+      "queryParams": {
+        "agendaDate": "string"
+      },
+      "actions": [
+        {
+          "id": "calendar.new.reminder.select",
+          "label": "选择提醒提前量",
+          "behavior": "other",
+          "paramsSchema": {
+            "minutes": "string"
+          }
+        },
+        {
+          "id": "calendar.new.reminder.confirm",
+          "label": "确认新建日程提醒",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/new-event?sheet=type&agendaDate=:agendaDate",
+      "routePath": "/new-event",
+      "uiStateId": "calendar.newEvent.type",
+      "component": "CalendarNewEventPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "backgroundMain",
+          "direction": "vertical",
+          "description": "编辑器后方原页面"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "真实分组日程主栏"
+        },
+        {
+          "name": "monthGrid",
+          "direction": "vertical",
+          "description": "后方月盘"
+        },
+        {
+          "name": "monthContent",
+          "direction": "vertical",
+          "description": "后方窄窗格月份与日程"
+        },
+        {
+          "name": "weekColumns",
+          "direction": "horizontal",
+          "description": "后方周日期列"
+        },
+        {
+          "name": "weekAllDay",
+          "direction": "vertical",
+          "description": "后方全天列表"
+        },
+        {
+          "name": "reminder",
+          "direction": "vertical",
+          "description": "提醒选择"
+        },
+        {
+          "name": "type",
+          "direction": "vertical",
+          "description": "日程类型选择"
+        },
+        {
+          "name": "discard",
+          "direction": "vertical",
+          "description": "放弃新建日程确认"
+        }
+      ],
+      "description": "新建日程类型选择",
+      "search": {
+        "sheet": "type"
+      },
+      "queryParams": {
+        "agendaDate": "string"
+      },
+      "actions": [
+        {
+          "id": "calendar.new.type.select",
+          "label": "选择新建日程类型",
+          "behavior": "other",
+          "paramsSchema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/new-event?sheet=discard&agendaDate=:agendaDate",
+      "routePath": "/new-event",
+      "uiStateId": "calendar.newEvent.discard",
+      "component": "CalendarNewEventPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "backgroundMain",
+          "direction": "vertical",
+          "description": "编辑器后方原页面"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "真实分组日程主栏"
+        },
+        {
+          "name": "monthGrid",
+          "direction": "vertical",
+          "description": "后方月盘"
+        },
+        {
+          "name": "monthContent",
+          "direction": "vertical",
+          "description": "后方窄窗格月份与日程"
+        },
+        {
+          "name": "weekColumns",
+          "direction": "horizontal",
+          "description": "后方周日期列"
+        },
+        {
+          "name": "weekAllDay",
+          "direction": "vertical",
+          "description": "后方全天列表"
+        },
+        {
+          "name": "reminder",
+          "direction": "vertical",
+          "description": "提醒选择"
+        },
+        {
+          "name": "type",
+          "direction": "vertical",
+          "description": "日程类型选择"
+        },
+        {
+          "name": "discard",
+          "direction": "vertical",
+          "description": "放弃新建日程确认"
+        }
+      ],
+      "description": "放弃新建日程确认",
+      "search": {
+        "sheet": "discard"
+      },
+      "queryParams": {
+        "agendaDate": "string"
+      },
+      "actions": [
+        {
+          "id": "calendar.new.discard.submit",
+          "label": "放弃新建日程更改",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/event/:eventId?agendaDate=:agendaDate",
+      "routePath": "/event/:eventId",
+      "uiStateId": "calendar.eventDetail.base",
+      "component": "CalendarEventDetailPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "eventId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "真实分组日程主栏"
+        },
+        {
+          "name": "confirmation",
+          "direction": "vertical",
+          "description": "删除确认"
+        }
+      ],
+      "description": "日程详情页",
+      "search": {},
+      "queryParams": {
+        "agendaDate": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/event/:eventId?deleteConfirm=open&agendaDate=:agendaDate",
+      "routePath": "/event/:eventId",
+      "uiStateId": "calendar.eventDetail.delete",
+      "component": "CalendarEventDetailPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "eventId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "真实分组日程主栏"
+        },
+        {
+          "name": "confirmation",
+          "direction": "vertical",
+          "description": "删除确认"
+        }
+      ],
+      "description": "确认删除当前日程",
+      "search": {
+        "deleteConfirm": "open"
+      },
+      "queryParams": {
+        "agendaDate": "string"
+      },
+      "actions": [
+        {
+          "id": "calendar.event.delete.submit",
+          "label": "确认删除当前日程",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "eventId": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/event/:eventId/edit?agendaDate=:agendaDate",
+      "routePath": "/event/:eventId/edit",
+      "uiStateId": "calendar.eventEdit.base",
+      "component": "CalendarNewEventPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "eventId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "backgroundMain",
+          "direction": "vertical",
+          "description": "编辑器后方原页面"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "真实分组日程主栏"
+        },
+        {
+          "name": "monthGrid",
+          "direction": "vertical",
+          "description": "后方月盘"
+        },
+        {
+          "name": "monthContent",
+          "direction": "vertical",
+          "description": "后方窄窗格月份与日程"
+        },
+        {
+          "name": "weekColumns",
+          "direction": "horizontal",
+          "description": "后方周日期列"
+        },
+        {
+          "name": "weekAllDay",
+          "direction": "vertical",
+          "description": "后方全天列表"
+        },
+        {
+          "name": "reminder",
+          "direction": "vertical",
+          "description": "提醒选择"
+        },
+        {
+          "name": "type",
+          "direction": "vertical",
+          "description": "日程类型选择"
+        },
+        {
+          "name": "discard",
+          "direction": "vertical",
+          "description": "放弃编辑日程确认"
+        }
+      ],
+      "description": "编辑日程页",
+      "search": {},
+      "queryParams": {
+        "agendaDate": "string"
+      },
+      "actions": [
+        {
+          "id": "calendar.edit.save.submit",
+          "label": "保存编辑日程",
+          "behavior": "submit",
+          "paramsSchema": {
+            "eventId": "string"
+          }
+        },
+        {
+          "id": "calendar.edit.allDay.toggle",
+          "label": "编辑日程全天开关",
+          "behavior": "toggle",
+          "paramsSchema": {
+            "eventId": "string",
+            "allDay": "boolean"
+          }
+        },
+        {
+          "id": "calendar.edit.startDate.input",
+          "label": "Edit start date",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "calendar.edit.endDate.input",
+          "label": "Edit end date",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/event/:eventId/edit?sheet=reminder&agendaDate=:agendaDate",
+      "routePath": "/event/:eventId/edit",
+      "uiStateId": "calendar.eventEdit.reminder",
+      "component": "CalendarNewEventPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "eventId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "backgroundMain",
+          "direction": "vertical",
+          "description": "编辑器后方原页面"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "真实分组日程主栏"
+        },
+        {
+          "name": "monthGrid",
+          "direction": "vertical",
+          "description": "后方月盘"
+        },
+        {
+          "name": "monthContent",
+          "direction": "vertical",
+          "description": "后方窄窗格月份与日程"
+        },
+        {
+          "name": "weekColumns",
+          "direction": "horizontal",
+          "description": "后方周日期列"
+        },
+        {
+          "name": "weekAllDay",
+          "direction": "vertical",
+          "description": "后方全天列表"
+        },
+        {
+          "name": "reminder",
+          "direction": "vertical",
+          "description": "提醒选择"
+        },
+        {
+          "name": "type",
+          "direction": "vertical",
+          "description": "日程类型选择"
+        },
+        {
+          "name": "discard",
+          "direction": "vertical",
+          "description": "放弃编辑日程确认"
+        }
+      ],
+      "description": "编辑日程提醒选择",
+      "search": {
+        "sheet": "reminder"
+      },
+      "queryParams": {
+        "agendaDate": "string"
+      },
+      "actions": [
+        {
+          "id": "calendar.edit.reminder.select",
+          "label": "选择提醒提前量",
+          "behavior": "other",
+          "paramsSchema": {
+            "minutes": "string"
+          }
+        },
+        {
+          "id": "calendar.edit.reminder.confirm",
+          "label": "确认编辑日程提醒",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/event/:eventId/edit?sheet=type&agendaDate=:agendaDate",
+      "routePath": "/event/:eventId/edit",
+      "uiStateId": "calendar.eventEdit.type",
+      "component": "CalendarNewEventPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "eventId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "backgroundMain",
+          "direction": "vertical",
+          "description": "编辑器后方原页面"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "真实分组日程主栏"
+        },
+        {
+          "name": "monthGrid",
+          "direction": "vertical",
+          "description": "后方月盘"
+        },
+        {
+          "name": "monthContent",
+          "direction": "vertical",
+          "description": "后方窄窗格月份与日程"
+        },
+        {
+          "name": "weekColumns",
+          "direction": "horizontal",
+          "description": "后方周日期列"
+        },
+        {
+          "name": "weekAllDay",
+          "direction": "vertical",
+          "description": "后方全天列表"
+        },
+        {
+          "name": "reminder",
+          "direction": "vertical",
+          "description": "提醒选择"
+        },
+        {
+          "name": "type",
+          "direction": "vertical",
+          "description": "日程类型选择"
+        },
+        {
+          "name": "discard",
+          "direction": "vertical",
+          "description": "放弃编辑日程确认"
+        }
+      ],
+      "description": "编辑日程类型选择",
+      "search": {
+        "sheet": "type"
+      },
+      "queryParams": {
+        "agendaDate": "string"
+      },
+      "actions": [
+        {
+          "id": "calendar.edit.type.select",
+          "label": "选择编辑日程类型",
+          "behavior": "other",
+          "paramsSchema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/event/:eventId/edit?sheet=discard&agendaDate=:agendaDate",
+      "routePath": "/event/:eventId/edit",
+      "uiStateId": "calendar.eventEdit.discard",
+      "component": "CalendarNewEventPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "eventId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "backgroundMain",
+          "direction": "vertical",
+          "description": "编辑器后方原页面"
+        },
+        {
+          "name": "master",
+          "direction": "vertical",
+          "description": "真实分组日程主栏"
+        },
+        {
+          "name": "monthGrid",
+          "direction": "vertical",
+          "description": "后方月盘"
+        },
+        {
+          "name": "monthContent",
+          "direction": "vertical",
+          "description": "后方窄窗格月份与日程"
+        },
+        {
+          "name": "weekColumns",
+          "direction": "horizontal",
+          "description": "后方周日期列"
+        },
+        {
+          "name": "weekAllDay",
+          "direction": "vertical",
+          "description": "后方全天列表"
+        },
+        {
+          "name": "reminder",
+          "direction": "vertical",
+          "description": "提醒选择"
+        },
+        {
+          "name": "type",
+          "direction": "vertical",
+          "description": "日程类型选择"
+        },
+        {
+          "name": "discard",
+          "direction": "vertical",
+          "description": "放弃编辑日程确认"
+        }
+      ],
+      "description": "放弃编辑日程确认",
+      "search": {
+        "sheet": "discard"
+      },
+      "queryParams": {
+        "agendaDate": "string"
+      },
+      "actions": [
+        {
+          "id": "calendar.edit.discard.submit",
+          "label": "放弃编辑日程更改",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/search?q=:q",
+      "routePath": "/search",
+      "uiStateId": "calendar.search.base",
+      "component": "CalendarSearchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "搜索页",
+      "search": {},
+      "queryParams": {
+        "q": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/date-jump",
+      "routePath": "/date-jump",
+      "uiStateId": "calendar.dateJump.base",
+      "component": "CalendarDateJumpPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "日期跳转页",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "calendar.dateJump.submit",
+          "label": "跳转到所选日期",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/date-calculate",
+      "routePath": "/date-calculate",
+      "uiStateId": "calendar.dateCalculate.base",
+      "component": "CalendarDateCalculatePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "日期计算页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/subscription",
+      "routePath": "/subscription",
+      "uiStateId": "calendar.subscription.base",
+      "component": "CalendarSubscriptionPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "订阅管理页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/desk-theme",
+      "routePath": "/desk-theme",
+      "uiStateId": "calendar.deskTheme.base",
+      "component": "CalendarDeskThemePage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "桌面组件主题页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/todos?collapsed=:collapsed&returnView=:returnView",
+      "targetNodeId": "/todos?collapsed=:collapsed&returnView=:returnView",
+      "id": "home.todos.open",
+      "label": "打开日历内待办",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {
+        "returnView": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "todo",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/todos?collapsed=:collapsed&returnView=:returnView",
+      "sourceNodeId": "/todos?collapsed=:collapsed&returnView=:returnView",
+      "target": "/?view=year",
+      "targetNodeId": "/?view=year",
+      "id": "todos.calendar.open",
+      "label": "返回日历日程",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "view": "year"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "returnView"
+        },
+        "right": "year"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/todos?collapsed=:collapsed&returnView=:returnView",
+      "sourceNodeId": "/todos?collapsed=:collapsed&returnView=:returnView",
+      "target": "/?view=week",
+      "targetNodeId": "/?view=week",
+      "id": "todos.calendar.open",
+      "label": "返回日历日程",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "view": "week"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "returnView"
+        },
+        "right": "week"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/todos?collapsed=:collapsed&returnView=:returnView",
+      "sourceNodeId": "/todos?collapsed=:collapsed&returnView=:returnView",
+      "target": "/?view=day",
+      "targetNodeId": "/?view=day",
+      "id": "todos.calendar.open",
+      "label": "返回日历日程",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "view": "day"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "returnView"
+        },
+        "right": "day"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/todos?collapsed=:collapsed&returnView=:returnView",
+      "sourceNodeId": "/todos?collapsed=:collapsed&returnView=:returnView",
+      "target": "/?view=agenda",
+      "targetNodeId": "/?view=agenda",
+      "id": "todos.calendar.open",
+      "label": "返回日历日程",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "view": "agenda"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "returnView"
+        },
+        "right": "agenda"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/todos?collapsed=:collapsed&returnView=:returnView",
+      "sourceNodeId": "/todos?collapsed=:collapsed&returnView=:returnView",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "todos.calendar.open",
+      "label": "返回日历日程",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "always"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/todos?collapsed=:collapsed&returnView=:returnView",
+      "sourceNodeId": "/todos?collapsed=:collapsed&returnView=:returnView",
+      "target": "/todos/new?returnView=:returnView",
+      "targetNodeId": "/todos/new?returnView=:returnView",
+      "id": "todos.new.open",
+      "label": "新建日历待办",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "returnView",
+        "collapsed"
+      ],
+      "uiMeta": {
+        "placement": "fab",
+        "icon": "add",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/todos?collapsed=:collapsed&returnView=:returnView",
+      "sourceNodeId": "/todos?collapsed=:collapsed&returnView=:returnView",
+      "target": "/todos/:todoId/edit?returnView=:returnView",
+      "targetNodeId": "/todos/:todoId/edit?returnView=:returnView",
+      "id": "todos.edit.open",
+      "label": "编辑真实待办",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "todoId": "string"
+      },
+      "preserveParams": [
+        "returnView",
+        "collapsed"
+      ],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "todo",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/todos/:todoId/edit?deleteConfirm=open&returnView=:returnView",
+      "sourceNodeId": "/todos/:todoId/edit?deleteConfirm=open&returnView=:returnView",
+      "target": "/todos?collapsed=:collapsed&returnView=:returnView",
+      "targetNodeId": "/todos?collapsed=:collapsed&returnView=:returnView",
+      "id": "todos.return",
+      "label": "删除后返回待办",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "returnView",
+        "collapsed"
+      ],
+      "fromConstraint": {
+        "path": "/todos/:todoId/edit",
+        "search": {
+          "deleteConfirm": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "none",
+        "icon": "todo",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/todos/:todoId/edit?returnView=:returnView",
+      "sourceNodeId": "/todos/:todoId/edit?returnView=:returnView",
+      "target": "/todos/:todoId/edit?deleteConfirm=open&returnView=:returnView",
+      "targetNodeId": "/todos/:todoId/edit?deleteConfirm=open&returnView=:returnView",
+      "id": "todos.delete.open",
+      "label": "确认删除待办",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "deleteConfirm": "open"
+      },
+      "searchParams": {},
+      "params": {
+        "todoId": "string"
+      },
+      "preserveParams": [
+        "returnView",
+        "collapsed"
+      ],
+      "fromConstraint": {
+        "path": "/todos/:todoId/edit",
+        "search": {
+          "deleteConfirm": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "delete",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=agenda",
+      "sourceNodeId": "/?view=agenda",
+      "target": "/event/:eventId?agendaDate=:agendaDate",
+      "targetNodeId": "/event/:eventId?agendaDate=:agendaDate",
+      "id": "home.agenda.event.open",
+      "label": "从日程视图打开真实事件",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {
+        "agendaDate": "string"
+      },
+      "params": {
+        "eventId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "agenda",
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "event",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/event/:eventId?agendaDate=:agendaDate",
+      "sourceNodeId": "/event/:eventId?agendaDate=:agendaDate",
+      "target": "/new-event?agendaDate=:agendaDate",
+      "targetNodeId": "/new-event?agendaDate=:agendaDate",
+      "id": "workspace.new.open",
+      "label": "从详情工作区新建",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "agendaDate"
+      ],
+      "fromConstraint": {
+        "path": "/event/:eventId",
+        "search": {
+          "deleteConfirm": null
+        }
+      },
+      "uiMeta": {
+        "placement": "fab",
+        "icon": "add",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/event/:eventId?agendaDate=:agendaDate",
+      "sourceNodeId": "/event/:eventId?agendaDate=:agendaDate",
+      "target": "/?view=year",
+      "targetNodeId": "/?view=year",
+      "id": "workspace.home.switch",
+      "label": "从详情工作区切回已有日历视图",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "view": "year"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "year"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/event/:eventId",
+        "search": {
+          "deleteConfirm": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/event/:eventId?agendaDate=:agendaDate",
+      "sourceNodeId": "/event/:eventId?agendaDate=:agendaDate",
+      "target": "/?view=week",
+      "targetNodeId": "/?view=week",
+      "id": "workspace.home.switch",
+      "label": "从详情工作区切回已有日历视图",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "view": "week"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "week"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/event/:eventId",
+        "search": {
+          "deleteConfirm": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/event/:eventId?agendaDate=:agendaDate",
+      "sourceNodeId": "/event/:eventId?agendaDate=:agendaDate",
+      "target": "/?view=day",
+      "targetNodeId": "/?view=day",
+      "id": "workspace.home.switch",
+      "label": "从详情工作区切回已有日历视图",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {
+        "view": "day"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "day"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/event/:eventId",
+        "search": {
+          "deleteConfirm": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/event/:eventId?agendaDate=:agendaDate",
+      "sourceNodeId": "/event/:eventId?agendaDate=:agendaDate",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "workspace.home.switch",
+      "label": "从详情工作区切回已有日历视图",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "always"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/event/:eventId",
+        "search": {
+          "deleteConfirm": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/?view=year",
+      "targetNodeId": "/?view=year",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "year"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "year"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": null,
+          "view": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/?view=week",
+      "targetNodeId": "/?view=week",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "week"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "week"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": null,
+          "view": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/?view=day",
+      "targetNodeId": "/?view=day",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "day"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "day"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": null,
+          "view": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/?view=agenda",
+      "targetNodeId": "/?view=agenda",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "agenda"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "agenda"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": null,
+          "view": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=year",
+      "sourceNodeId": "/?view=year",
+      "target": "/?view=year",
+      "targetNodeId": "/?view=year",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "year"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "year"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "year"
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=year",
+      "sourceNodeId": "/?view=year",
+      "target": "/?view=week",
+      "targetNodeId": "/?view=week",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "week"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "week"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "year"
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=year",
+      "sourceNodeId": "/?view=year",
+      "target": "/?view=day",
+      "targetNodeId": "/?view=day",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "day"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "day"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "year"
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=year",
+      "sourceNodeId": "/?view=year",
+      "target": "/?view=agenda",
+      "targetNodeId": "/?view=agenda",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "agenda"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "agenda"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "year"
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=year",
+      "sourceNodeId": "/?view=year",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "always"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "year"
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=week",
+      "sourceNodeId": "/?view=week",
+      "target": "/?view=year",
+      "targetNodeId": "/?view=year",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "year"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "year"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "week"
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=week",
+      "sourceNodeId": "/?view=week",
+      "target": "/?view=week",
+      "targetNodeId": "/?view=week",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "week"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "week"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "week"
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=week",
+      "sourceNodeId": "/?view=week",
+      "target": "/?view=day",
+      "targetNodeId": "/?view=day",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "day"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "day"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "week"
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=week",
+      "sourceNodeId": "/?view=week",
+      "target": "/?view=agenda",
+      "targetNodeId": "/?view=agenda",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "agenda"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "agenda"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "week"
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=week",
+      "sourceNodeId": "/?view=week",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "always"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "week"
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=day",
+      "sourceNodeId": "/?view=day",
+      "target": "/?view=year",
+      "targetNodeId": "/?view=year",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "year"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "year"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "day"
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=day",
+      "sourceNodeId": "/?view=day",
+      "target": "/?view=week",
+      "targetNodeId": "/?view=week",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "week"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "week"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "day"
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=day",
+      "sourceNodeId": "/?view=day",
+      "target": "/?view=day",
+      "targetNodeId": "/?view=day",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "day"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "day"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "day"
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=day",
+      "sourceNodeId": "/?view=day",
+      "target": "/?view=agenda",
+      "targetNodeId": "/?view=agenda",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "agenda"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "agenda"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "day"
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=day",
+      "sourceNodeId": "/?view=day",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "always"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "day"
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=agenda",
+      "sourceNodeId": "/?view=agenda",
+      "target": "/?view=year",
+      "targetNodeId": "/?view=year",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "year"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "year"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "agenda"
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=agenda",
+      "sourceNodeId": "/?view=agenda",
+      "target": "/?view=week",
+      "targetNodeId": "/?view=week",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "week"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "week"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "agenda"
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=agenda",
+      "sourceNodeId": "/?view=agenda",
+      "target": "/?view=day",
+      "targetNodeId": "/?view=day",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "day"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "day"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "agenda"
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=agenda",
+      "sourceNodeId": "/?view=agenda",
+      "target": "/?view=agenda",
+      "targetNodeId": "/?view=agenda",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "view": "agenda"
+      },
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "eq",
+        "left": {
+          "ref": "param",
+          "key": "view"
+        },
+        "right": "agenda"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "agenda"
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=agenda",
+      "sourceNodeId": "/?view=agenda",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "home.view.switch",
+      "label": "切换日历视图",
+      "type": "state",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "when": {
+        "op": "always"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "agenda"
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/?menu=open",
+      "targetNodeId": "/?menu=open",
+      "id": "home.menu.open",
+      "label": "打开日历更多菜单",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "menu": "open"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": null,
+          "view": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "more",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=year",
+      "sourceNodeId": "/?view=year",
+      "target": "/?view=year&menu=open",
+      "targetNodeId": "/?view=year&menu=open",
+      "id": "home.menu.open",
+      "label": "打开日历更多菜单",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "menu": "open"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "year"
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "more",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=week",
+      "sourceNodeId": "/?view=week",
+      "target": "/?view=week&menu=open",
+      "targetNodeId": "/?view=week&menu=open",
+      "id": "home.menu.open",
+      "label": "打开日历更多菜单",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "menu": "open"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "week"
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "more",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=day",
+      "sourceNodeId": "/?view=day",
+      "target": "/?view=day&menu=open",
+      "targetNodeId": "/?view=day&menu=open",
+      "id": "home.menu.open",
+      "label": "打开日历更多菜单",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "menu": "open"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "day"
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "more",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=agenda",
+      "sourceNodeId": "/?view=agenda",
+      "target": "/?view=agenda&menu=open",
+      "targetNodeId": "/?view=agenda&menu=open",
+      "id": "home.menu.open",
+      "label": "打开日历更多菜单",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "menu": "open"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "view"
+      ],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "agenda"
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "more",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/settings",
+      "sourceNodeId": "/settings",
+      "target": "/settings?sheet=reminder",
+      "targetNodeId": "/settings?sheet=reminder",
+      "id": "settings.reminder.open",
+      "label": "选择默认提前提醒",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "reminder"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/settings",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "reminder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/settings",
+      "sourceNodeId": "/settings",
+      "target": "/settings?sheet=allday",
+      "targetNodeId": "/settings?sheet=allday",
+      "id": "settings.allday.open",
+      "label": "选择默认全天提醒",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "allday"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/settings",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "reminder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/settings",
+      "sourceNodeId": "/settings",
+      "target": "/settings?sheet=later",
+      "targetNodeId": "/settings?sheet=later",
+      "id": "settings.later.open",
+      "label": "选择默认稍后提醒",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "later"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/settings",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "reminder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/event/:eventId?agendaDate=:agendaDate",
+      "sourceNodeId": "/event/:eventId?agendaDate=:agendaDate",
+      "target": "/event/:eventId?deleteConfirm=open&agendaDate=:agendaDate",
+      "targetNodeId": "/event/:eventId?deleteConfirm=open&agendaDate=:agendaDate",
+      "id": "event.delete.open",
+      "label": "打开删除日程确认",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "deleteConfirm": "open"
+      },
+      "searchParams": {},
+      "params": {
+        "eventId": "string"
+      },
+      "preserveParams": [
+        "agendaDate"
+      ],
+      "fromConstraint": {
+        "path": "/event/:eventId",
+        "search": {
+          "deleteConfirm": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "delete",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/new-event?agendaDate=:agendaDate",
+      "sourceNodeId": "/new-event?agendaDate=:agendaDate",
+      "target": "/new-event?sheet=reminder&agendaDate=:agendaDate",
+      "targetNodeId": "/new-event?sheet=reminder&agendaDate=:agendaDate",
+      "id": "reminder.new.open",
+      "label": "打开新建日程提醒选择",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "reminder"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/new-event",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "reminder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/event/:eventId/edit?agendaDate=:agendaDate",
+      "sourceNodeId": "/event/:eventId/edit?agendaDate=:agendaDate",
+      "target": "/event/:eventId/edit?sheet=reminder&agendaDate=:agendaDate",
+      "targetNodeId": "/event/:eventId/edit?sheet=reminder&agendaDate=:agendaDate",
+      "id": "reminder.edit.open",
+      "label": "打开编辑日程提醒选择",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "reminder"
+      },
+      "searchParams": {},
+      "params": {
+        "eventId": "string"
+      },
+      "preserveParams": [
+        "agendaDate"
+      ],
+      "fromConstraint": {
+        "path": "/event/:eventId/edit",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "reminder",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/new-event?agendaDate=:agendaDate",
+      "sourceNodeId": "/new-event?agendaDate=:agendaDate",
+      "target": "/new-event?sheet=type&agendaDate=:agendaDate",
+      "targetNodeId": "/new-event?sheet=type&agendaDate=:agendaDate",
+      "id": "type.new.open",
+      "label": "打开新建日程类型选择",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "type"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/new-event",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "event",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/event/:eventId/edit?agendaDate=:agendaDate",
+      "sourceNodeId": "/event/:eventId/edit?agendaDate=:agendaDate",
+      "target": "/event/:eventId/edit?sheet=type&agendaDate=:agendaDate",
+      "targetNodeId": "/event/:eventId/edit?sheet=type&agendaDate=:agendaDate",
+      "id": "type.edit.open",
+      "label": "打开编辑日程类型选择",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "type"
+      },
+      "searchParams": {},
+      "params": {
+        "eventId": "string"
+      },
+      "preserveParams": [
+        "agendaDate"
+      ],
+      "fromConstraint": {
+        "path": "/event/:eventId/edit",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "event",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/new-event?agendaDate=:agendaDate",
+      "sourceNodeId": "/new-event?agendaDate=:agendaDate",
+      "target": "/new-event?sheet=discard&agendaDate=:agendaDate",
+      "targetNodeId": "/new-event?sheet=discard&agendaDate=:agendaDate",
+      "id": "discard.new.open",
+      "label": "确认放弃新建日程",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "discard"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/new-event",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "close",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/event/:eventId/edit?agendaDate=:agendaDate",
+      "sourceNodeId": "/event/:eventId/edit?agendaDate=:agendaDate",
+      "target": "/event/:eventId/edit?sheet=discard&agendaDate=:agendaDate",
+      "targetNodeId": "/event/:eventId/edit?sheet=discard&agendaDate=:agendaDate",
+      "id": "discard.edit.open",
+      "label": "确认放弃编辑日程",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "sheet": "discard"
+      },
+      "searchParams": {},
+      "params": {
+        "eventId": "string"
+      },
+      "preserveParams": [
+        "agendaDate"
+      ],
+      "fromConstraint": {
+        "path": "/event/:eventId/edit",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "close",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?menu=open",
+      "sourceNodeId": "/?menu=open",
+      "target": "/settings",
+      "targetNodeId": "/settings",
+      "id": "settings.open",
+      "label": "打开日历设置页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": "open",
+          "view": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "settings",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=agenda&menu=open",
+      "sourceNodeId": "/?view=agenda&menu=open",
+      "target": "/settings",
+      "targetNodeId": "/settings",
+      "id": "settings.open",
+      "label": "打开日历设置页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "agenda",
+          "menu": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "settings",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=year&menu=open",
+      "sourceNodeId": "/?view=year&menu=open",
+      "target": "/settings",
+      "targetNodeId": "/settings",
+      "id": "settings.open",
+      "label": "打开日历设置页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "year",
+          "menu": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "settings",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=week&menu=open",
+      "sourceNodeId": "/?view=week&menu=open",
+      "target": "/settings",
+      "targetNodeId": "/settings",
+      "id": "settings.open",
+      "label": "打开日历设置页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "week",
+          "menu": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "settings",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=day&menu=open",
+      "sourceNodeId": "/?view=day&menu=open",
+      "target": "/settings",
+      "targetNodeId": "/settings",
+      "id": "settings.open",
+      "label": "打开日历设置页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "day",
+          "menu": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "settings",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/new-event?agendaDate=:agendaDate",
+      "targetNodeId": "/new-event?agendaDate=:agendaDate",
+      "id": "new-event.open",
+      "label": "打开新建日程页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": null,
+          "view": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "add",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=year",
+      "sourceNodeId": "/?view=year",
+      "target": "/new-event?agendaDate=:agendaDate",
+      "targetNodeId": "/new-event?agendaDate=:agendaDate",
+      "id": "new-event.open",
+      "label": "打开新建日程页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "year"
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "add",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=week",
+      "sourceNodeId": "/?view=week",
+      "target": "/new-event?agendaDate=:agendaDate",
+      "targetNodeId": "/new-event?agendaDate=:agendaDate",
+      "id": "new-event.open",
+      "label": "打开新建日程页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "week"
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "add",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=day",
+      "sourceNodeId": "/?view=day",
+      "target": "/new-event?agendaDate=:agendaDate",
+      "targetNodeId": "/new-event?agendaDate=:agendaDate",
+      "id": "new-event.open",
+      "label": "打开新建日程页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "day"
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "add",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=agenda",
+      "sourceNodeId": "/?view=agenda",
+      "target": "/new-event?agendaDate=:agendaDate",
+      "targetNodeId": "/new-event?agendaDate=:agendaDate",
+      "id": "new-event.open",
+      "label": "打开新建日程页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "agenda"
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "add",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/event/:eventId?agendaDate=:agendaDate",
+      "targetNodeId": "/event/:eventId?agendaDate=:agendaDate",
+      "id": "event.open",
+      "label": "打开日程详情页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "eventId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": null,
+          "view": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "event",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=day",
+      "sourceNodeId": "/?view=day",
+      "target": "/event/:eventId?agendaDate=:agendaDate",
+      "targetNodeId": "/event/:eventId?agendaDate=:agendaDate",
+      "id": "event.open",
+      "label": "打开日程详情页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "eventId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": null,
+          "view": "day"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "event",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=week",
+      "sourceNodeId": "/?view=week",
+      "target": "/event/:eventId?agendaDate=:agendaDate",
+      "targetNodeId": "/event/:eventId?agendaDate=:agendaDate",
+      "id": "event.open",
+      "label": "打开日程详情页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "eventId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": null,
+          "view": "week"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "event",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/search?q=:q",
+      "sourceNodeId": "/search?q=:q",
+      "target": "/event/:eventId?agendaDate=:agendaDate",
+      "targetNodeId": "/event/:eventId?agendaDate=:agendaDate",
+      "id": "event.open",
+      "label": "打开日程详情页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "eventId": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "event",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/new-event?agendaDate=:agendaDate",
+      "sourceNodeId": "/new-event?agendaDate=:agendaDate",
+      "target": "/event/:eventId?agendaDate=:agendaDate",
+      "targetNodeId": "/event/:eventId?agendaDate=:agendaDate",
+      "id": "event.open",
+      "label": "打开日程详情页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "eventId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/new-event",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "event",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/event/:eventId/edit?agendaDate=:agendaDate",
+      "sourceNodeId": "/event/:eventId/edit?agendaDate=:agendaDate",
+      "target": "/event/:eventId?agendaDate=:agendaDate",
+      "targetNodeId": "/event/:eventId?agendaDate=:agendaDate",
+      "id": "event.open",
+      "label": "打开日程详情页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "eventId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/event/:eventId/edit",
+        "search": {
+          "sheet": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "event",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/event/:eventId?agendaDate=:agendaDate",
+      "sourceNodeId": "/event/:eventId?agendaDate=:agendaDate",
+      "target": "/event/:eventId/edit?agendaDate=:agendaDate",
+      "targetNodeId": "/event/:eventId/edit?agendaDate=:agendaDate",
+      "id": "event.edit",
+      "label": "打开编辑日程页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "eventId": "string"
+      },
+      "preserveParams": [
+        "agendaDate"
+      ],
+      "fromConstraint": {
+        "path": "/event/:eventId",
+        "search": {
+          "deleteConfirm": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "edit",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/search?q=:q",
+      "targetNodeId": "/search?q=:q",
+      "id": "search.open",
+      "label": "打开搜索页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": null,
+          "view": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=year",
+      "sourceNodeId": "/?view=year",
+      "target": "/search?q=:q",
+      "targetNodeId": "/search?q=:q",
+      "id": "search.open",
+      "label": "打开搜索页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "year"
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=week",
+      "sourceNodeId": "/?view=week",
+      "target": "/search?q=:q",
+      "targetNodeId": "/search?q=:q",
+      "id": "search.open",
+      "label": "打开搜索页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "week"
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=day",
+      "sourceNodeId": "/?view=day",
+      "target": "/search?q=:q",
+      "targetNodeId": "/search?q=:q",
+      "id": "search.open",
+      "label": "打开搜索页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "day"
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=agenda",
+      "sourceNodeId": "/?view=agenda",
+      "target": "/search?q=:q",
+      "targetNodeId": "/search?q=:q",
+      "id": "search.open",
+      "label": "打开搜索页",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "agenda"
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "search",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?menu=open",
+      "sourceNodeId": "/?menu=open",
+      "target": "/date-jump",
+      "targetNodeId": "/date-jump",
+      "id": "date-jump.open",
+      "label": "打开日期跳转页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": "open",
+          "view": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=agenda&menu=open",
+      "sourceNodeId": "/?view=agenda&menu=open",
+      "target": "/date-jump",
+      "targetNodeId": "/date-jump",
+      "id": "date-jump.open",
+      "label": "打开日期跳转页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "agenda",
+          "menu": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=year&menu=open",
+      "sourceNodeId": "/?view=year&menu=open",
+      "target": "/date-jump",
+      "targetNodeId": "/date-jump",
+      "id": "date-jump.open",
+      "label": "打开日期跳转页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "year",
+          "menu": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=week&menu=open",
+      "sourceNodeId": "/?view=week&menu=open",
+      "target": "/date-jump",
+      "targetNodeId": "/date-jump",
+      "id": "date-jump.open",
+      "label": "打开日期跳转页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "week",
+          "menu": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=day&menu=open",
+      "sourceNodeId": "/?view=day&menu=open",
+      "target": "/date-jump",
+      "targetNodeId": "/date-jump",
+      "id": "date-jump.open",
+      "label": "打开日期跳转页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "day",
+          "menu": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "calendar",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?menu=open",
+      "sourceNodeId": "/?menu=open",
+      "target": "/date-calculate",
+      "targetNodeId": "/date-calculate",
+      "id": "date-calculate.open",
+      "label": "打开日期计算页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": "open",
+          "view": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "calculate",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=agenda&menu=open",
+      "sourceNodeId": "/?view=agenda&menu=open",
+      "target": "/date-calculate",
+      "targetNodeId": "/date-calculate",
+      "id": "date-calculate.open",
+      "label": "打开日期计算页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "agenda",
+          "menu": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "calculate",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=year&menu=open",
+      "sourceNodeId": "/?view=year&menu=open",
+      "target": "/date-calculate",
+      "targetNodeId": "/date-calculate",
+      "id": "date-calculate.open",
+      "label": "打开日期计算页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "year",
+          "menu": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "calculate",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=week&menu=open",
+      "sourceNodeId": "/?view=week&menu=open",
+      "target": "/date-calculate",
+      "targetNodeId": "/date-calculate",
+      "id": "date-calculate.open",
+      "label": "打开日期计算页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "week",
+          "menu": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "calculate",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=day&menu=open",
+      "sourceNodeId": "/?view=day&menu=open",
+      "target": "/date-calculate",
+      "targetNodeId": "/date-calculate",
+      "id": "date-calculate.open",
+      "label": "打开日期计算页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "day",
+          "menu": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "calculate",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?menu=open",
+      "sourceNodeId": "/?menu=open",
+      "target": "/subscription",
+      "targetNodeId": "/subscription",
+      "id": "subscription.open",
+      "label": "打开订阅管理页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": "open",
+          "view": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "subscription",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=agenda&menu=open",
+      "sourceNodeId": "/?view=agenda&menu=open",
+      "target": "/subscription",
+      "targetNodeId": "/subscription",
+      "id": "subscription.open",
+      "label": "打开订阅管理页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "agenda",
+          "menu": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "subscription",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=year&menu=open",
+      "sourceNodeId": "/?view=year&menu=open",
+      "target": "/subscription",
+      "targetNodeId": "/subscription",
+      "id": "subscription.open",
+      "label": "打开订阅管理页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "year",
+          "menu": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "subscription",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=week&menu=open",
+      "sourceNodeId": "/?view=week&menu=open",
+      "target": "/subscription",
+      "targetNodeId": "/subscription",
+      "id": "subscription.open",
+      "label": "打开订阅管理页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "week",
+          "menu": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "subscription",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=day&menu=open",
+      "sourceNodeId": "/?view=day&menu=open",
+      "target": "/subscription",
+      "targetNodeId": "/subscription",
+      "id": "subscription.open",
+      "label": "打开订阅管理页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "day",
+          "menu": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "subscription",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?menu=open",
+      "sourceNodeId": "/?menu=open",
+      "target": "/desk-theme",
+      "targetNodeId": "/desk-theme",
+      "id": "desk-theme.open",
+      "label": "打开桌面主题页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "menu": "open",
+          "view": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "theme",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=agenda&menu=open",
+      "sourceNodeId": "/?view=agenda&menu=open",
+      "target": "/desk-theme",
+      "targetNodeId": "/desk-theme",
+      "id": "desk-theme.open",
+      "label": "打开桌面主题页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "agenda",
+          "menu": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "theme",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=year&menu=open",
+      "sourceNodeId": "/?view=year&menu=open",
+      "target": "/desk-theme",
+      "targetNodeId": "/desk-theme",
+      "id": "desk-theme.open",
+      "label": "打开桌面主题页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "year",
+          "menu": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "theme",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=week&menu=open",
+      "sourceNodeId": "/?view=week&menu=open",
+      "target": "/desk-theme",
+      "targetNodeId": "/desk-theme",
+      "id": "desk-theme.open",
+      "label": "打开桌面主题页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "week",
+          "menu": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "theme",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/?view=day&menu=open",
+      "sourceNodeId": "/?view=day&menu=open",
+      "target": "/desk-theme",
+      "targetNodeId": "/desk-theme",
+      "id": "desk-theme.open",
+      "label": "打开桌面主题页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/",
+        "search": {
+          "view": "day",
+          "menu": "open"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "theme",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/date-jump",
+      "sourceNodeId": "/date-jump",
+      "target": "/",
+      "targetNodeId": "/",
+      "id": "home.open",
+      "label": "返回日历首页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "none",
+        "icon": "home",
+        "gesture": "tap"
+      }
+    }
+  ]
+}

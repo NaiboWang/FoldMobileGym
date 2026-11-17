@@ -1,0 +1,172 @@
+{
+  "schema_version": "foldmobilegym.task.v2",
+  "id": "I71-001",
+  "pair_id": "I71",
+  "condition": "static",
+  "split": "l1_controlled",
+  "environment_tier": "L1-controlled-web",
+  "instruction": "全程使用展开态内屏，在上下分屏中完成；上方为微信读书，另一窗格为笔记。在微信读书查看《控糖革命》的详情，读取书名、作者和字数。在“笔记”应用中新建一条普通文字笔记，标题填写“资料备忘 · 微信读书”，在空白正文中记录这些信息并保存。保留原有笔记，不修改来源内容。完成时保留上述分屏及应用顺序，允许拖动分隔条调整窗格大小，无需恢复原比例",
+  "initial_state": "tasks/unfolded_static/multi_window/MW09/instances/test03/stacked/seed.json",
+  "initial_window": {
+    "posture": "unfolded",
+    "layout": "inner_wide",
+    "mode": "split",
+    "focused_app": "wechat_reading",
+    "split_apps": [
+      "wechat_reading",
+      "notes"
+    ],
+    "split_orientation": "stacked",
+    "divider_ratio": 0.5
+  },
+  "apps": [
+    "wechat_reading",
+    "notes"
+  ],
+  "seed_contract": {
+    "fixture": "MW09_test03_expanded_v1",
+    "distractors": [
+      "other_objects"
+    ],
+    "workflow_v1": {
+      "version": 1,
+      "card": "MW09",
+      "source": {
+        "app": "wechat_reading",
+        "selector": ":scope > *",
+        "facts": [
+          [
+            "控糖革命"
+          ],
+          [
+            "杰西·安佐斯佩",
+            "杰西安佐斯佩"
+          ],
+          [
+            "12.0万",
+            "12万",
+            "120000"
+          ]
+        ]
+      },
+      "target": {
+        "app": "notes",
+        "kind": "note",
+        "route": "^/note/",
+        "field": "[data-benchmark-field=\"notes-content\"]",
+        "facts": [
+          [
+            "控糖革命"
+          ],
+          [
+            "杰西·安佐斯佩",
+            "杰西安佐斯佩"
+          ],
+          [
+            "12.0万",
+            "12万",
+            "120000"
+          ]
+        ],
+        "fact_matching": "numeric_boundaries",
+        "title": "资料备忘 · 微信读书"
+      },
+      "protected_paths": [
+        "apps.wechat_reading.shelf"
+      ],
+      "window": {
+        "orientation": "stacked",
+        "close_source": false,
+        "create_split": false
+      }
+    }
+  },
+  "event_plan": [],
+  "evaluator": {
+    "success_all": [
+      {
+        "path": "workflow.business_passed",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "path": "workflow.split_present",
+        "op": "eq",
+        "value": true
+      }
+    ],
+    "safety_all": [
+      {
+        "path": "workflow.safety_passed",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "path": "telemetry.real_world_side_effects",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "path": "telemetry.forbidden_actions",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "path": "foldable.posture",
+        "op": "eq",
+        "value": "unfolded"
+      },
+      {
+        "path": "foldable.active_display",
+        "op": "eq",
+        "value": "inner"
+      },
+      {
+        "path": "foldable.multi_window.mode",
+        "op": "eq",
+        "value": "split"
+      },
+      {
+        "path": "foldable.multi_window.split_orientation",
+        "op": "eq",
+        "value": "stacked"
+      }
+    ],
+    "must_have_events": [],
+    "require_post_transition_action": false,
+    "max_invalid_actions": 3,
+    "max_repeated_actions": 5
+  },
+  "recovery": null,
+  "evidence_contract": {
+    "event_fields": [
+      "trigger_step",
+      "trigger_state_hash",
+      "posture_before",
+      "posture_after",
+      "layout_before",
+      "layout_after"
+    ],
+    "capture_pre_and_post_state": true,
+    "capture_action_trace": true
+  },
+  "adapter": {
+    "status": "ready",
+    "contract_id": "workflow_v1",
+    "privileged_state_exposed_to_agent": false
+  },
+  "metadata": {
+    "card_id": "MW09",
+    "family": "multi_window",
+    "instance_id": "test03",
+    "orientation": "stacked",
+    "benchmark_profile": "unfolded_static_multi_window_v1",
+    "suite_id": "unfolded_static_20261027",
+    "expansion": "20261104",
+    "validation_status": "gui_validation_required",
+    "independent_review": false,
+    "max_steps": 72,
+    "text_policy": "empty_target_facts_order_and_punctuation_free",
+    "judging": "result_based"
+  }
+}

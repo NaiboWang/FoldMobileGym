@@ -1,0 +1,374 @@
+[
+  {
+    "app": "appstore",
+    "graphFile": "public\\appstore_nav_graph.json",
+    "taskId": "appstore:appstore.detail.item.open",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/app/:appId",
+      "routePath": "/app/:appId",
+      "uiStateId": "appstore.detail.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/app/:appId"
+        ],
+        "transitions": [
+          "appstore.item.detail"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/app/:appId"
+        ],
+        "transitions": [
+          "appstore.item.detail"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "appstore.featured.base",
+              "component": "FeaturedPage",
+              "description": "精选",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "App Store content"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "appstore.item.detail",
+              "label": "应用详情",
+              "type": "navigation",
+              "mode": "push",
+              "source": "/",
+              "target": "/app/:appId",
+              "uiMeta": {
+                "placement": "content",
+                "icon": "app",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {
+                "appId": "string"
+              },
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/app/:appId",
+              "routePath": "/app/:appId",
+              "uiStateId": "appstore.detail.base",
+              "component": "DetailPage",
+              "description": "应用详情",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {
+                "appId": "string"
+              },
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "App Store content"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "appstore.item.detail",
+                "dataTriggerType": "tap",
+                "paramsSchema": {
+                  "appId": "string"
+                },
+                "searchParamsSchema": {}
+              },
+              "placement": "content",
+              "icon": "app",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/app/:appId",
+              "routePath": "/app/:appId",
+              "uiStateId": "appstore.detail.base",
+              "component": "DetailPage",
+              "description": "应用详情",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {},
+              "params": {
+                "appId": "string"
+              },
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "App Store content"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "appstore.detail.item.open",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "appId": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "appstore.detail.item.open",
+              "label": "打开应用",
+              "description": null,
+              "behavior": "other",
+              "scope": "item",
+              "paramsSchema": {
+                "appId": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "bindTap",
+                "gestureType": "tap",
+                "file": "apps\\AppStore\\pages\\StorePages.tsx",
+                "line": 84,
+                "col": 57
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "appstore.detail.item.open",
+      "label": "打开应用",
+      "description": null,
+      "behavior": "other",
+      "scope": "item",
+      "paramsSchema": {
+        "appId": "string"
+      }
+    }
+  },
+  {
+    "app": "appstore",
+    "graphFile": "public\\appstore_nav_graph.json",
+    "taskId": "appstore:appstore.search.query.input",
+    "start": {
+      "nodeId": "/"
+    },
+    "target": {
+      "nodeId": "/search?q=:q",
+      "routePath": "/search",
+      "uiStateId": "appstore.search.base"
+    },
+    "trajectoryCount": 1,
+    "shortestLength": 1,
+    "trajectories": [
+      {
+        "nodes": [
+          "/",
+          "/search?q=:q"
+        ],
+        "transitions": [
+          "appstore.tab.search"
+        ],
+        "length": 1
+      }
+    ],
+    "trajectoriesDetailed": [
+      {
+        "nodes": [
+          "/",
+          "/search?q=:q"
+        ],
+        "transitions": [
+          "appstore.tab.search"
+        ],
+        "length": 1,
+        "steps": [
+          {
+            "index": 0,
+            "kind": "transition",
+            "from": {
+              "nodeId": "/",
+              "routePath": "/",
+              "uiStateId": "appstore.featured.base",
+              "component": "FeaturedPage",
+              "description": "精选",
+              "entryPoint": true,
+              "search": {},
+              "queryParams": {},
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "App Store content"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 0
+            },
+            "edge": {
+              "transitionId": "appstore.tab.search",
+              "label": "搜索",
+              "type": "navigation",
+              "mode": "replace",
+              "source": "/",
+              "target": "/search?q=:q",
+              "uiMeta": {
+                "placement": "tabbar",
+                "icon": "search",
+                "gesture": "tap"
+              },
+              "uiCondition": null,
+              "fromConstraint": null,
+              "search": {},
+              "searchParams": {},
+              "params": {},
+              "preserveParams": [],
+              "binding": null,
+              "expandedFrom": null,
+              "dataSourceRef": null
+            },
+            "to": {
+              "nodeId": "/search?q=:q",
+              "routePath": "/search",
+              "uiStateId": "appstore.search.base",
+              "component": "SearchPage",
+              "description": "搜索",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {
+                "q": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "App Store content"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataTrigger": "appstore.tab.search",
+                "dataTriggerType": "tap",
+                "paramsSchema": {},
+                "searchParamsSchema": {}
+              },
+              "placement": "tabbar",
+              "icon": "search",
+              "gesture": "tap"
+            }
+          },
+          {
+            "kind": "action",
+            "at": {
+              "nodeId": "/search?q=:q",
+              "routePath": "/search",
+              "uiStateId": "appstore.search.base",
+              "component": "SearchPage",
+              "description": "搜索",
+              "entryPoint": false,
+              "search": {},
+              "queryParams": {
+                "q": "string"
+              },
+              "params": {},
+              "scrollContainers": [
+                {
+                  "name": "main",
+                  "direction": "vertical",
+                  "description": "App Store content"
+                }
+              ],
+              "stateCondition": null,
+              "actionsCount": 1
+            },
+            "ui": {
+              "trigger": {
+                "dataAction": "appstore.search.query.input",
+                "dataActionType": "tap",
+                "paramsSchema": {
+                  "value": "string"
+                }
+              }
+            },
+            "action": {
+              "id": "appstore.search.query.input",
+              "label": "输入关键词",
+              "description": null,
+              "behavior": "input",
+              "scope": null,
+              "paramsSchema": {
+                "value": "string"
+              }
+            },
+            "codeUsages": [
+              {
+                "kind": "data-action",
+                "gestureType": "input",
+                "file": "apps\\AppStore\\pages\\StorePages.tsx",
+                "line": 62,
+                "col": 7
+              }
+            ],
+            "index": 1
+          }
+        ]
+      }
+    ],
+    "action": {
+      "id": "appstore.search.query.input",
+      "label": "输入关键词",
+      "description": null,
+      "behavior": "input",
+      "scope": null,
+      "paramsSchema": {
+        "value": "string"
+      }
+    }
+  }
+]

@@ -1,0 +1,168 @@
+{
+  "user": {
+    "name": "淘气值 728",
+    "avatar": "淘",
+    "member": "88VIP"
+  },
+  "search": {
+    "query": ""
+  },
+  "messages": {
+    "unreadThreadIds": ["coins", "offers", "vip"],
+    "dismissedPromoIds": [],
+    "notificationPromptDismissed": false,
+    "notificationsEnabled": false,
+    "scrollTop": 0
+  },
+  "cartItems": [
+    {
+      "productId": "phone",
+      "sku": "曜石黑；12GB+256GB",
+      "selected": true,
+      "quantity": 1
+    },
+    {
+      "productId": "bag",
+      "sku": "焦糖棕；大号",
+      "selected": true,
+      "quantity": 1
+    },
+    {
+      "productId": "watch",
+      "sku": "星空灰；标准版",
+      "selected": false,
+      "quantity": 2
+    }
+  ],
+  "orders": [
+    {
+      "id": "TB20261028001",
+      "productId": "phone",
+      "status": "pendingReceive",
+      "quantity": 1,
+      "paidPrice": 4299
+    },
+    {
+      "id": "TB20261027002",
+      "productId": "bag",
+      "status": "pendingReview",
+      "quantity": 1,
+      "paidPrice": 269
+    },
+    {
+      "id": "TB20261026003",
+      "productId": "watch",
+      "status": "pendingShip",
+      "quantity": 1,
+      "paidPrice": 599
+    },
+    {
+      "id": "TB20261025004",
+      "productId": "portable_monitor_x1",
+      "status": "afterSale",
+      "quantity": 1,
+      "paidPrice": 899
+    },
+    {
+      "id": "TB20261024005",
+      "productId": "camera",
+      "status": "closed",
+      "quantity": 1,
+      "paidPrice": 3699
+    },
+    {
+      "id": "TB20261023006",
+      "productId": "shoes",
+      "status": "pendingPay",
+      "quantity": 1,
+      "paidPrice": 189
+    }
+  ],
+  "products": [
+    {
+      "id": "portable_monitor_x1",
+      "title": "便携显示器 X1 双规格高清扩展屏",
+      "price": 899,
+      "sold": 1260,
+      "tag": "受控比价",
+      "image": "unsplash/photo-1517336714731-489689fd1ca8.jpg",
+      "shop": "数码实验室旗舰店",
+      "variants": [
+        {"id": "x1_13", "size": "13.3英寸", "resolution": "1080P", "weight": "580g", "price": 899},
+        {"id": "x1_15", "size": "15.6英寸", "resolution": "2.5K", "weight": "780g", "price": 1299}
+      ]
+    },
+    {
+      "id": "phone",
+      "title": "旗舰智能手机 影像升级 12GB+256GB",
+      "price": 4299,
+      "sold": 20000,
+      "tag": "官方立减",
+      "image": "unsplash/photo-1511707171634-5f897ff02aa9.jpg",
+      "shop": "品牌官方旗舰店"
+    },
+    {
+      "id": "bag",
+      "title": "轻奢通勤托特包 大容量柔软真皮质感",
+      "price": 269,
+      "sold": 8000,
+      "tag": "新品",
+      "image": "unsplash/photo-1584917865442-de89df76afd3.jpg",
+      "shop": "都市箱包店"
+    },
+    {
+      "id": "shoes",
+      "title": "男女同款轻便缓震运动鞋 日常百搭",
+      "price": 189,
+      "sold": 12000,
+      "tag": "百亿补贴",
+      "image": "unsplash/photo-1542291026-7eec264c27ff.jpg",
+      "shop": "运动旗舰店"
+    },
+    {
+      "id": "watch",
+      "title": "简约智能手表 健康监测 长续航",
+      "price": 599,
+      "sold": 5600,
+      "tag": "限时优惠",
+      "image": "unsplash/photo-1523275335684-37898b6baf30.jpg",
+      "shop": "智能生活馆"
+    },
+    {
+      "id": "laptop",
+      "title": "轻薄笔记本电脑 高性能办公学习本",
+      "price": 5299,
+      "sold": 3200,
+      "tag": "88VIP",
+      "image": "unsplash/photo-1517336714731-489689fd1ca8.jpg",
+      "shop": "数码旗舰店"
+    },
+    {
+      "id": "camera",
+      "title": "便携微单相机 高清旅行摄影套装",
+      "price": 3699,
+      "sold": 1800,
+      "tag": "分期免息",
+      "image": "unsplash/photo-1502920917128-1aa500764cbd.jpg",
+      "shop": "影像专营店"
+    },
+    {
+      "id": "headphone",
+      "title": "无线降噪头戴式耳机 沉浸空间音频",
+      "price": 799,
+      "sold": 9600,
+      "tag": "热卖",
+      "image": "unsplash/photo-1512499617640-c2f999098c30.jpg",
+      "shop": "潮流影音店"
+    },
+    {
+      "id": "sofa",
+      "title": "奶油风客厅沙发 小户型舒适组合",
+      "price": 2199,
+      "sold": 1500,
+      "tag": "送装一体",
+      "image": "unsplash/photo-1540574163026-643ea20ade25.jpg",
+      "shop": "品质家居"
+    }
+  ]
+}

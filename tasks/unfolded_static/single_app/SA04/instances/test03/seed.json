@@ -1,0 +1,94 @@
+{
+  "schema_version": "foldmobilegym.seed.v1",
+  "clock": {
+    "timestamp": 1793664000000,
+    "timezone": "Asia/Shanghai",
+    "flowing": false
+  },
+  "apps": {
+    "calendar": {}
+  },
+  "raw_apps": {
+    "calendar": {
+      "events": [
+        {
+          "id": "source-event",
+          "type": "event",
+          "title": "阶段汇报",
+          "description": "请准时参加。",
+          "location": "",
+          "allDay": false,
+          "startTs": 1794020400000,
+          "endTs": 1794022200000,
+          "reminderMinutesBefore": null,
+          "alarmEnabled": false
+        },
+        {
+          "id": "other-event",
+          "type": "event",
+          "title": "阶段汇报",
+          "description": "另一个活动",
+          "location": "508会议室",
+          "allDay": false,
+          "startTs": 1794038400000,
+          "endTs": 1794040200000,
+          "reminderMinutesBefore": null,
+          "alarmEnabled": false
+        },
+        {
+          "id": "target-event",
+          "type": "event",
+          "title": "户外走访",
+          "description": "带证件。",
+          "location": "西门集合",
+          "allDay": false,
+          "startTs": 1794013200000,
+          "endTs": 1794015000000,
+          "reminderMinutesBefore": null,
+          "alarmEnabled": false
+        },
+        {
+          "id": "other-date-event",
+          "type": "event",
+          "title": "阶段汇报",
+          "description": "另一天的同名活动",
+          "location": "科技楼C503",
+          "allDay": false,
+          "startTs": 1794106800000,
+          "endTs": 1794108600000,
+          "reminderMinutesBefore": null,
+          "alarmEnabled": false
+        },
+        {
+          "id": "other-date-visit",
+          "type": "event",
+          "title": "户外走访",
+          "description": "另一日走访，保留不改。",
+          "location": "东门集合",
+          "allDay": false,
+          "startTs": 1794099600000,
+          "endTs": 1794101400000,
+          "reminderMinutesBefore": null,
+          "alarmEnabled": false
+        }
+      ],
+      "selectedDateTs": 1794009600000,
+      "createdCount": 0,
+      "deletedCount": 0,
+      "mutationCount": 0,
+      "draft": {
+        "title": "",
+        "notes": "",
+        "location": ""
+      }
+    }
+  },
+  "os": {},
+  "device": {
+    "posture": "unfolded",
+    "hinge_angle": 180,
+    "active_display": "inner",
+    "layout_id": "inner_wide"
+  },
+  "pair_id": "J47"
+}

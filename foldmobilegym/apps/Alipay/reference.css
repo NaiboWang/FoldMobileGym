@@ -1,0 +1,133 @@
+/* Recording 80:00–81:00: account and service panes of the same app, not OS split. */
+.alipay-reference-layout { container-type: inline-size; }
+.alipay-reference-app { container-type: inline-size; }
+.alipay-reference-my { height: 100%; min-height: 0; overflow-y: auto; overflow-x: hidden; }
+.alipay-reference-home { height: 100%; min-height: 0; overflow: hidden; }
+.alipay-reference-home-main { height: 100%; overflow-y: auto; overflow-x: hidden; }
+.alipay-reference-home-services { display: none; }
+.alipay-reference-merchant { padding: 16px; }
+.alipay-reference-merchant h2 { display: flex; gap: 10px; align-items: center; font-size: 17px; margin-bottom: 24px; }
+.alipay-reference-merchant > div { display: grid; grid-template-columns: 1fr 1fr; text-align: center; font-size: 14px; color: #8b929b; }
+.alipay-reference-merchant p { font-size: 11px; margin-top: 16px; color: #8b929b; text-align: center; }
+.alipay-reference-collection { padding-top: 0; }
+.alipay-reference-collection-tabs { display: grid; grid-template-columns: 1fr 1fr; margin: 0 -10px 22px; background: linear-gradient(#eaf0fb, #f7f9fc); border-radius: 14px 14px 0 0; }
+.alipay-reference-collection-tabs button { height: 46px; color: #737d8c; border-radius: 14px 14px 0 0; font-size: 15px; }
+.alipay-reference-collection-tabs button[aria-pressed="true"] { background: var(--app-surface); color: var(--app-text); font-weight: 600; text-decoration: underline; text-decoration-color: var(--app-primary); text-underline-offset: 12px; }
+.alipay-reference-category-nav { position: sticky; top: 0; z-index: 1; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 6px; padding: 16px 0; background: var(--app-bg); }
+.alipay-reference-category-nav button { font-size: 15px; min-height: 40px; color: var(--app-text); overflow-wrap: anywhere; }
+.alipay-reference-category-nav button[aria-current="location"] { color: var(--app-primary); font-weight: 600; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 14px; }
+.alipay-reference-service-icon { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 12px; background: color-mix(in srgb, var(--service-color) 12%, var(--app-surface)); }
+.alipay-reference-account { min-width: 0; padding-bottom: 12px; }
+.alipay-reference-profile { background: linear-gradient(160deg, color-mix(in srgb, var(--app-primary) 12%, var(--app-bg)), var(--app-bg)); }
+.alipay-reference-profile > .flex > .flex-1 { min-width: 0; }
+.alipay-reference-profile button { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; }
+.alipay-reference-profile button:focus-visible,
+.alipay-reference-service:focus-visible { outline: 2px solid var(--app-primary); outline-offset: 2px; }
+.alipay-reference-services { min-width: 0; padding: 0 10px 16px; }
+.alipay-reference-services-heading { text-align: center; padding: 18px 12px; font-size: 20px; font-weight: 600; color: var(--app-text); }
+.alipay-reference-service-card { background: var(--app-surface); border-radius: 14px; margin-bottom: 12px; padding: 16px 10px; }
+.alipay-reference-service-card[data-service-category] { scroll-margin-top: 72px; }
+.alipay-reference-service-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 18px; color: var(--app-text); }
+.alipay-reference-service-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px 6px; }
+.alipay-reference-service { min-width: 0; min-height: 76px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 10px; border-radius: 10px; }
+.alipay-reference-service span { font-size: 15px; line-height: 1.35; text-align: center; overflow-wrap: anywhere; color: var(--app-text); }
+.alipay-reference-service-card[data-service-category="life"] .alipay-reference-service span { max-width: 100%; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.alipay-reference-service-note { font-size: 11px; line-height: 1.5; color: var(--app-text-secondary); margin-top: 18px; }
+.alipay-reference-balance-layout { height: 100%; min-height: 0; overflow: hidden; background: var(--app-bg); }
+.alipay-reference-balance-master { display: none; min-width: 0; min-height: 0; }
+.alipay-reference-balance-detail { min-width: 0; min-height: 0; }
+.alipay-reference-account-only { height: 100%; min-height: 0; overflow: hidden; }
+.alipay-reference-account-detail-layout > .alipay-reference-tabs { display: none; }
+.alipay-reference-services-heading { position: relative; }
+.alipay-reference-services-search-entry { position: absolute; right: 12px; top: 12px; width: 40px; height: 40px; display: grid; place-items: center; }
+.alipay-reference-service-search { min-height: 100%; padding: 0 6px 18px; color: var(--app-text); }
+.alipay-reference-search-header { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; gap: 8px; padding: 16px 0; background: var(--app-bg); }
+.alipay-reference-search-header > button { flex-shrink: 0; width: 30px; height: 40px; display: grid; place-items: center; }
+.alipay-reference-search-field { display: flex; flex: 1; min-width: 0; align-items: center; gap: 8px; border: 1px solid #91b5e7; border-radius: 24px; padding: 8px 10px; background: var(--app-surface); color: var(--app-text-secondary); }
+.alipay-reference-search-field input { width: 100%; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--app-text); font-size: 15px; }
+.alipay-reference-search-field button { flex-shrink: 0; color: var(--app-primary); padding-left: 8px; border-left: 1px solid var(--app-border); font-size: 15px; }
+.alipay-reference-search-history-heading { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; }
+.alipay-reference-service-search h2 { font-size: 15px; color: var(--app-text-secondary); margin-bottom: 12px; }
+.alipay-reference-search-history { display: flex; flex-wrap: wrap; gap: 10px; }
+.alipay-reference-search-history button { padding: 8px 12px; border-radius: 8px; background: var(--app-surface); overflow-wrap: anywhere; max-width: 100%; font-size: 15px; }
+.alipay-reference-search-results > div,.alipay-reference-search-results > button { display: flex; gap: 12px; align-items: center; background: var(--app-surface); border-radius: 12px; padding: 16px; width: 100%; margin-bottom: 10px; font-size: 15px; }
+.alipay-reference-home[data-service-search-open="true"] { padding-top: 40px; }
+.alipay-reference-home[data-service-search-open="true"] > .alipay-reference-home-main { display: none; }
+.alipay-reference-home[data-service-search-open="true"] > .alipay-reference-home-services { display: block; height: 100%; overflow-y: auto; }
+.alipay-reference-layout[data-service-search-open="true"] > .alipay-reference-tabs { display: none; }
+.alipay-reference-yuebao-layout { height: 100%; min-height: 0; overflow: hidden; background: #ff6135; }
+.alipay-reference-yuebao-master { display: none; min-width: 0; min-height: 0; }
+.alipay-reference-yuebao { height: 100%; min-height: 0; display: flex; flex-direction: column; padding-top: 40px; overflow: hidden; background: #ff6135; }
+.alipay-reference-yuebao-header { display: grid; grid-template-columns: 40px minmax(0,1fr) 40px; align-items: center; flex-shrink: 0; padding: 10px 12px 18px; color: white; text-align: center; }
+.alipay-reference-yuebao-header button { display: grid; place-items: center; height: 40px; }
+.alipay-reference-yuebao-header h1 { font-size: 19px; font-weight: 600; }
+.alipay-reference-yuebao-header p { margin: 4px auto 0; width: fit-content; padding: 3px 12px; border-radius: 20px; background: #ffffff20; font-size: 12px; }
+.alipay-reference-yuebao-scroll { min-height: 0; overflow-y: auto; overflow-x: hidden; padding: 0 12px 28px; background: linear-gradient(#ff6135 0, var(--app-bg) 120px); }
+.alipay-reference-yuebao-card { padding: 24px 16px 16px; border-radius: 18px; background: linear-gradient(#fff2ed 0, var(--app-surface) 120px); color: var(--app-text); }
+.alipay-reference-yuebao-total-label { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--app-text-secondary); }
+.alipay-reference-yuebao-total-label button { padding: 4px; }
+.alipay-reference-yuebao-safety { display: inline-flex; gap: 3px; align-items: center; font-size: 10px; color: #dc6949; border: 1px solid #f4caba; padding: 2px 4px; border-radius: 4px; }
+.alipay-reference-yuebao-total { display: flex; align-items: center; gap: 8px; font-size: 40px; font-weight: 600; margin-top: 10px; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.alipay-reference-yuebao-buckets { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin-top: 24px; padding: 18px 14px 32px; background: #fff0e9; border: 1px solid #f0ded5; border-radius: 12px 12px 0 0; }
+.alipay-reference-yuebao-buckets > div { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; font-size: 14px; }
+.alipay-reference-yuebao-income { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 28px; }
+.alipay-reference-yuebao-income > div { min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.alipay-reference-yuebao-income > div > span:first-child { display: flex; gap: 3px; align-items: center; font-size: 12px; color: var(--app-text-secondary); }
+.alipay-reference-yuebao-income strong { font-size: 18px; font-weight: 500; overflow-wrap: anywhere; }
+.alipay-reference-yuebao-income-yesterday { color: #d96181; }
+.alipay-reference-yuebao-tree { width: fit-content; padding: 3px 8px; background: #fff0bb; color: #c58621; font-size: 11px; border-radius: 20px; }
+.alipay-reference-yuebao-transfers { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; margin-top: 28px; }
+.alipay-reference-yuebao-transfers button { min-height: 50px; border-radius: 30px; background: #faf4f0; color: #d87543; font-size: 17px; cursor: default; }
+.alipay-reference-yuebao-transfers button:last-child { background: linear-gradient(90deg,#ffac50,#ff6135); color: white; }
+.alipay-reference-yuebao-schedule { display: flex; gap: 5px; align-items: center; justify-content: center; padding: 18px 0 26px; font-size: 13px; color: var(--app-text-secondary); }
+.alipay-reference-yuebao-account-services { display: flex; justify-content: space-between; font-size: 14px; }
+.alipay-reference-yuebao-account-services span:last-child { display: flex; gap: 3px; align-items: center; color: var(--app-text-secondary); }
+.alipay-reference-yuebao-scope { margin-top: 14px; font-size: 11px; line-height: 1.5; color: var(--app-text-secondary); }
+.alipay-reference-yuebao-notice,.alipay-reference-yuebao-products { margin-top: 14px; padding: 16px; border-radius: 14px; background: var(--app-surface); color: var(--app-text); }
+.alipay-reference-yuebao-notice h2,.alipay-reference-yuebao-products h2 { font-size: 16px; font-weight: 600; }
+.alipay-reference-yuebao-notice p { font-size: 12px; color: var(--app-text-secondary); margin-top: 6px; }
+.alipay-reference-yuebao-products h2 { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.alipay-reference-yuebao-products h2 span { font-size: 11px; font-weight: 400; color: var(--app-text-secondary); }
+.alipay-reference-yuebao-products > div { display: flex; justify-content: space-between; gap: 10px; padding-top: 22px; font-size: 14px; }
+.alipay-reference-yuebao-products strong { color: #d96181; }
+.alipay-reference-yuebao-disclaimer { font-size: 11px; line-height: 1.5; color: var(--app-text-secondary); padding-top: 16px; }
+.alipay-reference-finance { height: 100%; min-height: 0; overflow: hidden; padding-top: 40px; background: var(--app-bg); }
+.alipay-reference-finance-main { height: 100%; min-width: 0; min-height: 0; overflow-y: auto; overflow-x: hidden; isolation: isolate; }
+.alipay-reference-finance-services { display: none; }
+.alipay-reference-finance-header { position: sticky; top: 0; z-index: 1; background: var(--app-bg); padding: 12px 16px; }
+.alipay-reference-finance-summary { padding: 8px 12px 12px; background: linear-gradient(135deg, color-mix(in srgb, var(--app-primary) 8%, var(--app-bg)), var(--app-bg)); }
+.alipay-reference-finance-summary > div > div { min-width: 0; }
+.alipay-reference-finance-assets { font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.alipay-reference-finance-card { min-height: 140px; margin: 0 12px; padding: 28px 22px; display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 12px; border-radius: 18px; color: white; background: radial-gradient(ellipse at 15% 10%, #8688cc, transparent 75%), linear-gradient(120deg, #5358a4, #7375bc); }
+.alipay-reference-finance-card span:first-child { font-size: 24px; }
+.alipay-reference-finance-card span:last-child { font-size: 13px; opacity: .8; }
+@container (min-width: 600px) {
+  html[data-foldagent-posture="unfolded"] .alipay-reference-home[data-service-search-open="true"] > .alipay-reference-home-main { display: block; }
+  html[data-foldagent-posture="unfolded"] .alipay-reference-layout[data-service-search-open="true"] > .alipay-reference-tabs { display: flex; }
+  html[data-foldagent-posture="unfolded"] .alipay-reference-yuebao-layout { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); padding-top: 40px; }
+  html[data-foldagent-posture="unfolded"] .alipay-reference-yuebao-master { display: block; }
+  html[data-foldagent-posture="unfolded"] .alipay-reference-yuebao-layout > .alipay-reference-yuebao { padding-top: 0; min-width: 0; }
+  html[data-foldagent-posture="unfolded"] .alipay-reference-finance { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  html[data-foldagent-posture="unfolded"] .alipay-reference-finance-services { display: block; }
+  html[data-foldagent-posture="unfolded"] .alipay-reference-finance-main { padding-bottom: 100px; }
+  html[data-foldagent-posture="unfolded"] .alipay-reference-balance-layout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); padding-top: 40px; }
+  html[data-foldagent-posture="unfolded"] .alipay-reference-balance-master { display: block; }
+  html[data-foldagent-posture="unfolded"] .alipay-reference-balance-detail { padding-top: 0; }
+  html[data-foldagent-posture="unfolded"] .alipay-reference-account-detail-layout > .alipay-reference-tabs { display: flex; }
+  html[data-foldagent-posture="unfolded"] .alipay-reference-account-only[data-account-selected="balance"] [data-trigger="balance.open"],
+  html[data-foldagent-posture="unfolded"] .alipay-reference-account-only[data-account-selected="yuebao"] [data-trigger="yuebao.open"] { background: color-mix(in srgb, var(--app-primary) 6%, var(--app-surface)); }
+  html[data-foldagent-posture="unfolded"] .alipay-reference-main-layout { display: grid; grid-template-rows: minmax(0, 1fr) 90px; }
+  html[data-foldagent-posture="unfolded"] .alipay-reference-main-layout > div:not(.alipay-reference-tabs) { grid-area: 1 / 1 / 3 / 2; }
+  html[data-foldagent-posture="unfolded"] .alipay-reference-my,
+  html[data-foldagent-posture="unfolded"] .alipay-reference-home { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); overflow: hidden; padding-top: 40px; }
+  html[data-foldagent-posture="unfolded"] .alipay-reference-home-services { display: block; }
+  html[data-foldagent-posture="unfolded"] .alipay-reference-account,
+  html[data-foldagent-posture="unfolded"] .alipay-reference-services { height: 100%; overflow-y: auto; overflow-x: hidden; }
+  /* Reserve status-bar space outside both scrolling panes; scrolling padding is not a safe area. */
+  html[data-foldagent-posture="unfolded"] .alipay-reference-services { padding-top: 0; isolation: isolate; }
+  html[data-foldagent-posture="unfolded"] .alipay-reference-account,
+  html[data-foldagent-posture="unfolded"] .alipay-reference-home-main > .pt-10 { padding-top: 0; }
+  html[data-foldagent-posture="unfolded"] .alipay-reference-account,
+  html[data-foldagent-posture="unfolded"] .alipay-reference-home-main { padding-bottom: 100px; }
+  html[data-foldagent-posture="unfolded"] .alipay-reference-main-layout > .alipay-reference-tabs { grid-area: 2 / 1 / 3 / 2; z-index: 6; position: relative; width: calc(50% - 16px); align-self: start; border: 0; border-radius: 28px; margin: 0 8px 22px; }
+}

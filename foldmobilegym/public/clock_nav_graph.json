@@ -1,0 +1,1663 @@
+{
+  "app": "clock",
+  "appDir": "system\\Clock",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 18,
+  "transitionCount": 16,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "uiStateId": "clock.root.base",
+      "component": "ClockRootRedirect",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "时钟根路由",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/alarm?alarmId=:alarmId",
+      "routePath": "/alarm",
+      "uiStateId": "clock.alarm.base",
+      "component": "AlarmPage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "alarmEditor",
+          "direction": "vertical",
+          "description": "Alarm settings"
+        },
+        {
+          "name": "alarmRepeat",
+          "direction": "vertical",
+          "description": "Repeat options"
+        },
+        {
+          "name": "alarmTone",
+          "direction": "vertical",
+          "description": "Generated browser alert tones"
+        },
+        {
+          "name": "globalMenu",
+          "direction": "vertical",
+          "description": "Global More menu"
+        }
+      ],
+      "description": "闹钟页",
+      "search": {},
+      "queryParams": {
+        "alarmId": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/alarm?selection=alarms&alarmId=:alarmId",
+      "routePath": "/alarm",
+      "uiStateId": "clock.alarm.selection",
+      "component": "AlarmPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "alarmEditor",
+          "direction": "vertical",
+          "description": "Alarm settings"
+        },
+        {
+          "name": "alarmRepeat",
+          "direction": "vertical",
+          "description": "Repeat options"
+        },
+        {
+          "name": "alarmTone",
+          "direction": "vertical",
+          "description": "Generated browser alert tones"
+        },
+        {
+          "name": "globalMenu",
+          "direction": "vertical",
+          "description": "Global More menu"
+        }
+      ],
+      "description": "Alarm selection mode",
+      "search": {
+        "selection": "alarms"
+      },
+      "queryParams": {
+        "alarmId": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/alarm?menu=more&alarmId=:alarmId",
+      "routePath": "/alarm",
+      "uiStateId": "clock.alarm.menu",
+      "component": "AlarmPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "alarmEditor",
+          "direction": "vertical",
+          "description": "Alarm settings"
+        },
+        {
+          "name": "alarmRepeat",
+          "direction": "vertical",
+          "description": "Repeat options"
+        },
+        {
+          "name": "alarmTone",
+          "direction": "vertical",
+          "description": "Generated browser alert tones"
+        },
+        {
+          "name": "globalMenu",
+          "direction": "vertical",
+          "description": "Global More menu"
+        }
+      ],
+      "description": "Global Clock More menu",
+      "search": {
+        "menu": "more"
+      },
+      "queryParams": {
+        "alarmId": "string"
+      },
+      "actions": []
+    },
+    {
+      "id": "/alarm?panel=add&alarmId=:alarmId",
+      "routePath": "/alarm",
+      "uiStateId": "clock.alarm.add",
+      "component": "AlarmPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "alarmEditor",
+          "direction": "vertical",
+          "description": "Alarm settings"
+        },
+        {
+          "name": "alarmRepeat",
+          "direction": "vertical",
+          "description": "Repeat options"
+        },
+        {
+          "name": "alarmTone",
+          "direction": "vertical",
+          "description": "Generated browser alert tones"
+        },
+        {
+          "name": "globalMenu",
+          "direction": "vertical",
+          "description": "Global More menu"
+        }
+      ],
+      "description": "New alarm",
+      "search": {
+        "panel": "add"
+      },
+      "queryParams": {
+        "alarmId": "string"
+      },
+      "actions": [
+        {
+          "id": "alarm.add.save.submit",
+          "label": "Save alarm",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/alarm?panel=quick&alarmId=:alarmId",
+      "routePath": "/alarm",
+      "uiStateId": "clock.alarm.quick",
+      "component": "AlarmPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "alarmEditor",
+          "direction": "vertical",
+          "description": "Alarm settings"
+        },
+        {
+          "name": "alarmRepeat",
+          "direction": "vertical",
+          "description": "Repeat options"
+        },
+        {
+          "name": "alarmTone",
+          "direction": "vertical",
+          "description": "Generated browser alert tones"
+        },
+        {
+          "name": "globalMenu",
+          "direction": "vertical",
+          "description": "Global More menu"
+        }
+      ],
+      "description": "Quick alarm edit",
+      "search": {
+        "panel": "quick"
+      },
+      "queryParams": {
+        "alarmId": "string"
+      },
+      "actions": [
+        {
+          "id": "alarm.quick.save.submit",
+          "label": "Save alarm",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/alarm?panel=edit&alarmId=:alarmId",
+      "routePath": "/alarm",
+      "uiStateId": "clock.alarm.edit",
+      "component": "AlarmPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "alarmEditor",
+          "direction": "vertical",
+          "description": "Alarm settings"
+        },
+        {
+          "name": "alarmRepeat",
+          "direction": "vertical",
+          "description": "Repeat options"
+        },
+        {
+          "name": "alarmTone",
+          "direction": "vertical",
+          "description": "Generated browser alert tones"
+        },
+        {
+          "name": "globalMenu",
+          "direction": "vertical",
+          "description": "Global More menu"
+        }
+      ],
+      "description": "Alarm settings",
+      "search": {
+        "panel": "edit"
+      },
+      "queryParams": {
+        "alarmId": "string"
+      },
+      "actions": [
+        {
+          "id": "alarm.edit.save.submit",
+          "label": "Save alarm",
+          "behavior": "submit"
+        }
+      ]
+    },
+    {
+      "id": "/alarm?panel=add&repeat=open&alarmId=:alarmId",
+      "routePath": "/alarm",
+      "uiStateId": "clock.alarm.add.repeat",
+      "component": "AlarmPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "alarmEditor",
+          "direction": "vertical",
+          "description": "Alarm settings"
+        },
+        {
+          "name": "alarmRepeat",
+          "direction": "vertical",
+          "description": "Repeat options"
+        },
+        {
+          "name": "alarmTone",
+          "direction": "vertical",
+          "description": "Generated browser alert tones"
+        },
+        {
+          "name": "globalMenu",
+          "direction": "vertical",
+          "description": "Global More menu"
+        }
+      ],
+      "description": "New alarm repeat",
+      "search": {
+        "panel": "add",
+        "repeat": "open"
+      },
+      "queryParams": {
+        "alarmId": "string"
+      },
+      "actions": [
+        {
+          "id": "alarm.add.repeat.select.once",
+          "label": "Once",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.add.repeat.select.daily",
+          "label": "Every day",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.add.repeat.select.workday",
+          "label": "Workdays",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.add.repeat.select.holiday",
+          "label": "Holidays",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.add.repeat.select.weekday",
+          "label": "Monday to Friday",
+          "behavior": "select"
+        }
+      ]
+    },
+    {
+      "id": "/alarm?panel=edit&repeat=open&alarmId=:alarmId",
+      "routePath": "/alarm",
+      "uiStateId": "clock.alarm.edit.repeat",
+      "component": "AlarmPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "alarmEditor",
+          "direction": "vertical",
+          "description": "Alarm settings"
+        },
+        {
+          "name": "alarmRepeat",
+          "direction": "vertical",
+          "description": "Repeat options"
+        },
+        {
+          "name": "alarmTone",
+          "direction": "vertical",
+          "description": "Generated browser alert tones"
+        },
+        {
+          "name": "globalMenu",
+          "direction": "vertical",
+          "description": "Global More menu"
+        }
+      ],
+      "description": "Edit alarm repeat",
+      "search": {
+        "panel": "edit",
+        "repeat": "open"
+      },
+      "queryParams": {
+        "alarmId": "string"
+      },
+      "actions": [
+        {
+          "id": "alarm.edit.repeat.select.once",
+          "label": "Once",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.edit.repeat.select.daily",
+          "label": "Every day",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.edit.repeat.select.workday",
+          "label": "Workdays",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.edit.repeat.select.holiday",
+          "label": "Holidays",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.edit.repeat.select.weekday",
+          "label": "Monday to Friday",
+          "behavior": "select"
+        }
+      ]
+    },
+    {
+      "id": "/alarm?panel=add&ringtone=open&alarmId=:alarmId",
+      "routePath": "/alarm",
+      "uiStateId": "clock.alarm.add.ringtone",
+      "component": "AlarmPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "alarmEditor",
+          "direction": "vertical",
+          "description": "Alarm settings"
+        },
+        {
+          "name": "alarmRepeat",
+          "direction": "vertical",
+          "description": "Repeat options"
+        },
+        {
+          "name": "alarmTone",
+          "direction": "vertical",
+          "description": "Generated browser alert tones"
+        },
+        {
+          "name": "globalMenu",
+          "direction": "vertical",
+          "description": "Global More menu"
+        }
+      ],
+      "description": "Choose a generated browser alert tone",
+      "search": {
+        "panel": "add",
+        "ringtone": "open"
+      },
+      "queryParams": {
+        "alarmId": "string"
+      },
+      "actions": [
+        {
+          "id": "alarm.add.ringtone.select.classic",
+          "label": "Select classic tone",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.add.ringtone.select.soft",
+          "label": "Select soft tone",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.add.ringtone.select.bright",
+          "label": "Select bright tone",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.add.ringtone.preview",
+          "label": "Preview generated tone",
+          "behavior": "other",
+          "paramsSchema": {
+            "tone": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/alarm?panel=edit&ringtone=open&alarmId=:alarmId",
+      "routePath": "/alarm",
+      "uiStateId": "clock.alarm.edit.ringtone",
+      "component": "AlarmPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "alarmEditor",
+          "direction": "vertical",
+          "description": "Alarm settings"
+        },
+        {
+          "name": "alarmRepeat",
+          "direction": "vertical",
+          "description": "Repeat options"
+        },
+        {
+          "name": "alarmTone",
+          "direction": "vertical",
+          "description": "Generated browser alert tones"
+        },
+        {
+          "name": "globalMenu",
+          "direction": "vertical",
+          "description": "Global More menu"
+        }
+      ],
+      "description": "Edit generated browser alert tone",
+      "search": {
+        "panel": "edit",
+        "ringtone": "open"
+      },
+      "queryParams": {
+        "alarmId": "string"
+      },
+      "actions": [
+        {
+          "id": "alarm.edit.ringtone.select.classic",
+          "label": "Select classic tone",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.edit.ringtone.select.soft",
+          "label": "Select soft tone",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.edit.ringtone.select.bright",
+          "label": "Select bright tone",
+          "behavior": "select"
+        },
+        {
+          "id": "alarm.edit.ringtone.preview",
+          "label": "Preview generated tone",
+          "behavior": "other",
+          "paramsSchema": {
+            "tone": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/alarm/ringing/:ringId",
+      "routePath": "/alarm/ringing/:ringId",
+      "uiStateId": "clock.alarm.ringing.base",
+      "component": "AlarmRingingPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {
+        "ringId": "string"
+      },
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "Owned local alarm occurrence",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "alarm.ringing.dismiss",
+          "label": "Stop only this alarm occurrence",
+          "behavior": "other"
+        },
+        {
+          "id": "alarm.ringing.audio.enable",
+          "label": "Enable browser audio for this occurrence",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/settings",
+      "routePath": "/settings",
+      "uiStateId": "clock.settings.base",
+      "component": "ClockSettingsPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "Clock settings",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "clock.settings.gradualVolume.toggle",
+          "label": "Toggle gradual browser alarm volume",
+          "behavior": "toggle",
+          "paramsSchema": {
+            "value": "boolean"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/world",
+      "routePath": "/world",
+      "uiStateId": "clock.world.base",
+      "component": "WorldClockPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "cityPicker",
+          "direction": "vertical",
+          "description": "Available cities"
+        },
+        {
+          "name": "cityIndex",
+          "direction": "vertical",
+          "description": "City alphabet index"
+        }
+      ],
+      "description": "世界时钟页",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/world?selection=cities",
+      "routePath": "/world",
+      "uiStateId": "clock.world.selection",
+      "component": "WorldClockPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "cityPicker",
+          "direction": "vertical",
+          "description": "Available cities"
+        },
+        {
+          "name": "cityIndex",
+          "direction": "vertical",
+          "description": "City alphabet index"
+        }
+      ],
+      "description": "World-clock selection mode",
+      "search": {
+        "selection": "cities"
+      },
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/world?panel=cities",
+      "routePath": "/world",
+      "uiStateId": "clock.world.cities",
+      "component": "WorldClockPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        },
+        {
+          "name": "cityPicker",
+          "direction": "vertical",
+          "description": "Available cities"
+        },
+        {
+          "name": "cityIndex",
+          "direction": "vertical",
+          "description": "City alphabet index"
+        }
+      ],
+      "description": "City selector",
+      "search": {
+        "panel": "cities"
+      },
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "world.city.item.add.submit",
+          "label": "Add selected city or report existing city",
+          "behavior": "submit",
+          "scope": "item",
+          "paramsSchema": {
+            "cityId": "string"
+          }
+        },
+        {
+          "id": "world.city.search.input",
+          "label": "Search country or city",
+          "behavior": "input",
+          "paramsSchema": {
+            "value": "string"
+          }
+        },
+        {
+          "id": "world.city.search.clear",
+          "label": "Clear city search",
+          "behavior": "other"
+        },
+        {
+          "id": "world.city.index.jump",
+          "label": "Scroll to city initial",
+          "behavior": "other",
+          "paramsSchema": {
+            "letter": "string"
+          }
+        }
+      ]
+    },
+    {
+      "id": "/stopwatch",
+      "routePath": "/stopwatch",
+      "uiStateId": "clock.stopwatch.base",
+      "component": "StopwatchPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "秒表页",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "stopwatch.run.start",
+          "label": "Start or resume the stopwatch",
+          "behavior": "other"
+        },
+        {
+          "id": "stopwatch.run.pause",
+          "label": "Pause the stopwatch",
+          "behavior": "other"
+        },
+        {
+          "id": "stopwatch.run.lap",
+          "label": "Record a stopwatch lap",
+          "behavior": "other"
+        },
+        {
+          "id": "stopwatch.run.reset",
+          "label": "Reset the stopwatch",
+          "behavior": "other"
+        }
+      ]
+    },
+    {
+      "id": "/timer",
+      "routePath": "/timer",
+      "uiStateId": "clock.timer.base",
+      "component": "TimerPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [
+        {
+          "name": "main",
+          "direction": "vertical",
+          "description": "页面主内容区"
+        }
+      ],
+      "description": "计时器页",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "timer.run.start",
+          "label": "开始真实本地倒计时",
+          "behavior": "other"
+        },
+        {
+          "id": "timer.run.pause",
+          "label": "暂停倒计时",
+          "behavior": "other"
+        },
+        {
+          "id": "timer.run.resume",
+          "label": "继续倒计时",
+          "behavior": "other"
+        },
+        {
+          "id": "timer.run.stop",
+          "label": "停止倒计时",
+          "behavior": "other"
+        },
+        {
+          "id": "timer.setup.reset",
+          "label": "重置计时器设置",
+          "behavior": "other"
+        },
+        {
+          "id": "timer.setup.bell",
+          "label": "测试计时器铃声",
+          "behavior": "other"
+        },
+        {
+          "id": "timer.finish.dismiss",
+          "label": "确认结束并停止提示",
+          "behavior": "other"
+        },
+        {
+          "id": "timer.finish.restart",
+          "label": "重新开始原时长",
+          "behavior": "other"
+        },
+        {
+          "id": "timer.preset.select.duration",
+          "label": "选择原预设时长",
+          "behavior": "select",
+          "paramsSchema": {
+            "seconds": "number"
+          }
+        },
+        {
+          "id": "timer.screen.toggle",
+          "label": "请求或释放浏览器常亮",
+          "behavior": "toggle"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/alarm?alarmId=:alarmId",
+      "sourceNodeId": "/alarm?alarmId=:alarmId",
+      "target": "/alarm?menu=more&alarmId=:alarmId",
+      "targetNodeId": "/alarm?menu=more&alarmId=:alarmId",
+      "id": "alarm.menu.open",
+      "label": "Open global Clock menu",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "menu": "more"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/alarm",
+        "search": {
+          "menu": null,
+          "panel": null,
+          "selection": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "more",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/alarm?menu=more&alarmId=:alarmId",
+      "sourceNodeId": "/alarm?menu=more&alarmId=:alarmId",
+      "target": "/settings",
+      "targetNodeId": "/settings",
+      "id": "alarm.menu.settings.open",
+      "label": "Open Clock settings and consume menu",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/alarm",
+        "search": {
+          "menu": "more",
+          "panel": null,
+          "selection": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "settings",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/alarm?alarmId=:alarmId",
+      "sourceNodeId": "/alarm?alarmId=:alarmId",
+      "target": "/alarm?selection=alarms&alarmId=:alarmId",
+      "targetNodeId": "/alarm?selection=alarms&alarmId=:alarmId",
+      "id": "alarm.item.selection.enter",
+      "label": "Enter alarm selection mode",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "selection": "alarms"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/alarm",
+        "search": {
+          "panel": null,
+          "selection": null,
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "select",
+        "gesture": "longPress"
+      }
+    },
+    {
+      "source": "/world",
+      "sourceNodeId": "/world",
+      "target": "/world?selection=cities",
+      "targetNodeId": "/world?selection=cities",
+      "id": "world.city.selection.enter",
+      "label": "Enter city selection mode",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "selection": "cities"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/world",
+        "search": {
+          "panel": null,
+          "selection": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "select",
+        "gesture": "longPress"
+      }
+    },
+    {
+      "source": "/alarm?alarmId=:alarmId",
+      "sourceNodeId": "/alarm?alarmId=:alarmId",
+      "target": "/alarm/ringing/:ringId",
+      "targetNodeId": "/alarm/ringing/:ringId",
+      "id": "alarm.ringing.open",
+      "label": "Open an actual ringing alarm",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "ringId": "string"
+      },
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/alarm",
+        "search": {
+          "panel": null,
+          "selection": null,
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "alarm",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/alarm/ringing/:ringId",
+      "sourceNodeId": "/alarm/ringing/:ringId",
+      "target": "/alarm?alarmId=:alarmId",
+      "targetNodeId": "/alarm?alarmId=:alarmId",
+      "id": "alarm.ringing.return",
+      "label": "Return to the alarm list",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "back",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/world",
+      "sourceNodeId": "/world",
+      "target": "/world?panel=cities",
+      "targetNodeId": "/world?panel=cities",
+      "id": "world.city.selector.open",
+      "label": "Select a world-clock city",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "panel": "cities"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/world",
+        "search": {
+          "panel": null,
+          "selection": null
+        }
+      },
+      "uiMeta": {
+        "placement": "topbar",
+        "icon": "add",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/alarm?alarmId=:alarmId",
+      "sourceNodeId": "/alarm?alarmId=:alarmId",
+      "target": "/alarm?panel=add&alarmId=:alarmId",
+      "targetNodeId": "/alarm?panel=add&alarmId=:alarmId",
+      "id": "alarm.add.open",
+      "label": "New alarm",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "panel": "add"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/alarm",
+        "search": {
+          "panel": null,
+          "selection": null,
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "add",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/alarm?alarmId=:alarmId",
+      "sourceNodeId": "/alarm?alarmId=:alarmId",
+      "target": "/alarm?panel=quick&alarmId=:alarmId",
+      "targetNodeId": "/alarm?panel=quick&alarmId=:alarmId",
+      "id": "alarm.item.edit.open",
+      "label": "Edit selected alarm",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "panel": "quick"
+      },
+      "searchParams": {
+        "alarmId": "string"
+      },
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/alarm",
+        "search": {
+          "panel": null,
+          "selection": null,
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "alarm",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/alarm?panel=quick&alarmId=:alarmId",
+      "sourceNodeId": "/alarm?panel=quick&alarmId=:alarmId",
+      "target": "/alarm?panel=edit&alarmId=:alarmId",
+      "targetNodeId": "/alarm?panel=edit&alarmId=:alarmId",
+      "id": "alarm.editor.more.open",
+      "label": "More alarm settings",
+      "type": "state",
+      "mode": "replace",
+      "search": {
+        "panel": "edit"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "alarmId"
+      ],
+      "fromConstraint": {
+        "path": "/alarm",
+        "search": {
+          "panel": "quick"
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "settings",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/alarm?panel=add&alarmId=:alarmId",
+      "sourceNodeId": "/alarm?panel=add&alarmId=:alarmId",
+      "target": "/alarm?panel=add&repeat=open&alarmId=:alarmId",
+      "targetNodeId": "/alarm?panel=add&repeat=open&alarmId=:alarmId",
+      "id": "alarm.repeat.open",
+      "label": "Repeat options",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "repeat": "open"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "panel",
+        "alarmId"
+      ],
+      "fromConstraint": {
+        "path": "/alarm",
+        "search": {
+          "panel": "add",
+          "repeat": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "repeat",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/alarm?panel=edit&alarmId=:alarmId",
+      "sourceNodeId": "/alarm?panel=edit&alarmId=:alarmId",
+      "target": "/alarm?panel=edit&repeat=open&alarmId=:alarmId",
+      "targetNodeId": "/alarm?panel=edit&repeat=open&alarmId=:alarmId",
+      "id": "alarm.repeat.open",
+      "label": "Repeat options",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "repeat": "open"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "panel",
+        "alarmId"
+      ],
+      "fromConstraint": {
+        "path": "/alarm",
+        "search": {
+          "panel": "edit",
+          "repeat": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "repeat",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/alarm?panel=add&alarmId=:alarmId",
+      "sourceNodeId": "/alarm?panel=add&alarmId=:alarmId",
+      "target": "/alarm?panel=add&ringtone=open&alarmId=:alarmId",
+      "targetNodeId": "/alarm?panel=add&ringtone=open&alarmId=:alarmId",
+      "id": "alarm.ringtone.open",
+      "label": "Choose alarm browser tone",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "ringtone": "open"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "panel",
+        "alarmId"
+      ],
+      "fromConstraint": {
+        "path": "/alarm",
+        "search": {
+          "panel": "add",
+          "ringtone": null,
+          "repeat": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "sound",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/alarm?panel=edit&alarmId=:alarmId",
+      "sourceNodeId": "/alarm?panel=edit&alarmId=:alarmId",
+      "target": "/alarm?panel=edit&ringtone=open&alarmId=:alarmId",
+      "targetNodeId": "/alarm?panel=edit&ringtone=open&alarmId=:alarmId",
+      "id": "alarm.ringtone.open",
+      "label": "Choose alarm browser tone",
+      "type": "state",
+      "mode": "push",
+      "search": {
+        "ringtone": "open"
+      },
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [
+        "panel",
+        "alarmId"
+      ],
+      "fromConstraint": {
+        "path": "/alarm",
+        "search": {
+          "panel": "edit",
+          "ringtone": null,
+          "repeat": null
+        }
+      },
+      "uiMeta": {
+        "placement": "content",
+        "icon": "sound",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/world",
+      "targetNodeId": "/world",
+      "id": "tab.world",
+      "label": "切换到世界时钟页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "world",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/alarm?alarmId=:alarmId",
+      "sourceNodeId": "/alarm?alarmId=:alarmId",
+      "target": "/world",
+      "targetNodeId": "/world",
+      "id": "tab.world",
+      "label": "切换到世界时钟页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/alarm",
+        "search": {
+          "panel": null,
+          "selection": null,
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "world",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/stopwatch",
+      "sourceNodeId": "/stopwatch",
+      "target": "/world",
+      "targetNodeId": "/world",
+      "id": "tab.world",
+      "label": "切换到世界时钟页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "world",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/timer",
+      "sourceNodeId": "/timer",
+      "target": "/world",
+      "targetNodeId": "/world",
+      "id": "tab.world",
+      "label": "切换到世界时钟页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "world",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/alarm?alarmId=:alarmId",
+      "sourceNodeId": "/alarm?alarmId=:alarmId",
+      "target": "/stopwatch",
+      "targetNodeId": "/stopwatch",
+      "id": "tab.stopwatch",
+      "label": "切换到秒表页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/alarm",
+        "search": {
+          "panel": null,
+          "selection": null,
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "stopwatch",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/world",
+      "sourceNodeId": "/world",
+      "target": "/stopwatch",
+      "targetNodeId": "/stopwatch",
+      "id": "tab.stopwatch",
+      "label": "切换到秒表页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/world",
+        "search": {
+          "panel": null,
+          "selection": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "stopwatch",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/timer",
+      "sourceNodeId": "/timer",
+      "target": "/stopwatch",
+      "targetNodeId": "/stopwatch",
+      "id": "tab.stopwatch",
+      "label": "切换到秒表页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "stopwatch",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/alarm?alarmId=:alarmId",
+      "sourceNodeId": "/alarm?alarmId=:alarmId",
+      "target": "/timer",
+      "targetNodeId": "/timer",
+      "id": "tab.timer",
+      "label": "切换到计时器页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/alarm",
+        "search": {
+          "panel": null,
+          "selection": null,
+          "menu": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "timer",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/world",
+      "sourceNodeId": "/world",
+      "target": "/timer",
+      "targetNodeId": "/timer",
+      "id": "tab.timer",
+      "label": "切换到计时器页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/world",
+        "search": {
+          "panel": null,
+          "selection": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "timer",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/stopwatch",
+      "sourceNodeId": "/stopwatch",
+      "target": "/timer",
+      "targetNodeId": "/timer",
+      "id": "tab.timer",
+      "label": "切换到计时器页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "timer",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/world",
+      "sourceNodeId": "/world",
+      "target": "/alarm?alarmId=:alarmId",
+      "targetNodeId": "/alarm?alarmId=:alarmId",
+      "id": "tab.alarm",
+      "label": "切换到闹钟页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "fromConstraint": {
+        "path": "/world",
+        "search": {
+          "panel": null,
+          "selection": null
+        }
+      },
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "alarm",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/stopwatch",
+      "sourceNodeId": "/stopwatch",
+      "target": "/alarm?alarmId=:alarmId",
+      "targetNodeId": "/alarm?alarmId=:alarmId",
+      "id": "tab.alarm",
+      "label": "切换到闹钟页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "alarm",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/timer",
+      "sourceNodeId": "/timer",
+      "target": "/alarm?alarmId=:alarmId",
+      "targetNodeId": "/alarm?alarmId=:alarmId",
+      "id": "tab.alarm",
+      "label": "切换到闹钟页",
+      "type": "navigation",
+      "mode": "replace",
+      "search": {},
+      "searchParams": {},
+      "params": {},
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "tabbar",
+        "icon": "alarm",
+        "gesture": "tap"
+      }
+    }
+  ]
+}

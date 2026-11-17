@@ -1,0 +1,11 @@
+# Preserve the audited snapshot bytes across Windows/Linux checkouts.
+# In particular, the RedBook media manifest pins the raw notes.json SHA-256.
+foldmobilegym/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+mobilegym_overlay/mobilegym-data/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+
+# Standalone release metadata is hashed byte-for-byte on every operating system.
+media_sources/manifest.json -text whitespace=trailing-space,space-before-tab,cr-at-eol
+media_sources/README.md -text whitespace=trailing-space,space-before-tab,cr-at-eol
+media_sources/overrides/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+# Publication inventory pins showcase-media bytes, including future SVG files.
+media_sources/readme-screenshots/** -text whitespace=trailing-space,space-before-tab,cr-at-eol

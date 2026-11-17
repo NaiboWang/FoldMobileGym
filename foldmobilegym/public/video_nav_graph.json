@@ -1,0 +1,108 @@
+{
+  "app": "video",
+  "appDir": "apps\\Video",
+  "mode": "schema",
+  "dataFile": null,
+  "reachability": null,
+  "routeCount": 2,
+  "transitionCount": 1,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "uiStateId": "video.library.base",
+      "component": "Content",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "params": {},
+      "scrollContainers": [],
+      "description": "Local video library",
+      "search": {},
+      "queryParams": {},
+      "actions": []
+    },
+    {
+      "id": "/player/:id",
+      "routePath": "/player/:id",
+      "uiStateId": "video.player.base",
+      "component": "Content",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "params": {
+        "id": "string"
+      },
+      "scrollContainers": [],
+      "description": "Selected video and chapters",
+      "search": {},
+      "queryParams": {},
+      "actions": [
+        {
+          "id": "video.chapter.seek",
+          "label": "Seek to chapter",
+          "behavior": "other",
+          "scope": "item",
+          "paramsSchema": {
+            "seconds": "number"
+          }
+        },
+        {
+          "id": "video.fact.verify",
+          "label": "Verify current chapter",
+          "behavior": "other"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/",
+      "sourceNodeId": "/",
+      "target": "/player/:id",
+      "targetNodeId": "/player/:id",
+      "id": "video.asset.open",
+      "label": "Open video",
+      "type": "navigation",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "video",
+        "gesture": "tap"
+      }
+    },
+    {
+      "source": "/player/:id",
+      "sourceNodeId": "/player/:id",
+      "target": "/player/:id",
+      "targetNodeId": "/player/:id",
+      "id": "video.asset.open",
+      "label": "Open video",
+      "type": "state",
+      "mode": "push",
+      "search": {},
+      "searchParams": {},
+      "params": {
+        "id": "string"
+      },
+      "preserveParams": [],
+      "uiMeta": {
+        "placement": "content",
+        "icon": "video",
+        "gesture": "tap"
+      }
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "app": "theme_store",
+  "appDir": "system\\ThemeStore",
+  "mode": "schema",
+  "routeCount": 3,
+  "edgeCount": 4,
+  "nodes": [
+    {
+      "id": "/",
+      "routePath": "/",
+      "component": "ThemeStoreHomePage",
+      "entryPoint": true,
+      "entry": {
+        "kind": "home",
+        "home": true,
+        "deepLink": false
+      },
+      "description": "主题商店首页",
+      "stateCount": 1,
+      "states": [
+        "/"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/ranking",
+      "routePath": "/ranking",
+      "component": "ThemeStoreRankingPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "none",
+        "home": false,
+        "deepLink": false
+      },
+      "description": "主题排行榜",
+      "stateCount": 1,
+      "states": [
+        "/ranking"
+      ],
+      "actionCount": 0,
+      "actionIds": [],
+      "actions": []
+    },
+    {
+      "id": "/item/:kind/:id",
+      "routePath": "/item/:kind/:id",
+      "component": "StoreItemDetailPage",
+      "entryPoint": false,
+      "entry": {
+        "kind": "deepLink",
+        "home": false,
+        "deepLink": true
+      },
+      "description": "主题详情页",
+      "stateCount": 1,
+      "states": [
+        "/item/:kind/:id"
+      ],
+      "actionCount": 3,
+      "actionIds": [
+        "themeStore.item.theme.submit",
+        "themeStore.item.icons.submit",
+        "themeStore.item.wallpaper.submit"
+      ],
+      "actions": [
+        {
+          "id": "themeStore.item.theme.submit",
+          "label": "应用整套主题",
+          "behavior": "submit",
+          "paramsSchema": {
+            "themeId": "string"
+          }
+        },
+        {
+          "id": "themeStore.item.icons.submit",
+          "label": "只应用主题图标",
+          "behavior": "submit",
+          "paramsSchema": {
+            "themeId": "string"
+          }
+        },
+        {
+          "id": "themeStore.item.wallpaper.submit",
+          "label": "只应用主题壁纸",
+          "behavior": "submit",
+          "paramsSchema": {
+            "themeId": "string"
+          }
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "/",
+      "target": "/ranking",
+      "transitions": [
+        "ranking.open"
+      ],
+      "type": "navigation",
+      "label": "ranking.open",
+      "id": "ranking.open"
+    },
+    {
+      "source": "/ranking",
+      "target": "/",
+      "transitions": [
+        "home.open"
+      ],
+      "type": "navigation",
+      "label": "home.open",
+      "id": "home.open"
+    },
+    {
+      "source": "/",
+      "target": "/item/:kind/:id",
+      "transitions": [
+        "item.open"
+      ],
+      "type": "navigation",
+      "label": "item.open",
+      "id": "item.open"
+    },
+    {
+      "source": "/ranking",
+      "target": "/item/:kind/:id",
+      "transitions": [
+        "item.open"
+      ],
+      "type": "navigation",
+      "label": "item.open",
+      "id": "item.open"
+    }
+  ]
+}

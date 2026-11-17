@@ -1,0 +1,18 @@
+[
+  {"name":"reordered objects","actual":{"items":[{"id":"b","price":4.5},{"id":"a","price":12.3}]},"expected":{"items":[{"id":"a","price":12.3},{"id":"b","price":4.5}]},"passed":true},
+  {"name":"extra items before required item","actual":{"items":[{"id":"extra"},{"id":"a"}]},"expected":{"items":[{"id":"a"}]},"passed":true},
+  {"name":"missing required item","actual":{"items":[{"id":"a"}]},"expected":{"items":[{"id":"a"},{"id":"b"}]},"passed":false},
+  {"name":"fields must belong to same object","actual":{"items":[{"id":"a","price":4.5},{"id":"b","price":12.3}]},"expected":{"items":[{"id":"a","price":12.3}]},"passed":false},
+  {"name":"recursive containment","actual":{"groups":[{"id":"g","items":["b","a","extra"]}]},"expected":{"groups":[{"id":"g","items":["a","b"]}]},"passed":true},
+  {"name":"array is not an object","actual":["x"],"expected":{"0":"x"},"passed":false},
+  {"name":"empty object cannot match array","actual":[],"expected":{},"passed":false},
+  {"name":"missing is not null","actual":{},"expected":{"x":null},"passed":false},
+  {"name":"explicit null","actual":{"x":null},"expected":{"x":null},"passed":true},
+  {"name":"boolean is not numeric one","actual":{"x":true},"expected":{"x":1},"passed":false},
+  {"name":"numeric zero is not false","actual":{"x":0},"expected":{"x":false},"passed":false},
+  {"name":"numeric values","actual":{"x":12.3,"extra":1},"expected":{"x":12.3},"passed":true},
+  {"name":"numeric strings are not numbers","actual":{"x":"12.3"},"expected":{"x":12.3},"passed":false},
+  {"name":"empty list membership","actual":[1,2],"expected":[],"passed":true},
+  {"name":"empty list requires list","actual":{},"expected":[],"passed":false},
+  {"name":"membership is not multiplicity","actual":[1],"expected":[1,1],"passed":true}
+]
