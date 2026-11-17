@@ -12,7 +12,7 @@ The accompanying public [task dataset](#task-data) in [`tasks/`](tasks/) current
 
 This project provides a simulated experience and is still being improved. All in-app content and actions are examples; they cannot make real calls, payments, purchases, or send messages.
 
-[Watch the demo (about 64 seconds)](https://github.com/user-attachments/assets/ee175436-2e33-4813-834c-dd9afb31efb5) · [Get the project](https://github.com/yannnf/foldmobilegym)
+[Watch the demo (about 64 seconds)](https://github.com/user-attachments/assets/ee175436-2e33-4813-834c-dd9afb31efb5) 
 
 ## What You Can Explore
 

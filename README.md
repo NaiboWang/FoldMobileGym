@@ -12,7 +12,7 @@
 
 本项目提供模拟体验，仍在持续完善；应用中的内容与操作均为示例，不能用于真实通话、付款、下单或发送消息。
 
-[观看演示视频（约 64 秒）](https://github.com/user-attachments/assets/ee175436-2e33-4813-834c-dd9afb31efb5) · [获取项目](https://github.com/yannnf/foldmobilegym)
+[观看演示视频（约 64 秒）](https://github.com/user-attachments/assets/ee175436-2e33-4813-834c-dd9afb31efb5)
 
 ## 可以体验什么
 
