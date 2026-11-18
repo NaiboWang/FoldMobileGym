@@ -102,11 +102,11 @@ Windows 示例使用 `npm.cmd`，可避免 PowerShell 的脚本执行策略拦�
 在空间充足的位置打开 PowerShell，执行：
 
 ```powershell
-git clone https://github.com/yannnf/foldmobilegym.git
+git clone https://github.com/NaiboWang/FoldMobileGym.git
 cd foldmobilegym
 ```
 
-前往[媒体包下载页](https://github.com/NaiboWang/foldmobilegym/releases/tag/media-v0.3.0)，下载 [`foldagent-gui-media-full-v0.3.0.tar.gz`](https://github.com/yannnf/foldmobilegym/releases/download/media-v0.3.0/foldagent-gui-media-full-v0.3.0.tar.gz)。
+前往[媒体包下载页](https://github.com/NaiboWang/foldmobilegym/releases/tag/media-v0.3.0)，下载 [`foldagent-gui-media-full-v0.3.0.tar.gz`](https://github.com/NaiboWang/foldmobilegym/releases/download/media-v0.3.0/foldagent-gui-media-full-v0.3.0.tar.gz)。
 
 在刚才的 PowerShell 中执行以下命令，将示例路径替换为媒体包的实际保存位置：
 
@@ -142,10 +142,10 @@ npm.cmd run dev -- --host 127.0.0.1 --port 3100 --strictPort
 
 请先安装 Git、Node.js 24.14.0 或更高版本（包含 npm）、Python 3（推荐 3.11 或更高版本），以及 Chrome 或 Edge。以下命令适用于 bash / zsh；使用的媒体包与 Windows 相同，也需要预留至少 15 GB 可用空间。
 
-先从[媒体包下载页](https://github.com//foldmobilegym/releases/tag/media-v0.3.0)下载 [`foldagent-gui-media-full-v0.3.0.tar.gz`](https://github.com/yannnf/foldmobilegym/releases/download/media-v0.3.0/foldagent-gui-media-full-v0.3.0.tar.gz)。在准备保存项目的位置打开终端，依次执行：
+先从[媒体包下载页](https://github.com//foldmobilegym/releases/tag/media-v0.3.0)下载 [`foldagent-gui-media-full-v0.3.0.tar.gz`](https://github.com/NaiboWang/foldmobilegym/releases/download/media-v0.3.0/foldagent-gui-media-full-v0.3.0.tar.gz)。在准备保存项目的位置打开终端，依次执行：
 
 ```bash
-git clone https://github.com/yannnf/foldmobilegym.git
+git clone https://github.com/NaiboWang/FoldMobileGym.git
 cd foldmobilegym
 
 # 将下方路径替换为媒体包的实际下载位置
