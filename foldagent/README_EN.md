@@ -8,7 +8,7 @@ The migration includes the model client, prompts, screenshot and action loop, ta
 
 ## Prepare the Environment
 
-Run all commands from the **foldmobilegym repository root**. The project's reference versions are Node.js 24 and Python 3.11, with Chrome or Edge installed locally.
+Run all commands from the **FoldMobileGym repository root**. The project's reference versions are Node.js 24 and Python 3.11, with Chrome or Edge installed locally.
 
 Follow the root [README](../README.en.md) to install the simulator dependencies and media assets. The agent reuses Puppeteer from `foldmobilegym/node_modules`; it does not require the OpenAI SDK or a separate build.
 

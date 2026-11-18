@@ -56,7 +56,7 @@ All screenshots below are from the simulator. The apps and data shown are simula
 ## Directory Structure
 
 ```text
-foldmobilegym/                 Project repository root
+FoldMobileGym/                 Project repository root
 ├── README.md                  Chinese installation and usage guide
 ├── README.en.md               English installation and usage guide
 ├── foldmobilegym/             Web simulator; install npm dependencies and start it here
@@ -78,7 +78,7 @@ foldmobilegym/                 Project repository root
 └── media_sources/             Media documentation, source records, and README screenshots
 ```
 
-**Both the repository root and the simulator subdirectory are named `foldmobilegym`. Run the media installation and agent commands below from the repository root. Run `npm ci` and `npm run dev` from the `foldmobilegym` subdirectory inside it.**
+**After cloning, the repository root is named `FoldMobileGym`, and the simulator subdirectory is named `foldmobilegym`. Run the media installation and agent commands below from the repository root. Run `npm ci` and `npm run dev` from the `foldmobilegym` subdirectory inside it.**
 
 ## Getting Started
 
@@ -103,7 +103,7 @@ Open PowerShell in a location with sufficient free space and run:
 
 ```powershell
 git clone https://github.com/NaiboWang/FoldMobileGym.git
-cd foldmobilegym
+cd FoldMobileGym
 ```
 
 Visit the [media package release page](https://github.com/NaiboWang/foldmobilegym/releases/tag/media-v0.3.0) and download [`foldagent-gui-media-full-v0.3.0.tar.gz`](https://github.com/NaiboWang/foldmobilegym/releases/download/media-v0.3.0/foldagent-gui-media-full-v0.3.0.tar.gz).
@@ -146,7 +146,7 @@ Download [`foldagent-gui-media-full-v0.3.0.tar.gz`](https://github.com/NaiboWang
 
 ```bash
 git clone https://github.com/NaiboWang/FoldMobileGym.git
-cd foldmobilegym
+cd FoldMobileGym
 
 # Replace the path below with the actual location of your downloaded media package
 python3 tools/media/install_media_package.py --archive "$HOME/Downloads/foldagent-gui-media-full-v0.3.0.tar.gz"

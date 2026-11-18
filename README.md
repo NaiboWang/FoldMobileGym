@@ -56,7 +56,7 @@
 ## 目录结构
 
 ```text
-foldmobilegym/                 项目仓库根目录
+FoldMobileGym/                 项目仓库根目录
 ├── README.md                  中文安装与使用说明
 ├── README.en.md               英文安装与使用说明
 ├── foldmobilegym/             网页模拟器；在此目录安装 npm 依赖并启动
@@ -78,7 +78,7 @@ foldmobilegym/                 项目仓库根目录
 └── media_sources/             媒体说明、来源记录和 README 截图
 ```
 
-**仓库根目录与模拟器子目录都叫 `foldmobilegym`。下文中的媒体安装和 Agent 命令从仓库根目录执行；`npm ci` 和 `npm run dev` 从其中的 `foldmobilegym` 子目录执行。**
+**克隆后的仓库根目录为 `FoldMobileGym`，模拟器子目录为 `foldmobilegym`。下文中的媒体安装和 Agent 命令从仓库根目录执行；`npm ci` 和 `npm run dev` 从其中的 `foldmobilegym` 子目录执行。**
 
 ## 开始使用
 
@@ -103,7 +103,7 @@ Windows 示例使用 `npm.cmd`，可避免 PowerShell 的脚本执行策略拦�
 
 ```powershell
 git clone https://github.com/NaiboWang/FoldMobileGym.git
-cd foldmobilegym
+cd FoldMobileGym
 ```
 
 前往[媒体包下载页](https://github.com/NaiboWang/foldmobilegym/releases/tag/media-v0.3.0)，下载 [`foldagent-gui-media-full-v0.3.0.tar.gz`](https://github.com/NaiboWang/foldmobilegym/releases/download/media-v0.3.0/foldagent-gui-media-full-v0.3.0.tar.gz)。
@@ -146,7 +146,7 @@ npm.cmd run dev -- --host 127.0.0.1 --port 3100 --strictPort
 
 ```bash
 git clone https://github.com/NaiboWang/FoldMobileGym.git
-cd foldmobilegym
+cd FoldMobileGym
 
 # 将下方路径替换为媒体包的实际下载位置
 python3 tools/media/install_media_package.py --archive "$HOME/Downloads/foldagent-gui-media-full-v0.3.0.tar.gz"

@@ -8,7 +8,7 @@
 
 ## 准备环境
 
-所有命令均从 **foldmobilegym 仓库根目录**执行。建议使用项目参考版本 Node.js 24、Python 3.11，以及本机 Chrome 或 Edge。
+所有命令均从 **FoldMobileGym 仓库根目录**执行。建议使用项目参考版本 Node.js 24、Python 3.11，以及本机 Chrome 或 Edge。
 
 按根目录 [README](../README.md) 安装模拟器依赖和媒体。Agent 复用 `foldmobilegym/node_modules` 中的 Puppeteer，不需要 OpenAI SDK 或单独编译。
 
