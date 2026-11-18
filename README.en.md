@@ -1,8 +1,8 @@
-# FoldMobileGym · A Foldable Phone Simulator for the Web
+# FoldMobileGym: A Foldable Mobile Interaction Simulation Platform for GUI Agent Research
 
 [简体中文](README.md) | **English**
 
-Explore foldable phone app layouts and split-screen interactions in your browser.
+A browser-based simulation platform for foldable mobile apps, supporting multi-window interaction, vision-based GUI agents, and task evaluation.
 
 **FoldMobileGym** is a web-based simulator for foldable mobile apps. Without connecting a physical phone, you can switch between folded and unfolded screens, explore simulated apps such as the launcher, calendar, weather, and notes, and see how interfaces and interactions adapt to different screen sizes.
 
