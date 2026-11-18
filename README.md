@@ -102,7 +102,7 @@ Windows 示例使用 `npm.cmd`，可避免 PowerShell 的脚本执行策略拦�
 在空间充足的位置打开 PowerShell，执行：
 
 ```powershell
-git clone https://github.com/yannnf/foldmobilegym.git
+git clone https://github.com/NaiboWang/foldmobilegym.git
 cd foldmobilegym
 ```
 
@@ -145,7 +145,7 @@ npm.cmd run dev -- --host 127.0.0.1 --port 3100 --strictPort
 先从[媒体包下载页](https://github.com//foldmobilegym/releases/tag/media-v0.3.0)下载 [`foldagent-gui-media-full-v0.3.0.tar.gz`](https://github.com/yannnf/foldmobilegym/releases/download/media-v0.3.0/foldagent-gui-media-full-v0.3.0.tar.gz)。在准备保存项目的位置打开终端，依次执行：
 
 ```bash
-git clone https://github.com/yannnf/foldmobilegym.git
+git clone https://github.com/NaiboWang/foldmobilegym.git
 cd foldmobilegym
 
 # 将下方路径替换为媒体包的实际下载位置
