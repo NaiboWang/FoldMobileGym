@@ -6,7 +6,7 @@
 
 请先安装 Python 3.11 或更高版本，并预留至少 15 GB 可用空间。
 
-从[媒体包下载页](https://github.com/yannnf/foldmobilegym/releases/tag/media-v0.3.0)下载 [`foldagent-gui-media-full-v0.3.0.tar.gz`](https://github.com/yannnf/foldmobilegym/releases/download/media-v0.3.0/foldagent-gui-media-full-v0.3.0.tar.gz)。如果下载页需要登录，请使用具有访问权限的账号。
+从[媒体包下载页](https://github.com/NaiboWang/foldmobilegym/releases/tag/media-v0.3.0)下载 [`foldagent-gui-media-full-v0.3.0.tar.gz`](https://github.com/yannnf/foldmobilegym/releases/download/media-v0.3.0/foldagent-gui-media-full-v0.3.0.tar.gz)。如果下载页需要登录，请使用具有访问权限的账号。
 
 在仓库根目录执行以下命令，将示例路径替换为实际下载位置。请等待安装完成，不要手动解压覆盖项目文件。
 
