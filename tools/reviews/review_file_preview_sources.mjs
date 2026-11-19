@@ -8,6 +8,7 @@ const executablePath=process.env.FOLDAGENT_BROWSER_PATH||['C:/Program Files (x86
 assert.ok(executablePath&&fs.existsSync(executablePath));
 const url=new URL(process.env.FOLDAGENT_REVIEW_URL||'http://127.0.0.1:3432/');assert.ok(url.protocol==='http:'&&['localhost','127.0.0.1'].includes(url.hostname)&&!url.username&&!url.password);
 const browser=await require('puppeteer').launch({headless:true,executablePath}),checks=[],failures=[];
+fs.mkdirSync(path.join(root, 'artifacts'), { recursive: true });
 const output=fs.mkdtempSync(path.join(root,'artifacts/file-preview-source-')),app='[data-app-id="file_manager"]';
 try{
  for(const posture of ['folded','unfolded'])for(const locale of ['zh-Hans','en'])for(const type of ['text','pdf']){

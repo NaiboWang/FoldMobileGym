@@ -30,6 +30,8 @@ jobs:
           python-version: '3.11.9'
       - name: Check source and documentation paths
         run: node tools/release/check_source.mjs
+      - name: Check regression scripts create their artifact directory first
+        run: node --test tools/reviews/test_review_bootstrap.mjs
       - name: Install screenshot-agent task validation dependency
         run: python -m pip install --disable-pip-version-check -r foldagent_runtime/requirements.txt
       - name: Test screenshot-agent protocol and runtime (no browser or model API)

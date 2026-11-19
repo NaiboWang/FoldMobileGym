@@ -2,7 +2,9 @@ import assert from 'node:assert/strict';import fs from 'node:fs';import path fro
 import {resolveBrowserExecutable} from '../browser-automation/browser.mjs';
 import {attachReadOnlyBuildPage} from '../../foldmobilegym/scripts/lib/readOnlyBuildPage.mjs';
 const url=new URL(process.env.FOLDAGENT_REVIEW_URL||'http://127.0.0.1:3188/');assert.ok(url.protocol==='http:'&&['127.0.0.1','localhost'].includes(url.hostname)&&!url.username&&!url.password);
-const root=path.resolve(import.meta.dirname,'../..'),require=createRequire(path.join(root,'foldmobilegym/package.json')),puppeteer=require('puppeteer'),output=process.env.FOLDAGENT_REVIEW_OUTPUT||fs.mkdtempSync(path.join(root,'artifacts/meituan-fulfillment-'));fs.mkdirSync(output,{recursive:true});
+const root=path.resolve(import.meta.dirname,'../..'),require=createRequire(path.join(root,'foldmobilegym/package.json')),puppeteer=require('puppeteer');
+fs.mkdirSync(path.join(root, 'artifacts'), { recursive: true });
+const output=process.env.FOLDAGENT_REVIEW_OUTPUT||fs.mkdtempSync(path.join(root,'artifacts/meituan-fulfillment-'));fs.mkdirSync(output,{recursive:true});
 const browser=await puppeteer.launch({headless:true,executablePath:resolveBrowserExecutable()}),page=await browser.newPage();const app='[data-app-id="meituan_waimai"]',checks=[],errors=[];
 page.on('pageerror',e=>errors.push(e.message));const wait=()=>page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
 let transport={mode:'not-initialized',delivered:[],blocked:[]};
