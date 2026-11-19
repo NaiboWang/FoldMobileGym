@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import {createRequire} from 'node:module';
 import {openPilotApp} from '../browser-automation/pilot_app_navigation.mjs';import {resolveBrowserExecutable} from '../browser-automation/browser.mjs';
 const root=path.resolve(import.meta.dirname,'../..'),require=createRequire(path.join(root,'foldmobilegym/package.json')),puppeteer=require('puppeteer'),url=new URL(process.env.FOLDAGENT_REVIEW_URL||'http://127.0.0.1:3200/');assert.ok(url.protocol==='http:'&&['127.0.0.1','localhost'].includes(url.hostname)&&!url.username&&!url.password);
+fs.mkdirSync(path.join(root, 'artifacts'), { recursive: true });
 const output=fs.mkdtempSync(path.join(root,'artifacts/calculator-expression-'));const browser=await puppeteer.launch({headless:true,executablePath:resolveBrowserExecutable()});
 const app='[data-app-id="calculator"]',field=`${app} [data-expression-editor] input`,sheet=`${app} [data-calculator-history]`;const checks=[],failures=[],errors=[];
 const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));const state=page=>page.evaluate(()=>JSON.parse(JSON.stringify(window.__SIM__.getState().apps.calculator)));

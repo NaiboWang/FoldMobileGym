@@ -5,6 +5,7 @@ const require=createRequire(path.join(root,front,'package.json'));
 const executablePath=process.env.FOLDAGENT_BROWSER_PATH||['C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe','C:/Program Files/Google/Chrome/Application/chrome.exe','/usr/bin/chromium'].find(fs.existsSync);
 assert.ok(executablePath&&fs.existsSync(executablePath));
 const url=new URL(process.env.FOLDAGENT_REVIEW_URL||'http://127.0.0.1:3432/');assert.ok(url.protocol==='http:'&&['localhost','127.0.0.1'].includes(url.hostname)&&!url.username&&!url.password);
+fs.mkdirSync(path.join(root, 'artifacts'), { recursive: true });
 const output=fs.mkdtempSync(path.join(root,'artifacts/meituan-summary-')),browser=await require('puppeteer').launch({headless:true,executablePath}),checks=[],failures=[];
 const app='[data-app-id="meituan_waimai"]',summary=`${app} [data-meituan-merchant-summary]`;
 const shop={id:'summary-synthetic',name:'Synthetic merchant summary',rating:'4.6',sales:'1024 synthetic sales',time:'24 synthetic minutes',categoryId:'food',category:'Synthetic menu',dishes:[{id:'summary-dish',name:'Synthetic dish',price:11.25,note:'Synthetic source',emoji:'🍱'}]};

@@ -7,6 +7,7 @@ import { resolveBrowserExecutable } from '../browser-automation/browser.mjs';
 const root = path.resolve(import.meta.dirname, '../..'), require = createRequire(path.join(root, 'foldmobilegym/package.json'));
 const url = new URL(process.env.FOLDAGENT_REVIEW_URL || 'http://127.0.0.1:3191/');
 assert.ok(url.protocol === 'http:' && ['localhost', '127.0.0.1'].includes(url.hostname));
+fs.mkdirSync(path.join(root, 'artifacts'), { recursive: true });
 const output = fs.mkdtempSync(path.join(root, 'artifacts/file-search-identity-'));
 const browser = await require('puppeteer').launch({ headless: true, executablePath: resolveBrowserExecutable() });
 const checks = [], failures = [], errors = [], writes = [], observations = [];

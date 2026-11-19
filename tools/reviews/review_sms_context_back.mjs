@@ -14,6 +14,7 @@ const browser=await require('puppeteer').launch({headless:true,executablePath});
 const cases=[],failures=[];
 const app='[data-app-id="sms"]',id='synthetic-menu-thread';
 const fixture={conversations:[{id,sender:'Synthetic menu source',phoneNumber:'2025550101',timestamp:'09:00',isUnread:false}],messagesByConversationId:{[id]:[]}};
+fs.mkdirSync(path.join(root, 'artifacts'), { recursive: true });
 const output=fs.mkdtempSync(path.join(root,'artifacts/sms-context-back-'));
 try{
  for(const locale of ['zh-Hans','en'])for(const posture of ['folded','unfolded'])for(const kind of ['warm-root','routed-root-system','routed-root-backdrop','routed-new-system']){
